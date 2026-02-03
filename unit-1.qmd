@@ -3,19 +3,44 @@ title: "Unit 1"
 editor: source
 ---
 
-In this first unit, we will explore various tools for communicating statistical
-ideas. We will start with data visualizations, expanding your repertoire of 
-tools for visualizing data. From there, we will move to dashboards---both 
-static and dynamic. Finally, we will play with methods for including executable
-R code inside these documents. 
+In this first unit, we will explore messy data and statistical communication. 
+We will start with a review of concepts from *Introduction to Statistical Computing in R*---data visualizations with **ggplot2**, data wrangling with **dplyr** and 
+**tidyr**, writing functions that work with vectors, and iteration using 
+functions from the map (**purrr**) and apply families. We will also use 
+reviewing creating reproducible documents with Quarto and using R projects as 
+an opportunity to introduce you to version control with git and GitHub. 
+
+Once we've reviewed these concepts, we will dig deeper into the efficiency of
+our functions---how many intermediate objects are created, what order are 
+operations run, what functions are used internally? We will also compare and
+contrast different methods for iterating over functions---`for` loops and the
+`purrr` family of functions. From the perspective of efficiency, we will
+consider why one would choose one tool over the other. 
+
+After this review of efficiency, we will put our function writing an iteration
+skills to work and learn about data that come from alternative sources (not a 
+spreadsheet)! First we will explore hierarchical (JSON) data, iterating over
+multiple calls to an API. Next, we will explore extracting (scraping) data from
+a webpage, iterating over multiple webpages. 
+
+We close the unit with a journey back into the land of visualizations. You will
+learn about non-standard geometries that can spice up your plots---`geom_tile()`, 
+`geom_density_ridges()`, `geom_ribbon()`. We will also consider ways to make 
+our plots more clear to the reader by removing our legend using annotations or
+colors in the titles. We will play around with different color palettes and 
+built-in themes that can personalize your plot. 
+
+By the close of this unit you will produce a professionally polished Quarto 
+document including visual and statistical investigations into your selected 
+dataset. 
+
+::: {.callout-important}
+## Example Check-in Callout
 
 Throughout these sections, you will encounter "check-ins" assessing your 
 knowledge on a particular topic. These check-ins are delineated by a red 
 (important) callout box and are associated with the Canvas quizzes assigned 
 each week. 
-
-::: {.callout-important}
-## Example Check-in Callout
 
 This is where you will find the body of the question. The callout name refers
 to the name of the Canvas quiz the question is associated with.

@@ -11,3 +11,5 @@
 _site
 .github
 *.Rproj
+
+**/*.quarto_ipynb

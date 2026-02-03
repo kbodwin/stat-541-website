@@ -15,10 +15,9 @@ going to have a lot of fun!
 
 ## Acknowledements {.unnumbered}
 
-A huge shout out to [Dr. Kelly Bodwin](http://kelly-bodwin.com/) for creating 
-this class and adding it to the amazing number of computing courses the
-Statistics Department teaches. Another shout out goes the the amazing women at
-Macalester College---[Leslie Myint](https://www.lesliemyint.org/), [Brianna Heggeseth](https://bcheggeseth.github.io/), and [Alicia Johnson](https://ajohns24.github.io/)---for making their
+<!-- we should probably put our funding from Noycehere -->
+
+A huge shout out goes the the amazing women at Macalester College---[Leslie Myint](https://www.lesliemyint.org/), [Brianna Heggeseth](https://bcheggeseth.github.io/), and [Alicia Johnson](https://ajohns24.github.io/)---for making their
 *Intermediate Data Science* course materials public. And finally, a massive 
 thank you to [Sam Shanny-Csik](https://samanthacsik.github.io/) for their
 **incredible** resources for making and styling Quarto websites!

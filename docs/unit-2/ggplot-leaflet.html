@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Creating Maps with the leaflet Package – Advanced R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../unit-2/quarto-dashboard-static.html" rel="next">
+<link href="../unit-2/ggplot-extensions.html" rel="prev">
+<link href="../images/cat-monsters-horst.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-d740d1846410d21846eaedb988be6a2e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="../site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="../site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="../site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="../site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="../site_libs/leaflet-binding-2.2.3/leaflet.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content">
+    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Overview</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../course-materials/calendar.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../course-materials/syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../infrastructure.html"> 
+<span class="menu-text">Infrastructure</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../unit-1.html"> 
+<span class="menu-text">Unit 1 - Communication</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../unit-2.html" aria-current="page"> 
+<span class="menu-text">Unit 2 - Iteration</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../portfolio.html"> 
+<span class="menu-text">Portfolio</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/atheobold/stat-541-website"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unit-2/ggplot-leaflet.html">Creating Maps with the <code>leaflet</code> Package</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit 2</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit-2/ggplot-extensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><code>ggplot</code> Extensions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit-2/ggplot-leaflet.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Creating Maps with the <code>leaflet</code> Package</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit-2/quarto-dashboard-static.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto Dashboards, Part 1</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 3</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit-2/quarto-dashboard-dynamic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto Dashboards, Part 2</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#creating-maps" id="toc-creating-maps" class="nav-link active" data-scroll-target="#creating-maps">Creating Maps</a>
+  <ul class="collapse">
+  <li><a href="#required-video-introductory-series-to-leaflet-in-r-6-videos" id="toc-required-video-introductory-series-to-leaflet-in-r-6-videos" class="nav-link" data-scroll-target="#required-video-introductory-series-to-leaflet-in-r-6-videos">🎥 Required Video: Introductory Series to <code>leaflet</code> in R (6 Videos)</a></li>
+  <li><a href="#more-on-the-leaflet-package" id="toc-more-on-the-leaflet-package" class="nav-link" data-scroll-target="#more-on-the-leaflet-package">More on the <code>leaflet</code> package</a></li>
+  <li><a href="#practice-with-leaflet" id="toc-practice-with-leaflet" class="nav-link" data-scroll-target="#practice-with-leaflet">Practice With Leaflet</a></li>
+  </ul></li>
+  <li><a href="#extra-resources" id="toc-extra-resources" class="nav-link" data-scroll-target="#extra-resources">Extra Resources</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-2/ggplot-leaflet.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Creating Maps with the <code>leaflet</code> Package</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="creating-maps" class="level1">
+<h1>Creating Maps</h1>
+<p>Maps are fantastic and complicated all at the same time! Maps are some of the richest visualizations around because they come with data built into them. That is, on top of whatever data you’re going to plot you are also probably going to view terrain, roads, state/country borders, city names or a host of other information that come with our geography.</p>
+<p>This implicit richness only adds to challenge of creating a good map. Observe the following recent tweet for a silly example of how maps can be…difficult.</p>
+<p>There is no shortage of map data visualizations on the web, but all too often this is what we end up with:</p>
+<p><img src="images/xkcdheatmap.png" class="img-fluid"></p>
+<section id="required-video-introductory-series-to-leaflet-in-r-6-videos" class="level2">
+<h2 class="anchored" data-anchor-id="required-video-introductory-series-to-leaflet-in-r-6-videos">🎥 Required Video: Introductory Series to <code>leaflet</code> in R (6 Videos)</h2>
+<iframe width="400" height="225" style="width: 400px; height: 225px;" src="https://www.youtube.com/embed/6Uz5KBZ8V5E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Be sure to watch all 6 videos in this series.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Check-in: <code>leaflet</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>1. Is running just the <code>leaflet()</code> function enough to produce a map?</strong></p>
+<ul>
+<li>Yes</li>
+<li>No</li>
+</ul>
+<p><strong>2. To plot data points on a leaflet map, we should probably use which function?</strong></p>
+<ul>
+<li><code>addTiles()</code></li>
+<li><code>addMarkers()</code></li>
+<li><code>addProviderTiles()</code></li>
+<li><code>addPolygons()</code></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="more-on-the-leaflet-package" class="level2">
+<h2 class="anchored" data-anchor-id="more-on-the-leaflet-package">More on the <code>leaflet</code> package</h2>
+<p>The leaflet package is actually extremely rich and can basically enable (interactive) map visualizations as complex as you can imagine. Take some time to peruse the site for the leaflet R package:</p>
+<p><a href="https://rstudio.github.io/leaflet/" class="uri">https://rstudio.github.io/leaflet/</a></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Check-in: <code>leaflet</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>3. What do the names of your plotted data columns have to be?</strong></p>
+<ul>
+<li><code>x</code>; <code>y</code></li>
+<li><code>leafletx</code>; `leaflety</li>
+<li><code>lat</code> / <code>latitude</code>; <code>lon</code>/ <code>longitude</code></li>
+<li>Anything as long as you tell the <code>addMarkers()</code> function correctly</li>
+</ul>
+<p><strong>4. If you were to think of latitude and longitude as coordinates in the cartesian coordinate system, then…</strong></p>
+<ul>
+<li>latitude is on the horizontal axis and longitude is on the vertical</li>
+<li>latitude is on the vertical axis and longitude is on the horizontal</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="practice-with-leaflet" class="level2">
+<h2 class="anchored" data-anchor-id="practice-with-leaflet">Practice With Leaflet</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>helmet_icon <span class="ot">&lt;-</span> <span class="fu">makeIcon</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">iconUrl =</span> <span class="st">"http://www.clker.com/cliparts/l/R/b/J/X/D/astronaut-helmet-md.png"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">iconWidth =</span> <span class="dv">15</span>, </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">iconHeight =</span> <span class="dv">15</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>(<span class="at">lng =</span> <span class="fu">jitter</span>(space<span class="sc">$</span>Longitude, </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                          <span class="at">factor =</span> <span class="dv">2</span>), </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">lat =</span> <span class="fu">jitter</span>(space<span class="sc">$</span>Latitude,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                          <span class="at">factor =</span> <span class="dv">2</span>), </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">icon =</span> helmet_icon, </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">popup =</span> <span class="fu">paste</span>(space<span class="sc">$</span>Name, <span class="st">"&lt;br&gt;"</span>, </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"Birth Place: "</span>, space<span class="sc">$</span><span class="st">`</span><span class="at">Birth Place</span><span class="st">`</span>),</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">label =</span> <span class="fu">paste</span>(space<span class="sc">$</span>Name)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>             )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-fddcdc4960740e20eb94" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-fddcdc4960740e20eb94">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[[40.12239058193557,-34.92502910138497,41.07756782269634,31.57601959889454,42.65222659473316,35.08132041605568,37.11295123016799,35.21943229025093,35.22419229019669,42.02872304353168,9.052480389842957,34.13879195617297,34.13695136641683,38.8806644265472,33.7500161696513,41.94370156061115,33.47410753530483,30.2632308980311,30.26404649232614,39.29133175592333,39.28843045520432,39.29419131026626,39.28718093238793,39.28945654661417,44.38566756217022,34.72140241155942,30.08327172265889,38.8610020325384,38.51845314714052,42.39382766907602,30.39783246246574,42.09664383267899,33.52232895946471,42.35876359366772,42.35942050552141,42.35878416504298,42.35821665847261,42.35804672209133,42.36158780969267,42.36029436846596,40.011253807303,40.09796968923396,40.84297027980757,40.67526114137348,40.67615513208199,41.47528068207014,-34.69713462732138,42.88606417695184,42.88700909339015,40.80966339544866,40.03019628647882,40.55687069793351,37.30757556411849,51.4777467360401,32.4186068499157,43.60195357302038,40.28591582245803,43.06294430227621,32.77586569066383,32.77931047372743,38.3499512358845,35.22787932811369,35.23077276402962,35.04206986251392,38.92848726423887,41.88195482865528,41.87434197724791,41.87656426749372,41.88034566558891,41.87616222031036,41.87736573208117,41.8772652716189,39.09989042639289,47.19156803645189,41.50113418948434,41.49990431767113,41.49597872023254,41.49835577611781,41.49544264929339,41.49893420354247,41.49909700285427,41.49549593255453,41.84554326265748,28.318258810316,42.24193141553273,38.83229277851691,34.00050337783158,32.46243493307217,39.95849963469713,39.96284072558491,42.69689483094506,33.76019223855818,40.04146568539449,41.0570042187836,38.66055893987626,51.06193204353179,41.4185054461,32.7762257355965,32.77803224876815,32.7753990142505,32.77941043132463,40.12661544016874,39.7550894152123,34.60761297770701,37.67502755551507,40.95938649077295,39.73848474863401,39.74255137112966,39.73930789087755,42.32809874696549,42.32944038130608,38.85117277350346,37.27734852396764,42.89914726220497,31.76380609224687,34.63015623109852,42.09365819109781,42.10083745471033,36.39731912844474,42.1329625292314,41.59258838972963,44.04846898797886,43.65460127549122,35.11937745866871,38.88384691508787,41.7364596987392,31.70937185916367,35.05188552642161,36.08486325649409,43.00979958182504,43.0161167115916,40.76665544888208,37.91535134280072,50.11053787942205,37.88708543788065,36.74011904755751,36.73614779834966,38.71632773606714,38.71535291433197,31.55577639439328,41.59529921566404,29.7352570101622,42.9669597832343,42.96554187490292,34.85599297887388,41.35216879825174,40.88810101577062,40.88720712094362,37.02965296754525,41.76407074619131,39.9987341386616,34.8166533223233,22.39813823989096,21.30941885343181,29.76271412968901,40.62101068418279,39.76830289703894,39.77123240370403,39.7678263652018,33.96226549969457,42.2456259479607,30.33232551440561,46.90778403902264,36.42413079867855,42.01664758378892,40.7298988608591,27.09040831938548,29.6886510184482,19.52245797238628,24.55384816107677,31.12032091754401,32.76443492524707,43.81431198254004,40.41970049649891,30.22960506782055,33.8719895972467,40.03413488327832,34.77098467139096,37.67901704112527,47.06085434148903,-12.04614367369968,40.15160782279973,34.74802181638157,43.16678900077763,51.50753625794335,33.76962155210152,40.1664444457512,41.45116535071084,34.05282224752271,34.05509084181005,34.05471518458688,39.97394683666687,53.36916724972677,42.63091894318276,37.4166951578998,41.77332716854878,32.84263144219078,40.41578737468235,42.99349471164063,40.75890267031766,30.77733375801019,-37.81010349216263,35.15063116736898,35.14606738396549,25.76018618666783,25.76431887216337,25.76256486788608,25.76074479437835,40.60802439892815,43.04268269960326,32.81082511176994,44.97836528725686,38.73063733216367,30.69490101252644,30.69175176359488,32.50656929518027,40.82644927765189,32.36773599259212,45.49919699048692,40.796226173318,42.59814015297307,42.6005835303971,43.04840975275012,40.71614832961202,35.84797932877085,35.84956739878162,43.23815920665874,40.20779733059418,47.6817639015747,40.70984277755544,40.71336931582876,40.71044984355532,40.71523045123331,40.71291704202592,40.71468177920543,40.70964076843076,44.93994113618812,36.84891518171938,34.18869792855369,53.99017035878028,41.1145413588109,41.88328843233955,41.88893816194345,36.01237968982881,40.64237210975433,35.43345191947654,41.25538396972929,33.78507689977171,40.76750717567565,40.77062800508278,30.09193766400228,38.61606630006324,37.44091822888385,46.15094307862135,41.40328576476293,34.1445352366621,40.91848903155081,40.91358171196781,38.73662501391158,39.94929357802795,39.95312172235103,39.95468011696377,39.95379001794869,39.95319222713375,39.94992855879406,33.44781344830771,35.19665386760571,40.43676271202936,40.43694704413377,40.43844285092279,40.44312315954976,40.63455861985155,44.70192025827084,42.6424930401833,40.43613981144107,45.52585809653912,36.83478597679829,34.29683589765943,40.72452794628271,41.60097341818222,37.48586320025674,38.77561243306828,37.54283181782663,39.88080461785251,43.15773801007148,41.5117915451378,41.90050030647981,36.84432509227253,38.57929576360186,38.57964183803213,42.52272214028142,29.42115360289675,29.4245833830559,29.42140178548966,34.10554339408435,32.71382786664936,32.71707019174669,32.71184793466713,32.71598786736104,37.77248633974092,9.924192801283541,32.80067422357418,32.02761311514728,41.40518777090819,47.60986962819213,47.6101010816537,47.60249614268655,31.23402884970546,35.32600579570646,45.00583310038662,43.54092850153064,51.27625375149984,41.67741733058497,40.85685423316581,43.94641231007743,42.10498027664329,42.10143801379296,37.21087083868269,39.77335057330436,38.62851310728627,38.62353627163868,44.95560122721295,44.95236320759754,35.7852735108771,40.98547311853996,46.32370948585627,46.72469163174348,-33.87089201701589,43.04596216660973,43.04512255940077,43.04904681340468,25.03510578575494,30.44000618158741,31.10177878777014,39.89929811574576,41.47248069512405,45.62849182962268,43.55618130295407,42.37868728698663,40.56779811149691,41.24019687686858,42.7423957639963,38.90603553973717,38.90819520482627,38.91001711996292,38.90955838018861,41.56199055910972,43.19431273488244,35.52972662224184,41.39046289393212,35.23972936554301,35.44238750811166,33.91498007270637,39.73567719559868,33.48172660822052,42.8710011004869,40.93249743964061],[-75.1236132101976,138.6223385689414,-85.51090811944113,-84.13338927130363,-73.79344027488229,-106.6472742436544,-79.29063396500059,-101.8459051227437,-101.7942731583358,-93.60555369374278,-79.58856842828385,-118.0415939702553,-118.0256001767044,-77.0691344518674,-84.39102291805591,-71.27198574243951,-81.99533428031891,-97.7087059454464,-97.77085529446906,-76.65023326975547,-76.6362801214985,-76.64545493510806,-76.65172486526215,-76.59367687721992,-68.2203269543643,-76.65339731190899,-94.12528339223763,-86.45513593541475,-89.95092264451388,-71.18856758514649,-88.88980791507456,-75.91705115823501,-86.80022999990896,-71.03053140457452,-71.06147986130522,-71.06187970785156,-71.08324809599399,-71.04301665082306,-71.09869568504125,-71.02898886399076,-105.2696191659718,-74.81258866595081,-73.87951974090603,-73.96856142927352,-73.94765069438535,-84.55577170751116,-58.40689965332264,-78.84126945827629,-78.84058903629432,-91.12760572479232,-81.54892655296267,-90.01966999509689,-89.5032191222738,-3.188254957255125,-104.2213923694181,-83.14456410646089,-88.1383008308714,-92.65771900087377,-79.91580740889258,-79.9492457664544,-81.6349443481903,-80.87094657928091,-80.81367809696462,-85.32922844377934,-76.91376204165813,-87.63540045014726,-87.64052923512789,-87.62432856905419,-87.61754910319256,-87.6145403719801,-87.61196183038088,-87.65781352446558,-84.49363958497018,-120.9400190590044,-81.66528127232051,-81.68644138730546,-81.66614074149585,-81.7291586497747,-81.7250156000205,-81.69613032256669,-81.68019722144535,-81.71082218855103,-90.20722413295704,-80.62859334997184,-70.78573780892873,-104.842022967307,-81.06150536976823,-84.9841893221263,-82.98444842422406,-83.03352767614672,-74.9396147524952,-87.14578948805392,-86.85711112739561,-94.37591999405709,-90.38377381443533,0.1593967762502436,-87.40271130618893,-96.79196487680646,-96.83558495287421,-96.7705493889806,-96.77092381764773,-87.61895519008702,-84.21892052390722,-87.02249577540513,-106.373631566263,-73.8470350770942,-105.0098382851834,-104.952264670262,-104.9849049783478,-83.0546544092291,-83.02430513560334,-97.14235202802664,-107.869551202303,-71.30263577108157,-106.4699215790631,-78.6089103850247,-76.81139529344328,-76.00963399600911,-97.91695498416682,-80.09401192881876,-81.48709783665788,-123.0925371737772,-94.44050978304389,-78.09703959507111,-77.15160201358609,-72.81334153759224,-91.04337926833486,-78.91770758128258,-94.18655160181382,-83.70132605621568,-83.65389075010991,-73.79623953695977,-85.99357064611701,8.712776042408912,-121.2796317646506,-119.8067867930755,-119.8196018997543,-77.1736060908668,-77.16494549211565,-110.3587301414439,-87.38207619691534,-95.00182188153389,-85.65756081183335,-85.69908397407166,-82.41662948924511,-72.11572496718478,-74.06848589436764,-74.01201502564976,-76.37257841837121,-72.69268080641565,-75.28969404224239,-102.4158319393472,114.0994966556342,-157.8256199197652,-95.35705735493515,-79.11256118592233,-86.13829949900139,-86.15442770637202,-86.16944668827209,-118.3328973454153,-84.43209094298548,-81.67991496291704,-98.68574364528737,-84.90680100197999,-94.36502895923289,-74.04198610160407,114.9130279611788,77.02407896485101,-155.9018886580318,-81.77322012439025,-97.73410807104771,-117.0250461439837,-91.28435365765286,-86.84108265469176,-93.19954801594264,-79.71826439666495,-76.31498518446232,-79.44282180159612,-92.62854755596024,-109.4164505677541,-77.0548324109272,-89.38567991929877,-92.30502584569275,-78.71653295770794,-0.1258299547159971,-118.1846842445246,-105.0754305675205,-82.14975968050956,-118.2130304571627,-118.2416962168193,-118.2650901225409,-105.1513983324918,0.03030851425149822,-71.32232998259154,-79.17085777396029,-72.55597160223668,-83.67049950305488,-3.711778601643592,-71.46971595668712,-82.52908959280263,-85.24224171861836,144.9568829452226,-90.0479117606762,-90.0870727181989,-80.15372007471039,-80.1908249692665,-80.18449805804059,-80.17880049117372,-111.8657272348566,-87.8899647005541,-98.09678508565511,-93.28053466618067,-86.48102448449474,-88.05700971936916,-88.06688974710291,-92.1097935501719,-74.23070297590003,-86.33340580016697,-73.55337917472697,-74.51809602537774,-82.8691655639805,-82.89013629241512,-115.8265925000867,-94.25085180323866,-86.38125268056288,-86.37988196949706,-86.25089498561528,-74.06218863011864,-99.12699544457763,-74.0138841023806,-74.04439764100569,-74.03270543915662,-74.03811650825175,-74.00077722444641,-74.00831643012795,-74.00899323524418,-72.22767453456861,-76.25110283966394,-118.3670459267971,-1.519176568808617,-73.43520127683895,-87.75608489509064,-87.78261329549689,-84.27416416528865,-73.67781890200183,-96.27362481775782,-95.9386591992839,-117.8475325111265,-74.20181304798457,-74.2658450572099,-93.72803305601359,-95.27945951222804,-122.1156400272685,-95.35745368160966,-81.76123020779902,-118.1386962051663,-74.19843422442979,-74.16617184587128,-76.71816025333082,-75.14641240206075,-75.15302548094181,-75.1944589402945,-75.14232894389419,-75.14286517465946,-75.1489620553003,-112.053790882084,-79.46217227273253,-80.03449966782337,-79.96274380929401,-79.98417354967079,-79.98541641201457,-74.39545450651104,-73.46152563593489,-83.29195262986211,-84.99019978074998,-122.7081247745484,-76.3270500963291,-99.76456160472569,-73.78887853574945,-71.42997198215103,-122.2349726250875,-112.0705780998314,-77.42501981294859,-75.3628470643697,-77.62684716282126,-90.54819476049055,12.46798315818569,-86.90109565467337,-121.4586032231391,-121.4813658687897,-70.89972923413849,-98.52606330975655,-98.5216584693617,-98.50254198791224,-117.250179058622,-117.1895462958303,-117.1724340112668,-117.1542261943009,-117.121790878081,-122.3818114846337,-84.07944423536063,-108.07827582786,-81.11096778978542,-75.66165874158916,-122.3187166796974,-122.3048439308233,-122.347087373992,121.5033027994376,-96.96154936502425,-122.8209907000852,-96.72653977452953,3.826815182342113,-86.26355607566401,-72.58688313416623,-90.813510864723,-72.56503071950307,-72.57685399254343,-93.2610246481871,-101.7981094292179,-90.18100129169682,-90.16402692341516,-93.09165957784596,-93.10800760191249,-80.87620296322547,-75.16575144063309,-120.0085763218672,-92.06701311726302,151.1851377863771,-76.13139644621069,-76.16756821390369,-76.13803106946999,121.6021470945351,-84.26544720714631,-97.37829138015803,-79.75048272461983,-87.05909805704019,-122.6822609452431,-90.85651376987209,-71.22371576386921,-84.19264956829288,-80.81154743542206,-78.1517939841238,-77.0566420650228,-77.03158363401211,-77.049807347574,-77.05873578042976,-73.06726054771683,-88.73223191127313,-98.74452699806072,-73.96159184641478,-96.23170299130638,-100.2685723271425,-98.51774255616394,-75.56803013584884,-89.73595696140256,-97.42115573471463,-73.87798529613254],{"iconUrl":{"data":"http://www.clker.com/cliparts/l/R/b/J/X/D/astronaut-helmet-md.png","index":0},"iconWidth":15,"iconHeight":15},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["John-David F. Bartoe <br> Birth Place:  Abington, PA","Andrew S. W. Thomas <br> Birth Place:  Adelaide, Australia","Judith A. Resnik <br> Birth Place:  Akron, OH","Thomas J. Hennen <br> Birth Place:  Albany, GA","Nicole P. Stott <br> Birth Place:  Albany, NY","Sidney M. Gutierrez <br> Birth Place:  Albuquerque, NM","Guy S. Gardner <br> Birth Place:  Alta Vista, VA","Rick D. Husband <br> Birth Place:  Amarillo, TX","Paul S. Lockhart <br> Birth Place:  Amarillo, TX","Laurel B. Clark <br> Birth Place:  Ames, IA","Fred W. Leslie <br> Birth Place:  Ancon, Panama","Tracy E. Caldwell (Dyson) <br> Birth Place:  Arcadia, CA","Steven W. Lindsey <br> Birth Place:  Arcadia, CA","David M. Brown <br> Birth Place:  Arlington, VA","Roy D. Bridges Jr. <br> Birth Place:  Atlanta, GA","Scott D. Tingle <br> Birth Place:  Attleboro, MA","Susan L. Kilrain (Still) <br> Birth Place:  Augusta, GA","Kenneth D. Cockrell <br> Birth Place:  Austin, TX","Timothy L. Kopra <br> Birth Place:  Austin, TX","Robert L. Curbeam Jr. <br> Birth Place:  Baltimore, MD","Marsha S. Ivins <br> Birth Place:  Baltimore, MD","Thomas D. Jones <br> Birth Place:  Baltimore, MD","Terry W. Virts Jr. <br> Birth Place:  Baltimore, MD","G. Reid Wiseman <br> Birth Place:  Baltimore, MD","Charles O. Hobaugh <br> Birth Place:  Bar Harbor, ME","Michael J. Smith <br> Birth Place:  Beaufort, NC","Robert L. Crippen <br> Birth Place:  Beaumont, TX","Charles D. Walker <br> Birth Place:  Bedford, IN","Sandra H. Magnus <br> Birth Place:  Belleville, IL","Christopher J. Loria <br> Birth Place:  Belmont, MA","Fred W. Haise Jr. <br> Birth Place:  Biloxi, MS","Douglas H. Wheelock <br> Birth Place:  Binghamton, NY","Henry W. Hartsfield Jr. <br> Birth Place:  Birmingham, AL","Brian Duffy <br> Birth Place:  Boston, MA","S. Christa McAuliffe <br> Birth Place:  Boston, MA","Bruce McCandless II <br> Birth Place:  Boston, MA","Story Musgrave <br> Birth Place:  Boston, MA","Brian T. O'Leary <br> Birth Place:  Boston, MA","Albert Sacco Jr. <br> Birth Place:  Boston, MA","Stephanie D. Wilson <br> Birth Place:  Boston, MA","M. Scott Carpenter <br> Birth Place:  Boulder, CO","Daniel W. Bursch <br> Birth Place:  Bristol, PA","Mario Runco Jr. <br> Birth Place:  Bronx, NY","Martin J. Fettman <br> Birth Place:  Brooklyn, NY","Jeffrey A. Hoffman <br> Birth Place:  Brooklyn, NY","Terence T. Henricks <br> Birth Place:  Bryan, OH","Fernando Caldeiro <br> Birth Place:  Buenos Aires, Argentina","Edward G. Gibson <br> Birth Place:  Buffalo, NY","James A. Pawelczyk <br> Birth Place:  Buffalo, NY","James M. Kelly <br> Birth Place:  Burlington, IA","John H. Glenn Jr. <br> Birth Place:  Cambridge, OH","Steven R. Nagel <br> Birth Place:  Canton, IL","Linda M. Godwin <br> Birth Place:  Cape Girardeau, MO","John A. Llewellyn <br> Birth Place:  Cardiff, Wales","F. Andrew Gaffney <br> Birth Place:  Carlsbad, NM","Brewster H. Shaw Jr. <br> Birth Place:  Cass City, MI","Carl J. Meade <br> Birth Place:  Chanute Air Force Base, IL","George D. Nelson <br> Birth Place:  Charles City, IA","Catherine G. Coleman <br> Birth Place:  Charleston, SC","Frank L. Culbertson Jr. <br> Birth Place:  Charleston, SC","Jon A. McBride <br> Birth Place:  Charleston, WV","Charles M. Duke Jr. <br> Birth Place:  Charlotte, NC","Susan J. Helms <br> Birth Place:  Charlotte, NC","Tamara E. Jernigan <br> Birth Place:  Chattanooga, TN","Richard R. Arnold II <br> Birth Place:  Cheverly, MD","Eugene A. Cernan <br> Birth Place:  Chicago, IL","John M. Grunsfeld <br> Birth Place:  Chicago, IL","Joan E. Higginbotham <br> Birth Place:  Chicago, IL","Thomas K. Mattingly II <br> Birth Place:  Chicago, IL","James A. McDivitt <br> Birth Place:  Chicago, IL","Charles Lacy Veach <br> Birth Place:  Chicago, IL","Neil W. Woodward III <br> Birth Place:  Chicago, IL","Karl G. Henize <br> Birth Place:  Cincinnati, OH","Francis R. Scobee <br> Birth Place:  Cle Elum, WA","Kenneth D. Cameron <br> Birth Place:  Cleveland, OH","Gregory J. Harbaugh <br> Birth Place:  Cleveland, OH","James A. Lovell Jr. <br> Birth Place:  Cleveland, OH","G. David Low <br> Birth Place:  Cleveland, OH","Ronald M. Sega <br> Birth Place:  Cleveland, OH","Donald A. Thomas <br> Birth Place:  Cleveland, OH","Carl E. Walz <br> Birth Place:  Cleveland, OH","Mary E. Weber <br> Birth Place:  Cleveland, OH","David C. Hilmers <br> Birth Place:  Clinton, IA","N. Jan Davis <br> Birth Place:  Cocoa Beach, FL","Stephen G. Bowen <br> Birth Place:  Cohasset, MA","Dorothy M. Metcalf-Lindenberger <br> Birth Place:  Colorado Springs, CO","Charles F. Bolden Jr. <br> Birth Place:  Columbia, SC","David M. Walker <br> Birth Place:  Columbus, GA","Donn F. Eisele <br> Birth Place:  Columbus, OH","Michael J. Foreman <br> Birth Place:  Columbus, OH","Robert L. Gibson <br> Birth Place:  Cooperstown, NY","James S. Voss <br> Birth Place:  Cordova, AL","Joseph P. Allen <br> Birth Place:  Crawsfordsville, IN","Walter Cunningham <br> Birth Place:  Creston, IA","Robert L. Behnken <br> Birth Place:  Creve Couer, MO","Piers J. Sellers <br> Birth Place:  Crowborough, England","Jerry L. Ross <br> Birth Place:  Crown Point, IN","Jeffrey S. Ashby <br> Birth Place:  Dallas, TX","William F. Fisher <br> Birth Place:  Dallas, TX","Donald L. Holmquest <br> Birth Place:  Dallas, TX","Elliot M. See Jr. <br> Birth Place:  Dallas, TX","Joseph R. Tanner <br> Birth Place:  Danville, IL","Charles A. Bassett II <br> Birth Place:  Dayton, OH","Mae C. Jemison <br> Birth Place:  Decatur, AL","Kent V. Rominger <br> Birth Place:  Del Norte, CO","Gregory T. Linteris <br> Birth Place:  Demarest, NJ","Gerald P. Carr <br> Birth Place:  Denver, CO","J. Mike Lounge <br> Birth Place:  Denver, CO","John L. Swigert Jr. <br> Birth Place:  Denver, CO","Dominic A. Antonelli <br> Birth Place:  Detroit, MI","Gregory B. Jarvis <br> Birth Place:  Detroit, MI","Joe H. Engle <br> Birth Place:  Dickinson, KS","Stuart A. Roosa <br> Birth Place:  Durango, CO","Alan B. Shepard Jr. <br> Birth Place:  East Derry, NH","Patrick G. Forrester <br> Birth Place:  El Paso, TX","Curtis L. Brown Jr. <br> Birth Place:  Elizabethtown, NC","Eileen M. Collins <br> Birth Place:  Elmira, NY","Douglas G. Hurley <br> Birth Place:  Endicott, NY","Owen K. Garriott <br> Birth Place:  Enid, OK","Paul J. Weitz <br> Birth Place:  Erie, PA","Sunita L. Williams <br> Birth Place:  Euclid, OH","James P. Dutton Jr. <br> Birth Place:  Eugene, OR","Dale A. Gardner <br> Birth Place:  Fairmont, MN","William E. Thornton <br> Birth Place:  Faison, NC","Mark T. Vande Hei <br> Birth Place:  Falls Church, VA","Kathleen Rubins <br> Birth Place:  Farmington, CT","Richard H. Truly <br> Birth Place:  Fayette, MS","Ellen S. Baker <br> Birth Place:  Fayettesville, NC","Richard O. Covey <br> Birth Place:  Fayetteville, AR","Michael J. Bloomfield <br> Birth Place:  Flint, MI","Donald R. McMonagle <br> Birth Place:  Flint, MI","James D. Wetherbee <br> Birth Place:  Flushing, NY","Randolph J. Bresnik <br> Birth Place:  Fort Knox, KY","Stephen D. Thorne <br> Birth Place:  Frankfurt, West Germany","Jose M. Hernandez <br> Birth Place:  French Camp, CA","Barbara R. Morgan <br> Birth Place:  Fresno, CA","James D. van Hoften <br> Birth Place:  Fresno, CA","William A. Oefelein <br> Birth Place:  Ft. Belvoir, VA","John L. Phillips <br> Birth Place:  Ft. Belvoir, VA","Timothy J. Creamer <br> Birth Place:  Ft. Huachuca, AZ","Frank Borman <br> Birth Place:  Gary, IN","John M. Fabian <br> Birth Place:  Goosecreek, TX","Roger B. Chaffee <br> Birth Place:  Grand Rapids, MI","Jack R. Lousma <br> Birth Place:  Grand Rapids, MI","John H. Casper <br> Birth Place:  Greenville, SC","Pierre J. Thuot <br> Birth Place:  Groton, CT","William A. Pailes <br> Birth Place:  Hackensack, NJ","Walter M. Schirra Jr. <br> Birth Place:  Hackensack, NJ","Robert L. Satcher Jr. <br> Birth Place:  Hampton, VA","Sherwood C. Spring <br> Birth Place:  Hartford, CT","Theodore C. Freeman <br> Birth Place:  Haversford, PA","Edgar D. Mitchell <br> Birth Place:  Hereford, TX","William A. Anders <br> Birth Place:  Hong Kong","K. Megan McArthur <br> Birth Place:  Honolulu, HI","Shannon Walker <br> Birth Place:  Houston, TX","Patricia Hilliard Robertson <br> Birth Place:  Indiana, PA","Serena M. Aunon <br> Birth Place:  Indianapolis, IN","Anthony W. England <br> Birth Place:  Indianapolis, IN","David A. Wolf <br> Birth Place:  Indianapolis, IN","Joseph M. Acaba <br> Birth Place:  Inglewood, CA","Alfred M. Worden <br> Birth Place:  Jackson, MI","Wendy B. Lawrence <br> Birth Place:  Jacksonville, FL","Richard J. Hieb <br> Birth Place:  Jamestown, ND","Roger K. Crouch <br> Birth Place:  Jamestown, TN","Loren J. Shriver <br> Birth Place:  Jefferson, IA","George D. Zamka <br> Birth Place:  Jersey City, NJ","Taylor G. Wang <br> Birth Place:  Jiangxi, China","Kalpana Chawla <br> Birth Place:  Karnal, India","Ellison S. Onizuka <br> Birth Place:  Kealakekua, HI","Richard N. Richards <br> Birth Place:  Key West, FL","Robert Shane Kimbrough <br> Birth Place:  Killeen, TX","Frederick W. Sturckow <br> Birth Place:  La Mesa, CA","F. Curtis Michel <br> Birth Place:  LaCrosse, WI","Donald E. Williams <br> Birth Place:  Lafayette, IN","Dominic L. Gorie <br> Birth Place:  Lake Charles, LA","Ronald E. McNair <br> Birth Place:  Lake City, SC","Andrew J. Feustel <br> Birth Place:  Lancaster, PA","William S. McArthur Jr. <br> Birth Place:  Laurinburg, NC","Michael S. Hopkins <br> Birth Place:  Lebanon, MO","Loren W. Acton <br> Birth Place:  Lewiston, MT","Carlos I. Noriega <br> Birth Place:  Lima, Peru","Scott D. Altman <br> Birth Place:  Lincoln, IL","Scott E. Parazynski <br> Birth Place:  Little Rock, AR","William G. Gregory <br> Birth Place:  Lockport, NY","Gregory H. Johnson <br> Birth Place:  London, England","Frederick H. Hauck <br> Birth Place:  Long Beach, CA","Vance D. Brand <br> Birth Place:  Longmont, CA","Robert F. Overmyer <br> Birth Place:  Lorain, OH","Kevin P. Chilton <br> Birth Place:  Los Angeles, CA","Ellen Ochoa <br> Birth Place:  Los Angeles, CA","Sally K. Ride <br> Birth Place:  Los Angeles, CA","Jack D. Fischer <br> Birth Place:  Louisville, CO","C. Michael Foale <br> Birth Place:  Louth, England","Richard M. Linnehan <br> Birth Place:  Lowell, MA","Leland D. Melvin <br> Birth Place:  Lynchburg, VA","Daniel C. Burbank <br> Birth Place:  Machester, CT","Manley Lanier Carter Jr. <br> Birth Place:  Macon, GA","Michael E. Lopez-Alegria <br> Birth Place:  Madrid, Spain","Lee M. Morin <br> Birth Place:  Manchester, NH","Michael L. Gernhardt <br> Birth Place:  Mansfield, OH","Norman E. Thagard <br> Birth Place:  Marianna, FL","Philip K. Chapman <br> Birth Place:  Melbourne, Australia","Michael A. Baker <br> Birth Place:  Memphis, TN","John S. Bull <br> Birth Place:  Memphis, TN","Eric A. Boe <br> Birth Place:  Miami, FL","William B. Lenoir <br> Birth Place:  Miami, FL","Bill Nelson <br> Birth Place:  Miami, FL","Winston E. Scott <br> Birth Place:  Miami, FL","Don L. Lind <br> Birth Place:  Midvale, UT","Leroy Chiao <br> Birth Place:  Milwaukee, WI","Millie Hughes-Fulford <br> Birth Place:  Mineral Wells, TX","Robert D. Cabana <br> Birth Place:  Minneapolis, MN","Virgil I. Grissom <br> Birth Place:  Mitchell, IN","Kathryn P. Hire <br> Birth Place:  Mobile, AL","Clifton C. Williams Jr. <br> Birth Place:  Mobile, AL","James D. Halsell Jr. <br> Birth Place:  Monroe, LA","Buzz Aldrin <br> Birth Place:  Montclair, NJ","Kathryn C. Thornton <br> Birth Place:  Montgomery, AL","Gregory E. Chamitoff <br> Birth Place:  Montreal, Canada","Garrett E. Reisman <br> Birth Place:  Morristown, NJ","Jerry M. Linenger <br> Birth Place:  Mount Clemens, MI","Richard A. Searfoss <br> Birth Place:  Mount Clemens, MI","James F. Reilly II <br> Birth Place:  Mountain Home Air Force Base, ID","Peggy A. Whitson <br> Birth Place:  Mt. Ayr, IA","Margaret Rhea Seddon <br> Birth Place:  Murfreesboro, TN","Barry E. Wilmore <br> Birth Place:  Murfreesboro, TN","David C. Leestma <br> Birth Place:  Muskegon, MI","Russell L. Schweickart <br> Birth Place:  Neptune, NJ","James F. Buchli <br> Birth Place:  New Rockford, ND","Karol J. Bobko <br> Birth Place:  New York, NY","Jay Clark Buckey <br> Birth Place:  New York, NY","Anna L. Fisher <br> Birth Place:  New York, NY","Ronald J. Grabe <br> Birth Place:  New York, NY","Kevin R. Kregel <br> Birth Place:  New York, NY","Bruce E. Melnick <br> Birth Place:  New York, NY","Robert A. Parker <br> Birth Place:  New York, NY","Duane E. Graveline <br> Birth Place:  Newport, VT","Peter J. K. Wisoff <br> Birth Place:  Norfolk, VA","John D. Olivas <br> Birth Place:  North Hollywood, CA","Niclolas J. M. Patrick <br> Birth Place:  North Yorkshire, England","Daniel T. Barry <br> Birth Place:  Norwalk, CT","Lee J. Archambault <br> Birth Place:  Oak Park, IL","Joseph P. Kerwin <br> Birth Place:  Oak Park, IL","William M. Shepherd <br> Birth Place:  Oak Ridge, TN","Michael J. Massimino <br> Birth Place:  Oceanside, NY","William R. Pogue <br> Birth Place:  Okemah, OK","Clayton C. Anderson <br> Birth Place:  Omaha, NE","Bryan D. O'Connor <br> Birth Place:  Orange, CA","Mark E. Kelly <br> Birth Place:  Orange, NJ","Scott J. Kelly <br> Birth Place:  Orange, NJ","John O. Creighton <br> Birth Place:  Orange, TX","Steven A. Hawley <br> Birth Place:  Ottawa, KS","Pamela A. Melroy <br> Birth Place:  Palo Alto, CA","Karen L. Nyberg <br> Birth Place:  Parker's Prairie, MN","Michael T. Good <br> Birth Place:  Parma, OH","Alan G. Poindexter <br> Birth Place:  Pasadena, CA","Mark L. Polansky <br> Birth Place:  Paterson, NJ","Kathryn D. Sullivan <br> Birth Place:  Paterson, NJ","Kenneth S. Reightler Jr. <br> Birth Place:  Patuxent River, MD","Andrew M. Allen <br> Birth Place:  Philadelphia, PA","James P. Bagian <br> Birth Place:  Philadelphia, PA","Guion S. Bluford Jr. <br> Birth Place:  Philadelphia, PA","Charles Conrad Jr. <br> Birth Place:  Philadelphia, PA","Christopher J. Ferguson <br> Birth Place:  Philadelphia, PA","Scott J. Horowitz <br> Birth Place:  Philadelphia, PA","Steven L. Smith <br> Birth Place:  Phoenix, AZ","Charles E. Brady Jr. <br> Birth Place:  Pinehurst, NC","E. Michael Fincke <br> Birth Place:  Pittsburgh, PA","Stephen N. Frick <br> Birth Place:  Pittsburgh, PA","Terry J. Hart <br> Birth Place:  Pittsburgh, PA","James B. Irwin <br> Birth Place:  Pittsburgh, PA","Kenneth T. Ham <br> Birth Place:  Plainfield, NJ","Michael P. Anderson <br> Birth Place:  Plattsburgh, NY","Brent W. Jett <br> Birth Place:  Pontiac, MI","Kevin A. Ford <br> Birth Place:  Portland, IN","S. David Griggs <br> Birth Place:  Portland, OR","Kenneth D. Bowersox <br> Birth Place:  Portsmouth, VA","Edward G. Givens Jr. <br> Birth Place:  Quanah, TX","Charles J. Camarda <br> Birth Place:  Queens, NY","William F. Readdy <br> Birth Place:  Quonset Point, RI","Rex J. Walheim <br> Birth Place:  Redwood, CA","Jake Garn <br> Birth Place:  Richfield. UT","Joe F. Edwards Jr. <br> Birth Place:  Richmond, VA","Daniel M. Tani <br> Birth Place:  Ridley Park, PA","C. Gordon Fullerton <br> Birth Place:  Rochester, NY","Gary E. Payton <br> Birth Place:  Rock Island, IL","Michael Collins <br> Birth Place:  Rome, Italy","Terrence W. Wilcutt <br> Birth Place:  Russellville, KY","Michael L. Coats <br> Birth Place:  Sacramento, CA","Stephen K. Robinson <br> Birth Place:  Sacramento, CA","Christopher J. Cassidy <br> Birth Place:  Salem, MA","John E. Blaha <br> Birth Place:  San Antonio, TX","David R. Scott <br> Birth Place:  San Antonio, TX","Edward H. White II <br> Birth Place:  San Antonio, TX","Michael R. Clifford <br> Birth Place:  San Bernardino, CA","Stanley G. Love <br> Birth Place:  San Diego, CA","William C. McCool <br> Birth Place:  San Diego, CA","Michael J. McCulley <br> Birth Place:  San Diego, CA","James H. Newman <br> Birth Place:  San Diego, CA","John W. Young <br> Birth Place:  San Francisco, CA","Franklin R. Chang-Diaz <br> Birth Place:  San Jose, Costa Rica","Harrison H. Schmitt <br> Birth Place:  Santa Rita, NM","L. Blaine Hammond Jr. <br> Birth Place:  Savannah, GA","Paul W. Richards <br> Birth Place:  Scranton, PA","Richard F. Gordon Jr. <br> Birth Place:  Seattle, WA","Gregory C. Johnson <br> Birth Place:  Seattle, WA","Stephen S. Oswald <br> Birth Place:  Seattle, WA","Shannon W. Lucid <br> Birth Place:  Shanghai, China","L. Gordon Cooper Jr. <br> Birth Place:  Shawnee, OK","Donald R. Pettit <br> Birth Place:  Silverton, OR","Michael E. Fossum <br> Birth Place:  Sioux Falls, SD","Lodewijk van den Berg <br> Birth Place:  Sluiskil, Netherlands","Janice E. Voss <br> Birth Place:  South Bend, IN","Mary L. Cleave <br> Birth Place:  Southampton, NY","Donald K. Slayton <br> Birth Place:  Sparta, WI","Jerome Apt III <br> Birth Place:  Springfield, MA","Edward T. Lu <br> Birth Place:  Springfield, MA","Janet L. Kavandi <br> Birth Place:  Springfield, MO","Ronald E. Evans Jr. <br> Birth Place:  St. Francis, KS","Thomas D. Akers <br> Birth Place:  St. Louis, MO","Robert C. Springer <br> Birth Place:  St. Louis, MO","Duane G. Carey <br> Birth Place:  St. Paul, MN","Heidemarie M. Stefanyshyn-Piper <br> Birth Place:  St. Paul, MN","Thomas H. Marshburn <br> Birth Place:  Statesville, NC","Byron K. Lichtenberg <br> Birth Place:  Stroudsburg, PA","Bonnie J. Dunbar <br> Birth Place:  Sunnyside, WA","Jeffrey N. Williams <br> Birth Place:  Superior, WI","Paul D. Scully-Power <br> Birth Place:  Sydney, Australia","Lawrence J. Delucas <br> Birth Place:  Syracuse, NY","Jeanette J. Epps <br> Birth Place:  Syracuse, NY","Steven R. Swanson <br> Birth Place:  Syracuse, NY","Kjell N. Lindgren <br> Birth Place:  Taipei, Taiwan","Samuel T. Durrance <br> Birth Place:  Tallahassee, FL","Bernard A. Harris Jr. <br> Birth Place:  Temple, TX","Robert Cenker <br> Birth Place:  Uniontown, PA","Mark N. Brown <br> Birth Place:  Valparaiso, IN","Michael R. Barratt <br> Birth Place:  Vancouver, WA","Mark C. Lee <br> Birth Place:  Viroqua, WI","Charles J. Precourt <br> Birth Place:  Waltham, MA","Neil A. Armstrong <br> Birth Place:  Wapakoneta, OH","Ronald A. Parise <br> Birth Place:  Warren, OH","James C. Adamson <br> Birth Place:  Warsaw, NY","Alvin B. Drew Jr. <br> Birth Place:  Washington, DC","Frederick D. Gregory <br> Birth Place:  Washington, DC","Lisa M. Nowak <br> Birth Place:  Washington, DC","Robert L. Stewart <br> Birth Place:  Washington, DC","Richard A. Mastracchio <br> Birth Place:  Waterbury, CT","Daniel C. Brandenstein <br> Birth Place:  Watertown, WI","Thomas P. Stafford <br> Birth Place:  Weatherford, OK","Yvonne D. Cagle <br> Birth Place:  West Point, NY","John B. Herrington <br> Birth Place:  Wetumka, OK","Alan L. Bean <br> Birth Place:  Wheeler, TX","Richard M. Mullane <br> Birth Place:  Wichita Falls, TX","Nancy J. Currie <br> Birth Place:  Wilmington, DE","Donald H. Peterson <br> Birth Place:  Winona, MS","Charles D. Gemar <br> Birth Place:  Yanktown, SD","Ronald J. Garan Jr. <br> Birth Place:  Yonkers, NY"],null,null,null,["John-David F. Bartoe","Andrew S. W. Thomas","Judith A. Resnik","Thomas J. Hennen","Nicole P. Stott","Sidney M. Gutierrez","Guy S. Gardner","Rick D. Husband","Paul S. Lockhart","Laurel B. Clark","Fred W. Leslie","Tracy E. Caldwell (Dyson)","Steven W. Lindsey","David M. Brown","Roy D. Bridges Jr.","Scott D. Tingle","Susan L. Kilrain (Still)","Kenneth D. Cockrell","Timothy L. Kopra","Robert L. Curbeam Jr.","Marsha S. Ivins","Thomas D. Jones","Terry W. Virts Jr.","G. Reid Wiseman","Charles O. Hobaugh","Michael J. Smith","Robert L. Crippen","Charles D. Walker","Sandra H. Magnus","Christopher J. Loria","Fred W. Haise Jr.","Douglas H. Wheelock","Henry W. Hartsfield Jr.","Brian Duffy","S. Christa McAuliffe","Bruce McCandless II","Story Musgrave","Brian T. O'Leary","Albert Sacco Jr.","Stephanie D. Wilson","M. Scott Carpenter","Daniel W. Bursch","Mario Runco Jr.","Martin J. Fettman","Jeffrey A. Hoffman","Terence T. Henricks","Fernando Caldeiro","Edward G. Gibson","James A. Pawelczyk","James M. Kelly","John H. Glenn Jr.","Steven R. Nagel","Linda M. Godwin","John A. Llewellyn","F. Andrew Gaffney","Brewster H. Shaw Jr.","Carl J. Meade","George D. Nelson","Catherine G. Coleman","Frank L. Culbertson Jr.","Jon A. McBride","Charles M. Duke Jr.","Susan J. Helms","Tamara E. Jernigan","Richard R. Arnold II","Eugene A. Cernan","John M. Grunsfeld","Joan E. Higginbotham","Thomas K. Mattingly II","James A. McDivitt","Charles Lacy Veach","Neil W. Woodward III","Karl G. Henize","Francis R. Scobee","Kenneth D. Cameron","Gregory J. Harbaugh","James A. Lovell Jr.","G. David Low","Ronald M. Sega","Donald A. Thomas","Carl E. Walz","Mary E. Weber","David C. Hilmers","N. Jan Davis","Stephen G. Bowen","Dorothy M. Metcalf-Lindenberger","Charles F. Bolden Jr.","David M. Walker","Donn F. Eisele","Michael J. Foreman","Robert L. Gibson","James S. Voss","Joseph P. Allen","Walter Cunningham","Robert L. Behnken","Piers J. Sellers","Jerry L. Ross","Jeffrey S. Ashby","William F. Fisher","Donald L. Holmquest","Elliot M. See Jr.","Joseph R. Tanner","Charles A. Bassett II","Mae C. Jemison","Kent V. Rominger","Gregory T. Linteris","Gerald P. Carr","J. Mike Lounge","John L. Swigert Jr.","Dominic A. Antonelli","Gregory B. Jarvis","Joe H. Engle","Stuart A. Roosa","Alan B. Shepard Jr.","Patrick G. Forrester","Curtis L. Brown Jr.","Eileen M. Collins","Douglas G. Hurley","Owen K. Garriott","Paul J. Weitz","Sunita L. Williams","James P. Dutton Jr.","Dale A. Gardner","William E. Thornton","Mark T. Vande Hei","Kathleen Rubins","Richard H. Truly","Ellen S. Baker","Richard O. Covey","Michael J. Bloomfield","Donald R. McMonagle","James D. Wetherbee","Randolph J. Bresnik","Stephen D. Thorne","Jose M. Hernandez","Barbara R. Morgan","James D. van Hoften","William A. Oefelein","John L. Phillips","Timothy J. Creamer","Frank Borman","John M. Fabian","Roger B. Chaffee","Jack R. Lousma","John H. Casper","Pierre J. Thuot","William A. Pailes","Walter M. Schirra Jr.","Robert L. Satcher Jr.","Sherwood C. Spring","Theodore C. Freeman","Edgar D. Mitchell","William A. Anders","K. Megan McArthur","Shannon Walker","Patricia Hilliard Robertson","Serena M. Aunon","Anthony W. England","David A. Wolf","Joseph M. Acaba","Alfred M. Worden","Wendy B. Lawrence","Richard J. Hieb","Roger K. Crouch","Loren J. Shriver","George D. Zamka","Taylor G. Wang","Kalpana Chawla","Ellison S. Onizuka","Richard N. Richards","Robert Shane Kimbrough","Frederick W. Sturckow","F. Curtis Michel","Donald E. Williams","Dominic L. Gorie","Ronald E. McNair","Andrew J. Feustel","William S. McArthur Jr.","Michael S. Hopkins","Loren W. Acton","Carlos I. Noriega","Scott D. Altman","Scott E. Parazynski","William G. Gregory","Gregory H. Johnson","Frederick H. Hauck","Vance D. Brand","Robert F. Overmyer","Kevin P. Chilton","Ellen Ochoa","Sally K. Ride","Jack D. Fischer","C. Michael Foale","Richard M. Linnehan","Leland D. Melvin","Daniel C. Burbank","Manley Lanier Carter Jr.","Michael E. Lopez-Alegria","Lee M. Morin","Michael L. Gernhardt","Norman E. Thagard","Philip K. Chapman","Michael A. Baker","John S. Bull","Eric A. Boe","William B. Lenoir","Bill Nelson","Winston E. Scott","Don L. Lind","Leroy Chiao","Millie Hughes-Fulford","Robert D. Cabana","Virgil I. Grissom","Kathryn P. Hire","Clifton C. Williams Jr.","James D. Halsell Jr.","Buzz Aldrin","Kathryn C. Thornton","Gregory E. Chamitoff","Garrett E. Reisman","Jerry M. Linenger","Richard A. Searfoss","James F. Reilly II","Peggy A. Whitson","Margaret Rhea Seddon","Barry E. Wilmore","David C. Leestma","Russell L. Schweickart","James F. Buchli","Karol J. Bobko","Jay Clark Buckey","Anna L. Fisher","Ronald J. Grabe","Kevin R. Kregel","Bruce E. Melnick","Robert A. Parker","Duane E. Graveline","Peter J. K. Wisoff","John D. Olivas","Niclolas J. M. Patrick","Daniel T. Barry","Lee J. Archambault","Joseph P. Kerwin","William M. Shepherd","Michael J. Massimino","William R. Pogue","Clayton C. Anderson","Bryan D. O'Connor","Mark E. Kelly","Scott J. Kelly","John O. Creighton","Steven A. Hawley","Pamela A. Melroy","Karen L. Nyberg","Michael T. Good","Alan G. Poindexter","Mark L. Polansky","Kathryn D. Sullivan","Kenneth S. Reightler Jr.","Andrew M. Allen","James P. Bagian","Guion S. Bluford Jr.","Charles Conrad Jr.","Christopher J. Ferguson","Scott J. Horowitz","Steven L. Smith","Charles E. Brady Jr.","E. Michael Fincke","Stephen N. Frick","Terry J. Hart","James B. Irwin","Kenneth T. Ham","Michael P. Anderson","Brent W. Jett","Kevin A. Ford","S. David Griggs","Kenneth D. Bowersox","Edward G. Givens Jr.","Charles J. Camarda","William F. Readdy","Rex J. Walheim","Jake Garn","Joe F. Edwards Jr.","Daniel M. Tani","C. Gordon Fullerton","Gary E. Payton","Michael Collins","Terrence W. Wilcutt","Michael L. Coats","Stephen K. Robinson","Christopher J. Cassidy","John E. Blaha","David R. Scott","Edward H. White II","Michael R. Clifford","Stanley G. Love","William C. McCool","Michael J. McCulley","James H. Newman","John W. Young","Franklin R. Chang-Diaz","Harrison H. Schmitt","L. Blaine Hammond Jr.","Paul W. Richards","Richard F. Gordon Jr.","Gregory C. Johnson","Stephen S. Oswald","Shannon W. Lucid","L. Gordon Cooper Jr.","Donald R. Pettit","Michael E. Fossum","Lodewijk van den Berg","Janice E. Voss","Mary L. Cleave","Donald K. Slayton","Jerome Apt III","Edward T. Lu","Janet L. Kavandi","Ronald E. Evans Jr.","Thomas D. Akers","Robert C. Springer","Duane G. Carey","Heidemarie M. Stefanyshyn-Piper","Thomas H. Marshburn","Byron K. Lichtenberg","Bonnie J. Dunbar","Jeffrey N. Williams","Paul D. Scully-Power","Lawrence J. Delucas","Jeanette J. Epps","Steven R. Swanson","Kjell N. Lindgren","Samuel T. Durrance","Bernard A. Harris Jr.","Robert Cenker","Mark N. Brown","Michael R. Barratt","Mark C. Lee","Charles J. Precourt","Neil A. Armstrong","Ronald A. Parise","James C. Adamson","Alvin B. Drew Jr.","Frederick D. Gregory","Lisa M. Nowak","Robert L. Stewart","Richard A. Mastracchio","Daniel C. Brandenstein","Thomas P. Stafford","Yvonne D. Cagle","John B. Herrington","Alan L. Bean","Richard M. Mullane","Nancy J. Currie","Donald H. Peterson","Charles D. Gemar","Ronald J. Garan Jr."],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-37.81010349216263,53.99017035878028],"lng":[-157.8256199197652,151.1851377863771]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Check-in: <code>leaflet</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The above map plots data on NASA astronauts!</p>
+<p><strong>5. The graphic for each marker is a little astronaut helmet. How cute! This image was used via…</strong></p>
+<ul>
+<li>a URL pointing to it on the web.</li>
+<li>a downloaded image file.</li>
+</ul>
+<p><strong>6. The <code>popup</code> argument specifies what you see when you ______, while the <code>label</code> argument specifies what you see when you ______.</strong></p>
+<ul>
+<li>hover; click</li>
+<li>zoom-in; zoom-out</li>
+<li>click; hover</li>
+<li>squint your eyes; look normally</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="extra-resources" class="level1">
+<h1>Extra Resources</h1>
+<ul>
+<li>Greg Sward has a pretty good series of videos on <a href="https://www.youtube.com/channel/UCVvv6HyBo9pg5-URPeJPQEw/search?query=leaflet">leaflet in R</a> - the entire series is longer than we can fit as required viewing, but they are great tutorials!</li>
+<li>Abhinav Agrawal also has a good <a href="https://www.youtube.com/watch?v=ktWjjAlAKtE&amp;list=PL6wLL_RojB5y8uL3uuIMnJ6JoTIFywQ-r&amp;index=1">beginner series</a></li>
+<li>Don’t forget about the <a href="https://www.data-to-viz.com/">Data-to-Viz Website</a></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/github\.com\/atheobold\/stat-541-website");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../unit-2/ggplot-extensions.html" class="pagination-link" aria-label="`ggplot` Extensions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><code>ggplot</code> Extensions</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../unit-2/quarto-dashboard-static.html" class="pagination-link" aria-label="Quarto Dashboards, Part 1">
+        <span class="nav-page-text">Quarto Dashboards, Part 1</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>This page is built with ❤️ by Drs. Kelly Bodwin &amp; Allison Theobold and also <a href="https://quarto.org/">Quarto</a>.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-2/ggplot-leaflet.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../LICENSE.md">
+<p>License</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
