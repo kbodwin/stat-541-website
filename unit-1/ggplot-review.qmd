@@ -20,31 +20,25 @@ This module consists of readings reviewing material typically taught in STAT
 responsibility to decide which areas you need to review before diving into
 Stat 541.
 
-# The Grammar of Graphics
+Answer the following questions to see if you can safely skip this section. 
 
-You should feel comfortable with:
+1. Identify the elements of the following plot as
 
--   Knowing what goes into an aesthetic (`aes()`) versus the geometry (`geom_*()`)
-
--   Identifying these elements of existing plots
-
-## 📖 Recommended Reading: [*R4DS*: Data Visualisation](https://r4ds.hadley.nz/data-visualize.html)
-
-## 🎥 Recommended Video
-
-{{< video https://www.youtube.com/embed/kepKM7Z2O54?si=LR2jOR0kKfot1-vy >}}
-
-::: {.callout-important}
-## Check-in: `ggplot` Review
-
-Identify the elements of the following plot as
-
+::: columns
+::: {.column width="25%"}
 (i) An aesthetic
 (ii) A geometry
 (iii) A scale
 (iv) None of the above
+:::
 
+::: {.column width="5%"}
+:::
+
+::: {.column width="70%"}
 ![](images/escalators.png)
+:::
+:::
 
 (a) The x-axis is age
 (b) The y-axis is "Urge to run up the down escalator"
@@ -54,35 +48,9 @@ Identify the elements of the following plot as
 (f) The lines are labeled with text
 (g) Only even ages are labelled
 (h) Stick figure people are sliding down the line
-:::
 
-# Using ggplot2
 
-You should be comfortable with:
-
--   Using the "big 5" geometries
-    * `geom_point()`
-    * `geom_bar()` / `geom_col()`
-    * `geom_line()`
-    * `geom_histogram()`
-    * `geom_boxplot()`
-
--   Changing optional arguments
-    * Shape of points
-    * Size of points
-    * Linewidth of line
-    * Binwidth of histogram
-
--   Faceting
-    * `facet_wrap()` for one categorical variable
-    * `facet_grid()` for two categorical variables
-
-## 📖 Recommended Reading -- [*R for Data Science* - Layers](https://r4ds.hadley.nz/layers.html)
-
-::: {.callout-important}
-## Checkin: `ggplot` Review
-
-Fill in the six (6) blanks to make the following plot:
+2. Fill in the six (6) blanks to make the plot below:
 
 ```{r}
 #| eval: false
@@ -115,3 +83,44 @@ starwars %>%
        )
 ```
 :::
+
+# The Grammar of Graphics
+
+If you had a hard time answering Question 1, I would recommend reviewing
+this content. You should feel comfortable with:
+
+-   Knowing what goes into an aesthetic (`aes()`) versus the geometry (`geom_*()`)
+
+-   Identifying these elements of existing plots
+
+## 📖 Recommended Reading: [*R4DS*: Data Visualisation](https://r4ds.hadley.nz/data-visualize.html)
+
+::: {.column-margin}
+## 🎥 Recommended Video
+
+{{< video https://www.youtube.com/embed/kepKM7Z2O54?si=LR2jOR0kKfot1-vy >}}
+:::
+
+# Using ggplot2
+
+If you had a hard time answering Question 2, I would recommend reviewing
+this content. You should be comfortable with:
+
+-   Using the "big 5" geometries
+    * `geom_point()`
+    * `geom_bar()` / `geom_col()`
+    * `geom_line()`
+    * `geom_histogram()`
+    * `geom_boxplot()`
+
+-   Changing optional arguments
+    * Shape of points
+    * Size of points
+    * Linewidth of line
+    * Binwidth of histogram
+
+-   Faceting
+    * `facet_wrap()` for one categorical variable
+    * `facet_grid()` for two categorical variables
+
+## 📖 Recommended Reading -- [*R for Data Science* - Layers](https://r4ds.hadley.nz/layers.html)

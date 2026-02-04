@@ -114,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -418,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-1/ggplot-review.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -441,37 +441,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>This module consists of readings reviewing material typically taught in STAT 331. It is possible you can skip over portions of this reading. It is your responsibility to decide which areas you need to review before diving into Stat 541.</p>
-<section id="the-grammar-of-graphics" class="level1">
-<h1>The Grammar of Graphics</h1>
-<p>You should feel comfortable with:</p>
-<ul>
-<li><p>Knowing what goes into an aesthetic (<code>aes()</code>) versus the geometry (<code>geom_*()</code>)</p></li>
-<li><p>Identifying these elements of existing plots</p></li>
-</ul>
-<section id="recommended-reading-r4ds-data-visualisation" class="level2">
-<h2 class="anchored" data-anchor-id="recommended-reading-r4ds-data-visualisation">📖 Recommended Reading: <a href="https://r4ds.hadley.nz/data-visualize.html"><em>R4DS</em>: Data Visualisation</a></h2>
-</section>
-<section id="recommended-video" class="level2">
-<h2 class="anchored" data-anchor-id="recommended-video">🎥 Recommended Video</h2>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/kepKM7Z2O54?si=LR2jOR0kKfot1-vy" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Check-in: <code>ggplot</code> Review
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Identify the elements of the following plot as</p>
+<p>Answer the following questions to see if you can safely skip this section.</p>
+<ol type="1">
+<li>Identify the elements of the following plot as</li>
+</ol>
+<div class="columns">
+<div class="column" style="width:25%;">
 <ol type="i">
 <li>An aesthetic</li>
 <li>A geometry</li>
 <li>A scale</li>
 <li>None of the above</li>
 </ol>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:70%;">
 <p><img src="images/escalators.png" class="img-fluid"></p>
+</div>
+</div>
 <ol type="a">
 <li>The x-axis is age</li>
 <li>The y-axis is “Urge to run up the down escalator”</li>
@@ -482,13 +469,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Only even ages are labelled</li>
 <li>Stick figure people are sliding down the line</li>
 </ol>
+<ol start="2" type="1">
+<li>Fill in the six (6) blanks to make the plot below:</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">____</span>(species <span class="sc">==</span> <span class="st">"Human"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">____ =</span> height, <span class="at">y =</span> mass, <span class="at">____ =</span> gender)) <span class="sc">+</span> </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  geom_[____](<span class="at">____ =</span> <span class="dv">17</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">____</span>(<span class="at">x =</span> <span class="st">"Height (cm)"</span>, </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Mass (kg)"</span>, </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Gender Expression"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>       )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ggplot-review_files/figure-html/ggplot-plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
+</div>
+<p>:::</p>
+<section id="the-grammar-of-graphics" class="level1 page-columns page-full">
+<h1>The Grammar of Graphics</h1>
+<p>If you had a hard time answering Question 1, I would recommend reviewing this content. You should feel comfortable with:</p>
+<ul>
+<li><p>Knowing what goes into an aesthetic (<code>aes()</code>) versus the geometry (<code>geom_*()</code>)</p></li>
+<li><p>Identifying these elements of existing plots</p></li>
+</ul>
+<section id="recommended-reading-r4ds-data-visualisation" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-reading-r4ds-data-visualisation">📖 Recommended Reading: <a href="https://r4ds.hadley.nz/data-visualize.html"><em>R4DS</em>: Data Visualisation</a></h2>
 </section>
-</section>
+
+<div class="no-row-height column-margin column-container"><section id="recommended-video" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-video">🎥 Recommended Video</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/kepKM7Z2O54?si=LR2jOR0kKfot1-vy" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section></div></section>
 <section id="using-ggplot2" class="level1">
 <h1>Using ggplot2</h1>
-<p>You should be comfortable with:</p>
+<p>If you had a hard time answering Question 2, I would recommend reviewing this content. You should be comfortable with:</p>
 <ul>
 <li>Using the “big 5” geometries
 <ul>
@@ -513,38 +534,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="recommended-reading-r-for-data-science---layers" class="level2">
 <h2 class="anchored" data-anchor-id="recommended-reading-r-for-data-science---layers">📖 Recommended Reading – <a href="https://r4ds.hadley.nz/layers.html"><em>R for Data Science</em> - Layers</a></h2>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Checkin: <code>ggplot</code> Review
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Fill in the six (6) blanks to make the following plot:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">____</span>(species <span class="sc">==</span> <span class="st">"Human"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">____ =</span> height, <span class="at">y =</span> mass, <span class="at">____ =</span> gender)) <span class="sc">+</span> </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  geom_[____](<span class="at">____ =</span> <span class="dv">17</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">____</span>(<span class="at">x =</span> <span class="st">"Height (cm)"</span>, </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Mass (kg)"</span>, </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Gender Expression"</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>       )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="ggplot-review_files/figure-html/ggplot-plot-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
 
 
 </section>
