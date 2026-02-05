@@ -47,6 +47,8 @@ website:
         href: course-materials/syllabus.qmd
       - text: "Infrastructure"
         href: infrastructure.qmd
+      - text: "STAT 331 Review"
+        href: 1810-review.qmd
       - text: "Unit 1 - Complex Analyses"
         href: unit-1.qmd
       - text: "Unit 2 - Professional Deliverables"
@@ -57,14 +59,17 @@ website:
         href: portfolio.qmd
 
   sidebar:
-    - id: infrastructure
-      title: "Infrastructure"
+    - id: review
+      title: "STAT 331 Review"
       style: "floating"
       collapse-level: 2
       align: left
       contents:
-        - href: infrastructure.qmd
-        - href: set-up/setup-discord.qmd
+        - href: 1810-review.qmd
+        - href: unit-1/ggplot-review.qmd
+        - href: unit-1/dplyr-review.qmd
+        - href: unit-1/tidyr-review.qmd
+        - href: unit-1/quarto-review.qmd
         - href: set-up/setup-workflow.qmd
         - href: set-up/setup-version-control.qmd
         - href: labs/lab-1.qmd
@@ -73,10 +78,6 @@ website:
       title: "Unit 1"
       contents:
         - href: unit-1.qmd
-        - href: unit-1/ggplot-review.qmd
-        - href: unit-1/dplyr-review.qmd
-        - href: unit-1/tidyr-review.qmd
-        - href: unit-1/quarto-review.qmd
         - href: unit-1/writing-functions.qmd
         - href: unit-1/efficient-code.qmd
         - href: unit-1/iterating-functions.qmd
