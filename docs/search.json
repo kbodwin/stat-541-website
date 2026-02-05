@@ -1,138 +1,5 @@
 [
   {
-    "objectID": "1810-review/quarto-review.html",
-    "href": "1810-review/quarto-review.html",
-    "title": "Untitled",
-    "section": "",
-    "text": "From the dplyr section ## Learning More About Packages in R\n📽 Required Video: Why do I get this message when I load the tidyverse? – 8 minutes\nThe theme of this lesson is good management of your files and data. In part two of this week’s coursework you will learn how to identify folders and paths, and create Quarto documents."
-  },
-  {
-    "objectID": "1810-review/quarto-review.html#file-management",
-    "href": "1810-review/quarto-review.html#file-management",
-    "title": "Untitled",
-    "section": "File Management",
-    "text": "File Management\nAs boring as it sounds, file management is arguably one of the most important skills a data scientist should have. The reproducibility of a project depends just as much on the way in which the project was stored as the computing tools used. While using R and Quarto make an important step in creating a reproducible analysis, there are other pieces that are arguably just as important—such as file management.\nEvidently, there has been a bit of generational shift as computers have evolved: the “file system” metaphor itself is outdated because no one uses physical files anymore. This article is an interesting discussion of the problem: it makes the argument that with modern search capabilities, most people use their computers as a laundry hamper instead of as a nice, organized filing cabinet.\n\nFile Systems\nRegardless of how you tend to organize your personal files, it is probably helpful to understand the basics of what is meant by a computer file system – a way to organize data stored on a hard drive. Since data is always stored as 0’s and 1’s, it’s important to have some way to figure out what type of data is stored in a specific location, and how to interpret it.\n\n\n Stop watching at 4:16.\n\n\nFile Paths\nThat’s not enough, though - we also need to know how computers remember the location of what is stored where. Specifically, we need to understand file paths.\nWhen you write a program, you may have to reference external files - data stored in a .csv file, for instance, or a picture. Best practice is to create a file structure that contains everything you need to run your entire project in a single file folder (you can, and sometimes should, have sub-folders).\n\n\n\nFor now, it is enough to know how to find files using file paths, and how to refer to a file using a relative file path from your base folder. In this situation, your “base folder” is known as your working directory - the place your program thinks of as home."
-  },
-  {
-    "objectID": "1810-review/quarto-review.html#directories-and-projects",
-    "href": "1810-review/quarto-review.html#directories-and-projects",
-    "title": "Untitled",
-    "section": "Directories, Paths, and Projects",
-    "text": "Directories, Paths, and Projects\nIn R, there are two ways to set up your file path and file system organization:\n\nSet your working directory in R (do not recommend)\nUse RProjects (preferred!)\n\n\nWorking Directories in R\nTo find where your working directory is in R, you can either look at the top of your console or type getwd() into your console.\n\n\n\n\n\n\n\n\n\n\ngetwd()\n\n[1] \"/Users/atheobol/Documents/Teaching/stat-541-website/1810-review\"\n\n\nAlthough it is not recommended, you can set your working directory in R with setwd().\n\nsetwd(\"/path/to/my/assignment/folder\")\n\n\n\nR Projects\n\n📖 Required Reading: Workflow and Projects\nSince there are often many files necessary for a project (e.g. data sources, images, etc.), R has a nice built in system for setting up your project organization with R Projects. You can either create a new folder on your computer containing an R Project (e.g., you have not yet created a folder for this class) or you can add an R Project to an existing folder on your computer (e.g., you have already created a folder for this class).\n\nCreate with a new folderAdd to an existing folder\n\n\nTo create a R Project, first open RStudio on your computer and click File &gt; New Project, then:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGive your folder a name (it doesn’t have to be my-stat331). However, it is good practice for this file folder name to not contain spaces.\nThen, browse on your computer for a location to save this folder to. For example, mine is saved in my Documents. Make sure you know how to find this; it should NOT be saved in your Downloads!\n\n\n\n\n\n\n\n\n\nThis new folder, my-stat331 should now live in your Documents folder (or wherever you save it to) and contain a my-stat331.Rproj file. This is your new “home” base for this class - whenever you refer to a file with a relative path it will begin to look for it here.\n\n\nTo add a R Project to an existing folder on your computer (e.g., you already created a folder for this class), first open RStudio on your computer and click File &gt; New Project, then:\n\n\n\n\n\n\n\n\n\nThen, browse on your computer to select the existing folder you wish to add your R Project to. For example, mine is saved in my Documents and called my-stat331.\n\n\n\n\n\n\n\n\n\nYour existing folder, my-stat331 should now contain a my-stat331.Rproj file. This is your new “home” base for this class - whenever you refer to a file with a relative path it will begin to look for it here.\n\n\n\n\n\n\n\n\n\nCautionYour folder cannot synch with anything online!\n\n\n\nYour STAT 331 folder cannot be in a folder stored on OneDrive or iCloud! Storing your folder in this location will cause your code to periodically not run and I cannot help you fix it."
-  },
-  {
-    "objectID": "1810-review/quarto-review.html#check-in-1.3-stat-331-folder-r-project",
-    "href": "1810-review/quarto-review.html#check-in-1.3-stat-331-folder-r-project",
-    "title": "Untitled",
-    "section": "✅ Check-in 1.3: Stat 331 Folder & R Project",
-    "text": "✅ Check-in 1.3: Stat 331 Folder & R Project\nTake a screenshot of your class directory, showing:\n\nthe location of your Stat 331 folder\nan R Project included in your Stat 331 folder\na Week 1 sub-folder"
-  },
-  {
-    "objectID": "1810-review/quarto-review.html#downloading-quarto",
-    "href": "1810-review/quarto-review.html#downloading-quarto",
-    "title": "Untitled",
-    "section": "Downloading Quarto",
-    "text": "Downloading Quarto\nThe software associated with Quarto is automatically downloaded with the newest versions of RStudio. So, if you are using the most up to date version of RStudio (as instructed in Part 1 of this week’s coursework), you should already have Quarto installed on your computer. But, let’s test it out.\nTo ensure you have Quarto installed, carry out the following process:\n\nOpen RStudio\nClick on “File” (in the upper navigation bar)\nSelect “New File” (in the dropdown options)\nSelect “Quarto Document…” (in the dropdown option)\n\n \nIf you have Quarto installed, you should be prompted with the following menu:\n\nIf, instead, you receive a message saying Quarto is not installed on your computer, you need to download Quarto: https://quarto.org/docs/download/"
-  },
-  {
-    "objectID": "1810-review/quarto-review.html#introduction-to-quarto",
-    "href": "1810-review/quarto-review.html#introduction-to-quarto",
-    "title": "Untitled",
-    "section": "Introduction to Quarto",
-    "text": "Introduction to Quarto\n\n📖 Required Reading: Intro to Quarto\n\n\nHTML Documents\nWe will exclusively use HTML documents in this course. If you are interested in learning more about formatting options for Quarto HTML documents, I would recommend checking out:\n\na discussion of the basics of formatting HTML documents in Quarto\nthe list of all HTML formatting options for Quarto documents"
-  },
-  {
-    "objectID": "1810-review/quarto-review.html#check-in-1.4-quarto-documents",
-    "href": "1810-review/quarto-review.html#check-in-1.4-quarto-documents",
-    "title": "Untitled",
-    "section": "✅ Check-in: 1.4 Quarto Documents",
-    "text": "✅ Check-in: 1.4 Quarto Documents\nQuestion 1: What are the options at the top of a Quarto document (between the --- and --- symbols) called?\n\nXML\nYAML\nREML\nTOML\n\nQuestion 2: What symbols create an R code chunk?\n\n```\n{r}\n```{r}\n`{r}`\n\nQuestion 3: What symbol defines a heading?\n\n$\n_\n*\n#\n\nQuestion 4: When working in a Quarto document, the [visual / source] editor will display the raw Quarto document, whereas the [visual / source] will display the document as it will appear when it is rendered.\nQuestion 5: To produce an HTML report from your Quarto document, you need to click the ____ button.\n\nVisual\nRender\nRender on Save\nSave"
-  },
-  {
-    "objectID": "1810-review/tidyr-review.html",
-    "href": "1810-review/tidyr-review.html",
-    "title": "Data Joins and Transformations Review",
-    "section": "",
-    "text": "This module consists of readings reviewing material typically taught in STAT 331. It is possible you can skip over portions of this reading. It is your responsibility to decide which areas you need to review before diving into Stat 541.\nAnswer the following questions to see if you can safely skip this section.\nEach question focuses on the following data tables:\nIf you had a hard time answering these questions, I would recommend reviewing Section 1.1.\ncountry\nyear\ncases\npopulation\n\n\n\n\nAfghanistan\n1999\n745\n19987071\n\n\nAfghanistan\n2000\n2666\n20595360\n\n\nBrazil\n1999\n37737\n172006362\n\n\nBrazil\n2000\n80488\n174504898\n\n\nChina\n1999\n212258\n1272915272\n\n\nChina\n2000\n213766\n1280428583\nIf you had a hard time answering this question, I would recommend reviewing Section 1.2.2.\ncountry\nyear\ncases\npopulation\n\n\n\n\nAfghanistan\n1999\n745\n19987071\n\n\nAfghanistan\n2000\n2666\n20595360\n\n\nBrazil\n1999\n37737\n172006362\n\n\nBrazil\n2000\n80488\n174504898\n\n\nChina\n1999\n212258\n1272915272\n\n\nChina\n2000\n213766\n1280428583\nIf you had a hard time answering this question, I would recommend reviewing Section 1.3.1.\ncountry\nyear\ncases\npopulation\n\n\n\n\nAfghanistan\n1999\n745\n19987071\n\n\nAfghanistan\n2000\n2666\n20595360\n\n\nBrazil\n1999\n37737\n172006362\n\n\nBrazil\n2000\n80488\n174504898\n\n\nChina\n1999\n212258\n1272915272\n\n\nChina\n2000\n213766\n1280428583\nIf you had a hard time answering this question, I would recommend reviewing Section 1.3.2.\ncountry\nyear\ncases\npopulation\n\n\n\n\nAfghanistan\n1999\n745\n19987071\n\n\nAfghanistan\n2000\n2666\n20595360\n\n\nBrazil\n1999\n37737\n172006362\n\n\nBrazil\n2000\n80488\n174504898\n\n\nChina\n1999\n212258\n1272915272\n\n\nChina\n2000\n213766\n1280428583\nIf you had a hard time answering this question, I would recommend reviewing Section 1.2.1 and Section 2.1."
-  },
-  {
-    "objectID": "1810-review/tidyr-review.html#pivot-operations",
-    "href": "1810-review/tidyr-review.html#pivot-operations",
-    "title": "Data Joins and Transformations Review",
-    "section": "Pivot Operations",
-    "text": "Pivot Operations\nIt’s fairly common for data to come in forms which are convenient for either human viewing or data entry. Unfortunately, these forms aren’t necessarily the most friendly for analysis. There are two main “layouts” a dataset can have:\n\n“wide” format\n“long” format\n\nThe image below shows the same dataset presented in each layout.\n\nSometimes we will be given data that is in one layout and we will need to transform it into a different layout. This animation illustrates the process of going from a wide data layout to a long data layout, and how to go from a long data layout back to a wide data layout. Here, we are using the pivot_wider() and pivot_longer() functions from the tidyr package in R.\n\n\n\n© Kelsey Gonzales\n\n\nLet’s explore each of these formats in more depth\n\nLonger\n📖 Required Reading: R4DS Section 5.3 (Lengthening data)\n\n\n\nIn many cases, the data come in what we might call “wide” form - some of the column names are not names of variables (e.g., year), but instead, are themselves values of another variable (e.g., 1991, 1992).\n\n\n\n\n\n\nTip\n\n\n\nNotice that I’m surrounding 1999 in back ticks (` `). I need to do this because a number is not a syntactically correct variable name, so using cols = 1999:2000 would not work!\n\n\nPicture the Operationpivot_longer()\n\n\nTables 4a and 4b (from above) are good examples of data which is in “wide” form and should be transformed into a long(er) form. The values of year are spread across multiple columns.\n\ntable4a\n\n# A tibble: 3 × 3\n  country     `1999` `2000`\n  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;\n1 Afghanistan    745   2666\n2 Brazil       37737  80488\n3 China       212258 213766\n\ntable4b\n\n# A tibble: 3 × 3\n  country         `1999`     `2000`\n  &lt;chr&gt;            &lt;dbl&gt;      &lt;dbl&gt;\n1 Afghanistan   19987071   20595360\n2 Brazil       172006362  174504898\n3 China       1272915272 1280428583\n\n\nThe solution to this is to rearrange the data into “long form”: to take the columns which contain values and “stack” them, adding a variable to indicate which column each value came from. To do this, we have to duplicate the values in any column which isn’t being stacked (e.g. country, in both the example above and the image below).\n\n\n\nA visual representation of what the pivot_longer operation looks like in practice.\n\n\nOnce our data are in long form, we can (if necessary) separate values that once served as column labels into actual variables, and we’ll have tidy(er) data.\n\n\n\n\ntable4a |&gt; \n  pivot_longer(cols = `1999`:`2000`, \n               names_to = \"year\", \n               values_to = \"cases\"\n               )\n\n# A tibble: 6 × 3\n  country     year   cases\n  &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt;\n1 Afghanistan 1999     745\n2 Afghanistan 2000    2666\n3 Brazil      1999   37737\n4 Brazil      2000   80488\n5 China       1999  212258\n6 China       2000  213766\n\ntable4b |&gt; \n  pivot_longer(cols = -country, \n               names_to = \"year\", \n               values_to = \"population\"\n               )\n\n# A tibble: 6 × 3\n  country     year  population\n  &lt;chr&gt;       &lt;chr&gt;      &lt;dbl&gt;\n1 Afghanistan 1999    19987071\n2 Afghanistan 2000    20595360\n3 Brazil      1999   172006362\n4 Brazil      2000   174504898\n5 China       1999  1272915272\n6 China       2000  1280428583\n\n\nThe columns are moved to a variable with the name passed to the argument names_to (hopefully, that is easy to remember), and the values are moved to a variable with the name passed to the argument values_to (again, hopefully easy to remember).\nWe identify ID variables (variables which we don’t want to pivot) by not including them in the pivot statement. We can do this in one of two ways:\n\nselect only variables (columns) we want to pivot (e.g., cols = `1999`:`2000`)\nselect variables (columns) we don’t want to pivot, using - to remove them (e.g., cols = -country).\n\nWhich option is easier depends how many things you’re pivoting (and how the columns are structured).\n\n\n\n\n\nWider\n📖 Required Reading: R4DS Section 5.3 (Widening data)\n\n\n\nWhile it’s very common to need to transform data into a longer format, it’s not that uncommon to need to do the reverse operation. When an observation is scattered across multiple rows, your data is too long and needs to be made wider again.\n\n\n\n\n\n\nTip\n\n\n\nNotice that I’m not using a cols argument for pivot_wider()! This is because pivot_wider() only modifies the columns specified in the names_from and values_from arguments.\n\n\nPicture the Operationpivot_wider()\n\n\nTable 2 (from above) is an example of a table that is in long format but needs to be converted to a wider layout to be “tidy” - there are separate rows for cases and population, which means that a single observation (one year, one country) has two rows.\n\ntable2\n\n# A tibble: 12 × 4\n   country      year type            count\n   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 Afghanistan  1999 cases             745\n 2 Afghanistan  1999 population   19987071\n 3 Afghanistan  2000 cases            2666\n 4 Afghanistan  2000 population   20595360\n 5 Brazil       1999 cases           37737\n 6 Brazil       1999 population  172006362\n 7 Brazil       2000 cases           80488\n 8 Brazil       2000 population  174504898\n 9 China        1999 cases          212258\n10 China        1999 population 1272915272\n11 China        2000 cases          213766\n12 China        2000 population 1280428583\n\n\n\n\n\nA visual representation of what the pivot_wider operation looks like in practice.\n\n\n\n\n\n\ntable2 |&gt;\n  pivot_wider(names_from  = type, \n              values_from = count\n              )\n\n# A tibble: 6 × 4\n  country      year  cases population\n  &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;\n1 Afghanistan  1999    745   19987071\n2 Afghanistan  2000   2666   20595360\n3 Brazil       1999  37737  172006362\n4 Brazil       2000  80488  174504898\n5 China        1999 212258 1272915272\n6 China        2000 213766 1280428583"
-  },
-  {
-    "objectID": "1810-review/tidyr-review.html#separating-and-uniting-variables",
-    "href": "1810-review/tidyr-review.html#separating-and-uniting-variables",
-    "title": "Data Joins and Transformations Review",
-    "section": "Separating and Uniting Variables",
-    "text": "Separating and Uniting Variables\nWe will talk about strings and regular expressions later in the course, but there’s a task that is fairly commonly encountered with functions that belong to the tidyr package: separating variables into two different columns separate() and it’s complement, unite(), which is useful for combining two variables into one column.\n\ntable3 |&gt;\n  separate_wider_delim(cols        = rate,\n                       names       = c(\"cases\", \"population\"),\n                       delim       = \"/\",\n                       cols_remove = FALSE\n           )\n\n# A tibble: 6 × 5\n  country      year cases  population rate             \n  &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;            \n1 Afghanistan  1999 745    19987071   745/19987071     \n2 Afghanistan  2000 2666   20595360   2666/20595360    \n3 Brazil       1999 37737  172006362  37737/172006362  \n4 Brazil       2000 80488  174504898  80488/174504898  \n5 China        1999 212258 1272915272 212258/1272915272\n6 China        2000 213766 1280428583 213766/1280428583\n\n\n\nunite()\nAnd, of course, there is a complementary operation, which is when it’s necessary to join two columns to get a useable data value.\n\ntable5 |&gt;\n  unite(col = \"year\",\n        c(century, year),\n        sep = ''\n        )\n\n# A tibble: 6 × 3\n  country     year  rate             \n  &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;            \n1 Afghanistan 1999  745/19987071     \n2 Afghanistan 2000  2666/20595360    \n3 Brazil      1999  37737/172006362  \n4 Brazil      2000  80488/174504898  \n5 China       1999  212258/1272915272\n6 China       2000  213766/1280428583\n\n\n:::"
-  },
-  {
-    "objectID": "1810-review/tidyr-review.html#animating-joins",
-    "href": "1810-review/tidyr-review.html#animating-joins",
-    "title": "Data Joins and Transformations Review",
-    "section": "Animating Joins",
-    "text": "Animating Joins\nSuppose we start with two tables, x and y:\n\n\n\n© Garrick Aden-Buie"
-  },
-  {
-    "objectID": "1810-review/tidyr-review.html#mutating-joins",
-    "href": "1810-review/tidyr-review.html#mutating-joins",
-    "title": "Data Joins and Transformations Review",
-    "section": "Mutating Joins",
-    "text": "Mutating Joins\nWe’re primarily going to focus on mutating joins, as filtering joins can be accomplished by…filtering…rather than by table joins.\n\nInner JoinLeft JoinRight JoinFull Join\n\n\nAn inner_join() only keeps any rows that are included in both tables, but keeps every column.\n\n\n\n© Garrick Aden-Buie\n\n\n\n\nBut what if we want to keep all of the rows in x? We would do a left_join() (since x is on the left).\n\n\n\n© Garrick Aden-Buie\n\n\nIf there are multiple matches in the y table, though, we might have to duplicate rows in x. This is still a left join, just a more complicated one.\n\n\n\n© Garrick Aden-Buie\n\n\n\n\nIf we wanted to keep all of the rows in y, we would do a right_join() (since y is on the right):\n\n\n\n© Garrick Aden-Buie\n\n\nWe can always change a left join to a right join or visa versa. People seem to have a preference for left joins, but if you like right joins more go for it!\n\n\nAnd finally, if we want to keep all of the rows of both x and y, we’d do a full_join():\n\n\n\n© Garrick Aden-Buie\n\n\n\n\n\nEvery join has a “left side” and a “right side” - so in XXXX_join(A, B), A is the left side, and B is the right side.\nJoins are differentiated based on how they treat the rows and columns of each side. In mutating joins, the columns from both sides are always kept. The table below summarizes which rows are kept from each side of the join, for different mutating joins.\n\n\n\n\n\n\n\n\n\n\n\n\nRows Selected\n\n\n\nJoin Type\nLeft Side\nRight Side\n\n\n\n\ninner\nmatching\nmatching\n\n\nleft\nall\nmatching\n\n\nright\nmatching\nall\n\n\nouter\nall\nall"
-  },
-  {
-    "objectID": "1810-review/tidyr-review.html#filtering-joins",
-    "href": "1810-review/tidyr-review.html#filtering-joins",
-    "title": "Data Joins and Transformations Review",
-    "section": "Filtering Joins",
-    "text": "Filtering Joins\nThese joins do not merge two datasets together! Instead, they filter the values of one dataset based on the values of another dataset.\n\nSemi JoinAnti Join\n\n\nA semi_join() keeps rows in x that have a match in y. Notice that the resulting dataset is a modification of the original x dataset—nothing from y has been added to x!\n\n\n\n\n\n\nTip\n\n\n\nYou can think of this as a relative of using the inclusion operator (%in%) inside of a filter() statement (e.g., filter(day %in% c(\"Mon\", \"Tues\", \"Wed\"))).\n\n\n\n\n\n© Garrick Aden-Buie\n\n\nSuppose we wanted to only keep countries in Table 2 that were also present in Table 1. We could do this using a semi-join:\n\nsemi_join(x = table2, \n          y = table1, \n          by = \"country\")\n\n# A tibble: 12 × 4\n   country      year type            count\n   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 Afghanistan  1999 cases             745\n 2 Afghanistan  1999 population   19987071\n 3 Afghanistan  2000 cases            2666\n 4 Afghanistan  2000 population   20595360\n 5 Brazil       1999 cases           37737\n 6 Brazil       1999 population  172006362\n 7 Brazil       2000 cases           80488\n 8 Brazil       2000 population  174504898\n 9 China        1999 cases          212258\n10 China        1999 population 1272915272\n11 China        2000 cases          213766\n12 China        2000 population 1280428583\n\n\nNotice that since Table 2 and Table 1 both contain the same countries the resulting dataset (where the matches were kept) is the same as the original Table 2.\n\n\nA anti_join() keeps rows in x that do not have a match in y. Notice that the resulting dataset is a modification of the original x dataset—nothing from y has been added to x!\n\n\n\n\n\n\nTip\n\n\n\nYou can think of this as a relative of using a ! in front of the inclusion operator (%in%) inside of a filter() statement (e.g., filter(! day %in% c(\"Mon\", \"Tues\", \"Wed\"))). The ! negates the %in% so only Thurs, Fri, Sat, and Sun would be included.\n\n\n\n\n\n© Garrick Aden-Buie\n\n\nSuppose we wanted to filter out countries in Table 2 that were also present in Table 1. We could do this using an anti-join:\n\nanti_join(x = table2, \n          y = table1, \n          by = \"country\")\n\n# A tibble: 0 × 4\n# ℹ 4 variables: country &lt;chr&gt;, year &lt;dbl&gt;, type &lt;chr&gt;, count &lt;dbl&gt;\n\n\nNotice that since Table 2 and Table 1 both contain the same countries the resulting dataset (where the matches were filtered out) is empty."
-  },
-  {
-    "objectID": "1810-review/dplyr-review.html",
-    "href": "1810-review/dplyr-review.html",
-    "title": "dplyr Review",
-    "section": "",
-    "text": "This module consists of readings reviewing material typically taught in STAT 331. It is possible you can skip over portions of this reading. It is your responsibility to decide which areas you need to review before diving into Stat 541.\nAnswer the following questions to see if you can safely skip this section.\nThink about the datasets you have already worked with. Which of the following restrictions on a list do you think are needed for the list to be a data.frame? (Select all that apply)\nIf you had a hard time answering these questions, I would recommend reviewing Section 1.1.\nIf you had a hard time answering this question, I would recommend reviewing Section 1.2.\n# a\narrange(avg_bill_ratio)\n\n# b\ngroup_by(species)\n\n# c\npenguins \n\n# d\nsummarize(\n    avg_bill_ratio = mean(bill_ratio, na.rm = TRUE)\n    )\n  \n# e\nmutate(\n    bill_ratio = bill_length_mm / bill_depth_mm\n    )\nIf you had a hard time answering this question, I would recommend reviewing Section 1.3."
-  },
-  {
-    "objectID": "1810-review/dplyr-review.html#data-structures-sec-data-structures",
-    "href": "1810-review/dplyr-review.html#data-structures-sec-data-structures",
-    "title": "dplyr Review",
-    "section": "Data Structures {sec-data-structures}",
-    "text": "Data Structures {sec-data-structures}\nChoose one of these two options:\n\n\n📽 Watch a Video: Data Types in R\n\n📖 Read a Textbook: Data Types in R\n\n\nIn addition, read the following section from the first edition of R for DS:\n📖 Recommended Reading: Tibbles"
-  },
-  {
-    "objectID": "1810-review/dplyr-review.html#data-wrangling-with-dplyr-sec-dplyr",
-    "href": "1810-review/dplyr-review.html#data-wrangling-with-dplyr-sec-dplyr",
-    "title": "dplyr Review",
-    "section": "Data Wrangling with dplyr {sec-dplyr}",
-    "text": "Data Wrangling with dplyr {sec-dplyr}\nIf you had a hard time answering Question 3, I would recommend reviewing this content.\n📖 Recommended Reading: Data Transformation\n\n\nRecommended Videos\n📽 filter() – 11 minutes\n📽 select() – 6 minutes\n📽 mutate() – 9 minutes\n📽 arrange() – 7 minutes\n📽 summarize()– 8 minutes\n📽 group_by() – 6 minutes\n\nThe Pipe Operator {sec-pipe}\nIf you had a hard time answering Question 4, I would recommend also reviewing this content.\n📽 Recommended Video: The pipe operator – 8 minutes"
-  },
-  {
-    "objectID": "1810-review/tidyr-review.html#tidy-data",
-    "href": "1810-review/tidyr-review.html#tidy-data",
-    "title": "Data Joins and Transformations Review",
-    "section": "Tidy Data",
-    "text": "Tidy Data\n📖 Recommended Reading: R4DS Section 5.2 (Tidy data)\n\n\n\n\n\n\nNoteDo we always want our data in the same layout?\n\n\n\nThe concept of tidy data is useful for mapping variables from the data set to elements in a graph, specifications of a model, or aggregating to create summaries. However, what is considered to be “tidy data” format for one task, might not be in the correct “tidy data” format for a different task. It is important for you to consider the end goal when restructuring your data."
-  },
-  {
-    "objectID": "1810-review/tidyr-review.html#reshaping-data",
-    "href": "1810-review/tidyr-review.html#reshaping-data",
-    "title": "Data Joins and Transformations Review",
-    "section": "Reshaping Data",
-    "text": "Reshaping Data\nIt’s fairly common for data to come in forms which are convenient for either human viewing or data entry. Unfortunately, these forms aren’t necessarily the most friendly for analysis. There are two main “layouts” a dataset can have:\n\n“wide” format\n“long” format\n\nThe image below shows the same dataset presented in each layout.\n\nSometimes we will be given data that is in one layout and we will need to transform it into a different layout. This animation illustrates the process of going from a wide data layout to a long data layout, and how to go from a long data layout back to a wide data layout. Here, we are using the pivot_wider() and pivot_longer() functions from the tidyr package in R.\n\n\n\n© Garrett Aden Buie\n\n\nLet’s explore each of these formats in more depth\n\nLonger\n📖 Recommended Reading: R4DS Section 5.3 (Lengthening data)\n\n\n\nTable 4a and 4b are currently stored in a wide format, where the years are spread across multiple columns. We can use pivot_longer() to pivot these data to long format (with one column for all years).\n\npivot_longer(table4a, \n             cols = `1999`:`2000`, \n             names_to = \"year\", \n             values_to = \"cases\") \n\n# A tibble: 6 × 3\n  country     year   cases\n  &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt;\n1 Afghanistan 1999     745\n2 Afghanistan 2000    2666\n3 Brazil      1999   37737\n4 Brazil      2000   80488\n5 China       1999  212258\n6 China       2000  213766\n\n\n\n\n\n\n\n\nTip\n\n\n\nNotice that I’m surrounding 1999 and 2000 in back ticks (` `). I need to do this because a number is not a syntactically correct variable name, so using cols = 1999:2000 would not work!\nAlso note that the year column is currently considered to be a character data type, so we would likely need to mutate() it before we do our analysis!\n\n\n\n\nWider\n📖 Recommended Reading: R4DS Section 5.3 (Widening data)\n\n\n\nTable 2 is currently stored in a long format, where the case and population information is stored in a single column named type. We can use pivot_wider() to pivot these data to wide format (with one column for each statistic).\n\npivot_wider(table2, \n            names_from = type, \n            values_from = count)\n\n# A tibble: 6 × 4\n  country      year  cases population\n  &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;\n1 Afghanistan  1999    745   19987071\n2 Afghanistan  2000   2666   20595360\n3 Brazil       1999  37737  172006362\n4 Brazil       2000  80488  174504898\n5 China        1999 212258 1272915272\n6 China        2000 213766 1280428583\n\n\n\n\n\n\n\n\nTip\n\n\n\nNotice that I’m not using a cols argument for pivot_wider()! This is because pivot_wider() only modifies the columns specified in the names_from and values_from arguments."
-  },
-  {
-    "objectID": "1810-review/tidyr-review.html#separating-and-uniting",
-    "href": "1810-review/tidyr-review.html#separating-and-uniting",
-    "title": "Data Joins and Transformations Review",
-    "section": "Separating and Uniting",
-    "text": "Separating and Uniting\nIn addition to pivoting, tidyr provides tools to accomplish two additional tasks: separating variables into two different columns using separate(), and uniting (combining) two variables into one column using unite().\n\nseparate_wider_delim()\nTable 3 (and Table 5) has a rate column that includes information about both the cases and the population, separated with a / symbol. We can use separate_wider_delim() to create two separate columns for these variables.\n\nseparate_wider_delim(table3, \n                     cols = rate, \n                     delim = \"/\", \n                     names = c(\"cases\", \"population\"), \n                     cols_remove = TRUE\n                     ) \n\n# A tibble: 6 × 4\n  country      year cases  population\n  &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Afghanistan  1999 745    19987071  \n2 Afghanistan  2000 2666   20595360  \n3 Brazil       1999 37737  172006362 \n4 Brazil       2000 80488  174504898 \n5 China        1999 212258 1272915272\n6 China        2000 213766 1280428583\n\n\n\n\n\n\n\n\nTip\n\n\n\nNote that we could have also used separate_wider_regex() here to split on the / symbol. The patterns argument of separate_wider_regex() is a bit funky:\n\nseparate_wider_regex(table3, \n                     rate, \n                     patterns = c(cases = \"\\\\d+\", \"/\", population = \"\\\\d+\")\n                     ) \n\npatterns needs to be a named character vector where the names become column names and the values are regular expressions that match the contents of the vector. cases comes from the first one or more (+) digits \\\\d, then the split is made on the \\, and then population comes from the following one or more digits.\nPersonally, we think the delim option is a bit easier, but this is how it would work with regular expressions.\n\n\n\n\nunite()\nIn addition to having variables that need separating, Table 5 also has two variables (century and year) that need to be united (i.e., joined together). We can perform this action using the unite() function.\n\ntable5 |&gt;\n  unite(col = \"year\",\n        c(century, year),\n        sep = \"\"\n        ) |&gt; \n  separate_wider_delim(cols = rate, \n                       delim = \"/\", \n                       names = c(\"cases\", \"population\"), \n                       cols_remove = TRUE) \n\n# A tibble: 6 × 4\n  country     year  cases  population\n  &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Afghanistan 1999  745    19987071  \n2 Afghanistan 2000  2666   20595360  \n3 Brazil      1999  37737  172006362 \n4 Brazil      2000  80488  174504898 \n5 China       1999  212258 1272915272\n6 China       2000  213766 1280428583\n\n\n\n\n\n\n\n\nTip\n\n\n\nNotice that I’m using the pipe operator (|&gt;) to chain these operations together. First, the century and year variables are united and then the resulting dataframe is fed into the separate_wider_delim() function to separate the rate column.\nThe pipe operator saves us from having to save intermediate objects and makes the process easier to read!"
-  },
-  {
     "objectID": "unit-2/quarto-dashboard-static.html",
     "href": "unit-2/quarto-dashboard-static.html",
     "title": "Quarto Dashboards, Part 1",
@@ -320,6 +187,486 @@
     ]
   },
   {
+    "objectID": "unit-1/iterating-functions.html",
+    "href": "unit-1/iterating-functions.html",
+    "title": "Iterating Over Functions",
+    "section": "",
+    "text": "In this unit, you’ll learn tools for iteration—repeatedly performing the same action on different objects. Iteration in R generally tends to look a bit different from other programming languages. Much of iteration we get for free! For example, if you want to double a numeric vector x in R, you can just write 2 * x, whereas in many other languages you would need to explicitly double each element of x using some sort of for loop.\nIn R, there are generally two methods for iteration—for() loops and functionals. We will start with a review of for() loops before hopping over to functionals.",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Iterating Over Functions"
+    ]
+  },
+  {
+    "objectID": "unit-1/iterating-functions.html#required-reading-functionals",
+    "href": "unit-1/iterating-functions.html#required-reading-functionals",
+    "title": "Iterating Over Functions",
+    "section": "📖 Required Reading: Functionals",
+    "text": "📖 Required Reading: Functionals\npurrr is a tidyverse package that provides several useful functions for iteration. The main advantages of purrr include:\n\nImproved readability of R code\nReduction in the “overhead” in writing a for loop (creating storage containers and writing the for (i in ...))\n\nIn purrr, we can use the family of map() functions to apply a function to each element of a list or vector. We can think of this as mapping an input (a list or vector) to a new output via a function. Let’s look at the purrr cheatsheet to look at graphical representations of how these functions work.\n\nmap() returns a list\nmap_chr() returns a character vector\nmap_lgl() returns a logical vector\nmap_int() returns an integer vector\nmap_dbl() returns a numeric vector\nmap_vec() returns a vector of a different (non-atomic) type (like dates)\n\nTo get the class() of each data frame column, map_chr() is sensible because classes are strings:\n\nmap_chr(mtcars, .f = class)\n\n      mpg       cyl      disp        hp      drat        wt      qsec        vs \n\"numeric\" \"numeric\" \"numeric\" \"numeric\" \"numeric\" \"numeric\" \"numeric\" \"numeric\" \n       am      gear      carb \n\"numeric\" \"numeric\" \"numeric\" \n\n\nLet’s get the class of each variable in diamonds:\n\nmap_chr(diamonds, class)\n\nError in `map_chr()`:\nℹ In index: 2.\nℹ With name: cut.\nCaused by error:\n! Result must be length 1, not 2.\n\n\nWhat happened!? map_chr() was expecting to create a character vector with one element per element (column) in diamonds. But something happened in column 2 with the cut variable. Let’s figure out what happened:\n\nclass(diamonds$cut)\n\n[1] \"ordered\" \"factor\" \n\n\nAh! cut has two classes. In this case, map() (which returns a list) is the best option because some variables have multiple classes:\n\nmap(diamonds, class)\n\n$carat\n[1] \"numeric\"\n\n$cut\n[1] \"ordered\" \"factor\" \n\n$color\n[1] \"ordered\" \"factor\" \n\n$clarity\n[1] \"ordered\" \"factor\" \n\n$depth\n[1] \"numeric\"\n\n$table\n[1] \"numeric\"\n\n$price\n[1] \"integer\"\n\n$x\n[1] \"numeric\"\n\n$y\n[1] \"numeric\"\n\n$z\n[1] \"numeric\"\n\n\nThe error we encountered with map_chr() is a nice feature of purrr because it allows us to be very sure of the type of output we are getting. Failing loudly is vastly preferable to getting unexpected outputs silently because we can catch errors earlier!\nWe can combine map_*() functions with tidy selection for some powerful variable summaries that require much less code than for() loops.\n\ndiamonds %&gt;% \n  select(where(is.numeric)) %&gt;% \n  map_dbl(.f = mean)\n\n       carat        depth        table        price            x            y \n   0.7979397   61.7494049   57.4571839 3932.7997219    5.7311572    5.7345260 \n           z \n   3.5387338 \n\ndiamonds %&gt;% \n  select(!where(is.numeric)) %&gt;% \n  map_int(.f = n_distinct)\n\n    cut   color clarity \n      5       7       8 \n\n\n\nExercises\n\nWrite a function called summ_stats() that takes a numeric vector x as input and returns the mean, median, standard deviation, and IQR as a data frame. You can use tibble() to create the data frame.\n\nExample: tibble(a = 1:2, b = 2:3) creates a data frame with variables a and b.\n\n\n\n\nSolution\n\n\nsumm_stats &lt;- function(x) {\n    tibble(\n        mean = mean(x, na.rm = TRUE),\n        median = median(x, na.rm = TRUE),\n        sd = sd(x, na.rm = TRUE),\n        iqr = IQR(x, na.rm = TRUE)\n    ) \n}\n\n\n\nUse map() to apply your summ_stats() function to the numeric columns in the diamonds dataset.\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nLook up the bind_rows() documentation from dplyr to combine summary statistics for all quantitative variables into one data frame. The .id argument will be especially helpful in adding the variable names!\n\n\n\n\n\n\n\n\n\n\n\nImportantConsider pivoting !\n\n\n\nThe output would be easier for the reader to understand if the summary statistics were rows and the variable names were columns.\n\n\n\n\n\n\nSolution\n\n\ndiamonds_num &lt;- diamonds %&gt;% \n  select(where(is.numeric))\n\nmap(diamonds_num, .f = summ_stats) %&gt;% \n  bind_rows(.id = \"variable\") %&gt;% \n  pivot_longer(cols = -variable, \n               names_to = \"statistic\", \n               values_to = \"value\") %&gt;% \n  pivot_wider(names_from = variable, values_from = value)\n\n# A tibble: 4 × 8\n  statistic carat depth table price     x     y     z\n  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 mean      0.798 61.7  57.5  3933.  5.73  5.73 3.54 \n2 median    0.7   61.8  57    2401   5.7   5.71 3.53 \n3 sd        0.474  1.43  2.23 3989.  1.12  1.14 0.706\n4 iqr       0.64   1.5   3    4374.  1.83  1.82 1.13 \n\n\n\n\nWrite a for() loop to achieve the same result. Which do you prefer in terms of ease of code writing and readability?\n\n\n\nSolution\n\n\ndiamonds_summ_stats2 &lt;- vector(\"list\", length = ncol(diamonds_num))\n\nfor (i in seq_along(diamonds_num)) {\n    diamonds_summ_stats2[[i]] &lt;- summ_stats(diamonds_num[[i]])\n}\n\ndiamonds_summ_stats2 %&gt;%\n    set_names(colnames(diamonds_num)) %&gt;%\n    bind_rows(.id = \"variable\")\n\n# A tibble: 7 × 5\n  variable     mean  median       sd     iqr\n  &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;\n1 carat       0.798    0.7     0.474    0.64\n2 depth      61.7     61.8     1.43     1.5 \n3 table      57.5     57       2.23     3   \n4 price    3933.    2401    3989.    4374.  \n5 x           5.73     5.7     1.12     1.83\n6 y           5.73     5.71    1.14     1.82\n7 z           3.54     3.53    0.706    1.13",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Iterating Over Functions"
+    ]
+  },
+  {
+    "objectID": "unit-1/iterating-functions.html#multiple-inputs",
+    "href": "unit-1/iterating-functions.html#multiple-inputs",
+    "title": "Iterating Over Functions",
+    "section": "Multiple Inputs",
+    "text": "Multiple Inputs\npurrr also offers the pmap() family of functions that take multiple inputs and loops over them simultaneously. Let’s look at the purrr cheatsheet to look at graphical representations of how these functions work.\n\nstring_data &lt;- tibble(\n    string = c(\"apple\", \"banana\", \"cherry\"),\n    pattern = c(\"p\", \"n\", \"h\"),\n    replacement = c(\"P\", \"N\", \"H\")\n)\nstring_data\n\n# A tibble: 3 × 3\n  string pattern replacement\n  &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;      \n1 apple  p       P          \n2 banana n       N          \n3 cherry h       H          \n\npmap_chr(string_data, .f = str_replace_all)\n\n[1] \"aPPle\"  \"baNaNa\" \"cHerry\"\n\n\nNote how the column names in string_data exactly match the argument names in str_replace_all(). The iteration that is happening is across rows, and the multiple arguments in str_replace_all() are being matched by name.\nWe can also use pmap() to specify variations in some arguments but leave some arguments constant across the iterations:\n\nstring_data &lt;- tibble(\n    pattern = c(\"p\", \"n\", \"h\"),\n    replacement = c(\"P\", \"N\", \"H\")\n)\n\npmap_chr(string_data, str_replace_all, string = \"ppp nnn hhh\")\n\n[1] \"PPP nnn hhh\" \"ppp NNN hhh\" \"ppp nnn HHH\"\n\n\n\nExercises\n\nCreate 2 small examples that show how pmap() works with str_sub(). Your examples should:\n\n\nUse different arguments for string, start, and end\nUse different arguments for start and end but a fixed string\n\n\n\nSolution\n\n\nstring_data &lt;- tibble(\n    string = c(\"apple\", \"banana\", \"cherry\"),\n    start = c(1, 2, 4),\n    end = c(2, 3, 5)\n)\n\npmap_chr(string_data, str_sub)\n\n[1] \"ap\" \"an\" \"rr\"\n\nstring_data &lt;- tibble(\n    start = c(1, 2, 4),\n    end = c(2, 3, 5)\n)\npmap_chr(string_data, str_sub, string = \"abcde\")\n\n[1] \"ab\" \"bc\" \"de\"",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Iterating Over Functions"
+    ]
+  },
+  {
+    "objectID": "unit-1/api.html",
+    "href": "unit-1/api.html",
+    "title": "Application Programming Interfaces (APIs)",
+    "section": "",
+    "text": "Now that we’ve talked about the JSON format for data files, it’s time we talked about one of the primary vehicles for them: APIs.",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Application Programming Interfaces (APIs)"
+    ]
+  },
+  {
+    "objectID": "unit-1/api.html#required-video-what-is-an-api",
+    "href": "unit-1/api.html#required-video-what-is-an-api",
+    "title": "Application Programming Interfaces (APIs)",
+    "section": "🎥 Required Video: What is an API?",
+    "text": "🎥 Required Video: What is an API?\n\n\n\n\n\n\nTip\n\n\n\nThis is the tip of the iceberg when it comes to APIs, but it will suffice to enable a lot of cool things for us. The video above used some nice examples like the restaurant and travel services, but there are APIs for accessing all kinds of data out there…like Facebook, Twitter, Google Maps, etc.\n\n\nFor our class we’re not interested in creating APIs, but mostly using them to access data that we otherwise couldn’t get our hands on…at least not as easily.",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Application Programming Interfaces (APIs)"
+    ]
+  },
+  {
+    "objectID": "unit-1/api.html#required-reading-r-api-tutorial",
+    "href": "unit-1/api.html#required-reading-r-api-tutorial",
+    "title": "Application Programming Interfaces (APIs)",
+    "section": "📖 Required Reading: R API Tutorial",
+    "text": "📖 Required Reading: R API Tutorial\n\n\n\n\n\n\nWarningWrong URL\n\n\n\nThe tutorial references the wrong link to access the API on the number of people in space. The correct link is: http://api.open-notify.org/astros.json",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Application Programming Interfaces (APIs)"
+    ]
+  },
+  {
+    "objectID": "unit-1/api.html#check-in-apis",
+    "href": "unit-1/api.html#check-in-apis",
+    "title": "Application Programming Interfaces (APIs)",
+    "section": "Check-in: APIs",
+    "text": "Check-in: APIs\n\nWhat two packages did the tutorial make use of?\n\n\nrvest and jsonlite\nhttr and jsonlite\nhttr and rvest\nhttr and tidyjson\nXML and rvest\n\n\nWhat type of request will we likely start with when getting data from an API?\n\n\nPULL()\nGIMME()\nGET()\nSUMMON()\n\n\nIf GET() successfully requested information from the API, what status should you see in the response object?\nHow many people are currently aboard the International Space Station?\n\n\nlibrary(httr)\nlibrary(tidyjson)\nlibrary(jsonlite)\nlibrary(tidyverse)\n\nres &lt;- GET(\"http://api.open-notify.org/astros.json\")\n\n## Using jsonlite\nspace &lt;- res$content %&gt;% \n  rawToChar() %&gt;% \n  fromJSON()\n\n## Using tidyjson\njson_tbl &lt;- res$content %&gt;% \n  rawToChar() %&gt;% \n  as.tbl_json()\n\njson_tbl %&gt;% \n  spread_all() %&gt;% \n  enter_object(\"people\") %&gt;% \n  gather_array() %&gt;%       # if it's a JSON array\n  spread_all() %&gt;% \n  select(name)\n\n## Using unnest_longer & unnest_wider\nspace &lt;- res$content %&gt;% \n  rawToChar() %&gt;% \n  fromJSON()\n\nlist(space) %&gt;%\n  tibble(data = .) %&gt;%\n  unnest_wider(data) %&gt;%        \n  unnest_longer(people) %&gt;%     \n  unnest_wider(people) %&gt;% \n  filter(craft == \"ISS\")",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Application Programming Interfaces (APIs)"
+    ]
+  },
+  {
+    "objectID": "set-up/setup-discord.html",
+    "href": "set-up/setup-discord.html",
+    "title": "Using Discord 101",
+    "section": "",
+    "text": "Discord is a platform for text chatting, voice chatting, and screen sharing. We will be using Discord as a group “workspace” for this class.\nJoin the Stat 541 Server to start experimenting with the interface. When you join the server, you will be given some suggestions to get started.\n\nWe recommend you click through these - and in particular, it is probably a good idea to download the desktop version of Discord."
+  },
+  {
+    "objectID": "set-up/setup-discord.html#what-is-discord",
+    "href": "set-up/setup-discord.html#what-is-discord",
+    "title": "Using Discord 101",
+    "section": "",
+    "text": "Discord is a platform for text chatting, voice chatting, and screen sharing. We will be using Discord as a group “workspace” for this class.\nJoin the Stat 541 Server to start experimenting with the interface. When you join the server, you will be given some suggestions to get started.\n\nWe recommend you click through these - and in particular, it is probably a good idea to download the desktop version of Discord."
+  },
+  {
+    "objectID": "set-up/setup-discord.html#setting-up-your-account",
+    "href": "set-up/setup-discord.html#setting-up-your-account",
+    "title": "Using Discord 101",
+    "section": "2 Setting up your account",
+    "text": "2 Setting up your account\n\nVerify your email\nTo use this Discord server, you must have a verified email.\nNobody (including your professors) will be able to see this email, and it does not have to be your Cal Poly email. This is simply to keep the server from being overrun by temporary accounts.\n\n\nCreate your identity\nThe first thing you should do is decide what name and picture you would like to use.\n\nWe would like to strongly encourage you to use your real name and picture, so that we can get to know you. However, if you prefer to remain anonymous, you are free to do so.\n\n(Please do not be like Regina and use the name of another student, however! This kind of impersonation will result in a permanent ban from the server.)\n\n\nDecide about privacy and notifications\nThe default settings on the channel are probably just fine for you. Feel free to make any changes that work for you, though.\nYou can change your message notifications:\n\nYou can edit your privacy settings, although most things are already private:\n\n\n\nConnect other apps\nYou can connect other apps to Discord, either for productivity or just for fun.\n\nDr. Bodwin has connected her Spotify, so you can listen along with her music and/or judge her taste."
+  },
+  {
+    "objectID": "set-up/setup-discord.html#using-the-channels",
+    "href": "set-up/setup-discord.html#using-the-channels",
+    "title": "Using Discord 101",
+    "section": "3 Using the Channels",
+    "text": "3 Using the Channels\nThe server is made up of many channels. Some are text chatrooms, while some are “Voice Channels” that connect you via audio to everyone else in the channel.\n\nText Channels\nUse the #general channel for anything and everything:\n\nIf your question is about course logistics, rather than the material itself, consider using the #class-logistics channel:\n\nYou can use the specific weekly channels to ask questions about the material…\n\n… or the specific lab assignment.\n\nNotice that you can use tick marks (```), like in R Markdown, to make your code appear in a formatted code box.\n\n\nVoice Channels\nTo join a voice channel, simply click it! Make sure you are careful about when you are muted or unmuted.\n\nThe extra “Side Chat” channels are limited to 4 or 8 people, if you would like to start an impromptu study conversation without being heard by the professors and/or the rest of the class. (We’ll only drop in if you invite us!)\nVoice channels can also be used for people to “Go Live”, and share their screen with everyone else.\n\nWhile this will usually be something professors use to demonstrate code, you can go live, too! But you may need to download the desktop version of Discord to do so.\n\n\nPrivate messages\nIt is also easy to send private messages, to your professor(s) or to each other. These private messages can also easily be used to launch a private video chat and/or screen sharing."
+  },
+  {
+    "objectID": "set-up/setup-discord.html#creating-your-own-server",
+    "href": "set-up/setup-discord.html#creating-your-own-server",
+    "title": "Using Discord 101",
+    "section": "4 Creating your own server",
+    "text": "4 Creating your own server\nLast but not least - if you have an established study group you like to work with, and you want to use Discord to communicate without the distraction or invasion of the rest of the class, feel free to create your very own server! You can easily hop between servers during work parties, to ask each other questions or just to take a break and chat about life."
+  },
+  {
+    "objectID": "portfolio/portfolio-instructions.html",
+    "href": "portfolio/portfolio-instructions.html",
+    "title": "Final Portfolio Instructions",
+    "section": "",
+    "text": "GitHub is an incredibly useful tool for project management and collaboration. It also has several useful features for professional promotion: you can host your own site on github using GitHub pages, describe yourself using a GitHub developer profile, and even use resume.github.io to generate a resume summary of your activity on GitHub (you must opt-in by starring the project page).\nThe development of Quarto has made it incredibly simple to generate websites, which can be easily hosted by GitHub Pages.",
+    "crumbs": [
+      "Portfolio",
+      "Final Portfolio Instructions"
+    ]
+  },
+  {
+    "objectID": "portfolio/portfolio-instructions.html#instructions-for-creating-a-personal-website",
+    "href": "portfolio/portfolio-instructions.html#instructions-for-creating-a-personal-website",
+    "title": "Final Portfolio Instructions",
+    "section": "Instructions for Creating a Personal Website",
+    "text": "Instructions for Creating a Personal Website\nIf you’ve never made a personal website, you will need to create one! There are so many resources for creating Quarto websites, but my absolute favorite one’s are from Sam Shanny-Csik.\nFollow this step-by-step guide for creating a new Quarto website: &lt;https://ucsb-meds.github.io/creating-quarto-websites/\n\n\n\n\n\n\n\n\nImportantName your project &lt;YourGitHubUsername&gt;.github.io\n\n\n\nWe’re going to deploy websites using GitHub pages, and it would be nice if your website had a professional name! I would recommend using your username, unless you chose a username that isn’t very descriptive or unique (e.g., brandonk04). If this is the case, I would recommend you use a more descriptive name for your project (e.g., brandon-kim-04).\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nI would strongly recommend this folder living inside your broader “STAT 541” folder, at least for now!",
+    "crumbs": [
+      "Portfolio",
+      "Final Portfolio Instructions"
+    ]
+  },
+  {
+    "objectID": "portfolio/portfolio-instructions.html#making-changes-to-an-existing-website",
+    "href": "portfolio/portfolio-instructions.html#making-changes-to-an-existing-website",
+    "title": "Final Portfolio Instructions",
+    "section": "Making Changes to an Existing Website",
+    "text": "Making Changes to an Existing Website\nSo you already have a personal website? Great! Let’s get started making blog posts for your website!\nWe’re going to follow another one of Sam Shanny-Csik’s guides for integrating blog posts into your existing website:\nhttps://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/\n\n\n\n\n\n\nImportant\n\n\n\nI’m expecting that your posts are contained in a portfolio folder, so they are easy for me to find.\n\n\nBy the end of the quarter, you should have seven blog posts for the following projects you’ve completed:\n\nAdvanced Visualizations\nQuarto Dashboards (Static)\nQuarto Dashboards (Dynamic)\nWriting Efficient Functions\nJSON Data & APIs\nWebscraping\nGenerative Art",
+    "crumbs": [
+      "Portfolio",
+      "Final Portfolio Instructions"
+    ]
+  },
+  {
+    "objectID": "portfolio/portfolio-instructions.html#additional-styling-options",
+    "href": "portfolio/portfolio-instructions.html#additional-styling-options",
+    "title": "Final Portfolio Instructions",
+    "section": "Additional Styling Options",
+    "text": "Additional Styling Options\nIn case you are interested in styling your website further, I would recommend looking over this presentation on using .scss and .sass files.",
+    "crumbs": [
+      "Portfolio",
+      "Final Portfolio Instructions"
+    ]
+  },
+  {
+    "objectID": "labs/lab-9.html",
+    "href": "labs/lab-9.html",
+    "title": "Lab 9",
+    "section": "",
+    "text": "This lab is individual, but you are still encouraged to work and discuss with your peers.\nFor this lab, you will submit two pieces of art:\n\nOne piece must be made using ordinary plotting functions on data. (similar to the art made in the first reading)\nOne piece must be completely generative. You may use packages from the readings for this, but of course, do not simply turn in the default results of a single function. :)\n\nBoth art pieces must also include:\n\nA title\nA museum-style description. Feel free to be overly dramatic with this, if you want to - it doesn’t need to involve any true art theory.\nA description of the code choices and how they influenced the appearance of the piece. For example, you might say, “By setting the number of recursions to 100, we repeat the pattern 100 times in the space of the image.”"
+  },
+  {
+    "objectID": "labs/lab-7.html",
+    "href": "labs/lab-7.html",
+    "title": "Lab 7",
+    "section": "",
+    "text": "One of the Open-Notify APIs provides predictions of pass times for a given location when given the corresponding latitude, longitude, and altitude are given:\nPass Times API\n\n\nYou can find the latitudes and longitudes for the U.S. state capitals at this site.\n\nUse the API to get the next three predicted pass times for all of the U.S. state capitals. Organize all of this information into a nice data frame (or data frame-like object) that will be easy to use for mapping.\n\n\n\n\n\nMap the U.S. state capitals using leaflet.\nFind an image of your choosing to use as the marker icon, that’s relevant for these data. Maybe a spaceship? 🚀 Or an astronaut? Or the moon?\nThe hover-over information for each marker should include the name of the state capital and the soonest predicted pass time. The click information should include the name of the state capital and all three predicted pass times. Make sure these times are in an easy-to-read format.\n\n\n\n\nCheck out this video for adding polylines to a leaflet map.\n\nOverlay lines on your map that connect the U.S. state capitals in order of pass times (essentially east to west) so that we can see the expected pass order.\n\n\n\n\nMake sure your final file is carefully formatted, so that each analysis is clear and concise. Be sure your knitted .html file shows all your source code, including your function definitions."
+  },
+  {
+    "objectID": "labs/lab-7.html#the-open-notify-api",
+    "href": "labs/lab-7.html#the-open-notify-api",
+    "title": "Lab 7",
+    "section": "",
+    "text": "One of the Open-Notify APIs provides predictions of pass times for a given location when given the corresponding latitude, longitude, and altitude are given:\nPass Times API\n\n\nYou can find the latitudes and longitudes for the U.S. state capitals at this site.\n\nUse the API to get the next three predicted pass times for all of the U.S. state capitals. Organize all of this information into a nice data frame (or data frame-like object) that will be easy to use for mapping.\n\n\n\n\n\nMap the U.S. state capitals using leaflet.\nFind an image of your choosing to use as the marker icon, that’s relevant for these data. Maybe a spaceship? 🚀 Or an astronaut? Or the moon?\nThe hover-over information for each marker should include the name of the state capital and the soonest predicted pass time. The click information should include the name of the state capital and all three predicted pass times. Make sure these times are in an easy-to-read format.\n\n\n\n\nCheck out this video for adding polylines to a leaflet map.\n\nOverlay lines on your map that connect the U.S. state capitals in order of pass times (essentially east to west) so that we can see the expected pass order.\n\n\n\n\nMake sure your final file is carefully formatted, so that each analysis is clear and concise. Be sure your knitted .html file shows all your source code, including your function definitions."
+  },
+  {
+    "objectID": "labs/lab-6-alt.html",
+    "href": "labs/lab-6-alt.html",
+    "title": "Lab 6 - Alternative",
+    "section": "",
+    "text": "The exercises from the functions below were pulled from the newest version of R for Data Science. Specifically, from Chapters 25 and 26. For this “alternative” lab you will complete the exercises from the textbook, with the option of submitting a pull request to the repository for the textbook solutions."
+  },
+  {
+    "objectID": "labs/lab-6-alt.html#data-frame-functions",
+    "href": "labs/lab-6-alt.html#data-frame-functions",
+    "title": "Lab 6 - Alternative",
+    "section": "Data Frame Functions",
+    "text": "Data Frame Functions\nQuestion 5: Insert the data frame function you wrote from Lab 6 (either Exercise 1 or Exercise 2).\nFor Questions 6 - 10 you will write different functions which work with data similar to the nycflights13 data.\nQuestion 6: Write a filter_severe() function that finds all flights that were cancelled (i.e. is.na(arr_time)) or delayed by more than an hour.\nQuestion 7: Write a summarize_severe() function that counts the number of cancelled flights and the number of flights delayed by more than an hour.\nQuestion 8: Modify your filter_severe() function to allow the user to supply the number of hours that should be used to filter the flights that were cancelled or delayed.\nQuestion 9: Write a summarize_weather() function that summarizes the weather to compute the minimum, mean, and maximum, of a user supplied variable.\nQuestion 10: Write a standardize_time() function that converts the user supplied variable that uses clock time (e.g., dep_time, arr_time, etc.) into a decimal time (i.e. hours + (minutes / 60))."
+  },
+  {
+    "objectID": "labs/lab-3.html",
+    "href": "labs/lab-3.html",
+    "title": "Lab 3",
+    "section": "",
+    "text": "For this lab assignment, you are tasked with transforming some aspect of the 2020 Wellcome Global Health Monitor Report or the 2018 Global Health Monitor Report into a dashboard. Anything in either of these reports is fair game, so find something that inspires you!\nIn case you are drawing a blank, here are some ideas:"
+  },
+  {
+    "objectID": "labs/lab-3.html#dashboard-requirements",
+    "href": "labs/lab-3.html#dashboard-requirements",
+    "title": "Lab 3",
+    "section": "Dashboard Requirements",
+    "text": "Dashboard Requirements\nThe dashboard you create must have the following:\n\na navigation logo (similar to the Olympic rings)\nicons to your socials (e.g., LinkedIn, Instagram, Twitter, email)\nat least two pages\nat least two tabsets (can be on just one page)\nat least two cards with quick information (e.g., % of people across the world who have faith in vaccines)\nat least on plot made with leaflet\na non-default theme\nnon-default plot colors\n\n\n\n\n\n\n\nWarningCoordinate Colors\n\n\n\nThe colors in your styled dashboard should match the colors in your plots!"
+  },
+  {
+    "objectID": "labs/lab-3.html#resources-for-creating-your-dashboard",
+    "href": "labs/lab-3.html#resources-for-creating-your-dashboard",
+    "title": "Lab 3",
+    "section": "Resources for Creating Your Dashboard",
+    "text": "Resources for Creating Your Dashboard\nThere are two additional videos by Dr. Mine Çetinkaya-Rundel that you will need to watch in order to create your dashboard."
+  },
+  {
+    "objectID": "labs/lab-3.html#submission",
+    "href": "labs/lab-3.html#submission",
+    "title": "Lab 3",
+    "section": "Submission",
+    "text": "Submission\nYou are required to submit both the link to your GitHub repository containing your source code and a link to your published dashboard. You are expected to publish your dashboard through Quarto Pub, a free publishing service for static content created with Quarto.\n\n\n\n\n\n\n\n\nNoteSign-up for Quarto Pub\n\n\n\nYou will need to sign up for a free Quarto Pub account. I would highly recommend you link your Quarto Pub account with your GitHub account, since the documents you will be publishing should live in a GitHub repository!\n\n\n\n\n\n\n\n\n\n\n\nWarningDo not use GitHub actions!\n\n\n\nYou are expected to publish the content rendered on your local machine. Do not follow the instructions for using GitHub Actions to publish—that’s too spicy!"
+  },
+  {
+    "objectID": "labs/lab-1.html",
+    "href": "labs/lab-1.html",
+    "title": "Lab 1 - Quarto Warmup & STAT 331 Review",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(ggridges)",
+    "crumbs": [
+      "STAT 331 Review",
+      "Lab 1 - Quarto Warmup & STAT 331 Review"
+    ]
+  },
+  {
+    "objectID": "labs/lab-1.html#quarto",
+    "href": "labs/lab-1.html#quarto",
+    "title": "Lab 1 - Quarto Warmup & STAT 331 Review",
+    "section": "Quarto",
+    "text": "Quarto\nFirst, let’s make sure you know how to use Markdown formatting to style a Quarto document.\n\nMake this text bold.\nMake this text italicized.\nMake these into a bullet point list:\n\nApples Bananas Potatoes\n\nEdit the YAML to remove warning messages from being output in the rendered HTML file\nUsing code chunk options, make it so this chunk shows the plot but not the source code:\n\n\nggplot(data = mpg, \n       mapping = aes(y = manufacturer, x = hwy)) + \n  geom_boxplot() +\n  labs(x = \"\",\n       y = \"\", \n       title = \"Highway Milage (mpg) for Different Car Manufacturers\"\n       )\n\n\nUsing code chunk options, remove the messages about bandwidth geom_density_ridges() chose to use:\n\n\nggplot(data = mpg, \n       mapping = aes(y = manufacturer, x = hwy)) + \n  geom_density_ridges() +\n  labs(x = \"\",\n       y = \"\", \n       title = \"Highway Milage (mpg) for Different Car Manufacturers\"\n       )\n\n\nUsing code chunk options, make it so that these plots are printed side-by-side:\n\n\nggplot(data = mpg, \n       mapping = aes(y = manufacturer, x = hwy)) + \n  geom_boxplot() +\n  labs(x = \"\",\n       y = \"\", \n       title = \"Highway Milage (mpg) for Different Car Manufacturers\"\n       )\n\nggplot(data = mpg, \n       mapping = aes(y = manufacturer, x = hwy)) + \n  geom_density_ridges() +\n  labs(x = \"\",\n       y = \"\", \n       title = \"Highway Milage (mpg) for Different Car Manufacturers\"\n       )\n\n\nUsing code chunk options, make it so this chunk shows the code but not the output:\n\n\n2 + 2\n\n\nUsing code chunk options, make it so the file can still knit even though this chunk has an error\n\n\n2 + a\n\n\nUsing code chunk options, create a descriptive label for each of the code chunks above.",
+    "crumbs": [
+      "STAT 331 Review",
+      "Lab 1 - Quarto Warmup & STAT 331 Review"
+    ]
+  },
+  {
+    "objectID": "labs/lab-1.html#data-wrangling-review",
+    "href": "labs/lab-1.html#data-wrangling-review",
+    "title": "Lab 1 - Quarto Warmup & STAT 331 Review",
+    "section": "Data Wrangling Review",
+    "text": "Data Wrangling Review\nSince you already seen some ggplots, let’s do a bit of review on data handling. In this class, we will exclusively make use of tools from the tidyverse suite of packages to perform our data cleaning and wrangling operations. If you are less familiar with these packages or it’s been some time since you used them, I would strongly recommend referencing the function documentation!\nFor these problems, we will continue to work with the mpg data frame, making various changes to the data to clean it up.\n\nThe fl variable describes the type of fuel for each car, with levels: p, r, e, d, and c. Do some research into what each of these labels mean! Then, use the if_else() function to create a new variable (fuel_type) with two levels: petrol (any car using petrolium-based gas) and alternative energy (any car not using petrolium-based gas).\n\n\nThe drv variable describes if the car has front drive (f), rear drive (r), or four wheel drive (4). Let’s make better labels for these values! Specifically, use the case_when() function to change the drv variable to have the following levels: front, rear, four wheel.\n\n\nThe trans variable contains two pieces of information, (1) the transmission style (auto or manual) and the specific type of transmission (e.g., l5, m5). Using the separate_wider_delim() function, create two new variables from trans, (1) trans_type containing the specific type of transmission of each car (e.g., l5), and (2) trans_style the style of the transmission (e.g., auto). Hint: You will need to deal with the stray parenthesis!",
+    "crumbs": [
+      "STAT 331 Review",
+      "Lab 1 - Quarto Warmup & STAT 331 Review"
+    ]
+  },
+  {
+    "objectID": "labs/lab-1.html#getting-to-know-your-classmates",
+    "href": "labs/lab-1.html#getting-to-know-your-classmates",
+    "title": "Lab 1 - Quarto Warmup & STAT 331 Review",
+    "section": "Getting to know your classmates",
+    "text": "Getting to know your classmates\n\nFind someone who took Stat 331 from a different professor than you. Compare your experiences. Tell me their name and professor. List one or two things that you think you learned more about, and one or two things that they learned more about.\nFind someone in the class who does not share your birth month. Tell me their name and birthday, and use R to find out how many days apart your birthdays are.",
+    "crumbs": [
+      "STAT 331 Review",
+      "Lab 1 - Quarto Warmup & STAT 331 Review"
+    ]
+  },
+  {
+    "objectID": "course-materials/syllabus.html",
+    "href": "course-materials/syllabus.html",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "",
+    "text": "Of course, if your question is truly private, such as a grade inquiry or a personal concern, you may send me a private email. To help both you and me, here are some specific expectations about emails:"
+  },
+  {
+    "objectID": "course-materials/syllabus.html#course-objectives",
+    "href": "course-materials/syllabus.html#course-objectives",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "1.1 Course Objectives",
+    "text": "1.1 Course Objectives\nAfter taking this course, you will be able to:\nCreate\n\ncomplex and reproducible data reports, that include interactive and / or dynamic elements.\ncompelling data visualizations with interactive elements.\n\nUse iteration to\n\nobtain data through APIs and webscraping.\ncreate generative art."
+  },
+  {
+    "objectID": "course-materials/syllabus.html#prerequisites",
+    "href": "course-materials/syllabus.html#prerequisites",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "1.2 Prerequisites",
+    "text": "1.2 Prerequisites\nI expect you to enter this class with:\n\nComfort in intermediate level R skills.\nStatistical knowledge at the Year 2 level; i.e., comfort with the concepts and basic math of multiple linear regression.\nFamiliarity with computers and technology (e.g., Internet browsing, word processing, opening/saving files, converting files to PDF format, sending and receiving e-mail, etc.).\nA positive attitude, a curious mind, and a respect for ethical use of data science tools."
+  },
+  {
+    "objectID": "course-materials/syllabus.html#practice-activities-and-check-ins-due-tuesdays-by-midnight",
+    "href": "course-materials/syllabus.html#practice-activities-and-check-ins-due-tuesdays-by-midnight",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "2.1 Practice Activities and Check-ins (Due Tuesdays by midnight)",
+    "text": "2.1 Practice Activities and Check-ins (Due Tuesdays by midnight)\nThese small “quizzes” or activities are posted each week, to give you a way to check your milestones on the main topics of the week.\nYou get full credit for any reasonable effort on these; I will not be grading them carefully or giving feedback.\nCheck-ins are designed so that they can be done on your own, using the Coursework guides, in advance of class. Practice activities are meant to be done in class during or after lecture."
+  },
+  {
+    "objectID": "course-materials/syllabus.html#lab-assignments-due-mondays-by-5pm",
+    "href": "course-materials/syllabus.html#lab-assignments-due-mondays-by-5pm",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "2.2 Lab Assignments (Due Mondays by 5pm)",
+    "text": "2.2 Lab Assignments (Due Mondays by 5pm)\nEach week, you will have a “lab” assignment, bringing together the week’s skills.\nThese assignments are considered to be due every Monday by 5pm, so you have time to ask questions during student hours on Monday.\n\nSuccess / Growing Grading\nI expect that you will approach each lab assignment seriously, investing the necessary time and energy to prepare your responses. Different from what you may have experienced, lab assignments are graded for “proficiency” of specific learning targets, which describe what you should be able to do after taking this course. You’ll receive a score for each problem on an assignment according to the Success / Growing rubric below, as well as feedback to help you improve.\n\n\n\n\n\n\n\nScore\nJustification\n\n\n\n\nSuccess\nThe solution to the problem is correct, legible, and easy to follow, with all reasoning provided. Any error does not bring into question your understanding of the topic.\n\n\nGrowing\nThe solution shows growth toward mastering the topic; however, elements of the solution bring into question your understanding of the topic, and thus further attention is needed."
+  },
+  {
+    "objectID": "course-materials/syllabus.html#final-portfolio-due-sunday-june-7",
+    "href": "course-materials/syllabus.html#final-portfolio-due-sunday-june-7",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "2.3 Final Portfolio (Due Sunday, June 7)",
+    "text": "2.3 Final Portfolio (Due Sunday, June 7)\nIn lieu of exams, you will assemble a portfolio demonstrating your level of proficiency in each of the learning goals for this course. Examples of your code can only be taken from the lab assignments or the projects; i.e., not from check-ins or practice activities. On Canvas you can find a detailed description of the major and minor learning goals, how you can demonstrate your proficiency, and what is required for particular course grades.\nNote that the portfolio is not simply a list of links to your code; it also requires a brief discussion of how that code demonstrates the skill. There are also general reflection and summary questions involved. That is to say, although you will not necessarily need to write code, the portfolio will take a good amount of time and effort to assemble; plan accordingly.\n\n\n\n\n\n\nCautionIncremental Progress\n\n\n\nYou can do your future self a big favor by working on your portfolio progressively throughout the quarter, instead of leaving it all for Finals Week. My suggestion is that each week, you add everything you can to your portfolio that you demonstrated in that week."
+  },
+  {
+    "objectID": "course-materials/syllabus.html#what-if-i-have-accommodations-or-feel-that-accommodations-would-be-beneficial-to-my-learning",
+    "href": "course-materials/syllabus.html#what-if-i-have-accommodations-or-feel-that-accommodations-would-be-beneficial-to-my-learning",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "5.1 What if I have accommodations or feel that accommodations would be beneficial to my learning?",
+    "text": "5.1 What if I have accommodations or feel that accommodations would be beneficial to my learning?\nI enthusiastically support the mission of Disability Resource Center to make education accessible to all. I design all my courses with accessibility at the forefront of my thinking, but if you have any suggestions for ways I can make things more accessible, please let me know. Come talk to me if you need accommodation for your disabilities. I honor self-diagnosis: let’s talk to each other about how we can make the course as accessible as possible. See also the standard syllabus statements, which include more information about formal processes."
+  },
+  {
+    "objectID": "course-materials/syllabus.html#im-having-difficulty-paying-for-food-and-rent-what-can-i-do",
+    "href": "course-materials/syllabus.html#im-having-difficulty-paying-for-food-and-rent-what-can-i-do",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "5.2 I’m having difficulty paying for food and rent, what can I do?",
+    "text": "5.2 I’m having difficulty paying for food and rent, what can I do?\nIf you have difficulty affording groceries or accessing sufficient food to eat every day, or if you lack a safe and stable place to live, and you believe this may affect your performance in the course, I urge you to contact the Dean of Students for support. Furthermore, please notify me if you are comfortable in doing so. This will enable me to advocate for you and to connect you with other campus resources."
+  },
+  {
+    "objectID": "course-materials/syllabus.html#my-mental-health-is-impairing-my-ability-to-engage-in-my-classes-what-should-i-do",
+    "href": "course-materials/syllabus.html#my-mental-health-is-impairing-my-ability-to-engage-in-my-classes-what-should-i-do",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "5.3 My mental health is impairing my ability to engage in my classes, what should I do?",
+    "text": "5.3 My mental health is impairing my ability to engage in my classes, what should I do?\nNational surveys of college students have consistently found that stress, sleep problems, anxiety, depression, interpersonal concerns, death of a significant other and alcohol use are among the top ten health impediments to academic performance. If you are experiencing any mental health issues, I and Cal Poly are here to help you. Cal Poly’s Counseling Services (805-756-2511) is a free and confidential resource for assistance, support and advocacy."
+  },
+  {
+    "objectID": "course-materials/syllabus.html#someone-is-threatening-me-what-can-i-do",
+    "href": "course-materials/syllabus.html#someone-is-threatening-me-what-can-i-do",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "5.4 Someone is threatening me, what can I do?",
+    "text": "5.4 Someone is threatening me, what can I do?\nI will listen and believe you if someone is threatening you. I will help you get the help you need. I commit to changing campus culture that responds poorly to dating violence and stalking."
+  },
+  {
+    "objectID": "course-materials/syllabus.html#what-if-i-cant-arrange-for-childcare",
+    "href": "course-materials/syllabus.html#what-if-i-cant-arrange-for-childcare",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "5.5 What if I can’t arrange for childcare?",
+    "text": "5.5 What if I can’t arrange for childcare?\nIf you are responsible for childcare on short notice, you are welcome to bring children to class with you. If you are a lactating parent, you many take breaks to feed your infant or express milk as needed. If I can support yo in navigating parenting, coursework, and other obligations in any way, please let me know."
+  },
+  {
+    "objectID": "course-materials/syllabus.html#what-if-i-need-to-miss-class",
+    "href": "course-materials/syllabus.html#what-if-i-need-to-miss-class",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "6.1 What if I need to miss class?",
+    "text": "6.1 What if I need to miss class?\nI encourage you to attend every class session, but policies are for narcs. I put a great deal of time into making each class session engaging and worth your time. Attendance in this course is not explicitly required, but it degrades your classmates’ trust in you when they don’t see you in class.\nPlease do not email me letting me know when you are missing class - you will not lose points for this, but it is your responsibility to catch up on the materials and complete the in-class activities. Here’s what you should do if you do miss a class:\n\nTalk to a classmate to figure out what information you missed\nCheck Canvas for any necessary handouts or changes to assignments\nStop by student hours with any questions you have after reviewing notes and handouts\n\nIf you miss a bunch of classes, please come talk to me. I’m working from the assumption that you care and are trying, but something is getting in your way (health issues? depression / anxiety? college stress?); let’s figure out what that is and how I can help."
+  },
+  {
+    "objectID": "course-materials/syllabus.html#what-if-i-need-to-turn-something-in-late",
+    "href": "course-materials/syllabus.html#what-if-i-need-to-turn-something-in-late",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "6.2 What if I need to turn something in late?",
+    "text": "6.2 What if I need to turn something in late?\nAssignments are expected to be submitted on time. However, every student will be permitted to submit up to three individual assignments up to 3-days late, by completing a deadline extension form. Similar to the “real world,” deadline extensions must be requested before an assignment is due.\nWhen you complete the deadline extension form you will be required to state (1) what assignment you need an extension for, and (2) your proposed new deadline. Your new deadline must be within 3-days of the original deadline.\nAll deadline extensions must be done through the form, so I can keep track of who has used their allotment of extensions. If you are registered with DRC to have deadline extensions, you are required to complete a deadline extension request and make a note if your extension is related to a need related to DRC accommodations.\nAny late work is required to have a deadline extension request, meaning if you do not complete a deadline extension request for an assignment you are not permitted to turn it in late. The link to the deadline extension form can be found in Canvas in the Course Information module (at the top of the page).\n\n\n\n\n\n\nWarningDeadline extensions are not permitted for the Final Portfolio!"
+  },
+  {
+    "objectID": "course-materials/syllabus.html#do-i-need-to-bring-a-computer-to-class",
+    "href": "course-materials/syllabus.html#do-i-need-to-bring-a-computer-to-class",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "6.3 Do I need to bring a computer to class?",
+    "text": "6.3 Do I need to bring a computer to class?\nYou are allowed to use technology in the classroom! In fact, we will often do so as part of in-class activities. Our class is held in a room with monitors, but no computers. So, bringing a laptop is critical!"
+  },
+  {
+    "objectID": "course-materials/syllabus.html#how-can-i-expect-to-be-treated-in-this-course",
+    "href": "course-materials/syllabus.html#how-can-i-expect-to-be-treated-in-this-course",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "7.1 How can I expect to be treated in this course?",
+    "text": "7.1 How can I expect to be treated in this course?\nFollowing Ihab Hassan, I strive to teach statistics so that people will stop killing each other. In my classroom, diversity and individual differences are a sources of strength. One of the greatest failures of Statistics, historically and in the present, has been the exclusion of voices from the field. Everyone here can learn from each other, and doing so is vital to the structure of the course. Significant portions of this course involve group work and discussion in class. Some discussions will touch on sensitive topics. So that everyone feels comfortable participating in these activities, we must listen to each other and treat each other with respect. Any attitude or belief that espouses the superiority of one group of people over another is not welcome in my classroom. Such beliefs are directly destructive to the sense of community that we strive to create, and will sabotage our ability to learn from each other (and thus sabotage the entire structure of the course).\nIn this classroom, I expect you to be polite, respectful, inclusive, and open-minded.\nSome examples of how to be a good classmate include:\n\nDoing your best to avoid language that is ableist, racist, sexist, or classist; or that perpetuates harmful stereotypes.\nAddressing your classmates by their preferred name and pronouns.\nDoing your best to be aware of your own biases, privileges, and areas of ignorance.\nListening to others’ opinions, and making an effort to understand their perspective.\nTaking the time to help your classmates grasp concepts or solve problems, even when you are ready to move on.\n\nIn summary: Be good to each other."
+  },
+  {
+    "objectID": "course-materials/syllabus.html#what-constitutes-plagiarism-in-a-statistics-class",
+    "href": "course-materials/syllabus.html#what-constitutes-plagiarism-in-a-statistics-class",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "7.2 What constitutes plagiarism in a statistics class?",
+    "text": "7.2 What constitutes plagiarism in a statistics class?\nYou are encouraged to work with other classmates on all but the exam portions of this class. You are also encouraged (realistically, required!) to make use of online resources to accomplish tasks.\nWhen dealing with code, follow these guidelines:\n\nNever copy-paste more than small snippets of code. That is, you might borrow a little three-line function from StackOverflow, but you should not copy over a full analysis you find on Kaggle.\nAttribute all code that is not completely your own. If you do borrow that StackOverflow snippet, provide a link to the source. If you reference a similar analysis for ideas, mention that in your description.\n\n\n\n\n\n\n\nWarningExplain Your Code\n\n\n\nA good rule for deciding if the code you are borrowing is plagiarism is: If I sat you down by yourself in a room with no internet, could you explain to me roughly what each line of code is doing?\n(In fact, this is exactly what I will do if I need to investigate possible cheating.)"
+  },
+  {
+    "objectID": "course-materials/syllabus.html#learning-to-code-with-chatgpt",
+    "href": "course-materials/syllabus.html#learning-to-code-with-chatgpt",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "7.3 Learning to Code with ChatGPT",
+    "text": "7.3 Learning to Code with ChatGPT\nNew AI models like Chat GPT offer a whole new world of online coding resources. This is exciting! In this class, you are allowed to use these tools like you would any other online coding support tool. (Note that this is not a typical policy; most of your other classes likely do not allow AI tools to be used.)\nIf you do use an AI tool to help you write or debug code, it is important that you document and cite this process. That is, you should save the “conversation” with the chatbot, to show how you used your knowledge of R coding to construct queries that lead to useful results.\nWhen you submit your portfolio, if you use AI-generated code in your examples, you will need to make an argument for how you are demonstrating mastery of the requisite skills, and the AI is only being used as support."
+  },
+  {
+    "objectID": "course-materials/syllabus.html#integrity-violations",
+    "href": "course-materials/syllabus.html#integrity-violations",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "7.4 Integrity Violations",
+    "text": "7.4 Integrity Violations\nIf you accidentally forget a small citation, or go a little overboard in how much you “borrow” from StackOverflow, you’ll get a warning. Any instance of willful and deliberate cheating will result in a failing grade in this class, full stop.\n\n\n\n\n\n\nWarningThe door swings both ways\n\n\n\nBe careful about being on the giving end as well as the taking end. For example: If you send your finished assignment to a friend, and that friend copies it, you have both just failed the course."
+  },
+  {
+    "objectID": "course-materials/syllabus.html#footnotes",
+    "href": "course-materials/syllabus.html#footnotes",
+    "title": "STAT 541: Advanced Statistical Computing",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nSee Section 3.0.2 for information on what you can expect when you email me.↩︎"
+  },
+  {
+    "objectID": "1810-review/tidyr-review.html",
+    "href": "1810-review/tidyr-review.html",
+    "title": "Data Joins and Transformations Review",
+    "section": "",
+    "text": "This module consists of readings reviewing material typically taught in STAT 331. It is possible you can skip over portions of this reading. It is your responsibility to decide which areas you need to review before diving into Stat 541.\nAnswer the following questions to see if you can safely skip this section.\nEach question focuses on the following data tables:\nIf you had a hard time answering these questions, I would recommend reviewing Section 1.1.\ncountry\nyear\ncases\npopulation\n\n\n\n\nAfghanistan\n1999\n745\n19987071\n\n\nAfghanistan\n2000\n2666\n20595360\n\n\nBrazil\n1999\n37737\n172006362\n\n\nBrazil\n2000\n80488\n174504898\n\n\nChina\n1999\n212258\n1272915272\n\n\nChina\n2000\n213766\n1280428583\nIf you had a hard time answering this question, I would recommend reviewing Section 1.2.2.\ncountry\nyear\ncases\npopulation\n\n\n\n\nAfghanistan\n1999\n745\n19987071\n\n\nAfghanistan\n2000\n2666\n20595360\n\n\nBrazil\n1999\n37737\n172006362\n\n\nBrazil\n2000\n80488\n174504898\n\n\nChina\n1999\n212258\n1272915272\n\n\nChina\n2000\n213766\n1280428583\nIf you had a hard time answering this question, I would recommend reviewing Section 1.3.1.\ncountry\nyear\ncases\npopulation\n\n\n\n\nAfghanistan\n1999\n745\n19987071\n\n\nAfghanistan\n2000\n2666\n20595360\n\n\nBrazil\n1999\n37737\n172006362\n\n\nBrazil\n2000\n80488\n174504898\n\n\nChina\n1999\n212258\n1272915272\n\n\nChina\n2000\n213766\n1280428583\nIf you had a hard time answering this question, I would recommend reviewing Section 1.3.2.\ncountry\nyear\ncases\npopulation\n\n\n\n\nAfghanistan\n1999\n745\n19987071\n\n\nAfghanistan\n2000\n2666\n20595360\n\n\nBrazil\n1999\n37737\n172006362\n\n\nBrazil\n2000\n80488\n174504898\n\n\nChina\n1999\n212258\n1272915272\n\n\nChina\n2000\n213766\n1280428583\nIf you had a hard time answering this question, I would recommend reviewing Section 1.2.1 and Section 2.1."
+  },
+  {
+    "objectID": "1810-review/tidyr-review.html#sec-tidy-data",
+    "href": "1810-review/tidyr-review.html#sec-tidy-data",
+    "title": "Data Joins and Transformations Review",
+    "section": "Tidy Data",
+    "text": "Tidy Data\n📖 Recommended Reading: R4DS Section 5.2 (Tidy data)\n\n\n\n\n\n\nNoteDo we always want our data in the same layout?\n\n\n\nThe concept of tidy data is useful for mapping variables from the data set to elements in a graph, specifications of a model, or aggregating to create summaries. However, what is considered to be “tidy data” format for one task, might not be in the correct “tidy data” format for a different task. It is important for you to consider the end goal when restructuring your data."
+  },
+  {
+    "objectID": "1810-review/tidyr-review.html#reshaping-data",
+    "href": "1810-review/tidyr-review.html#reshaping-data",
+    "title": "Data Joins and Transformations Review",
+    "section": "Reshaping Data",
+    "text": "Reshaping Data\nIt’s fairly common for data to come in forms which are convenient for either human viewing or data entry. Unfortunately, these forms aren’t necessarily the most friendly for analysis. There are two main “layouts” a dataset can have:\n\n“wide” format\n“long” format\n\nThe image below shows the same dataset presented in each layout.\n\nSometimes we will be given data that is in one layout and we will need to transform it into a different layout. This animation illustrates the process of going from a wide data layout to a long data layout, and how to go from a long data layout back to a wide data layout. Here, we are using the pivot_wider() and pivot_longer() functions from the tidyr package in R.\n\n\n\n© Garrett Aden Buie\n\n\nLet’s explore each of these formats in more depth\n\nLonger\n📖 Recommended Reading: R4DS Section 5.3 (Lengthening data)\n\n\n\nTable 4a and 4b are currently stored in a wide format, where the years are spread across multiple columns. We can use pivot_longer() to pivot these data to long format (with one column for all years).\n\npivot_longer(table4a, \n             cols = `1999`:`2000`, \n             names_to = \"year\", \n             values_to = \"cases\") \n\n# A tibble: 6 × 3\n  country     year   cases\n  &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt;\n1 Afghanistan 1999     745\n2 Afghanistan 2000    2666\n3 Brazil      1999   37737\n4 Brazil      2000   80488\n5 China       1999  212258\n6 China       2000  213766\n\n\n\n\n\n\n\n\nTip\n\n\n\nNotice that I’m surrounding 1999 and 2000 in back ticks (` `). I need to do this because a number is not a syntactically correct variable name, so using cols = 1999:2000 would not work!\nAlso note that the year column is currently considered to be a character data type, so we would likely need to mutate() it before we do our analysis!\n\n\n\n\nWider\n📖 Recommended Reading: R4DS Section 5.3 (Widening data)\n\n\n\nTable 2 is currently stored in a long format, where the case and population information is stored in a single column named type. We can use pivot_wider() to pivot these data to wide format (with one column for each statistic).\n\npivot_wider(table2, \n            names_from = type, \n            values_from = count)\n\n# A tibble: 6 × 4\n  country      year  cases population\n  &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;\n1 Afghanistan  1999    745   19987071\n2 Afghanistan  2000   2666   20595360\n3 Brazil       1999  37737  172006362\n4 Brazil       2000  80488  174504898\n5 China        1999 212258 1272915272\n6 China        2000 213766 1280428583\n\n\n\n\n\n\n\n\nTip\n\n\n\nNotice that I’m not using a cols argument for pivot_wider()! This is because pivot_wider() only modifies the columns specified in the names_from and values_from arguments."
+  },
+  {
+    "objectID": "1810-review/tidyr-review.html#separating-and-uniting",
+    "href": "1810-review/tidyr-review.html#separating-and-uniting",
+    "title": "Data Joins and Transformations Review",
+    "section": "Separating and Uniting",
+    "text": "Separating and Uniting\nIn addition to pivoting, tidyr provides tools to accomplish two additional tasks: separating variables into two different columns using separate(), and uniting (combining) two variables into one column using unite().\n\nseparate_wider_delim()\nTable 3 (and Table 5) has a rate column that includes information about both the cases and the population, separated with a / symbol. We can use separate_wider_delim() to create two separate columns for these variables.\n\nseparate_wider_delim(table3, \n                     cols = rate, \n                     delim = \"/\", \n                     names = c(\"cases\", \"population\"), \n                     cols_remove = TRUE\n                     ) \n\n# A tibble: 6 × 4\n  country      year cases  population\n  &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Afghanistan  1999 745    19987071  \n2 Afghanistan  2000 2666   20595360  \n3 Brazil       1999 37737  172006362 \n4 Brazil       2000 80488  174504898 \n5 China        1999 212258 1272915272\n6 China        2000 213766 1280428583\n\n\n\n\n\n\n\n\nTip\n\n\n\nNote that we could have also used separate_wider_regex() here to split on the / symbol. The patterns argument of separate_wider_regex() is a bit funky:\n\nseparate_wider_regex(table3, \n                     rate, \n                     patterns = c(cases = \"\\\\d+\", \"/\", population = \"\\\\d+\")\n                     ) \n\npatterns needs to be a named character vector where the names become column names and the values are regular expressions that match the contents of the vector. cases comes from the first one or more (+) digits \\\\d, then the split is made on the \\, and then population comes from the following one or more digits.\nPersonally, we think the delim option is a bit easier, but this is how it would work with regular expressions.\n\n\n\n\nunite()\nIn addition to having variables that need separating, Table 5 also has two variables (century and year) that need to be united (i.e., joined together). We can perform this action using the unite() function.\n\ntable5 |&gt;\n  unite(col = \"year\",\n        c(century, year),\n        sep = \"\"\n        ) |&gt; \n  separate_wider_delim(cols = rate, \n                       delim = \"/\", \n                       names = c(\"cases\", \"population\"), \n                       cols_remove = TRUE) \n\n# A tibble: 6 × 4\n  country     year  cases  population\n  &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Afghanistan 1999  745    19987071  \n2 Afghanistan 2000  2666   20595360  \n3 Brazil      1999  37737  172006362 \n4 Brazil      2000  80488  174504898 \n5 China       1999  212258 1272915272\n6 China       2000  213766 1280428583\n\n\n\n\n\n\n\n\nTip\n\n\n\nNotice that I’m using the pipe operator (|&gt;) to chain these operations together. First, the century and year variables are united and then the resulting dataframe is fed into the separate_wider_delim() function to separate the rate column.\nThe pipe operator saves us from having to save intermediate objects and makes the process easier to read!"
+  },
+  {
+    "objectID": "1810-review/tidyr-review.html#sec-mutating-joins",
+    "href": "1810-review/tidyr-review.html#sec-mutating-joins",
+    "title": "Data Joins and Transformations Review",
+    "section": "Mutating Joins",
+    "text": "Mutating Joins\nWe’re primarily going to focus on mutating joins, as filtering joins can be accomplished by…filtering…rather than by table joins.\n\nInner JoinLeft JoinRight JoinFull Join\n\n\nAn inner_join() only keeps any rows that are included in both tables, but keeps every column.\n\n\n\n© Garrick Aden-Buie\n\n\n\n\nBut what if we want to keep all of the rows in x? We would do a left_join() (since x is on the left).\n\n\n\n© Garrick Aden-Buie\n\n\nIf there are multiple matches in the y table, though, we might have to duplicate rows in x. This is still a left join, just a more complicated one.\n\n\n\n© Garrick Aden-Buie\n\n\n\n\nIf we wanted to keep all of the rows in y, we would do a right_join() (since y is on the right):\n\n\n\n© Garrick Aden-Buie\n\n\nWe can always change a left join to a right join or visa versa. People seem to have a preference for left joins, but if you like right joins more go for it!\n\n\nAnd finally, if we want to keep all of the rows of both x and y, we’d do a full_join():\n\n\n\n© Garrick Aden-Buie\n\n\n\n\n\nEvery join has a “left side” and a “right side” - so in XXXX_join(A, B), A is the left side, and B is the right side.\nJoins are differentiated based on how they treat the rows and columns of each side. In mutating joins, the columns from both sides are always kept. The table below summarizes which rows are kept from each side of the join, for different mutating joins.\n\n\n\n\n\n\n\n\n\n\n\n\nRows Selected\n\n\n\nJoin Type\nLeft Side\nRight Side\n\n\n\n\ninner\nmatching\nmatching\n\n\nleft\nall\nmatching\n\n\nright\nmatching\nall\n\n\nouter\nall\nall"
+  },
+  {
+    "objectID": "1810-review/tidyr-review.html#filtering-joins",
+    "href": "1810-review/tidyr-review.html#filtering-joins",
+    "title": "Data Joins and Transformations Review",
+    "section": "Filtering Joins",
+    "text": "Filtering Joins\nThese joins do not merge two datasets together! Instead, they filter the values of one dataset based on the values of another dataset.\n\nSemi JoinAnti Join\n\n\nA semi_join() keeps rows in x that have a match in y. Notice that the resulting dataset is a modification of the original x dataset—nothing from y has been added to x!\n\n\n\n\n\n\nTip\n\n\n\nYou can think of this as a relative of using the inclusion operator (%in%) inside of a filter() statement (e.g., filter(day %in% c(\"Mon\", \"Tues\", \"Wed\"))).\n\n\n\n\n\n© Garrick Aden-Buie\n\n\nSuppose we wanted to only keep countries in Table 2 that were also present in Table 1. We could do this using a semi-join:\n\nsemi_join(x = table2, \n          y = table1, \n          by = \"country\")\n\n# A tibble: 12 × 4\n   country      year type            count\n   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 Afghanistan  1999 cases             745\n 2 Afghanistan  1999 population   19987071\n 3 Afghanistan  2000 cases            2666\n 4 Afghanistan  2000 population   20595360\n 5 Brazil       1999 cases           37737\n 6 Brazil       1999 population  172006362\n 7 Brazil       2000 cases           80488\n 8 Brazil       2000 population  174504898\n 9 China        1999 cases          212258\n10 China        1999 population 1272915272\n11 China        2000 cases          213766\n12 China        2000 population 1280428583\n\n\nNotice that since Table 2 and Table 1 both contain the same countries the resulting dataset (where the matches were kept) is the same as the original Table 2.\n\n\nA anti_join() keeps rows in x that do not have a match in y. Notice that the resulting dataset is a modification of the original x dataset—nothing from y has been added to x!\n\n\n\n\n\n\nTip\n\n\n\nYou can think of this as a relative of using a ! in front of the inclusion operator (%in%) inside of a filter() statement (e.g., filter(! day %in% c(\"Mon\", \"Tues\", \"Wed\"))). The ! negates the %in% so only Thurs, Fri, Sat, and Sun would be included.\n\n\n\n\n\n© Garrick Aden-Buie\n\n\nSuppose we wanted to filter out countries in Table 2 that were also present in Table 1. We could do this using an anti-join:\n\nanti_join(x = table2, \n          y = table1, \n          by = \"country\")\n\n# A tibble: 0 × 4\n# ℹ 4 variables: country &lt;chr&gt;, year &lt;dbl&gt;, type &lt;chr&gt;, count &lt;dbl&gt;\n\n\nNotice that since Table 2 and Table 1 both contain the same countries the resulting dataset (where the matches were filtered out) is empty."
+  },
+  {
+    "objectID": "1810-review/setup-version-control.html",
+    "href": "1810-review/setup-version-control.html",
+    "title": "Version Control with Git and GitHub",
+    "section": "",
+    "text": "Most of this reading is either heavily inspired by Happy Git and Github for the UseR (Bryan, Hester, and The Stat 545 TAs 2021) or directly links to that book. After completing this pre-reading, you should:"
+  },
+  {
+    "objectID": "1810-review/setup-version-control.html#footnotes",
+    "href": "1810-review/setup-version-control.html#footnotes",
+    "title": "Version Control with Git and GitHub",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nYes, I’m aware that this sounds paranoid. It’s been a very rare occasion that I’ve needed to restore something from another backup. You don’t want to take chances.↩︎"
+  },
+  {
+    "objectID": "1810-review/ggplot-review.html",
+    "href": "1810-review/ggplot-review.html",
+    "title": "ggplot Review",
+    "section": "",
+    "text": "This module consists of readings reviewing material typically taught in STAT 331. It is possible you can skip over portions of this reading. It is your responsibility to decide which areas you need to review before diving into Stat 541.\nAnswer the following questions to see if you can safely skip this section.\nstarwars %&gt;%\n  ____(species == \"Human\") %&gt;%\n  ggplot(mapping = aes(____ = height, y = mass, ____ = gender)) + \n  geom_[____](____ = 17, size = 3) +\n  ____(x = \"Height (cm)\", \n       y = \"Mass (kg)\", \n       color = \"Gender Expression\"\n       )\n:::"
+  },
+  {
+    "objectID": "1810-review/ggplot-review.html#recommended-reading-r4ds-data-visualisation",
+    "href": "1810-review/ggplot-review.html#recommended-reading-r4ds-data-visualisation",
+    "title": "ggplot Review",
+    "section": "📖 Recommended Reading: R4DS: Data Visualisation",
+    "text": "📖 Recommended Reading: R4DS: Data Visualisation"
+  },
+  {
+    "objectID": "1810-review/ggplot-review.html#recommended-video",
+    "href": "1810-review/ggplot-review.html#recommended-video",
+    "title": "ggplot Review",
+    "section": "🎥 Recommended Video",
+    "text": "🎥 Recommended Video"
+  },
+  {
+    "objectID": "1810-review/ggplot-review.html#recommended-reading-r-for-data-science---layers",
+    "href": "1810-review/ggplot-review.html#recommended-reading-r-for-data-science---layers",
+    "title": "ggplot Review",
+    "section": "📖 Recommended Reading – R for Data Science - Layers",
+    "text": "📖 Recommended Reading – R for Data Science - Layers"
+  },
+  {
     "objectID": "1810-review.html",
     "href": "1810-review.html",
     "title": "STAT 331 Review",
@@ -327,6 +674,580 @@
     "text": "In these first weeks, we will start with a review of concepts from Introduction to Statistical Computing in R—data visualizations with ggplot2, data wrangling with dplyr and tidyr, writing functions that work with vectors, and iteration using functions from the map (purrr) and apply families. We will also use reviewing creating reproducible documents with Quarto and using R projects as an opportunity to introduce you to version control with git and GitHub.\n\n\n\n\n\n\nImportant\n\n\n\nIt is possible that you might not need to review every topic from this section. To gauge your understanding, at the beginning of each section there are “check-in” questions assessing your knowledge on a particular topic. If you can easily answer these questions, you can feel free to skip this review topic. If, however, the answers to some questions are not obvious, we have provided readings and / or videos to review the necessary concepts.",
     "crumbs": [
       "STAT 331 Review"
+    ]
+  },
+  {
+    "objectID": "1810-review/dplyr-review.html",
+    "href": "1810-review/dplyr-review.html",
+    "title": "dplyr Review",
+    "section": "",
+    "text": "This module consists of readings reviewing material typically taught in STAT 331. It is possible you can skip over portions of this reading. It is your responsibility to decide which areas you need to review before diving into Stat 541.\nAnswer the following questions to see if you can safely skip this section.\nThink about the datasets you have already worked with. Which of the following restrictions on a list do you think are needed for the list to be a data.frame? (Select all that apply)\nIf you had a hard time answering these questions, I would recommend reviewing Section 1.1.\nIf you had a hard time answering this question, I would recommend reviewing Section 1.2.\n# a\narrange(avg_bill_ratio)\n\n# b\ngroup_by(species)\n\n# c\npenguins \n\n# d\nsummarize(\n    avg_bill_ratio = mean(bill_ratio, na.rm = TRUE)\n    )\n  \n# e\nmutate(\n    bill_ratio = bill_length_mm / bill_depth_mm\n    )\nIf you had a hard time answering this question, I would recommend reviewing Section 1.3."
+  },
+  {
+    "objectID": "1810-review/dplyr-review.html#dplyr",
+    "href": "1810-review/dplyr-review.html#dplyr",
+    "title": "dplyr Review",
+    "section": "dplyr",
+    "text": "dplyr\nYou should feel comfortable using:\n\nThe five main dplyr verbs:\n\nfilter()\narrange()\nselect()\nmutate()\nsummarize()\n\nIncorportaing group_by() to perform groupwise operations\nChaining together data wrangling operations with the pipe operator (|&gt; or %&gt;%)\n\n\nData Structures\nChoose one of these two options:\n\n\n📽 Watch a Video: Data Types in R\n\n📖 Read a Textbook: Data Types in R\n\n\nIn addition, read the following section from the first edition of R for DS:\n📖 Recommended Reading: Tibbles\n\n\nData Wrangling with dplyr\nIf you had a hard time answering Question 3, I would recommend reviewing this content.\n📖 Recommended Reading: Data Transformation\n\n\nRecommended Videos\n📽 filter() – 11 minutes\n📽 select() – 6 minutes\n📽 mutate() – 9 minutes\n📽 arrange() – 7 minutes\n📽 summarize()– 8 minutes\n📽 group_by() – 6 minutes\n\n\nThe Pipe Operator\nIf you had a hard time answering Question 4, I would recommend also reviewing this content.\n📽 Recommended Video: The pipe operator – 8 minutes"
+  },
+  {
+    "objectID": "1810-review/quarto-review.html",
+    "href": "1810-review/quarto-review.html",
+    "title": "Untitled",
+    "section": "",
+    "text": "From the dplyr section ## Learning More About Packages in R\n📽 Required Video: Why do I get this message when I load the tidyverse? – 8 minutes\nThe theme of this lesson is good management of your files and data. In part two of this week’s coursework you will learn how to identify folders and paths, and create Quarto documents."
+  },
+  {
+    "objectID": "1810-review/quarto-review.html#file-management",
+    "href": "1810-review/quarto-review.html#file-management",
+    "title": "Untitled",
+    "section": "File Management",
+    "text": "File Management\nAs boring as it sounds, file management is arguably one of the most important skills a data scientist should have. The reproducibility of a project depends just as much on the way in which the project was stored as the computing tools used. While using R and Quarto make an important step in creating a reproducible analysis, there are other pieces that are arguably just as important—such as file management.\nEvidently, there has been a bit of generational shift as computers have evolved: the “file system” metaphor itself is outdated because no one uses physical files anymore. This article is an interesting discussion of the problem: it makes the argument that with modern search capabilities, most people use their computers as a laundry hamper instead of as a nice, organized filing cabinet.\n\nFile Systems\nRegardless of how you tend to organize your personal files, it is probably helpful to understand the basics of what is meant by a computer file system – a way to organize data stored on a hard drive. Since data is always stored as 0’s and 1’s, it’s important to have some way to figure out what type of data is stored in a specific location, and how to interpret it.\n\n\n Stop watching at 4:16.\n\n\nFile Paths\nThat’s not enough, though - we also need to know how computers remember the location of what is stored where. Specifically, we need to understand file paths.\nWhen you write a program, you may have to reference external files - data stored in a .csv file, for instance, or a picture. Best practice is to create a file structure that contains everything you need to run your entire project in a single file folder (you can, and sometimes should, have sub-folders).\n\n\n\nFor now, it is enough to know how to find files using file paths, and how to refer to a file using a relative file path from your base folder. In this situation, your “base folder” is known as your working directory - the place your program thinks of as home."
+  },
+  {
+    "objectID": "1810-review/quarto-review.html#directories-and-projects",
+    "href": "1810-review/quarto-review.html#directories-and-projects",
+    "title": "Untitled",
+    "section": "Directories, Paths, and Projects",
+    "text": "Directories, Paths, and Projects\nIn R, there are two ways to set up your file path and file system organization:\n\nSet your working directory in R (do not recommend)\nUse RProjects (preferred!)\n\n\nWorking Directories in R\nTo find where your working directory is in R, you can either look at the top of your console or type getwd() into your console.\n\n\n\n\n\n\n\n\n\n\ngetwd()\n\n[1] \"/Users/atheobol/Documents/Teaching/stat-541-website/1810-review\"\n\n\nAlthough it is not recommended, you can set your working directory in R with setwd().\n\nsetwd(\"/path/to/my/assignment/folder\")\n\n\n\nR Projects\n\n📖 Required Reading: Workflow and Projects\nSince there are often many files necessary for a project (e.g. data sources, images, etc.), R has a nice built in system for setting up your project organization with R Projects. You can either create a new folder on your computer containing an R Project (e.g., you have not yet created a folder for this class) or you can add an R Project to an existing folder on your computer (e.g., you have already created a folder for this class).\n\nCreate with a new folderAdd to an existing folder\n\n\nTo create a R Project, first open RStudio on your computer and click File &gt; New Project, then:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGive your folder a name (it doesn’t have to be my-stat331). However, it is good practice for this file folder name to not contain spaces.\nThen, browse on your computer for a location to save this folder to. For example, mine is saved in my Documents. Make sure you know how to find this; it should NOT be saved in your Downloads!\n\n\n\n\n\n\n\n\n\nThis new folder, my-stat331 should now live in your Documents folder (or wherever you save it to) and contain a my-stat331.Rproj file. This is your new “home” base for this class - whenever you refer to a file with a relative path it will begin to look for it here.\n\n\nTo add a R Project to an existing folder on your computer (e.g., you already created a folder for this class), first open RStudio on your computer and click File &gt; New Project, then:\n\n\n\n\n\n\n\n\n\nThen, browse on your computer to select the existing folder you wish to add your R Project to. For example, mine is saved in my Documents and called my-stat331.\n\n\n\n\n\n\n\n\n\nYour existing folder, my-stat331 should now contain a my-stat331.Rproj file. This is your new “home” base for this class - whenever you refer to a file with a relative path it will begin to look for it here.\n\n\n\n\n\n\n\n\n\nCautionYour folder cannot synch with anything online!\n\n\n\nYour STAT 331 folder cannot be in a folder stored on OneDrive or iCloud! Storing your folder in this location will cause your code to periodically not run and I cannot help you fix it."
+  },
+  {
+    "objectID": "1810-review/quarto-review.html#check-in-1.3-stat-331-folder-r-project",
+    "href": "1810-review/quarto-review.html#check-in-1.3-stat-331-folder-r-project",
+    "title": "Untitled",
+    "section": "✅ Check-in 1.3: Stat 331 Folder & R Project",
+    "text": "✅ Check-in 1.3: Stat 331 Folder & R Project\nTake a screenshot of your class directory, showing:\n\nthe location of your Stat 331 folder\nan R Project included in your Stat 331 folder\na Week 1 sub-folder"
+  },
+  {
+    "objectID": "1810-review/quarto-review.html#downloading-quarto",
+    "href": "1810-review/quarto-review.html#downloading-quarto",
+    "title": "Untitled",
+    "section": "Downloading Quarto",
+    "text": "Downloading Quarto\nThe software associated with Quarto is automatically downloaded with the newest versions of RStudio. So, if you are using the most up to date version of RStudio (as instructed in Part 1 of this week’s coursework), you should already have Quarto installed on your computer. But, let’s test it out.\nTo ensure you have Quarto installed, carry out the following process:\n\nOpen RStudio\nClick on “File” (in the upper navigation bar)\nSelect “New File” (in the dropdown options)\nSelect “Quarto Document…” (in the dropdown option)\n\n \nIf you have Quarto installed, you should be prompted with the following menu:\n\nIf, instead, you receive a message saying Quarto is not installed on your computer, you need to download Quarto: https://quarto.org/docs/download/"
+  },
+  {
+    "objectID": "1810-review/quarto-review.html#introduction-to-quarto",
+    "href": "1810-review/quarto-review.html#introduction-to-quarto",
+    "title": "Untitled",
+    "section": "Introduction to Quarto",
+    "text": "Introduction to Quarto\n\n📖 Required Reading: Intro to Quarto\n\n\nHTML Documents\nWe will exclusively use HTML documents in this course. If you are interested in learning more about formatting options for Quarto HTML documents, I would recommend checking out:\n\na discussion of the basics of formatting HTML documents in Quarto\nthe list of all HTML formatting options for Quarto documents"
+  },
+  {
+    "objectID": "1810-review/quarto-review.html#check-in-1.4-quarto-documents",
+    "href": "1810-review/quarto-review.html#check-in-1.4-quarto-documents",
+    "title": "Untitled",
+    "section": "✅ Check-in: 1.4 Quarto Documents",
+    "text": "✅ Check-in: 1.4 Quarto Documents\nQuestion 1: What are the options at the top of a Quarto document (between the --- and --- symbols) called?\n\nXML\nYAML\nREML\nTOML\n\nQuestion 2: What symbols create an R code chunk?\n\n```\n{r}\n```{r}\n`{r}`\n\nQuestion 3: What symbol defines a heading?\n\n$\n_\n*\n#\n\nQuestion 4: When working in a Quarto document, the [visual / source] editor will display the raw Quarto document, whereas the [visual / source] will display the document as it will appear when it is rendered.\nQuestion 5: To produce an HTML report from your Quarto document, you need to click the ____ button.\n\nVisual\nRender\nRender on Save\nSave"
+  },
+  {
+    "objectID": "1810-review/setup-workflow.html",
+    "href": "1810-review/setup-workflow.html",
+    "title": "Installing / Updating R & RStudio",
+    "section": "",
+    "text": "Your workflow refers to the series of good habits you get into in your coding process, that help save you time and headache down the road.\nThis document outlines our suggestions for getting going with your workflow. None of these items is required for the course; they will simply make your life easier down the road."
+  },
+  {
+    "objectID": "1810-review/setup-workflow.html#updating-r",
+    "href": "1810-review/setup-workflow.html#updating-r",
+    "title": "Installing / Updating R & RStudio",
+    "section": "1 Updating R",
+    "text": "1 Updating R\nEach of you should have R already installed on your computer, but you might not have the most up to date version of R! Do not ignore these instructions. If you neglect to update your version of R, you may find that updating a package will make it so your code will not run.\n\nStep 1: Open RStudio\nStep 2: At the top of the the Console it will say what version of R you are using\n\n\nIf the version is not 4.4.3 (like the image above), you need to update your version of R! The simplest way to do this is to follow the instructions below to install R."
+  },
+  {
+    "objectID": "1810-review/setup-workflow.html#installing-r",
+    "href": "1810-review/setup-workflow.html#installing-r",
+    "title": "Installing / Updating R & RStudio",
+    "section": "2 Installing R",
+    "text": "2 Installing R\nDownload and install R by going to https://cloud.r-project.org/. Here, you will find three options for installing R—click on the option for your computer’s operating system.\n\n\n\n\nIf you are a Windows user:\n\nClick on “Download R for Windows”\nClick on “base”\nClick on the Download link.\nWhen you open the execution file (.exe) you will be prompted with a variety of questions about installing R. Feel free to use the default features / settings that come with R (continue to click “Ok” until the download starts).\n\n\n\n\n\n\n\nWarningMultiple Versions of R\n\n\n\nBeware that if you had a previous version of R downloaded on your PC, that old version will not be deleted when you download the most recent version of R. We do not want to have two versions of R installed, as your computer can get confused what version of R to use. So, you need to remove the old version of R.\nTo do this you need to:\n\nNavigate to your computer’s settings\nClick on the “Apps” option on the left-hand panel\nSearch for or scroll down to R\nFind the older version of R\n\n\n\nClick on the ... on the right side\nSelect “Uninstall”\n\n\n\n\n\n\nIf you are macOS user:\n\nClick on “Download R for (Mac) OS X”\nUnder “Latest release:” click on R-X.X.X.pkg, where R-X.X.X is the version number. For example, the latest version of R as of July 1, 2024 was R-4.4.1 (Race for Your Life).\nWhen installing, use the default features / settings that come with R (click Ok until the download starts)."
+  },
+  {
+    "objectID": "1810-review/setup-workflow.html#updating-rstudio",
+    "href": "1810-review/setup-workflow.html#updating-rstudio",
+    "title": "Installing / Updating R & RStudio",
+    "section": "3 Updating RStudio",
+    "text": "3 Updating RStudio\nRStudio can be downloaded here\nThe most recent version of RStudio is 2024.12.1+563. You can check if you are using the most recent version of RStudio by:\n\nOpening RStudio\nClicking on “Help”\nSelecting “Check for Updates”\nChoosing “Quit and Download” if there is an update available"
+  },
+  {
+    "objectID": "1810-review/setup-workflow.html#installing-updating-the-tidyverse",
+    "href": "1810-review/setup-workflow.html#installing-updating-the-tidyverse",
+    "title": "Installing / Updating R & RStudio",
+    "section": "4 Installing / Updating the tidyverse",
+    "text": "4 Installing / Updating the tidyverse\nIn this class, we will make heavy use of the tidyverse packages.\nIf you have not used the tidyverse before, type the following into your console:\n\ninstall.packages(\"tidyverse\")\n\nIf you have used the tidyverse before, you only need to update packages. Type the following into your console:\n\nlibrary(tidyverse)\ntidyverse_update()\n\nThen follow the instructions that print out to update a few of your tidyverse packages."
+  },
+  {
+    "objectID": "1810-review/setup-workflow.html#configure-your-options",
+    "href": "1810-review/setup-workflow.html#configure-your-options",
+    "title": "Installing / Updating R & RStudio",
+    "section": "5 Configure your options",
+    "text": "5 Configure your options\nThere are a few settings we recommend that you change right away in RStudio.\n\nR Workspace\nFirst, you should not save your environment when you close RStudio:\n\n\n\nCode Chunk Output\nSecond, make a deliberate choice about where your chunks will evaluate when you run that. That is, if you reference files, are you referencing them relative to your Project, or relative to your Quarto Document (which might live in a subfolder or even outside the project)."
+  },
+  {
+    "objectID": "course-materials/calendar.html",
+    "href": "course-materials/calendar.html",
+    "title": "STAT 541: Advanced R",
+    "section": "",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nRequired Reading\nLecture Activities\nLab Assignment\nPortfolio\n\n\n\n\n1\nStat 331 Review & Version Control\nMarch 31 (note no class on Monday)\nInstalling / Updating R & RStudio\nVersion Control\n\nLab 1 Instructions\nLab 1 GitHub repository\n\n\n\n2\nAdvanced Visualizations\nApril 7\nggplot Review\nggplotExtensions\nMaking maps with leaflet\n\nLab 2 Instructions\nLab 2 GitHub repository\n\n\n\n3\nQuarto Dashboards (Static)\nApril 14\nCreating Static Quarto Dashboards\n\nLab 3 Instructions\nLab 3 GitHub repository\n\n\n\n4\nQuarto Dashboards (Dynamic)\nApril 21\nCreating Interactive Quarto Dashboards\n\nLab 4 Instructions\nLab 4 GitHub repository\n\n\n\n5\nPortfolio Week\nApril 28\n\n\n\nPortfolio Instructions\n\n\n6\nWriting Efficient Functions\nMay 5\nReview of Writing Functions in R\nWriting Efficient Functions\nIterating over Functions\n\nLab 6 Instructions\nLab 6 Alternative\nLab 6 GitHub repository\n\n\n\n7\nJSON Data & APIs\nMay 12\nHierarchical (JSON) Data\nWorking with APIs\nCollaborative Version Control\n\nLab 7 Instructions\nLab 7 GitHub repository\n\n\n\n8\nWebscraping\nMay 19\nWebscraping\n\nLab 8 Instructions\nLab 8 GitHub repository\n\n\n\n9\nGenerative Art\nMay 26 (note Tuesday follows a Monday schedule)\nGenerative Art\n\nLab 9 Instructions\nLab 9 GitHub repository\n\n\n\n10\nPortfolio Week\nJune 2\n\n\n\nPortfolio Instructions\n\n\nFinals Week (Portfolio Meetings)\nJune 9"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Stat 541 takes a deeper dive into statistical computing in R, building your communication and iteration skills. We will explore different modalities for communicating statistical ideas—dynamic visualizations and dashboards, while also exploring ways to integrate R code into these environments. We will also continue to expand your skills as a developer—writing functions and iterating over those functions to query data from APIs and scrape the web. We’re going to have a lot of fun!"
+  },
+  {
+    "objectID": "index.html#acknowledements",
+    "href": "index.html#acknowledements",
+    "title": "Welcome",
+    "section": "Acknowledements",
+    "text": "Acknowledements\n\nA huge shout out goes the the amazing women at Macalester College—Leslie Myint, Brianna Heggeseth, and Alicia Johnson—for making their Intermediate Data Science course materials public. And finally, a massive thank you to Sam Shanny-Csik for their incredible resources for making and styling Quarto websites!\nThis website is built with Quarto, the lovely icons are all by Allison Horst, and none of this would be possible without the tidyverse."
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Welcome",
+    "section": "License",
+    "text": "License\nThis online work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International. Visit here for more information about the license."
+  },
+  {
+    "objectID": "labs/lab-2.html",
+    "href": "labs/lab-2.html",
+    "title": "Lab 2",
+    "section": "",
+    "text": "Create a Quarto file for ALL Lab 2 (no separate files for Parts 1 and 2).\n\nMake sure your final file is carefully formatted, so that each analysis is clear and concise.\nBe sure your knitted .html file shows all your source code, including any function definitions."
+  },
+  {
+    "objectID": "labs/lab-2.html#dissecting-a-bad-visualization",
+    "href": "labs/lab-2.html#dissecting-a-bad-visualization",
+    "title": "Lab 2",
+    "section": "Dissecting a Bad Visualization",
+    "text": "Dissecting a Bad Visualization\nBelow is an example of a less-than-ideal visualization from the collection linked above. It comes to us from data provided for the Wellcome Global Monitor 2018 report by the Gallup World Poll:\n\n\nWhile there are certainly issues with this image, do your best to tell the story of this graph in words. That is, what is this graph telling you? What do you think the authors meant to convey with it?\nList the variables that appear to be displayed in this visualization. Hint: Variables refer to columns in the data.\nNow that you’re versed in the grammar of graphics (e.g., ggplot), list the aesthetics used and which variables are mapped to each.\nWhat type of graph would you call this? Meaning, what geom would you use to produce this plot?\nProvide at least four problems or changes that would improve this graph. Please format your changes as bullet points!"
+  },
+  {
+    "objectID": "labs/lab-2.html#improving-the-bad-visualization",
+    "href": "labs/lab-2.html#improving-the-bad-visualization",
+    "title": "Lab 2",
+    "section": "Improving the Bad Visualization",
+    "text": "Improving the Bad Visualization\nThe data for the Wellcome Global Monitor 2018 report can be downloaded at the following site: https://wellcome.ac.uk/reports/wellcome-global-monitor/2018\n\nThere are two worksheets in the downloaded dataset file. You may need to read them in separately, but you may also just use one if it suffices.\n\nImprove the visualization above by either re-creating it with the issues you identified fixed OR by creating a new visualization that you believe tells the same story better."
+  },
+  {
+    "objectID": "labs/lab-2.html#second-data-visualization-improvement",
+    "href": "labs/lab-2.html#second-data-visualization-improvement",
+    "title": "Lab 2",
+    "section": "Second Data Visualization Improvement",
+    "text": "Second Data Visualization Improvement\nFor this second plot, you must select a plot that uses maps so you can demonstrate your proficiency with the leaflet package!\n\nSelect a data visualization in the report that you think could be improved. Be sure to cite both the page number and figure title. Do your best to tell the story of this graph in words. That is, what is this graph telling you? What do you think the authors meant to convey with it?\nList the variables that appear to be displayed in this visualization.\nNow that you’re versed in the grammar of graphics (ggplot), list the aesthetics used and which variables are specified for each.\nWhat type of graph would you call this?\nList all of the problems or things you would improve about this graph.\nImprove the visualization above by either re-creating it with the issues you identified fixed OR by creating a new visualization that you believe tells the same story better."
+  },
+  {
+    "objectID": "labs/lab-2.html#third-data-visualization-improvement",
+    "href": "labs/lab-2.html#third-data-visualization-improvement",
+    "title": "Lab 2",
+    "section": "Third Data Visualization Improvement",
+    "text": "Third Data Visualization Improvement\nFor this third plot, you must use one of the other ggplot2 extension packages mentioned this week (e.g., gganimate, plotly, patchwork, cowplot).\n\nSelect a data visualization in the report that you think could be improved. Be sure to cite both the page number and figure title. Do your best to tell the story of this graph in words. That is, what is this graph telling you? What do you think the authors meant to convey with it?\nList the variables that appear to be displayed in this visualization.\nNow that you’re versed in the grammar of graphics (ggplot), list the aesthetics used and which variables are specified for each.\nWhat type of graph would you call this?\nList all of the problems or things you would improve about this graph.\nImprove the visualization above by either re-creating it with the issues you identified fixed OR by creating a new visualization that you believe tells the same story better."
+  },
+  {
+    "objectID": "labs/lab-4.html",
+    "href": "labs/lab-4.html",
+    "title": "Lab 4",
+    "section": "",
+    "text": "For this lab assignment, you are tasked with transforming your previous static dashboard into an interactive dashboard using either Shiny or webR."
+  },
+  {
+    "objectID": "labs/lab-4.html#dashboard-requirements",
+    "href": "labs/lab-4.html#dashboard-requirements",
+    "title": "Lab 4",
+    "section": "Dashboard Requirements",
+    "text": "Dashboard Requirements\n\n\nIf you created a Shiny dashboard\nYour dashboard must have the following:\n\nat least one opportunity for user input via a slide bar\nat least one opportunity for user input via check boxes\n\nThese interactive features are expected to be used to:\n\nupdate at least one visualization\nupdate at least one of your “quick information” cards\n\n\n\n\nIf you created a webR dashboard\nYour dashboard must have the following:\n\na code chunk box that allows the user to interact with code used for your dashboard\ninstructions on how to modify the code\n\nYou can incorporate this code box to modify your visualization or to modify a table.\nYou will need to put your educator hat on when making the instructions for how the user needs to interact your code box. Consider the following:\n\nwhat “skeleton” code you want to provide\nwhat instructions / details would help the user modify the code you provided\nwhat messages / warnings might you want to provide if the user inputs something you didn’t expect (the exercise grading section gives some tips on this!)\n\n\n\n\n\n\n\n\n\nTipInteractive Table\n\n\n\nYou are free to swap one of your visualizations out for an interactive table!"
+  },
+  {
+    "objectID": "labs/lab-4.html#submission",
+    "href": "labs/lab-4.html#submission",
+    "title": "Lab 4",
+    "section": "Submission",
+    "text": "Submission\nYou are required to submit both the link to your GitHub repository containing your source code and a link to your published dashboard.\nIf you created an interactive dashboard with Shiny\nYou will need to publish your dashboard through shinyapps.io, a free publishing service for content created with Shiny.\nIf you created an interactive dashboard with webR\nYou can publish your dashboard the same way as last week, using Quarto Pub!"
+  },
+  {
+    "objectID": "labs/lab-6.html",
+    "href": "labs/lab-6.html",
+    "title": "Lab 6 - Spicy",
+    "section": "",
+    "text": "This assignment will challenge your function writing abilities. I’m not going to lie, these functions are difficult but well within your reach. I do, however, want to recognize that not everyone is interested in being a “virtuoso” with their function writing. So, there are two options for this week’s lab:"
+  },
+  {
+    "objectID": "labs/lab-6.html#testing-your-function",
+    "href": "labs/lab-6.html#testing-your-function",
+    "title": "Lab 6 - Spicy",
+    "section": "Testing Your Function!",
+    "text": "Testing Your Function!\n\n## Testing how your function handles multiple input variables\nremove_outliers(diamonds, \n                price, \n                x, \n                y, \n                z)\n\n## Testing how your function handles an input that isn't numeric\nremove_outliers(diamonds, \n                price, \n                color)\n\n## Testing how your function handles a non-default sd_thresh\nremove_outliers(diamonds, \n                price,\n                x, \n                y, \n                z, \n                sd_thresh = 2)\n\nExercise 2: Write a function that imputes missing values for numeric variables in a dataset. The user should be able to supply the dataset, the variables to impute values for, and a function to use when imputing. Hint 1: You will need to use across() to apply your function, since the user can input multiple variables. Hint 2: The replace_na() function is helpful here!"
+  },
+  {
+    "objectID": "labs/lab-6.html#testing-your-function-1",
+    "href": "labs/lab-6.html#testing-your-function-1",
+    "title": "Lab 6 - Spicy",
+    "section": "Testing Your Function!",
+    "text": "Testing Your Function!\n\n## Testing how your function handles multiple input variables\nimpute_missing(nycflights13::flights, \n               arr_delay, \n               dep_delay) \n\n## Testing how your function handles an input that isn't numeric\nimpute_missing(nycflights13::flights, \n               arr_delay, \n               carrier)\n\n## Testing how your function handles a non-default impute_fun\nimpute_missing(nycflights13::flights, \n               arr_delay, \n               dep_delay, \n               impute_fun = median)"
+  },
+  {
+    "objectID": "labs/lab-6.html#testing-your-function-2",
+    "href": "labs/lab-6.html#testing-your-function-2",
+    "title": "Lab 6 - Spicy",
+    "section": "Testing Your Function!",
+    "text": "Testing Your Function!\n\nfit_model(\n  diamonds,\n  mod_formula = price ~ carat + cut,\n  remove_outliers = TRUE,\n  impute_missing = TRUE,\n  price, \n  carat\n)"
+  },
+  {
+    "objectID": "labs/lab-6.html#parameters",
+    "href": "labs/lab-6.html#parameters",
+    "title": "Lab 6 - Spicy",
+    "section": "Parameters",
+    "text": "Parameters\nFirst, we need to define the set of parameters we want to iterate the fit_model() function over. The tidyr package has a useful function called crossing() that is useful for generating argument combinations. For each argument, we specify all possible values for that argument and crossing() generates all combinations. Note that you can create a list of formula objects in R with c(y ~ x1, y ~ x1 + x2).\n\ndf_arg_combos &lt;- crossing(\n    impute = c(TRUE, FALSE),\n    remove_outliers = c(TRUE, FALSE), \n    mod = c(y ~ x1, \n            y ~ x1 + x2)\n)\ndf_arg_combos\n\nExercise 4: Use crossing() to create the data frame of argument combinations for our analyses."
+  },
+  {
+    "objectID": "labs/lab-6.html#iterating-over-the-parameters",
+    "href": "labs/lab-6.html#iterating-over-the-parameters",
+    "title": "Lab 6 - Spicy",
+    "section": "Iterating Over the Parameters",
+    "text": "Iterating Over the Parameters\nWe’ve arrived at the final step!\nExercise 5: Use pmap() from purrr to apply the fit_model() function to every combination of arguments from `diamonds."
+  },
+  {
+    "objectID": "labs/lab-8.html",
+    "href": "labs/lab-8.html",
+    "title": "Lab 8",
+    "section": "",
+    "text": "Goal: Scrape information from https://www.cheese.com to obtain a dataset of characteristics about different cheeses, and gain deeper insight into your coding process. 🪤\n\nPart 1: Locate and examine the robots.txt file for this website. Summarize what you learn from it.\nPart 2: Learn about the html_attr() function from rvest. Describe how this function works with a small example.\nPart 3: (Do this alongside Part 4 below.) I used ChatGPT to start the process of scraping cheese information with the following prompt:\n\nWrite R code using the rvest package that allows me to scrape cheese information from cheese.com.\n\nFully document your process of checking this code. Record any observations you make about where ChatGPT is useful / not useful.\n\n# Load required libraries\nlibrary(rvest)\nlibrary(dplyr)\n\n# Define the URL\nurl &lt;- \"https://www.cheese.com/alphabetical\"\n\n# Read the HTML content from the webpage\nwebpage &lt;- read_html(url)\n\n# Extract the cheese names and URLs\ncheese_data &lt;- webpage %&gt;%\n  html_nodes(\".cheese-item\") %&gt;%\n  html_nodes(\"a\") %&gt;%\n  html_attr(\"href\") %&gt;%\n  paste0(\"https://cheese.com\", .)\n\ncheese_names &lt;- webpage %&gt;%\n  html_nodes(\".cheese-item h3\") %&gt;%\n  html_text()\n\n# Create a data frame to store the results\ncheese_df &lt;- data.frame(Name = cheese_names,\n                        URL = cheese_data,\n                        stringsAsFactors = FALSE)\n\n# Print the data frame\nprint(cheese_df)\n\nPart 4: Obtain the following information for all cheeses in the database:\n\ncheese name\nURL for the cheese’s webpage (e.g., https://www.cheese.com/gouda/)\nwhether or not the cheese has a picture (e.g., gouda has a picture, but bianco does not).\n\nTo be kind to the website owners, please add a 1 second pause between page queries. (Note that you can view 100 cheeses at a time.)\nPart 5: When you go to a particular cheese’s page (like gouda), you’ll see more detailed information about the cheese. For just 10 of the cheeses in the database, obtain the following detailed information:\n\nmilk information\ncountry of origin\nfamily\ntype\nflavour\n\n(Just 10 to avoid overtaxing the website! Continue adding a 1 second pause between page queries.)\nPart 6: Evaluate the code that you wrote in terms of efficiency. To what extent do your function(s) adhere to the principles for writing good functions? To what extent are your functions efficient? To what extent is your iteration of these functions efficient?"
+  },
+  {
+    "objectID": "portfolio.html",
+    "href": "portfolio.html",
+    "title": "Portfolio",
+    "section": "",
+    "text": "A portfolio is a collection of work that gives information about the person doing the work. Artists and architects, for example, have portfolios that show the range and scope of what they do, and by looking through their portfolios, you get a sense of who this person is, how they have grown as a professional, what they have produced, and what they are capable of producing.\nThat’s the spirit intended for the STAT 331 Portfolio. In your portfolio, you will give a curated collection of your best work along with reflections that tell the story of your growth from the first day of classes all the way to the end. Your goal is to argue, convincingly and with concrete evidence, that you have met the criteria for both content proficiency, evidence of continued learning, and growth as a team member that goes with a particular grade. I will read your portfolio carefully, and if you make a convincing case for a grade, that’s the grade you’ll receive.",
+    "crumbs": [
+      "Portfolio"
+    ]
+  },
+  {
+    "objectID": "portfolio.html#key-information",
+    "href": "portfolio.html#key-information",
+    "title": "Portfolio",
+    "section": "Key Information",
+    "text": "Key Information\nFormat: Your portfolio will have two components:\n\nA personal website with blog posts containing your projects from STAT 541\nA final grade reflection, justifying your achievement for the course’s learning objectives\n\nThe blog posts from your website is what you will reference when justifying your achievement for a given learning objective.\n\nDue date: The portfolio is due the Saturday before finals week. No deadline extensions are available for the Final Portfolio.",
+    "crumbs": [
+      "Portfolio"
+    ]
+  },
+  {
+    "objectID": "portfolio.html#final-grade-reflection",
+    "href": "portfolio.html#final-grade-reflection",
+    "title": "Portfolio",
+    "section": "Final Grade Reflection",
+    "text": "Final Grade Reflection\nThis component is a self-evaluation of your performance in the class. Your goal is to state clearly what grade you think you have earned in the course, and convincingly argue that you have met the criteria for that grade. Please be thoughtful, honest, and reflective, but also brief and focused.\nThis reflection will be done in the reflection-template.qmd file. The structure of the document is as follows:\n\nFor each of the learning targets, carefully select examples of your code that demonstrate concretely and directly your proficiency with the given target.\n\n\nYou must indicate where the code you provided came from, linking to the blog post from your personal website.\n\n\nWhat grade did you earn? State it clearly in one sentence. You can include plus/minus modifiers; see below about those.\nHow did you meet that grade’s requirements? The requirements for grades are found in the Portfolio Rubric. Review the criteria carefully. Then, explain how you have satisfied the criteria for the grade you are saying you’ve earned. Be specific and thorough. List each criterion you have met and how you know you’ve met it. Refer to specific artifacts or examples in the Portfolio that support your case. Again, keep it brief and focused on concrete evidence that the criteria have been met.\nWhat else? There may be some other criteria that figures into your grade request that isn’t explicitly listed in the syllabus. If so, state the criteria you’re thinking of, explain why they are useful criteria for your grade determination, and then explain how well you met those criteria (and provide evidence in the artifacts, if applicable). As with the syllabus criteria, be focused, specific, and thorough — and refer to specific artifacts that provide evidence.\n\nPlus/minus grades: You may argue to add a “+” or “-” modifier to your grade. Generally speaking a “+” added to a letter grade means you’ve met all the criteria for the letter grade along with a significant amount, but not all, of the criteria for the next letter grade up. And a “-” means that you have met the requirements for a letter grade but only in a way that you believe is a bare minimum, or you’ve met almost all the requirements for the letter grade except for a small number of minor criteria.",
+    "crumbs": [
+      "Portfolio"
+    ]
+  },
+  {
+    "objectID": "portfolio.html#about-time-and-effort",
+    "href": "portfolio.html#about-time-and-effort",
+    "title": "Portfolio",
+    "section": "About Time and Effort",
+    "text": "About Time and Effort\nAs your instructor, I understand and respect that you have spent a great deal of time and effort on this course and will probably continue to do so until the end of the quarter. It’s possible that STAT 331 has been the most challenging course on your schedule this quarter, perhaps in your entire college career so far. I want you to know that I see you, I respect your efforts, and it’s extremely fulfilling to see you respond to the challenges and grow.\nI also want to be clear that while the time and effort spent on the class are vitally important, they are not explicitly part of the grade criteria you find in the syllabus. So, when you make the case for your grade in the portfolio, I respectfully ask that you keep your argument focused on concrete evidence of understanding of the learning targets and engagement with the class.\nWhen making the case for your grade, the focus needs to be on the results of your investment of time and effort. Did your efforts result in several exemplary solutions through the quarter? If so, put a subset of them in the Portfolio. Did the time you spend on coursework result in being an engaged collaborator during Practice Activities? If so, document how your efforts made you a valuable group member.",
+    "crumbs": [
+      "Portfolio"
+    ]
+  },
+  {
+    "objectID": "portfolio.html#questions-you-might-have",
+    "href": "portfolio.html#questions-you-might-have",
+    "title": "Portfolio",
+    "section": "Questions You Might Have",
+    "text": "Questions You Might Have\n\nQ: What if you disagree with our final grade reflection?\n\nA: There are two ways this might happen.\n\nYou ask for a grade that is higher than the evidence supports. That is, you grade yourself too highly, for example you believe you earned an A in the course, but I do not feel the evidence you’ve provided supports this grade. If this occurs in your Midterm Portfolio, I will discuss this with you in your 5-minute Midterm Portfolio meeting.I’ll tell you what grade I would have given you based on the evidence you provided in the portfolio. You can then use this feedback when constructing your final portfolio. If I believe the grade you’ve proposed in your Final Portfolio does not reflect the evidence you’ve provided, I will discuss this with you in your 5-minute Final Portfolio meeting. I’ll tell you what grade I would have given you based on the evidence you provided in the portfolio, and then give you the chance to provide additional evidence and explanations for your grade request. In our meeting, if you still think your grade request is correct, you’ll have the chance to walk me through your materials and reasoning. Afterwards, I might agree with you. But if we still disagree, we will try to come to an agreement on the highest grade that the evidence supports. I have faith that we’ll be able to come to a mutually-agreeable result. But, if we can’t, I will assign the grade that in my estimation is the highest grade supported by the evidence, and my determination will be final. However, again, I will exhaust all other options before simply overriding your grade determination.\nYou ask for a grade that was lower than your actual performance indicates. That is, you “lowball” yourself, for example you say you earned a B when in fact I think you earned an A-. In this case, I will award you the grade I think you earned, and then just inform you that I’ve done so (and why).\n\nIn my experience, the second situation happens significantly more frequently than the first.\n\n\n\nQ: Is there a limit on the number of artifacts I can include to support my grade?\n\nA: There is no strict limit, but please be selective.\nQuality, not quantity is what we are after. We do not want every assignment in our portfolio! Typically you should be able to give a complete portfolio in fewer than 8 assignments with judicious selection of homework solutions and other work. A handful of homework solutions that clearly indicate your attainment of the grade criteria is just as good as, if not better than, a massive binder of mediocre examples.\n\n\n\nQ: How specific or detailed do I need to be on some of the criteria? For example, do I need to list all the dates when I answered someone’s question on Discord?\n\nA: This isn’t filing your taxes, so a precise down-to-the-minute accounting of your work isn’t necessary.\nDetails and your reasoning are more important than precision and completeness here. For example if you made a handful of supportive comments in Discord, pick a few and tell me about them. What was the question about? What did you say? Why was that comment an example of “helpful feedback”? (Do you know that it was helpful?) Remember the purpose is to make a convincing case that you’ve earned a particular grade.\n\n\n\nQ: Would someone actually make a case that they earned a “D” in the class?\n\nA: Yes, if the person is honest and there’s not enough evidence to make the case for a “C”.\nIf you’re in that situation, be honest and don’t overreach just because the consequences are significant.\n\n\n\nQ: How long should the essays be?\n\nA: You should put serious effort into each of the essays and give thorough, detailed, and thoughtful responses — without going overboard and writing more than you need.\nThere is no hard word or character count here, but if you are writing less than half a page using ordinary font and line spacing, then you probably need to spend more time carefully reflecting on the question; if you are writing more than two pages for a single essay, you might consider editing it down for clarity. As always, put yourself in the shoes of your readers and then use your judgment as a writer.\n\n\n\nQ: What if you do not submit a Final Portfolio?\n\nA: If you do not complete a Final Portfolio submission, your grade will be at my discretion.\nI will use your Midterm Portfolio as well as completion of assignments from Week 7 - 10 to guide my decision.\nI’ll add more questions and answers in this space as they come up.",
+    "crumbs": [
+      "Portfolio"
+    ]
+  },
+  {
+    "objectID": "portfolio/portfolio-rubric.html",
+    "href": "portfolio/portfolio-rubric.html",
+    "title": "Final Portfolio Evaluation Rubric",
+    "section": "",
+    "text": "You will use the following labels to score each of the learning objectives in this course. Think of these as levels of achievement, like in a video game.",
+    "crumbs": [
+      "Portfolio",
+      "Final Portfolio Evaluation Rubric"
+    ]
+  },
+  {
+    "objectID": "portfolio/portfolio-rubric.html#grade-calculation",
+    "href": "portfolio/portfolio-rubric.html#grade-calculation",
+    "title": "Final Portfolio Evaluation Rubric",
+    "section": "Grade Calculation",
+    "text": "Grade Calculation\nThese are benchmarks to give you an idea of what achievements might correspond to what grade. It is not an exact mathematical conversion; your actual Portfolio Grade will be decided during our discussion meeting.\n\n\n\n\nNovice\nProficient\nVirtuoso\n\n\nA\n20%\n20%\n60%\n\n\nB\n40%\n40%\n20%\n\n\nC\n60%\n25%\n5%\n\n\nD\n90%\n10%\n0%",
+    "crumbs": [
+      "Portfolio",
+      "Final Portfolio Evaluation Rubric"
+    ]
+  },
+  {
+    "objectID": "portfolio/portfolio-rubric.html#missing-portfolios",
+    "href": "portfolio/portfolio-rubric.html#missing-portfolios",
+    "title": "Final Portfolio Evaluation Rubric",
+    "section": "Missing Portfolios",
+    "text": "Missing Portfolios\nIf you do not submit a Final Portfolio, your grade will be determined based on your Midterm Portfolio. If, however, you also did not submit a Midterm Portfolio, the best grade you can earn in the course is a C-.",
+    "crumbs": [
+      "Portfolio",
+      "Final Portfolio Evaluation Rubric"
+    ]
+  },
+  {
+    "objectID": "unit-1.html",
+    "href": "unit-1.html",
+    "title": "Unit 1",
+    "section": "",
+    "text": "In this first unit, we will explore messy data and statistical communication. We will start with a review of concepts from Introduction to Statistical Computing in R—data visualizations with ggplot2, data wrangling with dplyr and tidyr, writing functions that work with vectors, and iteration using functions from the map (purrr) and apply families. We will also use reviewing creating reproducible documents with Quarto and using R projects as an opportunity to introduce you to version control with git and GitHub.\nOnce we’ve reviewed these concepts, we will dig deeper into the efficiency of our functions—how many intermediate objects are created, what order are operations run, what functions are used internally? We will also compare and contrast different methods for iterating over functions—for loops and the purrr family of functions. From the perspective of efficiency, we will consider why one would choose one tool over the other.\nAfter this review of efficiency, we will put our function writing an iteration skills to work and learn about data that come from alternative sources (not a spreadsheet)! First we will explore hierarchical (JSON) data, iterating over multiple calls to an API. Next, we will explore extracting (scraping) data from a webpage, iterating over multiple webpages.\nWe close the unit with a journey back into the land of visualizations. You will learn about non-standard geometries that can spice up your plots—geom_tile(), geom_density_ridges(), geom_ribbon(). We will also consider ways to make our plots more clear to the reader by removing our legend using annotations or colors in the titles. We will play around with different color palettes and built-in themes that can personalize your plot.\nBy the close of this unit you will produce a professionally polished Quarto document including visual and statistical investigations into your selected dataset.\n\n\n\n\n\n\nImportantExample Check-in Callout\n\n\n\nThroughout these sections, you will encounter “check-ins” assessing your knowledge on a particular topic. These check-ins are delineated by a red (important) callout box and are associated with the Canvas quizzes assigned each week.\nThis is where you will find the body of the question. The callout name refers to the name of the Canvas quiz the question is associated with.",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Unit 1"
+    ]
+  },
+  {
+    "objectID": "unit-1/efficient-code.html",
+    "href": "unit-1/efficient-code.html",
+    "title": "Writing Efficient Code",
+    "section": "",
+    "text": "In this module, you’ll learn a bit about how to make your code faster in general.",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Writing Efficient Code"
+    ]
+  },
+  {
+    "objectID": "unit-1/efficient-code.html#required-reading-the-tictoc-and-microbenchmark-packages",
+    "href": "unit-1/efficient-code.html#required-reading-the-tictoc-and-microbenchmark-packages",
+    "title": "Writing Efficient Code",
+    "section": "📖 Required Reading: The tictoc and microbenchmark packages",
+    "text": "📖 Required Reading: The tictoc and microbenchmark packages",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Writing Efficient Code"
+    ]
+  },
+  {
+    "objectID": "unit-1/efficient-code.html#required-reading-the-bench-package",
+    "href": "unit-1/efficient-code.html#required-reading-the-bench-package",
+    "title": "Writing Efficient Code",
+    "section": "📖 Required Reading: The bench package",
+    "text": "📖 Required Reading: The bench package",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Writing Efficient Code"
+    ]
+  },
+  {
+    "objectID": "unit-1/efficient-code.html#required-reading-lobstrobj_size",
+    "href": "unit-1/efficient-code.html#required-reading-lobstrobj_size",
+    "title": "Writing Efficient Code",
+    "section": "📖 Required Reading: lobstr::obj_size()",
+    "text": "📖 Required Reading: lobstr::obj_size()",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Writing Efficient Code"
+    ]
+  },
+  {
+    "objectID": "unit-1/efficient-code.html#save-smaller-data-frames-if-you-are-going-to-use-them-many-times",
+    "href": "unit-1/efficient-code.html#save-smaller-data-frames-if-you-are-going-to-use-them-many-times",
+    "title": "Writing Efficient Code",
+    "section": "Save smaller data frames, if you are going to use them many times",
+    "text": "Save smaller data frames, if you are going to use them many times\nConsider the following dataset:\n\nlibrary(fivethirtyeight)\n\nglimpse(congress_age)\n\nRows: 18,635\nColumns: 13\n$ congress   &lt;int&gt; 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80,…\n$ chamber    &lt;chr&gt; \"house\", \"house\", \"house\", \"house\", \"house\", \"house\", \"hous…\n$ bioguide   &lt;chr&gt; \"M000112\", \"D000448\", \"S000001\", \"E000023\", \"L000296\", \"G00…\n$ firstname  &lt;chr&gt; \"Joseph\", \"Robert\", \"Adolph\", \"Charles\", \"William\", \"James\"…\n$ middlename &lt;chr&gt; \"Jefferson\", \"Lee\", \"Joachim\", \"Aubrey\", NA, \"A.\", \"Joseph\"…\n$ lastname   &lt;chr&gt; \"Mansfield\", \"Doughton\", \"Sabath\", \"Eaton\", \"Lewis\", \"Galla…\n$ suffix     &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ birthday   &lt;date&gt; 1861-02-09, 1863-11-07, 1866-04-04, 1868-03-29, 1868-09-22…\n$ state      &lt;chr&gt; \"TX\", \"NC\", \"IL\", \"NJ\", \"KY\", \"PA\", \"CA\", \"NY\", \"WI\", \"MA\",…\n$ party      &lt;chr&gt; \"D\", \"D\", \"D\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\", \"D\", \"R\",…\n$ incumbent  &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, TRUE, TRU…\n$ termstart  &lt;date&gt; 1947-01-03, 1947-01-03, 1947-01-03, 1947-01-03, 1947-01-03…\n$ age        &lt;dbl&gt; 86, 83, 81, 79, 78, 78, 78, 77, 76, 76, 75, 74, 74, 73, 73,…\n\n\nSuppose we want to do some exploratory analysis on these data. Let’s use the tic() and toc() functions from the tictoc packages to check how much time it takes to run this code:\n\ntic()\n\ncongress_age %&gt;%\n  filter(chamber == \"senate\") %&gt;%\n  summarize(mean(age))\n\ncongress_age %&gt;%\n  filter(chamber == \"senate\") %&gt;%\n  ggplot() + \n  geom_histogram(mapping = aes(x = age))\ncongress_age %&gt;%\n  filter(chamber == \"senate\") %&gt;%\n  slice_max(n = 5, order_by = age)\n\n\ntoc()\n\n0.131 sec elapsed\n\n\nThese are all three reasonable things to do, and they can’t be done in the same pipeline. But wait - we just made R do the process of subsetting to only Senators three separate times!\n\ntic()\n  congress_age %&gt;%\n    filter(chamber == \"senate\")\n\n\ntoc()\n\n0.011 sec elapsed\n\n\nInstead, how about we filter the data once, save it into an object, and call on that object:\n\ntic()\n\n senate &lt;- congress_age %&gt;%\n  filter(chamber == \"senate\")\n\nsenate %&gt;%\n  summarize(mean(age))\n\nsenate %&gt;%\n  ggplot() + \n  geom_histogram(mapping = aes(x = age))\nsenate %&gt;%\n  slice_max(n = 5, order_by = age)\n\n\ntoc()\n\n0.097 sec elapsed\n\n\nThat is half the run time! Yes, we are dealing with minute increments of time (less than a second), but hopefully you could see how this might scale to larger calcuations.",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Writing Efficient Code"
+    ]
+  },
+  {
+    "objectID": "unit-1/efficient-code.html#avoid-for-loops",
+    "href": "unit-1/efficient-code.html#avoid-for-loops",
+    "title": "Writing Efficient Code",
+    "section": "Avoid for-loops",
+    "text": "Avoid for-loops\nFor-loops are deathly slow in R. If you absolutely must iterate over a process, rely on the map() or apply() function families.\n\n\n\n\n\n\nNoteWhy choose map() instead of apply()?\n\n\n\nThe map() and apply() functions will typically be close to the same speed, so the largest argument in favor of the map() family of functions are (1) their consistent syntax, and (2) their consistent object output.\nThe map() function always returns a list and the map_XXX() variants always return a vector of a specified data type. Whereas, apply() returns a vector or a list, lapply() returns a list, and sapply() returns a vetor or a matrix.\n\n\nHere is a motivating example demonstrating the difference in run time between a function which loops over every column in a data frame to extract the data type and a function which uses map_chr() to apply the class() function to every column of a data frame:\n\nloop_func &lt;- function(df){\n  \n  # initialize the type object\n  type &lt;- rep(NA, ncol(df))\n  \n  for(i in 1:ncol(df)){\n    \n    # store the class of the ith column of df into the ith entry of type \n    type[i] &lt;- class(df[,i])\n  }\n  \n  return(type)\n}\n\nmap_func &lt;- function(df){\n  \n  type &lt;- map_chr(df, class)\n  \n  return(type)\n\n  }\n\ndat &lt;- as.data.frame(\n  matrix(1,\n         nrow = 5,\n         ncol = 100000)\n  )\n\nmicrobenchmark::microbenchmark(loop_func(dat),\n                               map_func(dat),\n                               times = 3)\n\nUnit: milliseconds\n           expr  min   lq mean median   uq  max neval\n loop_func(dat) 3176 3182 3187   3188 3193 3198     3\n  map_func(dat)   12   12   12     12   13   13     3\n\n\nThat’s a pretty big difference!",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Writing Efficient Code"
+    ]
+  },
+  {
+    "objectID": "unit-1/efficient-code.html#use-vectorized-functions",
+    "href": "unit-1/efficient-code.html#use-vectorized-functions",
+    "title": "Writing Efficient Code",
+    "section": "Use vectorized functions",
+    "text": "Use vectorized functions\nBetter even than map() or apply() is not to iterate at all! Writing vectorized functions is tough, but do-able in many cases. Here’s an example:",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Writing Efficient Code"
+    ]
+  },
+  {
+    "objectID": "unit-1/efficient-code.html#required-video-simple-vectorizing-example",
+    "href": "unit-1/efficient-code.html#required-video-simple-vectorizing-example",
+    "title": "Writing Efficient Code",
+    "section": "🎥 Required Video: Simple Vectorizing Example",
+    "text": "🎥 Required Video: Simple Vectorizing Example\nBetter yet - rely on built-in functions in other packages to do it for you!",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Writing Efficient Code"
+    ]
+  },
+  {
+    "objectID": "unit-1/efficient-code.html#allocate-memory-in-advance",
+    "href": "unit-1/efficient-code.html#allocate-memory-in-advance",
+    "title": "Writing Efficient Code",
+    "section": "Allocate memory in advance",
+    "text": "Allocate memory in advance\nA trick we use very often in coding is to “tack on” values to the end of a vector or list as we iterate through something. However, this is actually very slow! If you know how long your list is going to end up, consider pre-creating that list.\n\ndo_stuff_allocate &lt;- function(reps) {\n  results &lt;- vector(length = reps)\n  for (i in 1:reps) {\n    results[i] &lt;- i\n  }\n  return(results)\n}\n\ndo_stuff_tackon &lt;- function(reps) {\n   results &lt;- c()\n  for (i in 1:reps) {\n    results &lt;- c(results, i)\n  }\n  return(results)\n}\n\nmicrobenchmark::microbenchmark(\n  do_stuff_allocate(1000),\n  do_stuff_tackon(1000)\n)\n\nUnit: microseconds\n                    expr min  lq mean median  uq  max neval\n do_stuff_allocate(1000)  13  13   24     14  14 1040   100\n   do_stuff_tackon(1000) 421 493  686    520 551 5515   100",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Writing Efficient Code"
+    ]
+  },
+  {
+    "objectID": "unit-1/efficient-code.html#data.table",
+    "href": "unit-1/efficient-code.html#data.table",
+    "title": "Writing Efficient Code",
+    "section": "data.table",
+    "text": "data.table\nFor speeding up work with data frames, no package is better than data.table!",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Writing Efficient Code"
+    ]
+  },
+  {
+    "objectID": "unit-1/efficient-code.html#required-video-5-minute-intro-to-data.table",
+    "href": "unit-1/efficient-code.html#required-video-5-minute-intro-to-data.table",
+    "title": "Writing Efficient Code",
+    "section": "📖 Required Video: 5-minute intro to data.table",
+    "text": "📖 Required Video: 5-minute intro to data.table",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Writing Efficient Code"
+    ]
+  },
+  {
+    "objectID": "unit-1/efficient-code.html#required-reading-data.table-cheatsheet",
+    "href": "unit-1/efficient-code.html#required-reading-data.table-cheatsheet",
+    "title": "Writing Efficient Code",
+    "section": "📖 Required Reading: data.table cheatsheet",
+    "text": "📖 Required Reading: data.table cheatsheet\n\n\n\n\n\n\nImportantCheck-in: data.table\n\n\n\nQuestion 1: Here is some dplyr code. Re-write it in data.table syntax. Then perform a speed test to see which one is faster, and by how much.\n\ncongress_age %&gt;%\n  group_by(state) %&gt;%\n  summarize(mean_age = mean(age))",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Writing Efficient Code"
+    ]
+  },
+  {
+    "objectID": "unit-1/efficient-code.html#required-reading-profiling",
+    "href": "unit-1/efficient-code.html#required-reading-profiling",
+    "title": "Writing Efficient Code",
+    "section": "📖 Required Reading: Profiling",
+    "text": "📖 Required Reading: Profiling",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Writing Efficient Code"
+    ]
+  },
+  {
+    "objectID": "unit-1/efficient-code.html#recommended-reading-measuring-performance",
+    "href": "unit-1/efficient-code.html#recommended-reading-measuring-performance",
+    "title": "Writing Efficient Code",
+    "section": "📖 Recommended Reading: Measuring Performance",
+    "text": "📖 Recommended Reading: Measuring Performance\n\n\n\n\n\n\nTipSkimming is sufficient!\n\n\n\nFor this reading, I strongly encourage you to skim. The code aspects are mostly more complicated that we expect in this class; but the general overview of the principles behind speeding up code is helpful.\nIn your work, you will most likely “profile” manually, by tictoc-ing bits of your code and so forth, not by these fancy methods.\n\n\n\n\n\n\n\n\nImportantCheck-in: Profiling\n\n\n\nQuestion 2: Why is vapply() faster than sapply()?\n\nIt specifies the output type.\nIt specifies the input type.\nIt performs fewer safety checks.\nIt performs fewer iterations.\n\nQuestion 3: Here are two other ways to compute the square root of a vector. Which is faster? fastest? Use microbenchmarking to test your answers!\n\nx ^ (1 / 2)\nexp(log(x) / 2)\n\nQuestion 4: Why is mean(x) slower than sum(x)/length(x)?\n\nsum() is vectorized, while mean() is not.\nA mean is a smaller number than a sum, so it needs less memory.\nmean() calculates the mean twice just in case.\nmean() was written in an old version of R.",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Writing Efficient Code"
+    ]
+  },
+  {
+    "objectID": "unit-1/efficient-code.html#optional-super-advanced-mode",
+    "href": "unit-1/efficient-code.html#optional-super-advanced-mode",
+    "title": "Writing Efficient Code",
+    "section": "Optional: Super advanced mode",
+    "text": "Optional: Super advanced mode\nThe following are some suggestions of ways you can level-up your code speed. These are outside the scope of this class, but you are welcome to explore them!\n\nDive deep into the R efficiency rabbit hole…\nParallelize your computations\nMake your code run in C++ with Rcpp\nLearn to use recursion\nLearn more about memory allocation and garbage collecting in R.",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Writing Efficient Code"
+    ]
+  },
+  {
+    "objectID": "unit-1/json.html",
+    "href": "unit-1/json.html",
+    "title": "Hierarchical Data",
+    "section": "",
+    "text": "It’s likely that a huge portion of the datasets you’ve worked with in your life thus far are very well structured and organized to the point of being tabular. That is, the dataset consists of a single table with rows and columns. If you’re not familiar with the concept of tidy data I suggest you check out this tidyr vignette on what it means for a dataset to be “tidy.” Most of your datasets have likely even been tidy:\n\nEach variable forms a column\nEach observation forms a row\n\nAlmost everyone’s experiences beyond this probably involved taking multiple tidy datasets and combining them in some way, but the overall dataset still fit into this tabular structure. These often came in the form of TXT, CSV, Excel, or TSV files.\nOur world is rich with data and a great deal of it doesn’t come in nice, neat tables…BUT a lot of it is still extremely structured and well organized.\n\n\nYou’ve likely already noticed, via your work with leaflet, there is another very popular data format called “JSON”. JSON is short for JavaScript Object Notation and is a syntax for storing and exchanging data…but data in a much broader sense than we’re used to thinking about.\nIn the middle of a statistics-related course when I hear the word “data” my mind instinctively envisions something tabular with which we could do some sort of visualization or analysis with. However, in the broadest sense, the word “data” really just describes pieces of information…which encapsulates everything from movie theater schedules when you look up showtimes on a website to what your cell phone uses as part of your “data plan.”\nWhile the website for your favorite movie theater may not have had your visualization and analysis plans in mind, their data may still be of interest to us. Many companies and organizations have built tools that allow access to their data in a more streamlined way, and JSON has become a ubiquitous format for many of these data sources to use.",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Hierarchical Data"
+    ]
+  },
+  {
+    "objectID": "unit-1/json.html#structured-but-non-tabular-data",
+    "href": "unit-1/json.html#structured-but-non-tabular-data",
+    "title": "Hierarchical Data",
+    "section": "",
+    "text": "You’ve likely already noticed, via your work with leaflet, there is another very popular data format called “JSON”. JSON is short for JavaScript Object Notation and is a syntax for storing and exchanging data…but data in a much broader sense than we’re used to thinking about.\nIn the middle of a statistics-related course when I hear the word “data” my mind instinctively envisions something tabular with which we could do some sort of visualization or analysis with. However, in the broadest sense, the word “data” really just describes pieces of information…which encapsulates everything from movie theater schedules when you look up showtimes on a website to what your cell phone uses as part of your “data plan.”\nWhile the website for your favorite movie theater may not have had your visualization and analysis plans in mind, their data may still be of interest to us. Many companies and organizations have built tools that allow access to their data in a more streamlined way, and JSON has become a ubiquitous format for many of these data sources to use.",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Hierarchical Data"
+    ]
+  },
+  {
+    "objectID": "unit-1/json.html#required-reading-r-for-data-science-chapter-23",
+    "href": "unit-1/json.html#required-reading-r-for-data-science-chapter-23",
+    "title": "Hierarchical Data",
+    "section": "📖 Required Reading: R for Data Science, Chapter 23",
+    "text": "📖 Required Reading: R for Data Science, Chapter 23\n\n\n\n\n\n\nNoteOnly read Sections 1-4 for now!",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Hierarchical Data"
+    ]
+  },
+  {
+    "objectID": "unit-1/json.html#check-in-unnesting",
+    "href": "unit-1/json.html#check-in-unnesting",
+    "title": "Hierarchical Data",
+    "section": "Check-in: Unnesting",
+    "text": "Check-in: Unnesting\n\nWhat happens when you use unnest_wider() with unnamed list-columns like df2?\n\n\nWhat argument is now necessary?\n\n\n\n\nHow does unnest_wider() reconcile columns with different lengths?\n\n\nFrom time-to-time you encounter data frames with multiple list-columns with aligned values. For example, in the following data frame, the values of y and z are aligned (i.e. y and z will always have the same length within a row, and the first value of y corresponds to the first value of z).\n\n\nWhat happens if you apply two unnest_longer() calls to this data frame?\nHow can you preserve the relationship between x and y? Hint: Carefully read the documentation",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Hierarchical Data"
+    ]
+  },
+  {
+    "objectID": "unit-1/json.html#required-reading-r-for-data-science-chapter-23-1",
+    "href": "unit-1/json.html#required-reading-r-for-data-science-chapter-23-1",
+    "title": "Hierarchical Data",
+    "section": "📖 Required Reading: R for Data Science, Chapter 23",
+    "text": "📖 Required Reading: R for Data Science, Chapter 23\n\n\n\n\n\n\nNoteNow read Sections 5 & 6!",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Hierarchical Data"
+    ]
+  },
+  {
+    "objectID": "unit-1/json.html#check-in-json-pt.-1",
+    "href": "unit-1/json.html#check-in-json-pt.-1",
+    "title": "Hierarchical Data",
+    "section": "Check-in: JSON, pt. 1",
+    "text": "Check-in: JSON, pt. 1\n\nObjects are held in _____.\n\n\nparentheses\ndouble quotes\nsquare brackets\ncurly braces\n\n\nWhile it may seem tedious compared to our usual tabular forms of data, JSON data is easy to read because it _____.\n\n\ncomes in name / value pairs\nis separated by “—–”\ncomes in table / name/value triplets\n\n\nCreate rectangular versions of df_col and df_row (shown below).\n\n\njson_col &lt;- parse_json('\n  {\n    \"x\": [\"a\", \"x\", \"z\"],\n    \"y\": [10, null, 3]\n  }\n')\n\njson_row &lt;- parse_json('\n  [\n    {\"x\": \"a\", \"y\": 10},\n    {\"x\": \"x\", \"y\": null},\n    {\"x\": \"z\", \"y\": 3}\n  ]\n')\n\ndf_col &lt;- tibble(json = list(json_col)) \n\ndf_row &lt;- tibble(json = json_row)",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Hierarchical Data"
+    ]
+  },
+  {
+    "objectID": "unit-1/json.html#check-in-json-pt.-2",
+    "href": "unit-1/json.html#check-in-json-pt.-2",
+    "title": "Hierarchical Data",
+    "section": "Check-in: JSON, pt. 2",
+    "text": "Check-in: JSON, pt. 2\nLet’s use the companies JSON dataset from the tidyjson package to explore tools from the tidyjson package. This exploration parallels the worldbank examples from the tidyjson vignette.\nStep 1 – Use spread_all() to spread the values of a JSON object\n\nWhen you use the spread_all() function on the companies dataset, how many columns are created?\n\n\nStep 2 – Find the values that were not able to be spread\nTo identify the names of an object, their type, and frequency we use the following pipeline:\n\nname_of_data %&gt;% \n  gather_object() %&gt;% \n  json_types() %&gt;% \n  count(name, type)\n\nThe gather_object() function collapses a JSON object into name-value pairs, producing a tbl_json object. The json_types() function then inspects the JSON associated with each row of the tbl_json object, and adds a new column (\"type\") that identifies the type according to the JSON standard. We can then count() the number of occurrences of each name, type combination to understand how many rows / observations contained these values.\n\nHow many different values are included in the companies dataset?\n\nNow that we know the name of every value in the companies dataset, we can inspect how many of these columns were not captured when we used spread-all().\n\nHow many arrays from the companies dataset were not spread into new columns?\n\nStep 3 – Manually spread the problem values\nNow that we know the names of the values that were not spread into columns, we can wrangle specific values to capture their values. Let’s do this with the acquisitions value.\nWe do this with the following pipeline:\n\nname_of_dataset %&gt;% \n  enter_object(name_of_value) %&gt;% \n  gather_array() %&gt;% \n  spread_all()\n\nThe enter_object() function allows you to navigate a specific value of the JSON data by referencing its name. gather_array() then collapses a JSON array into index-value pairs, creating a new column array.index to store the index of the array, and storing values in the ‘JSON’ attribute for further tidyjson manipulation.\n\nUsing this pipeline on the acquisitions array of the companies dataset, what values are stored in this array? i.e., what are the names of the new columns that appear in the spread dataset?\n\nStep 4 – Combining everything together\nBy combining with our initial top-level spread_all(), we can aggregate the sale price of companies by category_code and the currency it was sold in.\n\n# For nice looking tables!\nlibrary(gt)\n\ncompanies %&gt;% \n  spread_all() %&gt;% \n  # Manually extracting information from acquisitions\n  enter_object(acquisitions) %&gt;% \n  gather_array() %&gt;% \n  spread_all() %&gt;% \n  # Removing missing values from relevant variables\n  drop_na(category_code, price_currency_code, price_amount) %&gt;% \n  # Finding max sale price for different company categories\n  group_by(category_code, price_currency_code) %&gt;%\n  summarize(\n    max_price = max(price_amount), \n    .groups = \"drop\"\n            ) %&gt;% \n  mutate(\n    # Convert to dollar format\n    max_price = scales::dollar(max_price), \n    # Remove _ from company sector\n    category_code = str_replace_all(category_code, \n                                    pattern = \"_\",\n                                    replacement = \" \"), \n    # Capitalize the first letter of each word\n    category_code = str_to_title(category_code)\n    ) %&gt;% \n  gt() %&gt;% \n  cols_label(category_code = md(\"**Business Sector**\"), \n                 price_currency_code = md(\"**Currency of Sale**\"), \n                 max_price = md(\"**Max Company Sale Price**\")\n                 )\n\n\n\n\n\n\n\nBusiness Sector\nCurrency of Sale\nMax Company Sale Price\n\n\n\n\nBiotech\nUSD\n$587,000,000\n\n\nConsulting\nUSD\n$4,500,000\n\n\nEnterprise\nUSD\n$4,900,000,000\n\n\nHardware\nUSD\n$710,000,000\n\n\nMobile\nUSD\n$168,000,000\n\n\nNetwork Hosting\nUSD\n$45,340,000\n\n\nNews\nUSD\n$1,850,000,000\n\n\nOther\nUSD\n$23,700,000\n\n\nPublic Relations\nUSD\n$25,000,000\n\n\nSearch\nUSD\n$225,000,000\n\n\nSecurity\nUSD\n$242,000,000\n\n\nSemiconductor\nUSD\n$342,500,000\n\n\nSoftware\nUSD\n$155,000,000\n\n\nWeb\nUSD\n$260,000,000\n\n\n\n\n\n\n\nStep 5 – Scaling to multiple columns\nThis is a powerful process, but you might be able to see how we don’t necessarily want to do this process repeatedly for every value spread_all() was not able to parse.\n\n\n\n\n\n\nWarningDo you see a way you could use iteration to complete this task?",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Hierarchical Data"
     ]
   },
   {
@@ -625,47 +1546,5 @@
       "Unit 2 - Professional Deliverables",
       "Quarto Dashboards, Part 2"
     ]
-  },
-  {
-    "objectID": "1810-review/tidyr-review.html#tidy-data-sec-tidy-data",
-    "href": "1810-review/tidyr-review.html#tidy-data-sec-tidy-data",
-    "title": "Data Joins and Transformations Review",
-    "section": "Tidy Data {sec-tidy-data}",
-    "text": "Tidy Data {sec-tidy-data}\n📖 Recommended Reading: R4DS Section 5.2 (Tidy data)\n\n\n\n\n\n\nNoteDo we always want our data in the same layout?\n\n\n\nThe concept of tidy data is useful for mapping variables from the data set to elements in a graph, specifications of a model, or aggregating to create summaries. However, what is considered to be “tidy data” format for one task, might not be in the correct “tidy data” format for a different task. It is important for you to consider the end goal when restructuring your data."
-  },
-  {
-    "objectID": "1810-review/tidyr-review.html#sec-tidy-data",
-    "href": "1810-review/tidyr-review.html#sec-tidy-data",
-    "title": "Data Joins and Transformations Review",
-    "section": "Tidy Data",
-    "text": "Tidy Data\n📖 Recommended Reading: R4DS Section 5.2 (Tidy data)\n\n\n\n\n\n\nNoteDo we always want our data in the same layout?\n\n\n\nThe concept of tidy data is useful for mapping variables from the data set to elements in a graph, specifications of a model, or aggregating to create summaries. However, what is considered to be “tidy data” format for one task, might not be in the correct “tidy data” format for a different task. It is important for you to consider the end goal when restructuring your data."
-  },
-  {
-    "objectID": "1810-review/tidyr-review.html#sec-mutating-joins",
-    "href": "1810-review/tidyr-review.html#sec-mutating-joins",
-    "title": "Data Joins and Transformations Review",
-    "section": "Mutating Joins",
-    "text": "Mutating Joins\nWe’re primarily going to focus on mutating joins, as filtering joins can be accomplished by…filtering…rather than by table joins.\n\nInner JoinLeft JoinRight JoinFull Join\n\n\nAn inner_join() only keeps any rows that are included in both tables, but keeps every column.\n\n\n\n© Garrick Aden-Buie\n\n\n\n\nBut what if we want to keep all of the rows in x? We would do a left_join() (since x is on the left).\n\n\n\n© Garrick Aden-Buie\n\n\nIf there are multiple matches in the y table, though, we might have to duplicate rows in x. This is still a left join, just a more complicated one.\n\n\n\n© Garrick Aden-Buie\n\n\n\n\nIf we wanted to keep all of the rows in y, we would do a right_join() (since y is on the right):\n\n\n\n© Garrick Aden-Buie\n\n\nWe can always change a left join to a right join or visa versa. People seem to have a preference for left joins, but if you like right joins more go for it!\n\n\nAnd finally, if we want to keep all of the rows of both x and y, we’d do a full_join():\n\n\n\n© Garrick Aden-Buie\n\n\n\n\n\nEvery join has a “left side” and a “right side” - so in XXXX_join(A, B), A is the left side, and B is the right side.\nJoins are differentiated based on how they treat the rows and columns of each side. In mutating joins, the columns from both sides are always kept. The table below summarizes which rows are kept from each side of the join, for different mutating joins.\n\n\n\n\n\n\n\n\n\n\n\n\nRows Selected\n\n\n\nJoin Type\nLeft Side\nRight Side\n\n\n\n\ninner\nmatching\nmatching\n\n\nleft\nall\nmatching\n\n\nright\nmatching\nall\n\n\nouter\nall\nall"
-  },
-  {
-    "objectID": "1810-review/dplyr-review.html#sec-data-structures",
-    "href": "1810-review/dplyr-review.html#sec-data-structures",
-    "title": "dplyr Review",
-    "section": "Data Structures",
-    "text": "Data Structures\nChoose one of these two options:\n\n\n📽 Watch a Video: Data Types in R\n\n📖 Read a Textbook: Data Types in R\n\n\nIn addition, read the following section from the first edition of R for DS:\n📖 Recommended Reading: Tibbles"
-  },
-  {
-    "objectID": "1810-review/dplyr-review.html#sec-dplyr",
-    "href": "1810-review/dplyr-review.html#sec-dplyr",
-    "title": "dplyr Review",
-    "section": "Data Wrangling with dplyr",
-    "text": "Data Wrangling with dplyr\nIf you had a hard time answering Question 3, I would recommend reviewing this content.\n📖 Recommended Reading: Data Transformation\n\n\nRecommended Videos\n📽 filter() – 11 minutes\n📽 select() – 6 minutes\n📽 mutate() – 9 minutes\n📽 arrange() – 7 minutes\n📽 summarize()– 8 minutes\n📽 group_by() – 6 minutes\n\nThe Pipe Operator\nIf you had a hard time answering Question 4, I would recommend also reviewing this content.\n📽 Recommended Video: The pipe operator – 8 minutes"
-  },
-  {
-    "objectID": "1810-review/dplyr-review.html#dplyr",
-    "href": "1810-review/dplyr-review.html#dplyr",
-    "title": "dplyr Review",
-    "section": "dplyr",
-    "text": "dplyr\nYou should feel comfortable using:\n\nThe five main dplyr verbs:\n\nfilter()\narrange()\nselect()\nmutate()\nsummarize()\n\nIncorportaing group_by() to perform groupwise operations\nChaining together data wrangling operations with the pipe operator (|&gt; or %&gt;%)\n\n\nData Structures\nChoose one of these two options:\n\n\n📽 Watch a Video: Data Types in R\n\n📖 Read a Textbook: Data Types in R\n\n\nIn addition, read the following section from the first edition of R for DS:\n📖 Recommended Reading: Tibbles\n\n\nData Wrangling with dplyr\nIf you had a hard time answering Question 3, I would recommend reviewing this content.\n📖 Recommended Reading: Data Transformation\n\n\nRecommended Videos\n📽 filter() – 11 minutes\n📽 select() – 6 minutes\n📽 mutate() – 9 minutes\n📽 arrange() – 7 minutes\n📽 summarize()– 8 minutes\n📽 group_by() – 6 minutes\n\n\nThe Pipe Operator\nIf you had a hard time answering Question 4, I would recommend also reviewing this content.\n📽 Recommended Video: The pipe operator – 8 minutes"
   }
 ]

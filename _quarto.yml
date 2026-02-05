@@ -81,13 +81,12 @@ website:
         - href: unit-1/writing-functions.qmd
         - href: unit-1/efficient-code.qmd
         - href: unit-1/iterating-functions.qmd
-        #- href: labs/lab-6.qmd
-        #- href: labs/lab-6-alt.qmd
+        #- href: labs/lab-2.qmd
         - href: unit-1/json.qmd
         - href: unit-1/api.qmd
-        #- href: labs/lab-7.qmd
+        #- href: labs/lab-3.qmd
         - href: unit-1/web-scraping.qmd
-        #- href: labs/lab-8.qmd
+        #- href: labs/lab-4.qmd
 
     - id: portfolio
       title: "Portfolio"
@@ -103,11 +102,11 @@ website:
         - href: unit-2.qmd
         - href: unit-2/ggplot-extensions.qmd
         - href: unit-2/ggplot-leaflet.qmd
-        #- href: labs/lab-2.qmd
+        #- href: labs/lab-5.qmd
         - href: unit-2/quarto-dashboard-static.qmd
-        - href: labs/lab-3.qmd
+        #- href: labs/lab-6.qmd
         - href: unit-2/quarto-dashboard-dynamic.qmd
-        - href: labs/lab-4.qmd
+        #- href: labs/lab-7.qmd
 
 format:
   html:
