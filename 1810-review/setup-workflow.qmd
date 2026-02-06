@@ -12,6 +12,14 @@ execute:
   message: false
 ---
 
+::: {.callout-important}
+# Not Optional Content
+
+As opposed to the latter sections, this section **is not optional**. Every
+student is required to have completed each of the steps below to ensure you 
+have the most up to date versions of R and RStudio.
+:::
+
 Your **workflow** refers to the series of good habits you get into in your
 coding process, that help save you time and headache down the road.
 
