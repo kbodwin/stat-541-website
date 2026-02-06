@@ -65,6 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../1810-review/ggplot-review.html" rel="next">
+<link href="../1810-review.html" rel="prev">
 <link href="../images/cat-monsters-horst.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -112,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -305,11 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../infrastructure.qmd"> 
-<span class="menu-text">Infrastructure</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../1810-review.html"> 
+    <a class="nav-link active" href="../1810-review.html" aria-current="page"> 
 <span class="menu-text">STAT 331 Review</span></a>
   </li>  
   <li class="nav-item">
@@ -338,10 +336,75 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../1810-review/setup-workflow.html">Installing / Updating R &amp; RStudio</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../1810-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">STAT 331 Review</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../1810-review/setup-workflow.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Installing / Updating R &amp; RStudio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../1810-review/ggplot-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><code>ggplot</code> Review</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../1810-review/dplyr-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><code>dplyr</code> Review</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../1810-review/tidyr-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Joins and Transformations Review</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../1810-review/quarto-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Untitled</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../1810-review/setup-version-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Version Control with Git and GitHub</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1 - Quarto Warmup &amp; STAT 331 Review</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -359,7 +422,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#configure-your-options" id="toc-configure-your-options" class="nav-link" data-scroll-target="#configure-your-options"><span class="header-section-number">5</span> Configure your options</a>
   <ul class="collapse">
   <li><a href="#r-workspace" id="toc-r-workspace" class="nav-link" data-scroll-target="#r-workspace">R Workspace</a></li>
-  <li><a href="#code-chunk-output" id="toc-code-chunk-output" class="nav-link" data-scroll-target="#code-chunk-output">Code Chunk Output</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/1810-review/setup-workflow.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
@@ -396,8 +458,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Step 1: Open RStudio</li>
 <li>Step 2: At the top of the the Console it will say what version of R you are using</li>
 </ul>
-<p><img src="images/r-version.png" class="img-fluid" alt="A screenshot of what version of R should appear when you open RStudio. The version reads 'R version 4.4.1 (2024-06-14) -- 'Race for Your Life'."></p>
-<p>If the version <strong>is not</strong> 4.4.3 (like the image above), you need to update your version of R! The simplest way to do this is to follow the instructions below to install R.</p>
+<p><img src="images/r-version-10-2025.png" class="img-fluid" alt="A screenshot of what version of R should appear when you open RStudio. The version reads 'R version 4.5.2 (2025-10-31) -- '[Not] Part in a Rumble'."></p>
+<p>If the version <strong>is not</strong> 4.5.2 (like the image above), you need to update your version of R! The simplest way to do this is to follow the instructions below to install R.</p>
 </section>
 <section id="installing-r" class="level2 page-columns page-full" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="installing-r"><span class="header-section-number">2</span> Installing R</h2>
@@ -476,16 +538,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="configure-your-options" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="configure-your-options"><span class="header-section-number">5</span> Configure your options</h2>
-<p>There are a few settings we recommend that you change right away in RStudio.</p>
+<p>There are a few settings we recommend that you change right away in RStudio. These can be accessed by opening RStudio and clicking on the “Tools” option from the top of the RStudio menu and selecting “Global Options…” from the dropdown menu:</p>
+<p><img src="images/rstudio-global-options.png" class="img-fluid" alt=""></p>
 <section id="r-workspace" class="level3">
 <h3 class="anchored" data-anchor-id="r-workspace">R Workspace</h3>
-<p>First, you should not save your environment when you close RStudio:</p>
-<p><img src="https://rstats.wtf/img/rstudio-workspace.png" class="img-fluid" alt="A screenshot of the Global options screen, specifically focusing on the 'General' section of the options. There is a red arrow pointing to the box that says 'Restore .RData into workspace at startup', indicating that this box should not be checked (this option should be turned off). There is another red arrow pointing at the dropdown menu next to 'Save workspace to .RData on exit', indicating that the option should be 'Never'."></p>
-</section>
-<section id="code-chunk-output" class="level3">
-<h3 class="anchored" data-anchor-id="code-chunk-output">Code Chunk Output</h3>
-<p>Second, make a deliberate choice about where your chunks will evaluate when you run that. That is, if you reference files, are you referencing them relative to your <em>Project</em>, or relative to your <em>Quarto Document</em> (which might live in a subfolder or even outside the project).</p>
-<p><img src="images/directory_option.png" class="img-fluid" alt="A screenshot of the Global options screen, specifically focusing on the 'R Markdown' section of the options. There is a red box around the option for 'Evaluate chunks in directory:' where there is a drop down menu for where the output of the code chunks will be displayed. The option selected is 'Document' which means that the output of the code chunks will be shown in the document (not in a separate tab) beneath the code chunk."></p>
+<p>First, in the “General” pane (that first shows up), you should not save your environment when you close RStudio. Meaning, you should uncheck the box that says “Restore .RData into workspace at startup” and you should select “Never” from the dropdown menu that says “Save workspace to .RData on exit”:</p>
+<p><img src="https://rstats.wtf/img/rstudio-workspace.png" class="img-fluid" alt="A screenshot of the Global options screen, specifically focusing on the 'General' section of the options. There is a red arrow pointing to the box that says 'Restore .RData into workspace at startup', indicating that this box should not be checked (this option should be turned off). There is another red arrow pointing at the dropdown menu next to 'Save workspace to .RData on exit', indicating that the option should be 'Never'."> ### Code Chunk Output</p>
+<p>Next, click on the R Markdown pane on the left hand side. This pane allows you to choose how your Quarto documents will behave.</p>
+<p>First, let’s decide where we want the output of our code to appear in our document. If you want for the output of your code (e.g., summary statistics, visualizations) to be shown in the document immediately below the code chunk, check the box that says “Show output inline for all R Markdown documents.” If you do not check this box, your output will either be shown in the Console (for numerical summaries) or in the Plots tab (for visualizations).</p>
+<p>Second, we need to decide where Quarto should look for files that we are referencing. Meaning, if you reference files, should Quarto look for them relative to the <em>Project</em> or relative to your <em>Quarto Document</em> (which might live in a subfolder or even outside the project). I would recommend choosing “Document” here!</p>
+<p><img src="images/rstudio-inline-document.png" class="img-fluid" alt="A screenshot of the Global options screen, specifically focusing on the 'R Markdown' section of the options. There is a red box around the option for 'Show output inline for all R Markdown documents.' and the box on the left hand side is checked indicating that this option is turned on. There is a second red box around the 'Evaluate chunks in directory:' option where there is a drop down menu for where Quarto should assume the files you are referencing should be searched for. The option selected is 'Document' which means that external files should be searched for relative to the Quarto document instead of the Project."></p>
 
 
 </section>
@@ -905,6 +967,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../1810-review.html" class="pagination-link" aria-label="STAT 331 Review">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">STAT 331 Review</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../1810-review/ggplot-review.html" class="pagination-link" aria-label="`ggplot` Review">
+        <span class="nav-page-text"><code>ggplot</code> Review</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

@@ -307,10 +307,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../infrastructure.qmd"> 
-<span class="menu-text">Infrastructure</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../1810-review.html"> 
 <span class="menu-text">STAT 331 Review</span></a>
   </li>  
@@ -532,7 +528,7 @@ $ age        &lt;dbl&gt; 86, 83, 81, 79, 78, 78, 78, 77, 76, 76, 75, 74, 74, 73,
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.131 sec elapsed</code></pre>
+<pre><code>0.122 sec elapsed</code></pre>
 </div>
 </div>
 <p>These are all three reasonable things to do, and they can’t be done in the same pipeline. But wait - we just made R do the process of subsetting to only Senators three separate times!</p>
@@ -544,7 +540,7 @@ $ age        &lt;dbl&gt; 86, 83, 81, 79, 78, 78, 78, 77, 76, 76, 75, 74, 74, 73,
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.011 sec elapsed</code></pre>
+<pre><code>0.01 sec elapsed</code></pre>
 </div>
 </div>
 <p>Instead, how about we filter the data once, save it into an object, and call on that object:</p>
@@ -566,7 +562,7 @@ $ age        &lt;dbl&gt; 86, 83, 81, 79, 78, 78, 78, 77, 76, 76, 75, 74, 74, 73,
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.097 sec elapsed</code></pre>
+<pre><code>0.084 sec elapsed</code></pre>
 </div>
 </div>
 <p>That is <strong>half</strong> the run time! Yes, we are dealing with minute increments of time (less than a second), but hopefully you could see how this might scale to larger calcuations.</p>
@@ -668,8 +664,8 @@ $ age        &lt;dbl&gt; 86, 83, 81, 79, 78, 78, 78, 77, 76, 76, 75, 74, 74, 73,
 <div class="cell-output cell-output-stdout">
 <pre><code>Unit: microseconds
                     expr min  lq mean median  uq  max neval
- do_stuff_allocate(1000)  13  13   24     14  14 1040   100
-   do_stuff_tackon(1000) 421 493  686    520 551 5515   100</code></pre>
+ do_stuff_allocate(1000)  13  13   24     13  14 1037   100
+   do_stuff_tackon(1000) 424 487  645    500 515 4630   100</code></pre>
 </div>
 </div>
 </section>

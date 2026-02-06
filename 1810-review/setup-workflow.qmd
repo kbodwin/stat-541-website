@@ -30,9 +30,9 @@ will make it so your code will not run.
 -   Step 2: At the top of the the Console it will say what version of R you are
 using
 
-![](images/r-version.png){fig-alt="A screenshot of what version of R should appear when you open RStudio. The version reads 'R version 4.4.1 (2024-06-14) -- 'Race for Your Life'."}
+![](images/r-version-10-2025.png){fig-alt="A screenshot of what version of R should appear when you open RStudio. The version reads 'R version 4.5.2 (2025-10-31) -- '[Not] Part in a Rumble'."}
 
-If the version **is not** 4.4.3 (like the image above), you need to update your
+If the version **is not** 4.5.2 (like the image above), you need to update your
 version of R! The simplest way to do this is to follow the instructions below to
 install R.
 
@@ -134,19 +134,37 @@ packages.
 
 ## Configure your options
 
-There are a few settings we recommend that you change right away in RStudio.
+There are a few settings we recommend that you change right away in RStudio. 
+These can be accessed by opening RStudio and clicking on the "Tools" option from 
+the top of the RStudio menu and selecting "Global Options..." from the dropdown
+menu:
+
+![](images/rstudio-global-options.png){fig-alt=""}
 
 ### R Workspace
 
-First, you should not save your environment when you close RStudio:
+First, in the "General" pane (that first shows up), you should not save your
+environment when you close RStudio. Meaning, you should uncheck the box that
+says "Restore .RData into workspace at startup" and you should select "Never" 
+from the dropdown menu that says "Save workspace to .RData on exit":
 
 ![](https://rstats.wtf/img/rstudio-workspace.png){fig-alt="A screenshot of the Global options screen, specifically focusing on the 'General' section of the options. There is a red arrow pointing to the box that says 'Restore .RData into workspace at startup', indicating that this box should not be checked (this option should be turned off). There is another red arrow pointing at the dropdown menu next to 'Save workspace to .RData on exit', indicating that the option should be 'Never'."}
-
 ### Code Chunk Output
 
-Second, make a deliberate choice about where your chunks will evaluate when you
-run that. That is, if you reference files, are you referencing them relative to
-your *Project*, or relative to your *Quarto Document* (which might live in a
-subfolder or even outside the project).
+Next, click on the R Markdown pane on the left hand side. This pane allows you
+to choose how your Quarto documents will behave. 
 
-![](images/directory_option.png){fig-alt="A screenshot of the Global options screen, specifically focusing on the 'R Markdown' section of the options. There is a red box around the option for 'Evaluate chunks in directory:' where there is a drop down menu for where the output of the code chunks will be displayed. The option selected is 'Document' which means that the output of the code chunks will be shown in the document (not in a separate tab) beneath the code chunk."}
+First, let's decide where we want the output of our code to appear in our 
+document. If you want for the output of your code (e.g., summary statistics, 
+visualizations) to be shown in the document immediately below the code chunk, 
+check the box that says "Show output inline for all R Markdown documents." If 
+you do not check this box, your output will either be shown in the Console (for
+numerical summaries) or in the Plots tab (for visualizations). 
+
+Second, we need to decide where Quarto should look for files that we are 
+referencing. Meaning, if you reference files, should Quarto look for them
+relative to the *Project* or relative to your *Quarto Document* (which might
+live in a subfolder or even outside the project). I would recommend choosing
+"Document" here!
+
+![](images/rstudio-inline-document.png){fig-alt="A screenshot of the Global options screen, specifically focusing on the 'R Markdown' section of the options. There is a red box around the option for 'Show output inline for all R Markdown documents.' and the box on the left hand side is checked indicating that this option is turned on. There is a second red box around the 'Evaluate chunks in directory:' option where there is a drop down menu for where Quarto should assume the files you are referencing should be searched for. The option selected is 'Document' which means that external files should be searched for relative to the Quarto document instead of the Project."}

@@ -45,8 +45,6 @@ website:
         href: course-materials/calendar.qmd
       - text: "Syllabus"
         href: course-materials/syllabus.qmd
-      - text: "Infrastructure"
-        href: infrastructure.qmd
       - text: "STAT 331 Review"
         href: 1810-review.qmd
       - text: "Unit 1 - Complex Analyses"
@@ -66,12 +64,12 @@ website:
       align: left
       contents:
         - href: 1810-review.qmd
-        - href: unit-1/setup-workflow.qmd
-        - href: unit-1/ggplot-review.qmd
-        - href: unit-1/dplyr-review.qmd
-        - href: unit-1/tidyr-review.qmd
-        - href: unit-1/quarto-review.qmd
-        - href: unit-1/setup-version-control.qmd
+        - href: 1810-review/setup-workflow.qmd
+        - href: 1810-review/ggplot-review.qmd
+        - href: 1810-review/dplyr-review.qmd
+        - href: 1810-review/tidyr-review.qmd
+        - href: 1810-review/quarto-review.qmd
+        - href: 1810-review/setup-version-control.qmd
         - href: labs/lab-1.qmd
 
     - id: unit-1
