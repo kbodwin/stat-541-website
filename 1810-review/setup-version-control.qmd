@@ -18,6 +18,14 @@ editor: source
 <!-- [This resource](https://rstats.wtf/project-oriented-workflow.html) provides an -->
 <!-- excellent explanation of why and how to use projects. -->
 
+<!-- ## ✅ Check-in 1.3: Stat 331 Folder & R Project -->
+
+<!-- Take a screenshot of your class directory, showing: -->
+
+<!-- 1.  the location of your Stat 331 folder -->
+<!-- 2.  an R Project included in your Stat 331 folder -->
+<!-- 3.  a Week 1 sub-folder -->
+
 ```{r}
 #| include: false
 #| label: set-up
