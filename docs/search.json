@@ -410,7 +410,7 @@
     "href": "labs/lab-1.html",
     "title": "Lab 1 - Quarto Warmup & STAT 331 Review",
     "section": "",
-    "text": "library(tidyverse)\nlibrary(ggridges)",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.6\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.1     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.2\n✔ purrr     1.2.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors",
     "crumbs": [
       "STAT 331 Review",
       "Lab 1 - Quarto Warmup & STAT 331 Review"
@@ -421,7 +421,7 @@
     "href": "labs/lab-1.html#quarto",
     "title": "Lab 1 - Quarto Warmup & STAT 331 Review",
     "section": "Quarto",
-    "text": "Quarto\nFirst, let’s make sure you know how to use Markdown formatting to style a Quarto document.\n\nMake this text bold.\nMake this text italicized.\nMake these into a bullet point list:\n\nApples Bananas Potatoes\n\nEdit the YAML to remove warning messages from being output in the rendered HTML file\nUsing code chunk options, make it so this chunk shows the plot but not the source code:\n\n\nggplot(data = mpg, \n       mapping = aes(y = manufacturer, x = hwy)) + \n  geom_boxplot() +\n  labs(x = \"\",\n       y = \"\", \n       title = \"Highway Milage (mpg) for Different Car Manufacturers\"\n       )\n\n\nUsing code chunk options, remove the messages about bandwidth geom_density_ridges() chose to use:\n\n\nggplot(data = mpg, \n       mapping = aes(y = manufacturer, x = hwy)) + \n  geom_density_ridges() +\n  labs(x = \"\",\n       y = \"\", \n       title = \"Highway Milage (mpg) for Different Car Manufacturers\"\n       )\n\n\nUsing code chunk options, make it so that these plots are printed side-by-side:\n\n\nggplot(data = mpg, \n       mapping = aes(y = manufacturer, x = hwy)) + \n  geom_boxplot() +\n  labs(x = \"\",\n       y = \"\", \n       title = \"Highway Milage (mpg) for Different Car Manufacturers\"\n       )\n\nggplot(data = mpg, \n       mapping = aes(y = manufacturer, x = hwy)) + \n  geom_density_ridges() +\n  labs(x = \"\",\n       y = \"\", \n       title = \"Highway Milage (mpg) for Different Car Manufacturers\"\n       )\n\n\nUsing code chunk options, make it so this chunk shows the code but not the output:\n\n\n2 + 2\n\n\nUsing code chunk options, make it so the file can still knit even though this chunk has an error\n\n\n2 + a\n\n\nUsing code chunk options, create a descriptive label for each of the code chunks above.",
+    "text": "Quarto\nFirst, let’s make sure you know how to use Markdown formatting to style a Quarto document.\n\nMake this text bold.\nMake this text italicized.\nMake these items into a bullet point list:\n\nApples Bananas Potatoes\n\nEdit the YAML to remove warning messages from being output in the rendered HTML file\nUsing code chunk options, make it so this chunk shows the code but not the output:\n\n\n2 + 2\n\n[1] 4\n\n\n\nUsing code chunk options, make it so the file can still render even though this chunk has an error\n\n\n2 + a\n\nError: object 'a' not found",
     "crumbs": [
       "STAT 331 Review",
       "Lab 1 - Quarto Warmup & STAT 331 Review"
@@ -432,7 +432,7 @@
     "href": "labs/lab-1.html#data-wrangling-review",
     "title": "Lab 1 - Quarto Warmup & STAT 331 Review",
     "section": "Data Wrangling Review",
-    "text": "Data Wrangling Review\nSince you already seen some ggplots, let’s do a bit of review on data handling. In this class, we will exclusively make use of tools from the tidyverse suite of packages to perform our data cleaning and wrangling operations. If you are less familiar with these packages or it’s been some time since you used them, I would strongly recommend referencing the function documentation!\nFor these problems, we will continue to work with the mpg data frame, making various changes to the data to clean it up.\n\nThe fl variable describes the type of fuel for each car, with levels: p, r, e, d, and c. Do some research into what each of these labels mean! Then, use the if_else() function to create a new variable (fuel_type) with two levels: petrol (any car using petrolium-based gas) and alternative energy (any car not using petrolium-based gas).\n\n\nThe drv variable describes if the car has front drive (f), rear drive (r), or four wheel drive (4). Let’s make better labels for these values! Specifically, use the case_when() function to change the drv variable to have the following levels: front, rear, four wheel.\n\n\nThe trans variable contains two pieces of information, (1) the transmission style (auto or manual) and the specific type of transmission (e.g., l5, m5). Using the separate_wider_delim() function, create two new variables from trans, (1) trans_type containing the specific type of transmission of each car (e.g., l5), and (2) trans_style the style of the transmission (e.g., auto). Hint: You will need to deal with the stray parenthesis!",
+    "text": "Data Wrangling Review\nIn this class, we will exclusively make use of tools from the tidyverse suite of packages to perform our data cleaning and wrangling operations. If you are less familiar with these packages or it’s been some time since you used them, I would strongly recommend referencing the function documentation!\nFor these problems, we will continue to work with the mpg data frame, making various changes to the data to clean it up.\n\nThe fl variable describes the type of fuel for each car, with levels: p, r, e, d, and c. Do some research into what each of these labels mean! Then, use the mutate() and if_else() functions to create a new variable (fuel_type) with two levels: petrol (any car using petrolium-based gas) and alternative energy (any car not using petrolium-based gas).\n\n\nThe drv variable describes if the car has front drive (f), rear drive (r), or four wheel drive (4). Let’s make better labels for these values! Specifically, use the mutate() and case_when() functions to change the drv variable to have the following descriptive levels: front, rear, four wheel.\n\n\nThe trans variable contains two pieces of information, (1) the transmission style (auto or manual) and the specific type of transmission (e.g., l5, m5, av). Using the separate_wider_delim() function, create two new variables from trans, (1) trans_type containing the specific type of transmission of each car (e.g., l5), and (2) trans_style the style of the transmission (e.g., auto). Hint: You will need to deal with the stray parenthesis!",
     "crumbs": [
       "STAT 331 Review",
       "Lab 1 - Quarto Warmup & STAT 331 Review"
@@ -1719,5 +1719,16 @@
     "title": "Introduction to Version Control",
     "section": "Your Turn - Commit that Change",
     "text": "Your Turn - Commit that Change\n\n\nI will live code this process!\n\nPut a green post-it on your laptop if you were successful!\n\n\n\n\n\n\n\n\n\nThree Steps to Commit\n\n\n\nCheck the box of the document you want to commit changes from (this stages the changes)\nType out a commit message describing the changes you made (make it short!)\nClick the Commit button to commit these documents with that commit message"
+  },
+  {
+    "objectID": "labs/lab-1.html#data-visualization-review",
+    "href": "labs/lab-1.html#data-visualization-review",
+    "title": "Lab 1 - Quarto Warmup & STAT 331 Review",
+    "section": "Data Visualization Review",
+    "text": "Data Visualization Review\nIn this class, we will exclusively make visualizations using ggplot2 and packages developed to be compatible with ggplot2. If you are less familiar with plotting in ggplot2 or it’s been some time since you used this package, I would strongly recommend referencing resources from the data visualization section of this week’s coursework!\n\nUse side-by-side boxplots to visualize the distribution of hwy miles per gallon for each manufacturer. The names of the manufacturers should be easily readable, and your axes should include any necessary information regarding the variables and their units!\n\n\nUse faceted scatterplots to visualize how the relationship between hwy mileage and cty mileage has changed over time. Your axes should include any necessary information regarding the variables and their units!",
+    "crumbs": [
+      "STAT 331 Review",
+      "Lab 1 - Quarto Warmup & STAT 331 Review"
+    ]
   }
 ]
