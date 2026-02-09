@@ -394,9 +394,11 @@ diamonds %>%
 
 ## Multiple Inputs
 
-`purrr` also offers the `pmap()` family of functions that take multiple inputs
-and loops over them simultaneously. Let's look at the [`purrr` cheatsheet](https://rstudio.github.io/cheatsheets/purrr.pdf) to look at
+`purrr` also offers the `map2()` and `pmap()` family of functions that take
+**multiple** inputs and loop over them simultaneously. The [`purrr` cheatsheet](https://rstudio.github.io/cheatsheets/purrr.pdf) provides nice 
 graphical representations of how these functions work.
+
+For all the examples below, I'm going to work with this dataset of strings:
 
 ```{r}
 #| label: pmap_ex1
@@ -406,6 +408,76 @@ string_data <- tibble(
     pattern = c("p", "n", "h"),
     replacement = c("P", "N", "H")
 )
+
+string_data
+```
+
+### Two Inputs
+
+The `str_detect()` function takes two arguments: a `string` and a `pattern`
+to detect. The function returns logical values (`TRUE`, `FALSE`) indicating 
+whether the pattern was detected in the string. Let's use this to see how the 
+`map2_lgl()` function works!
+
+```{r}
+#| label: map2-example
+
+map2_lgl(
+  .x = string_data$string,
+  .y = string_data$pattern,
+  .f = ~ str_detect(.x, .y)
+)
+```
+
+This should look a bit different, we are using `string_data$string` to 
+input the variables we want into `map2()` rather than piping (`|>`) the
+variables into the function. 
+
+If we had tried to use the pipe operator, we would have gotten the following 
+error message:
+
+```{r}
+#| error: true
+#| label: bad-variable-specification
+
+string_data |> 
+  map2_lgl(
+    .x = string,
+    .y = pattern,
+    .f = ~ str_detect(.x, .y)
+    )
+```
+This error is because the pipe operator is inputting the entire `string_data`
+dataframe into the first argument of `map2_lgl()` (`.x`). Looking at the 
+documentation for `map2()`, the `.x` and `.y` arguments should be specified as
+a pair of vectors, not dataframes. 
+
+If we wanted to use the pipe operator, we would need to join this with a data
+masking function (e.g., `mutate()`) that allows us to reference variable names
+for inputs into functions:
+
+```{r}
+#| label: data-mask-map2
+
+string_data |> 
+  mutate(found = map2_lgl(
+    .x = string,
+    .y = pattern,
+    .f = ~ str_detect(.x, .y)
+    )
+  )
+
+```
+
+### Three or More Inputs
+
+Now that we've conquered two inputs, let's try three! The `str_replace_all()`
+function takes three inputs: a `string`, a `pattern` to look for, and a 
+`replacement` pattern (to use when the `pattern` is found).
+
+```{r}
+#| label: pmap-name-match
+
 string_data
 
 pmap_chr(string_data, .f = str_replace_all)
@@ -413,35 +485,93 @@ pmap_chr(string_data, .f = str_replace_all)
 
 Note how the column names in `string_data` exactly match the argument names in
 `str_replace_all()`. The iteration that is happening is across rows, and the
-multiple arguments in `str_replace_all()` are being matched by name.
+multiple arguments in `str_replace_all()` are being matched by name. So, the 
+first row is effectively running 
+`str_replace_all(string = "apple", pattern = "p", replacement = "P")`, and
+similarly for the second and third row. 
 
-We can also use `pmap()` to specify variations in some arguments but leave some
-arguments constant across the iterations:
+What if the column names didn't match? Well, we would need to take a similar
+approach to what we did with `map2()`: 
 
 ```{r}
-#| label: pmap_ex2
+#| label: non-matchin-names
 
-string_data <- tibble(
-    pattern = c("p", "n", "h"),
-    replacement = c("P", "N", "H")
+string_data <- string_data |> 
+  rename(word = string, 
+         look_for = pattern, 
+         replace_with = replacement)
+
+pmap_chr(
+  .l = list(string = string_data$word,
+       pattern = string_data$look_for,
+       replacement = string_data$replace_with),
+  .f = str_replace_all
 )
-
-pmap_chr(string_data, str_replace_all, string = "ppp nnn hhh")
 ```
 
-### Exercises
+The main difference here is there is **one** argument (`.l`) where we specify 
+the inputs to the function (instead of `.x` and `.y`). This argument is a list, 
+where the elements of the list should take on the same names as the function 
+arguments. 
 
-7. Create 2 small examples that show how `pmap()` works with `str_sub()`. Your
-examples should:
-
-- Use different arguments for `string`, `start`, and `end`
-- Use different arguments for `start` and `end` but a fixed `string`
-
-<details>
-    <summary>Solution</summary>
+Similar to before, if I wanted to use `pmap()` to modify the `word` column of 
+the dataset, I would need to pair it with `mutate()`:
 
 ```{r}
-#| label: pmap_ex_str_remove_soln
+#| label: pmap-mutate
+
+string_data |> 
+  mutate(word = pmap_chr(
+  .l = list(string = word,
+       pattern = look_for,
+       replacement = replace_with),
+  .f = str_replace_all
+  )
+)
+```
+
+
+
+::: {.callout-important}
+# Check-in: Iteration
+
+9. The function `str_c()` concatenates strings. Create a small example that uses
+`map2_chr()` to combine two character vectors element by element. Each element
+of the first vector should be combined with the corresponding element of the
+second vector, separated by a space.
+
+```{r}
+#| label: map2-exercise
+#| echo: false
+#| eval: false
+
+string_data <- tibble(
+  first  = c("apple", "banana", "cherry"),
+  second = c("pie", "bread", "jam")
+)
+
+map2_chr(
+  string_data$first,
+  string_data$second,
+  ~ str_c(.x, .y, sep = " ")
+)
+```
+
+10. The function `str_sub()` takes three arguments: `string`, `start`, and `end`.
+Create a small example that uses `pmap_chr()` to apply `str_sub()` row-by-row, 
+where:
+
+- each row uses a different string,
+- a different starting position, and
+- a different ending position.
+
+Use a tibble with one column per argument, then use `pmap_chr()` to extract
+substrings.
+
+```{r}
+#| label: pmap-exercise
+#| echo: false
+#| eval: false
 
 string_data <- tibble(
     string = c("apple", "banana", "cherry"),
@@ -450,12 +580,5 @@ string_data <- tibble(
 )
 
 pmap_chr(string_data, str_sub)
-
-string_data <- tibble(
-    start = c(1, 2, 4),
-    end = c(2, 3, 5)
-)
-pmap_chr(string_data, str_sub, string = "abcde")
 ```
-
-</details>
+:::

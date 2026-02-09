@@ -419,7 +419,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#combining-with-tidy-selection" id="toc-combining-with-tidy-selection" class="nav-link" data-scroll-target="#combining-with-tidy-selection">Combining with Tidy Selection</a></li>
   <li><a href="#multiple-inputs" id="toc-multiple-inputs" class="nav-link" data-scroll-target="#multiple-inputs">Multiple Inputs</a>
   <ul class="collapse">
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#two-inputs" id="toc-two-inputs" class="nav-link" data-scroll-target="#two-inputs">Two Inputs</a></li>
+  <li><a href="#three-or-more-inputs" id="toc-three-or-more-inputs" class="nav-link" data-scroll-target="#three-or-more-inputs">Three or More Inputs</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -818,14 +819,16 @@ $z
 </section>
 <section id="multiple-inputs" class="level2">
 <h2 class="anchored" data-anchor-id="multiple-inputs">Multiple Inputs</h2>
-<p><code>purrr</code> also offers the <code>pmap()</code> family of functions that take multiple inputs and loops over them simultaneously. Let’s look at the <a href="https://rstudio.github.io/cheatsheets/purrr.pdf"><code>purrr</code> cheatsheet</a> to look at graphical representations of how these functions work.</p>
+<p><code>purrr</code> also offers the <code>map2()</code> and <code>pmap()</code> family of functions that take <strong>multiple</strong> inputs and loop over them simultaneously. The <a href="https://rstudio.github.io/cheatsheets/purrr.pdf"><code>purrr</code> cheatsheet</a> provides nice graphical representations of how these functions work.</p>
+<p>For all the examples below, I’m going to work with this dataset of strings:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>string_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">string =</span> <span class="fu">c</span>(<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>),</span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">pattern =</span> <span class="fu">c</span>(<span class="st">"p"</span>, <span class="st">"n"</span>, <span class="st">"h"</span>),</span>
 <span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">replacement =</span> <span class="fu">c</span>(<span class="st">"P"</span>, <span class="st">"N"</span>, <span class="st">"H"</span>)</span>
 <span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>string_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>string_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
   string pattern replacement
@@ -834,58 +837,124 @@ $z
 2 banana n       N          
 3 cherry h       H          </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pmap_chr</span>(string_data, <span class="at">.f =</span> str_replace_all)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="two-inputs" class="level3">
+<h3 class="anchored" data-anchor-id="two-inputs">Two Inputs</h3>
+<p>The <code>str_detect()</code> function takes two arguments: a <code>string</code> and a <code>pattern</code> to detect. The function returns logical values (<code>TRUE</code>, <code>FALSE</code>) indicating whether the pattern was detected in the string. Let’s use this to see how the <code>map2_lgl()</code> function works!</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map2_lgl</span>(</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">.x =</span> string_data<span class="sc">$</span>string,</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">.y =</span> string_data<span class="sc">$</span>pattern,</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">.f =</span> <span class="sc">~</span> <span class="fu">str_detect</span>(.x, .y)</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE TRUE TRUE</code></pre>
+</div>
+</div>
+<p>This should look a bit different, we are using <code>string_data$string</code> to input the variables we want into <code>map2()</code> rather than piping (<code>|&gt;</code>) the variables into the function.</p>
+<p>If we had tried to use the pipe operator, we would have gotten the following error message:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>string_data <span class="sc">|&gt;</span> </span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map2_lgl</span>(</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">.x =</span> string,</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">.y =</span> pattern,</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">.f =</span> <span class="sc">~</span> <span class="fu">str_detect</span>(.x, .y)</span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'string' not found</code></pre>
+</div>
+</div>
+<p>This error is because the pipe operator is inputting the entire <code>string_data</code> dataframe into the first argument of <code>map2_lgl()</code> (<code>.x</code>). Looking at the documentation for <code>map2()</code>, the <code>.x</code> and <code>.y</code> arguments should be specified as a pair of vectors, not dataframes.</p>
+<p>If we wanted to use the pipe operator, we would need to join this with a data masking function (e.g., <code>mutate()</code>) that allows us to reference variable names for inputs into functions:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>string_data <span class="sc">|&gt;</span> </span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">found =</span> <span class="fu">map2_lgl</span>(</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">.x =</span> string,</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">.y =</span> pattern,</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">.f =</span> <span class="sc">~</span> <span class="fu">str_detect</span>(.x, .y)</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  string pattern replacement found
+  &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;       &lt;lgl&gt;
+1 apple  p       P           TRUE 
+2 banana n       N           TRUE 
+3 cherry h       H           TRUE </code></pre>
+</div>
+</div>
+</section>
+<section id="three-or-more-inputs" class="level3">
+<h3 class="anchored" data-anchor-id="three-or-more-inputs">Three or More Inputs</h3>
+<p>Now that we’ve conquered two inputs, let’s try three! The <code>str_replace_all()</code> function takes three inputs: a <code>string</code>, a <code>pattern</code> to look for, and a <code>replacement</code> pattern (to use when the <code>pattern</code> is found).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>string_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  string pattern replacement
+  &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;      
+1 apple  p       P          
+2 banana n       N          
+3 cherry h       H          </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pmap_chr</span>(string_data, <span class="at">.f =</span> str_replace_all)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "aPPle"  "baNaNa" "cHerry"</code></pre>
 </div>
 </div>
-<p>Note how the column names in <code>string_data</code> exactly match the argument names in <code>str_replace_all()</code>. The iteration that is happening is across rows, and the multiple arguments in <code>str_replace_all()</code> are being matched by name.</p>
-<p>We can also use <code>pmap()</code> to specify variations in some arguments but leave some arguments constant across the iterations:</p>
+<p>Note how the column names in <code>string_data</code> exactly match the argument names in <code>str_replace_all()</code>. The iteration that is happening is across rows, and the multiple arguments in <code>str_replace_all()</code> are being matched by name. So, the first row is effectively running <code>str_replace_all(string = "apple", pattern = "p", replacement = "P")</code>, and similarly for the second and third row.</p>
+<p>What if the column names didn’t match? Well, we would need to take a similar approach to what we did with <code>map2()</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>string_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">pattern =</span> <span class="fu">c</span>(<span class="st">"p"</span>, <span class="st">"n"</span>, <span class="st">"h"</span>),</span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">replacement =</span> <span class="fu">c</span>(<span class="st">"P"</span>, <span class="st">"N"</span>, <span class="st">"H"</span>)</span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="fu">pmap_chr</span>(string_data, str_replace_all, <span class="at">string =</span> <span class="st">"ppp nnn hhh"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>string_data <span class="ot">&lt;-</span> string_data <span class="sc">|&gt;</span> </span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">word =</span> string, </span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">look_for =</span> pattern, </span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">replace_with =</span> replacement)</span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="fu">pmap_chr</span>(</span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">.l =</span> <span class="fu">list</span>(<span class="at">string =</span> string_data<span class="sc">$</span>word,</span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">pattern =</span> string_data<span class="sc">$</span>look_for,</span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">replacement =</span> string_data<span class="sc">$</span>replace_with),</span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">.f =</span> str_replace_all</span>
+<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "PPP nnn hhh" "ppp NNN hhh" "ppp nnn HHH"</code></pre>
+<pre><code>[1] "aPPle"  "baNaNa" "cHerry"</code></pre>
 </div>
 </div>
-<section id="exercises" class="level3">
-<h3 class="anchored" data-anchor-id="exercises">Exercises</h3>
-<ol start="7" type="1">
-<li>Create 2 small examples that show how <code>pmap()</code> works with <code>str_sub()</code>. Your examples should:</li>
+<p>The main difference here is there is <strong>one</strong> argument (<code>.l</code>) where we specify the inputs to the function (instead of <code>.x</code> and <code>.y</code>). This argument is a list, where the elements of the list should take on the same names as the function arguments.</p>
+<p>Similar to before, if I wanted to use <code>pmap()</code> to modify the <code>word</code> column of the dataset, I would need to pair it with <code>mutate()</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>string_data <span class="sc">|&gt;</span> </span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">pmap_chr</span>(</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">.l =</span> <span class="fu">list</span>(<span class="at">string =</span> word,</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">pattern =</span> look_for,</span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">replacement =</span> replace_with),</span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">.f =</span> str_replace_all</span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  word   look_for replace_with
+  &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;       
+1 aPPle  p        P           
+2 baNaNa n        N           
+3 cHerry h        H           </code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Check-in: Iteration
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol start="9" type="1">
+<li>Create a small example that shows how <code>map2()</code> works with <code>str_sub()</code>. Your example should use different arguments for <code>string</code>, <code>start</code>, and <code>end</code>.</li>
 </ol>
-<ul>
-<li>Use different arguments for <code>string</code>, <code>start</code>, and <code>end</code></li>
-<li>Use different arguments for <code>start</code> and <code>end</code> but a fixed <code>string</code></li>
-</ul>
-<details>
-<summary>
-Solution
-</summary>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>string_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">string =</span> <span class="fu">c</span>(<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>),</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>),</span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">end =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="fu">pmap_chr</span>(string_data, str_sub)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "ap" "an" "rr"</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>string_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>),</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">end =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="fu">pmap_chr</span>(string_data, str_sub, <span class="at">string =</span> <span class="st">"abcde"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "ab" "bc" "de"</code></pre>
 </div>
 </div>
-</details>
 
 
 </section>
