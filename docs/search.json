@@ -191,7 +191,7 @@
     "href": "unit-1/iterating-functions.html",
     "title": "Iterating Over Functions",
     "section": "",
-    "text": "In this unit, you’ll learn tools for iteration—repeatedly performing the same action on different objects. Iteration in R generally tends to look a bit different from other programming languages. Much of iteration we get for free! For example, if you want to double a numeric vector x in R, you can just write 2 * x, whereas in many other languages you would need to explicitly double each element of x using some sort of for loop.\nIn R, there are generally two methods for iteration—for() loops and functionals. We will start with a review of for() loops before hopping over to functionals.",
+    "text": "In this unit, you’ll review for iteration—repeatedly performing the same function on different inputs.\nIteration in R generally tends to look a bit different from other programming languages. Much of iteration we get for free! For example, if you want to double a numeric vector x in R, you can just write 2 * x, whereas in many other languages you would need to explicitly double each element of x using some sort of for loop.\nIn R, there are generally two methods for iteration—for() loops and functionals. We will start with a review of for() loops before hopping over to functionals.",
     "crumbs": [
       "Unit 1 - Complex Analyses",
       "Iterating Over Functions"
@@ -1729,6 +1729,83 @@
     "crumbs": [
       "STAT 331 Review",
       "Lab 1 - Quarto Warmup & STAT 331 Review"
+    ]
+  },
+  {
+    "objectID": "unit-1/iterating-functions.html#for-loop-indices",
+    "href": "unit-1/iterating-functions.html#for-loop-indices",
+    "title": "Iterating Over Functions",
+    "section": "for() loop Indices",
+    "text": "for() loop Indices\nThe seq_along() function generates an integer sequence from 1 to the length of the vector supplied. A nice feature of seq_along() is that it generates an empty iteration vector if the vector you’re iterating over itself has length 0.\n\nseq_along(groups)\n\n[1] 1 2 3\n\nno_groups &lt;- c()\nseq_along(no_groups)\n\ninteger(0)\n\nfor (i in seq_along(groups)) {\n    print(groups[i])\n}\n\n[1] \"group1\"\n[1] \"group2\"\n[1] \"group3\"\n\nfor (i in seq_along(no_groups)) {\n    print(no_groups[i])\n}\n\nClosely related to seq_along() is seq_len(). While seq_along(x) generates an integer sequence from 1 to length(x), seq_len(x) takes x itself to be a length:\n\nseq_len(3)\n\n[1] 1 2 3\n\nseq_len(0)\n\ninteger(0)\n\nfor (i in seq_len(length(groups))) {\n    print(groups[i])\n}\n\n[1] \"group1\"\n[1] \"group2\"\n[1] \"group3\"\n\nfor (i in seq_len(length(no_groups))) {\n    print(no_groups[i])\n}",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Iterating Over Functions"
+    ]
+  },
+  {
+    "objectID": "unit-1/iterating-functions.html#dataframe-indices",
+    "href": "unit-1/iterating-functions.html#dataframe-indices",
+    "title": "Iterating Over Functions",
+    "section": "Dataframe Indices",
+    "text": "Dataframe Indices\nseq_len() is useful for iterating over the rows of a data frame because seq_along() would iterate over columns:\n\nsmall_data &lt;- tibble(a = 1:2, \n                     b = 2:3, \n                     c = 4:5)\nsmall_data\n\n# A tibble: 2 × 3\n      a     b     c\n  &lt;int&gt; &lt;int&gt; &lt;int&gt;\n1     1     2     4\n2     2     3     5\n\n\n\nfor (col in seq_along(small_data)) {\n    print(col)\n}\n\n[1] 1\n[1] 2\n[1] 3\n\nfor (r in seq_len(nrow(small_data))) {\n    print(r)\n}\n\n[1] 1\n[1] 2",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Iterating Over Functions"
+    ]
+  },
+  {
+    "objectID": "unit-1/iterating-functions.html#storing-objects",
+    "href": "unit-1/iterating-functions.html#storing-objects",
+    "title": "Iterating Over Functions",
+    "section": "Storing Objects",
+    "text": "Storing Objects\nOften we’ll want to store output created during a for loop. We can create storage containers with the vector() function:\n\nchar_storage &lt;- vector(\"character\", \n                       length = 3)\nchar_storage\n\n[1] \"\" \"\" \"\"\n\nnum_storage &lt;- vector(\"numeric\", \n                      length = 3)\nnum_storage\n\n[1] 0 0 0\n\nlist_storage &lt;- vector(\"list\", \n                       length = 3)\nlist_storage\n\n[[1]]\nNULL\n\n[[2]]\nNULL\n\n[[3]]\nNULL\n\n\nOur loop can then store objects created at each iteration stage:\n\nfor (i in seq_len(3)) {\n    char_storage[i] &lt;- str_c(\"Number: \", i)\n    num_storage[i] &lt;- 2*i\n    list_storage[[i]] &lt;- i # Note the [[ for subsetting here\n}\n\nchar_storage\n\n[1] \"Number: 1\" \"Number: 2\" \"Number: 3\"\n\nnum_storage\n\n[1] 2 4 6\n\nlist_storage\n\n[[1]]\n[1] 1\n\n[[2]]\n[1] 2\n\n[[3]]\n[1] 3\n\n\n\n\n\n\n\n\nTipInitial Object Size\n\n\n\nNotice that we initialized char_storage, num_storage, and list_storage to all be the same length as our iteration vector (seq_len(3)). Technically, this wasn’t necessary. We could have been much lazier when we initialized these objects: list_storage &lt;- NA. Why didn’t we do this?\nWhen you don’t initialize an object as a specific size (e.g., length = 3) then at every stage of the for() loop R needs to append a new index to that object. This really slows down your for() loop!\nYou should always initialize your object as the size you want it to be.\n\n\n\n\n\n\n\n\nImportantCheck-in: Iteration\n\n\n\n\nWrite a for()-loop that prints the even numbers from 1:20.\nCan you produce the same output with the seq() function?\n\n\nWrite a for()-loop that iterates over the month.name vector (built-in to base R) and stores a character vector of output containing strings like “Month 1: January”, “Month 2: February”.\nCan you produce the same output with str_c() only?\n\n\nWrite a for()-loop that store the class() (type) of every column in the mtcars data frame.",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Iterating Over Functions"
+    ]
+  },
+  {
+    "objectID": "unit-1/iterating-functions.html#recommended-reading-functionals",
+    "href": "unit-1/iterating-functions.html#recommended-reading-functionals",
+    "title": "Iterating Over Functions",
+    "section": "📖 Recommended Reading: Functionals",
+    "text": "📖 Recommended Reading: Functionals\npurrr is a tidyverse package that provides several useful functions for iteration. The main advantages of purrr include:\n\nImproved readability of R code\nReduction in the “overhead” in writing a for()-loop (creating storage containers and writing the for (i in ...))\n\nIn purrr, we can use the family of map() functions to apply a function to each element of a list or vector. We can think of this as mapping an input (a list or vector) to a new output via a function. Let’s look at the purrr cheatsheet to look at graphical representations of how these functions work.\n\nmap() returns a list\nmap_chr() returns a character vector\nmap_lgl() returns a logical vector\nmap_int() returns an integer vector\nmap_dbl() returns a numeric vector\nmap_vec() returns a vector of a different (non-atomic) type (like dates or factors)",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Iterating Over Functions"
+    ]
+  },
+  {
+    "objectID": "unit-1/iterating-functions.html#a-single-output",
+    "href": "unit-1/iterating-functions.html#a-single-output",
+    "title": "Iterating Over Functions",
+    "section": "A Single Output",
+    "text": "A Single Output\nTo get the class() of each data frame column, map_chr() is the function we want because the class of a variable is a strings (e.g., \"logical\").\n\nmap_chr(mtcars, .f = class)\n\n      mpg       cyl      disp        hp      drat        wt      qsec        vs \n\"numeric\" \"numeric\" \"numeric\" \"numeric\" \"numeric\" \"numeric\" \"numeric\" \"numeric\" \n       am      gear      carb \n\"numeric\" \"numeric\" \"numeric\" \n\n\n\n\n\n\n\n\nNoteList Input\n\n\n\nThe first input of map() functions must be a list. A dataframe is a special type of list, where the columns are the different elements of the list (e.g., mtcars[[\"mpg]]). map_chr() iterates over the columns (elements) of the mtcars dataframe (list).\n\n\nLet’s get the class of each variable in diamonds:\n\nmap_chr(diamonds, .f = class)\n\nError in `map_chr()`:\nℹ In index: 2.\nℹ With name: cut.\nCaused by error:\n! Result must be length 1, not 2.",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Iterating Over Functions"
+    ]
+  },
+  {
+    "objectID": "unit-1/iterating-functions.html#multiple-outputs",
+    "href": "unit-1/iterating-functions.html#multiple-outputs",
+    "title": "Iterating Over Functions",
+    "section": "Multiple Outputs",
+    "text": "Multiple Outputs\nWhat happened!? map_chr() was expecting to create a character vector with one element per column in diamonds. But something happened in column 2 with the cut variable. Let’s figure out what happened:\n\nclass(diamonds$cut)\n\n[1] \"ordered\" \"factor\" \n\n\nAh! cut has two classes. In this case, map() (which returns a list) is the best option because some variables have multiple classes:\n\nmap(diamonds, .f = class)\n\n$carat\n[1] \"numeric\"\n\n$cut\n[1] \"ordered\" \"factor\" \n\n$color\n[1] \"ordered\" \"factor\" \n\n$clarity\n[1] \"ordered\" \"factor\" \n\n$depth\n[1] \"numeric\"\n\n$table\n[1] \"numeric\"\n\n$price\n[1] \"integer\"\n\n$x\n[1] \"numeric\"\n\n$y\n[1] \"numeric\"\n\n$z\n[1] \"numeric\"\n\n\nThe error we encountered with map_chr() is a nice feature of purrr because it requires us to be very sure of the type of output we are getting. Failing loudly is vastly preferable to getting unexpected outputs silently!",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Iterating Over Functions"
+    ]
+  },
+  {
+    "objectID": "unit-1/iterating-functions.html#combining-with-tidy-selection",
+    "href": "unit-1/iterating-functions.html#combining-with-tidy-selection",
+    "title": "Iterating Over Functions",
+    "section": "Combining with Tidy Selection",
+    "text": "Combining with Tidy Selection\nWe can combine map_*() functions with tidy selection for some powerful variable summaries that require much less code than for() loops.\n\ndiamonds %&gt;% \n  select(where(is.numeric)) %&gt;% \n  map_dbl(.f = mean)\n\n       carat        depth        table        price            x            y \n   0.7979397   61.7494049   57.4571839 3932.7997219    5.7311572    5.7345260 \n           z \n   3.5387338 \n\ndiamonds %&gt;% \n  select(!where(is.numeric)) %&gt;% \n  map_int(.f = n_distinct)\n\n    cut   color clarity \n      5       7       8 \n\n\n\n\n\n\n\n\nImportantCheck-in: Iteration\n\n\n\n\nWrite a function called summ_stats() that takes a numeric vector x as input and returns the mean, median, standard deviation, and IQR as a data frame. You can use tibble() to create the data frame.\n\nExample: tibble(a = 1:2, b = 2:3) creates a data frame with variables a and b.\n\n\n\nUse map() to apply your summ_stats() function to the numeric columns in the diamonds dataset. Hint: Look up the bind_rows() documentation from dplyr to combine summary statistics for all quantitative variables into one data frame. The .id argument will be especially helpful in adding the variable names!\n\n\nLet’s make the output more intuitive, with the variables on the columns and the summary statistics on the rows. You will need to do a double pivot (pivot_longer() then pivot_wider()) to achieve this result!",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Iterating Over Functions"
     ]
   }
 ]
