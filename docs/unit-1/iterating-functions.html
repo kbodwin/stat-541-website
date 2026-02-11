@@ -951,8 +951,17 @@ $z
 </div>
 <div class="callout-body-container callout-body">
 <ol start="9" type="1">
-<li>Create a small example that shows how <code>map2()</code> works with <code>str_sub()</code>. Your example should use different arguments for <code>string</code>, <code>start</code>, and <code>end</code>.</li>
+<li>The function <code>str_c()</code> concatenates strings. Create a small example that uses <code>map2_chr()</code> to combine two character vectors element by element. Each element of the first vector should be combined with the corresponding element of the second vector, separated by a space.</li>
 </ol>
+<ol start="10" type="1">
+<li>The function <code>str_sub()</code> takes three arguments: <code>string</code>, <code>start</code>, and <code>end</code>. Create a small example that uses <code>pmap_chr()</code> to apply <code>str_sub()</code> row-by-row, where:</li>
+</ol>
+<ul>
+<li>each row uses a different string,</li>
+<li>a different starting position, and</li>
+<li>a different ending position.</li>
+</ul>
+<p>Use a tibble with one column per argument, then use <code>pmap_chr()</code> to extract substrings.</p>
 </div>
 </div>
 
