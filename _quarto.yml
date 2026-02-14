@@ -77,8 +77,8 @@ website:
       contents:
         - href: unit-1.qmd
         - href: unit-1/writing-functions.qmd
-        - href: unit-1/efficient-code.qmd
         - href: unit-1/iterating-functions.qmd
+        - href: unit-1/efficient-code.qmd
         #- href: labs/lab-2.qmd
         - href: unit-1/json.qmd
         - href: unit-1/api.qmd
