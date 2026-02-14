@@ -1,0 +1,5 @@
+---
+title: "Project Checkpoint 5"
+---
+
+Copy & paste your visuals and model summaries into a quarto dashboard

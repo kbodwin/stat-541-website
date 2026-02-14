@@ -1,0 +1,12 @@
+---
+title: "Project Checkpoint 1"
+---
+
+- get dataset
+- explain context of data
+- explain what cleaning has been done to the data
+
+- research questions that these data could address
+- research questions that supplemental data could be used to address
+
+- sketch out two visualizations that could be made to address the RQ you posed

@@ -1,0 +1,21 @@
+---
+title: "Project Checkpoint 0"
+---
+
+1.  Rank dataset preferences
+2.  State if there are people that you would trade your dataset preference to work with
+3.  If you had to choose one **favorite** topic from 331 what would it be?
+
+-   viz
+-   cleaning data
+-   writing functions
+-   iterating over functions
+-   statistical analyses
+
+4.  If you had to choose one **least favorite** topic from 331 what would it be?
+
+-   viz
+-   cleaning data
+-   writing functions
+-   iterating over functions
+-   statistical analyses

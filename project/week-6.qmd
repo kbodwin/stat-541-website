@@ -1,0 +1,13 @@
+---
+title: "Project Checkpoint 6"
+---
+
+Make a map about OG dataset
+
+Acquire new country-specific data
+
+Make a dynamic visual (animated or plotly) about that country's data
+
+
+
+

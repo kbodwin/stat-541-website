@@ -1,0 +1,7 @@
+---
+title: "Project Checkpoint 7"
+---
+
+Integrate one shiny element into your dashboard
+
+

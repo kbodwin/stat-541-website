@@ -1,0 +1,7 @@
+---
+title: "Project Checkpoint 3"
+---
+
+Acquire new country-level data using APIs and webscraping that is joined with the original data.
+
+Produce summaries or simple visualizations that include additional information.

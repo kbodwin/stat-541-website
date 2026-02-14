@@ -1,0 +1,18 @@
+---
+title: "Project Checkpoint 2"
+---
+
+
+Something students can do toward their project after week 2!
+
+- give us $k$ data summaries using the existing columns in the data
+- provide $n$ data summaries that modify the columns originally in the data
+    * at least $m$ of these summaries need to include function
+    * at least $m$ of these summaries need to include iteration
+    
+- presented nicely
+    * link to **gt**?
+
+
+
+

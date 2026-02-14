@@ -1,0 +1,9 @@
+---
+title: "Project Checkpoint 4"
+---
+
+Make two new visuals (with more complex geoms)
+
+Fit a statistical model
+
+Report findings from that model (professionally formatted)
