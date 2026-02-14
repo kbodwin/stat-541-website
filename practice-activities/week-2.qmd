@@ -1,0 +1,52 @@
+---
+title: "Functions, Iteration & Efficiency"
+---
+
+The function below uses `if()`, `else if()` and `else` to check how a 
+number should be classified.
+
+```{r}
+#| echo: true
+#| label: non-vectorized-function
+
+pos_neg_zero <- function(x){
+  if(x > 0){
+    return("Greater than 0!")
+  } 
+  else if (x < 0){
+    return("Less than 0!")
+  } 
+  else {
+    return("Equal to 0!")
+  }
+}
+```
+
+These functions (`if()`, `else if()`) are not vectorized, meaning they cannot
+accept a vector as an input, which is why the code below returns an error:
+
+```{r}
+#| error: true
+#| label: error-with-vector-for-non-vectorized-function
+#| echo: true
+
+x <- seq(from = -4, to = 6)
+pos_neg_zero(x)
+```
+
+Since this function is not vectorized, we would need to use `map_chr()` to 
+apply the `pos_neg_zero()` function to every element of the vector `x`:
+
+```{r}
+#| label: iterating-non-vectorized-function
+#| echo: true
+
+map_chr(x, .f = pos_neg_zero)
+```
+
+1. Rewrite the `pos_neg_zero()` function so it is vectorized. Meaning, the
+function should be capable of accepting a vector as an input. *Hint: The trick 
+**is not** adding `map_chr()` into the function body!*
+:::
+
+
