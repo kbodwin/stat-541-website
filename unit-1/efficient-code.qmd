@@ -1,5 +1,5 @@
 ---
-title: "Writing Efficient Code"
+title: "Writing More Efficient Code"
 editor: source
 execute: 
   echo: false
@@ -13,46 +13,29 @@ execute:
 
 library(tidyverse)
 library(tictoc)
-library(microbenchmark)
+library(palmerpenguins)
 
 options(digits = 2)
 ```
 
-In this module, you'll learn a bit about how to make your code faster in
-general.
+In this module, you'll learn a bit about how to make your code more efficient 
+**and** more human readable. 
 
-# Code speed
+# Code Efficiency
 
-Fortunately, we stand on the shoulders of giants. Many skilled computer
-scientists have put a lot of time and effort into writing R functions that run
-as fast as possible. For you, most of the work to speed up code is simply 
-finding the right packages to rely on.
+For you, most of the work to make your code more efficient (and more readable)
+can be largely summarized with two principles:
 
-However, there are a few baseline principles that can get you a long way. If
-your code takes a long time to run, the reason is often one of these:
+1. avoid larger calculations and memory demands, and 
+2. avoid repeating slow steps
 
--   You are doing a very large computation, relative to the power of your
-computer.
--   You are repeating a slow process many times.
--   You are trying to do simple things, but on a very large object.
+Let's explore how we can write code which addresses each of these common 
+pitfalls. 
 
-To speed up the code, without deep knowledge of computer algorithms and inner
-workings, you can sometimes come up with clever ways to avoid these pitfalls.
+# Avoid larger calculations and memory demands
 
-First, though: as you start thinking about writing faster code, you'll need a
-way to check whether your improvements actually sped up the code.
-
-#### 📖 Required Reading: [The tictoc and microbenchmark packages](https://www.jumpingrivers.com/blog/timing-in-r/)
-
-#### 📖 Required Reading: [The bench package](https://www.tidyverse.org/blog/2018/06/bench-1.0.1/)
-
-#### 📖 Required Reading: [`lobstr::obj_size()`](https://lobstr.r-lib.org/reference/obj_size.html)
-
-# Tip 1: Avoid larger calculations and memory demands
-
-## Save smaller data frames, if you are going to use them many times
-
-Consider the following dataset:
+In many of our analyses, we will find ourselves performing repeated tasks on 
+the same, smaller data frame. For example, consider the following dataset:
 
 ```{r}
 #| echo: true
@@ -64,9 +47,10 @@ library(fivethirtyeight)
 glimpse(congress_age)
 ```
 
-Suppose we want to do some exploratory analysis on these data. Let's use the
-`tic()` and `toc()` functions from the **tictoc** packages to check how much
-time it takes to run this code:
+Suppose we want to do some exploratory analysis on these data, summarizing 
+and visualizing the ages of senators. Let's use the `tic()` and `toc()`
+functions from the **tictoc** packages to check how much time it takes to run
+this code:
 
 ```{r}
 #| results: false
@@ -83,13 +67,12 @@ congress_age %>%
 
 congress_age %>%
   filter(chamber == "senate") %>%
-  ggplot() + 
-  geom_histogram(mapping = aes(x = age))
+  slice_max(n = 5, order_by = age)
 
 congress_age %>%
   filter(chamber == "senate") %>%
-  slice_max(n = 5, order_by = age)
-
+  ggplot() + 
+  geom_histogram(mapping = aes(x = age))
 ```
 
 ```{r}
@@ -98,8 +81,8 @@ toc()
 ```
 
 These are all three reasonable things to do, and they can't be done in the same
-pipeline. But wait - we just made R do the process of filtering to only include
-Senators three separate times!
+pipeline. But wait, we just made R do the process of filtering to only include
+senators three separate times!
 
 ```{r}
 #| echo: true
@@ -133,12 +116,11 @@ senate %>%
   summarize(mean(age))
 
 senate %>%
-  ggplot() + 
-  geom_histogram(mapping = aes(x = age))
-
+  slice_max(n = 5, order_by = age)
 
 senate %>%
-  slice_max(n = 5, order_by = age)
+  ggplot() + 
+  geom_histogram(mapping = aes(x = age))
 ```
 
 ```{r}
@@ -147,11 +129,41 @@ senate %>%
 toc()
 ```
 
-That is almost **half** the run time! Yes, we are dealing with very small
-increments of time (less than a second), but hopefully you could see how this
-might scale to larger calculations. 
+Not only did saving the senator data cut down on the runtime of our code, it 
+made the code easier to understand! It is **much** clearer to the reader that
+each of the data exploration steps refers to the `senate` dataset. 
 
-# Tip 2: Avoid repeating slow steps
+::: {.callout-important}
+# Check-in
+
+1. What functions help us assess how long it takes our code to run?
+
+2. How would you change the code below to make it more efficient?
+
+```{r}
+#| echo: true
+#| eval: false
+#| label: repeated-steps-quiz
+
+penguins |> 
+  group_by(species) |>
+  summarize(mean_bill_len = mean(bill_length_mm, na.rm = TRUE))
+
+penguins |> 
+  group_by(species) |>
+  slice_min(order_by = bill_length_mm)
+
+penguins |> 
+  group_by(species) |> 
+  mutate(
+    scaled_bill_length = (bill_length_mm - mean(bill_length_mm, na.rm = TRUE)) /
+      sd(bill_length_mm, na.rm = TRUE)
+    )
+
+```
+:::
+
+# Avoid repeating slow steps
 
 ## Avoid for-loops
 
@@ -169,8 +181,8 @@ their consistent syntax, and their consistent object output.
 
 The `map()` function **always** returns a list and the `map_XXX()` variants
 **always** return a vector of a specified data type. Whereas, `apply()` returns
-a vector or a list, `lapply()` returns a list, and `sapply()` returns a vector or
-a matrix. 
+a vector or a list, `lapply()` returns a list, and `sapply()` returns a vector
+or a matrix. 
 :::
 
 Here is a motivating example demonstrating the difference in run time between 
@@ -225,23 +237,87 @@ dat <- as.data.frame(
 
 ```
 
-The `microbenchmark()` function from the **microbenchmark** package allows us
-to compare the run time for multiple functions:
+Let's use `tic()` and `toc()` again to compare the run time for these 
+two functions:
 
+::: columns
+::: {.column width="48%"}
 ```{r}
-#| label: compare-loops
-#| cache: true
 #| warning: false
 #| echo: true
+#| label: loop-function-speed-1
+#| results: false
 
-microbenchmark::microbenchmark(loop_func(dat),
-                               map_func(dat),
-                               times = 3)
+tic()
+loop_func(dat)
 ```
 
+```{r}
+#| label: loop-function-speed-2
+#| echo: true
+
+toc()
+```
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+```{r}
+#| echo: true
+#| results: false
+#| label: map-function-speed-1
+
+tic()
+map_func(dat)
+```
+
+```{r}
+#| echo: true
+#| label: map-function-speed-2
+
+toc()
+```
+:::
+:::
+
 Looking at the output, we see substantial differences in the run time of these
-two functions. On average, the loop function takes 3,271 milliseconds whereas 
-the map function takes 13 milliseconds. 
+two functions. The loop function took about 3.5 seconds whereas the map function
+took less than half a second. 
+
+::: {.callout-important}
+# Check-in
+
+3. Why might we prefer using `map()` functions instead of writing a `for()` 
+loop?
+
+a. `map()` automatically makes the code run faster in all cases.
+b. `map()` makes code more readable, concise, and often faster.
+c. `map()` can only be used with numeric data, unlike loops.
+d. `map()` replaces all possible uses of loops in programming.
+
+4. Which `map()` function should be used in place of this `for()` loop?
+
+```{r}
+#| eval: false
+#| echo: true
+#| label: loop-quiz
+
+numbers <- c(4, 9, 16, 25)
+
+results <- vector("numeric", length(numbers))
+
+for (i in seq_along(numbers)) {
+  results[i] <- sqrt(numbers[i])
+}
+```
+
+a. `map()`
+b. `map_dbl()`
+c. `map_chr()`
+d. `walk()`
+:::
 
 ## Use vectorized functions
 
@@ -251,159 +327,27 @@ vectorized functions is tough, but do-able in many cases. Here's an example:
 {{< video https://youtu.be/ShewFCbPHv8?si=sVpKCo0FF28hw40v >}}
 
 ::: {.callout-important}
-# Check-in: Efficiency
+# Check-in
 
-The function below uses `if()`, `else if()` and `else` to check how a 
-number should be classified.
+5. Which of the following functions are vectorized?
+
+a. `sqrt()`
+b. `if()`
+c. `ifelse()`
+d. `mean()`
+
+6. Why does the code below produce an error?
 
 ```{r}
 #| echo: true
-#| label: non-vectorized-function
-
-pos_neg_zero <- function(x){
-  if(x > 0){
-    return("Greater than 0!")
-  } 
-  else if (x < 0){
-    return("Less than 0!")
-  } 
-  else {
-    return("Equal to 0!")
-  }
-}
-```
-
-These functions (`if()`, `else if()`) are not vectorized, meaning they cannot
-accept a vector as an input, which is why the code below returns an error:
-
-```{r}
 #| error: true
-#| label: error-with-vector-for-non-vectorized-function
-#| echo: true
 
-x <- seq(from = -4, to = 6)
-pos_neg_zero(x)
+x <- c(1, 2, 3, 4, 16, 25)
+
+f <- function(x) {
+  if (x > 0) x else 0
+}
+
+f(x)
 ```
-
-Since this function is not vectorized, we would need to use `map_chr()` to 
-apply the `pos_neg_zero()` function to every element of the vector `x`:
-
-```{r}
-#| label: iterating-non-vectorized-function
-#| echo: true
-
-map_chr(x, .f = pos_neg_zero)
-```
-
-1. Rewrite the `pos_neg_zero()` function so it is vectorized. Meaning, the
-function should be capable of accepting a vector as an input. *Hint: The trick 
-**is not** adding `map_chr()` into the function body!*
-
 :::
-
-# Tip 3: Use faster existing functions
-
-Because R has so many packages, there are often many functions to perform the
-same task. Not all functions are created equal!
-
-## `data.table`
-
-For speeding up work with data frames, no package is better than `data.table`!
-
-{{< video https://www.youtube.com/embed/uueVddWwbkk >}}
-
-#### 📖 Required Reading: [data.table cheatsheet](https://pbs.twimg.com/media/Dwoq0ZQXQAE5lJt.jpg)
-
-::: {.callout-important}
-# Check-in: Efficiency
-
-2. Here is some `dplyr` code. Re-write it in `data.table` syntax. 
-
-```{r}
-#| echo: true
-#| eval: false
-
-congress_age %>%
-  group_by(state) %>%
-  summarize(mean_age = mean(age))
-
-```
-
-3. Using either the `tictoc` or `microbenchmark` packages perform a speed test 
-to see which code is faster, and by how much.
-:::
-
-# Tip 4: Only improve what needs improving
-
-> “We should forget about small efficiencies, say about 97% of the time:
-> premature optimization is the root of all evil. Yet we should not pass up our
-> opportunities in that critical 3%. A good programmer will not be lulled into
-> complacency by such reasoning, \[they\] will be wise to look carefully at the
-> critical code; but only after that code has been identified.” — Donald Knuth.
-
-Speed and computational efficiency are important, but there can be a trade off. 
-If you make a small speed improvement, but your code becomes overly complex, 
-confusing, or difficult to edit and test it's not worth it!
-
-Also, consider your time and energy as the programmer. Suppose you have a 
-function that takes 30-minutes to run. It relies on a subfunction that takes 
-30-seconds to run. Should you really spend your efforts making the subfunction
-take only 10-seconds?
-
-The art of finding the slow bits of your code where you can make the most
-improvement is called **profiling**.
-
-#### 📖 Required Reading: [Profiling](http://adv-r.had.co.nz/Profiling.html#profiling)
-
-#### 📖 Recommended Reading: [Measuring Performance](https://adv-r.hadley.nz/perf-measure.html)
-
-::: {.callout-tip}
-# Skimming is sufficient!
-
-For this reading, I strongly encourage you to skim. The code aspects are mostly
-more complicated that we expect in this class; but the general overview of the
-principles behind speeding up code is helpful.
-
-In your work, you will most likely "profile" manually, by `tictoc`-ing bits of
-your code and so forth, not by these fancy methods.
-:::
-
-::: {.callout-important}
-# Check-in: Efficiency
-
-4. Why is `vapply()` faster than `sapply()`?
-
-a.  It specifies the output type.
-b.  It specifies the input type.
-c.  It performs fewer safety checks.
-d.  It performs fewer iterations.
-
-5. Here are two other ways to compute the square root of a vector.
-Which is faster?  fastest? Use microbenchmarking to test your answers!
-
-```{r}
-#| echo: true
-#| eval: false
-x ^ (1 / 2)
-exp(log(x) / 2)
-```
-
-6. Why is `mean(x)` slower than `sum(x)/length(x)`?
-
-a.  `sum()` is vectorized, while `mean()` is not.
-b.  A mean is a smaller number than a sum, so it needs less memory.
-c.  `mean()` calculates the mean twice just in case.
-d.  `mean()` was written in an old version of R.
-
-:::
-
-## Optional: Super advanced mode
-
-The following are some suggestions of ways you can level-up your code speed. 
-These are outside the scope of this class, but you are welcome to explore them!
-
--   [Dive deep into the R efficiency rabbit hole...](https://csgillespie.github.io/efficientR/)
--   [Parallelize your computations](http://zevross.com/blog/2019/02/12/dramatically-speed-up-your-r-purrr-functions-with-the-furrr-package/)
--   [Make your code run in C++ with Rcpp](http://adv-r.had.co.nz/Rcpp.html#rcpp)
--   Learn to use [recursion](https://techvidvan.com/tutorials/recursion-in-r/)
--   Learn more about [memory allocation](https://adv-r.hadley.nz/names-values.html) and [garbage collecting](http://adv-r.had.co.nz/memory.html) in R.

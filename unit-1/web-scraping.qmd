@@ -308,3 +308,6 @@ head(df_articles2)
 ```
 
 </details>
+
+<!-- Grad level ideas: -->
+<!-- - scrape something that isn't a table -->
