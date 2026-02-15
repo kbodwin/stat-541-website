@@ -500,7 +500,7 @@
     "href": "practice-activities/week-2.html",
     "title": "Functions, Iteration & Efficiency",
     "section": "",
-    "text": "ImportantCheck-in: Iteration\n\n\n\n\nWrite a function called summ_stats() that takes a numeric vector x as input and returns the mean, median, standard deviation, and IQR as a data frame. You can use tibble() to create the data frame.\n\nExample: tibble(a = 1:2, b = 2:3) creates a data frame with variables a and b.\n\n\n\nUse map() to apply your summ_stats() function to the numeric columns in the diamonds dataset. Hint: Look up the bind_rows() documentation from dplyr to combine summary statistics for all quantitative variables into one data frame. The .id argument will be especially helpful in adding the variable names!\n\n\nLet’s make the output more intuitive, with the variables on the columns and the summary statistics on the rows. You will need to do a double pivot (pivot_longer() then pivot_wider()) to achieve this result!\n\n\n\nThe function below uses if(), else if() and else to check how a number should be classified.\n\npos_neg_zero &lt;- function(x){\n  if(x &gt; 0){\n    return(\"Greater than 0!\")\n  } \n  else if (x &lt; 0){\n    return(\"Less than 0!\")\n  } \n  else {\n    return(\"Equal to 0!\")\n  }\n}\n\nThese functions (if(), else if()) are not vectorized, meaning they cannot accept a vector as an input, which is why the code below returns an error:\n\nx &lt;- seq(from = -4, to = 6)\npos_neg_zero(x)\n\nSince this function is not vectorized, we would need to use map_chr() to apply the pos_neg_zero() function to every element of the vector x:\n\nmap_chr(x, .f = pos_neg_zero)\n\n\nRewrite the pos_neg_zero() function so it is vectorized. Meaning, the function should be capable of accepting a vector as an input. Hint: The trick is not adding map_chr() into the function body!",
+    "text": "Download the template Practice Activity Quarto file here: pa-2.qmd\n\n\n\n\n\n\nImportant\n\n\n\nBe sure to save the file inside your Week 2 folder of your STAT 431 (or 541) folder!",
     "crumbs": [
       "Unit 1 - Complex Analyses",
       "Week 2 In-Class Activity"
@@ -1561,6 +1561,61 @@
     "crumbs": [
       "Unit 1 - Complex Analyses",
       "Iterating Over Functions"
+    ]
+  },
+  {
+    "objectID": "practice-activities/week-2.html#accessing-the-lab-data",
+    "href": "practice-activities/week-2.html#accessing-the-lab-data",
+    "title": "Functions, Iteration & Efficiency",
+    "section": "",
+    "text": "Download the template Practice Activity Quarto file here: pa-2.qmd\n\n\n\n\n\n\nImportant\n\n\n\nBe sure to save the file inside your Week 2 folder of your STAT 431 (or 541) folder!",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Week 2 In-Class Activity"
+    ]
+  },
+  {
+    "objectID": "practice-activities/week-2.html#writing-functions",
+    "href": "practice-activities/week-2.html#writing-functions",
+    "title": "Functions, Iteration & Efficiency",
+    "section": "Writing Functions",
+    "text": "Writing Functions\n\nWrite a function called summ_stats() that takes a vector x as input and produces the following output:\n\n\nfor numeric variables: returns the mean, median, standard deviation, and IQR as a data frame\nfor categorical variables: returns the number of levels (categories) of the variable\n\nHint: You can use tibble() to create the data frame. For example, tibble(a = 1:2, b = 2:3) creates a data frame with variables a and b.",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Week 2 In-Class Activity"
+    ]
+  },
+  {
+    "objectID": "practice-activities/week-2.html#iterating-functions",
+    "href": "practice-activities/week-2.html#iterating-functions",
+    "title": "Functions, Iteration & Efficiency",
+    "section": "Iterating Functions",
+    "text": "Iterating Functions\n\nUse map() to apply your summ_stats() function to every column in the diamonds dataset. Hint: Look up the bind_rows() documentation from dplyr to combine summary statistics for all quantitative variables into one data frame. The .id argument will be especially helpful in adding the variable names!",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Week 2 In-Class Activity"
+    ]
+  },
+  {
+    "objectID": "practice-activities/week-2.html#data-transformation",
+    "href": "practice-activities/week-2.html#data-transformation",
+    "title": "Functions, Iteration & Efficiency",
+    "section": "Data Transformation",
+    "text": "Data Transformation\n\nLet’s make the output more intuitive, with the variables on the columns and the summary statistics on the rows.\n\nHint: You will need to do a double pivot (pivot_longer() then pivot_wider()) to achieve this result!",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Week 2 In-Class Activity"
+    ]
+  },
+  {
+    "objectID": "practice-activities/week-2.html#using-helper-functions",
+    "href": "practice-activities/week-2.html#using-helper-functions",
+    "title": "Functions, Iteration & Efficiency",
+    "section": "Using Helper Functions",
+    "text": "Using Helper Functions\n\nNow that we have the output we want, let’s use our code to write a summ_df() function that takes a data frame as an input and outputs a table of summary statistics for every variable in the data frame.\n\n\nDemonstrate that your function works using the mpg dataset.\n\n\nsumm_df(mpg)",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Week 2 In-Class Activity"
     ]
   }
 ]

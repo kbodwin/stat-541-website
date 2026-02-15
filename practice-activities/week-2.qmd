@@ -4,109 +4,117 @@ execute:
   eval: false
 ---
 
+## Accessing the Lab & Data
+
+Download the template Practice Activity Quarto file here: <a href="student/pa-2.qmd" download>`pa-2.qmd`</a> 
+
 ::: {.callout-important}
-# Check-in: Iteration
+Be sure to save the file inside your Week 2 folder of your STAT 431 (or 541) folder! 
+:::
 
-6. Write a function called `summ_stats()` that takes a numeric vector `x` as
-input and returns the mean, median, standard deviation, and IQR as a data frame.
-You can use `tibble()` to create the data frame.
-    * Example: `tibble(a = 1:2, b = 2:3)` creates a data frame with variables
-    `a` and `b`.
+## Writing Functions
 
+1. Write a function called `summ_stats()` that takes a vector `x` as
+input and produces the following output:
+
+- for **numeric variables**: returns the mean, median, standard deviation, and
+IQR as a data frame
+- for **categorical variables**: returns the number of levels (categories) of
+the variable
+
+*Hint:* You can use `tibble()` to create the data frame. For example, 
+`tibble(a = 1:2, b = 2:3)` creates a data frame with variables `a` and `b`.
 
 ```{r}
-#| label: ex_summ_stats_soln1
 #| echo: false
+#| label: sum-stats-function-soln
 
-summ_stats <- function(x) {
+summ_stats <- function(x){
+  if(is.numeric(x)) {
     tibble(
         mean = mean(x, na.rm = TRUE),
         median = median(x, na.rm = TRUE),
         sd = sd(x, na.rm = TRUE),
         iqr = IQR(x, na.rm = TRUE)
-    ) 
+    )
+  } 
+  else if (is.factor(x) | is.character(x)){
+  tibble(levels = n_distinct(x, na.rm = TRUE))  
+  } 
+  else {
+    return(NA)
+  }
 }
 ```
 
-7. Use `map()` to apply your `summ_stats()` function to the numeric columns in 
-the `diamonds` dataset. *Hint:* Look up the `bind_rows()` documentation from
-dplyr to combine summary statistics for all quantitative variables into one
-data frame. The `.id` argument will be especially helpful in adding the variable
+## Iterating Functions
+
+2. Use `map()` to apply your `summ_stats()` function to every column in the 
+`diamonds` dataset. 
+*Hint:* Look up the `bind_rows()` documentation from dplyr to combine summary
+statistics for all quantitative variables into one data frame. The `.id`
+argument will be especially helpful in adding the variable
 names!
 
 ```{r}
-#| label: ex_summ_stats_soln2
+#| label: sum-stats-map-soln
 #| echo: false
-#| eval: false
 
 diamonds %>% 
-  select(where(is.numeric)) |> 
   map(.f = summ_stats) %>% 
   bind_rows(.id = "variable") 
 
 ```
 
-8. Let's make the output more intuitive, with the variables on the columns and
-the summary statistics on the rows. You will need to do a double pivot 
-(`pivot_longer()` then `pivot_wider()`) to achieve this result!
+## Data Transformation
+
+3. Let's make the output more intuitive, with the variables on the columns and
+the summary statistics on the rows. 
+
+*Hint:* You will need to do a double pivot (`pivot_longer()` then
+`pivot_wider()`) to achieve this result!
 
 ```{r}
-#| label: double-pivot
+#| label: double-pivot-soln
 #| echo: false
-#| eval: false
 
 diamonds %>% 
-  select(where(is.numeric)) %>% 
-  bind_rows(.id = "variable") %>% 
+  map(.f = summ_stats) %>% 
+  bind_rows(.id = "variable") |> 
   pivot_longer(cols = -variable, 
                names_to = "statistic", 
                values_to = "value") %>% 
   pivot_wider(names_from = variable, values_from = value)
 
 ```
-:::
 
+## Using Helper Functions
 
-The function below uses `if()`, `else if()` and `else` to check how a number should be classified.
+4. Now that we have the output we want, let's use our code to write a 
+`summ_df()` function that takes a data frame as an input and outputs a table of
+summary statistics for every variable in the data frame. 
 
 ```{r}
-#| echo: true
-#| label: non-vectorized-function
+#| label: df-function-soln
+#| echo: false
 
-pos_neg_zero <- function(x){
-  if(x > 0){
-    return("Greater than 0!")
-  } 
-  else if (x < 0){
-    return("Less than 0!")
-  } 
-  else {
-    return("Equal to 0!")
-  }
+summ_df <- function(df){
+  df |> 
+    map(.f = summ_stats) %>% 
+    bind_rows(.id = "variable") |> 
+    pivot_longer(cols = -variable, 
+                names_to = "statistic", 
+                values_to = "value") %>% 
+    pivot_wider(names_from = variable, values_from = value)
 }
 ```
 
-These functions (`if()`, `else if()`) are not vectorized, meaning they cannot accept a vector as an input, which is why the code below returns an error:
+5. Demonstrate that your function works using the `mpg` dataset. 
 
 ```{r}
-#| error: true
-#| label: error-with-vector-for-non-vectorized-function
 #| echo: true
+#| label: try-df-function
 
-x <- seq(from = -4, to = 6)
-pos_neg_zero(x)
+summ_df(mpg)
 ```
 
-Since this function is not vectorized, we would need to use `map_chr()` to apply the `pos_neg_zero()` function to every element of the vector `x`:
-
-```{r}
-#| label: iterating-non-vectorized-function
-#| echo: true
-
-map_chr(x, .f = pos_neg_zero)
-```
-
-1.  Rewrite the `pos_neg_zero()` function so it is vectorized. Meaning, the function should be capable of accepting a vector as an input. *Hint: The trick **is not** adding `map_chr()` into the function body!*
-
-
-<!-- need to have a question using map2 -->
