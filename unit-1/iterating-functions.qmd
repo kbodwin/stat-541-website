@@ -273,7 +273,7 @@ str_c("Month ", 1:12, ": ", month.name)
 ```
 
 5. Write a `for()`-loop that store the `class()` (type) of every column in the
-`mtcars` data frame. 
+`mpg` data frame. 
 
 ```{r}
 #| label: col_classes_soln
@@ -281,11 +281,11 @@ str_c("Month ", 1:12, ": ", month.name)
 #| echo: false
 
 col_classes <- vector("character", 
-                      ncol(mtcars)
+                      ncol(mpg)
                       )
 
-for (i in seq_along(mtcars)) {
-    col_classes[i] <- class(mtcars[[i]])
+for (i in seq_along(mpg)) {
+    col_classes[i] <- class(mpg[[i]])
 }
 ```
 :::
@@ -326,7 +326,7 @@ want because the class of a variable is a strings (e.g., `"logical"`).
 ```{r}
 #| label: purrr_col_classes
 
-map_chr(mtcars, .f = class)
+map_chr(mpg, .f = class)
 ```
 
 ::: {.callout-note}
@@ -334,8 +334,8 @@ map_chr(mtcars, .f = class)
 
 The first input of `map()` functions must be a list. A dataframe is a special
 type of list, where the columns are the different elements of the list 
-(e.g., `mtcars[["mpg]]`). `map_chr()` iterates over the **columns** (elements) 
-of the `mtcars` dataframe (list). 
+(e.g., `mpg[["manufacturer"]]`). `map_chr()` iterates over the **columns**
+(elements) of the `mpg` dataframe (list). 
 :::
 
 Let's get the class of each variable in `diamonds`:
@@ -392,63 +392,29 @@ diamonds %>%
 ::: {.callout-important}
 # Check-in: Iteration
 
-6. Write a function called `summ_stats()` that takes a numeric vector `x` as
-input and returns the mean, median, standard deviation, and IQR as a data frame.
-You can use `tibble()` to create the data frame.
-    * Example: `tibble(a = 1:2, b = 2:3)` creates a data frame with variables
-    `a` and `b`.
-
+6. Using a map function reproduce this table which indicates whether a given 
+column is numeric.
 
 ```{r}
-#| label: ex_summ_stats_soln1
 #| echo: false
+#| label: map-lgl-solution
 
-summ_stats <- function(x) {
-    tibble(
-        mean = mean(x, na.rm = TRUE),
-        median = median(x, na.rm = TRUE),
-        sd = sd(x, na.rm = TRUE),
-        iqr = IQR(x, na.rm = TRUE)
-    ) 
-}
+diamonds |> 
+  map_lgl(.f = is.numeric)
 ```
 
-7. Use `map()` to apply your `summ_stats()` function to the numeric columns in 
-the `diamonds` dataset. *Hint:* Look up the `bind_rows()` documentation from
-dplyr to combine summary statistics for all quantitative variables into one
-data frame. The `.id` argument will be especially helpful in adding the variable
-names!
+7. Using a map function reproduce this table which indicates how many levels
+are included in each categorical variable.
 
 ```{r}
-#| label: ex_summ_stats_soln2
 #| echo: false
-#| eval: false
+#| label: map-int-solution
 
-diamonds %>% 
-  select(where(is.numeric)) |> 
-  map(.f = summ_stats) %>% 
-  bind_rows(.id = "variable") 
-
+diamonds |> 
+  select(where(is.factor)) |> 
+  map_int(.f = n_distinct)
 ```
 
-8. Let's make the output more intuitive, with the variables on the columns and
-the summary statistics on the rows. You will need to do a double pivot 
-(`pivot_longer()` then `pivot_wider()`) to achieve this result!
-
-```{r}
-#| label: double-pivot
-#| echo: false
-#| eval: false
-
-diamonds %>% 
-  select(where(is.numeric)) %>% 
-  bind_rows(.id = "variable") %>% 
-  pivot_longer(cols = -variable, 
-               names_to = "statistic", 
-               values_to = "value") %>% 
-  pivot_wider(names_from = variable, values_from = value)
-
-```
 :::
 
 ## Multiple Inputs
@@ -528,6 +494,11 @@ string_data |>
 
 ```
 
+# STAT 541
+
+This content is required for students enrolled in STAT 541 and optional for 
+students enrolled in STAT 431. 
+
 ### Three or More Inputs
 
 Now that we've conquered two inputs, let's try three! The `str_replace_all()`
@@ -600,14 +571,20 @@ of the first vector should be combined with the corresponding element of the
 second vector, separated by a space.
 
 ```{r}
-#| label: map2-exercise
-#| echo: false
+#| label: map2-exercise-tibble
+#| echo: true
 #| eval: false
 
 string_data <- tibble(
   first  = c("apple", "banana", "cherry"),
   second = c("pie", "bread", "jam")
 )
+```
+
+```{r}
+#| label: map2-exercise
+#| echo: false
+#| eval: false
 
 map2_chr(
   string_data$first,
@@ -628,8 +605,8 @@ Use a tibble with one column per argument, then use `pmap_chr()` to extract
 substrings.
 
 ```{r}
-#| label: pmap-exercise
-#| echo: false
+#| label: pmap-exercise-tibble
+#| echo: true
 #| eval: false
 
 string_data <- tibble(
@@ -637,6 +614,12 @@ string_data <- tibble(
     start = c(1, 2, 4),
     end = c(2, 3, 5)
 )
+```
+
+```{r}
+#| label: pmap-exercise-solution
+#| echo: false
+#| eval: false
 
 pmap_chr(.l = string_data, .f = str_sub)
 ```

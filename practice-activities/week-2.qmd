@@ -4,6 +4,69 @@ execute:
   eval: false
 ---
 
+::: {.callout-important}
+# Check-in: Iteration
+
+6. Write a function called `summ_stats()` that takes a numeric vector `x` as
+input and returns the mean, median, standard deviation, and IQR as a data frame.
+You can use `tibble()` to create the data frame.
+    * Example: `tibble(a = 1:2, b = 2:3)` creates a data frame with variables
+    `a` and `b`.
+
+
+```{r}
+#| label: ex_summ_stats_soln1
+#| echo: false
+
+summ_stats <- function(x) {
+    tibble(
+        mean = mean(x, na.rm = TRUE),
+        median = median(x, na.rm = TRUE),
+        sd = sd(x, na.rm = TRUE),
+        iqr = IQR(x, na.rm = TRUE)
+    ) 
+}
+```
+
+7. Use `map()` to apply your `summ_stats()` function to the numeric columns in 
+the `diamonds` dataset. *Hint:* Look up the `bind_rows()` documentation from
+dplyr to combine summary statistics for all quantitative variables into one
+data frame. The `.id` argument will be especially helpful in adding the variable
+names!
+
+```{r}
+#| label: ex_summ_stats_soln2
+#| echo: false
+#| eval: false
+
+diamonds %>% 
+  select(where(is.numeric)) |> 
+  map(.f = summ_stats) %>% 
+  bind_rows(.id = "variable") 
+
+```
+
+8. Let's make the output more intuitive, with the variables on the columns and
+the summary statistics on the rows. You will need to do a double pivot 
+(`pivot_longer()` then `pivot_wider()`) to achieve this result!
+
+```{r}
+#| label: double-pivot
+#| echo: false
+#| eval: false
+
+diamonds %>% 
+  select(where(is.numeric)) %>% 
+  bind_rows(.id = "variable") %>% 
+  pivot_longer(cols = -variable, 
+               names_to = "statistic", 
+               values_to = "value") %>% 
+  pivot_wider(names_from = variable, values_from = value)
+
+```
+:::
+
+
 The function below uses `if()`, `else if()` and `else` to check how a number should be classified.
 
 ```{r}
@@ -43,4 +106,7 @@ Since this function is not vectorized, we would need to use `map_chr()` to apply
 map_chr(x, .f = pos_neg_zero)
 ```
 
-1.  Rewrite the `pos_neg_zero()` function so it is vectorized. Meaning, the function should be capable of accepting a vector as an input. *Hint: The trick **is not** adding `map_chr()` into the function body!* :::
+1.  Rewrite the `pos_neg_zero()` function so it is vectorized. Meaning, the function should be capable of accepting a vector as an input. *Hint: The trick **is not** adding `map_chr()` into the function body!*
+
+
+<!-- need to have a question using map2 -->
