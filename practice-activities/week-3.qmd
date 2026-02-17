@@ -32,9 +32,9 @@ unnest_longer(df4, col = y) %>%
 
 (b) How can you preserve the relationship between x and y? *Hint: Carefully read the documentation*
 
-\`\`\`{r} #\| include: false #\| label: code-for-q2-b
+<!-- ```{r} #\| include: false #\| label: code-for-q2-b -->
 
-unnest_longer(df4, col = c(y, z))
+<!-- unnest_longer(df4, col = c(y, z)) -->
 
 <!-- From APIs: -->
 
@@ -80,5 +80,5 @@ list(space) %>%
   unnest_wider(people) %>% 
   filter(craft == "ISS")
 ```
-:::
 
+:::
