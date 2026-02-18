@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Instructions">
 
-<title>Application Programming Interfaces (APIs) – Advanced R</title>
+<title>Lab 9: Searching for Efficiency &amp; Making Great Tables – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +66,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../unit-1/web-scraping.html" rel="next">
-<link href="../unit-1/json.html" rel="prev">
 <link href="../images/cat-monsters-horst.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -114,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -311,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">STAT 331 Review</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../unit-1.html" aria-current="page"> 
+    <a class="nav-link" href="../unit-1.html"> 
 <span class="menu-text">Unit 1 - Complex Analyses</span></a>
   </li>  
   <li class="nav-item">
@@ -340,86 +339,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unit-1/api.html">Application Programming Interfaces (APIs)</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unit 1</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit-1/writing-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Writing Functions in R</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit-1/iterating-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Iterating Over Functions</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit-1/efficient-code.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Writing More Efficient Code</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice-activities/week-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 2 In-Class Activity</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit-1/json.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hierarchical Data</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit-1/api.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Application Programming Interfaces (APIs)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit-1/web-scraping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Web Scraping</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#required-video-what-is-an-api" id="toc-required-video-what-is-an-api" class="nav-link active" data-scroll-target="#required-video-what-is-an-api">🎥 Required Video: What is an API?</a></li>
-  <li><a href="#required-reading-r-api-tutorial" id="toc-required-reading-r-api-tutorial" class="nav-link" data-scroll-target="#required-reading-r-api-tutorial">📖 Required Reading: R API Tutorial</a></li>
-  <li><a href="#check-in-apis" id="toc-check-in-apis" class="nav-link" data-scroll-target="#check-in-apis">Check-in: APIs</a></li>
+  <li><a href="#accessing-the-lab" id="toc-accessing-the-lab" class="nav-link active" data-scroll-target="#accessing-the-lab">Accessing the Lab</a></li>
+  <li><a href="#formatting-tables" id="toc-formatting-tables" class="nav-link" data-scroll-target="#formatting-tables">Formatting Tables</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
+  <li><a href="#lab-2" id="toc-lab-2" class="nav-link" data-scroll-target="#lab-2">Lab 2</a></li>
+  <li><a href="#lab-3" id="toc-lab-3" class="nav-link" data-scroll-target="#lab-3">Lab 3</a></li>
+  <li><a href="#lab-7" id="toc-lab-7" class="nav-link" data-scroll-target="#lab-7">Lab 7</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-1/api.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-1/formatting-tables.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -427,13 +364,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Application Programming Interfaces (APIs)</h1>
+<h1 class="title">Lab 9: Searching for Efficiency &amp; Making Great Tables</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Instructions </p>
+          </div>
+  </div>
     
   
     
@@ -444,9 +387,89 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Now that we’ve talked about the JSON format for data files, it’s time we talked about one of the primary vehicles for them: APIs.</p>
-<section id="required-video-what-is-an-api" class="level2">
-<h2 class="anchored" data-anchor-id="required-video-what-is-an-api">🎥 Required Video: <a href="https://www.youtube.com/watch?v=s7wmiS2mSXY">What is an API?</a></h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="accessing-the-lab" class="level2">
+<h2 class="anchored" data-anchor-id="accessing-the-lab">Accessing the Lab</h2>
+<p>Download the template Lab 8 Quarto file here: <a href="../student/lab-9-student.qmd" download=""><code>lab-9-student.qmd</code></a></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Be sure to save this in the Lab 9 folder, inside your Week 9 folder, inside your STAT 331 folder!</p>
+</div>
+</div>
+</section>
+<section id="formatting-tables" class="level2">
+<h2 class="anchored" data-anchor-id="formatting-tables">Formatting Tables</h2>
+<p>In this lab, we will also practice making nice, report worthy, tables!</p>
+<p>I would recommend you think of tables no different from the visualizations you’ve been making. We want <strong>all</strong> aspects of our tables to be clear to the reader, so the comparisons we want them to make are straightforward. You should be thinking about:</p>
+<ul>
+<li>Column headers</li>
+<li>Grouping headers</li>
+<li>Order of columns</li>
+<li>Order of rows</li>
+<li>Number of decimals included for numeric entries</li>
+<li>etc.</li>
+</ul>
+<p>Tables are also a great avenue to display creativity! In fact, there is a yearly <a href="https://www.rstudio.com/blog/rstudio-table-contest-2022/">RStudio table contest</a>, and <a href="https://community.rstudio.com/c/table-gallery/64">here</a> is a gallery of the award winning tables!</p>
+<p>There are many packages for generating tables but I recommend either <code>kable()</code> function from the <strong>knitr</strong> package or <code>gt()</code> function from the <strong>gt</strong> package and their add-ons.</p>
+<p><strong>For simple tables</strong></p>
+<ul>
+<li>the <code>kable()</code> function from the <strong>knitr</strong> package for <em>simple</em> tables</li>
+<li>the <code>gt()</code> function from the <strong>gt</strong> package</li>
+</ul>
+<p><strong>For more sophisticated tables</strong></p>
+<ul>
+<li>styling functions from the <strong>kableExtra</strong> package (e.g., <code>kable_styling()</code>, <code>kable_classic()</code>)</li>
+<li>add-on functions from the <strong>gt</strong> package (e.g., <code>cols_label()</code>, <code>tab_header()</code>, <code>fmt_percent()</code>)</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Quarto doesn’t play nice with some options for formatting HTML tables in other packages.</p>
+<p>To make sure that your tables render as expected, we need to specify <code>html-table-processing: none</code> in the YAML header. You will notice that I already included that in this lab.</p>
+<p>I also recommend using the <strong>Source Editor</strong> for this lab.</p>
+</div>
+</div>
+</section>
+<section id="the-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-data">The Data</h2>
+<p>For this week’s lab, we will be <strong>revisiting questions from previous lab assignments</strong>, with the purpose of using functions from the <code>map()</code> family to iterate over certain tasks. To do this, we will need to load in the data from Lab 2, Lab 3, and Lab 7.</p>
+<p><strong>Question 1: Edit the code below to read in the appropriate datsets that you should have saved from the previous labs!</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data from Lab 2</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>surveys <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"Week 2"</span>, <span class="st">"Lab 2"</span>, <span class="st">"surveys.csv"</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Data from Lab 3</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>evals <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"Week 3"</span>, <span class="st">"Lab3"</span>, <span class="st">"teacher_evals.csv"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">sex =</span> gender)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Data from Lab 7</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>fish <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"Week 7"</span>, <span class="st">"Lab 7"</span>, <span class="st">"BlackfootFish.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="lab-2" class="level2">
+<h2 class="anchored" data-anchor-id="lab-2">Lab 2</h2>
+<p>First up, we’re going to revisit Question 2 from Lab 2. This question asked:</p>
+<blockquote class="blockquote">
+<p>What are the data types of the variables in this dataset?</p>
+</blockquote>
+<p><strong>Question 2: Using <code>map_chr()</code>, produce a table of the data type of each variable in the <code>surveys</code> dataset. Specifically, the table should have two columns <code>Variable</code> and <code>Data Type</code> with a row for each variable and be displayed using <code>kable()</code>.</strong></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -457,90 +480,167 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is the tip of the iceberg when it comes to APIs, but it will suffice to enable a lot of cool things for us. The video above used some nice examples like the restaurant and travel services, but there are APIs for accessing all kinds of data out there…like Facebook, Twitter, Google Maps, etc.</p>
+<p>You will want to check out the <code>enframe()</code> function to help with this task.</p>
 </div>
 </div>
-<p>For our class we’re not interested in <strong>creating</strong> APIs, but mostly <strong>using</strong> them to access data that we otherwise couldn’t get our hands on…at least not as easily.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q1 code</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Question 3: Format the table nicely! Your table must use either <code>kable()</code> and functions in the kableExtra package or <code>gt()</code> and functions from the gt package to produce a table with the following qualities:</strong></p>
+<ul>
+<li>rows are ordered to make the information easy to understand</li>
+<li>include a caption or header</li>
+<li>use bolded column names</li>
+</ul>
+<p><em>Note that you should assign the column names when creating the table, not by renaming columns in the dataset itself because we hate variable names with spaces in them!</em></p>
 </section>
-<section id="required-reading-r-api-tutorial" class="level2">
-<h2 class="anchored" data-anchor-id="required-reading-r-api-tutorial">📖 Required Reading: <a href="https://www.dataquest.io/blog/r-api-tutorial/">R API Tutorial</a></h2>
-<div class="callout callout-style-default callout-warning callout-titled">
+<section id="lab-3" class="level2">
+<h2 class="anchored" data-anchor-id="lab-3">Lab 3</h2>
+<p>Now, were on to Lab 3 where we will revisit two questions.</p>
+<p>In the original version of Lab 3, Question 4 asked you to:</p>
+<blockquote class="blockquote">
+<p>Change data types in whichever way you see fit (e.g., is the instructor ID really a numeric data type?)</p>
+</blockquote>
+<!-- This should get changed to `modify_if()` (not `map_if()`) -->
+<!-- `modify()`: the modify() family always returns the same type as the input object. -->
+<!-- modify_if() only modifies the elements of .x that satisfy a predicate and leaves the others unchanged. 
+modify_at() only modifies elements given by names or positions. -->
+<p><strong>Question 4: Using <code>map_at()</code> or <code>map_if()</code>, convert the <code>course_id</code>, <code>weekday</code>, <code>academic_degree</code>, <code>time_of_day</code>, and <code>sex</code> columns to factors. In other words, convert all character variables into factors. DO NOT PRINT OUT YOUR NEW DATA FRAME, just show the code.</strong> <em>Hint: You will need to use <code>bind_cols()</code> to transform the list output back into a data frame.</em></p>
+<p>Next up, we’re going revisit Question 7 which asked:</p>
+<blockquote class="blockquote">
+<p>What are the demographics of the instructors in this study? Investigate the variables <code>academic_degree</code>, <code>seniority</code>, and <code>sex</code> and summarize your findings in ~3 complete sentences.</p>
+</blockquote>
+<p>Many people created <strong>multiple</strong> tables of counts for each of these demographics, but in this exercise we are going to create <strong>one</strong> table with every demographic.</p>
+<p><strong>Question 5: Recreate the (mainly unformatted) table below using <u>one</u> pipeline. It is okay if the rows are not in the same order in your table, but the rest of the table should match mine. Meaning, you will need to do some renaming of the names of the variables and their levels.</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab-9-unformatted.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="A table with four columns labeled variable, level, n, and prop. Under the variable column there are four rows labeled Academic Degree, the levels of this variable (displayed in the level column) are Doctorate (n = 177, prop = 0.5747), Masters (78, 0.2532), No Degree (44, 0.1429), and Tenured Professor (9, 0.0292). Under the variable column there are two rows labeled Seniority, the levels (displayed in the levels column) are Junior (159, 0.5162) and Senior (149, 0.4838). Under the variable column there are two rows labeled Sex, the levels (displayed in the levels column) are Female (141, 0.4578) and Male (167, 0.5422)."></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Wrong URL
+<span class="screen-reader-only">Important</span>Same Data Cleaning as Lab 3
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The tutorial references the wrong link to access the API on the number of people in space. The correct link is: <a href="http://api.open-notify.org/astros.json" class="uri">http://api.open-notify.org/astros.json</a></p>
+<p>Repeat the data cleaning steps that we did before question 7 to recreate this exact table. Remember that we needed to first only keep one row per instructor!</p>
+<p>I’m using the <code>sen_level</code> classification from Challenge 3:</p>
+<ul>
+<li><code>"junior"</code> = <code>seniority</code> is 4 or less (inclusive)</li>
+<li><code>"senior"</code> = <code>seniority</code> is between 4 and 8 (inclusive)</li>
+<li><code>"very senior"</code> = <code>seniority</code> is greater than 8.</li>
+</ul>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- There are two main ways (that I have thought of) to approach this efficiently: -->
+<!-- 1. Using `map_at()` and `list_rbind()`. The `names_to` argument in  -->
+<!-- `list_rbind()` will be key! -->
+<!-- 2. Using `pivot_wider()`. -->
+<!-- For both options, you should start by creating a dataframe that has the -->
+<!-- `variable`, `level`, and `count` columns and then calculate `prop`, the -->
+<!-- proportion of professors that are in each group. Once you have these values -->
+<!-- calculated, then you can start styling the appearance of the labels! -->
+<p>I used the following options in <code>kable_styling()</code> (from the <strong>kableExtra</strong> package) to output this table:</p>
+<pre><code>  kable_styling(full_width = FALSE,
+                bootstrap_options = "striped")</code></pre>
+</div>
+</div>
+<p><strong>Question 6: Now turn your output into a very nice table, like one of the examples below using <code>kable()</code> and <code>kableExtra</code> or <code>gt()</code>.</strong></p>
+<div class="columns">
+<div class="column" style="width:48%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab-9-format-kable.png" class="img-fluid figure-img" alt="This table takes the previous table and formats it so there are obvious groups for Academic Degree, Seniority, and Sex. The table has a title: Demographics of Professors at the University of Poland, Warsaw in 2020. The title is in light gray text above the table. The table has four columns: Demographic, Group, Count, and %. Column headers are bold, and the Professor label spans across the Count and % columns. Horizontal dividing lines separate the major demographic categories: Academic Degree, Seniority, and Sex. Each demographic name appears in the first column, vertically grouped with its subcategories listed beneath it. For example, under Academic Degree, the groups listed are No Degree, Masters, Doctorate, and Tenured Professor with counts and percentages to the right (44 – 14.29%, 78 – 25.32%, 177 – 57.47%, 9 – 2.92%). Similar formatting follows for Seniority (Junior, Senior) and Sex (Female, Male). The layout uses consistent alignment, with text left-aligned and numbers right-aligned for clarity."></p>
+<figcaption>Example 1, produced with the <code>kable()</code> function and functions from the <strong>kableExtra</strong> package</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:2%;">
+
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab-9-format-gt.png" class="img-fluid figure-img" alt="A professionally formatted table titled: Demographics of Professors. A subtitle below reads: Student Evaluations at the University of Poland, Warsaw in 2020. The table is divided into three main sections: Seniority, Sex, and Academic Degree, each displayed as a bold header row with a light gray background spanning the width of the table. Column headers are Demographic, Count, and %, under a merged heading labeled Professors. Data rows under each section are separated by thin horizontal lines, with category names left-aligned and numeric values right-aligned for readability. Under Seniority: Junior (159, 51.62%) and Senior (149, 48.38%). Under Sex: Female (141, 45.78%) and Male (167, 54.22%). Under Academic Degree: No Degree (44, 14.29%), Masters (78, 25.32%), Doctorate (177, 57.47%), and Tenured Professor (9, 2.92%). The overall layout is clean and minimalist, using alternating gray headers and white data rows for clear grouping and contrast."></p>
+<figcaption>Example 2, produced with the <strong>gt</strong> package</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Your table does not need to copy one of these exactly but it should include <u>all</u> of the following:</strong></p>
+<ul>
+<li>Some way of clearly indicating the three variable types as row groups</li>
+<li>Giving nice column names</li>
+<li>Using a column header that spans the <code>Count</code> and <code>%</code> columns</li>
+<li>Nicely formatting the % column to include % signs and only 1-2 digits</li>
+<li>Giving the table a title or a caption</li>
+</ul>
+<!-- ## Lab 5 -->
+<!-- In lab 5 we got to solve a mystery using a bunch of different related data sets. -->
+<!-- Remember how we got the data? -->
+<!-- > This code chunk will read in all of the tables of data for you. Don't modify or remove this! -->
+<!-- This was also a mystery at the time! The code chunk given loaded an `.Rdata` file -->
+<!-- that included all of the data frames you needed for your analysis. However, your -->
+<!-- data may not always be saved in a nice `.Rdata` file. Let's write a more general -->
+<!-- function to read in lots of datasets ourselves! -->
+<!-- **Question 6: Write a function whose only argument is a directory that will read in all .csv files in that directory and return a *list* of the data frames.** -->
+<!-- Specifically your function should: -->
+<!--   1. Find the names of all .csv files in that directory (the `list.files()` -->
+<!--   function will be helpful). -->
+<!--   2. Use `map()` to efficiently read all of the files into R and save them in a -->
+<!--   **list** -->
+<!--   3. Rename the elements of the list with the names of each file  -->
+<!--   4. Return the list -->
+<!-- **Test your function on a directory that has at least two .csv files in it and show us that it works! DO NOT print full datasets. Show us that the output is a list and that the names of the list are file names. Your function should be able to handle if a directory includes files that aren't only csv's** -->
+<!-- ```{r} -->
+<!-- #| label: data-read-function -->
+<!-- ``` -->
+<!-- ::: {.callout-note} -->
+<!-- For example, if I have a directory `data/` that has `surveys.csv`,  -->
+<!-- `teacher_evals.csv`, and `bCH_murder_data.Rdata` in it, the function should -->
+<!-- return a list with two elements - the surveys and teacher_evals data frames. The -->
+<!-- names of the list elements should be `"surveys.csv"` and `"teacher_evals.csv"`. -->
+<!-- ::: -->
 </section>
-<section id="check-in-apis" class="level2">
-<h2 class="anchored" data-anchor-id="check-in-apis">Check-in: APIs</h2>
-<ol type="1">
-<li>What two packages did the tutorial make use of?</li>
-</ol>
-<ul>
-<li>rvest and jsonlite</li>
-<li>httr and jsonlite</li>
-<li>httr and rvest</li>
-<li>httr and tidyjson</li>
-<li>XML and rvest</li>
-</ul>
-<ol start="2" type="1">
-<li>What type of request will we likely start with when getting data from an API?</li>
-</ol>
-<ul>
-<li><code>PULL()</code></li>
-<li><code>GIMME()</code></li>
-<li><code>GET()</code></li>
-<li><code>SUMMON()</code></li>
-</ul>
-<ol start="3" type="1">
-<li><p>If <code>GET()</code> successfully requested information from the API, what <code>status</code> should you see in the response object?</p></li>
-<li><p>How many people are currently aboard the International Space Station?</p></li>
-</ol>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyjson)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">GET</span>(<span class="st">"http://api.open-notify.org/astros.json"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Using jsonlite</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>space <span class="ot">&lt;-</span> res<span class="sc">$</span>content <span class="sc">%&gt;%</span> </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rawToChar</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fromJSON</span>()</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Using tidyjson</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>json_tbl <span class="ot">&lt;-</span> res<span class="sc">$</span>content <span class="sc">%&gt;%</span> </span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rawToChar</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.tbl_json</span>()</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>json_tbl <span class="sc">%&gt;%</span> </span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread_all</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">enter_object</span>(<span class="st">"people"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather_array</span>() <span class="sc">%&gt;%</span>       <span class="co"># if it's a JSON array</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread_all</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name)</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="do">## Using unnest_longer &amp; unnest_wider</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>space <span class="ot">&lt;-</span> res<span class="sc">$</span>content <span class="sc">%&gt;%</span> </span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rawToChar</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fromJSON</span>()</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(space) <span class="sc">%&gt;%</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(<span class="at">data =</span> .) <span class="sc">%&gt;%</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_wider</span>(data) <span class="sc">%&gt;%</span>        </span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_longer</span>(people) <span class="sc">%&gt;%</span>     </span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_wider</span>(people) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(craft <span class="sc">==</span> <span class="st">"ISS"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="lab-7" class="level2">
+<h2 class="anchored" data-anchor-id="lab-7">Lab 7</h2>
+<p>For our last problem, we will revisit a question from the most recent lab. Question 1 asked you to use <code>across()</code> to make a table which summarized:</p>
+<blockquote class="blockquote">
+<p>What variable(s) have missing values present?<br>
+How many observations have missing values?</p>
+</blockquote>
+<p><strong>Question 7: Using <code>map_int()</code>, produce a nicely formatted table of the number of missing values for each variable in the <code>fish</code> data.</strong></p>
+<p><strong>Question 8: Now turn your output into a very nice table, like the example below using the gt package. Specifically, your table should color the cells with 0 missing values green and cells with &gt; 0 missing values red.</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lab-9-format-color.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="A table titled: Number of Missing Values for Fish Measurements. A subtitle below reads: Data collected from 1989 to 2006 on the Blackfoot Fish River in Montana. The table has two columns: Measurement Variable and Missing Values. Each row lists a variable from the fish dataset—trip, mark, length, year, section, species, and weight—with its corresponding count of missing values. Cells in the Missing Values column are color-coded to indicate data completeness: Green cells represent zero missing values for all variables except one. The last row, for weight, is filled with a contrasting orange color to highlight a higher count of missing data (1,796 missing values). Text is centered within cells, headers are bolded with a light gray horizontal divider, and the overall design uses a clean, minimalistic layout."></p>
+</figure>
 </div>
-<!-- Grad level ideas: -->
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span><code>data_color()</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will find this documentation page helpful! https://gt.rstudio.com/reference/data_color.html</p>
+</div>
+</div>
 
 
 </section>
@@ -959,18 +1059,6 @@ Tip
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../unit-1/json.html" class="pagination-link" aria-label="Hierarchical Data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Hierarchical Data</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../unit-1/web-scraping.html" class="pagination-link" aria-label="Web Scraping">
-        <span class="nav-page-text">Web Scraping</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -979,7 +1067,7 @@ Tip
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-1/api.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-1/formatting-tables.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
