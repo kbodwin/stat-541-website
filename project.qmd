@@ -3,14 +3,20 @@ title: "Projects"
 editor: source
 ---
 
-Over the duration of the term, you will complete **three** projects. Each project will focus on the **same** data you select at the beginning of the course, but will explore the data in slightly different ways. In each of the sections below, we describe the goals / foci of each project, the final deliverable, and the approximate timeline for completing the project.
+Over the duration of the term, you will complete **three** projects. Each
+project will focus on the **same** data you select at the beginning of the
+course, but will explore the data in slightly different ways. In each of the
+sections below, we describe the goals / foci of each project, the final
+deliverable, and the approximate timeline for completing the project.
 
-Before the term starts, you will need to choose the dataset you are interested in working with throughout the course. Below, we describe each of the datasets you can choose from:
+Before the term starts, you will need to choose the dataset you are interested
+in working with throughout the course. Below, we describe each of the datasets
+you can choose from:
 
--   Environmental: Plastic Waste
--   Health: Measles Cases
--   Sports: Olympic Medals
--   Geopolitical: Government Types
+-   [Environmental: Plastic Waste](https://github.com/rfordatascience/tidytuesday/blob/main/data/2021/2021-01-26/readme.md)
+-   [Health: Measles Cases](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-06-24/readme.md)
+-   [Sports: Olympic Medals](https://github.com/rfordatascience/tidytuesday/blob/main/data/2024/2024-08-06/readme.md)
+-   [Geopolitical: Government Types](https://github.com/rfordatascience/tidytuesday/blob/main/data/2024/2024-11-05/readme.md)
 
 **Please fill out this form indicating your preferences regarding these options:**
 
@@ -24,8 +30,8 @@ visualizations and summary tables.
 
 The deliverable for the project is a stylized, publication-ready report. The
 report will include an exploratory data analysis complete with styled
-visualizations and polished tables, each of which address **at least two**
-research questions posed by your group.
+visualizations and polished tables which address **at least two** research
+questions posed by your group.
 
 The approximate timeline for completing the project is:
 
@@ -33,19 +39,23 @@ The approximate timeline for completing the project is:
     -   Acquire data
     -   Pose research questions
     -   Sketch out potential visualizations
+
 -   [Week 2](/project/week-2.qmd)
     -   Summarize data
     -   Write functions
     -   Iterate over functions
     -   Professionally format summaries
+
 -   [Week 3](/project/week-3.qmd)
     -   Acquire new country-level data using APIs and webscraping
     -   Join new data with original data
     -   Produce summaries or simple visualizations that incorporate new data
+
 -   [Week 4](/project/week-4.qmd)
     -   Make two new visualizations using more complex geometries
     -   Fit a statistical model
     -   Report findings from that model (professionally formatted)
+
 -   [Week 5](/project/project-1.qmd) final report is due
 
 # Project 2 (Unit 2)
