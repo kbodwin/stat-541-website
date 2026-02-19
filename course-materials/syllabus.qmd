@@ -3,8 +3,6 @@ title: 'Advanced Statistical Computing'
 subtitle: "Spring 2024"
 format: 
   html: 
-    number-depth: 2
-    number-sections: true
     table-of-contents: true
 editor: source
 execute: 
@@ -13,13 +11,94 @@ execute:
   message: false
 ---
 
-::: {.panel-tabset}
+This quarter, the undergraduate *Advanced R* course (STAT 431) is being 
+coordinated with the graduate *Advanced R* course (STAT 541). The structure of
+each course is identical and the content will be very similar. However, the
+graduate course will occasionally require additional content. 
 
+# STAT 431
+
+::: {.panel-tabset}
 # Instructor Info 
 
 :::::: columns
 ::: {.column width="50%"}
-**Instructor: Dr. Allison Theobold** -- you can call me [**Dr. Theobold**](https://docs.google.com/document/d/1m4e-2l76luAd9WrxiwCVf8-yf-co82dDSe1jHYf-NBo/edit?usp=sharing) or [**Dr. T**](https://docs.google.com/document/d/1m4e-2l76luAd9WrxiwCVf8-yf-co82dDSe1jHYf-NBo/edit?usp=sharing)! I use **they / them** pronouns. 😊
+**Instructor: Dr. Kelly Bodwin** -- you can call me [**Dr. Bodwin** or **Dr. B**](https://docs.google.com/document/d/1m4e-2l76luAd9WrxiwCVf8-yf-co82dDSe1jHYf-NBo/edit?usp=sharing)! I use **she / her** pronouns. 😊
+
+**Email**: kbodwin\@calpoly.edu[^1]  
+**Office**: Building 25, Office 106
+
+[^1]: See @sec-help for information on what you can expect when you email me.
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="40%"}
+![](../images/bodwin-headshot.png){fig-alt="A headshot of Dr. Bodwin, a woman with with long brown hair and bangs. Dr. B smiles warmly while standing outdoors against a soft background of autumn tones. She wears tortoiseshell glasses, a purple sweater, a tidyverse-themed scarf, and dangling blue earrings, with arms confidently crossed." width="60%"}
+
+
+:::
+::::::
+
+# Class Meetings
+
+**Room:** 180-272
+
+**Times:** 
+
+- Section 01: Mondays & Wednesdays from 2:10pm - 4:00pm
+- Section 02: Mondays & Wednesdays from 4:10pm - 6:00pm
+
+# Student Hours {#sec-OH}
+
+This will be updated shortly!
+
+<!-- This quarter I will be holding student hours on Mondays, Wednesdays,  -->
+<!-- and Thursdays at the same time---so it is easy to remember! -->
+
+<!-- +-----------------+--------------------------------------------------+ -->
+<!-- | Day             | Time                                             | -->
+<!-- +=================+==================================================+ -->
+<!-- | Mondays         | 12:10pm -- 1:00pm (in-person)                    | -->
+<!-- +-----------------+--------------------------------------------------+ -->
+<!-- | Wednesdays      | 12:10pm -- 1:00pm (in-person)                    | -->
+<!-- +-----------------+--------------------------------------------------+ -->
+<!-- | Thursdays       | 12:10 pm - 1:00 pm (on Zoom)                     | -->
+<!-- +-----------------+--------------------------------------------------+ -->
+
+<!-- I will typically hold student hours in my office (25-103), but may choose to -->
+<!-- move to the outside vestibule between wings of the building (where all the -->
+<!-- whiteboards are) or the Statistics department conference room. If we're meeting -->
+<!-- somewhere other than my office, I will leave a sign on the door indicating where -->
+<!-- we're meeting! -->
+
+# Personal Meetings
+
+This will be updated shortly!
+
+<!-- If you would like to talk with me one-on-one about anything (e.g., grades, -->
+<!-- research), I've reserved time on Thursdays from 12:10pm to 1:00pm -->
+<!-- for individual appointments. You can make 10-minute appointments through the -->
+<!-- following link: <https://calendly.com/allisontheobold> -->
+
+<!-- I do request that you make appointments at least 2-hours ahead of time, so I -->
+<!-- don't accidentally miss our meeting! -->
+
+<!-- If you need to meet, but none of the student hours work for you please let me -->
+<!-- know! It is possible we can communicate asynchronously through Discord or email, -->
+<!-- but I am happy to schedule a meeting during another time if necessary. -->
+:::
+
+
+# STAT 541
+
+::: {.panel-tabset}
+# Instructor Info 
+
+:::::: columns
+::: {.column width="50%"}
+**Instructor: Dr. Allison Theobold** -- you can call me [**Dr. Theobold** or **Dr. T**](https://docs.google.com/document/d/1m4e-2l76luAd9WrxiwCVf8-yf-co82dDSe1jHYf-NBo/edit?usp=sharing)! I use **they / them** pronouns. 😊
 
 **Email**: atheobol\@calpoly.edu[^1]  
 **Office**: Building 25, Office 105
@@ -31,7 +110,7 @@ execute:
 :::
 
 ::: {.column width="40%"}
-![](images/headshot.jpg){fig-alt="A headshot of Dr. Theobold, in a pink blazer at the top floor of Building 25, with Bishop Peak in the background." width="60%"}
+![](../images/theobold-headshot.jpg){fig-alt="A headshot of Dr. Theobold, a non-binary identifying person with short brown hair, a fun pink blazer, and great dragonfly earrings. They are standing at the top of Building 25 at Cal Poly, with the green mountains of San Luis Obispo in the background." width="60%" style="border-radius: 15px"}
 :::
 ::::::
 
