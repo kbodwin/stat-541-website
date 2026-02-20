@@ -17,6 +17,10 @@ library(flair)
 library(leaflet)
 ```
 
+<!-- * **at least one** visualization must use a more complex geometry (e.g., -->
+<!-- `geom_segment()`, `geom_density_ridge()` `geom_ribbon()`, `geom_tile()`, -->
+<!-- `geom_hex()`) -->
+
 ## Beyond the Basics of Data Visualization
 
 Historically, there have been 5 plot types that are considered basic or foundational:
