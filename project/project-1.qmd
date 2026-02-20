@@ -3,27 +3,77 @@ title: "Project 1 Final Deliverable"
 editor: source
 ---
 
-<!-- The deliverable for the project is a stylized, publication-ready report. The -->
-<!-- report will include an exploratory data analysis complete with styled -->
-<!-- visualizations and polished tables which address **at least two** research -->
-<!-- questions posed by your group. -->
+For this project, you and your group will collaborate to produce a stylized,
+publication-ready report. The report will include an exploratory data analysis
+complete with styled visualizations and polished tables which address
+**at least two** research questions posed by your group.
 
-By the conclusion of this unit students will produce a stylized, publication-ready report. The report will include an exploratory data analysis complete with visualizations of maps and non-standard geometries (e.g., geom_tile(), geom_text()), alongside polished tables of summary statistics. Visualizations will use techniques to make the plots more clear to the reader (e.g., removing the legend, removing minor gridlines, thoughtful use of colors and fonts).
+Along the way you will learn how to:
 
-- write data summary functions
-- iterate over those functions
-- acquire data from APIs and webscraping
-- create professionally styled visualizations and tables
+- write data summary functions,
+- iterate over those functions,
+- acquire data from APIs and webscraping, and
+- create professionally styled visualizations and tables.
 
-## Final Deliverable
+# Final Deliverable
 
-**The final report you create _must_ have the following elements:**
+The final report you create _must_ have the following elements.
 
+## Data Acquisition
 
-<!-- The report includes figure and table captions, alternative text for visualizations and figure references, as well as documentation for the R packages used for the analysis. The data students draw on for the report will be chosen from a set of options, with each option requiring the use of regular expressions to wrangle their data. Students will answer selected questions provided by the instructor AND ask exploratory questions themselves. -->
+-   describes the context of the original data
+-   acquire new country-level data using APIs and webscraping
+-   joins new data with original data 
 
+## Research Questions
 
-::: {.column-margin}
+-   addresses **at least two** research questions using the original data 
+-   addresses **at least one** research question using the new (country-level)
+data
+
+## Data Summaries & Visualizations
+
+-   **at least three** data summaries which address the research questions 
+posed
+    * **at least one** of these summaries need to be produced with a custom
+    function. 
+    * **at least one** of these summaries need to include iteration (either 
+    inside or outside of a function).
+
+-   creates professionally formatted summary tables (for **all** data summaries)
+    * every table **must** have formatted values (e.g., decimals, percentages,
+    currencies), boldface headers, and captions, and 
+    * **at least one** table must incorporate additional styling (e.g., color, 
+    row group labels, spanner labels)
+    
+-   creates **two** professionally formatted visualizations
+    * every visualization **must** have alternative (alt) text, non-default
+    colors, a non-default theme, and clear labels
+    * **at least one** visualization must use a more complex geometry (e.g.,
+    `geom_segment()`, `geom_density_ridge()` `geom_ribbon()`, `geom_tile()`,
+    `geom_hex()`)
+    
+    
+## Data Model
+
+-   fits **one** statistical model addressing one of the research questions 
+posed
+-   professionally formats the output of that model to communicate the results
+(must satisfy requirements for professionally formatted tables)
+
+## Quarto Document
+
+::: columns
+::: {.column width="55%"}
+-   uses a non-default theme
+-   uses headers and subheaders to delineate the sections
+-   uses table and figure numbers to reference findings
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="40%"}
 ::: callout-warning
 # Coordinated Colors
 
@@ -31,13 +81,18 @@ The colors from the document theme you chose should match the colors in your
 plots and tables!
 :::
 :::
+:::
 
 # Peer Review
 
-<!-- In Week 7 your group will give feedback to another group as it relates to the  -->
-<!-- layout of their dashboard and the visualizations / tables they produced.  -->
+In Week 4 your group will give (and receive) feedback to another group as it
+relates to the layout of the report and the visualizations / tables included
+in the report. 
 
 # Submission
+
+Your final submission varies based on the course in which you are enrolled. 
+Please see below for the expectations for your course. 
 
 ## STAT 431
 
@@ -56,5 +111,7 @@ quarto pub -->
 ::: callout-tip
 # Sign-up for Connect Cloud
 
-You will need to sign up for a free [Connect Cloud](https://connect.posit.cloud/) account with your GitHub account, since the documents you will be publishing should live in a GitHub repository!
+You will need to sign up for a free [Connect Cloud](https://connect.posit.cloud/)
+account with your GitHub account, since the documents you will be publishing
+should live in a GitHub repository!
 :::

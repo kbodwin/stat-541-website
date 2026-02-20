@@ -1,9 +1,24 @@
 ---
 title: "Project Checkpoint 4"
+editor: source
 ---
 
-Make two new visuals (with more complex geoms)
+For the final step of the project, our goal is to create visualizations that
+use more complex geometries, fit a statistical model to address a research 
+question, and report the findings of that model. 
 
-Fit a statistical model
+**By the end of the week, your updated report should contain:**
 
-Report findings from that model (professionally formatted)
+-   **two** professionally formatted visualizations
+    * every visualization **must** have alternative (alt) text, non-default
+    colors, a non-default theme, and clear labels
+    * **at least one** visualization must use a more complex geometry (e.g.,
+    `geom_segment()`, `geom_density_ridge()` `geom_ribbon()`, `geom_tile()`,
+    `geom_hex()`)
+    
+-   fits **one** statistical model addressing one of the research questions 
+posed
+-   professionally formats the output of that model to communicate the results
+    * Formatted values (e.g., decimals, percentages, currencies)
+    * Boldface headers
+    * Captions

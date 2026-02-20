@@ -313,7 +313,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#final-deliverable" id="toc-final-deliverable" class="nav-link active" data-scroll-target="#final-deliverable">Final Deliverable</a></li>
+  <li><a href="#final-deliverable" id="toc-final-deliverable" class="nav-link active" data-scroll-target="#final-deliverable">Final Deliverable</a>
+  <ul class="collapse">
+  <li><a href="#data-acquisition" id="toc-data-acquisition" class="nav-link" data-scroll-target="#data-acquisition">Data Acquisition</a></li>
+  <li><a href="#research-questions" id="toc-research-questions" class="nav-link" data-scroll-target="#research-questions">Research Questions</a></li>
+  <li><a href="#data-summaries-visualizations" id="toc-data-summaries-visualizations" class="nav-link" data-scroll-target="#data-summaries-visualizations">Data Summaries &amp; Visualizations</a></li>
+  <li><a href="#data-model" id="toc-data-model" class="nav-link" data-scroll-target="#data-model">Data Model</a></li>
+  <li><a href="#quarto-document" id="toc-quarto-document" class="nav-link" data-scroll-target="#quarto-document">Quarto Document</a></li>
+  </ul></li>
   <li><a href="#peer-review" id="toc-peer-review" class="nav-link" data-scroll-target="#peer-review">Peer Review</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a>
   <ul class="collapse">
@@ -324,7 +331,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/project/project-1.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -346,23 +353,71 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- The deliverable for the project is a stylized, publication-ready report. The -->
-<!-- report will include an exploratory data analysis complete with styled -->
-<!-- visualizations and polished tables which address **at least two** research -->
-<!-- questions posed by your group. -->
-<p>By the conclusion of this unit students will produce a stylized, publication-ready report. The report will include an exploratory data analysis complete with visualizations of maps and non-standard geometries (e.g., geom_tile(), geom_text()), alongside polished tables of summary statistics. Visualizations will use techniques to make the plots more clear to the reader (e.g., removing the legend, removing minor gridlines, thoughtful use of colors and fonts).</p>
+<p>For this project, you and your group will collaborate to produce a stylized, publication-ready report. The report will include an exploratory data analysis complete with styled visualizations and polished tables which address <strong>at least two</strong> research questions posed by your group.</p>
+<p>Along the way you will learn how to:</p>
 <ul>
-<li>write data summary functions</li>
-<li>iterate over those functions</li>
-<li>acquire data from APIs and webscraping</li>
-<li>create professionally styled visualizations and tables</li>
+<li>write data summary functions,</li>
+<li>iterate over those functions,</li>
+<li>acquire data from APIs and webscraping, and</li>
+<li>create professionally styled visualizations and tables.</li>
 </ul>
-<section id="final-deliverable" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="final-deliverable">Final Deliverable</h2>
-<p><strong>The final report you create <em>must</em> have the following elements:</strong></p>
-<!-- The report includes figure and table captions, alternative text for visualizations and figure references, as well as documentation for the R packages used for the analysis. The data students draw on for the report will be chosen from a set of options, with each option requiring the use of regular expressions to wrangle their data. Students will answer selected questions provided by the instructor AND ask exploratory questions themselves. -->
+<section id="final-deliverable" class="level1">
+<h1>Final Deliverable</h1>
+<p>The final report you create <em>must</em> have the following elements.</p>
+<section id="data-acquisition" class="level2">
+<h2 class="anchored" data-anchor-id="data-acquisition">Data Acquisition</h2>
+<ul>
+<li>describes the context of the original data</li>
+<li>acquire new country-level data using APIs and webscraping</li>
+<li>joins new data with original data</li>
+</ul>
+</section>
+<section id="research-questions" class="level2">
+<h2 class="anchored" data-anchor-id="research-questions">Research Questions</h2>
+<ul>
+<li>addresses <strong>at least two</strong> research questions using the original data</li>
+<li>addresses <strong>at least one</strong> research question using the new (country-level) data</li>
+</ul>
+</section>
+<section id="data-summaries-visualizations" class="level2">
+<h2 class="anchored" data-anchor-id="data-summaries-visualizations">Data Summaries &amp; Visualizations</h2>
+<ul>
+<li><strong>at least three</strong> data summaries which address the research questions posed
+<ul>
+<li><strong>at least one</strong> of these summaries need to be produced with a custom function.</li>
+<li><strong>at least one</strong> of these summaries need to include iteration (either inside or outside of a function).</li>
+</ul></li>
+<li>creates professionally formatted summary tables (for <strong>all</strong> data summaries)
+<ul>
+<li>every table <strong>must</strong> have formatted values (e.g., decimals, percentages, currencies), boldface headers, and captions, and</li>
+<li><strong>at least one</strong> table must incorporate additional styling (e.g., color, row group labels, spanner labels)</li>
+</ul></li>
+<li>creates <strong>two</strong> professionally formatted visualizations
+<ul>
+<li>every visualization <strong>must</strong> have alternative (alt) text, non-default colors, a non-default theme, and clear labels</li>
+<li><strong>at least one</strong> visualization must use a more complex geometry (e.g., <code>geom_segment()</code>, <code>geom_density_ridge()</code> <code>geom_ribbon()</code>, <code>geom_tile()</code>, <code>geom_hex()</code>)</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-model" class="level2">
+<h2 class="anchored" data-anchor-id="data-model">Data Model</h2>
+<ul>
+<li>fits <strong>one</strong> statistical model addressing one of the research questions posed</li>
+<li>professionally formats the output of that model to communicate the results (must satisfy requirements for professionally formatted tables)</li>
+</ul>
+</section>
+<section id="quarto-document" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-document">Quarto Document</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>uses a non-default theme</li>
+<li>uses headers and subheaders to delineate the sections</li>
+<li>uses table and figure numbers to reference findings</li>
+</ul>
+</div><div class="column" style="width:5%;">
 
-<div class="no-row-height column-margin column-container"><div class="">
+</div><div class="column" style="width:40%;">
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -376,14 +431,17 @@ ul.task-list li input[type="checkbox"] {
 <p>The colors from the document theme you chose should match the colors in your plots and tables!</p>
 </div>
 </div>
-</div></div></section>
+</div>
+</div>
+</section>
+</section>
 <section id="peer-review" class="level1">
 <h1>Peer Review</h1>
-<!-- In Week 7 your group will give feedback to another group as it relates to the  -->
-<!-- layout of their dashboard and the visualizations / tables they produced.  -->
+<p>In Week 4 your group will give (and receive) feedback to another group as it relates to the layout of the report and the visualizations / tables included in the report.</p>
 </section>
 <section id="submission" class="level1">
 <h1>Submission</h1>
+<p>Your final submission varies based on the course in which you are enrolled. Please see below for the expectations for your course.</p>
 <section id="stat-431" class="level2">
 <h2 class="anchored" data-anchor-id="stat-431">STAT 431</h2>
 <p>You are required to submit <strong>both</strong> the link to your GitHub repository containing your source code <strong>and</strong> the final rendered report (as an HTML).</p>

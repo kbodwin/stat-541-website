@@ -15,16 +15,22 @@ Along the way you will learn how to:
 - craft interactive plots using `plotly` and `leaflet`, and 
 - produce dynamic tables using `DT`.
 
-## Final Deliverable
+# Final Deliverable
 
-**The Quarto dashboard you create _must_ have the following elements:**
+The Quarto dashboard you create _must_ have the following elements:
+
+## Layout 
 
 -   a navigation logo (similar to the Olympic rings)
 -   icons to your socials (e.g., LinkedIn, Instagram, Twitter, email)
 -   a non-default theme
 -   at least two pages
 -   at least two tabsets (can be on just one page)
--   at least two cards with quick information (e.g., % of people across the world who have faith in vaccines)
+
+## Static Content
+
+-   at least two cards with quick information (e.g., % of people across the
+world who have faith in vaccines)
 -   one plot made with `leaflet`
 -   one additional interactive plot or table
 -   non-default plot colors
@@ -39,7 +45,7 @@ The colors in your styled dashboard should match the colors in your plots!
 :::
 :::
 
-**Your dashboard must also contain interactive components. Specifically, your Shiny dashboard _must_ have the following:**
+## Interactive (Shiny) Content
 
 -   at least one opportunity for user input via a slide bar
 -   at least one opportunity for user input via check boxes
@@ -49,18 +55,26 @@ table or visualization.
 
 # Peer Review
 
-In Week 7 your group will give feedback to another group as it relates to the 
-layout of their dashboard and the visualizations / tables they produced. 
+In Week 7 your group will give (and receive) feedback to another group as it
+relates to the layout of the dashboard and the visualizations / tables 
+included in the dashboard.
 
 # Submission
 
+Your final submission varies based on the course in which you are enrolled. 
+Please see below for the expectations for your course. 
+
 ## STAT 431
 
-You are required to submit **both** the link to your GitHub repository containing your source code **and** a `.zip` folder containing every file needed to render your dashboard.
+You are required to submit **both** the link to your GitHub repository
+containing your source code **and** a `.zip` folder containing every file needed
+to render your dashboard.
 
 ## STAT 541
 
-You are required to submit **both** the link to your GitHub repository containing your source code **and** a link to your [published]{.underline} dashboard.
+You are required to submit **both** the link to your GitHub repository
+containing your source code **and** a link to your [published]{.underline}
+dashboard.
 
 <!-- Need to change to Connect Cloud (https://connect.posit.cloud/) instead of  -->
 

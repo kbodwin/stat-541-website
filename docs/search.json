@@ -555,7 +555,7 @@
     "href": "project/project-1.html",
     "title": "Project 1 Final Deliverable",
     "section": "",
-    "text": "By the conclusion of this unit students will produce a stylized, publication-ready report. The report will include an exploratory data analysis complete with visualizations of maps and non-standard geometries (e.g., geom_tile(), geom_text()), alongside polished tables of summary statistics. Visualizations will use techniques to make the plots more clear to the reader (e.g., removing the legend, removing minor gridlines, thoughtful use of colors and fonts)."
+    "text": "For this project, you and your group will collaborate to produce a stylized, publication-ready report. The report will include an exploratory data analysis complete with styled visualizations and polished tables which address at least two research questions posed by your group.\nAlong the way you will learn how to:"
   },
   {
     "objectID": "project/project-1.html#final-deliverable",
@@ -1654,5 +1654,61 @@
     "title": "Advanced Statistical Computing",
     "section": "Personal Meetings",
     "text": "Personal Meetings\nIf you would like to talk with me about personal matters (e.g., grades), please don’t hesitate to send me an email!"
+  },
+  {
+    "objectID": "project/project-1.html#data-acquisition",
+    "href": "project/project-1.html#data-acquisition",
+    "title": "Project 1 Final Deliverable",
+    "section": "Data Acquisition",
+    "text": "Data Acquisition\n\ndescribes the context of the original data\nacquire new country-level data using APIs and webscraping\njoins new data with original data"
+  },
+  {
+    "objectID": "project/project-1.html#research-questions",
+    "href": "project/project-1.html#research-questions",
+    "title": "Project 1 Final Deliverable",
+    "section": "Research Questions",
+    "text": "Research Questions\n\naddresses at least two research questions using the original data\naddresses at least one research question using the new (country-level) data"
+  },
+  {
+    "objectID": "project/project-1.html#data-summaries-visualizations",
+    "href": "project/project-1.html#data-summaries-visualizations",
+    "title": "Project 1 Final Deliverable",
+    "section": "Data Summaries & Visualizations",
+    "text": "Data Summaries & Visualizations\n\nat least three data summaries which address the research questions posed\n\nat least one of these summaries need to be produced with a custom function.\nat least one of these summaries need to include iteration (either inside or outside of a function).\n\ncreates professionally formatted summary tables (for all data summaries)\n\nevery table must have formatted values (e.g., decimals, percentages, currencies), boldface headers, and captions, and\nat least one table must incorporate additional styling (e.g., color, row group labels, spanner labels)\n\ncreates two professionally formatted visualizations\n\nevery visualization must have alternative (alt) text, non-default colors, a non-default theme, and clear labels\nat least one visualization must use a more complex geometry (e.g., geom_segment(), geom_density_ridge() geom_ribbon(), geom_tile(), geom_hex())"
+  },
+  {
+    "objectID": "project/project-1.html#data-model",
+    "href": "project/project-1.html#data-model",
+    "title": "Project 1 Final Deliverable",
+    "section": "Data Model",
+    "text": "Data Model\n\nfits one statistical model addressing one of the research questions posed\nprofessionally formats the output of that model to communicate the results (must satisfy requirements for professionally formatted tables)"
+  },
+  {
+    "objectID": "project/project-1.html#quarto-document",
+    "href": "project/project-1.html#quarto-document",
+    "title": "Project 1 Final Deliverable",
+    "section": "Quarto Document",
+    "text": "Quarto Document\n\n\n\nuses a non-default theme\nuses headers and subheaders to delineate the sections\nuses table and figure numbers to reference findings\n\n\n\n\n\n\n\n\n\n\nWarningCoordinated Colors\n\n\n\nThe colors from the document theme you chose should match the colors in your plots and tables!"
+  },
+  {
+    "objectID": "project/project-2.html#layout",
+    "href": "project/project-2.html#layout",
+    "title": "Project 2 Final Deliverable",
+    "section": "Layout",
+    "text": "Layout\n\na navigation logo (similar to the Olympic rings)\nicons to your socials (e.g., LinkedIn, Instagram, Twitter, email)\na non-default theme\nat least two pages\nat least two tabsets (can be on just one page)"
+  },
+  {
+    "objectID": "project/project-2.html#static-content",
+    "href": "project/project-2.html#static-content",
+    "title": "Project 2 Final Deliverable",
+    "section": "Static Content",
+    "text": "Static Content\n\nat least two cards with quick information (e.g., % of people across the world who have faith in vaccines)\none plot made with leaflet\none additional interactive plot or table\nnon-default plot colors\na summary table displaying the results of a statistical model or summary statistics\n\n\n\n\n\n\n\n\n\nWarningCoordinated Colors\n\n\n\nThe colors in your styled dashboard should match the colors in your plots!"
+  },
+  {
+    "objectID": "project/project-2.html#interactive-shiny-content",
+    "href": "project/project-2.html#interactive-shiny-content",
+    "title": "Project 2 Final Deliverable",
+    "section": "Interactive (Shiny) Content",
+    "text": "Interactive (Shiny) Content\n\nat least one opportunity for user input via a slide bar\nat least one opportunity for user input via check boxes\n\nThese interactive features are expected to be used to update at least one table or visualization."
   }
 ]
