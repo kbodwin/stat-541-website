@@ -15,9 +15,18 @@ from APIs and scrape the web. We're going to have a lot of fun!
 
 ## Acknowledements {.unnumbered}
 
-<!-- we should probably put our funding from Noyce here -->
+The design (and redesign) of this course was generously supported by the 
+[Noyce School of Applied Computing at Cal Poly](https://noyce.calpoly.edu/)
+through a teaching innovation grant. We thank both our collaboration team at Cal
+Poly---[Charlotte Mann](https://manncz.github.io/), 
+[Emily Robinson](https://www.emilyarobinson.com/), 
+[Zoe Rehnberg](https://github.com/zoerehnberg), 
+[Julia Schedler](https://github.com/juliaSchedler)---and our external
+collaborator---[Tyson Barrett](https://github.com/TysonStanley). This class
+wouldn't have been possible without the generous support we received! 
 
-A huge shout out goes the the amazing women at Macalester College---[Leslie Myint](https://www.lesliemyint.org/), [Brianna Heggeseth](https://bcheggeseth.github.io/), and [Alicia Johnson](https://ajohns24.github.io/)---for making their
+A huge shout out goes the the amazing women at Macalester College---[Leslie Myint](https://www.lesliemyint.org/), [Brianna Heggeseth](https://bcheggeseth.github.io/), 
+and [Alicia Johnson](https://ajohns24.github.io/)---for making their
 *Intermediate Data Science* course materials public. And finally, a massive 
 thank you to [Sam Shanny-Csik](https://samanthacsik.github.io/) for their
 **incredible** resources for making and styling Quarto websites!

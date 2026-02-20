@@ -97,15 +97,15 @@ website:
         - href: project/week-2.qmd
         - href: project/week-3.qmd
         - href: project/week-4.qmd
-        - href: project/unit-1.qmd
+        - href: project/project-1.qmd
         - href: project/week-5.qmd
         - href: project/week-6.qmd
         - href: project/week-7.qmd
-        - href: project/unit-2.qmd
+        - href: project/project-2.qmd
         - href: project/week-8.qmd
         - href: project/week-9.qmd
         - href: project/week-10.qmd
-        - href: project/unit-3.qmd
+        - href: project/project-3.qmd
 
     - id: unit-2
       title: "Unit 2"
