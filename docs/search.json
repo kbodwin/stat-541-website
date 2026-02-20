@@ -522,7 +522,7 @@
     "href": "project/week-4.html",
     "title": "Project Checkpoint 4",
     "section": "",
-    "text": "Make two new visuals (with more complex geoms)\nFit a statistical model\nReport findings from that model (professionally formatted)",
+    "text": "For the final step of the project, our goal is to create visualizations that use more complex geometries, fit a statistical model to address a research question, and report the findings of that model.\nBy the end of the week, your updated report should contain:\n\ntwo professionally formatted visualizations\n\nevery visualization must have alternative (alt) text, non-default colors, a non-default theme, and clear labels\nat least one visualization must use a more complex geometry (e.g., geom_segment(), geom_density_ridge() geom_ribbon(), geom_tile(), geom_hex())\n\nfits one statistical model addressing one of the research questions posed\nprofessionally formats the output of that model to communicate the results\n\nFormatted values (e.g., decimals, percentages, currencies)\nBoldface headers\nCaptions",
     "crumbs": [
       "Projects",
       "Project Checkpoint 4"
@@ -533,7 +533,7 @@
     "href": "project/week-2.html",
     "title": "Project Checkpoint 2",
     "section": "",
-    "text": "Now that you have explored your dataset and posed research questions about these data, this week we are focused on producing summary statistics that could be used to also address your research question. These summary statistics will allow you to apply your function writing and iteration skills!\nBy the end of the week, your updated report should contain:\n\nTwo data summaries that use existing columns in the data\nThree data summaries that modify columns from the original data\n\nAt least two of these summaries need to be produced with a custom function.\nAt least two of these summaries need to include iteration (either inside or outside of a function).\n\nSummary tables that at a minimum have:\n\nFormatted values (e.g., decimals, percentages, currencies)\nBoldface headers\nCaptions",
+    "text": "Now that you have explored your dataset and posed research questions about these data, this week we are focused on producing summary statistics that could be used to also address your research question. These summary statistics will allow you to apply your function writing and iteration skills!\nBy the end of the week, your updated report should contain:\n\nTwo data summaries that use existing (unmodified) columns in the data\n\nAt least one of these summaries need to be produced with a custom function.\nAt least one of these summaries need to include iteration (either inside or outside of a function).\n\nTwo data summaries that modify columns from the original data\n\nAt least one of these summaries need to be produced with a custom function.\nAt least one of these summaries need to include iteration (either inside or outside of a function).\n\nSummary tables that at a minimum have:\n\nFormatted values (e.g., decimals, percentages, currencies)\nBoldface headers\nCaptions\n\n\n\n\n\n\n\n\nImportant\n\n\n\nYour report should contain at least two custom functions (to produce data summaries), and at least two places where iteration was used.",
     "crumbs": [
       "Projects",
       "Project Checkpoint 2"
@@ -558,11 +558,39 @@
     "text": "For this project, you and your group will collaborate to produce a stylized, publication-ready report. The report will include an exploratory data analysis complete with styled visualizations and polished tables which address at least two research questions posed by your group.\nAlong the way you will learn how to:"
   },
   {
-    "objectID": "project/project-1.html#final-deliverable",
-    "href": "project/project-1.html#final-deliverable",
+    "objectID": "project/project-1.html#data-acquisition",
+    "href": "project/project-1.html#data-acquisition",
     "title": "Project 1 Final Deliverable",
-    "section": "Final Deliverable",
-    "text": "Final Deliverable\nThe final report you create must have the following elements:\n\n\n\n\n\n\n\n\n\nWarningCoordinated Colors\n\n\n\nThe colors from the document theme you chose should match the colors in your plots and tables!"
+    "section": "Data Acquisition",
+    "text": "Data Acquisition\n\ndescribes the context of the original data\nacquire new country-level data using APIs and webscraping\njoins new data with original data"
+  },
+  {
+    "objectID": "project/project-1.html#research-questions",
+    "href": "project/project-1.html#research-questions",
+    "title": "Project 1 Final Deliverable",
+    "section": "Research Questions",
+    "text": "Research Questions\n\naddresses at least two research questions using the original data\naddresses at least one research question using the new (country-level) data"
+  },
+  {
+    "objectID": "project/project-1.html#data-summaries-visualizations",
+    "href": "project/project-1.html#data-summaries-visualizations",
+    "title": "Project 1 Final Deliverable",
+    "section": "Data Summaries & Visualizations",
+    "text": "Data Summaries & Visualizations\n\nat least three data summaries which address the research questions posed\n\nat least one of these summaries need to be produced with a custom function.\nat least one of these summaries need to include iteration (either inside or outside of a function).\n\ncreates professionally formatted summary tables (for all data summaries)\n\nevery table must have formatted values (e.g., decimals, percentages, currencies), boldface headers, and captions, and\nat least one table must incorporate additional styling (e.g., color, row group labels, spanner labels)\n\ncreates two professionally formatted visualizations\n\nevery visualization must have alternative (alt) text, non-default colors, a non-default theme, and clear labels\nat least one visualization must use a more complex geometry (e.g., geom_segment(), geom_density_ridge() geom_ribbon(), geom_tile(), geom_hex())"
+  },
+  {
+    "objectID": "project/project-1.html#data-model",
+    "href": "project/project-1.html#data-model",
+    "title": "Project 1 Final Deliverable",
+    "section": "Data Model",
+    "text": "Data Model\n\nfits one statistical model addressing one of the research questions posed\nprofessionally formats the output of that model to communicate the results (must satisfy requirements for professionally formatted tables)"
+  },
+  {
+    "objectID": "project/project-1.html#quarto-document",
+    "href": "project/project-1.html#quarto-document",
+    "title": "Project 1 Final Deliverable",
+    "section": "Quarto Document",
+    "text": "Quarto Document\n\n\n\nuses a non-default theme\nuses headers and subheaders to delineate the sections\nuses table and figure numbers to reference findings\n\n\n\n\n\n\n\n\n\n\nWarningCoordinated Colors\n\n\n\nThe colors from the document theme you chose should match the colors in your plots and tables!"
   },
   {
     "objectID": "project/project-1.html#stat-431",
@@ -947,6 +975,13 @@
     "text": "This quarter, the undergraduate Advanced R course (STAT 431) is being coordinated with the graduate Advanced R course (STAT 541). The structure of each course is identical and the content will be very similar. However, the graduate course will occasionally require additional content.\nOf course, if your question is truly private, such as a grade inquiry or a personal concern, you may send me a private email. To help both you and me, here are some specific expectations about emails:"
   },
   {
+    "objectID": "course-materials/syllabus.html#personal-meetings",
+    "href": "course-materials/syllabus.html#personal-meetings",
+    "title": "Advanced Statistical Computing",
+    "section": "Personal Meetings",
+    "text": "Personal Meetings\nIf you would like to talk with me about personal matters (e.g., grades), please don’t hesitate to send me an email!"
+  },
+  {
     "objectID": "course-materials/syllabus.html#course-objectives",
     "href": "course-materials/syllabus.html#course-objectives",
     "title": "Advanced Statistical Computing",
@@ -1163,11 +1198,25 @@
     "text": "For this project, you and your group will collaborate to transform your report from Project 1 into an interactive Quarto dashboard. Your dashboard will address a research question related to the original dataset (that you worked with for Project 1) and also dig deeper into addressing a related question for one country.\nAlong the way you will learn how to:"
   },
   {
-    "objectID": "project/project-2.html#final-deliverable",
-    "href": "project/project-2.html#final-deliverable",
+    "objectID": "project/project-2.html#layout",
+    "href": "project/project-2.html#layout",
     "title": "Project 2 Final Deliverable",
-    "section": "Final Deliverable",
-    "text": "Final Deliverable\nThe Quarto dashboard you create must have the following elements:\n\na navigation logo (similar to the Olympic rings)\nicons to your socials (e.g., LinkedIn, Instagram, Twitter, email)\na non-default theme\nat least two pages\nat least two tabsets (can be on just one page)\nat least two cards with quick information (e.g., % of people across the world who have faith in vaccines)\none plot made with leaflet\none additional interactive plot or table\nnon-default plot colors\na summary table displaying the results of a statistical model or summary statistics\n\n\n\n\n\n\n\n\n\nWarningCoordinated Colors\n\n\n\nThe colors in your styled dashboard should match the colors in your plots!\n\n\nYour dashboard must also contain interactive components. Specifically, your Shiny dashboard must have the following:\n\nat least one opportunity for user input via a slide bar\nat least one opportunity for user input via check boxes\n\nThese interactive features are expected to be used to update at least one table or visualization."
+    "section": "Layout",
+    "text": "Layout\n\na navigation logo (similar to the Olympic rings)\nicons to your socials (e.g., LinkedIn, Instagram, Twitter, email)\na non-default theme\nat least two pages\nat least two tabsets (can be on just one page)"
+  },
+  {
+    "objectID": "project/project-2.html#static-content",
+    "href": "project/project-2.html#static-content",
+    "title": "Project 2 Final Deliverable",
+    "section": "Static Content",
+    "text": "Static Content\n\nat least two cards with quick information (e.g., % of people across the world who have faith in vaccines)\none plot made with leaflet\none additional interactive plot or table\nnon-default plot colors\na summary table displaying the results of a statistical model or summary statistics\n\n\n\n\n\n\n\n\n\nWarningCoordinated Colors\n\n\n\nThe colors in your styled dashboard should match the colors in your plots!"
+  },
+  {
+    "objectID": "project/project-2.html#interactive-shiny-content",
+    "href": "project/project-2.html#interactive-shiny-content",
+    "title": "Project 2 Final Deliverable",
+    "section": "Interactive (Shiny) Content",
+    "text": "Interactive (Shiny) Content\n\nat least one opportunity for user input via a slide bar\nat least one opportunity for user input via check boxes\n\nThese interactive features are expected to be used to update at least one table or visualization."
   },
   {
     "objectID": "project/project-2.html#stat-431",
@@ -1199,7 +1248,7 @@
     "href": "project/week-3.html",
     "title": "Project Checkpoint 3",
     "section": "",
-    "text": "Acquire new country-level data using APIs and webscraping that is joined with the original data.\nProduce summaries or simple visualizations that include additional information.",
+    "text": "Now that you have explored your original dataset and produced data summaries addressing your primary research questions, it is time to integrate new country-level data.\nBy the end of the week, your updated report should contain:\n\none new country-level data acquired using APIs,\none new country-level data acquired using webscraping,\ndescriptions of each of the new datasets\na “meta” dataset containing all the acquired data (joined together)\nat least two data summaries OR visualizations incorporating the additional country-level data",
     "crumbs": [
       "Projects",
       "Project Checkpoint 3"
@@ -1334,7 +1383,7 @@
     "href": "unit-1/efficient-code.html#avoid-for-loops",
     "title": "Writing More Efficient Code",
     "section": "Avoid for-loops",
-    "text": "Avoid for-loops\nfor()-loops are deathly slow in R. If you absolutely must iterate over a process, rely on the map() or apply() function families. These functions offer the same versatility of a for()-loop but are (1) more human readable, and (2) much faster because they are written in C.\n\n\n\n\n\n\nNoteWhy choose map() instead of apply()?\n\n\n\nThe map() and apply() functions will typically be close to the same speed, so the largest argument in favor of the map() family of functions are their consistent syntax, and their consistent object output.\nThe map() function always returns a list and the map_XXX() variants always return a vector of a specified data type. Whereas, apply() returns a vector or a list, lapply() returns a list, and sapply() returns a vector or a matrix.\n\n\nHere is a motivating example demonstrating the difference in run time between two functions:\n\na function which loops over every column in a data frame to extract the data type of that column\na function which uses map_chr() to apply the class() function to every column of a data frame\n\n\nloop_func &lt;- function(df){\n  \n  # initialize the type object\n  type &lt;- rep(NA, ncol(df))\n  \n  for(i in seq_len(ncol(df))) {\n    \n    # store the class of the ith column of df into the ith entry of type \n    type[i] &lt;- class(df[,i])\n  }\n  \n  return(type)\n}\n\nmap_func &lt;- function(df){\n  \n  type &lt;- map_chr(df, class)\n  \n  return(type)\n\n  }\n\nOkay, now that we’ve made these two functions, let’s see how they compare in their run time. Below, we’ve made a simple albeit large dataframe. The dataframe has five rows and 100,000 columns and the element of every column is a vector of 1s.\n\ndat &lt;- as.data.frame(\n  matrix(1,\n         nrow = 5,\n         ncol = 100000)\n  )\n\nLet’s use tic() and toc() again to compare the run time for these two functions:\n\n\n\ntic()\nloop_func(dat)\n\n\ntoc()\n\n3.663 sec elapsed\n\n\n\n\n\n\ntic()\nmap_func(dat)\n\n\ntoc()\n\n0.381 sec elapsed\n\n\n\n\nLooking at the output, we see substantial differences in the run time of these two functions. The loop function took about 3.5 seconds whereas the map function took less than half a second.\n\n\n\n\n\n\nImportantCheck-in\n\n\n\n\nWhy might we prefer using map() functions instead of writing a for() loop?\n\n\nmap() automatically makes the code run faster in all cases.\nmap() makes code more readable, concise, and often faster.\nmap() can only be used with numeric data, unlike loops.\nmap() replaces all possible uses of loops in programming.\n\n\nWhich map() function should be used in place of this for() loop?\n\n\nnumbers &lt;- c(4, 9, 16, 25)\n\nresults &lt;- vector(\"numeric\", length(numbers))\n\nfor (i in seq_along(numbers)) {\n  results[i] &lt;- sqrt(numbers[i])\n}\n\n\nmap()\nmap_dbl()\nmap_chr()\nwalk()",
+    "text": "Avoid for-loops\nfor()-loops are deathly slow in R. If you absolutely must iterate over a process, rely on the map() or apply() function families. These functions offer the same versatility of a for()-loop but are (1) more human readable, and (2) much faster because they are written in C.\n\n\n\n\n\n\nNoteWhy choose map() instead of apply()?\n\n\n\nThe map() and apply() functions will typically be close to the same speed, so the largest argument in favor of the map() family of functions are their consistent syntax, and their consistent object output.\nThe map() function always returns a list and the map_XXX() variants always return a vector of a specified data type. Whereas, apply() returns a vector or a list, lapply() returns a list, and sapply() returns a vector or a matrix.\n\n\nHere is a motivating example demonstrating the difference in run time between two functions:\n\na function which loops over every column in a data frame to extract the data type of that column\na function which uses map_chr() to apply the class() function to every column of a data frame\n\n\nloop_func &lt;- function(df){\n  \n  # initialize the type object\n  type &lt;- rep(NA, ncol(df))\n  \n  for(i in seq_len(ncol(df))) {\n    \n    # store the class of the ith column of df into the ith entry of type \n    type[i] &lt;- class(df[,i])\n  }\n  \n  return(type)\n}\n\nmap_func &lt;- function(df){\n  \n  type &lt;- map_chr(df, class)\n  \n  return(type)\n\n  }\n\nOkay, now that we’ve made these two functions, let’s see how they compare in their run time. Below, we’ve made a simple albeit large dataframe. The dataframe has five rows and 100,000 columns and the element of every column is a vector of 1s.\n\ndat &lt;- as.data.frame(\n  matrix(1,\n         nrow = 5,\n         ncol = 100000)\n  )\n\nLet’s use tic() and toc() again to compare the run time for these two functions:\n\n\n\ntic()\nloop_func(dat)\n\n\ntoc()\n\n3.598 sec elapsed\n\n\n\n\n\n\ntic()\nmap_func(dat)\n\n\ntoc()\n\n0.369 sec elapsed\n\n\n\n\nLooking at the output, we see substantial differences in the run time of these two functions. The loop function took about 3.5 seconds whereas the map function took less than half a second.\n\n\n\n\n\n\nImportantCheck-in\n\n\n\n\nWhy might we prefer using map() functions instead of writing a for() loop?\n\n\nmap() automatically makes the code run faster in all cases.\nmap() makes code more readable, concise, and often faster.\nmap() can only be used with numeric data, unlike loops.\nmap() replaces all possible uses of loops in programming.\n\n\nWhich map() function should be used in place of this for() loop?\n\n\nnumbers &lt;- c(4, 9, 16, 25)\n\nresults &lt;- vector(\"numeric\", length(numbers))\n\nfor (i in seq_along(numbers)) {\n  results[i] &lt;- sqrt(numbers[i])\n}\n\n\nmap()\nmap_dbl()\nmap_chr()\nwalk()",
     "crumbs": [
       "Unit 1 - Complex Analyses",
       "Writing More Efficient Code"
@@ -1400,7 +1449,7 @@
     "href": "unit-1/iterating-functions.html#initial-object-size",
     "title": "Iterating Over Functions",
     "section": "Initial Object Size",
-    "text": "Initial Object Size\nNotice that we initialized char_storage, num_storage, and list_storage to all be the same length as our iteration vector (seq_len(3)). Technically, this wasn’t necessary. We could have been much lazier when we initialized these objects: list_storage &lt;- NA. Why didn’t we do this?\nWhen you don’t initialize an object as a specific size (e.g., length = 3) then at every stage of the for() loop R needs to append a new index to that object. This really slows down your for() loop!\nHere is a comparison of the run time between two functions that both store the index of the iteration. The first function (do_stuff_allocate) sets the initial object size (vector(length = reps)) before the loop is run. The second function (do_stuff_tackon) does not set an initial object size and instead initializes results as a vector of length 1 (results &lt;- NA).\n\ndo_stuff_allocate &lt;- function(reps) {\n  results &lt;- vector(length = reps)\n  for (i in seq_len(reps)) {\n    results[i] &lt;- i\n  }\n  return(results)\n}\n\ndo_stuff_tackon &lt;- function(reps) {\n   results &lt;- NA\n  for (i in seq_len(reps)) {\n    results &lt;- c(results, i)\n  }\n  return(results)\n}\n\nLet’s see how these two functions compare in their run time:\n\n\n\n\n\n\n\n\nStatistic\ndo_stuff_allocate\ndo_stuff_tackon\n\n\n\n\nmin\n12,669 µs\n404,465 µs\n\n\nmean\n24,197 µs\n703,224 µs\n\n\nmedian\n14,042 µs\n527,998 µs\n\n\nmax\n989,453 µs\n5,229,714 µs\n\n\n\n\n\n\n\nLesson: You should always initialize your object as the size you want it to be.\n\n\n\n\n\n\nImportantCheck-in: Iteration\n\n\n\n\nWrite a for()-loop that prints the even numbers from 1:20.\nCan you produce the same output with the seq() function?\n\n\nWrite a for()-loop that iterates over the month.name vector (built-in to base R) and stores a character vector of output containing strings like “Month 1: January”, “Month 2: February”.\nCan you produce the same output with str_c() only?\n\n\nWrite a for()-loop that store the class() (type) of every column in the mpg data frame.",
+    "text": "Initial Object Size\nNotice that we initialized char_storage, num_storage, and list_storage to all be the same length as our iteration vector (seq_len(3)). Technically, this wasn’t necessary. We could have been much lazier when we initialized these objects: list_storage &lt;- NA. Why didn’t we do this?\nWhen you don’t initialize an object as a specific size (e.g., length = 3) then at every stage of the for() loop R needs to append a new index to that object. This really slows down your for() loop!\nHere is a comparison of the run time between two functions that both store the index of the iteration. The first function (do_stuff_allocate) sets the initial object size (vector(length = reps)) before the loop is run. The second function (do_stuff_tackon) does not set an initial object size and instead initializes results as a vector of length 1 (results &lt;- NA).\n\ndo_stuff_allocate &lt;- function(reps) {\n  results &lt;- vector(length = reps)\n  for (i in seq_len(reps)) {\n    results[i] &lt;- i\n  }\n  return(results)\n}\n\ndo_stuff_tackon &lt;- function(reps) {\n   results &lt;- NA\n  for (i in seq_len(reps)) {\n    results &lt;- c(results, i)\n  }\n  return(results)\n}\n\nLet’s see how these two functions compare in their run time:\n\n\n\n\n\n\n\n\nStatistic\ndo_stuff_allocate\ndo_stuff_tackon\n\n\n\n\nmin\n12,628 µs\n390,894 µs\n\n\nmean\n22,950 µs\n624,723 µs\n\n\nmedian\n13,510 µs\n480,458 µs\n\n\nmax\n907,248 µs\n4,006,971 µs\n\n\n\n\n\n\n\nLesson: You should always initialize your object as the size you want it to be.\n\n\n\n\n\n\nImportantCheck-in: Iteration\n\n\n\n\nWrite a for()-loop that prints the even numbers from 1:20.\nCan you produce the same output with the seq() function?\n\n\nWrite a for()-loop that iterates over the month.name vector (built-in to base R) and stores a character vector of output containing strings like “Month 1: January”, “Month 2: February”.\nCan you produce the same output with str_c() only?\n\n\nWrite a for()-loop that store the class() (type) of every column in the mpg data frame.",
     "crumbs": [
       "Unit 1 - Complex Analyses",
       "Iterating Over Functions"
@@ -1647,68 +1696,5 @@
       "Unit 2 - Professional Deliverables",
       "Quarto Dashboards, Part 1"
     ]
-  },
-  {
-    "objectID": "course-materials/syllabus.html#personal-meetings",
-    "href": "course-materials/syllabus.html#personal-meetings",
-    "title": "Advanced Statistical Computing",
-    "section": "Personal Meetings",
-    "text": "Personal Meetings\nIf you would like to talk with me about personal matters (e.g., grades), please don’t hesitate to send me an email!"
-  },
-  {
-    "objectID": "project/project-1.html#data-acquisition",
-    "href": "project/project-1.html#data-acquisition",
-    "title": "Project 1 Final Deliverable",
-    "section": "Data Acquisition",
-    "text": "Data Acquisition\n\ndescribes the context of the original data\nacquire new country-level data using APIs and webscraping\njoins new data with original data"
-  },
-  {
-    "objectID": "project/project-1.html#research-questions",
-    "href": "project/project-1.html#research-questions",
-    "title": "Project 1 Final Deliverable",
-    "section": "Research Questions",
-    "text": "Research Questions\n\naddresses at least two research questions using the original data\naddresses at least one research question using the new (country-level) data"
-  },
-  {
-    "objectID": "project/project-1.html#data-summaries-visualizations",
-    "href": "project/project-1.html#data-summaries-visualizations",
-    "title": "Project 1 Final Deliverable",
-    "section": "Data Summaries & Visualizations",
-    "text": "Data Summaries & Visualizations\n\nat least three data summaries which address the research questions posed\n\nat least one of these summaries need to be produced with a custom function.\nat least one of these summaries need to include iteration (either inside or outside of a function).\n\ncreates professionally formatted summary tables (for all data summaries)\n\nevery table must have formatted values (e.g., decimals, percentages, currencies), boldface headers, and captions, and\nat least one table must incorporate additional styling (e.g., color, row group labels, spanner labels)\n\ncreates two professionally formatted visualizations\n\nevery visualization must have alternative (alt) text, non-default colors, a non-default theme, and clear labels\nat least one visualization must use a more complex geometry (e.g., geom_segment(), geom_density_ridge() geom_ribbon(), geom_tile(), geom_hex())"
-  },
-  {
-    "objectID": "project/project-1.html#data-model",
-    "href": "project/project-1.html#data-model",
-    "title": "Project 1 Final Deliverable",
-    "section": "Data Model",
-    "text": "Data Model\n\nfits one statistical model addressing one of the research questions posed\nprofessionally formats the output of that model to communicate the results (must satisfy requirements for professionally formatted tables)"
-  },
-  {
-    "objectID": "project/project-1.html#quarto-document",
-    "href": "project/project-1.html#quarto-document",
-    "title": "Project 1 Final Deliverable",
-    "section": "Quarto Document",
-    "text": "Quarto Document\n\n\n\nuses a non-default theme\nuses headers and subheaders to delineate the sections\nuses table and figure numbers to reference findings\n\n\n\n\n\n\n\n\n\n\nWarningCoordinated Colors\n\n\n\nThe colors from the document theme you chose should match the colors in your plots and tables!"
-  },
-  {
-    "objectID": "project/project-2.html#layout",
-    "href": "project/project-2.html#layout",
-    "title": "Project 2 Final Deliverable",
-    "section": "Layout",
-    "text": "Layout\n\na navigation logo (similar to the Olympic rings)\nicons to your socials (e.g., LinkedIn, Instagram, Twitter, email)\na non-default theme\nat least two pages\nat least two tabsets (can be on just one page)"
-  },
-  {
-    "objectID": "project/project-2.html#static-content",
-    "href": "project/project-2.html#static-content",
-    "title": "Project 2 Final Deliverable",
-    "section": "Static Content",
-    "text": "Static Content\n\nat least two cards with quick information (e.g., % of people across the world who have faith in vaccines)\none plot made with leaflet\none additional interactive plot or table\nnon-default plot colors\na summary table displaying the results of a statistical model or summary statistics\n\n\n\n\n\n\n\n\n\nWarningCoordinated Colors\n\n\n\nThe colors in your styled dashboard should match the colors in your plots!"
-  },
-  {
-    "objectID": "project/project-2.html#interactive-shiny-content",
-    "href": "project/project-2.html#interactive-shiny-content",
-    "title": "Project 2 Final Deliverable",
-    "section": "Interactive (Shiny) Content",
-    "text": "Interactive (Shiny) Content\n\nat least one opportunity for user input via a slide bar\nat least one opportunity for user input via check boxes\n\nThese interactive features are expected to be used to update at least one table or visualization."
   }
 ]
