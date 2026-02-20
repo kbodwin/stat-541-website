@@ -50,7 +50,7 @@ graduate course will occasionally require additional content.
 - Section 01: Mondays & Wednesdays from 2:10pm - 4:00pm
 - Section 02: Mondays & Wednesdays from 4:10pm - 6:00pm
 
-# Student Hours {#sec-OH}
+# Student Hours
 
 This will be updated shortly!
 
@@ -73,21 +73,10 @@ This will be updated shortly!
 <!-- somewhere other than my office, I will leave a sign on the door indicating where -->
 <!-- we're meeting! -->
 
-# Personal Meetings
+## Personal Meetings
 
-This will be updated shortly!
-
-<!-- If you would like to talk with me one-on-one about anything (e.g., grades, -->
-<!-- research), I've reserved time on Thursdays from 12:10pm to 1:00pm -->
-<!-- for individual appointments. You can make 10-minute appointments through the -->
-<!-- following link: <https://calendly.com/allisontheobold> -->
-
-<!-- I do request that you make appointments at least 2-hours ahead of time, so I -->
-<!-- don't accidentally miss our meeting! -->
-
-<!-- If you need to meet, but none of the student hours work for you please let me -->
-<!-- know! It is possible we can communicate asynchronously through Discord or email, -->
-<!-- but I am happy to schedule a meeting during another time if necessary. -->
+If you would like to talk with me about personal matters (e.g., grades), please
+don't hesitate to send me an email! 
 :::
 
 
