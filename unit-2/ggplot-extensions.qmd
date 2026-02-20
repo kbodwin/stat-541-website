@@ -56,126 +56,6 @@ oscars <- oscars %>%
 
 ```
 
-## Custom Colors and Themes
-
-A huge part of making a compelling and convincing plot is your choice of color
-and layout.
-
-Your first video will take you through some great core principals of
-visualization. Then your two short readings will show you the basics of
-manipulating colors and themes in `ggplot`.
-
-## 🎥 Required Video: The Glamour of Graphics
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/h5cTacaWE6I?si=zLxvctfyr3TuAwlG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-## 📖 Required Reading: [Colors and Palettes](https://www.datanovia.com/en/blog/ggplot-colors-best-tricks-you-will-love/)
-
-## 📖 Required Reading: [Themes](http://www.sthda.com/english/wiki/ggplot2-themes-and-background-colors-the-3-elements)
-
-## Extra Resouces 
-
--   The [`jcolors` package](https://jaredhuling.org/jcolors/) for color palettes
--   The [`ggthemer` package](https://www.shanelynn.ie/themes-and-colours-for-r-ggplots-with-ggthemr/) for setting universal themes.
--   [Make your own](https://emanuelaf.github.io/own-ggplot-theme.html) theme to use!
-
-::: {.callout-important}
-## Check-in: Extending `ggplot`
-
-**1. Which of the functions below would you use to change the colors of the bars
-on the following plot?**
-
--   `scale_color_continuous()`
--   `scale_color_discrete()`
--   `scale_fill_continuous()`
--   `scale_fill_discrete()`
-
-```{r}
-#| label: oscars-plot
-
-top_5 <- oscars %>%
-  count(birthplace) %>%
-  top_n(5, n) %>%
-  pull(birthplace)
-
-p <- oscars %>%
-  filter(birthplace %in% top_5) %>%
-  ggplot(mapping = aes(y = birthplace, fill = birthplace)) + 
-  labs(title = "Number of Academy Award Winners\n from major cities", 
-       y = "", 
-       x = "") +
-  geom_bar()
-
-p
-```
-
-**2. Consider the plot in Question 1. What change was made to it in each step
-below? That is, what code would go inside the function `+ theme( )` to
-produce the added change?**
-
-a)  
-
-```{r}
-#| label: theme-remove-legend
-
-p + 
-  theme(legend.position = "none")
-```
-
-b)  
-
-```{r}
-#| label: theme-grid-major
-p + 
-  theme(panel.grid.minor.x = element_blank())
-```
-
-**3. Which built-in theme is each of the following plots? That is, what
-`theme_XXXX()` function would produce the added change?**
-
-a)  
-
-```{r}
-#| label: theme-classic
-
-p +
-  theme_classic() +
-  theme(legend.position = "none")
-```
-
-b)  
-
-```{r}
-#| label: theme-bw
-p + 
-  theme_bw() +
-  theme(legend.position = "none")
-```
-
-c)  
-
-```{r}
-#| label: theme-dark
-
-p + 
-  theme_dark() +
-  theme(legend.position = "none")
-```
-
-d)  
-
-```{r}
-#| label: theme-void
-
-p + 
-  theme_void() +
-  theme(legend.position = "none")
-
-```
-
-**4. Which of the plots above (a, b, c, or d) best adheres to the principles
-outlined by Will Chase (in the Glamour of Graphics)?**
-:::
 
 ## gganimate
 
@@ -199,9 +79,9 @@ in Quarto, so that you don't re-render the images every time you knit your file.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3UY7Or0v_dI?si=j326j6NNtakM6BmK&amp;start=77" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ::: {.callout-important}
-## Check-in: Extending `ggplot`
+## Check-in
 
-**5.  Fill in the five (5) blanks for the `gganimate` plot below:**
+1.  Fill in the five (5) blanks for the `gganimate` plot below:
 
 ```{r}
 #| label: gganimate-plot-code-trans-states
@@ -277,9 +157,9 @@ Take a look around the links below!
 ## 📖 Required Reading: [More `ggplot` Extension Summaries](https://mode.com/blog/r-ggplot-extension-packages)
 
 ::: {.callout-important}
-## Check-in: Extending `ggplot`
+## Check-in
 
-**6.  Which extension package would you use to...**
+2.  Which extension package would you use to...
 *Hint: There is more than one possible answer for each question!*
 
 a)  Visualize a **social network** using twitter data?
@@ -307,4 +187,4 @@ corresponding label?
 -   You can also search the [Tidy Tuesday hashtag on twitter](https://twitter.com/search?q=%23TidyTuesday&src=typeahead_click) to see some great examples of data manipulating and visualization
 -   Don't forget about the [Data-to-Viz Website](https://www.data-to-viz.com/)
 -   [The "dataisbeautiful" subreddit](https://www.reddit.com/r/dataisbeautiful/top/?t=all) shares many nice visualizations. 
--   [This webinar](https://www.youtube.com/watch?v=0m4yywqNPVY), by ggplot contributor Thomas Lin Pedersen, is wonderful. It's about 2 hours long - so more than we can fit in as required viewing - but if you want to become a `ggplot` master, watch this!
+-   [This webinar](https://www.youtube.com/watch?v=0m4yywqNPVY), by ggplot contributor Thomas Lin Pedersen, is wonderful. It's about 2 hours long - so more than we can fit in as required viewing - but if you want to become a `ggplot` queen, watch this!
