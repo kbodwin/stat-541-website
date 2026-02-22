@@ -86,7 +86,10 @@ website:
         - href: unit-1/web-scraping.qmd
         # - text: Week 3 In-Class Activity
         #   href: practice-activities/week-3.qmd
-        - href: unit-1/other-plots.qmd
+        - href: unit-1/alt-geoms.qmd
+        - href: unit-1/styled-plots.qmd
+        # - text: Week 4 In-Class Activity
+        #   href: practice-activities/week-4.qmd
 
     - id: project
       title: "Project"

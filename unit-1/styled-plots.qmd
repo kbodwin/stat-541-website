@@ -1,0 +1,527 @@
+---
+title: "Professionally Styled Plots"
+format: html 
+editor: source
+execute: 
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: set-up
+
+library(tidyverse)
+library(palmerpenguins)
+library(gapminder)
+```
+
+# Custom Colors and Themes
+
+A huge part of making a compelling and convincing plot is your choice of color
+and layout. In this second part of the coursework, we are going to learn more 
+about customizing colors and themes.
+
+## 🎥 Required Video: The Glamour of Graphics
+
+{{< video https://www.youtube.com/embed/h5cTacaWE6I?si=zLxvctfyr3TuAwlG >}}
+
+This is one of the best talks on *simple* ways to make your visualizations more clear and glamorous. We recommend watching the entire thing (maybe on a sunny
+walk or at the beach!), but if you can't do the entire thing here are the main
+principles Will Chase outlines:
+
+1.  Don't make people tilt their head (to read your plot)
+2.  Left align most of your text
+3.  Lighten gridlines as much as possible and don't use minor gridlines
+4.  Legends suck
+5.  Fonts matter
+6.  Color is hard
+
+Let's work through each of these recommendations.
+
+## Don't make people tilt their head
+
+Let's start with something simple! Not making people tilt their head to read
+your plot seems like an easy thing to do. We typically see plots that make
+people tilt their head when categorical variables have long names. For example,
+in the code below, we pull out the top 10 countries based on the length. We then
+compare the country's life expectancy using side-by-side boxplots. As you can
+see, the names of the countries are illegible.
+
+```{r}
+#| label: fig-mooshed-country-names
+#| fig-alt: "Boxplot of life expectancy (‘lifeExp’) by country. The x-axis lists multiple country names, and the y-axis shows life expectancy values ranging roughly from the mid-30s to low-80s. Each country has a vertical boxplot showing the distribution of life expectancy over time. However, the country labels along the x-axis are long and overlap heavily, making them difficult or impossible to read. The plot demonstrates a situation where axis labels need to be modified for clarity."
+#| fig-cap: "Boxplot with unreadable x-axis labels"
+
+countris_to_keep <- gapminder |> 
+  distinct(country) |> 
+  mutate(name_len = str_length(country)) |> 
+  slice_max(n = 10, order_by = name_len)
+
+gapminder |> 
+  semi_join(countris_to_keep, by = "country") |> 
+  ggplot(mapping = aes(x = country, 
+                       y = lifeExp)
+         ) +
+  geom_boxplot()
+```
+
+A "typical" fix is to tilt the names of the countries 45 degrees, like so:
+
+```{r}
+#| label: fig-tilt-names-45-degrees
+#| fig-alt: "Boxplot of life expectancy (‘lifeExp’) by country. The y-axis shows life expectancy values from roughly the mid-30s to low-80s. Each country has a vertical boxplot summarizing its distribution over time. The country names along the x-axis have been rotated diagonally to prevent overlap. While the labels are now readable, the angling makes the reader need to tilt their head for them to read the plot. The plot illustrates a common but imperfect fix for overlapping axis labels."
+#| fig-cap: "Rotating the axis labels as a preliminary fix"
+
+gapminder |> 
+  semi_join(countris_to_keep, by = "country") |> 
+  ggplot(mapping = aes(x = country, 
+                       y = lifeExp)
+         ) +
+  geom_boxplot() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+However, our plot now makes people tilt their head! A better fix is to move the
+countries to the y-axis, where the names have plenty of space. Viola!
+
+```{r}
+#| label: fig-move-country-to-y
+#| fig-alt: "Horizontal boxplot of life expectancy by country. The x-axis shows life expectancy in years (roughly mid-30s to low-80s), and the y-axis lists country names. Each country has a horizontal boxplot summarizing its life expectancy over time. By flipping the axes, the country labels are displayed vertically along the y-axis and are fully readable without overlap or rotation. This layout makes the long country names easy to scan and compare."
+#| fig-cap: "Rotating `x` and `y` axes so the long labels are easily read without tilting your head"
+
+gapminder |> 
+  semi_join(countris_to_keep, by = "country") |> 
+  ggplot(mapping = aes(y = country, 
+                       x = lifeExp)
+         ) +
+  geom_boxplot() +
+  labs(x = "Life Expectancy (Years)", 
+       y = "")
+```
+
+You might have noticed something about **a lot** of the plots we've shown you in
+this coursework---many don't have y-axis labels. The reason for this is twofold,
+first people always have to tilt their head to read the y-axis label. Second,
+many of these labels are not necessary because the variable is obvious.
+
+Here, we don't need a label that says "Country" because the y-axis values can
+clearly communicate that context. In 
+[Figure 10 of Non-Standard Geometries](alt-geoms.html#fig-hexbin) the
+y-axis didn't have a clear context, but we included that context in a location
+where the reader didn't need to tilt their head (the plot title).
+
+## Left align most of your text
+
+This recommendation is **very** easy to follow when making plots with
+**ggplot2** because left alignment is the default orientation for text.
+Sometimes we see students get excited at the idea of centering their plot title,
+but Will Chase (and your teachers) would recommend against it. Use that creative
+energy on finding great colors!
+
+## Lighten gridlines as much as possible
+
+[This documentation page](https://ggplot2.tidyverse.org/reference/ggtheme.html)
+provides a complete list of all the themes that are built into **ggplot2**.
+
+If you want to go a bit deeper into the land of ggplot themes, 
+[this blog by Emanuela Furfaro](https://emanuelaf.github.io/own-ggplot-theme.html)
+provides great advice on how to make your own custom ggplot theme function.
+
+## Legends suck {#sec-legend}
+
+In general, legends suck because they take people's eyes away from your plot.
+Below, we present a few options for trying to address this issue.
+
+### Reordering Your Legend
+
+If you must keep your legend, then you **absolutely must** format your legend so
+that the colors appear in the same order as they appear on the plot. When your
+legend is not in order, then it is **substantially** more difficult for people
+to read your plot, as seen in this amazing gist from
+[Jenny Bryan](https://jennybryan.org/).
+
+![](images/jenny-bryan-reorder-legend.png){fig-alt="Side-by-side line charts showing why you should reorder your legend to match the data. Both plots show three lines (‘top’, ‘middle’, and ‘bottom’) across x = 1 to 3. In the left plot, the legend order does not match the vertical order of the lines at the right end of the chart, making it harder to read. In the right plot, the legend is reordered to match the lines’ final positions (highest to lowest), making the chart easier to understand."}
+
+The `fct_reorder()` and `fct_reorder2()` functions from the **forcats** package
+are the key tools for getting your legend to have the same ordering as your
+plot. In [Figure 6 from Non-Standard Geometries](alt-geoms.html#fig-geom-ribbon),
+the legend **did not** appear in the same order as the plot. Let's fix that
+using `fct_reorder()`!
+
+```{r}
+#| code-fold: true
+#| label: old-summaries
+
+ribbon_summaries <- gapminder |> 
+  filter(continent %in% c("Oceania", "Africa")) |> 
+  group_by(year, continent) |> 
+  summarize(mean_life = mean(lifeExp, na.rm = TRUE), 
+            .groups = "drop") |>
+  pivot_wider(names_from = continent, 
+              values_from = mean_life, 
+              names_prefix = "mean_")
+```
+
+
+```{r}
+#| label: fig-reorder-ribbon
+#| fig-alt: "Line and ribbon plot titled ‘Profound Differences in Life Expectancy’ with the subtitle ‘Comparing Continents with Highest and Lowest Life Expectancy’. The x-axis shows years from the 1950s to the early 2000s, and the y-axis shows life expectancy. Two lines are shown: Oceania (upper line) and Africa (lower line), with a shaded region between them highlighting the gap. Both lines increase over time, and Oceania remains consistently higher than Africa. The legend lists the continents in an order that does not match their vertical position in the plot, making it less intuitive to connect colors to lines. The plot illustrates why reordering the legend to match the visual order of the lines improves clarity."
+#| fig-cap: "Previous ribbon plot with a reordered legend so the colors appear in the same order as the plot"
+
+gapminder |> 
+  filter(continent %in% c("Oceania", "Africa")) |> 
+  group_by(year, continent) |> 
+  summarize(mean_life = mean(lifeExp, na.rm = TRUE), 
+            .groups = "drop") |> 
+  mutate(continent = forcats::fct_reorder(.f = continent, 
+                                          .x = mean_life, 
+                                          .desc = TRUE)) |> 
+  ggplot(mapping = aes(x = year, 
+                       y = mean_life, 
+                       color = continent)) +
+  geom_line(linewidth = 2) +
+  geom_ribbon(data = ribbon_summaries, 
+              mapping = aes(x = year, 
+                            ymin = mean_Africa, 
+                            ymax = mean_Oceania
+                            ), 
+            position = "identity",
+            inherit.aes = FALSE, 
+            fill = "lightgray") +
+  labs(x = "", 
+       y = "", 
+       title = "Profound Differences in Life Expectancy", 
+       subtitle = "Comparing Continents with Highest and Lowest Life Expectancy", 
+       color = "Continent") +
+  theme_bw() +
+  theme(panel.grid.minor = element_blank())
+```
+
+### Embedding Your Legend in the Plot Title
+
+If you can remove your legend, then there are two approaches you can
+take---adding the legend to the plot title or adding annotations to the plot. 
+Let's take a look at the first option, adding colors to your plot title.
+
+The **ggtext** package allows you to add hex colors and other HTML elements
+(e.g., italics, boldface) to plot titles. The process involves two main steps:
+
+1.  Wrap your text in HTML tags within the `labs()` function.
+
+2.  Tell ggplot to render the HTML by adding `plot.title = element_markdown()`
+inside the `theme()` function.
+
+Let's see how this can look! I've added the hex colors for the two continents 
+(from [Figure 6 from Non-Standard Geometries](alt-geoms.html#fig-geom-ribbon))
+into the subtitle of my plot:
+
+```{r}
+#| label: fig-html-subtitle
+#| fig-alt: "Line and ribbon plot titled ‘Profound Differences in Life Expectancy’ with the subtitle ‘Comparison of Oceania and Africa’, where the words ‘Oceania’ and ‘Africa’ are colored to match their lines in the plot. The x-axis shows years from the 1950s to the early 2000s, and the y-axis shows life expectancy. A teal line (Oceania) appears above a red line (Africa), with a shaded gray ribbon between them highlighting the gap. Both lines increase over time, and the gap remains large throughout. There is no separate legend; instead, the colored continent names in the subtitle act as direct labels for the lines."
+#| fig-cap: "Removing the legend and incorporating the colors into the plot title"
+
+library(ggtext)
+
+gapminder |> 
+  filter(continent %in% c("Oceania", "Africa")) |> 
+  group_by(year, continent) |> 
+  summarize(mean_life = mean(lifeExp, na.rm = TRUE), 
+            .groups = "drop") |> 
+  ggplot(mapping = aes(x = year, 
+                       y = mean_life, 
+                       color = continent)) +
+  geom_line(linewidth = 2) +
+  geom_ribbon(data = ribbon_summaries, 
+              mapping = aes(x = year, 
+                            ymin = mean_Africa, 
+                            ymax = mean_Oceania
+                            ), 
+            position = "identity",
+            inherit.aes = FALSE, 
+            fill = "lightgray") +
+  labs(x = "", 
+       y = "", 
+       title = "Profound Differences in Life Expectancy",
+       subtitle = "Comparison of <span style='color: #17b3b7;'>Oceania</span> and <span style='color: #f35e5a;'>Africa</span>") +
+  theme_bw() + 
+  theme(
+    legend.position = "none",
+    plot.subtitle = element_markdown(), 
+    panel.grid.minor = element_blank()
+    )
+```
+
+Notice that the subtitle is still specified as a string. Inside the string there
+are HTML elements (`<span>`) that declare the colors of the text. For example,
+`<span style='color: #17b3b7;'>Oceania</span>` declares that the text "Oceania"
+should be printed with the color `#17b3b7`. The beginning of the span (`<span`)
+and the end of the span (`</span>`) declare when the coloring starts and ends.
+
+::::::: callout-tip
+# Finding the Hex Colors
+
+There are a variety of ways you can get the hex codes for the colors in your
+plot. To grab the codes for these base ggplot colors, I used an online color
+picker (e.g., [imagecolorpicker.com](https://imagecolorpicker.com/)). If you are
+using non-default colors (e.g., the **viridis** or **RColorBrewer** packages), 
+there are built-in functions for getting the hex codes (example below).
+
+:::::: columns
+::: {.column width="48%"}
+```{r}
+#| label: hex-codes-viridis
+
+library(viridis)
+
+viridis(5)
+```
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+```{r}
+#| label: hex-codes-brewer
+
+library(RColorBrewer)
+
+brewer.pal(5, "Set2")
+```
+:::
+::::::
+:::::::
+
+### Removing Your Legend with Annotations
+
+Maybe you feel like having the legend in the plot title is still difficult for
+people to read. We don't disagree! It would be **really** easy for people to
+read the legend if it was included in the **body** of the visualization. Let's
+explore that option!
+
+Let's first start with our base plot that we want to add annotations to:
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| fig-alt: "Line and ribbon plot titled ‘Profound Differences in Life Expectancy’ with the subtitle ‘Comparing Continents with Highest and Lowest Life Expectancy’. The x-axis shows years from the 1950s to the early 2000s, and the y-axis shows life expectancy. Two lines are displayed but there are no labels for the lines or a legend indicating what continent each line corresponds with. This plot is being used as the 'base' plot to add annotations to the body of the plot (instead of the plot title)."
+
+plot <- gapminder |> 
+  filter(continent %in% c("Oceania", "Africa")) |> 
+  group_by(year, continent) |> 
+  summarize(mean_life = mean(lifeExp, na.rm = TRUE), 
+            .groups = "drop") |> 
+  ggplot(mapping = aes(x = year, 
+                       y = mean_life, 
+                       color = continent)) +
+  geom_line(linewidth = 2) +
+  geom_ribbon(data = ribbon_summaries, 
+              mapping = aes(x = year, 
+                            ymin = mean_Africa, 
+                            ymax = mean_Oceania
+                            ), 
+            position = "identity",
+            inherit.aes = FALSE, 
+            fill = "lightgray") +
+  labs(x = "", 
+       y = "", 
+       title = "Profound Differences in Life Expectancy", 
+       subtitle = "Comparing Continents with Highest and Lowest Life Expectancy"
+       ) +
+  theme_bw() +
+  theme(
+    legend.position = "none",
+    panel.grid.minor = element_blank()
+    )
+
+plot
+```
+
+Now that we have our base plot (saved as `plot`), we can explore adding
+annotations to the plot using `geom_text()`. Looking at the documentation for
+`geom_text()` you will notice that you must supply `x`, `y`, and `label`
+aesthetics. So, you need to have a dataframe with **three** columns indicating
+where to put the labels (x and y location) and what labels should be used. Let's
+think about how to make this dataframe.
+
+Based on Will Chase's advice, we should consider adding annotations on the left
+("left align most of your text"), somewhere around 1955. If we want the
+annotations to help people know what continent each line is associated with, it
+seems like we want the text to be close to the line. For consistency, let's put
+both annotations *inside* the grey area.
+
+```{r}
+#| label: annotations
+
+annotate_text <- gapminder |> 
+  filter(continent %in% c("Oceania", "Africa"), 
+         year == 1957
+         ) |> 
+  group_by(year, continent) |> 
+  summarize(y_lab = mean(lifeExp, na.rm = TRUE), 
+            .groups = "drop") |> 
+  # Move text based on what continent it is
+  mutate(
+    y_lab = y_lab + if_else(continent == "Africa", 
+                            2, # Move up for Africa (on bottom)
+                            -2 # Move down for Oceania (on top)
+                            )  
+  )
+annotate_text
+```
+
+Now that we have our annotations, let's put them on the plot!
+
+```{r}
+#| label: fig-add-annotations
+#| fig-alt: "Line and ribbon plot titled ‘Profound Differences in Life Expectancy’ with the subtitle ‘Comparing Continents with Highest and Lowest Life Expectancy’. The x-axis shows years from the 1950s to the early 2000s, and the y-axis shows life expectancy. Two lines are shown: a teal line for Oceania (upper line) and a red line for Africa (lower line), with a shaded gray ribbon between them highlighting the gap. Both lines rise steadily over time. Instead of a legend, the plot includes direct text annotations near the lines: the word ‘Oceania’ in teal placed near the upper line and ‘Africa’ in red placed near the lower line. The annotation colors match the line colors, making the plot easy to interpret without a separate legend."
+#| fig-cap: "Incorporating annotations to the body of the plot where text colors coordinate with the plot lines"
+
+plot + 
+  geom_text(data = annotate_text, 
+            mapping = aes(x = year, 
+                          y = y_lab, 
+                          label = continent, 
+                          color = continent
+                          ), 
+            inherit.aes = FALSE
+            )
+  
+```
+
+## Fonts matter
+
+<!-- need to add advice on choosing fonts  -->
+
+## Color is hard
+
+There are **so** many color packages in R that all work with ggplot. Regardless
+of what colors you decide to work with, you will need to know:
+
+1.  What aesthetic are the colors associated with (e.g., `color` or `fill`)?
+2.  Is the palette continuous (for a quantitative variable) or discrete (for a
+categorical variable)?
+
+The answers to these two questions direct you toward what function you need to
+use to change the colors in your plot. For example, to change the colors in a
+filled area plot (like 
+[Figure 5 from Non-Standard Geometries](alt-geoms.html#fig-area-plot-reordered))
+you would need to use a `scale_fill_XXXX()` function, whereas with a hexbin plot
+(like [Figure 10](alt-geoms.html#fig-hexbin)) you would need to use a 
+`scale_color_XXXX()` function.
+
+We recommend poking around the [Color Scales and Legends chapter of the *ggplot2* book by Hadley Wickham](https://ggplot2-book.org/scales-colour.html). This chapter
+covers how color scales work, how to choose palettes, and how to customize them.
+The chapter even motivates the importance of choosing accessible color palettes
+that *everyone's* eyes can see.
+
+The number of color packages can get a bit overwhelming, which is why 
+[Emil Hvitfeldt](https://emilhvitfeldt.com/) put together a
+[comprehensive list of color palettes in R](https://emilhvitfeldt.github.io/r-color-palettes/). Check it out! Find the
+color palette that speaks to you! Is it the `Apricot` palette from the
+**LaCroixColoR** package?!
+
+::: {.callout-important}
+# [Check-ins]{style="font-size: 1.5em;"}
+:::
+
+**1. Which of the functions below would you use to change the colors of the bars on the following plot?**
+
+-   `scale_color_continuous()`
+-   `scale_color_discrete()`
+-   `scale_fill_continuous()`
+-   `scale_fill_discrete()`
+
+```{r}
+#| label: base-plot
+#| fig-alt: "Horizontal bar chart showing the number of penguins sampled by species. The x-axis shows ‘Number of Penguins Sampled’, and the y-axis lists three species: Adelie, Chinstrap, and Gentoo. Each bar is filled with a different color and the legend on the right labeled ‘Species of Penguin’ matches colors to species. The plot includes both major and minor gridlines in the background. Darker major gridlines align with labeled axis ticks, and lighter minor gridlines appear between them (with no labeled ticks). Both sets of gridlines create a dense grid behind the bars." 
+
+p <- ggplot(penguins, 
+       mapping = aes(y = species, 
+                     fill = species)) + 
+  geom_bar() +
+  labs(y = "", 
+       x = "Number of Penguins Sampled", 
+       fill = "Species of Penguin")
+
+p
+```
+
+**2. Consider the plot in Question 1. What change was made to it in each step below? That is, what code would go inside the function `+ theme( )` to produce the added change?**
+
+a)  
+
+```{r}
+#| label: theme-remove-legend
+#| echo: false
+#| fig-alt: "Horizontal bar chart showing the number of penguins sampled by species. The x-axis shows ‘Number of Penguins Sampled’, and the y-axis lists three species: Adelie, Chinstrap, and Gentoo. Each bar is filled with a different color. Similar to the base plot, this plot includes both major and minor gridlines in the background. However, in this plot there is no legend on the right." 
+
+p + 
+  theme(legend.position = "none")
+```
+
+b)  
+
+```{r}
+#| label: theme-grid-major
+#| echo: false
+#| fig-alt: "Horizontal bar chart showing the number of penguins sampled by species. The x-axis shows ‘Number of Penguins Sampled’, and the y-axis lists three species: Adelie, Chinstrap, and Gentoo. Each bar is filled with a different color and the legend on the right labeled ‘Species of Penguin’ matches colors to species. The plot includes only major gridlines in the background (darker major gridlines with labeled axis ticks), creating a simpler grid behind the bars." 
+
+p + 
+  theme(panel.grid.minor.x = element_blank())
+```
+
+**3. Which built-in theme is each of the following plots? That is, what `theme_XXXX()` function would produce the added change?**
+
+a)  
+
+```{r}
+#| label: theme-classic
+#| echo: false
+#| fig-alt: "Compared with the base ggplot theme, this version uses a classic theme: the grey panel background is gone (now plain white), all gridlines are removed, and only the black x- and y-axis lines with ticks remain."
+
+p +
+  theme_classic() +
+  theme(legend.position = "none")
+```
+
+b)  
+
+```{r}
+#| label: theme-bw
+#| echo: false
+#| fig-alt: "Compared with the base ggplot theme, this version has a white background and both major and minor gridlines are clearly visible in light grey. A thin black border outlines the plotting panel. The overall look is higher contrast and more minimal than the default grey theme, while still retaining gridlines for reference."
+
+p + 
+  theme_bw() +
+  theme(legend.position = "none")
+```
+
+c)  
+
+```{r}
+#| label: theme-dark
+#| echo: false
+#| fig-alt: "Compared with the base ggplot theme, this version has a dark grey background instead of light grey, and gridlines are shown in lighter grey for contrast. Axis text and tick labels are light-colored to stand out against the dark background. The overall appearance is high-contrast with a dark backdrop, while the colored bars remain vivid."
+
+p + 
+  theme_dark() +
+  theme(legend.position = "none")
+```
+
+d)  
+
+```{r}
+#| label: theme-void
+#| echo: false
+#| fig-alt: "Compared with the base ggplot theme, this version uses a theme where all axes, axis labels, tick marks, gridlines, legend, and background panel elements have been removed. Only the colored bars remain on a blank background, creating a minimal, stripped-down appearance with no contextual guides or reference lines."
+
+p + 
+  theme_void() +
+  theme(legend.position = "none")
+
+```
+
+**4. Which of the plots above (a, b, c, or d) best adheres to the principles outlined by Will Chase (in the Glamour of Graphics)?**
+
+**5. None of the built-in ggplot themes _completely_ adhere to the principles outlined by Will Chase. For the plot you chose in Question 4, what additional change(s) are necessary?**

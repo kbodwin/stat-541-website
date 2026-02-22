@@ -1,13 +1,11 @@
 ---
-title: "Non-Standard Geometries & Styled Plots"
+title: "Non-Standard Geometries"
 format: html 
 editor: source
 execute: 
   warning: false
   message: false
 ---
-
-<!-- every plot needs alt text -->
 
 ```{r}
 #| label: set-up
@@ -54,6 +52,8 @@ package.
 
 ```{r}
 #| label: fig-lollipop-plot
+#| fig-alt: "Lollipop chart titled ‘Comparison of Flipper Lengths for Different Penguin Species’. The x-axis shows mean flipper length in millimeters, and the y-axis lists three species: Adelie, Chinstrap, and Gentoo.Each species has a horizontal line extending from zero to a dot marking its mean flipper length. Adelie is just under 200 mm, Chinstrap is around 195 mm, and Gentoo is the highest at just over 215 mm. The chart highlights that Gentoo penguins have the longest average flipper length, followed by Chinstrap, then Adelie."
+#| fig-cap: "Lollipop plot of mean flipper length"
 
 species_means <- penguins |> 
   group_by(species) |> 
@@ -92,6 +92,8 @@ the categorical variable needs to be mapped to the y-axis.
 
 ```{r}
 #| label: fig-ridgeline-plot
+#| alt-text: "Ridgeline density plot titled ‘Comparison of Flipper Lengths for Different Penguin Species’. The x-axis shows flipper length in millimeters, and the y-axis lists three species: Adelie, Chinstrap, and Gentoo. Each species is represented by a filled, overlapping density curve positioned on its own horizontal line. Adelie has a distribution centered around the high 180s to mid-190s mm. Chinstrap is slightly higher, centered around the mid-190s to just above 200 mm. Gentoo is clearly shifted to the right, with most values between about 210 and 230 mm. The plot emphasizes that Gentoo penguins have longer flippers overall, with some overlap between Adelie and Chinstrap distributions."
+#| fig-cap: "Ridgeline density plot of penguin flipper length"
 
 library(ggridges)
 
@@ -193,6 +195,8 @@ Okay, now that we've summarized our data, let's try making an area plot!
 
 ```{r}
 #| label: fig-total-area
+#| fig-alt: "Stacked area chart titled ‘Mean Life Expectancy Over Time’ with year on the x-axis (1950s to early 2000s) and life expectancy on the y-axis. The legend lists five continents: Africa, Americas, Asia, Europe, and Oceania. However, only a single large purple area (Oceania) is visible, filling the entire chart from about 70 to just over 80 years. The other continents are hidden behind it because the stacking order is incorrect. The plot demonstrates how a poorly ordered stacked area chart can obscure all but the top layer, making comparisons impossible."
+#| fig-cap: "A first go at making an area plot"
 
 ggplot(data = continent_life_exp, 
        mapping = aes(x = year, 
@@ -203,7 +207,9 @@ ggplot(data = continent_life_exp,
             position = "identity") +
   labs(x = "", 
        y = "", 
-       title = "Mean Life Expectancy Over Time") 
+       title = "Mean Life Expectancy Over Time", 
+       fill = "Continent", 
+       color = "Continent") 
 ```
 
 Huh, that doesn't look great. It looks like we are only getting a plot for 
@@ -212,6 +218,8 @@ if we can uncover the other groups.
 
 ```{r}
 #| label: fig-area-transparent
+#| fig-alt: "Stacked area chart titled ‘Mean Life Expectancy Over Time’ with years from the 1950s to the early 2000s on the x-axis and life expectancy on the y-axis. Five semi-transparent colored areas represent Africa, Americas, Asia, Europe, and Oceania. All continents show steady increases over time. Africa is lowest throughout (rising from around 40 to mid-50s), followed by Asia and the Americas. Europe is higher (mid-60s to high-70s), and Oceania is highest (around 70 to just over 80). Because the areas overlap and are stacked with transparency, the chart is cluttered and difficult to compare accurately across continents."
+#| fig-cap: Incorporating transparency
 
 ggplot(data = continent_life_exp, 
        mapping = aes(x = year, 
@@ -246,6 +254,8 @@ smallest!
 
 ```{r}
 #| label: fig-area-plot-reordered
+#| fig-alt: "Stacked area chart titled ‘Mean Life Expectancy Over Time’ with years from the 1950s to the early 2000s on the x-axis and life expectancy on the y-axis. Five colored areas represent Oceania, Europe, Americas, Asia, and Africa, ordered from highest to lowest life expectancy. All continents show steady increases over time. Oceania is highest throughout (around 70 to just over 80 years), followed by Europe, the Americas, and Asia. Africa remains lowest (about 40 to mid-50s). The areas are ordered so that higher life expectancy regions appear on top, making the trends and relative positions easier to compare."
+#| fig-cap: "A more polished area plot where *every* group is visible"
 
 gapminder |> 
   group_by(year, continent) |> 
@@ -302,6 +312,8 @@ column can be mapped to `ymax`. Let's give it a try!
 
 ```{r}
 #| label: fig-geom-ribbon
+#| fig-alt: "Ribbon plot titled ‘Profound Differences in Life Expectancy’ with the subtitle ‘Comparing Continents with Highest and Lowest Life Expectancy’. The x-axis shows years from the 1950s to the early 2000s, and the y-axis shows life expectancy. Two lines are drawn: Oceania (highest) in teal and Africa (lowest) in red. A shaded gray ribbon fills the vertical space between the two lines, emphasizing the gap. Both continents show steady increases over time, but the distance between them remains large—roughly 25 to 30 years—highlighting the persistent difference in life expectancy."
+#| fig-cap: "A ribbon plot highlighting differences in life expectancy between Africa and Oceania"
 
 gapminder |> 
   filter(continent %in% c("Oceania", "Africa")) |> 
@@ -345,6 +357,8 @@ the later years.
 
 ```{r}
 #| label: fig-sample-heatmap
+#| fig-alt: "Heatmap titled ‘Number of Penguins Sampled Each Year’ with the subtitle ‘Separated by Island of the Palmer Archipelago’. The x-axis shows years 2007, 2008, and 2009, and the y-axis lists three islands: Torgersen, Dream, and Biscoe. Each cell is shaded from dark to light blue to indicate the number of penguins sampled, with lighter shades representing higher counts. Biscoe has the highest counts overall (especially in 2008), Dream has moderate counts across all years, and Torgersen has the lowest counts. The heatmap highlights differences in sampling intensity by island and year."
+#| fig-cap: "Heatmap of sample sizes"
 
 penguins |> 
   count(year, island) |> 
@@ -410,6 +424,9 @@ to titles (i.e., `Bill Length` not `bill length`).
 #| label: title-helper-function
 
 make_titles <- function(x){
+  # expects a character or factor as an input
+  stopifnot(is.character(x) | is.factor(x))
+  
   # remove the units at the end of the name
   str_remove(x, pattern = "(g|mm)$") |> 
   # replace all _ with spaces
@@ -425,6 +442,8 @@ Okay, now let's use this function to make nice labels and get our heatmap!
 
 ```{r}
 #| label: fig-correlation-plot
+#| fig-alt: "Heatmap titled ‘Correlation Between Penguin Body Measurements’. Both axes list four numeric variables: Bill Depth, Bill Length, Body Mass, and Flipper Length. Each cell is shaded to show the correlation between a pair of variables, with darker blue indicating stronger positive correlation and darker gray indicating negative correlation. The diagonal cells are gray, representing NA values for each variable correlated with itself. Flipper Length and Body Mass show a strong positive correlation. Bill Length is moderately positively correlated with Body Mass and Flipper Length. Bill Depth shows negative correlations with the other measurements, especially with Flipper Length and Body Mass. The heatmap highlights the overall pattern of positive associations among size-related measures and negative associations involving bill depth."
+#| fig-cap: "Heatmap of correlations, grey boxes represent perfect correlations (of 1)"
 
 penguins_cor |> 
   mutate(
@@ -454,6 +473,8 @@ plot that leaves something to be desired.
 
 ```{r}
 #| label: fig-diamonds-scatter-busy
+#| fig-cap: "Overplotting in a scatterplot"
+#| fig-alt: "Scatterplot of diamond price versus carat weight. The x-axis shows carat (from near 0 up to about 5), and the y-axis shows price (from near 0 up to around 18,000). Thousands of black points are plotted, heavily overlapping and forming dense vertical bands at common carat values. There is a clear overall positive relationship—price increases as carat increases—but the large number of points makes the plot cluttered and the detailed pattern difficult to see."
 
 ggplot(data = diamonds, 
        mapping = aes(x = carat, 
@@ -471,6 +492,8 @@ make a hexagonal bin plot.
 
 ```{r}
 #| label: fig-hexbin
+#| fig-alt: "Hexbin plot titled ‘Number of Diamonds Observed’ with the subtitle ‘For each Price, Carat Combination’. The x-axis shows carat (from near 0 to about 5), and the y-axis shows price (from $0 to around $18,000). Instead of individual points, the plot uses hexagonal bins to group diamonds by carat and price. The color of each hexagon represents the number of diamonds in that range, with lighter blue indicating higher counts and darker blue indicating fewer. The plot reveals a clear positive relationship between carat and price, with the highest concentrations of diamonds at lower carat values and moderate prices, and fewer diamonds at high carat and high price levels."
+#| fig-cap: "Hexbin plot of frequency of observations for each `carat` and `price` combination"
 
 library(hexbin)
 
@@ -496,11 +519,11 @@ ever wondered when you would want to make a radar plot? Or maybe a parallel
 plot? This site has it all!
 
 ::: {.callout-important}
-# Check-in
+# [Check-ins]{style="font-size: 1.5em;"}
+:::
 
 ::: columns
 ::: {.column width="40%"}
-</br>
 
 1. Which of the following non-standard plots could be used to visualize 
 categorical variables?
@@ -514,483 +537,25 @@ numerical variables?
 :::
 
 ::: {.column width="55%"}
+
+(*Some plots can go both places!*)
+
 -   Bubble Plot
+
 -   Violin Plot
+
 -   Circular Barplot
+
 -   Tree Map
+
 -   Sankey Diagram
+
 -   Waffle Chart
+
 -   Stream Graph
+
 -   Radar Chart
+
 -   Bubble Plot
 :::
 :::
-:::
-
-# Custom Colors and Themes
-
-A huge part of making a compelling and convincing plot is your choice of color
-and layout. In this second part of the coursework, we are going to learn more
-about customizing colors and themes. 
-
-## 🎥 Required Video: The Glamour of Graphics
-
-{{< video https://www.youtube.com/embed/h5cTacaWE6I?si=zLxvctfyr3TuAwlG >}}
-
-This is one of the best talks on *simple* ways to make your visualizations more
-clear and glamorous. We recommend watching the entire thing (maybe on a 
-sunny walk or at the beach!), but if you can't do the entire thing here are the
-main principles Will Chase outlines:
-
-1. Don't make people tilt their head (to read your plot)
-2. Left align most of your text
-3. Lighten gridlines as much as possible and don't use minor gridlines
-4. Legends suck
-5. Fonts matter
-6. Color is hard
-
-Let's work through each of these recommendations. 
-
-## Don't make people tilt their head
-
-Let's start with something simple! Not making people tilt their head to read
-your plot seems like an easy thing to do. We typically see plots that make 
-people tilt their head when categorical variables have long names. For example, 
-in the code below, we pull out the top 10 countries based on the length. We then
-compare the country's life expectancy using side-by-side boxplots. As you can
-see, the names of the countries are illegible. 
-
-```{r}
-#| label: fig-mooshed-country-names
-
-countris_to_keep <- gapminder |> 
-  distinct(country) |> 
-  mutate(name_len = str_length(country)) |> 
-  slice_max(n = 10, order_by = name_len)
-
-gapminder |> 
-  semi_join(countris_to_keep, by = "country") |> 
-  ggplot(mapping = aes(x = country, 
-                       y = lifeExp)
-         ) +
-  geom_boxplot()
-```
-A "typical" fix is to tilt the names of the countries 45 degrees, like so:
-
-```{r}
-#| label: fig-tilt-names-45-degrees
-
-gapminder |> 
-  semi_join(countris_to_keep, by = "country") |> 
-  ggplot(mapping = aes(x = country, 
-                       y = lifeExp)
-         ) +
-  geom_boxplot() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-```
-However, our plot now makes people tilt their head! A better fix is to move 
-the countries to the y-axis, where the names have plenty of space. Viola!
-
-```{r}
-#| label: fig-move-country-to-y
-
-gapminder |> 
-  semi_join(countris_to_keep, by = "country") |> 
-  ggplot(mapping = aes(y = country, 
-                       x = lifeExp)
-         ) +
-  geom_boxplot() +
-  labs(x = "Life Expectancy (Years)", 
-       y = "")
-```
-
-You might have noticed something about **a lot** of the plots we've shown you
-in this coursework---many don't have y-axis labels. The reason for this is
-twofold, first people always have to tilt their head to read the y-axis label. 
-Second, many of these labels are not necessary because the variable is obvious. 
-
-Here, we don't need a label that says "Country" because the y-axis values can
-clearly communicate that context. In @fig-hexbin the y-axis didn't have a clear 
-context, but we included that context in a location where the reader didn't 
-need to tilt their head (the plot title). 
-
-## Left align most of your text
-
-This recommendation is **very** easy to follow when making plots with 
-**ggplot2** because left alignment is the default orientation for text. 
-Sometimes we see students get excited at the idea of centering their plot
-title, but Will Chase (and your teachers) would recommend against it. Use
-that creative energy on finding great colors! 
-
-## Lighten gridlines as much as possible
-
-[This documentation page](https://ggplot2.tidyverse.org/reference/ggtheme.html)
-provides a complete list of all the themes that are built into **ggplot2**.
-
-If you want to go a bit deeper into the land of ggplot themes, 
-[this blog by Emanuela Furfaro](https://emanuelaf.github.io/own-ggplot-theme.html)
-provides great advice on how to make your own custom ggplot theme function. 
-
-## Legends suck {#sec-legend}
-
-In general, legends suck because they take people's eyes away from your plot. 
-Below, we present a few options for trying to address this issue. 
-
-### Reordering Your Legend
-
-If you must keep your legend, then you **absolutely must** format your legend
-so that the colors appear in the same order as they appear on the plot. When 
-your legend is not in order, then it is **substantially** more difficult for 
-people to read your plot, as seen in this amazing gist from [Jenny Bryan](https://jennybryan.org/). 
-
-![](images/jenny-bryan-reorder-legend.png){fig-alt="Side-by-side line charts showing why you should reorder your legend to match the data. Both plots show three lines (‘top’, ‘middle’, and ‘bottom’) across x = 1 to 3. In the left plot, the legend order does not match the vertical order of the lines at the right end of the chart, making it harder to read. In the right plot, the legend is reordered to match the lines’ final positions (highest to lowest), making the chart easier to understand."}
-
-The `fct_reorder()` and `fct_reorder2()` functions from the **forcats** 
-package are the key tools for getting your legend to have the same ordering as
-your plot. In @fig-geom-ribbon, the legend **did not** appear in the same order
-as the plot. Let's fix that using `fct_reorder()`!
-
-```{r}
-#| label: fig-reorder-ribbon
-
-gapminder |> 
-  filter(continent %in% c("Oceania", "Africa")) |> 
-  group_by(year, continent) |> 
-  summarize(mean_life = mean(lifeExp, na.rm = TRUE), 
-            .groups = "drop") |> 
-  mutate(continent = forcats::fct_reorder(.f = continent, 
-                                          .x = mean_life, 
-                                          .desc = TRUE)) |> 
-  ggplot(mapping = aes(x = year, 
-                       y = mean_life, 
-                       color = continent)) +
-  geom_line(linewidth = 2) +
-  geom_ribbon(data = ribbon_summaries, 
-              mapping = aes(x = year, 
-                            ymin = mean_Africa, 
-                            ymax = mean_Oceania
-                            ), 
-            position = "identity",
-            inherit.aes = FALSE, 
-            fill = "lightgray") +
-  labs(x = "", 
-       y = "", 
-       title = "Profound Differences in Life Expectancy", 
-       subtitle = "Comparing Continents with Highest and Lowest Life Expectancy", 
-       color = "Continent") +
-  theme_bw() +
-  theme(panel.grid.minor = element_blank())
-```
-
-### Embedding Your Legend in the Plot Title
-
-If you can remove your legend, then there are two approaches you can
-take---adding the legend to the plot title or adding annotations to the plot. 
-Let's take a look at the first option, adding colors to your plot title. 
-
-The **ggtext** package allows you to add hex colors and other HTML elements 
-(e.g., italics, boldface) to plot titles. The process involves two main steps:
-
-1. Wrap your text in HTML tags within the `labs()` function.
-
-2. Tell ggplot to render the HTML by adding `plot.title = element_markdown()`
-inside the `theme()` function.
-
-Let's see how this can look! I've added the hex colors for the two continents
-(from @fig-geom-ribbon) into the subtitle of my plot:
-
-```{r}
-#| label: fig-html-subtitle
-
-library(ggtext)
-
-gapminder |> 
-  filter(continent %in% c("Oceania", "Africa")) |> 
-  group_by(year, continent) |> 
-  summarize(mean_life = mean(lifeExp, na.rm = TRUE), 
-            .groups = "drop") |> 
-  ggplot(mapping = aes(x = year, 
-                       y = mean_life, 
-                       color = continent)) +
-  geom_line(linewidth = 2) +
-  geom_ribbon(data = ribbon_summaries, 
-              mapping = aes(x = year, 
-                            ymin = mean_Africa, 
-                            ymax = mean_Oceania
-                            ), 
-            position = "identity",
-            inherit.aes = FALSE, 
-            fill = "lightgray") +
-  labs(x = "", 
-       y = "", 
-       title = "Profound Differences in Life Expectancy",
-       subtitle = "Comparison of <span style='color: #17b3b7;'>Oceania</span> and <span style='color: #f35e5a;'>Africa</span>") +
-  theme_bw() + 
-  theme(
-    legend.position = "none",
-    plot.subtitle = element_markdown(), 
-    panel.grid.minor = element_blank()
-    )
-```
-
-Notice that the subtitle is still specified as a string. Inside the string there
-are HTML elements (`<span>`) that declare the colors of the text. For example,
-`<span style='color: #17b3b7;'>Oceania</span>` declares that the text "Oceania"
-should be printed with the color `#17b3b7`. The beginning of the span (`<span `)
-and the end of the span (`</span>`) declare when the coloring starts and ends.
-
-::: {.callout-tip}
-# Finding the Hex Colors
-
-There are a variety of ways you can get the hex codes for the colors in your 
-plot. To grab the codes for these base ggplot colors, I used an online color 
-picker (e.g., [imagecolorpicker.com](https://imagecolorpicker.com/)). If you are
-using non-default colors (e.g., the **viridis** or **RColorBrewer** packages), 
-there are built-in functions for getting the hex codes. 
-
-::: columns
-::: {.column width="48%"}
-```{r}
-#| label: hex-codes-viridis
-
-library(viridis)
-
-viridis(5)
-```
-
-:::
-
-::: {.column width="4%"}
-:::
-
-::: {.column width="48%"}
-```{r}
-#| label: hex-codes-brewer
-
-library(RColorBrewer)
-
-brewer.pal(5, "Set2")
-```
-
-:::
-:::
-:::
-
-### Removing Your Legend with Annotations
-
-Maybe you feel like having the legend in the plot title is still difficult 
-for people to read. We don't disagree! It would be **really** easy for people
-to read the legend if it was included in the **body** of the visualization. 
-Let's explore that option! 
-
-Let's first start with our base plot that we want to add annotations to:
-
-```{r}
-#| echo: true
-#| code-fold: true
-
-plot <- gapminder |> 
-  filter(continent %in% c("Oceania", "Africa")) |> 
-  group_by(year, continent) |> 
-  summarize(mean_life = mean(lifeExp, na.rm = TRUE), 
-            .groups = "drop") |> 
-  ggplot(mapping = aes(x = year, 
-                       y = mean_life, 
-                       color = continent)) +
-  geom_line(linewidth = 2) +
-  geom_ribbon(data = ribbon_summaries, 
-              mapping = aes(x = year, 
-                            ymin = mean_Africa, 
-                            ymax = mean_Oceania
-                            ), 
-            position = "identity",
-            inherit.aes = FALSE, 
-            fill = "lightgray") +
-  labs(x = "", 
-       y = "", 
-       title = "Profound Differences in Life Expectancy", 
-       subtitle = "Comparing Continents with Highest and Lowest Life Expectancy"
-       ) +
-  theme_bw() +
-  theme(
-    legend.position = "none",
-    panel.grid.minor = element_blank()
-    )
-
-plot
-```
-
-Now that we have our base plot (saved as `plot`), we can explore adding
-annotations to the plot using `geom_text()`. Looking at the documentation for 
-`geom_text()` you will notice that you must supply `x`, `y`, and `label` 
-aesthetics. So, you need to have a dataframe with **three** columns indicating 
-where to put the labels (x and y location) and what labels should be used. Let's
-think about how to make this dataframe. 
-
-Based on Will Chase's advice, we should consider adding annotations on the left
-("left align most of your text"), somewhere around 1955. If we want the
-annotations to help people know what continent each line is associated with, it
-seems like we want the text to be close to the line. For consistency, let's 
-put both annotations *inside* the grey area. 
-
-```{r}
-#| label: annotations
-
-annotate_text <- gapminder |> 
-  filter(continent %in% c("Oceania", "Africa"), 
-         year == 1957
-         ) |> 
-  group_by(year, continent) |> 
-  summarize(y_lab = mean(lifeExp, na.rm = TRUE), 
-            .groups = "drop") |> 
-  # Move text based on what continent it is
-  mutate(
-    y_lab = y_lab + if_else(continent == "Africa", 
-                            2, # Move up for Africa (on bottom)
-                            -2 # Move down for Oceania (on top)
-                            )  
-  )
-annotate_text
-```
-
-Now that we have our annotations, let's put them on the plot! 
-
-```{r}
-#| label: fig-add-annotations
-
-plot + 
-  geom_text(data = annotate_text, 
-            mapping = aes(x = year, 
-                          y = y_lab, 
-                          label = continent, 
-                          color = continent
-                          ), 
-            inherit.aes = FALSE
-            )
-  
-```
-
-## Fonts matter
-
-<!-- need to add advice on choosing fonts  -->
-
-## Color is hard
-
-There are **so** many color packages in R that all work with ggplot. Regardless
-of what colors you decide to work with, you will need to know:
-
-1. What aesthetic are the colors associated with (e.g., `color` or `fill`)?
-2. Is the palette continuous (for a quantitative variable) or discrete (for 
-a categorical variable)?
-
-The answers to these two questions direct you toward what function you need to 
-use to change the colors in your plot. For example, to change the colors in a
-filled area plot (like @fig-area-plot-reordered) you would need to use a 
-`scale_fill_XXXX()` function, whereas with a hexbin plot (like @fig-hexbin) you
-would need to use a `scale_color_XXXX()` function. 
-
-We recommend poking around the [Color Scales and Legends chapter of the *ggplot2* book by Hadley Wickham](https://ggplot2-book.org/scales-colour.html). This 
-chapter covers how color scales work, how to choose palettes, and how to 
-customize them. The chapter even motivates the importance of choosing accessible
-color palettes that *everyone's* eyes can see. 
-
-The number of color packages can get a bit overwhelming, which is why 
-[Emil Hvitfeldt](https://emilhvitfeldt.com/) put together a [comprehensive list of color palettes in R](https://emilhvitfeldt.github.io/r-color-palettes/). Check
-it out! Find the color palette that speaks to you! Is it the `Apricot` palette
-from the **LaCroixColoR** package?!
-
-
-# Check-ins
-
-**1. Which of the functions below would you use to change the colors of the bars on the following plot?**
-
--   `scale_color_continuous()`
--   `scale_color_discrete()`
--   `scale_fill_continuous()`
--   `scale_fill_discrete()`
-
-```{r}
-#| label: base-plot
-
-p <- ggplot(penguins, 
-       mapping = aes(y = species, 
-                     fill = species)) + 
-  geom_bar() +
-  labs(title = "Number of Academy Award Winners\n from major cities", 
-       y = "", 
-       x = "")  +
-  theme(legend.position = "none")
-
-p
-```
-
-**2. Consider the plot in Question 1. What change was made to it in each step below? That is, what code would go inside the function `+ theme( )` to produce the added change?**
-
-a)  
-
-```{r}
-#| label: theme-remove-legend
-
-p + 
-  theme(legend.position = "none")
-```
-
-b)  
-
-```{r}
-#| label: theme-grid-major
-p + 
-  theme(panel.grid.minor.x = element_blank())
-```
-
-**3. Which built-in theme is each of the following plots? That is, what `theme_XXXX()` function would produce the added change?**
-
-a)  
-
-```{r}
-#| label: theme-classic
-
-p +
-  theme_classic() +
-  theme(legend.position = "none")
-```
-
-b)  
-
-```{r}
-#| label: theme-bw
-p + 
-  theme_bw() +
-  theme(legend.position = "none")
-```
-
-c)  
-
-```{r}
-#| label: theme-dark
-
-p + 
-  theme_dark() +
-  theme(legend.position = "none")
-```
-
-d)  
-
-```{r}
-#| label: theme-void
-
-p + 
-  theme_void() +
-  theme(legend.position = "none")
-
-```
-
-**4. Which of the plots above (a, b, c, or d) best adheres to the principles outlined by Will Chase (in the Glamour of Graphics)?**
-
-# Extra Resouces
-
--   The [`jcolors` package](https://jaredhuling.org/jcolors/) for color palettes
--   The [`ggthemer` package](https://www.shanelynn.ie/themes-and-colours-for-r-ggplots-with-ggthemr/) for setting universal themes.
--   [Make your own](https://emanuelaf.github.io/own-ggplot-theme.html) theme to use!
-
-
