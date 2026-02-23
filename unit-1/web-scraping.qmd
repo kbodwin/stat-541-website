@@ -2,67 +2,9 @@
 title: "Web Scraping"
 editor: source
 execute: 
-  echo: false
-  eval: false
   warning: false
   message: false
 ---
-
-<!-- (move to Cheese website from old lab) -->
-
-<!-- > **Goal:** Scrape information from <https://www.cheese.com> to obtain a dataset -->
-<!-- > of characteristics about different cheeses, and gain deeper insight into your -->
-<!-- > coding process. 🪤 -->
-
-<!-- **Part 1:** Locate and examine the `robots.txt` file for this website. Summarize -->
-<!-- what you learn from it. -->
-
-<!-- **Part 2:** Learn about the `html_attr()` function from `rvest`. Describe how -->
-<!-- this function works with a small example. -->
-
-<!-- **Part 3:** (Do this alongside Part 4 below.) I  -->
-<!-- used [ChatGPT](https://chat.openai.com/chat) to start the process of scraping -->
-<!-- cheese information with the following prompt: -->
-
-<!-- > Write R code using the rvest package that allows me to scrape cheese -->
-<!-- > information from cheese.com. -->
-
-<!-- Fully document your process of checking this code. Record any observations you -->
-<!-- make about where ChatGPT is useful / not useful. -->
-
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- #| label: small-example-of-getting-cheese-info -->
-
-<!-- # Load required libraries -->
-<!-- library(rvest) -->
-<!-- library(dplyr) -->
-
-<!-- # Define the URL -->
-<!-- url <- "https://www.cheese.com/alphabetical" -->
-
-<!-- # Read the HTML content from the webpage -->
-<!-- webpage <- read_html(url) -->
-
-<!-- # Extract the cheese names and URLs -->
-<!-- cheese_data <- webpage %>% -->
-<!--   html_nodes(".cheese-item") %>% -->
-<!--   html_nodes("a") %>% -->
-<!--   html_attr("href") %>% -->
-<!--   paste0("https://cheese.com", .) -->
-
-<!-- cheese_names <- webpage %>% -->
-<!--   html_nodes(".cheese-item h3") %>% -->
-<!--   html_text() -->
-
-<!-- # Create a data frame to store the results -->
-<!-- cheese_df <- data.frame(Name = cheese_names, -->
-<!--                         URL = cheese_data, -->
-<!--                         stringsAsFactors = FALSE) -->
-
-<!-- # Print the data frame -->
-<!-- print(cheese_df) -->
-<!-- ``` -->
 
 <!-- **Part 4:** Obtain the following information for **all** cheeses in the -->
 <!-- database: -->
@@ -122,11 +64,6 @@ Web scraping describes the use of code to extract information displayed on a web
 page. In R, the `rvest` package (meant to sound like "harvest") offers tools for
 scraping.
 
-Additional readings:
-
--   [rvest](https://cran.r-project.org/web/packages/rvest/vignettes/rvest.html)
--   [CSS selectors](https://css-tricks.com/how-css-selectors-work/)
-
 ## Scraping ethics
 
 ### `robots.txt`
@@ -137,17 +74,13 @@ this file, this we need to comply with the information in it for moral and legal
 reasons.
 
 We will look through the information in [this tutorial](https://www.zenrows.com/blog/robots-txt-web-scraping) and apply this
-to the [NIH robots.txt file](https://www.nih.gov/robots.txt).
+to the [cheese.com robots.txt file](https://www.cheese.com/robots.txt).
 
-From our investigation of the NIH `robots.txt`, we learn:
-
--   `User-agent: *`: Anyone is allowed to scrape
--   `Crawl-delay: 2`: Need to wait 2 seconds between each page scraped
--   No `Visit-time` entry: no restrictions on time of day that scraping is
-allowed
--   No `Request-rate` entry: no restrictions on simultaneous requests
--   No mention of `?page=`, `news-events`, `news-releases`, or `https://science.education.nih.gov/` in the `Disallow` sections. (This is what
-we want to scrape today.)
+The [cheese.com](https://www.cheese.com/) `robots.txt` is very simple, it
+says that anyone is allowed to scrape (`User-agent: *`). The file doesn't give
+any additional instructions, such as `Crawl-delay` (how long you need to wait
+between scraping each page), `Visit-time` (restrictions on time of day that
+scraping is allowed), or `Request-rate` (restrictions on simultaneous requests).
 
 ### Further considerations
 
@@ -165,9 +98,9 @@ webpages. Let's look at the core parts of HTML from the [rvest vignette](https:/
 
 In order to gather information from a webpage, we must learn the language used
 to identify patterns of specific information. For example, on the 
-[NIH News Releases page](https://www.nih.gov/news-events/news-releases), we can
-see that the data is represented in a consistent pattern of image + title + 
-abstract.
+[alphabetical page of cheeses]](https://www.cheese.com/alphabetical/), we can
+see that the data is represented in a consistent pattern of image + name of 
+cheese.
 
 We will identify data in a web page using a pattern matching language called
 [CSS Selectors](https://css-tricks.com/how-css-selectors-work/) that can refer
@@ -207,8 +140,8 @@ return after some time and your scraping code will include all of the wrong CSS
 selectors.
 :::
 
-Although you can [learn how to use CSS Selectors by hand](%5BCSS%20Selectors%5D(https://css-tricks.com/how-css-selectors-work/)), we
-will use a shortcut by installing the
+Although you can [learn how to use CSS Selectors by hand](%5BCSS%20Selectors%5D(https://css-tricks.com/how-css-selectors-work/)), 
+we will use a shortcut by installing the 
 [Selector Gadget](http://selectorgadget.com/) tool.
 
 -   There is a version available for Chrome--add it to Chrome via the [Chome Web Store](https://chromewebstore.google.com/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb).
@@ -221,22 +154,21 @@ will use a shortcut by installing the
 
 ## Check-in: Webscraping
 
-Head over to the [NIH News Releases page](https://www.nih.gov/news-events/news-releases). Click the Selector Gadget extension icon or bookmark button. As you mouse over
+Head over to the [alphabetical page of the first 100 cheeses](https://www.cheese.com/alphabetical/?per_page=100).
+Click the Selector Gadget extension icon or bookmark button. As you mouse over
 the webpage, different parts will be highlighted in orange.
 
-1.  What CSS selector would you use to obtain the title of each article?
+1.  What CSS selector would you use to obtain the image of the cheese?
 
-<!-- .teaser-title -->
+<!-- img -->
 
-2.  What CSS selector would you use to obtain the publication date of each 
-article?
+2.  What CSS selector would you use to obtain the name of the cheese?
 
-<!-- .date-display-single -->
+<!-- h3 -->
 
-3.  What CSS selector would you use to obtain the article abstract paragraph
-(which will also include the publication date)?
+3.  What CSS selector would you use to obtain the link for each cheese?
 
-<!-- .teaser-description -->
+<!-- .product-item a -->
 
 ## Retrieving Data Using `rvest` and CSS Selectors
 
@@ -249,30 +181,108 @@ fetch the data using the `rvest` package.
 
 library(rvest)
 
-nih <- read_html("https://www.nih.gov/news-events/news-releases")
+cheeses <- read_html("https://www.cheese.com/alphabetical/?per_page=100")
 ```
 
 Once the webpage is loaded, we can retrieve data using the CSS selectors we
-specified earlier. The following code retrieves the article titles:
+specified earlier. The code below retrieves three pieces of information about 
+the cheeses on this website:
+
+**1. name**
+
+::: {.column-margin}
+::: {.callout-tip}
+# More Targetted CSS Selectors
+I'm adding an `h3` to my CSS selector, since the store information is also
+selected with the `.product-item`. If I don't grab the `h3` element, then 
+the cheeses with store information will show up like this:
+`"Stores >\n                \n            \n        \n    \n    Aged Gouda" `
+:::
+:::
 
 ```{r}
-#| label:  html_elements_text
-#| echo: true
+#| label: obtain-cheese-name
 
-# Retrieve titles of articles
-article_titles <- nih %>%
-    html_elements(".teaser-title") %>%
-    html_text()
+cheeses %>%
+  html_elements(".product-item h3") %>%
+  html_text(trim = T) |> 
+  head()
+```
 
-# Inspect titles
-head(article_titles)
+**2. HTML**
+
+```{r}
+cheeses %>%
+  html_elements(".product-item a") %>%
+  html_attr("href") %>%
+  url_absolute("https://www.cheese.com") |> 
+  head()
+```
+
+::: {.column-margin}
+::: {.callout-tip}
+# Relative and Absolute URLs
+
+The urls that are output by `html_attr("href")` are *relative* urls 
+(e.g., `"/2-year-aged-cumin-gouda/"`) to get te *full* url, we need to paste the
+base url (https://www.cheese.com) to the beginning of the relative url. The
+`url_absolute()` function can do this for us. 
+
+<!-- The function is essentially the same as: `str_c("https://www.cheese.com", .)`,  -->
+<!-- where the string `"https://www.cheese.com"` is added to the beginning of every -->
+<!-- relative url.  -->
+:::
+:::
+
+**3. status of the image (exists or missing)**
+
+```{r}
+cheeses %>%
+  html_elements(".product-item a img") %>%
+  html_attr("class") %>%
+  head()
+```
+
+::: {.column-margin}
+::: {.callout-tip}
+# Detecting an Image
+
+This seems like a great place to use `str_detect()`!
+:::
+:::
+
+```{r}
+#| label: code from students
+#| echo: false
+#| eval: false
+
+## VISRUTH & MATT
+  # cheese product listings
+  cheeses <- read_html(url) |>
+    html_nodes(".product-item")
+
+  # temp object that's used twice
+  temp_cheese_data <- cheeses |>
+    html_nodes("h3 a")
+
+  # building tibble
+  tibble(
+    cheese = temp_cheese_data |> html_text(),
+    url = temp_cheese_data |>
+      html_attr("href") |>
+      (\(slug) glue::glue("https://www.cheese.com{slug}"))(),
+    has_image = cheeses |>
+      html_nodes(".product-img a img") |>
+      html_attr("class") |>
+      str_detect("image-exists")
+  )
 ```
 
 ## Iteration
 
-Our goal is to get article titles, publication dates, and abstract text for news
-releases across several pages of results. **Before doing any coding,** let's
-plan our approach!
+Our goal is to obtain a dataset of characteristics about different cheeses 
+from <https://www.cheese.com>. **Before doing any coding,** let's plan our
+approach!
 
 -   What functions will you write?
     -   We probably need a function to grab the text from the page.
@@ -305,71 +315,72 @@ the NIH `robots.txt` file.
 -   Recall that `bind_rows()` from `dplyr` takes a list of data frames and
 stacks them on top of each other.
 
-<details>
-
-<summary>Solution</summary>
 
 ```{r}
 #| label: ex_solns_fcts
 #| echo: true
 
-# Helper function to reduce html_elements() %>% html_text() code duplication
 get_text_from_page <- function(page, css_selector) {
     
   page %>%
     html_elements(css_selector) %>%
-    html_text()
+    html_text(trim = T)
+}
+
+get_url_from_page <- function(page, css_selector) {
+    
+  page %>%
+    html_elements(css_selector) %>%
+    html_attr("href")
+}
+
+get_image_from_page <- function(page, css_selector) {
+    
+  page %>%
+    html_elements(css_selector) %>%
+    html_attr("src")
 }
 
 scrape_page <- function(url) {
     
-    # Respect the 2 second crawl delay in the NIH robots.txt file
-    Sys.sleep(2)
+    # 1 second crawl delay
+    Sys.sleep(1)
     
     # Read the page
     page <- read_html(url)
     
     # Grab elements from the page
-    article_titles <- get_text_from_page(page, ".teaser-title")
-    article_dates <- get_text_from_page(page, ".date-display-single")
-    article_abstracts <- get_text_from_page(page, ".teaser-description")
+    cheese_names <- get_text_from_page(page, ".product-item")
+    cheese_url <- get_url_from_page(page, ".product-item a")
+    cheese_image <- get_image_from_page(page, ".product-item img")
     
-    # Clean article abstracts!
-    article_abstracts <- str_remove(article_abstracts, "^.+—") %>% 
+    # Clean cheese names
+    cheese_names <- cheese_names %>%
       trimws()
     
-    # Put page elements into a dataframe
-    tibble(
-        title = article_titles,
-        date = article_dates,
-        abstract = article_abstracts
+    cheese_names <- ifelse(
+      str_detect(cheese_names, "Stores >"),
+      str_trim(str_extract(cheese_names, "[^\n]+$")),
+      cheese_names
+      )
+    
+    # Full cheese URL
+    base_url <- "https://www.cheese.com"
+    cheese_url <- paste0(base_url, cheese_url)
+    cheese_url <- unique(cheese_url[!grepl("store", cheese_url)]) #remove store links + duplicates
+    
+    # Find cheeses with image
+    has_image <- ifelse(grepl("static", cheese_image), "No", "Yes")
+    
+    #Put page elements into a dataframe
+    cheeses <- data.frame(
+      cheese = cheese_names,
+      url = cheese_url,
+      image = has_image
     )
+    
+    return(cheeses)
 }
-```
-
-Using a for-loop:
-
-```{r}
-#| eval: false
-#| label: ex_solns_for-loop
-#| echo: true
-
-# Create an empty list for the first five pages
-pages <- vector("list", length = 5)
-
-for (i in 1:5) {
-    base_url <- "https://www.nih.gov/news-events/news-releases"
-    if (i == 1) {
-        url <- base_url
-    } else {
-        url <- str_c(base_url, "?page=", i-1)
-    }
-    pages[[i]] <- scrape_page(url)
-}
-
-df_articles <- bind_rows(pages)
-
-head(df_articles)
 ```
 
 Using `purrr::map()`:
@@ -379,23 +390,19 @@ Using `purrr::map()`:
 #| label:  ex_solns_map
 #| echo: true
 
-# Create a character vector of URLs for the first 5 pages
-base_url <- "https://www.nih.gov/news-events/news-releases"
+base_url <- "https://www.cheese.com/alphabetical/?per_page=100"
 
-urls_all_pages <- c(base_url, 
-                    str_c(base_url, 
-                          "?page=", 
-                          1:4)
-                    )
+urls_all_pages <- c(str_c(base_url,
+                          "&page=",
+                          1:21)
+                     )
 
-pages2 <- purrr::map(urls_all_pages, scrape_page)
+all_pages <- map(urls_all_pages, scrape_page)
 
-df_articles2 <- bind_rows(pages2)
+all_cheeses <- bind_rows(all_pages)
 
-head(df_articles2)
+head(all_cheeses)
 ```
-
-</details>
 
 <!-- Grad level ideas: -->
 <!-- - scrape something that isn't a table -->
