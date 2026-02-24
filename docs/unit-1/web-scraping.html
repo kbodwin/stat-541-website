@@ -441,9 +441,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#finding-css-selectors" id="toc-finding-css-selectors" class="nav-link" data-scroll-target="#finding-css-selectors">Finding CSS Selectors</a></li>
   <li><a href="#required-video-selector-gadget-tutorial-video" id="toc-required-video-selector-gadget-tutorial-video" class="nav-link" data-scroll-target="#required-video-selector-gadget-tutorial-video">Required Video: Selector Gadget Tutorial Video</a></li>
   <li><a href="#check-in-webscraping" id="toc-check-in-webscraping" class="nav-link" data-scroll-target="#check-in-webscraping">Check-in: Webscraping</a></li>
-  <li><a href="#retrieving-data-using-rvest-and-css-selectors" id="toc-retrieving-data-using-rvest-and-css-selectors" class="nav-link" data-scroll-target="#retrieving-data-using-rvest-and-css-selectors">Retrieving Data Using <code>rvest</code> and CSS Selectors</a></li>
+  <li><a href="#sec-css-cheese" id="toc-sec-css-cheese" class="nav-link" data-scroll-target="#sec-css-cheese">Retrieving Data Using <code>rvest</code> and CSS Selectors</a></li>
   <li><a href="#iteration" id="toc-iteration" class="nav-link" data-scroll-target="#iteration">Iteration</a></li>
-  <li><a href="#check-in-webscraping-1" id="toc-check-in-webscraping-1" class="nav-link" data-scroll-target="#check-in-webscraping-1">Check-in: Webscraping</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-1/web-scraping.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
@@ -471,30 +470,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<!-- **Part 4:** Obtain the following information for **all** cheeses in the -->
-<!-- database: -->
-<!-- -   cheese name -->
-<!-- -   URL for the cheese's webpage (e.g., <https://www.cheese.com/gouda/>) -->
-<!-- -   whether or not the cheese has a picture (e.g.,  -->
-<!-- [gouda](https://www.cheese.com/gouda/) has a picture, but  -->
-<!-- [bianco](https://www.cheese.com/bianco/) does not). -->
-<!-- To be kind to the website owners, please add a 1 second pause between page -->
-<!-- queries. (Note that you can view 100 cheeses at a time.) -->
-<!-- **Part 5:** When you go to a particular cheese's page (like  -->
-<!-- [gouda](https://www.cheese.com/gouda/)), you'll see more detailed information -->
-<!-- about the cheese. For [**just 10**]{.underline} of the cheeses in the database, -->
-<!-- obtain the following detailed information: -->
-<!-- -   milk information -->
-<!-- -   country of origin -->
-<!-- -   family -->
-<!-- -   type -->
-<!-- -   flavour -->
-<!-- (Just 10 to avoid overtaxing the website! Continue adding a 1 second pause -->
-<!-- between page queries.) -->
-<!-- **Part 6:** Evaluate the code that you wrote in terms of **efficiency**. To -->
-<!-- what extent do your function(s) adhere to the **principles for writing good functions**? -->
-<!-- To what extent are your **functions efficient**? To what extent is your  -->
-<!-- **iteration of these functions efficient**?  -->
 <section id="learning-goals" class="level1">
 <h1>Learning goals</h1>
 <p>After this lesson, you should be able to:</p>
@@ -580,9 +555,6 @@ Warning
 </section>
 <section id="check-in-webscraping" class="level2">
 <h2 class="anchored" data-anchor-id="check-in-webscraping">Check-in: Webscraping</h2>
-<!-- > **Goal:** Scrape information from <https://www.cheese.com> to obtain a dataset -->
-<!-- > of characteristics about different cheeses, and gain deeper insight into your -->
-<!-- > coding process. 🪤 -->
 <p>Head over to the <a href="https://www.cheese.com/alphabetical/?per_page=100">alphabetical page of the first 100 cheeses</a>. Click the Selector Gadget extension icon or bookmark button. As you mouse over the webpage, different parts will be highlighted in orange.</p>
 <ol type="1">
 <li>What CSS selector would you use to obtain the image of the cheese?</li>
@@ -597,8 +569,8 @@ Warning
 </ol>
 <!-- .product-item a -->
 </section>
-<section id="retrieving-data-using-rvest-and-css-selectors" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="retrieving-data-using-rvest-and-css-selectors">Retrieving Data Using <code>rvest</code> and CSS Selectors</h2>
+<section id="sec-css-cheese" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="sec-css-cheese">Retrieving Data Using <code>rvest</code> and CSS Selectors</h2>
 <p>Now that we have identified CSS selectors for the information we need, let’s fetch the data using the <code>rvest</code> package.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rvest)</span>
@@ -624,9 +596,10 @@ Warning
 </div>
 </div></div><div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cheeses <span class="sc">%&gt;%</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_elements</span>(<span class="st">".product-item h3"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_text</span>(<span class="at">trim =</span> T) <span class="sc">|&gt;</span> </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_elements</span>(<span class="st">".product-item"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_element</span>(<span class="st">"h3"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_text</span>(<span class="at">trim =</span> T) <span class="sc">|&gt;</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2 Year Aged Cumin Gouda"           "3-Cheese Italian Blend"           
 [3] "30 Month Aged Parmigiano Reggiano" "3yrs Aged Vintage Gouda"          
@@ -636,17 +609,18 @@ Warning
 <p><strong>2. HTML</strong></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cheeses <span class="sc">%&gt;%</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_elements</span>(<span class="st">".product-item a"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_attr</span>(<span class="st">"href"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">url_absolute</span>(<span class="st">"https://www.cheese.com"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_elements</span>(<span class="st">".product-item"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_element</span>(<span class="st">"a"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_attr</span>(<span class="st">"href"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">url_absolute</span>(<span class="st">"https://www.cheese.com"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "https://www.cheese.com/2-year-aged-cumin-gouda/"                                 
-[2] "https://www.cheese.com/2-year-aged-cumin-gouda/"                                 
-[3] "https://www.cheese.com/3-cheese-italian-blend/"                                  
-[4] "https://www.cheese.com/3-cheese-italian-blend/"                                  
-[5] "https://www.cheese.com/30-month-aged-parmigiano-reggiano-150g/"                  
-[6] "https://www.cheese.com/30-month-aged-parmigiano-reggiano-150g/#store-online-tabs"</code></pre>
+<pre><code>[1] "https://www.cheese.com/2-year-aged-cumin-gouda/"               
+[2] "https://www.cheese.com/3-cheese-italian-blend/"                
+[3] "https://www.cheese.com/30-month-aged-parmigiano-reggiano-150g/"
+[4] "https://www.cheese.com/3yrs-aged-vintage-gouda/"               
+[5] "https://www.cheese.com/aarewasser/"                            
+[6] "https://www.cheese.com/abbaye-de-belloc/"                      </code></pre>
 </div>
 </div>
 
@@ -670,9 +644,10 @@ Warning
 </div></div><p><strong>3. status of the image (exists or missing)</strong></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cheeses <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_elements</span>(<span class="st">".product-item a img"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_attr</span>(<span class="st">"class"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_elements</span>(<span class="st">".product-item"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_element</span>(<span class="st">"a img"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_attr</span>(<span class="st">"class"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "image-exists"  "image-missing" "image-exists"  "image-exists" 
 [5] "image-exists"  "image-exists" </code></pre>
@@ -696,7 +671,7 @@ Warning
 </div></div></section>
 <section id="iteration" class="level2">
 <h2 class="anchored" data-anchor-id="iteration">Iteration</h2>
-<p>Our goal is to get article titles, publication dates, and abstract text for news releases across several pages of results. <strong>Before doing any coding,</strong> let’s plan our approach!</p>
+<p>Our goal is to obtain a dataset of characteristics about different cheeses from <a href="https://www.cheese.com" class="uri">https://www.cheese.com</a>. <strong>Before doing any coding,</strong> let’s plan our approach!</p>
 <ul>
 <li>What functions will you write?
 <ul>
@@ -705,108 +680,129 @@ Warning
 </ul></li>
 <li>What arguments will they have?
 <ul>
-<li>The function grabbing text should have two inputs, (1) the page and (2) the CSS selector to use</li>
 <li>The function scraping the page should probably only take one input: the page</li>
+<li>The function grabbing text should have two inputs, (1) the page and (2) the CSS selector to use</li>
 </ul></li>
 <li>How will you use your functions?
 <ul>
 <li>These functions need to be iterated! We would need to call the function to scrape a page once for each page we want to scrape.</li>
 </ul></li>
 </ul>
-</section>
-<section id="check-in-webscraping-1" class="level2">
-<h2 class="anchored" data-anchor-id="check-in-webscraping-1">Check-in: Webscraping</h2>
-<!-- cheese name -->
-<!-- URL for the cheese’s webpage (e.g., https://www.cheese.com/gouda/) -->
-<!-- whether or not the cheese has a picture (e.g., gouda has a picture, but bianco does not). -->
-<p>Let’s carry out this plan to get the article title, publication date, and abstract text for the first five pages of news releases in a single data frame. You will need to write at least one function, and you will need iteration—either a <code>for</code> loop or the appropriate <code>map_()</code> functions.</p>
-<p>Advice:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>🪤 <span style="font-size: 1.5em;">Check-ins</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let’s carry out this plan to obtain the following information for <strong>all</strong> cheeses in the database:</p>
 <ul>
-<li>Mouse over the page buttons at the very bottom of the news home page to see what the URLs look like.</li>
-<li>The abstract should not have the publication date–use <code>stringr</code> and regular expressions to remove the publication date.</li>
-<li>Include <code>Sys.sleep(2)</code> in your function to respect the <code>Crawl-delay: 2</code> in the NIH <code>robots.txt</code> file.</li>
-<li>Recall that <code>bind_rows()</code> from <code>dplyr</code> takes a list of data frames and stacks them on top of each other.</li>
+<li>cheese name</li>
+<li>URL for the cheese’s webpage (e.g., https://www.cheese.com/gouda/)</li>
+<li>whether or not the cheese has a picture (e.g., gouda has a picture, but bianco does not).</li>
+</ul>
+<p>To be kind to the website owners, we will add a 1 second pause between page queries. (Note that you can view 100 cheeses at a time.)</p>
+</div>
+</div>
+<ol type="1">
+<li>All three of the CSS selectors from <a href="#sec-css-cheese" class="quarto-xref">Section&nbsp;3.4</a>, have something in common. Can you spot it? Specifically, what input to <code>html_elements()</code> do they all share?</li>
+</ol>
+<!-- .product-item -->
+<ol start="2" type="1">
+<li>Now that we’ve found the similarities, let’s spot the differences. Match each CSS selector to where it is (exclusively) used.</li>
+</ol>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>cheese name</li>
+<li>cheese URL</li>
+<li>cheese image</li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:55%;">
+<p><code>h3</code></p>
+<p><code>a</code></p>
+<p><code>a img</code></p>
+</div>
+</div>
+<ol start="3" type="1">
+<li>There are also differences in the HTML elements that are being extracted from the pages. Match each HTML extractor function to where it is used.</li>
+</ol>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>cheese name</li>
+<li>cheese URL</li>
+<li>cheese image</li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:55%;">
+<p><code>html_text()</code></p>
+<p><code>html_attr()</code></p>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Let’s use all this information to write a general function that can be used for all three cases (name, URL, image). The function should take <strong>four</strong> arguments, (1) page to scrape, (2) css_selector, (3) node, and (4) what element to extract. The following function calls should give you an idea of how the function should operate.</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_info_from_page</span>(cheeses, </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">css_selector =</span> <span class="st">".product-item"</span>, </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">node =</span> <span class="st">"h3 a"</span>) </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">get_info_from_page</span>(cheeses, </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">css_selector =</span> <span class="st">".product-item"</span>, </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">node =</span> <span class="st">"a"</span>, </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">extract =</span> <span class="st">"href"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_detect</span>(<span class="at">pattern =</span> <span class="st">"(#store-online-tabs)$"</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">url_absolute</span>(<span class="st">"https://www.cheese.com"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Complete the function below.</strong></p>
+<ol start="5" type="1">
+<li>Our next step is to use this function in a larger <code>scrape_page()</code> function that will obtain the necessary information for each page of cheeses. To be kind to the website owners, let’s add a 1 second pause between page queries.</li>
+</ol>
+<p><strong>Fill in the code below to create the <code>scrape_cheese_page()</code> function.</strong></p>
+<ol start="6" type="1">
+<li>Finally, let’s iterate over <strong>all</strong> the pages of cheese! We can figure out how many pages we need to scrape over by grabbing the number of pages from the bottom of the <a href="https://www.cheese.com/alphabetical/?per_page=100">first alphabetical page (per page = 100)</a>. This method is a bit less error prone than manually typing <code>21</code>!</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A less error prone </span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>total_pages <span class="ot">&lt;-</span> cheeses <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_elements</span>(<span class="st">".page-link:nth-child(10)"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_text</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Fill in the code below to <code>map()</code> over <em>every</em> page of cheese.</strong></p>
+<ol start="7" type="1">
+<li>The <code>map()</code> function returns a list of dataframes. What function should we use to bind each of these dataframes together to form <strong>one</strong> large dataframe on cheeses?</li>
+</ol>
+<ul>
+<li><code>bind_cols()</code></li>
+<li><code>bind_rows()</code></li>
+<li><code>inner_join()</code></li>
+<li><code>full_join()</code></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>get_text_from_page <span class="ot">&lt;-</span> <span class="cf">function</span>(page, css_selector) {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  page <span class="sc">%&gt;%</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html_elements</span>(css_selector) <span class="sc">%&gt;%</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html_text</span>(<span class="at">trim =</span> T)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>get_url_from_page <span class="ot">&lt;-</span> <span class="cf">function</span>(page, css_selector) {</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  page <span class="sc">%&gt;%</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html_elements</span>(css_selector) <span class="sc">%&gt;%</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html_attr</span>(<span class="st">"href"</span>)</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>get_image_from_page <span class="ot">&lt;-</span> <span class="cf">function</span>(page, css_selector) {</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  page <span class="sc">%&gt;%</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html_elements</span>(css_selector) <span class="sc">%&gt;%</span></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html_attr</span>(<span class="st">"src"</span>)</span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>scrape_page <span class="ot">&lt;-</span> <span class="cf">function</span>(url) {</span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1 second crawl delay</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Sys.sleep</span>(<span class="dv">1</span>)</span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Read the page</span></span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    page <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url)</span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Grab elements from the page</span></span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>    cheese_names <span class="ot">&lt;-</span> <span class="fu">get_text_from_page</span>(page, <span class="st">".product-item"</span>)</span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>    cheese_url <span class="ot">&lt;-</span> <span class="fu">get_url_from_page</span>(page, <span class="st">".product-item a"</span>)</span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>    cheese_image <span class="ot">&lt;-</span> <span class="fu">get_image_from_page</span>(page, <span class="st">".product-item img"</span>)</span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Clean cheese names</span></span>
-<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>    cheese_names <span class="ot">&lt;-</span> cheese_names <span class="sc">%&gt;%</span></span>
-<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>      <span class="fu">trimws</span>()</span>
-<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>    cheese_names <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(</span>
-<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(cheese_names, <span class="st">"Stores &gt;"</span>),</span>
-<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_trim</span>(<span class="fu">str_extract</span>(cheese_names, <span class="st">"[^</span><span class="sc">\n</span><span class="st">]+$"</span>)),</span>
-<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>      cheese_names</span>
-<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Full cheese URL</span></span>
-<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>    base_url <span class="ot">&lt;-</span> <span class="st">"https://www.cheese.com"</span></span>
-<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>    cheese_url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(base_url, cheese_url)</span>
-<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>    cheese_url <span class="ot">&lt;-</span> <span class="fu">unique</span>(cheese_url[<span class="sc">!</span><span class="fu">grepl</span>(<span class="st">"store"</span>, cheese_url)]) <span class="co">#remove store links + duplicates</span></span>
-<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find cheeses with image</span></span>
-<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>    has_image <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">grepl</span>(<span class="st">"static"</span>, cheese_image), <span class="st">"No"</span>, <span class="st">"Yes"</span>)</span>
-<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Put page elements into a dataframe</span></span>
-<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>    cheeses <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>      <span class="at">cheese =</span> cheese_names,</span>
-<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>      <span class="at">url =</span> cheese_url,</span>
-<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>      <span class="at">image =</span> has_image</span>
-<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(cheeses)</span>
-<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,046 × 3
+   cheese                            url                                   image
+   &lt;chr&gt;                             &lt;chr&gt;                                 &lt;lgl&gt;
+ 1 2 Year Aged Cumin Gouda           https://www.cheese.com/2-year-aged-c… TRUE 
+ 2 3-Cheese Italian Blend            https://www.cheese.com/3-cheese-ital… FALSE
+ 3 30 Month Aged Parmigiano Reggiano https://www.cheese.com/30-month-aged… TRUE 
+ 4 3yrs Aged Vintage Gouda           https://www.cheese.com/3yrs-aged-vin… TRUE 
+ 5 Aarewasser                        https://www.cheese.com/aarewasser/    TRUE 
+ 6 Abbaye de Belloc                  https://www.cheese.com/abbaye-de-bel… TRUE 
+ 7 Abbaye de Belval                  https://www.cheese.com/abbaye-de-bel… FALSE
+ 8 Abbaye de Citeaux                 https://www.cheese.com/abbaye-de-cit… TRUE 
+ 9 Abbaye de Tamié                   https://www.cheese.com/tamie/         TRUE 
+10 Abbaye de Timadeuc                https://www.cheese.com/abbaye-de-tim… TRUE 
+# ℹ 2,036 more rows</code></pre>
 </div>
-<p>Using <code>purrr::map()</code>:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>base_url <span class="ot">&lt;-</span> <span class="st">"https://www.cheese.com/alphabetical/?per_page=100"</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>urls_all_pages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">str_c</span>(base_url,</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"&amp;page="</span>,</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>                          <span class="dv">1</span><span class="sc">:</span><span class="dv">21</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                     )</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>all_pages <span class="ot">&lt;-</span> <span class="fu">map</span>(urls_all_pages, scrape_page)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>all_cheeses <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(all_pages)</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(all_cheeses)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<!-- Grad level ideas: -->
-<!-- - scrape something that isn't a table -->
 
 
 </section>
