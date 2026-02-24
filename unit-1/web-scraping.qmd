@@ -13,8 +13,6 @@ execute:
 library(tidyverse)
 ```
 
-# Learning goals
-
 After this lesson, you should be able to:
 
 -   Use CSS Selectors and the Selector Gadget tool to locate data of interest

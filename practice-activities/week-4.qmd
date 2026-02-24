@@ -1,0 +1,17 @@
+---
+title: "Untitled"
+---
+
+<!-- **Part 5:** When you go to a particular cheese's page (like  -->
+<!-- [gouda](https://www.cheese.com/gouda/)), you'll see more detailed information -->
+<!-- about the cheese. For [**just 10**]{.underline} of the cheeses in the database, -->
+<!-- obtain the following detailed information: -->
+
+<!-- -   milk information -->
+<!-- -   country of origin -->
+<!-- -   family -->
+<!-- -   type -->
+<!-- -   flavour -->
+
+<!-- (Just 10 to avoid overtaxing the website! Continue adding a 1 second pause -->
+<!-- between page queries.) -->
