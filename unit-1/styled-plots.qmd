@@ -391,7 +391,167 @@ plot +
 
 ## Fonts matter
 
-<!-- need to add advice on choosing fonts  -->
+You may have missed it, but fonts have [gotten an interesting amount of attention recently](https://www.nytimes.com/2025/12/09/us/politics/rubio-state-department-font.html).
+There has been a longstanding debate between serif and sans serif fonts, 
+centering primarily on readability, tone, and context of use.
+
+::: columns
+::: {.column width="48%"}
+**Serif fonts** have small decorative strokes (“serifs”) at the ends of letters.
+
+- Examples: *Times New Roman, Georgia, Garamond*
+
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+**Sans serif fonts** do not have these strokes.
+
+- Examples: *Arial, Helvetica, Calibri*
+:::
+:::
+
+![](images/serif-san-serif.jpeg){fig-alt="Graphic comparing serif and sans serif fonts. On a blue background, a large capital A with small decorative strokes at the ends is labeled Serif on the left, and a large capital A without decorative strokes is labeled Sans Serif on the right. Green circles highlight the presence of serifs on the left letter and their absence on the right letter."}
+
+### The Debate 
+
+Historically, serif fonts were considered easier to read in printed materials. 
+The serifs were thought to:
+
+* Guide the eye along lines of text
+* Improve readability in long passages
+* Create a more traditional or scholarly feel
+
+Sans serif fonts became popular in digital contexts because they:
+
+* Render cleanly at low resolutions
+* Appear simpler and more modern
+* Reduce visual clutter on screens
+
+Modern readability research shows:
+
+* Differences in **[reading speed and comprehension](https://www.sciencedirect.com/science/article/pii/S0042698905000192?via%3Dihub) are usually small**.
+* Context matters more than serif vs. sans serif alone.
+* Factors like **font size, spacing, contrast, and layout** often 
+[have a greater impact on readability](https://jov.arvojournals.org/article.aspx?articleid=2433383).
+
+In other words: there is no universal "better" choice.
+
+### Tone and Perception
+
+Font choice strongly influences how a visualization feels:
+
+| Serif       | Sans Serif |
+| ----------- | ---------- |
+| Traditional | Modern     |
+| Formal      | Clean      |
+| Scholarly   | Minimal    |
+| Literary    | Technical  |
+
+In data visualization, tone matters. A plot in *Garamond* feels very different
+from the same plot in *Helvetica*.
+
+For plots specifically sans serif is often preferred because:
+
+* It looks clean at small sizes (axis labels, legends)
+* It works well on slides and dashboards
+* It reduces distraction from the data itself
+
+### Bottom Line
+
+The serif vs. sans serif debate is less about absolute readability and more
+about **context, tone, and design goals**. In data visualization, clarity and
+consistency usually matter more than the category of font itself.
+
+When choosing a font for a visualization:
+
+1. Prioritize readability at small sizes.
+2. Ensure good contrast and spacing.
+3. Be consistent across figures.
+4. Match the font to the audience and context.
+5. Test how it looks when exported (PDF, PNG, slides).
+
+### Changing Your Plot Font
+
+Let's create the same plot in both a serif and sans serif font and compare 
+clarity, tone, and legibility. Let's take the last plot we saw 
+(@fig-add-annotations) and modify the font. 
+
+You should notice that the default font in @fig-add-annotations is
+**san serif**, but we never specified the font! **ggplot2** does not have its
+own built-in font, rather it uses the system’s default "sans" font. For
+Windows, this default font is typically Arial, whereas for a Mac the default
+font is typically Helvetica. 
+
+We can change the font inside the `theme()` function, using the `text` argument.
+
+::: columns
+::: {.column width="48%"}
+
+```{r}
+#| label: fig-change-times
+#| code-fold: true
+#| fig-cap: "Times New Roman font"
+
+plot + 
+  geom_text(data = annotate_text, 
+            mapping = aes(x = year, 
+                          y = y_lab, 
+                          label = continent, 
+                          color = continent
+                          ), 
+            inherit.aes = FALSE, 
+            family = "Times", 
+            size = 7
+            ) +
+  theme(text = element_text(family = "Times", size = 16))
+
+```
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+
+```{r}
+#| label: fig-change-calibri
+#| code-fold: true
+#| fig-cap: "Arial font"
+
+plot + 
+  geom_text(data = annotate_text, 
+            mapping = aes(x = year, 
+                          y = y_lab, 
+                          label = continent, 
+                          color = continent
+                          ), 
+            inherit.aes = FALSE, 
+            family = "Arial", 
+            size = 7
+            ) +
+  theme(text = element_text(family = "Arial", size = 16)
+        )
+
+```
+
+
+:::
+:::
+
+::: {.callout-important}
+# Find your favorite font!
+
+You can run `quartzFonts()` in your console to see what fonts are (currently) 
+installed on your computer. If that list isn't long enough (or you are looking
+for a specific font), we recommend installing the **systemfonts** package. This
+package opens the door to many non-standard fonts. 
+
+Dr. Theobold's favorite font is `"Avenir"`. 🤓
+:::
+
 
 ## Color is hard
 

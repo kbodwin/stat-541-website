@@ -311,7 +311,7 @@
     "href": "unit-1/styled-plots.html#fonts-matter",
     "title": "Professionally Styled Plots",
     "section": "Fonts matter",
-    "text": "Fonts matter",
+    "text": "Fonts matter\nYou may have missed it, but fonts have gotten an interesting amount of attention recently. There has been a longstanding debate between serif and sans serif fonts, centering primarily on readability, tone, and context of use.\n\n\nSerif fonts have small decorative strokes (“serifs”) at the ends of letters.\n\nExamples: Times New Roman, Georgia, Garamond\n\n\n\n\nSans serif fonts do not have these strokes.\n\nExamples: Arial, Helvetica, Calibri\n\n\n\n\n\nThe Debate\nHistorically, serif fonts were considered easier to read in printed materials. The serifs were thought to:\n\nGuide the eye along lines of text\nImprove readability in long passages\nCreate a more traditional or scholarly feel\n\nSans serif fonts became popular in digital contexts because they:\n\nRender cleanly at low resolutions\nAppear simpler and more modern\nReduce visual clutter on screens\n\nModern readability research shows:\n\nDifferences in reading speed and comprehension are usually small.\nContext matters more than serif vs. sans serif alone.\nFactors like font size, spacing, contrast, and layout often have a greater impact on readability.\n\nIn other words: there is no universal “better” choice.\n\n\nTone and Perception\nFont choice strongly influences how a visualization feels:\n\n\n\nSerif\nSans Serif\n\n\n\n\nTraditional\nModern\n\n\nFormal\nClean\n\n\nScholarly\nMinimal\n\n\nLiterary\nTechnical\n\n\n\nIn data visualization, tone matters. A plot in Garamond feels very different from the same plot in Helvetica.\nFor plots specifically sans serif is often preferred because:\n\nIt looks clean at small sizes (axis labels, legends)\nIt works well on slides and dashboards\nIt reduces distraction from the data itself\n\n\n\nBottom Line\nThe serif vs. sans serif debate is less about absolute readability and more about context, tone, and design goals. In data visualization, clarity and consistency usually matter more than the category of font itself.\nWhen choosing a font for a visualization:\n\nPrioritize readability at small sizes.\nEnsure good contrast and spacing.\nBe consistent across figures.\nMatch the font to the audience and context.\nTest how it looks when exported (PDF, PNG, slides).\n\n\n\nChanging Your Plot Font\nLet’s create the same plot in both a serif and sans serif font and compare clarity, tone, and legibility. Let’s take the last plot we saw (Figure 6) and modify the font.\nYou should notice that the default font in Figure 6 is san serif, but we never specified the font! ggplot2 does not have its own built-in font, rather it uses the system’s default “sans” font. For Windows, this default font is typically Arial, whereas for a Mac the default font is typically Helvetica.\nWe can change the font inside the theme() function, using the text argument.\n\n\n\n\nCode\nplot + \n  geom_text(data = annotate_text, \n            mapping = aes(x = year, \n                          y = y_lab, \n                          label = continent, \n                          color = continent\n                          ), \n            inherit.aes = FALSE, \n            family = \"Times\", \n            size = 7\n            ) +\n  theme(text = element_text(family = \"Times\", size = 16))\n\n\n\n\n\n\n\n\nFigure 7: Times New Roman font\n\n\n\n\n\n\n\n\n\n\nCode\nplot + \n  geom_text(data = annotate_text, \n            mapping = aes(x = year, \n                          y = y_lab, \n                          label = continent, \n                          color = continent\n                          ), \n            inherit.aes = FALSE, \n            family = \"Arial\", \n            size = 7\n            ) +\n  theme(text = element_text(family = \"Arial\", size = 16)\n        )\n\n\n\n\n\n\n\n\nFigure 8: Arial font\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportantFind your favorite font!\n\n\n\nYou can run quartzFonts() in your console to see what fonts are (currently) installed on your computer. If that list isn’t long enough (or you are looking for a specific font), we recommend installing the systemfonts package. This package opens the door to many non-standard fonts.\nDr. Theobold’s favorite font is \"Avenir\". 🤓",
     "crumbs": [
       "Unit 1 - Complex Analyses",
       "Professionally Styled Plots"
@@ -1736,7 +1736,7 @@
     "href": "unit-1/web-scraping.html#check-in-webscraping",
     "title": "Web Scraping",
     "section": "Check-in: Webscraping",
-    "text": "Check-in: Webscraping\n\n\n\nHead over to the alphabetical page of the first 100 cheeses. Click the Selector Gadget extension icon or bookmark button. As you mouse over the webpage, different parts will be highlighted in orange.\n\nWhat CSS selector would you use to obtain the image of the cheese?\n\n\n\nWhat CSS selector would you use to obtain the name of the cheese?\n\n\n\nWhat CSS selector would you use to obtain the link for each cheese?",
+    "text": "Check-in: Webscraping\nHead over to the alphabetical page of the first 100 cheeses. Click the Selector Gadget extension icon or bookmark button. As you mouse over the webpage, different parts will be highlighted in orange.\n\nWhat CSS selector would you use to obtain the image of the cheese?\n\n\n\nWhat CSS selector would you use to obtain the name of the cheese?\n\n\n\nWhat CSS selector would you use to obtain the link for each cheese?",
     "crumbs": [
       "Unit 1 - Complex Analyses",
       "Web Scraping"
@@ -1758,7 +1758,7 @@
     "href": "unit-1/web-scraping.html#iteration",
     "title": "Web Scraping",
     "section": "Iteration",
-    "text": "Iteration\nOur goal is to get article titles, publication dates, and abstract text for news releases across several pages of results. Before doing any coding, let’s plan our approach!\n\nWhat functions will you write?\n\nWe probably need a function to grab the text from the page.\nWe can then use this function to grab different parts of an HTML page and piece them together\n\nWhat arguments will they have?\n\nThe function grabbing text should have two inputs, (1) the page and (2) the CSS selector to use\nThe function scraping the page should probably only take one input: the page\n\nHow will you use your functions?\n\nThese functions need to be iterated! We would need to call the function to scrape a page once for each page we want to scrape.",
+    "text": "Iteration\nOur goal is to obtain a dataset of characteristics about different cheeses from https://www.cheese.com. Before doing any coding, let’s plan our approach!\n\nWhat functions will you write?\n\nWe probably need a function to grab the text from the page.\nWe can then use this function to grab different parts of an HTML page and piece them together\n\nWhat arguments will they have?\n\nThe function scraping the page should probably only take one input: the page\nThe function grabbing text should have two inputs, (1) the page and (2) the CSS selector to use\n\nHow will you use your functions?\n\nThese functions need to be iterated! We would need to call the function to scrape a page once for each page we want to scrape.\n\n\n\n\n\n\n\n\nImportant🪤 Check-ins\n\n\n\nLet’s carry out this plan to obtain the following information for all cheeses in the database:\n\ncheese name\nURL for the cheese’s webpage (e.g., https://www.cheese.com/gouda/)\nwhether or not the cheese has a picture (e.g., gouda has a picture, but bianco does not).\n\nTo be kind to the website owners, we will add a 1 second pause between page queries. (Note that you can view 100 cheeses at a time.)\n\n\n\nAll three of the CSS selectors from Section 3.4, have something in common. Can you spot it? Specifically, what input to html_elements() do they all share?\n\n\n\nNow that we’ve found the similarities, let’s spot the differences. Match each CSS selector to where it is (exclusively) used.\n\n\n\n\ncheese name\ncheese URL\ncheese image\n\n\n\n\nh3\na\na img\n\n\n\nThere are also differences in the HTML elements that are being extracted from the pages. Match each HTML extractor function to where it is used.\n\n\n\n\ncheese name\ncheese URL\ncheese image\n\n\n\n\nhtml_text()\nhtml_attr()\n\n\n\nLet’s use all this information to write a general function that can pull all three pieces of information (name, URL, image).\n\n\n\n\n\nInclude Sys.sleep(2) in your function to respect the Crawl-delay: 2 in the NIH robots.txt file.\nRecall that bind_rows() from dplyr takes a list of data frames and stacks them on top of each other.\n\n\nUsing purrr::map(), iterate over all the pages of cheese.",
     "crumbs": [
       "Unit 1 - Complex Analyses",
       "Web Scraping"
@@ -1872,6 +1872,83 @@
     "crumbs": [
       "Unit 2 - Professional Deliverables",
       "Quarto Dashboards, Part 1"
+    ]
+  },
+  {
+    "objectID": "unit-1/web-scraping.html#sec-css-cheese",
+    "href": "unit-1/web-scraping.html#sec-css-cheese",
+    "title": "Web Scraping",
+    "section": "Retrieving Data Using rvest and CSS Selectors",
+    "text": "Retrieving Data Using rvest and CSS Selectors\nNow that we have identified CSS selectors for the information we need, let’s fetch the data using the rvest package.\n\nlibrary(rvest)\n\ncheeses &lt;- read_html(\"https://www.cheese.com/alphabetical/?per_page=100\")\n\nOnce the webpage is loaded, we can retrieve data using the CSS selectors we specified earlier. The code below retrieves three pieces of information about the cheeses on this website:\n1. name\n\n\n\n\n\n\n\n\nTipMore Targetted CSS Selectors\n\n\n\nI’m adding an h3 to my CSS selector, since the store information is also selected with the .product-item. If I don’t grab the h3 element, then the cheeses with store information will show up like this: \"Stores &gt;\\n                \\n            \\n        \\n    \\n    Aged Gouda\"\n\n\n\ncheeses %&gt;%\n  html_elements(\".product-item h3\") %&gt;%\n  html_text(trim = T) |&gt; \n  head()\n\n[1] \"2 Year Aged Cumin Gouda\"           \"3-Cheese Italian Blend\"           \n[3] \"30 Month Aged Parmigiano Reggiano\" \"3yrs Aged Vintage Gouda\"          \n[5] \"Aarewasser\"                        \"Abbaye de Belloc\"                 \n\n\n2. HTML\n\ncheeses %&gt;%\n  html_elements(\".product-item a\") %&gt;%\n  html_attr(\"href\") %&gt;%\n  url_absolute(\"https://www.cheese.com\") |&gt; \n  head()\n\n[1] \"https://www.cheese.com/2-year-aged-cumin-gouda/\"                                 \n[2] \"https://www.cheese.com/2-year-aged-cumin-gouda/\"                                 \n[3] \"https://www.cheese.com/3-cheese-italian-blend/\"                                  \n[4] \"https://www.cheese.com/3-cheese-italian-blend/\"                                  \n[5] \"https://www.cheese.com/30-month-aged-parmigiano-reggiano-150g/\"                  \n[6] \"https://www.cheese.com/30-month-aged-parmigiano-reggiano-150g/#store-online-tabs\"\n\n\n\n\n\n\n\n\n\n\nTipRelative and Absolute URLs\n\n\n\nThe urls that are output by html_attr(\"href\") are relative urls (e.g., \"/2-year-aged-cumin-gouda/\") to get te full url, we need to paste the base url (https://www.cheese.com) to the beginning of the relative url. The url_absolute() function can do this for us.\n\n\n\n\n\n3. status of the image (exists or missing)\n\ncheeses %&gt;%\n  html_elements(\".product-item a img\") %&gt;%\n  html_attr(\"class\") %&gt;%\n  head()\n\n[1] \"image-exists\"  \"image-missing\" \"image-exists\"  \"image-exists\" \n[5] \"image-exists\"  \"image-exists\" \n\n\n\n\n\n\n\n\n\n\nTipDetecting an Image\n\n\n\nThis seems like a great place to use str_detect()!",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Web Scraping"
+    ]
+  },
+  {
+    "objectID": "unit-1/styled-plots.html#the-traditional-argument",
+    "href": "unit-1/styled-plots.html#the-traditional-argument",
+    "title": "Professionally Styled Plots",
+    "section": "The Traditional Argument",
+    "text": "The Traditional Argument\n\nSerif = Better for Print\nHistorically, serif fonts were considered easier to read in printed materials. The serifs were thought to:\n\nGuide the eye along lines of text\nImprove readability in long passages\nCreate a more traditional or scholarly feel\n\n\n\nSans Serif = Better for Screens\nSans serif fonts became popular in digital contexts because they:\n\nRender cleanly at low resolutions\nAppear simpler and more modern\nReduce visual clutter on screens",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Professionally Styled Plots"
+    ]
+  },
+  {
+    "objectID": "unit-1/styled-plots.html#what-research-suggests",
+    "href": "unit-1/styled-plots.html#what-research-suggests",
+    "title": "Professionally Styled Plots",
+    "section": "What Research Suggests",
+    "text": "What Research Suggests\nModern readability research shows:\n\nDifferences in reading speed and comprehension are usually small\nContext matters more than serif vs. sans serif alone\nFactors like font size, spacing, contrast, and layout often have a greater impact on readability\n\nIn other words: there is no universal “better” choice.",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Professionally Styled Plots"
+    ]
+  },
+  {
+    "objectID": "unit-1/styled-plots.html#tone-and-perception",
+    "href": "unit-1/styled-plots.html#tone-and-perception",
+    "title": "Professionally Styled Plots",
+    "section": "Tone and Perception",
+    "text": "Tone and Perception\nFont choice strongly influences how a visualization feels:\n\n\n\nSerif\nSans Serif\n\n\n\n\nTraditional\nModern\n\n\nFormal\nClean\n\n\nScholarly\nMinimal\n\n\nLiterary\nTechnical\n\n\n\nIn data visualization, tone matters. A plot in Garamond feels very different from the same plot in Helvetica.",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Professionally Styled Plots"
+    ]
+  },
+  {
+    "objectID": "unit-1/styled-plots.html#in-the-context-of-data-visualization-ggplot",
+    "href": "unit-1/styled-plots.html#in-the-context-of-data-visualization-ggplot",
+    "title": "Professionally Styled Plots",
+    "section": "In the Context of Data Visualization (ggplot)",
+    "text": "In the Context of Data Visualization (ggplot)\nFor plots specifically:\n\nSans serif is often preferred because:\n\nIt looks clean at small sizes (axis labels, legends)\nIt works well on slides and dashboards\nIt reduces distraction from the data itself\n\n\n\nSerif may be appropriate when:\n\nThe visualization appears in a formal report or academic paper\nYou want a more traditional or editorial feel\nThe design intentionally mirrors print publishing aesthetics",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Professionally Styled Plots"
+    ]
+  },
+  {
+    "objectID": "unit-1/styled-plots.html#practical-guidance-for-students",
+    "href": "unit-1/styled-plots.html#practical-guidance-for-students",
+    "title": "Professionally Styled Plots",
+    "section": "Practical Guidance for Students",
+    "text": "Practical Guidance for Students\nWhen choosing a font for a ggplot:\n\nPrioritize readability at small sizes.\nEnsure good contrast and spacing.\nBe consistent across figures.\nMatch the font to the audience and context.\nTest how it looks when exported (PDF, PNG, slides).\n\nEncourage students to experiment: Create the same plot in both a serif and sans serif font and compare clarity, tone, and legibility.",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Professionally Styled Plots"
+    ]
+  },
+  {
+    "objectID": "unit-1/styled-plots.html#bottom-line",
+    "href": "unit-1/styled-plots.html#bottom-line",
+    "title": "Professionally Styled Plots",
+    "section": "Bottom Line",
+    "text": "Bottom Line\nThe serif vs. sans serif debate is less about absolute readability and more about context, tone, and design goals. In data visualization, clarity and consistency usually matter more than the category of font itself.\n\nIf you’d like, I can also provide a short discussion prompt or in-class exercise to help students explore this hands-on in ggplot.",
+    "crumbs": [
+      "Unit 1 - Complex Analyses",
+      "Professionally Styled Plots"
     ]
   }
 ]

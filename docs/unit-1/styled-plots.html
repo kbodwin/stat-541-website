@@ -438,7 +438,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#embedding-your-legend-in-the-plot-title" id="toc-embedding-your-legend-in-the-plot-title" class="nav-link" data-scroll-target="#embedding-your-legend-in-the-plot-title">Embedding Your Legend in the Plot Title</a></li>
   <li><a href="#removing-your-legend-with-annotations" id="toc-removing-your-legend-with-annotations" class="nav-link" data-scroll-target="#removing-your-legend-with-annotations">Removing Your Legend with Annotations</a></li>
   </ul></li>
-  <li><a href="#fonts-matter" id="toc-fonts-matter" class="nav-link" data-scroll-target="#fonts-matter">Fonts matter</a></li>
+  <li><a href="#fonts-matter" id="toc-fonts-matter" class="nav-link" data-scroll-target="#fonts-matter">Fonts matter</a>
+  <ul class="collapse">
+  <li><a href="#the-debate" id="toc-the-debate" class="nav-link" data-scroll-target="#the-debate">The Debate</a></li>
+  <li><a href="#tone-and-perception" id="toc-tone-and-perception" class="nav-link" data-scroll-target="#tone-and-perception">Tone and Perception</a></li>
+  <li><a href="#bottom-line" id="toc-bottom-line" class="nav-link" data-scroll-target="#bottom-line">Bottom Line</a></li>
+  <li><a href="#changing-your-plot-font" id="toc-changing-your-plot-font" class="nav-link" data-scroll-target="#changing-your-plot-font">Changing Your Plot Font</a></li>
+  </ul></li>
   <li><a href="#color-is-hard" id="toc-color-is-hard" class="nav-link" data-scroll-target="#color-is-hard">Color is hard</a></li>
   </ul></li>
   </ul>
@@ -826,7 +832,180 @@ Figure&nbsp;6: Incorporating annotations to the body of the plot where text colo
 </section>
 <section id="fonts-matter" class="level2">
 <h2 class="anchored" data-anchor-id="fonts-matter">Fonts matter</h2>
-<!-- need to add advice on choosing fonts  -->
+<p>You may have missed it, but fonts have <a href="https://www.nytimes.com/2025/12/09/us/politics/rubio-state-department-font.html">gotten an interesting amount of attention recently</a>. There has been a longstanding debate between serif and sans serif fonts, centering primarily on readability, tone, and context of use.</p>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><strong>Serif fonts</strong> have small decorative strokes (“serifs”) at the ends of letters.</p>
+<ul>
+<li>Examples: <em>Times New Roman, Georgia, Garamond</em></li>
+</ul>
+</div><div class="column" style="width:4%;">
+
+</div><div class="column" style="width:48%;">
+<p><strong>Sans serif fonts</strong> do not have these strokes.</p>
+<ul>
+<li>Examples: <em>Arial, Helvetica, Calibri</em></li>
+</ul>
+</div>
+</div>
+<p><img src="images/serif-san-serif.jpeg" class="img-fluid" alt="Graphic comparing serif and sans serif fonts. On a blue background, a large capital A with small decorative strokes at the ends is labeled Serif on the left, and a large capital A without decorative strokes is labeled Sans Serif on the right. Green circles highlight the presence of serifs on the left letter and their absence on the right letter."></p>
+<section id="the-debate" class="level3">
+<h3 class="anchored" data-anchor-id="the-debate">The Debate</h3>
+<p>Historically, serif fonts were considered easier to read in printed materials. The serifs were thought to:</p>
+<ul>
+<li>Guide the eye along lines of text</li>
+<li>Improve readability in long passages</li>
+<li>Create a more traditional or scholarly feel</li>
+</ul>
+<p>Sans serif fonts became popular in digital contexts because they:</p>
+<ul>
+<li>Render cleanly at low resolutions</li>
+<li>Appear simpler and more modern</li>
+<li>Reduce visual clutter on screens</li>
+</ul>
+<p>Modern readability research shows:</p>
+<ul>
+<li>Differences in <strong><a href="https://www.sciencedirect.com/science/article/pii/S0042698905000192?via%3Dihub">reading speed and comprehension</a> are usually small</strong>.</li>
+<li>Context matters more than serif vs.&nbsp;sans serif alone.</li>
+<li>Factors like <strong>font size, spacing, contrast, and layout</strong> often <a href="https://jov.arvojournals.org/article.aspx?articleid=2433383">have a greater impact on readability</a>.</li>
+</ul>
+<p>In other words: there is no universal “better” choice.</p>
+</section>
+<section id="tone-and-perception" class="level3">
+<h3 class="anchored" data-anchor-id="tone-and-perception">Tone and Perception</h3>
+<p>Font choice strongly influences how a visualization feels:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Serif</th>
+<th>Sans Serif</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Traditional</td>
+<td>Modern</td>
+</tr>
+<tr class="even">
+<td>Formal</td>
+<td>Clean</td>
+</tr>
+<tr class="odd">
+<td>Scholarly</td>
+<td>Minimal</td>
+</tr>
+<tr class="even">
+<td>Literary</td>
+<td>Technical</td>
+</tr>
+</tbody>
+</table>
+<p>In data visualization, tone matters. A plot in <em>Garamond</em> feels very different from the same plot in <em>Helvetica</em>.</p>
+<p>For plots specifically sans serif is often preferred because:</p>
+<ul>
+<li>It looks clean at small sizes (axis labels, legends)</li>
+<li>It works well on slides and dashboards</li>
+<li>It reduces distraction from the data itself</li>
+</ul>
+</section>
+<section id="bottom-line" class="level3">
+<h3 class="anchored" data-anchor-id="bottom-line">Bottom Line</h3>
+<p>The serif vs.&nbsp;sans serif debate is less about absolute readability and more about <strong>context, tone, and design goals</strong>. In data visualization, clarity and consistency usually matter more than the category of font itself.</p>
+<p>When choosing a font for a visualization:</p>
+<ol type="1">
+<li>Prioritize readability at small sizes.</li>
+<li>Ensure good contrast and spacing.</li>
+<li>Be consistent across figures.</li>
+<li>Match the font to the audience and context.</li>
+<li>Test how it looks when exported (PDF, PNG, slides).</li>
+</ol>
+</section>
+<section id="changing-your-plot-font" class="level3">
+<h3 class="anchored" data-anchor-id="changing-your-plot-font">Changing Your Plot Font</h3>
+<p>Let’s create the same plot in both a serif and sans serif font and compare clarity, tone, and legibility. Let’s take the last plot we saw (<a href="#fig-add-annotations" class="quarto-xref">Figure&nbsp;6</a>) and modify the font.</p>
+<p>You should notice that the default font in <a href="#fig-add-annotations" class="quarto-xref">Figure&nbsp;6</a> is <strong>san serif</strong>, but we never specified the font! <strong>ggplot2</strong> does not have its own built-in font, rather it uses the system’s default “sans” font. For Windows, this default font is typically Arial, whereas for a Mac the default font is typically Helvetica.</p>
+<p>We can change the font inside the <code>theme()</code> function, using the <code>text</code> argument.</p>
+<div class="columns">
+<div class="column" style="width:48%;">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>plot <span class="sc">+</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> annotate_text, </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">y =</span> y_lab, </span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">label =</span> continent, </span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> continent</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>                          ), </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">family =</span> <span class="st">"Times"</span>, </span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">7</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">+</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"Times"</span>, <span class="at">size =</span> <span class="dv">16</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-change-times" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-change-times-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="styled-plots_files/figure-html/fig-change-times-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-change-times-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Times New Roman font
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:4%;">
+
+</div><div class="column" style="width:48%;">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>plot <span class="sc">+</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> annotate_text, </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">y =</span> y_lab, </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">label =</span> continent, </span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> continent</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>                          ), </span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">family =</span> <span class="st">"Arial"</span>, </span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">7</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">+</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"Arial"</span>, <span class="at">size =</span> <span class="dv">16</span>)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>        )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-change-calibri" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-change-calibri-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="styled-plots_files/figure-html/fig-change-calibri-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-change-calibri-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Arial font
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Find your favorite font!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can run <code>quartzFonts()</code> in your console to see what fonts are (currently) installed on your computer. If that list isn’t long enough (or you are looking for a specific font), we recommend installing the <strong>systemfonts</strong> package. This package opens the door to many non-standard fonts.</p>
+<p>Dr.&nbsp;Theobold’s favorite font is <code>"Avenir"</code>. 🤓</p>
+</div>
+</div>
+</section>
 </section>
 <section id="color-is-hard" class="level2">
 <h2 class="anchored" data-anchor-id="color-is-hard">Color is hard</h2>
@@ -859,15 +1038,15 @@ Figure&nbsp;6: Incorporating annotations to the body of the plot where text colo
 <li><code>scale_fill_discrete()</code></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(penguins, </span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> species, </span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">fill =</span> species)) <span class="sc">+</span> </span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>, </span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Number of Penguins Sampled"</span>, </span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Species of Penguin"</span>)</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(penguins, </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> species, </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">fill =</span> species)) <span class="sc">+</span> </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>, </span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Number of Penguins Sampled"</span>, </span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Species of Penguin"</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
