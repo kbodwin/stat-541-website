@@ -1,17 +1,37 @@
 ---
-title: "Untitled"
+title: "Practice Activity Week 4"
+format: html
+embed-resources: true
+editor: source
+execute: 
+  echo: true
+  error: true
 ---
 
-<!-- **Part 5:** When you go to a particular cheese's page (like  -->
-<!-- [gouda](https://www.cheese.com/gouda/)), you'll see more detailed information -->
-<!-- about the cheese. For [**just 10**]{.underline} of the cheeses in the database, -->
-<!-- obtain the following detailed information: -->
+```{r}
+#| label: packages-setup
+#| message: false
+#| warning: false
 
-<!-- -   milk information -->
-<!-- -   country of origin -->
-<!-- -   family -->
-<!-- -   type -->
-<!-- -   flavour -->
+library(tidyverse)
+```
 
-<!-- (Just 10 to avoid overtaxing the website! Continue adding a 1 second pause -->
-<!-- between page queries.) -->
+## Accessing the Practice Activity
+
+Download the template Practice Activity Quarto file here: <a href="student/pa-4.qmd" download>`pa-4.qmd`</a>
+
+::: {.callout-important}
+Be sure to save the file inside your Week 2 folder of your STAT 431 (or 541) folder! 
+:::
+
+<!-- Simple ggplot extensions -->
+<!-- ggridges -->
+<!-- heatmaps -->
+<!-- ribbon -->
+<!-- Remove your legend -->
+<!-- Annotations -->
+<!-- Colors in titles -->
+<!-- Colors & themes -->
+<!-- Linear regression analysis -->
+<!-- broom -->
+<!-- gt -->
