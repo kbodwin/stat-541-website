@@ -377,7 +377,7 @@
     "href": "unit-1/iterating-functions.html#initial-object-size",
     "title": "Iterating Over Functions",
     "section": "Initial Object Size",
-    "text": "Initial Object Size\nNotice that we initialized char_storage, num_storage, and list_storage to all be the same length as our iteration vector (seq_len(3)). Technically, this wasn’t necessary. We could have been much lazier when we initialized these objects: list_storage &lt;- NA. Why didn’t we do this?\nWhen you don’t initialize an object as a specific size (e.g., length = 3) then at every stage of the for() loop R needs to append a new index to that object. This really slows down your for() loop!\nHere is a comparison of the run time between two functions that both store the index of the iteration. The first function (do_stuff_allocate) sets the initial object size (vector(length = reps)) before the loop is run. The second function (do_stuff_tackon) does not set an initial object size and instead initializes results as a vector of length 1 (results &lt;- NA).\n\ndo_stuff_allocate &lt;- function(reps) {\n  results &lt;- vector(length = reps)\n  for (i in seq_len(reps)) {\n    results[i] &lt;- i\n  }\n  return(results)\n}\n\ndo_stuff_tackon &lt;- function(reps) {\n   results &lt;- NA\n  for (i in seq_len(reps)) {\n    results &lt;- c(results, i)\n  }\n  return(results)\n}\n\nLet’s see how these two functions compare in their run time:\n\n\n\n\n\n\n\n\nStatistic\ndo_stuff_allocate\ndo_stuff_tackon\n\n\n\n\nmin\n12,546 µs\n400,693 µs\n\n\nmean\n23,563 µs\n682,452 µs\n\n\nmedian\n13,756 µs\n507,088 µs\n\n\nmax\n920,327 µs\n4,906,060 µs\n\n\n\n\n\n\n\nLesson: You should always initialize your object as the size you want it to be.\n\n\n\n\n\n\nImportantCheck-in: Iteration\n\n\n\n\nWrite a for()-loop that prints the even numbers from 1:20.\nCan you produce the same output with the seq() function?\n\n\nWrite a for()-loop that iterates over the month.name vector (built-in to base R) and stores a character vector of output containing strings like “Month 1: January”, “Month 2: February”.\nCan you produce the same output with str_c() only?\n\n\nWrite a for()-loop that store the class() (type) of every column in the mpg data frame.",
+    "text": "Initial Object Size\nNotice that we initialized char_storage, num_storage, and list_storage to all be the same length as our iteration vector (seq_len(3)). Technically, this wasn’t necessary. We could have been much lazier when we initialized these objects: list_storage &lt;- NA. Why didn’t we do this?\nWhen you don’t initialize an object as a specific size (e.g., length = 3) then at every stage of the for() loop R needs to append a new index to that object. This really slows down your for() loop!\nHere is a comparison of the run time between two functions that both store the index of the iteration. The first function (do_stuff_allocate) sets the initial object size (vector(length = reps)) before the loop is run. The second function (do_stuff_tackon) does not set an initial object size and instead initializes results as a vector of length 1 (results &lt;- NA).\n\ndo_stuff_allocate &lt;- function(reps) {\n  results &lt;- vector(length = reps)\n  for (i in seq_len(reps)) {\n    results[i] &lt;- i\n  }\n  return(results)\n}\n\ndo_stuff_tackon &lt;- function(reps) {\n   results &lt;- NA\n  for (i in seq_len(reps)) {\n    results &lt;- c(results, i)\n  }\n  return(results)\n}\n\nLet’s see how these two functions compare in their run time:\n\n\n\n\n\n\n\n\nStatistic\ndo_stuff_allocate\ndo_stuff_tackon\n\n\n\n\nmin\n12,587 µs\n424,760 µs\n\n\nmean\n22,304 µs\n677,312 µs\n\n\nmedian\n13,735 µs\n515,452 µs\n\n\nmax\n826,150 µs\n5,122,048 µs\n\n\n\n\n\n\n\nLesson: You should always initialize your object as the size you want it to be.\n\n\n\n\n\n\nImportantCheck-in: Iteration\n\n\n\n\nWrite a for()-loop that prints the even numbers from 1:20.\nCan you produce the same output with the seq() function?\n\n\nWrite a for()-loop that iterates over the month.name vector (built-in to base R) and stores a character vector of output containing strings like “Month 1: January”, “Month 2: February”.\nCan you produce the same output with str_c() only?\n\n\nWrite a for()-loop that store the class() (type) of every column in the mpg data frame.",
     "crumbs": [
       "Unit 1 - Complex Analyses",
       "Iterating Over Functions"
@@ -454,7 +454,7 @@
     "href": "unit-1/efficient-code.html#avoid-for-loops",
     "title": "Writing More Efficient Code",
     "section": "Avoid for-loops",
-    "text": "Avoid for-loops\nfor()-loops are deathly slow in R. If you absolutely must iterate over a process, rely on the map() or apply() function families. These functions offer the same versatility of a for()-loop but are (1) more human readable, and (2) much faster because they are written in C.\n\n\n\n\n\n\nNoteWhy choose map() instead of apply()?\n\n\n\nThe map() and apply() functions will typically be close to the same speed, so the largest argument in favor of the map() family of functions are their consistent syntax, and their consistent object output.\nThe map() function always returns a list and the map_XXX() variants always return a vector of a specified data type. Whereas, apply() returns a vector or a list, lapply() returns a list, and sapply() returns a vector or a matrix.\n\n\nHere is a motivating example demonstrating the difference in run time between two functions:\n\na function which loops over every column in a data frame to extract the data type of that column\na function which uses map_chr() to apply the class() function to every column of a data frame\n\n\nloop_func &lt;- function(df){\n  \n  # initialize the type object\n  type &lt;- rep(NA, ncol(df))\n  \n  for(i in seq_len(ncol(df))) {\n    \n    # store the class of the ith column of df into the ith entry of type \n    type[i] &lt;- class(df[,i])\n  }\n  \n  return(type)\n}\n\nmap_func &lt;- function(df){\n  \n  type &lt;- map_chr(df, class)\n  \n  return(type)\n\n  }\n\nOkay, now that we’ve made these two functions, let’s see how they compare in their run time. Below, we’ve made a simple albeit large dataframe. The dataframe has five rows and 100,000 columns and the element of every column is a vector of 1s.\n\ndat &lt;- as.data.frame(\n  matrix(1,\n         nrow = 5,\n         ncol = 100000)\n  )\n\nLet’s use tic() and toc() again to compare the run time for these two functions:\n\n\n\ntic()\nloop_func(dat)\n\n\ntoc()\n\n3.646 sec elapsed\n\n\n\n\n\n\ntic()\nmap_func(dat)\n\n\ntoc()\n\n0.442 sec elapsed\n\n\n\n\nLooking at the output, we see substantial differences in the run time of these two functions. The loop function took about 3.5 seconds whereas the map function took less than half a second.\n\n\n\n\n\n\nImportantCheck-in\n\n\n\n\nWhy might we prefer using map() functions instead of writing a for() loop?\n\n\nmap() automatically makes the code run faster in all cases.\nmap() makes code more readable, concise, and often faster.\nmap() can only be used with numeric data, unlike loops.\nmap() replaces all possible uses of loops in programming.\n\n\nWhich map() function should be used in place of this for() loop?\n\n\nnumbers &lt;- c(4, 9, 16, 25)\n\nresults &lt;- vector(\"numeric\", length(numbers))\n\nfor (i in seq_along(numbers)) {\n  results[i] &lt;- sqrt(numbers[i])\n}\n\n\nmap()\nmap_dbl()\nmap_chr()\nwalk()",
+    "text": "Avoid for-loops\nfor()-loops are deathly slow in R. If you absolutely must iterate over a process, rely on the map() or apply() function families. These functions offer the same versatility of a for()-loop but are (1) more human readable, and (2) much faster because they are written in C.\n\n\n\n\n\n\nNoteWhy choose map() instead of apply()?\n\n\n\nThe map() and apply() functions will typically be close to the same speed, so the largest argument in favor of the map() family of functions are their consistent syntax, and their consistent object output.\nThe map() function always returns a list and the map_XXX() variants always return a vector of a specified data type. Whereas, apply() returns a vector or a list, lapply() returns a list, and sapply() returns a vector or a matrix.\n\n\nHere is a motivating example demonstrating the difference in run time between two functions:\n\na function which loops over every column in a data frame to extract the data type of that column\na function which uses map_chr() to apply the class() function to every column of a data frame\n\n\nloop_func &lt;- function(df){\n  \n  # initialize the type object\n  type &lt;- rep(NA, ncol(df))\n  \n  for(i in seq_len(ncol(df))) {\n    \n    # store the class of the ith column of df into the ith entry of type \n    type[i] &lt;- class(df[,i])\n  }\n  \n  return(type)\n}\n\nmap_func &lt;- function(df){\n  \n  type &lt;- map_chr(df, class)\n  \n  return(type)\n\n  }\n\nOkay, now that we’ve made these two functions, let’s see how they compare in their run time. Below, we’ve made a simple albeit large dataframe. The dataframe has five rows and 100,000 columns and the element of every column is a vector of 1s.\n\ndat &lt;- as.data.frame(\n  matrix(1,\n         nrow = 5,\n         ncol = 100000)\n  )\n\nLet’s use tic() and toc() again to compare the run time for these two functions:\n\n\n\ntic()\nloop_func(dat)\n\n\ntoc()\n\n3.645 sec elapsed\n\n\n\n\n\n\ntic()\nmap_func(dat)\n\n\ntoc()\n\n0.4 sec elapsed\n\n\n\n\nLooking at the output, we see substantial differences in the run time of these two functions. The loop function took about 3.5 seconds whereas the map function took less than half a second.\n\n\n\n\n\n\nImportantCheck-in\n\n\n\n\nWhy might we prefer using map() functions instead of writing a for() loop?\n\n\nmap() automatically makes the code run faster in all cases.\nmap() makes code more readable, concise, and often faster.\nmap() can only be used with numeric data, unlike loops.\nmap() replaces all possible uses of loops in programming.\n\n\nWhich map() function should be used in place of this for() loop?\n\n\nnumbers &lt;- c(4, 9, 16, 25)\n\nresults &lt;- vector(\"numeric\", length(numbers))\n\nfor (i in seq_along(numbers)) {\n  results[i] &lt;- sqrt(numbers[i])\n}\n\n\nmap()\nmap_dbl()\nmap_chr()\nwalk()",
     "crumbs": [
       "Unit 1 - Complex Analyses",
       "Writing More Efficient Code"
@@ -650,9 +650,23 @@
     ]
   },
   {
+    "objectID": "practice-activities/week-4.html",
+    "href": "practice-activities/week-4.html",
+    "title": "Practice Activity Week 4",
+    "section": "",
+    "text": "library(tidyverse)"
+  },
+  {
+    "objectID": "practice-activities/week-4.html#accessing-the-practice-activity",
+    "href": "practice-activities/week-4.html#accessing-the-practice-activity",
+    "title": "Practice Activity Week 4",
+    "section": "Accessing the Practice Activity",
+    "text": "Accessing the Practice Activity\nDownload the template Practice Activity Quarto file here: pa-4.qmd\n\n\n\n\n\n\nImportant\n\n\n\nBe sure to save the file inside your Week 2 folder of your STAT 431 (or 541) folder!"
+  },
+  {
     "objectID": "practice-activities/week-2.html",
     "href": "practice-activities/week-2.html",
-    "title": "Functions, Iteration & Efficiency",
+    "title": "Practice Activity Week 2",
     "section": "",
     "text": "Download the template Practice Activity Quarto file here: pa-2.qmd\n\n\n\n\n\n\nImportant\n\n\n\nBe sure to save the file inside your Week 2 folder of your STAT 431 (or 541) folder!",
     "crumbs": [
@@ -661,9 +675,9 @@
     ]
   },
   {
-    "objectID": "practice-activities/week-2.html#accessing-the-lab-data",
-    "href": "practice-activities/week-2.html#accessing-the-lab-data",
-    "title": "Functions, Iteration & Efficiency",
+    "objectID": "practice-activities/week-2.html#accessing-the-practice-activity",
+    "href": "practice-activities/week-2.html#accessing-the-practice-activity",
+    "title": "Practice Activity Week 2",
     "section": "",
     "text": "Download the template Practice Activity Quarto file here: pa-2.qmd\n\n\n\n\n\n\nImportant\n\n\n\nBe sure to save the file inside your Week 2 folder of your STAT 431 (or 541) folder!",
     "crumbs": [
@@ -674,7 +688,7 @@
   {
     "objectID": "practice-activities/week-2.html#writing-functions",
     "href": "practice-activities/week-2.html#writing-functions",
-    "title": "Functions, Iteration & Efficiency",
+    "title": "Practice Activity Week 2",
     "section": "Writing Functions",
     "text": "Writing Functions\n\nWrite a function called summ_stats() that takes a vector x as input and produces the following output:\n\n\nfor numeric variables: returns the mean, median, standard deviation, and IQR as a data frame\nfor categorical variables: returns the number of levels (categories) of the variable\n\nHint: You can use tibble() to create the data frame. For example, tibble(a = 1:2, b = 2:3) creates a data frame with variables a and b.",
     "crumbs": [
@@ -685,9 +699,9 @@
   {
     "objectID": "practice-activities/week-2.html#iterating-functions",
     "href": "practice-activities/week-2.html#iterating-functions",
-    "title": "Functions, Iteration & Efficiency",
+    "title": "Practice Activity Week 2",
     "section": "Iterating Functions",
-    "text": "Iterating Functions\n\nUse map() to apply your summ_stats() function to every column in the diamonds dataset. Hint: Look up the bind_rows() documentation from dplyr to combine summary statistics for all quantitative variables into one data frame. The .id argument will be especially helpful in adding the variable names!",
+    "text": "Iterating Functions\n\nUse map() to apply your summ_stats() function to every column in the diamonds dataset. Hint: Look up the bind_rows() documentation from dplyr to combine summary statistics for all quantitative variables into one data frame. The .id argument will be especially helpful in adding the variable names!\n\n\n\nError in diamonds %&gt;% map(.f = summ_stats) %&gt;% bind_rows(.id = \"variable\"): could not find function \"%&gt;%\"",
     "crumbs": [
       "Unit 1 - Complex Analyses",
       "Week 2 In-Class Activity"
@@ -696,9 +710,9 @@
   {
     "objectID": "practice-activities/week-2.html#data-transformation",
     "href": "practice-activities/week-2.html#data-transformation",
-    "title": "Functions, Iteration & Efficiency",
+    "title": "Practice Activity Week 2",
     "section": "Data Transformation",
-    "text": "Data Transformation\n\nLet’s make the output more intuitive, with the variables on the columns and the summary statistics on the rows.\n\nHint: You will need to do a double pivot (pivot_longer() then pivot_wider()) to achieve this result!",
+    "text": "Data Transformation\n\nLet’s make the output more intuitive, with the variables on the columns and the summary statistics on the rows.\n\nHint: You will need to do a double pivot (pivot_longer() then pivot_wider()) to achieve this result!\n\n\nError in pivot_longer(diamonds %&gt;% map(.f = summ_stats) %&gt;% bind_rows(.id = \"variable\"), : could not find function \"%&gt;%\"",
     "crumbs": [
       "Unit 1 - Complex Analyses",
       "Week 2 In-Class Activity"
@@ -707,9 +721,9 @@
   {
     "objectID": "practice-activities/week-2.html#using-helper-functions",
     "href": "practice-activities/week-2.html#using-helper-functions",
-    "title": "Functions, Iteration & Efficiency",
+    "title": "Practice Activity Week 2",
     "section": "Using Helper Functions",
-    "text": "Using Helper Functions\n\nNow that we have the output we want, let’s use our code to write a summ_df() function that takes a data frame as an input and outputs a table of summary statistics for every variable in the data frame.\n\n\nDemonstrate that your function works using the mpg dataset.\n\n\nsumm_df(mpg)",
+    "text": "Using Helper Functions\n\nNow that we have the output we want, let’s use our code to write a summ_df() function that takes a data frame as an input and outputs a table of summary statistics for every variable in the data frame.\n\n\nDemonstrate that your function works using the mpg dataset.\n\n\nsumm_df(mpg)\n\nError in pivot_longer(map(df, .f = summ_stats) %&gt;% bind_rows(.id = \"variable\"), : could not find function \"%&gt;%\"",
     "crumbs": [
       "Unit 1 - Complex Analyses",
       "Week 2 In-Class Activity"
@@ -1162,8 +1176,8 @@
     ]
   },
   {
-    "objectID": "practice-activities/week-1.html#accessing-the-lab-data",
-    "href": "practice-activities/week-1.html#accessing-the-lab-data",
+    "objectID": "practice-activities/week-1.html#accessing-the-practice-activity",
+    "href": "practice-activities/week-1.html#accessing-the-practice-activity",
     "title": "Practice Activity Week 1",
     "section": "",
     "text": "Download the template Practice Activity Quarto file here: pa-1.qmd\n\n\n\n\n\n\nImportant\n\n\n\nBe sure to save the file inside your Week 2 folder of your STAT 431 (or 541) folder!\n\n\n\nlibrary(tidyverse)",
@@ -1219,9 +1233,30 @@
   {
     "objectID": "practice-activities/week-3.html",
     "href": "practice-activities/week-3.html",
-    "title": "Untitled",
+    "title": "Practice Activity Week 3",
     "section": "",
-    "text": "From time-to-time you encounter data frames with multiple list-columns with aligned values. For example, in the following data frame, the values of y and z are aligned (i.e. y and z will always have the same length within a row, and the first value of y corresponds to the first value of z).\n\n\nWhat happens if you apply two unnest_longer() calls to this data frame?\nHow can you preserve the relationship between x and y? Hint: Carefully read the documentation\n\n\n\n\n\n\nlibrary(httr)\nlibrary(tidyjson)\nlibrary(jsonlite)\nlibrary(tidyverse)\n\nres &lt;- GET(\"http://api.open-notify.org/astros.json\")\n\n## Using jsonlite\nspace &lt;- res$content %&gt;% \n  rawToChar() %&gt;% \n  fromJSON()\n\n## Using tidyjson\njson_tbl &lt;- res$content %&gt;% \n  rawToChar() %&gt;% \n  as.tbl_json()\n\njson_tbl %&gt;% \n  spread_all() %&gt;% \n  enter_object(\"people\") %&gt;% \n  gather_array() %&gt;%       # if it's a JSON array\n  spread_all() %&gt;% \n  select(name)\n\n## Using unnest_longer & unnest_wider\nspace &lt;- res$content %&gt;% \n  rawToChar() %&gt;% \n  fromJSON()\n\nlist(space) %&gt;%\n  tibble(data = .) %&gt;%\n  unnest_wider(data) %&gt;%        \n  unnest_longer(people) %&gt;%     \n  unnest_wider(people) %&gt;% \n  filter(craft == \"ISS\")\n\n:::"
+    "text": "Download the template Practice Activity Quarto file here: pa-3.qmd\n\n\n\n\n\n\nImportant\n\n\n\nBe sure to save the file inside your Week 2 folder of your STAT 431 (or 541) folder!\n\n\n\nlibrary(httr)\nlibrary(tidyjson)\nlibrary(jsonlite)\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "practice-activities/week-3.html#accessing-the-practice-activity",
+    "href": "practice-activities/week-3.html#accessing-the-practice-activity",
+    "title": "Practice Activity Week 3",
+    "section": "",
+    "text": "Download the template Practice Activity Quarto file here: pa-3.qmd\n\n\n\n\n\n\nImportant\n\n\n\nBe sure to save the file inside your Week 2 folder of your STAT 431 (or 541) folder!\n\n\n\nlibrary(httr)\nlibrary(tidyjson)\nlibrary(jsonlite)\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "practice-activities/week-3.html#getting-the-pass-times-for-one-city",
+    "href": "practice-activities/week-3.html#getting-the-pass-times-for-one-city",
+    "title": "Practice Activity Week 3",
+    "section": "Getting the Pass Times for One City",
+    "text": "Getting the Pass Times for One City\nInspecting the satellite pass API homepage, we can obtain the JSON data with the pass information for a given city using an address like the following: https://api.g7vrd.co.uk/v1/satellite-passes/25544/51.45/-2.5833.json?hours=18\nIn this web address,\n\n25544 stands for the NORAD Catalog Number for the ISS. So, this number will never change for different cities.\n51.45 is the latitude for the given location\n-2.5833 is the longitude for the given location\n?hours=18 tells the API how many hours you want to consider for the passes\n\nLet’s give this a go!\n\nUsing the base_url, lat and long objects, obtain the ISS pass times for New York City. Save this object as nyc. Hint 1: The glue() function from the glue package or the str_c() function from stringr will be helpful here! Hint 2: What function do you use to get information from an API?\n\n\nbase_url &lt;- \"https://api.g7vrd.co.uk/v1/satellite-passes/25544/\"\n\nlat  &lt;- 40.7128\nlong &lt;- -74.0060\n\n\nNow that we have the JSON file for NYC, let’s parse it into a tidy dataframe. Using functions from jsonlite or tidyjson convert the JSON file to a dataframe. Hint: You might find it helpful to inspect the raw JSON file here.\n\n\nnyc$content |&gt; \n  rawToChar() |&gt;\n  as.tbl_json() |&gt;\n  enter_object(\"passes\") |&gt;\n  gather_array() |&gt;\n  spread_all()\n\n\nThe start column for the passtimes is what we are interested in, but currently this is formatted as a string (e.g., \"2026-02-26T05:23:21.257Z\"). Parse this column into a data-time object using the ymd_hms() function from lubridate. Hint: The pass times for the ISS are reported in UTC (Coordinated Universal Time).\n\n\nOur final step is to isolate the pass time for NYC. Use the pull() function to extract the parsed data-time column you made in the last question."
+  },
+  {
+    "objectID": "practice-activities/week-3.html#getting-the-pass-times-for-every-city",
+    "href": "practice-activities/week-3.html#getting-the-pass-times-for-every-city",
+    "title": "Practice Activity Week 3",
+    "section": "Getting the Pass Times for Every City",
+    "text": "Getting the Pass Times for Every City\nNow that we have worked out each step using one city, the next step is to scale this process to multiple cities. We’ve created a tibble with ten major cities across the world. Your goal is to acquire the pass time for each city.\n\ncities &lt;- tibble(\n  city = c(\n    \"New York\", \"Mexico City\", \"Sao Paulo\", \"London\",\n    \"Cairo\", \"Nairobi\", \"Mumbai\", \"Bangkok\",\n    \"Tokyo\", \"Sydney\"\n  ),\n  country = c(\n    \"USA\", \"Mexico\", \"Brazil\", \"United Kingdom\",\n    \"Egypt\", \"Kenya\", \"India\", \"Thailand\",\n    \"Japan\", \"Australia\"\n  ),\n  latitude = c(\n    40.7128, 19.4326, -23.5505, 51.5074,\n    30.0444, -1.2921, 19.0760, 13.7563,\n    35.6762, -33.8688\n  ),\n  longitude = c(\n    -74.0060, -99.1332, -46.6333, -0.1278,\n    31.2357, 36.8219, 72.8777, 100.5018,\n    139.6503, 151.2093\n  )\n)\n\n\nOur first step is to write a function that gets the pass time for any latitude and longitude coordinates. Using your code from Questions 1 though 4, create a get_pass-time() function which outputs the pass time for a given location. Hint: Your function should take two arguments: latitude and longitude.\n\n\nUsing map2() iterate your function over the latitude and longitude columns of the cities dataframe. Hint: There are three arguments to map2(), .x, .y, and .f. You will need to specify each!\n\nCrap! It seems we got an error. Let’s think through what might be happening.\n\nHow does your function handle cities without pass times? What can you add to the body of your function to handle this special case?\n\n\nHow does your function handle cities with multiple pass times? What can you add to the body of your function to handle this special case?\n\n\nAlright, let’s try this again. Using map2() iterate your function over the latitude and longitude columns of the cities dataframe. Save this object as city_passes so you don’t get an error about exceeding 10 requests per minute.\n\n\ncity_passes &lt;- \n\n\nAdd each city’s pass times to the original cities dataframe. Arrange the table based on the cities where the ISS will pass next. Hint: The city_passes object is a list which you will need to unpack. The unnest() will be helpful here!"
   },
   {
     "objectID": "project.html",

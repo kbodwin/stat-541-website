@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Untitled – Advanced R</title>
+<title>Practice Activity Week 3 – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -343,8 +343,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#accessing-the-practice-activity" id="toc-accessing-the-practice-activity" class="nav-link active" data-scroll-target="#accessing-the-practice-activity">Accessing the Practice Activity</a></li>
+  <li><a href="#open-notify-api" id="toc-open-notify-api" class="nav-link" data-scroll-target="#open-notify-api">Open-Notify API</a>
+  <ul class="collapse">
+  <li><a href="#getting-the-pass-times-for-one-city" id="toc-getting-the-pass-times-for-one-city" class="nav-link" data-scroll-target="#getting-the-pass-times-for-one-city">Getting the Pass Times for <em>One</em> City</a></li>
+  <li><a href="#getting-the-pass-times-for-every-city" id="toc-getting-the-pass-times-for-every-city" class="nav-link" data-scroll-target="#getting-the-pass-times-for-every-city">Getting the Pass Times for <em>Every</em> City</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/practice-activities/week-3.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -352,7 +363,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Untitled</h1>
+<h1 class="title">Practice Activity Week 3</h1>
 </div>
 
 
@@ -369,58 +380,196 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<!-- From JSON -->
-<ol start="2" type="1">
-<li>From time-to-time you encounter data frames with multiple list-columns with aligned values. For example, in the following data frame, the values of <code>y</code> and <code>z</code> are aligned (i.e.&nbsp;<code>y</code> and <code>z</code> will always have the same length within a row, and the first value of <code>y</code> corresponds to the first value of <code>z</code>).</li>
-</ol>
-<ol type="a">
-<li><p>What happens if you apply two <code>unnest_longer()</code> calls to this data frame?</p></li>
-<li><p>How can you preserve the relationship between x and y? <em>Hint: Carefully read the documentation</em></p></li>
-</ol>
-<!-- ```{r} #\| include: false #\| label: code-for-q2-b -->
-<!-- unnest_longer(df4, col = c(y, z)) -->
-<!-- From APIs: -->
-<!-- 15.  How many people are currently aboard the International Space Station? -->
+<section id="accessing-the-practice-activity" class="level2">
+<h2 class="anchored" data-anchor-id="accessing-the-practice-activity">Accessing the Practice Activity</h2>
+<p>Download the template Practice Activity Quarto file here: <a href="student/pa-3.qmd" download=""><code>pa-3.qmd</code></a></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Be sure to save the file inside your Week 2 folder of your STAT 431 (or 541) folder!</p>
+</div>
+</div>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyjson)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">GET</span>(<span class="st">"http://api.open-notify.org/astros.json"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Using jsonlite</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>space <span class="ot">&lt;-</span> res<span class="sc">$</span>content <span class="sc">%&gt;%</span> </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rawToChar</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fromJSON</span>()</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Using tidyjson</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>json_tbl <span class="ot">&lt;-</span> res<span class="sc">$</span>content <span class="sc">%&gt;%</span> </span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rawToChar</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.tbl_json</span>()</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>json_tbl <span class="sc">%&gt;%</span> </span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread_all</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">enter_object</span>(<span class="st">"people"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather_array</span>() <span class="sc">%&gt;%</span>       <span class="co"># if it's a JSON array</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread_all</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name)</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="do">## Using unnest_longer &amp; unnest_wider</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>space <span class="ot">&lt;-</span> res<span class="sc">$</span>content <span class="sc">%&gt;%</span> </span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rawToChar</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fromJSON</span>()</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(space) <span class="sc">%&gt;%</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(<span class="at">data =</span> .) <span class="sc">%&gt;%</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_wider</span>(data) <span class="sc">%&gt;%</span>        </span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_longer</span>(people) <span class="sc">%&gt;%</span>     </span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_wider</span>(people) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(craft <span class="sc">==</span> <span class="st">"ISS"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>:::</p>
+</section>
+<section id="open-notify-api" class="level1">
+<h1>Open-Notify API</h1>
+<p>The Open-Notify APIs provides information on the International Space Station. Specifically, the API provides (1) the names of the astronauts currently aboard the ISS, (2) the current location of the ISS, and (3) overhead pass predictions for the ISS.</p>
+<p>For this activity, we are going to find the predicted time the ISS will pass by 10 major cities across the world and sort the pass times to see the path of the ISS.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>City</th>
+<th>Country</th>
+<th>Latitude</th>
+<th>Longitude</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>New York</td>
+<td>USA</td>
+<td>40.7128</td>
+<td>-74.0060</td>
+</tr>
+<tr class="even">
+<td>Mexico City</td>
+<td>Mexico</td>
+<td>19.4326</td>
+<td>-99.1332</td>
+</tr>
+<tr class="odd">
+<td>São Paulo</td>
+<td>Brazil</td>
+<td>-23.5505</td>
+<td>-46.6333</td>
+</tr>
+<tr class="even">
+<td>London</td>
+<td>United Kingdom</td>
+<td>51.5074</td>
+<td>-0.1278</td>
+</tr>
+<tr class="odd">
+<td>Cairo</td>
+<td>Egypt</td>
+<td>30.0444</td>
+<td>31.2357</td>
+</tr>
+<tr class="even">
+<td>Nairobi</td>
+<td>Kenya</td>
+<td>-1.2921</td>
+<td>36.8219</td>
+</tr>
+<tr class="odd">
+<td>Mumbai</td>
+<td>India</td>
+<td>19.0760</td>
+<td>72.8777</td>
+</tr>
+<tr class="even">
+<td>Bangkok</td>
+<td>Thailand</td>
+<td>13.7563</td>
+<td>100.5018</td>
+</tr>
+<tr class="odd">
+<td>Tokyo</td>
+<td>Japan</td>
+<td>35.6762</td>
+<td>139.6503</td>
+</tr>
+<tr class="even">
+<td>Sydney</td>
+<td>Australia</td>
+<td>-33.8688</td>
+<td>151.2093</td>
+</tr>
+</tbody>
+</table>
+<section id="getting-the-pass-times-for-one-city" class="level2">
+<h2 class="anchored" data-anchor-id="getting-the-pass-times-for-one-city">Getting the Pass Times for <em>One</em> City</h2>
+<p>Inspecting the <a href="https://g7vrd.co.uk/public-satellite-pass-rest-api">satellite pass API homepage</a>, we can obtain the JSON data with the pass information for a given city using an address like the following: <a href="https://api.g7vrd.co.uk/v1/satellite-passes/25544/51.45/-2.5833.json?hours=18" class="uri">https://api.g7vrd.co.uk/v1/satellite-passes/25544/51.45/-2.5833.json?hours=18</a></p>
+<p>In this web address,</p>
+<ul>
+<li><code>25544</code> stands for the NORAD Catalog Number for the ISS. So, this number will <strong>never</strong> change for different cities.</li>
+<li><code>51.45</code> is the latitude for the given location</li>
+<li><code>-2.5833</code> is the longitude for the given location</li>
+<li><code>?hours=18</code> tells the API how many hours you want to consider for the passes</li>
+</ul>
+<p>Let’s give this a go!</p>
+<ol type="1">
+<li>Using the <code>base_url</code>, <code>lat</code> and <code>long</code> objects, obtain the ISS pass times for New York City. Save this object as <code>nyc</code>. <em>Hint 1: The <code>glue()</code> function from the <strong>glue</strong> package or the <code>str_c()</code> function from <strong>stringr</strong> will be helpful here!</em> <em>Hint 2: What function do you use to get information from an API?</em></li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>base_url <span class="ot">&lt;-</span> <span class="st">"https://api.g7vrd.co.uk/v1/satellite-passes/25544/"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>lat  <span class="ot">&lt;-</span> <span class="fl">40.7128</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>long <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">74.0060</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="2" type="1">
+<li>Now that we have the JSON file for NYC, let’s parse it into a tidy dataframe. Using functions from <strong>jsonlite</strong> or <strong>tidyjson</strong> convert the JSON file to a dataframe. <em>Hint: You might find it helpful to inspect the raw JSON file <a href="https://api.g7vrd.co.uk/v1/satellite-passes/25544/40.7128/-74.006.json?hours=18">here</a>.</em></li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nyc<span class="sc">$</span>content <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rawToChar</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.tbl_json</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">enter_object</span>(<span class="st">"passes"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather_array</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread_all</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="3" type="1">
+<li>The <code>start</code> column for the passtimes is what we are interested in, but currently this is formatted as a string (e.g., <code>"2026-02-26T05:23:21.257Z"</code>). Parse this column into a data-time object using the <code>ymd_hms()</code> function from <strong>lubridate</strong>. <em>Hint: The pass times for the ISS are reported in UTC (Coordinated Universal Time).</em></li>
+</ol>
+<ol start="4" type="1">
+<li>Our final step is to isolate the pass time for NYC. Use the <code>pull()</code> function to extract the parsed data-time column you made in the last question.</li>
+</ol>
+</section>
+<section id="getting-the-pass-times-for-every-city" class="level2">
+<h2 class="anchored" data-anchor-id="getting-the-pass-times-for-every-city">Getting the Pass Times for <em>Every</em> City</h2>
+<p>Now that we have worked out each step using <em>one</em> city, the next step is to scale this process to <strong>multiple</strong> cities. We’ve created a tibble with ten major cities across the world. Your goal is to acquire the pass time for each city.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cities <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">city =</span> <span class="fu">c</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"New York"</span>, <span class="st">"Mexico City"</span>, <span class="st">"Sao Paulo"</span>, <span class="st">"London"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Cairo"</span>, <span class="st">"Nairobi"</span>, <span class="st">"Mumbai"</span>, <span class="st">"Bangkok"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Tokyo"</span>, <span class="st">"Sydney"</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">country =</span> <span class="fu">c</span>(</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"USA"</span>, <span class="st">"Mexico"</span>, <span class="st">"Brazil"</span>, <span class="st">"United Kingdom"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Egypt"</span>, <span class="st">"Kenya"</span>, <span class="st">"India"</span>, <span class="st">"Thailand"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Japan"</span>, <span class="st">"Australia"</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">latitude =</span> <span class="fu">c</span>(</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="fl">40.7128</span>, <span class="fl">19.4326</span>, <span class="sc">-</span><span class="fl">23.5505</span>, <span class="fl">51.5074</span>,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="fl">30.0444</span>, <span class="sc">-</span><span class="fl">1.2921</span>, <span class="fl">19.0760</span>, <span class="fl">13.7563</span>,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="fl">35.6762</span>, <span class="sc">-</span><span class="fl">33.8688</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">longitude =</span> <span class="fu">c</span>(</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span><span class="fl">74.0060</span>, <span class="sc">-</span><span class="fl">99.1332</span>, <span class="sc">-</span><span class="fl">46.6333</span>, <span class="sc">-</span><span class="fl">0.1278</span>,</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="fl">31.2357</span>, <span class="fl">36.8219</span>, <span class="fl">72.8777</span>, <span class="fl">100.5018</span>,</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="fl">139.6503</span>, <span class="fl">151.2093</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="5" type="1">
+<li>Our first step is to write a function that gets the pass time for <em>any</em> latitude and longitude coordinates. Using your code from Questions 1 though 4, create a <code>get_pass-time()</code> function which outputs the pass time for a given location. <em>Hint: Your function should take <strong>two</strong> arguments: latitude and longitude.</em></li>
+</ol>
+<ol start="6" type="1">
+<li>Using <code>map2()</code> iterate your function over the <code>latitude</code> and <code>longitude</code> columns of the <code>cities</code> dataframe. <em>Hint: There are three arguments to <code>map2()</code>, <code>.x</code>, <code>.y</code>, and <code>.f</code>. You will need to specify each!</em></li>
+</ol>
+<p>Crap! It seems we got an error. Let’s think through what might be happening.</p>
+<ol start="7" type="1">
+<li>How does your function handle cities without pass times? What can you add to the body of your function to handle this special case?</li>
+</ol>
+<ol start="8" type="1">
+<li>How does your function handle cities with <strong>multiple</strong> pass times? What can you add to the body of your function to handle this special case?</li>
+</ol>
+<ol start="9" type="1">
+<li>Alright, let’s try this again. Using <code>map2()</code> iterate your function over the <code>latitude</code> and <code>longitude</code> columns of the <code>cities</code> dataframe. <strong>Save this object as <code>city_passes</code> so you don’t get an error about exceeding 10 requests per minute.</strong></li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>city_passes <span class="ot">&lt;-</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="10" type="1">
+<li>Add each city’s pass times to the original <code>cities</code> dataframe. Arrange the table based on the cities where the ISS will pass next. <em>Hint: The <code>city_passes</code> object is a list which you will need to unpack. The <code>unnest()</code> will be helpful here!</em></li>
+</ol>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -844,7 +993,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/practice-activities/week-3.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/practice-activities/week-3.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

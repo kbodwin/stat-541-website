@@ -2,6 +2,8 @@
 title: "Practice Activity Week 3"
 format: html
 editor: source
+execute: 
+  eval: false
 ---
 
 ## Accessing the Practice Activity
@@ -81,7 +83,6 @@ long <- -74.0060
 ```{r}
 #| label: q1-soln
 #| echo: false
-#| eval: false
 
 url <- glue::glue("{base_url}/25544/{lat}/{long}.json?hours=12")
 nyc <- GET(url)
@@ -112,7 +113,6 @@ Parse this column into a data-time object using the `ymd_hms()` function from
 ```{r}
 #| label: parse-date-nyc
 #| echo: false
-#| eval: false
 
 nyc$content |> 
   rawToChar() |>
@@ -129,7 +129,6 @@ to extract the parsed data-time column you made in the last question.
 ```{r}
 #| label: pull-date-nyc
 #| echo: false
-#| eval: false
 
 nyc$content |> 
   rawToChar() |>
@@ -214,7 +213,6 @@ you add to the body of your function to handle this special case?
 ```{r}
 #| label: pass-time-function-mult-passes
 #| echo: false
-#| eval: false
 
 get_pass_time <- function(lat, long){
   # Grab pass time information from API
@@ -264,7 +262,6 @@ table based on the cities where the ISS will pass next.
 ```{r}
 #| label: cities-with-passtimes
 #| echo: false
-#| eval: false
 
 cities %>%
   mutate(next_pass = city_passes) |>
