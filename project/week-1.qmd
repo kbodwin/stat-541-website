@@ -7,7 +7,7 @@ Now that you have been assigned a dataset, this week we are focused on
 acquiring the data, investigating how the data were cleaned, and working with
 your group to pose research questions that could be addressed with these data.
 
-**By the end of the week, you should have a draft report which:**
+## By the end of the week, you should have a draft report which:
 
 -   describes the context of the data
 -   explains what cleaning has been done to the data

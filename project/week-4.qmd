@@ -7,7 +7,7 @@ For the final step of the project, our goal is to create visualizations that
 use more complex geometries, fit a statistical model to address a research 
 question, and report the findings of that model. 
 
-**By the end of the week, your updated report should contain:**
+## By the end of the week, your updated report should contain:
 
 -   **two** professionally formatted visualizations
     * every visualization **must** have alternative (alt) text, non-default

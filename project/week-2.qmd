@@ -8,7 +8,7 @@ these data, this week we are focused on producing summary statistics that
 could be used to also address your research question. These summary statistics
 will allow you to apply your function writing and iteration skills! 
 
-**By the end of the week, your updated report should contain:**
+## By the end of the week, your updated report should contain:
 
 -   **Two** data summaries that use existing (unmodified) columns in the data
     * **At least one** of these summaries need to be produced with a custom
