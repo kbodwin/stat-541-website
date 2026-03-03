@@ -17,38 +17,56 @@ library(leaflet)
 ```
 
 # Creating Maps
-
+::: columns
+::: {.column width="60%"}
 Maps are fantastic and complicated all at the same time! Maps are some of the
 richest visualizations around because they come with data built into them. That 
 is, on top of whatever data you're going to plot you are also probably going to
 view terrain, roads, state/country borders, city names or a host of other
 information that come with our geography.
 
-This implicit richness only adds to challenge of creating a good map. Observe
-the following recent tweet for a silly example of how maps can be...difficult. 
+This implicit richness only adds to challenge of creating a good map. The XKCD
+comic on the right displays a great example of how creating maps can
+be...difficult. 
 
-There is no shortage of map data visualizations on the web, but all too
-often this is what we end up with:
+:::
 
-![](images/xkcdheatmap.png)
+::: {.column width="5%"}
+:::
+
+::: {.column width="35%"}
+![](images/xkcdheatmap.png){fig-alt="A black-and-white comic shows a presenter pointing at a screen with three U.S. heat maps. The maps are labeled 'Our Site’s Users', 'Subscribers to Martha Stewart Living', and 'Consumers of Furry Pornography'. All three maps look nearly identical, with dense red and yellow areas around major population centers and mostly green elsewhere. The presenter says, 'The business implications are clear.' A caption at the bottom reads: 'Pet Peeve #208: Geographic profile maps which are basically just population maps.'"}
+:::
+:::
+
+
 
 ## 🎥 Required Video: Introductory Series to `leaflet` in R (6 Videos)
 
+::: columns
+::: {.column width="60%"}
 <iframe width="400" height="225" style="width: 400px; height: 225px;" src="https://www.youtube.com/embed/6Uz5KBZ8V5E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-::: callout-caution
-Be sure to watch all 6 videos in this series.
 :::
 
-::: {.callout-important}
-# Check-in: `leaflet`
+::: {.column width="40%"}
+::: callout-caution
+Be sure to watch all 6 videos in this series!
+:::
+:::
+:::
 
-**1. Is running just the `leaflet()` function enough to produce a map?**
+
+
+::: {.callout-important}
+# Check-in
+
+1. Is running just the `leaflet()` function enough to produce a map?
 
 -   Yes
 -   No
 
-**2. To plot data points on a leaflet map, we should probably use which function?**
+2. To plot data points on a leaflet map, we should probably use which function?
 
 -   `addTiles()`
 -   `addMarkers()`
@@ -60,22 +78,20 @@ Be sure to watch all 6 videos in this series.
 
 The leaflet package is actually extremely rich and can basically enable
 (interactive) map visualizations as complex as you can imagine. Take some time 
-to peruse the site for the leaflet R package:
-
-<https://rstudio.github.io/leaflet/>
+to peruse the site for the leaflet R package: <https://rstudio.github.io/leaflet/>
 
 ::: {.callout-important}
-# Check-in: `leaflet`
+# Check-in
 
-**3.  What do the names of your plotted data columns have to be?**
+3.  What do the names of your plotted data columns have to be?
 
 -   `x`; `y`
 -   `leafletx`; \`leaflety
 -   `lat` / `latitude`; `lon`/ `longitude`
 -   Anything as long as you tell the `addMarkers()` function correctly
 
-**4.  If you were to think of latitude and longitude as coordinates in the
-cartesian coordinate system, then...**
+4.  If you were to think of latitude and longitude as coordinates in the
+cartesian coordinate system, then...
 
 -   latitude is on the horizontal axis and longitude is on the vertical
 -   latitude is on the vertical axis and longitude is on the horizontal
@@ -118,16 +134,18 @@ leaflet() %>%
 ```
 
 ::: {.callout-important}
-# Check-in: `leaflet`
+# Check-in
 
 The above map plots data on NASA astronauts!
 
-**5.  The graphic for each marker is a little astronaut helmet. How cute! This image was used via...**
+5.  The graphic for each marker is a little astronaut helmet. How cute! This
+image was used via...
 
 -   a URL pointing to it on the web.
 -   a downloaded image file.
 
-**6.  The `popup` argument specifies what you see when you \_\_\_\_\_\_, while the `label` argument specifies what you see when you \_\_\_\_\_\_.**
+6.  The `popup` argument specifies what you see when you \_\_\_\_\_\_, while the
+`label` argument specifies what you see when you \_\_\_\_\_\_.
 
 -   hover; click
 -   zoom-in; zoom-out

@@ -178,13 +178,12 @@ c)  Arrange **several different plots** next to each other?
 d)  Make it so **hovering over a point** in your scatterplot shows the
 corresponding label?
 
-<!-- Plotly, ggraph -->
+<!-- plotly, ggraph -->
 :::
 
 ## Extra Resources
 
--   Dave Robinson's [Tidy Tuesday Screencasts](https://www.youtube.com/user/safe4democracy/videos) show a master of Data Viz at work!
--   You can also search the [Tidy Tuesday hashtag on twitter](https://twitter.com/search?q=%23TidyTuesday&src=typeahead_click) to see some great examples of data manipulating and visualization
--   Don't forget about the [Data-to-Viz Website](https://www.data-to-viz.com/)
 -   [The "dataisbeautiful" subreddit](https://www.reddit.com/r/dataisbeautiful/top/?t=all) shares many nice visualizations. 
--   [This webinar](https://www.youtube.com/watch?v=0m4yywqNPVY), by ggplot contributor Thomas Lin Pedersen, is wonderful. It's about 2 hours long - so more than we can fit in as required viewing - but if you want to become a `ggplot` queen, watch this!
+-   Don't forget about the [Data-to-Viz Website](https://www.data-to-viz.com/)
+<!-- -   [This webinar](https://www.youtube.com/watch?v=0m4yywqNPVY), by ggplot contributor Thomas Lin Pedersen, is wonderful. It's about 2 hours long - so more than we can fit in as required viewing - but if you want to become a `ggplot` queen, watch this! -->
+<!-- -   Dave Robinson's [Tidy Tuesday Screencasts](https://www.youtube.com/user/safe4democracy/videos) show a Picasso of Data Viz at work! -->
