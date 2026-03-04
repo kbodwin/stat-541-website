@@ -2,8 +2,177 @@
 title: "Group Contract"
 ---
 
-expectations of dividing work expectations of collaborating expecations of individual ownership
+Throughout this course you will collaborate with your peers to complete various
+projects. You will be placed in a group with students who are also interested in
+working with the same dataset. You will work with this group for the entire
+term.
 
-groups of 3
-submissions of checkpoints alternate between group members
-think about how to turn in the checkpoints
+# Project Collaboration
+
+Because you will work with the same group for the full 10 weeks, you must
+develop a sustainable and transparent system for dividing responsibilities.
+
+1. **Identify the week’s goals**
+
+Begin by clarifying what concrete deliverables must be completed (e.g., cleaned
+dataset, exploratory visualizations, summary tables, dashboard layout,
+etc.).
+
+2. **Assign clear ownership**
+
+Each member should take primary ownership of **at least one** substantial task.
+
+"Ownership" means you are responsible for:
+
+- Initiating the work
+- Completing a strong draft
+- Documenting your decisions
+- Bringing specific questions to the group
+
+*Ownership means you lead it, draft it, and defend the decisions---not that you
+work in isolation.*
+
+3. **Contribute beyond your owned task**
+
+Every member is expected to:
+
+- Review and provide substantive feedback on others' work
+- Ask questions that strengthen clarity or interpretation
+- Help identify potential errors or alternative approaches
+- Ensure coherence across sections of the project
+
+*Collaboration means you question, improve, and strengthen everyone’s work.*
+
+4. **Avoid common pitfalls**
+
+- Dividing the project into isolated silos with no cross-talk
+- One person doing most of the technical work
+- "Editing-only" participation
+- Waiting until the deadline to integrate pieces
+
+5. **Rotate responsibilities**
+
+Over the three projects, aim to vary roles (e.g., data wrangling lead, 
+visualization lead, programming lead, writing lead, quality-control reviewer) so
+everyone has the opportunity to develop multiple skills.
+
+6. **Use structured weekly check-ins**
+
+Each week, your group should:
+
+- Agree on task ownership in writing (shared document)
+- Set internal deadlines before the official deadline
+- Spend time reviewing work together before submission
+
+</br>
+
+## How "Good" Collaboration Looks
+
+::: columns
+::: {.column width="48%"}
+**Strong groups tend to:**
+
+- Make decisions explicitly (not implicitly)
+- Document analytic choices
+- Ask "Why are we doing this?" regularly
+- Treat feedback as collaborative improvement, not criticism
+- Raise concerns early
+
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+**Weak groups tend to:**
+
+- Assume alignment without discussion
+- Avoid difficult conversations
+- Leave integration until the last minute
+- Confuse "splitting the work" with "collaborating"
+:::
+:::
+
+## Weekly Contribution Reporting
+
+Each week, alongside your group submission, every member must complete a brief
+Contribution Report describing task ownership and individual contributions.
+
+This is not meant to "police" groups. It is intended to:
+
+- Encourage clear task ownership
+- Promote balanced participation
+- Prevent last-minute misunderstandings
+- Support early intervention if problems arise
+
+> Uneven weeks happen. Patterns matter more than single reports.
+> If contribution concerns arise, I will intervene early to help recalibrate
+> expectations. Persistent under-contribution may affect individual grades.
+
+# Repository Workflow
+
+At the outset of each project, each member of your group will fork a copy of 
+the associated GitHub repository. This is the repository that is expected to 
+contain **all** the work associated with your project, which different 
+members of your group will submit every week for project "check points." 
+
+## Weekly Integrator
+
+Each week, one group member serves as the **Integrator**. This role rotates
+throughout the project.
+
+The Integrator is responsible for:
+
+- Compiling all group members' completed work into a single repository
+- Ensuring the project runs end-to-end without errors
+- Checking that files are correctly named, organized, and up to date
+
+The Integrator **is not** responsible for completing other members' unfinished
+work. Each member remains responsible for delivering their assigned
+contributions on time.
+
+Serving as Integrator is a technical and organizational leadership role. Because
+it rotates, every group member will practice maintaining project coherence and
+completeness.
+
+## Weekly Workflow
+
+To keep **everyone's** repositories up to date, your group is expected to adhere
+to the following workflow. 
+
+**1. Start of Week: Sync**
+
+***Before beginning any new work, all group members must sync their repository
+to the previous week’s Integrator version.*** This ensures everyone is working
+from the same, most up-to-date project state. Work completed on outdated
+versions may be lost or overwritten.
+
+**2. During the Week: Individual Development**
+
+Each member works in their own repository and takes ownership of clearly defined
+files or sections. **Members should not edit the same file simultaneously unless
+coordinating sequentially.** Clear task ownership prevents integration
+conflicts.
+
+**3. End of Week: Integration**
+
+The designated Integrator compiles all completed work into their repository,
+verifies that the project runs end-to-end, and submits the official repository
+link. This version becomes the project snapshot for the week.
+
+**4. Rotation**
+
+The Integrator role rotates weekly so that all members share responsibility for
+maintaining project coherence and technical completeness.
+
+### Why not have everyone work in the same repo?
+
+True collaborative version control involves branching strategies, pull requests,
+code review workflows, and conflict resolution. Teaching that well would require
+meaningful instructional time and practice. Given the scope of this course, 
+we've chosen to prioritize analytical skills and structured collaboration over
+advanced software engineering workflows.
+
+The rotating Integrator model gives you exposure to modular design,
+synchronization discipline, and project integration---transferable collaboration
+skills that do not require mastery of Git internals.

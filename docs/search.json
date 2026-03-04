@@ -1206,7 +1206,7 @@
     "href": "group-stuff/contract.html",
     "title": "Group Contract",
     "section": "",
-    "text": "expectations of dividing work expectations of collaborating expecations of individual ownership\ngroups of 3 submissions of checkpoints alternate between group members think about how to turn in the checkpoints"
+    "text": "Throughout this course you will collaborate with your peers to complete various projects. You will be placed in a group with students who are also interested in working with the same dataset. You will work with this group for the entire term."
   },
   {
     "objectID": "practice-activities/week-1.html",
@@ -2012,5 +2012,75 @@
       "Unit 2 - Professional Deliverables",
       "Quarto Dashboards, Part 1"
     ]
+  },
+  {
+    "objectID": "group-stuff/contract.html#how-good-collaboration-looks",
+    "href": "group-stuff/contract.html#how-good-collaboration-looks",
+    "title": "Group Contract",
+    "section": "How “Good” Collaboration Looks",
+    "text": "How “Good” Collaboration Looks\n\n\nStrong groups tend to:\n\nMake decisions explicitly (not implicitly)\nDocument analytic choices\nAsk “Why are we doing this?” regularly\nTreat feedback as collaborative improvement, not criticism\nRaise concerns early\n\n\n\n\nWeak groups tend to:\n\nAssume alignment without discussion\nAvoid difficult conversations\nLeave integration until the last minute\nConfuse “splitting the work” with “collaborating”"
+  },
+  {
+    "objectID": "group-stuff/instructor-action.html",
+    "href": "group-stuff/instructor-action.html",
+    "title": "Instructor Intervention Plan",
+    "section": "",
+    "text": "Trigger examples:\n\nA group reports “2 – Somewhat uneven” for two consecutive weeks\nOne student consistently reports vague or minimal contributions\n\nWhat I will do:\n\nSend a brief email to the group\nSummarize the pattern neutrally\nAsk your group to clarify how tasks are being assigned\nEncourage more explicit ownership rotation\n\nNo grade impact at this stage"
+  },
+  {
+    "objectID": "group-stuff/instructor-action.html#level-1-light-touch-check-in-early-signal",
+    "href": "group-stuff/instructor-action.html#level-1-light-touch-check-in-early-signal",
+    "title": "Instructor Intervention Plan",
+    "section": "",
+    "text": "Trigger examples:\n\nA group reports “2 – Somewhat uneven” for two consecutive weeks\nOne student consistently reports vague or minimal contributions\n\nWhat I will do:\n\nSend a brief email to the group\nSummarize the pattern neutrally\nAsk your group to clarify how tasks are being assigned\nEncourage more explicit ownership rotation\n\nNo grade impact at this stage"
+  },
+  {
+    "objectID": "group-stuff/instructor-action.html#level-2-structured-reset-conversation",
+    "href": "group-stuff/instructor-action.html#level-2-structured-reset-conversation",
+    "title": "Instructor Intervention Plan",
+    "section": "Level 2: Structured Reset Conversation",
+    "text": "Level 2: Structured Reset Conversation\nTrigger examples:\n\nRepeated uneven workload ratings (3+ weeks)\nConsistent reports of unequal contribution\nCommunication concerns appearing in multiple surveys\n\nWhat I will do:\n\nRequire a short meeting (10–15 minutes) where I ask your group to:\n\nExplain how they divide tasks\nDescribe how decisions are made\nPropose a revised division plan for the next two weeks\n\nPossibly require a written task allocation plan\n\nIndividual grades may be modified at this stage."
+  },
+  {
+    "objectID": "group-stuff/instructor-action.html#level-3-individual-accountability-adjustment",
+    "href": "group-stuff/instructor-action.html#level-3-individual-accountability-adjustment",
+    "title": "Instructor Intervention Plan",
+    "section": "Level 3: Individual Accountability Adjustment",
+    "text": "Level 3: Individual Accountability Adjustment\nTrigger examples:\n\nClear, documented pattern of under-contribution\nPeer reports align across multiple weeks\nIf you do not respond to my communication(s)\n\nWhat I will do:\n\nMeet with you individually\nClarify expectations\nDocument performance concerns\n\nIndividual grades will be modified at this stage."
+  },
+  {
+    "objectID": "group-stuff/contract.html#weekly-contribution-reporting",
+    "href": "group-stuff/contract.html#weekly-contribution-reporting",
+    "title": "Group Contract",
+    "section": "Weekly Contribution Reporting",
+    "text": "Weekly Contribution Reporting\nEach week, alongside your group submission, every member must complete a brief Contribution Report describing task ownership and individual contributions.\nThis is not meant to “police” groups. It is intended to:\n\nEncourage clear task ownership\nPromote balanced participation\nPrevent last-minute misunderstandings\nSupport early intervention if problems arise\n\n\nUneven weeks happen. Patterns matter more than single reports. If contribution concerns arise, I will intervene early to help recalibrate expectations. Persistent under-contribution may affect individual grades."
+  },
+  {
+    "objectID": "group-stuff/contract.html#weekly-integrator",
+    "href": "group-stuff/contract.html#weekly-integrator",
+    "title": "Group Contract",
+    "section": "Weekly Integrator",
+    "text": "Weekly Integrator\nEach week, one group member serves as the Integrator. This role rotates throughout the project.\nThe Integrator is responsible for:\n\nCompiling all group members’ completed work into a single repository\nEnsuring the project runs end-to-end without errors\nChecking that files are correctly named, organized, and up to date\n\nThe Integrator is not responsible for completing other members’ unfinished work. Each member remains responsible for delivering their assigned contributions on time.\nServing as Integrator is a technical and organizational leadership role. Because it rotates, every group member will practice maintaining project coherence and completeness."
+  },
+  {
+    "objectID": "group-stuff/contract.html#weekly-workflow",
+    "href": "group-stuff/contract.html#weekly-workflow",
+    "title": "Group Contract",
+    "section": "Weekly Workflow",
+    "text": "Weekly Workflow\nTo keep everyone’s repositories up to date, your group is expected to adhere to the following workflow.\n1. Start of Week: Sync\nBefore beginning any new work, all group members must sync their repository to the previous week’s Integrator version. This ensures everyone is working from the same, most up-to-date project state. Work completed on outdated versions may be lost or overwritten.\n2. During the Week: Individual Development\nEach member works in their own repository and takes ownership of clearly defined files or sections. Members should not edit the same file simultaneously unless coordinating sequentially. Clear task ownership prevents integration conflicts.\n3. End of Week: Integration\nThe designated Integrator compiles all completed work into their repository, verifies that the project runs end-to-end, and submits the official repository link. This version becomes the project snapshot for the week.\n4. Rotation\nThe Integrator role rotates weekly so that all members share responsibility for maintaining project coherence and technical completeness.\n\nWhy not have everyone work in the same repo?\nTrue collaborative version control involves branching strategies, pull requests, code review workflows, and conflict resolution. Teaching that well would require meaningful instructional time and practice. Given the scope of this course, we’ve chosen to prioritize analytical skills and structured collaboration over advanced software engineering workflows.\nThe rotating Integrator model gives you exposure to modular design, synchronization discipline, and project integration—transferable collaboration skills that do not require mastery of Git internals."
+  },
+  {
+    "objectID": "group-stuff/contract.html#why-not-have-everyone-work-in-the-same-repo",
+    "href": "group-stuff/contract.html#why-not-have-everyone-work-in-the-same-repo",
+    "title": "Group Contract",
+    "section": "Why not have everyone work in the same repo?",
+    "text": "Why not have everyone work in the same repo?\nTrue collaborative version control involves branching strategies, pull requests, code review workflows, and conflict resolution. Teaching that well would require meaningful instructional time and practice. Given the scope of this course, we’ve chosen to prioritize analytical skills and structured collaboration over advanced software engineering workflows.\nThe rotating Integrator model gives you exposure to modular design, synchronization discipline, and project integration—transferable collaboration skills that do not require mastery of Git internals."
+  },
+  {
+    "objectID": "project/rubrics/grading-rubric.html",
+    "href": "project/rubrics/grading-rubric.html",
+    "title": "Project 1 Grading Rubric",
+    "section": "",
+    "text": "Ideas for Group Collaboration part of rubric:\n\nA student’s final project grade cannot exceed their contribution grade by more than one letter grade.\n\nA-Level (Excellent Collaborative Practice)        \nDemonstrates sustained, equitable collaboration with clear ownership, cross-contribution, and strong integration across all project components.\nB-Level (Strong but Some Imbalance)\n\n\n\n\n\nDemonstrates generally effective collaboration with minor inconsistencies in workload balance or integration.\nC-Level (Noticeable Collaboration Problems)\n\nInconsistent or unclear ownership\nEvidence of repeated imbalance\nSome members primarily edited rather than substantively contributed\nSurveys show multiple “2” ratings\nInstructor check-in or structured reset required\nWork may show uneven quality across sections\n\nDemonstrates uneven collaboration, inconsistent ownership, or limited cross-member contribution.\nD-Level (Serious Collaboration Breakdown)\n\nPersistent imbalance despite intervention\nOne or more members carried disproportionate workload\nMinimal cross-feedback or integration\nSurveys show repeated “1” ratings\nDocumented communication breakdown\nWork appears fragmented or incoherent\n\nDemonstrates sustained imbalance, minimal collaborative engagement, or failure to meet shared responsibility expectations."
   }
 ]

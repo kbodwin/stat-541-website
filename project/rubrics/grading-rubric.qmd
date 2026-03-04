@@ -1,0 +1,56 @@
+---
+title: "Project 1 Grading Rubric"
+---
+
+
+Ideas for Group Collaboration part of rubric:
+
+> A student’s final project grade cannot exceed their contribution grade by
+> more than one letter grade.
+
+**A-Level (Excellent Collaborative Practice)**
+<!-- - Clear, consistent task ownership across weeks -->
+<!-- - Responsibilities rotated meaningfully across projects -->
+<!-- - All members contributed substantively to both: -->
+<!-- - Their owned task -->
+<!-- - Feedback and revision on others’ work -->
+<!-- - Work is well-integrated (no siloed sections) -->
+<!-- - Contribution surveys consistently indicate balanced workload (mostly 3–4 ratings) -->
+<!-- - No unresolved collaboration concerns -->
+
+Demonstrates sustained, equitable collaboration with clear ownership, cross-contribution, and strong integration across all project components.
+
+**B-Level (Strong but Some Imbalance)**
+
+<!-- - Clear ownership structure, but some uneven rotation -->
+<!-- - Minor workload imbalance in some weeks -->
+<!-- - Collaboration generally effective but occasionally siloed -->
+<!-- - Surveys show mostly balanced ratings with isolated concerns -->
+<!-- - Issues resolved without formal intervention -->
+
+Demonstrates generally effective collaboration with minor inconsistencies in
+workload balance or integration.
+
+**C-Level (Noticeable Collaboration Problems)**
+
+- Inconsistent or unclear ownership
+- Evidence of repeated imbalance
+- Some members primarily edited rather than substantively contributed
+- Surveys show multiple “2” ratings
+- Instructor check-in or structured reset required
+- Work may show uneven quality across sections
+
+Demonstrates uneven collaboration, inconsistent ownership, or limited 
+cross-member contribution.
+
+**D-Level (Serious Collaboration Breakdown)**
+
+- Persistent imbalance despite intervention
+- One or more members carried disproportionate workload
+- Minimal cross-feedback or integration
+- Surveys show repeated “1” ratings
+- Documented communication breakdown
+- Work appears fragmented or incoherent
+
+Demonstrates sustained imbalance, minimal collaborative engagement, or failure
+to meet shared responsibility expectations.
