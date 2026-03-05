@@ -3,23 +3,7 @@ title: "Practice Activity Week 4"
 format: html
 embed-resources: true
 editor: source
-execute: 
-  echo: true
-  error: true
-  eval: false
-resources: 
-  - student/pa-4.qmd
 ---
-
-# Accessing the Practice Activity
-
-Download the template Practice Activity Quarto file here: 
-<a href="student/pa-4.qmd" download>`pa-4.qmd`</a>
-
-::: {.callout-important}
-Be sure to save the file inside your Week 4 folder of your STAT 431 (or 541)
-folder! 
-:::
 
 ```{r}
 #| message: false
@@ -125,9 +109,7 @@ countrycode::countrycode("Brazil",
 ```
 
 2. You should have gotten a message about **1** matching error. Meaning, there
-was one specific country that  couldn't find the name for. **Modify your code
-to manually classify the continent of this country.**
-
+was one specific country that  couldn't find the name for. **Modify your previous code to manually classify the continent of this country.**
 
 ## Exploring Roundabouts
 
@@ -191,6 +173,8 @@ associated with the type of roundabout. *Hint: You might find the
 ```{r}
 #| label: stankey-plot
 
+library(ggalluvial)
+
 ```
 
 9. Now that you have a working solution, let's make the strata labels easy to
@@ -199,7 +183,7 @@ different ways to label the strata for each axis. Implement your favorite
 method! 
 
 ```{r}
-#| label: making-better-strata-labels
+#| label: better-strata-labels
 
 ```
 
@@ -210,4 +194,3 @@ method!
 #| label: final-touches
 
 ```
-
