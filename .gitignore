@@ -12,5 +12,5 @@ _site
 .github
 *.Rproj
 *_cache
-
 **/*.quarto_ipynb
+*solutions
