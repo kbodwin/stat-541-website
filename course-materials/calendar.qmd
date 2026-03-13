@@ -1,77 +1,93 @@
 ---
-title: "Advanced R"
+title: "{{< fa calendar >}} Schedule"
 subtitle: "Spring 2026"
-tbl-colwidths: [35,15,35,25,25]
 ---
-
-<!-- Goals:  -->
-
-<!-- - migrate to Google sheets to read in links -->
-
-<!-- - use gt to create spanner rows marking the start of each unit -->
-
-<!-- - hyperlink for unit main page on spanner header? -->
 
 This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.
 
-+----------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| Week                                                     | Date      | Coursework                                                                                                              | Lecture Activities                                                                     | Project                                                                         |
-+==========================================================+===========+=========================================================================================================================+========================================================================================+=================================================================================+
-| **0**                                                    |           |                                                                                                                         |                                                                                        | [Week 0 Project Checkpoint](/project/week-0.qmd)                                |
-+----------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| ### [Stat 331 Review](1810-review.qmd "Stat 331 Review") | ###       |                                                                                                                         |                                                                                        |                                                                                 |
-+----------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| **1**                                                    | March 30  | [Installing / Updating R & RStudio](/1810-review/setup-workflow.qmd "Installing / Updating R & RStudio")                | [Week 1 Practice Activity](/practice-activities/week-1.qmd "Week 1 Practice Activity") | [Week 1 Project Checkpoint](/project/week-1.qmd)                                |
-|                                                          |           |                                                                                                                         |                                                                                        |                                                                                 |
-|                                                          |           | [ggplot Review](/1810-review/ggplot-review.qmd "ggplot Review")                                                         |                                                                                        |                                                                                 |
-|                                                          |           |                                                                                                                         |                                                                                        |                                                                                 |
-|                                                          |           | [dplyr Review](/1810-review/dplyr-review.qmd "dplyr Review")                                                            |                                                                                        |                                                                                 |
-|                                                          |           |                                                                                                                         |                                                                                        |                                                                                 |
-|                                                          |           | [tidyr Review](/1810-review/tidyr-review.qmd "tidyr Review")                                                            |                                                                                        |                                                                                 |
-|                                                          |           |                                                                                                                         |                                                                                        |                                                                                 |
-|                                                          |           | [Quarto review](/1810-review/quarto-review.qmd "Quarto review")                                                         |                                                                                        |                                                                                 |
-|                                                          |           |                                                                                                                         |                                                                                        |                                                                                 |
-|                                                          |           | [Version Control](/1810-review/setup-version-control.qmd "Version Control")                                             |                                                                                        |                                                                                 |
-+----------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| ### [**Unit 1**](unit-1.qmd "Unit 1")                    | ###       |                                                                                                                         |                                                                                        |                                                                                 |
-+----------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| **2\                                                     | April 6   | [Writing Functions in R](/unit-1/writing-functions.qmd "Writing Functions in R")                                        | [Week 2 Practice Activity](/practice-activities/week-2.qmd "Week 2 Practice Activity") | [Week 2 Project Checkpoint](/project/week-2.qmd "Week 2 Project Checkpoint")    |
-| **Function Writing, Iteration & Efficiency               |           |                                                                                                                         |                                                                                        |                                                                                 |
-|                                                          |           | [Iterating over Functions](/unit-1/iterating-functions.qmd "Iterating over Functions")                                  |                                                                                        |                                                                                 |
-|                                                          |           |                                                                                                                         |                                                                                        |                                                                                 |
-|                                                          |           | [Writing Efficient Code](/unit-1/efficient-code.qmd "Writing Efficient Code")                                           |                                                                                        |                                                                                 |
-+----------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| **3\                                                     | April 13  | [JSON Data & APIs](/unit-1/json-api.qmd "JSON Data & APIs")                                                             | [Week 3 Practice Activity](/practice-activities/week-3.qmd "Week 3 Practice Activity") | [Week 3 Project Checkpoint](/project/week-3.qmd "Week 3 Project Checkpoint")    |
-| **JSON Data, APIs & Webscraping                          |           |                                                                                                                         |                                                                                        |                                                                                 |
-|                                                          |           | [Webscraping](/unit-2/web-scraping.qmd "Webscraping")                                                                   |                                                                                        |                                                                                 |
-+----------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| **4**\                                                   | April 20  |                                                                                                                         |                                                                                        | [Week 4 Project Checkpoint](/project/week-4.qmd "Week 4 Project Checkpoint")    |
-| Spicing Up Your Visualizations & Tables                  |           |                                                                                                                         |                                                                                        |                                                                                 |
-+----------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| ### [**Unit 2**](unit-2.qmd "Unit 2")                    | ###       |                                                                                                                         |                                                                                        |                                                                                 |
-+----------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| **5**\                                                   | April 27  | [Creating Static Quarto Dashboards](/unit-2/quarto-dashboard-static.qmd "Creating Static Quarto Dashboards")            |                                                                                        | [Week 5 Project Checkpoint](/project/week-5.qmd "Week 5 Project Checkpoint")    |
-| Quarto Dashboards (Static)                               |           |                                                                                                                         |                                                                                        |                                                                                 |
-|                                                          |           |                                                                                                                         |                                                                                        | [Unit 1 Project Due](/project/project-1.qmd "Unit 1 Project Due")               |
-+----------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| **6\                                                     | May 4     | [ggplot Extensions](/unit-2/ggplot-extensions.qmd "ggplot Extensions")                                                  |                                                                                        | [Week 6 Project Checkpoint](/project/week-6.qmd "Week 6 Project Checkpoint")    |
-| **Advanced Visualizations & Tables                       |           |                                                                                                                         |                                                                                        |                                                                                 |
-|                                                          |           | [leaflet](/unit-2/ggplot-leaflet.qmd "leaflet")                                                                         |                                                                                        |                                                                                 |
-|                                                          |           |                                                                                                                         |                                                                                        |                                                                                 |
-|                                                          |           | [gt & kableExtra](/unit-1/formatting-tables.qmd "gt & kableExtra")                                                      |                                                                                        |                                                                                 |
-+----------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| 7\                                                       | May 11    | [Creating Interactive Quarto Dashboards](/unit-2/quarto-dashboard-dynamic.qmd "Creating Interactive Quarto Dashboards") |                                                                                        | [Week 7 Project Checkpoint](/project/week-7.qmd "Week 7 Project Checkpoint")    |
-| Quarto Dashboards (Dynamic)                              |           |                                                                                                                         |                                                                                        |                                                                                 |
-+----------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| ### [**Unit 3**](unit-3.qmd "Unit 3")                    | ###       |                                                                                                                         |                                                                                        |                                                                                 |
-+----------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| **8**                                                    | May 18    |                                                                                                                         |                                                                                        | [Week 8 Project Checkpoint](/project/week-8.qmd "Week 8 Project Checkpoint")    |
-|                                                          |           |                                                                                                                         |                                                                                        |                                                                                 |
-|                                                          |           |                                                                                                                         |                                                                                        | [Unit 2 Project Due](/project/project-2.qmd "Unit 2 Project Due")               |
-+----------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| **9**                                                    | May 25    |                                                                                                                         |                                                                                        | [Week 9 Project Checkpoint](/project/week-9.qmd "Week 9 Project Checkpoint")    |
-+----------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| **10**                                                   | June 1    |                                                                                                                         |                                                                                        | [Week 10 Project Checkpoint](/project/week-10.qmd "Week 10 Project Checkpoint") |
-+----------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| **Finals Week**                                          | June 9    |                                                                                                                         |                                                                                        | [Unit 3 Project Due](/project/project-3.qmd "Unit 3 Project Due")               |
-+----------------------------------------------------------+-----------+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+```{r}
+#| label: packages
+#| echo: false
+#| message: false
+#| warning: false
+
+library(googlesheets4)
+library(gt)
+library(tidyverse)
+```
+
+```{r}
+#| label: google-sheets-calendar
+#| echo: false
+#| message: false
+#| warning: false
+
+gs4_deauth()
+
+d <- read_sheet("https://docs.google.com/spreadsheets/d/1F-TQSmjGrp6yKmkR9WMAFzG7uoX7OZ3RiqOdNgV8kzo/edit?usp=sharing")
+```
+
+```{r}
+#| label: format-calendar-entries
+#| echo: false
+
+t <- d |>
+  mutate(
+    date = ymd(date),
+    week = ifelse(is.na(week), "", week)) %>%
+  select(-slides) |> 
+  gt() |> 
+  # gt(rowname_col = "unit") |>
+  # tab_row_group(
+  #   label = "Unit 0 - Intro R Review",
+  #   rows = matches("0")
+  # ) |> 
+  # tab_row_group(
+  #   label = "Unit 1 - Messy Data",
+  #   rows = matches("1")
+  # ) |> 
+  # tab_row_group(
+  #   label = "Unit 2 - Professional Deliverables",
+  #   rows = matches("2")
+  # ) |> 
+  # tab_row_group(
+  #   label = "Unit 3 - R Packages",
+  #   rows = matches("3")
+  # ) |> 
+  text_transform(cells_body(columns = c(prepare)),
+                 fn = function(x){
+                   ifelse(is.na(x), fontawesome::fa('book', fill_opacity = 0.1), 
+                          glue::glue('<a href="{x}"><i class="fa fa-book" style="color: purple;"></i></a>'))
+                 }) %>%
+  # text_transform(cells_body(columns = c(slides)),
+  #                fn = function(x){
+  #                  ifelse(is.na(x), fontawesome::fa('laptop', fill_opacity = 0.1), 
+  #                         glue::glue('<a href="{x}"><i class="fa fa-laptop" style="color: purple;"></i></a>'))
+  #                }) %>%
+  text_transform(cells_body(columns = c(activity)),
+                 fn = function(x){
+                   ifelse(is.na(x), fontawesome::fa('users', fill_opacity = 0.1),
+                          glue::glue('<a href="{x}"><i class="fa fa-users" style="color: purple;"></i></a>'))
+                  }) %>%
+  # text_transform(cells_body(columns = c(lab)),
+  #                fn = function(x){
+  #                  ifelse(is.na(x), fontawesome::fa('pencil', fill_opacity = 0.1), 
+  #                         glue::glue('<a href="{x}"><i class="fa fa-pencil" style="color: purple;"></i></a>'))
+  #                }) %>%
+  text_transform(cells_body(columns = c(project)),
+                 fn = function(x){
+                   ifelse(is.na(x), fontawesome::fa('file-alt', fill_opacity = 0.1), 
+                          glue::glue('<a href="{x}"><i class="fa fa-file-alt" style="color: purple;"></i></a>'))
+                 }) %>%
+  fmt_date(date, date_style = 9) %>%
+  sub_missing(columns = date, missing_text = "") |> 
+  as_raw_html() 
+```
+
+```{r}
+#| echo: false
+#| results: "asis"
+#| label: output-calendar
+
+cat(t)
+```
