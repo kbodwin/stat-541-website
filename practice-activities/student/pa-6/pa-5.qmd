@@ -1,0 +1,204 @@
+---
+title: "Olympic Games"
+format: 
+  dashboard:
+    orientation: rows
+embed-resources: true
+logo: olympics-logo.svg
+logo-alt: "Olympics logo with multicolored circles."
+---
+
+```{r}
+#| label: load-packages
+library(tidyverse)
+library(gt)
+```
+
+```{r}
+#| label: load-data
+olympics_full <- read_csv("olympics.csv")
+```
+
+```{r}
+#| label: prep-data
+olympics <- olympics_full |>
+  filter(
+    season == "Summer",
+    !is.na(medal)
+  ) |>
+  separate_wider_delim(
+    cols = team, 
+    names = c("team", "suffix"), 
+    delim = "-", 
+    too_many = "merge", 
+    too_few = "align_start"
+  ) |>
+  select(-suffix) |>
+  mutate(medal = fct_relevel(medal, "Bronze", "Silver", "Gold"))
+```
+
+## Row
+
+### Column
+
+## Medals by sport and year
+
+### Medals by sport
+
+```{r}
+#| label: medals-by-sport
+#| title: Medals by sport
+olympics |>
+  mutate(
+    sport = fct_lump_n(sport, n = 15),
+    sport = fct_infreq(sport),
+    sport = fct_rev(sport)
+  ) |>
+  ggplot(aes(y = sport, fill = medal)) +
+  geom_bar() +
+  labs(
+    x = NULL,
+    y = NULL,
+    fill = "Medal"
+  ) +
+  theme_classic() +               
+  theme(
+    legend.position = "right"     
+  )
+```
+
+### Medals by year
+
+```{r}
+#| label: medals-by-year
+#| title: Medals by year
+olympics |>
+  count(year, medal) |>
+  ggplot(aes(x = year, y = n, color = medal)) +
+  geom_point(size = 1) +
+  geom_line() +
+  labs(
+    x = "Year",
+    y = NULL,
+    color = "Medal"
+  ) +
+  theme_bw() +                     
+  theme(
+    legend.position = "bottom"    
+  )
+```
+
+## Row
+
+### Column
+
+```{r}
+most_gold <- olympics |>
+  filter(medal == "Gold") |>
+  count(team, sort = TRUE) |>
+  slice_head(n = 1)
+
+most_silver <- olympics |>
+  filter(medal == "Silver") |>
+  count(team, sort = TRUE) |>
+  slice_head(n = 1)
+
+most_bronze <- olympics |>
+  filter(medal == "Bronze") |>
+  count(team, sort = TRUE) |>
+  slice_head(n = 1)
+```
+
+::: {.valuebox icon="award-fill" color="primary"}
+Most Golds:
+
+`{r} most_gold$n`
+
+`{r} most_gold$team`
+:::
+
+::: {.valuebox icon="trophy" color="success"}
+Most Silver:
+
+`{r} most_silver$n`
+
+`{r} most_silver$team`
+:::
+
+::: {.valuebox icon="award" color="danger"}
+Most Bronze:
+
+`{r} most_bronze$n`
+
+`{r} most_bronze$team`
+:::
+
+## Medals by country
+
+::: panel-tabset
+## Top 30 total medals
+
+</br>
+
+Teams sorted in descending order of total medals.
+
+```{r}
+#| label: top-30
+
+olympics |>
+  count(team, medal) |>
+  pivot_wider(
+    names_from = medal,
+    values_from = n,
+    values_fill = 0
+  ) |>
+  mutate(Total = Bronze + Gold + Silver) |>
+  slice_max(n = 30, order_by = Gold) |>
+  gt() |>
+  data_color(
+    columns = Gold,
+    colors = scales::col_numeric(c("#FFF7CC", "#D4AF37"), domain = NULL)
+  ) |>
+  data_color(
+    columns = Silver,
+    colors = scales::col_numeric(c("#F2F2F2", "#C0C0C0"), domain = NULL)
+  ) |>
+  data_color(
+    columns = Bronze,
+    colors = scales::col_numeric(c("#F5E1D3", "#CD7F32"), domain = NULL)
+  )
+```
+
+## Bottom 30 total medals
+
+</br>
+
+Teams sorted in descending order of total medals.
+
+```{r}
+#| label: bottom-30
+
+olympics |>
+  count(team, medal) |>
+  pivot_wider(
+    names_from = medal,
+    values_from = n,
+    values_fill = 0
+  ) |>
+  mutate(Total = Bronze + Gold + Silver) |>
+  slice_min(n = 30, order_by = Gold) |>
+  gt() |>
+  data_color(
+    columns = Gold,
+    colors = scales::col_numeric(c("#FFF7CC", "#D4AF37"), domain = NULL)
+  ) |>
+  data_color(
+    columns = Silver,
+    colors = scales::col_numeric(c("#F2F2F2", "#C0C0C0"), domain = NULL)
+  ) |>
+  data_color(
+    columns = Bronze,
+    colors = scales::col_numeric(c("#F5E1D3", "#CD7F32"), domain = NULL)
+  )
+```
+:::
