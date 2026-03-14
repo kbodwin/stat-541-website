@@ -16,6 +16,12 @@ library(gt)
 library(tidyverse)
 ```
 
+{{< fa book >}} **Prepare** – readings or tutorials completed before class
+
+{{< fa users >}} **Activity** – activities done during class
+
+{{< fa file-alt >}} **Project** – deliverables or milestones
+
 ```{r}
 #| label: google-sheets-calendar
 #| echo: false
@@ -33,7 +39,6 @@ d <- read_sheet("https://docs.google.com/spreadsheets/d/1F-TQSmjGrp6yKmkR9WMAFzG
 
 t <- d |>
   mutate(
-    date = ymd(date),
     week = ifelse(is.na(week), "", week), 
     unit = recode_values(unit, 
                          0 ~ "Unit 0 - Intro R Review", 
@@ -59,27 +64,18 @@ t <- d |>
                          8 ~ "Week 8",
                          9 ~ "Week 9",
                          10 ~ "Week 10",
-                         )
-    ) %>%
-  rename(Prepare = prepare, 
-         Activity = activity, 
-         Project = project) |> 
-  select(-slides) |> 
-  group_by(unit, week, date, topic) |>
-  summarise(
-    Prepare = paste(na.omit(Prepare), collapse = "<br>"),
-    Activity = first(Activity),
-    Project = first(Project),
-    .groups = "drop"
-  ) |> 
+                         ), 
+  week_label = case_when(week == "Week 0" ~ week, 
+                         week != lag(week) ~ week,
+                         .default = ""), 
+  date_label = as.character(date), 
+  date_label = if_else(date_label != lag(date_label), date_label, ""), 
+  date_label = ymd(date_label)
+  ) %>%
+  select(unit, week_label, date_label, topic, prepare, activity, project) |> 
   gt(groupname_col = "unit") |>
   cols_hide(unit) |> 
-  cols_label(
-    week = "",
-    date = "",
-    topic = ""
-    ) |> 
-  text_transform(cells_body(columns = c(Prepare)),
+  text_transform(cells_body(columns = c(prepare)),
                  fn = function(x){
                    ifelse(is.na(x), fontawesome::fa('book', fill_opacity = 0.1), 
                           glue::glue('<a href="{x}"><i class="fa fa-book" style="color: purple;"></i></a>'))
@@ -89,7 +85,7 @@ t <- d |>
   #                  ifelse(is.na(x), fontawesome::fa('laptop', fill_opacity = 0.1), 
   #                         glue::glue('<a href="{x}"><i class="fa fa-laptop" style="color: purple;"></i></a>'))
   #                }) %>%
-  text_transform(cells_body(columns = c(Activity)),
+  text_transform(cells_body(columns = c(activity)),
                  fn = function(x){
                    ifelse(is.na(x), fontawesome::fa('users', fill_opacity = 0.1),
                           glue::glue('<a href="{x}"><i class="fa fa-users" style="color: purple;"></i></a>'))
@@ -99,13 +95,13 @@ t <- d |>
   #                  ifelse(is.na(x), fontawesome::fa('pencil', fill_opacity = 0.1), 
   #                         glue::glue('<a href="{x}"><i class="fa fa-pencil" style="color: purple;"></i></a>'))
   #                }) %>%
-  text_transform(cells_body(columns = c(Project)),
+  text_transform(cells_body(columns = c(project)),
                  fn = function(x){
                    ifelse(is.na(x), fontawesome::fa('file-alt', fill_opacity = 0.1), 
                           glue::glue('<a href="{x}"><i class="fa fa-file-alt" style="color: purple;"></i></a>'))
                  }) %>%
-  fmt_date(date, date_style = 9) %>%
-  sub_missing(columns = date, missing_text = "") |> 
+  fmt_date(date_label, date_style = 31) %>%
+  sub_missing(columns = date_label, missing_text = "") |> 
   tab_style(
     style = list(
       cell_fill(color = "gray95"),
@@ -118,6 +114,45 @@ t <- d |>
                                             )
                                  )
   ) |> 
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(columns = topic)
+    ) |> 
+   tab_style(
+     style = list(
+      cell_fill(color = "#F9E3D6")
+      ),
+    locations = cells_body(
+      rows = str_detect(topic, pattern = "^Project [0-9]+ Due$")
+    )
+  ) |> 
+  #    tab_style(
+  #    style = list(
+  #     cell_fill(color = "#F9E3D6")
+  #     ),
+  #   locations = cells_body(
+  #     rows = (topic == "Project 2 Due")
+  #   )
+  # ) |> 
+  #    tab_style(
+  #    style = list(
+  #     cell_fill(color = "#F9E3D6")
+  #     ),
+  #   locations = cells_body(
+  #     rows = (topic == "Project 3 Due")
+  #   )
+  # ) |> 
+  tab_options(
+    row_group.padding = px(8)
+  ) |> 
+  cols_label(
+    week_label = "",
+    date_label = "",
+    topic = "",
+    prepare = md("**Prepare**"),
+    activity = md("**Activity**"),
+    project = md("**Project**")
+    ) |> 
   as_raw_html() 
 ```
 
