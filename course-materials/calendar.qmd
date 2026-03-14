@@ -126,7 +126,7 @@ t <- d |>
   tab_style(
     style = list(
       cell_fill(color = "gray95"),
-      cell_text(size = "larger")
+      cell_text(size = "x-large")
     ),
     locations = cells_row_groups(groups = c("Unit 0",
                                             "Unit 1",
