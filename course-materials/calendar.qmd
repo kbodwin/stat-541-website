@@ -65,6 +65,13 @@ t <- d |>
          Activity = activity, 
          Project = project) |> 
   select(-slides) |> 
+  group_by(unit, week, date, topic) |>
+  summarise(
+    Prepare = paste(na.omit(Prepare), collapse = "<br>"),
+    Activity = first(Activity),
+    Project = first(Project),
+    .groups = "drop"
+  ) |> 
   gt(groupname_col = "unit") |>
   cols_hide(unit) |> 
   cols_label(
