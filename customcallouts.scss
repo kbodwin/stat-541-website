@@ -1,0 +1,213 @@
+// Custom callout 1: Examples
+
+/*-- scss:defaults --*/
+
+// Example
+$border-color-left-ex: #207530 !default;
+$background-color-ex: #bcd6c1 !default;
+$icon-ex: url(images/icons/example.png) !default;
+
+
+// Required-Reading
+$border-color-left-rr: #511ac8 !default;
+$background-color-rr: #cbbaef !default;
+$icon-rr: url(images/icons/reqread.png);
+
+
+// Required-Viewing
+$border-color-left-rv: #511ac8 !default;
+$background-color-rv: #cbbaef !default;
+$icon-rv: url(images/icons/reqvideo.png);
+
+
+// Check-In
+$border-color-left-ci: #b32454 !default;
+$background-color-ci: #e8bdcc !default;
+$icon-ci: url(images/icons/checkin.png);
+
+// Practice-Exercise
+$border-color-left-pe: #b32454 !default;
+$background-color-pe: #e8bdcc !default;
+$icon-pe: url(images/icons/practice.png);
+
+// Learn-More
+$border-color-left-lm: #dfc016 !default;
+$background-color-lm: #f5ecb9 !default;
+$icon-lm: url(images/icons/learnmore.png);
+
+// Opinion
+$border-color-left-op: #dfc016 !default;
+$background-color-op: #f5ecb9 !default;
+$icon-op: url(images/icons/opinion.png);
+
+/*-- scss:rules --*/
+
+//example
+
+div.callout-example {
+  border-left-color: $border-color-left-ex !important;
+}
+
+div.callout-example .callout-header {
+  background-color: $background-color-ex !important;
+}
+
+div.callout-example .callout-icon::before {
+    background-image: $icon-ex;
+}
+
+
+//required-reading
+
+div.callout-required-reading {
+  border-left-color: $border-color-left-rr !important;
+}
+
+div.callout-required-reading.callout-style-default>.callout-header {
+  background-color: $background-color-rr;
+}
+
+.callout-required-reading.icon .callout-icon {
+  display: unset !important;
+}
+
+div.callout-required-reading.icon.callout-captioned .callout-icon::before {
+    background-image: $icon-rr;
+}
+
+.callout-required-reading.icon.callout-style-default div.callout-icon-container {
+  padding-top: 0.1em;
+  padding-right: 0.35em;
+}
+
+//required-video
+
+div.callout-required-video {
+  border-left-color: $border-color-left-rv !important;
+}
+
+div.callout-required-video.callout-style-default>.callout-header {
+  background-color: $background-color-rv;
+}
+
+.callout-required-video.icon .callout-icon {
+  display: unset !important;
+}
+
+div.callout-required-video.icon.callout-captioned .callout-icon::before {
+    background-image: $icon-rv;
+}
+
+.callout-required-video.icon.callout-style-default div.callout-icon-container {
+  padding-top: 0.1em;
+  padding-right: 0.35em;
+}
+//check-in
+
+div.callout-check-in {
+  border-left-color: $border-color-left-ci !important;
+}
+
+div.callout-check-in.callout-style-default>.callout-header {
+  background-color: $background-color-ci;
+}
+
+.callout-check-in.icon .callout-icon {
+  display: unset !important;
+}
+
+div.callout-check-in.icon.callout-captioned .callout-icon::before {
+    background-image: $icon-ci;
+}
+
+.callout-check-in.icon.callout-style-default div.callout-icon-container {
+  padding-top: 0.1em;
+  padding-right: 0.35em;
+}
+
+//practice-exercise
+
+div.callout-practice-exercise {
+  border-left-color: $border-color-left-pe !important;
+}
+
+div.callout-practice-exercise.callout-style-default>.callout-header {
+  background-color: $background-color-pe;
+}
+
+.callout-practice-exercise.icon .callout-icon {
+  display: unset !important;
+}
+
+div.callout-practice-exercise.icon.callout-captioned .callout-icon::before {
+    background-image: $icon-pe;
+}
+
+.callout-practice-exercise.icon.callout-style-default div.callout-icon-container {
+  padding-top: 0.1em;
+  padding-right: 0.35em;
+}
+
+
+//learn-more
+
+div.callout-learn-more {
+  border-left-color: $border-color-left-lm !important;
+}
+
+div.callout-learn-more.callout-style-default>.callout-header {
+  background-color: $background-color-lm;
+}
+
+.callout-learn-more.icon .callout-icon {
+  display: unset !important;
+}
+
+div.callout-learn-more.icon.callout-captioned .callout-icon::before {
+    background-image: $icon-lm;
+}
+
+.callout-learn-more.icon.callout-style-default div.callout-icon-container {
+  padding-top: 0.1em;
+  padding-right: 0.35em;
+}
+
+//opinion
+
+div.callout-example {
+  border-left-color: $border-color-left-ex !important;
+}
+
+div.callout-example .callout-header {
+  background-color: $background-color-ex !important;
+}
+
+div.callout-example .callout-icon::before {
+    background-image: $icon-ex;
+}
+
+
+div.callout-opinion {
+  border-left-color: $border-color-left-op !important;
+}
+
+div.callout-opinion.callout-style-default>.callout-header {
+  background-color: $background-color-op;
+}
+
+.callout-opinion.icon .callout-icon {
+  display: unset !important;
+}
+
+div.callout-opinion.icon.callout-captioned .callout-icon::before {
+    background-image: $icon-op;
+}
+
+.callout-opinion.icon.callout-style-default div.callout-icon-container {
+  padding-top: 0.1em;
+  padding-right: 0.35em;
+}
+
+
+
+/*-- source:https://stackoverflow.com/questions/74647399/define-a-new-callout-in-quarto --*/

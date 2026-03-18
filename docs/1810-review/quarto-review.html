@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Quarto Review – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
@@ -57,7 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -80,10 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d740d1846410d21846eaedb988be6a2e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-235111c28925c9e86c962b253a60587d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -110,10 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-
-
 </head>
-
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -279,14 +271,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content">
-    </a>
+    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content"><img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content"></a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -294,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
@@ -327,21 +315,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/atheobold/stat-541-website"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -349,15 +335,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../1810-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">STAT 331 Review</span></a>
@@ -406,37 +388,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#directories-paths-and-projects" id="toc-directories-paths-and-projects" class="nav-link active" data-scroll-target="#directories-paths-and-projects">Directories, Paths, and Projects</a>
+<li>
+<a href="#directories-paths-and-projects" id="toc-directories-paths-and-projects" class="nav-link active" data-scroll-target="#directories-paths-and-projects">Directories, Paths, and Projects</a>
   <ul class="collapse">
-  <li><a href="#sec-working-directories" id="toc-sec-working-directories" class="nav-link" data-scroll-target="#sec-working-directories">Working Directories in <code>R</code></a></li>
+<li><a href="#sec-working-directories" id="toc-sec-working-directories" class="nav-link" data-scroll-target="#sec-working-directories">Working Directories in <code>R</code></a></li>
   <li><a href="#sec-r-projects" id="toc-sec-r-projects" class="nav-link" data-scroll-target="#sec-r-projects">R Projects</a></li>
-  </ul></li>
-  <li><a href="#sec-quarto" id="toc-sec-quarto" class="nav-link" data-scroll-target="#sec-quarto">Reproducible Documents</a>
-  <ul class="collapse">
-  <li><a href="#downloading-quarto" id="toc-downloading-quarto" class="nav-link" data-scroll-target="#downloading-quarto">Downloading Quarto</a></li>
-  </ul></li>
-  <li><a href="#introduction-to-quarto" id="toc-introduction-to-quarto" class="nav-link" data-scroll-target="#introduction-to-quarto">Introduction to Quarto</a>
-  <ul class="collapse">
-  <li><a href="#html-documents" id="toc-html-documents" class="nav-link" data-scroll-target="#html-documents">HTML Documents</a></li>
-  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/1810-review/quarto-review.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+</li>
+  <li>
+<a href="#sec-quarto" id="toc-sec-quarto" class="nav-link" data-scroll-target="#sec-quarto">Reproducible Documents</a>
+  <ul class="collapse">
+<li><a href="#downloading-quarto" id="toc-downloading-quarto" class="nav-link" data-scroll-target="#downloading-quarto">Downloading Quarto</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#introduction-to-quarto" id="toc-introduction-to-quarto" class="nav-link" data-scroll-target="#introduction-to-quarto">Introduction to Quarto</a>
+  <ul class="collapse">
+<li><a href="#html-documents" id="toc-html-documents" class="nav-link" data-scroll-target="#html-documents">HTML Documents</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/1810-review/quarto-review.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Quarto Review</h1>
 </div>
 
@@ -451,10 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<div class="callout callout-style-default callout-caution callout-titled">
+</header><div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -466,9 +444,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <p>This module consists of readings reviewing material typically taught in STAT 331. It is possible you can skip over portions of this reading. It is your responsibility to decide which areas you need to review before diving into Stat 541.</p>
 <p>The theme of this lesson is good management of your files and data. For this course, you need to know how to identify <strong>folders</strong> and <strong>paths</strong>, and create professional looking <strong>Quarto documents</strong>.</p>
-<p>Answer the following questions to see if you can safely skip this section.</p>
-</div>
-</div>
+<p><strong>Answer the following questions to see if you can safely skip this section.</strong></p>
 <ol type="1">
 <li>Which statement best describes the difference between an absolute file path and a relative file path?</li>
 </ol>
@@ -517,28 +493,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>#</code></li>
 </ol>
 <p><em>If you had a hard time answering these questions, I would recommend reviewing <a href="#sec-quarto" class="quarto-xref">Section&nbsp;2</a>.</em></p>
-<section id="directories-paths-and-projects" class="level2">
-<h2 class="anchored" data-anchor-id="directories-paths-and-projects">Directories, Paths, and Projects</h2>
+</div>
+</div>
+<section id="directories-paths-and-projects" class="level2"><h2 class="anchored" data-anchor-id="directories-paths-and-projects">Directories, Paths, and Projects</h2>
 <p>In <code>R</code>, there are two ways to set up your file path and file system organization:</p>
 <ol type="1">
 <li>Set your working directory in <code>R</code> (do not recommend)</li>
 <li>Use RProjects (preferred!)</li>
 </ol>
-<section id="sec-working-directories" class="level3">
-<h3 class="anchored" data-anchor-id="sec-working-directories">Working Directories in <code>R</code></h3>
-<p>There are a few ways to find where your working directory is in <code>R</code>. You can look at the top of your console (seen below) or type <code>getwd()</code> into your console.</p>
+<section id="sec-working-directories" class="level3"><h3 class="anchored" data-anchor-id="sec-working-directories">Working Directories in <code>R</code>
+</h3>
+<p>There are a few ways to find where your working directory is in <code>R</code>. You can look at the top of your console (seen below) or type <code><a href="https://rdrr.io/r/base/getwd.html">getwd()</a></code> into your console.</p>
 <p><img src="images/rstudio-working-directory-console.png" class="img-fluid" alt="A screenshot of the Console at the bottom of the left hand pane in RStudio. There is a red box outlining the current working directory for R, which is the location where R will look for files. In the highlighted image, the working directory starts at the 'Home' directory for a Mac which is equivalent to the C Drive for Windows."></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Although it is not recommended, you can set your working directory in <code>R</code> with <code>setwd()</code>.</p>
+<p>Although it is not recommended, you can set your working directory in <code>R</code> with <code><a href="https://rdrr.io/r/base/getwd.html">setwd()</a></code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"/path/to/my/assignment/folder"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">setwd</a></span><span class="op">(</span><span class="st">"/path/to/my/assignment/folder"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="sec-r-projects" class="level3">
-<h3 class="anchored" data-anchor-id="sec-r-projects">R Projects</h3>
-<p>📖 <a href="https://r4ds.had.co.nz/workflow-projects.html">Recommended Reading: Workflow and Projects</a></p>
+</section><section id="sec-r-projects" class="level3"><h3 class="anchored" data-anchor-id="sec-r-projects">R Projects</h3>
+<div class="callout callout-style-default callout-required-reading callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-reading</span>Required Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://r4ds.had.co.nz/workflow-projects.html"><em>R4DS</em> Chapter 8: Workflow and Projects</a></p>
+</div>
+</div>
 <p>Since there are often many files necessary for a project (e.g.&nbsp;data sources, images, etc.), <code>R</code> has a nice built in system for setting up your project organization with R Projects. You can either create a new folder on your computer containing an R Project (e.g., you have not yet created a folder for this class) or you can add an R Project to an existing folder on your computer (e.g., you have already created a folder for this class).</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -554,47 +541,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Create with a new folder</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Add to Existing Folder</a></li></ul>
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Create with a new folder</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Add to Existing Folder</a></li>
+</ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>To create a R Project in a new folder (i.e., you haven’t already made a <code>stat-541</code> folder), first open RStudio on your computer and click <code>File &gt; New Project</code>, then:</p>
 <p><img src="images/create-new-rproj-step1.png" class="img-fluid" alt="A screenshot of the popup that appears when you select to make a New Project from the RStudio file menu. The 'New Directory' option is highlighted in blue, indicating this is the option that should be selected if you have not already made a folder."> Next, you should select the “New Project” option from the list of options. Don’t worry, we will get to make many of these other options later on in this class!</p>
 <p><img src="images/create-new-rproj-step2.png" class="img-fluid" alt="A screenshot of the popup that appears when you select the New Directory option from the New Project popup wizard. The 'New Project' option is highlighted in blue, indicating this is the option that should be selected."> Give your folder a name (it doesn’t have to be stat-541). However, it is good practice for this file folder name to not contain spaces. Then, browse on your computer for a location to save this folder to. For example, mine is saved in my Documents. Make sure you know how to find this; it should NOT be saved in your Downloads!</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/create-new-rproj-step3.png" class="img-fluid figure-img" alt="A screenshot of the popup that appears when you select the 'New Project' option from the New Project popup wizard. Directory name line displays the name of the folder that will be created, in this case stat-541. Below that line, the 'Create project as a subdirectory of' line indicates where on the computer the folder should live. In this case the folder is located in the Documents folder of the Mac. he 'Browse...' button on the right hand side allows the user to click on it and navigate to the location of the existing folder."></p>
-<figcaption>Choose the “New Project” option from the popup wizard</figcaption>
-</figure>
+<figure class="figure"><p><img src="images/create-new-rproj-step3.png" class="img-fluid figure-img" alt="A screenshot of the popup that appears when you select the 'New Project' option from the New Project popup wizard. Directory name line displays the name of the folder that will be created, in this case stat-541. Below that line, the 'Create project as a subdirectory of' line indicates where on the computer the folder should live. In this case the folder is located in the Documents folder of the Mac. he 'Browse...' button on the right hand side allows the user to click on it and navigate to the location of the existing folder."></p>
+<figcaption>Choose the “New Project” option from the popup wizard</figcaption></figure>
 </div>
 <p>Once you have completed this process, you should see a new <code>stat-541</code> folder in your Documents folder (or wherever you save it to) and the folder should contain a <code>stat-541.Rproj</code> file. This is your new “home” base for this - whenever you refer to a file with a relative path it will begin to look for it here.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>To add a R Project to an existing folder on your computer (e.g., you already created a folder for this class), first open RStudio on your computer and click <code>File &gt; New Project</code>, then:</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/create-existing-rproj-step1.png" class="img-fluid figure-img" alt="A screenshot of the popup that appears when you select to make a New Project from the RStudio file menu. The 'Existing Directory' option is highlighted in blue, indicating this is the option that should be selected if you have already made a folder."></p>
-<figcaption>Choose the “Existing Directory” option from the popup wizard</figcaption>
-</figure>
+<figure class="figure"><p><img src="images/create-existing-rproj-step1.png" class="img-fluid figure-img" alt="A screenshot of the popup that appears when you select to make a New Project from the RStudio file menu. The 'Existing Directory' option is highlighted in blue, indicating this is the option that should be selected if you have already made a folder."></p>
+<figcaption>Choose the “Existing Directory” option from the popup wizard</figcaption></figure>
 </div>
 <p>Then, browse on your computer to select the existing folder you wish to add your R Project to. For example, mine is saved in my Documents and called <code>my-stat331</code>.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/create-existing-rproj-step2.png" class="img-fluid figure-img" alt="A screenshot of the popup that appears when you select the Existing Directory option from the New Project popup wizard. There is a printed file path that says '~/Documents/stat-541' indicating that the project should be included in the stat-541 folder that lives in the Documents folder of this computer. The 'Browse...' button on the right hand side allows the user to click on it and navigate to the location of the existing folder."></p>
-<figcaption>Navigate to the location of the folder you made</figcaption>
-</figure>
+<figure class="figure"><p><img src="images/create-existing-rproj-step2.png" class="img-fluid figure-img" alt="A screenshot of the popup that appears when you select the Existing Directory option from the New Project popup wizard. There is a printed file path that says '~/Documents/stat-541' indicating that the project should be included in the stat-541 folder that lives in the Documents folder of this computer. The 'Browse...' button on the right hand side allows the user to click on it and navigate to the location of the existing folder."></p>
+<figcaption>Navigate to the location of the folder you made</figcaption></figure>
 </div>
 <p>Your existing folder, <code>stat-541</code> should now contain a <code>stat-541.Rproj</code> file. This is your new “home” base for this class - whenever you refer to a file with a relative path it will begin to look for it here.</p>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="sec-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="sec-quarto">Reproducible Documents</h2>
+</section></section><section id="sec-quarto" class="level2"><h2 class="anchored" data-anchor-id="sec-quarto">Reproducible Documents</h2>
 <p>Over the last ten years, science has experienced a “reproducibility” crisis. Meaning, a substantial portion of scientific findings were unable to be recreated because people didn’t sufficiently document the processes they used. As such, a foundational aspect of scientific research is using tools which allow others to reproduce your findings.</p>
 <p>Enter Quarto—a dynamic document that allows us to interweave R code and written text in the <strong>same</strong> document. Gone are the days of copying and pasting the results of your R code into a Word document—breaking the connection between your analysis and your report. Quarto is here to save the day!</p>
-<section id="downloading-quarto" class="level3">
-<h3 class="anchored" data-anchor-id="downloading-quarto">Downloading Quarto</h3>
+<section id="downloading-quarto" class="level3"><h3 class="anchored" data-anchor-id="downloading-quarto">Downloading Quarto</h3>
 <p>The software associated with Quarto is automatically downloaded with the newest versions of RStudio. So, if you are using the most up to date version of RStudio (as instructed in <a href="1810-review/setup-workflow.qmd">Part 1 of this week’s coursework</a>), you should already have Quarto installed on your computer. But, let’s test it out.</p>
 <p>To ensure you have Quarto installed, carry out the following process:</p>
 <ul>
@@ -603,29 +583,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Select “New File” (in the dropdown options)</li>
 <li>Select “Quarto Document…” (in the dropdown option)</li>
 </ul>
-<p><img src="images/new-quarto-doc-file.png" class="img-fluid" style="width:50.0%" alt="A screenshot of the dropdown options for creating a new Quarto document. The image shows the options under the 'File' menu (in the upper option bar), the 'New File' option in the 'File' menu has been selected, opneing a popout. In the popout options, the cursor is highlighting the 'Quarto Document' option."> <br></p>
+<p><img src="images/new-quarto-doc-file.png" class="img-fluid" style="width:50.0%" alt="A screenshot of the dropdown options for creating a new Quarto document. The image shows the options under the 'File' menu (in the upper option bar), the 'New File' option in the 'File' menu has been selected, opneing a popout. In the popout options, the cursor is highlighting the 'Quarto Document' option."></p>
 <p>If you have Quarto installed, you should be prompted with the following menu:</p>
 <p><img src="images/new-quarto-doc.png" class="img-fluid" style="width:50.0%" alt="A screenshot of the menu that should appear when you carry out the process described above. The menu is a square box with a title reading 'New Quarto Document'. On the left hand side of the box, the user can select what type of Quarto product they wish to create (Document, Presentation, or Interactive). On the right hand side, the user can control various aspects of their document, including the title, the author, the type of rendered document (HTML, PDF, or Word). At the bottom there are options to 'Create an Empty Document' (a barebones document), to 'Create' a document (with the user specified options), or 'Cancel'."></p>
 <p>If, instead, you receive a message saying Quarto is not installed on your computer, you need to download Quarto: <a href="https://quarto.org/docs/download/" class="uri">https://quarto.org/docs/download/</a></p>
-</section>
-</section>
-<section id="introduction-to-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-quarto">Introduction to Quarto</h2>
-<p>📖 <a href="https://r4ds.hadley.nz/quarto.html">Recommended Reading: Intro to Quarto</a></p>
-<section id="html-documents" class="level3">
-<h3 class="anchored" data-anchor-id="html-documents">HTML Documents</h3>
-<p>We will exclusively use HTML documents in this course. If you are interested in learning more about formatting options for Quarto HTML documents, I would recommend checking out:</p>
+</section></section><section id="introduction-to-quarto" class="level2"><h2 class="anchored" data-anchor-id="introduction-to-quarto">Introduction to Quarto</h2>
+<div class="callout callout-style-default callout-required-reading callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-reading</span>Required Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://r4ds.hadley.nz/quarto.html"><em>R4DS</em> Chapter 28: Quarto</a></p>
+</div>
+</div>
+<section id="html-documents" class="level3"><h3 class="anchored" data-anchor-id="html-documents">HTML Documents</h3>
+<p>We will exclusively use HTML documents in this course.</p>
+<div class="callout callout-style-default callout-learn-more callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Learn-more</span>Learn More
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you are interested in learning more about formatting options for Quarto HTML documents, I would recommend checking out:</p>
 <ul>
 <li><p><a href="https://quarto.org/docs/output-formats/html-basics.html">a discussion of the basics of formatting HTML documents in Quarto</a></p></li>
 <li><p><a href="https://quarto.org/docs/reference/formats/html.html">the list of all HTML formatting options for Quarto documents</a></p></li>
 </ul>
+</div>
+</div>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1037,9 +1034,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../1810-review/tidyr-review.html" class="pagination-link" aria-label="Data Joins and Transformations Review">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Joins and Transformations Review</span>
       </a>          
@@ -1051,8 +1046,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>This page is built with ❤️ by Drs. Kelly Bodwin &amp; Allison Theobold and also <a href="https://quarto.org/">Quarto</a>.</p>
 </div>   
@@ -1061,17 +1055,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/1810-review/quarto-review.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../LICENSE.md">
 <p>License</p>
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>

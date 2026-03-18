@@ -23,8 +23,7 @@ This module consists of readings reviewing material typically taught in STAT
 responsibility to decide which areas you need to review before diving into
 Stat 541.
 
-Answer the following questions to see if you can safely skip this section. 
-:::
+**Answer the following questions to see if you can safely skip this section.**
 
 1. In essence, a `data.frame` is simply a special `list` - with a few extra 
 restrictions on the `list` format.
@@ -134,6 +133,7 @@ mutate(
 
 *If you had a hard time answering this question, I would recommend reviewing
 [@sec-pipe].*
+:::
 
 ## `dplyr`
 
@@ -161,28 +161,41 @@ You should feel comfortable using:
 Choose one of these two options:
 
 ::: columns
-::: {.column width="45%"}
-
-📽 [Watch a Video: Data Types in R](https://youtu.be/vGY5i_J2c-c?si=ERuoY8qZOZ1uVbuL)
+::: {.column width="40%"}
+::: {.callout-required-video}
+::: youtube-video-container
+{{< video https://www.youtube.com/embed/vGY5i_J2c-c?si=sNtaYQ94QHAAdcfk >}}
+:::
+:::
 :::
 
-::: {.column width="45%"}
-📖 [Read a Textbook: Data Types in R ](https://bookdown.org/rdpeng/rprogdatascience/r-nuts-and-bolts.html#r-objects)
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+::: {.callout-required-reading}
+[*R Programming for Data Science*: Data Types in R](https://bookdown.org/rdpeng/rprogdatascience/r-nuts-and-bolts.html#r-objects)
 :::
 :::
+:::
+
 
 In addition, read the following section from the first edition of R for DS:
 
-📖 [Recommended Reading: Tibbles](https://r4ds.had.co.nz/tibbles.html)
+::: {.callout-required-reading}
+[*R4DS* Chapter 10: Tibbles](https://r4ds.had.co.nz/tibbles.html)
+:::
 
 ### Data Wrangling with dplyr {#sec-dplyr}
 
 If you had a hard time answering Question 3, I would recommend reviewing
 this content.
 
-📖 [Recommended Reading: Data Transformation](https://r4ds.hadley.nz/data-transform.html)
+::: {.callout-required-reading}
+[*R4DS* Chapter 3: Data Transformation](https://r4ds.hadley.nz/data-transform.html)
+:::
 
-## 
+::: {.callout-required-video}
 
 📽 [`filter()` -- 11 minutes](https://youtu.be/pPI-prhLYqI)
 
@@ -195,12 +208,16 @@ this content.
 📽 [`summarize()`-- 8 minutes](http://somup.com/crflYibWZw)
 
 📽 [`group_by()` -- 6 minutes](http://somup.com/crflqbbWFy)
+:::
 
 ### The Pipe Operator {#sec-pipe}
 
 If you had a hard time answering Question 4, I would recommend also reviewing
 this content.
 
-📽 [Recommended Video: The pipe operator -- 8 minutes](http://somup.com/crflYfbWZD)
+::: {.callout-required-video}
+::: youtube-video-container
 
-<!-- 📽 [Recommended Video: Extending the pipe -- 3 minutes](http://somup.com/crflYmbWup) -->
+{{< video https://www.youtube.com/embed/Y5WuR20M3dg?si=dudkpwIbP_D6hYtT >}}
+:::
+:::

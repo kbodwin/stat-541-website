@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Installing / Updating R &amp; RStudio – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
@@ -57,7 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -80,10 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5e9ed5a5d73ea68cd05592291cd36e9c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-3a2426717f8c80abf3a06f87d8ac1060.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-5e9ed5a5d73ea68cd05592291cd36e9c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-9bf895b27d75cd11dead9f0b1c0945a3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-4473741263f13f8e00018cb3fd1f6b22.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-9bf895b27d75cd11dead9f0b1c0945a3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -110,11 +105,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-
-
 </head>
-
-<body class="nav-sidebar floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -279,14 +271,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content">
-    </a>
+    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content"><img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content"></a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -294,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
@@ -327,21 +315,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/atheobold/stat-541-website"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -349,15 +335,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../1810-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">STAT 331 Review</span></a>
@@ -406,36 +388,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#updating-r" id="toc-updating-r" class="nav-link active" data-scroll-target="#updating-r"><span class="header-section-number">1</span> Updating R</a></li>
-  <li><a href="#installing-r" id="toc-installing-r" class="nav-link" data-scroll-target="#installing-r"><span class="header-section-number">2</span> Installing R</a>
+<li><a href="#updating-r" id="toc-updating-r" class="nav-link active" data-scroll-target="#updating-r"><span class="header-section-number">1</span> Updating R</a></li>
+  <li>
+<a href="#installing-r" id="toc-installing-r" class="nav-link" data-scroll-target="#installing-r"><span class="header-section-number">2</span> Installing R</a>
   <ul class="collapse">
-  <li><a href="#if-you-are-a-windows-user" id="toc-if-you-are-a-windows-user" class="nav-link" data-scroll-target="#if-you-are-a-windows-user">If you are a <em>Windows</em> user:</a></li>
+<li><a href="#if-you-are-a-windows-user" id="toc-if-you-are-a-windows-user" class="nav-link" data-scroll-target="#if-you-are-a-windows-user">If you are a <em>Windows</em> user:</a></li>
   <li><a href="#if-you-are-macos-user" id="toc-if-you-are-macos-user" class="nav-link" data-scroll-target="#if-you-are-macos-user">If you are <em>macOS</em> user:</a></li>
-  </ul></li>
+  </ul>
+</li>
   <li><a href="#updating-rstudio" id="toc-updating-rstudio" class="nav-link" data-scroll-target="#updating-rstudio"><span class="header-section-number">3</span> Updating RStudio</a></li>
   <li><a href="#installing-updating-the-tidyverse" id="toc-installing-updating-the-tidyverse" class="nav-link" data-scroll-target="#installing-updating-the-tidyverse"><span class="header-section-number">4</span> Installing / Updating the <code>tidyverse</code></a></li>
-  <li><a href="#configure-your-options" id="toc-configure-your-options" class="nav-link" data-scroll-target="#configure-your-options"><span class="header-section-number">5</span> Configure your options</a>
+  <li>
+<a href="#configure-your-options" id="toc-configure-your-options" class="nav-link" data-scroll-target="#configure-your-options"><span class="header-section-number">5</span> Configure your options</a>
   <ul class="collapse">
-  <li><a href="#r-workspace" id="toc-r-workspace" class="nav-link" data-scroll-target="#r-workspace">R Workspace</a></li>
-  </ul></li>
+<li><a href="#r-workspace" id="toc-r-workspace" class="nav-link" data-scroll-target="#r-workspace">R Workspace</a></li>
+  <li><a href="#code-chunk-output" id="toc-code-chunk-output" class="nav-link" data-scroll-target="#code-chunk-output">Code Chunk Output</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/1810-review/setup-workflow.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/1810-review/setup-workflow.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Installing / Updating R &amp; RStudio</h1>
 </div>
 
@@ -450,10 +430,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<div class="callout callout-style-default callout-important callout-titled">
+</header><div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -468,8 +445,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Your <strong>workflow</strong> refers to the series of good habits you get into in your coding process, that help save you time and headache down the road.</p>
 <p>This document outlines our suggestions for getting going with your workflow. None of these items is required for the course; they will simply make your life easier down the road.</p>
-<section id="updating-r" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="updating-r"><span class="header-section-number">1</span> Updating R</h2>
+<section id="updating-r" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="updating-r">
+<span class="header-section-number">1</span> Updating R</h2>
 <p>Each of you should have R already installed on your computer, but you might not have the most up to date version of R! <strong>Do not ignore these instructions.</strong> If you neglect to update your version of R, you may find that updating a package will make it so your code will not run.</p>
 <ul>
 <li>Step 1: Open RStudio</li>
@@ -477,15 +454,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p><img src="images/r-version-10-2025.png" class="img-fluid" alt="A screenshot of what version of R should appear when you open RStudio. The version reads 'R version 4.5.2 (2025-10-31) -- '[Not] Part in a Rumble'."></p>
 <p>If the version <strong>is not</strong> 4.5.2 (like the image above), you need to update your version of R! The simplest way to do this is to follow the instructions below to install R.</p>
-</section>
-<section id="installing-r" class="level2 page-columns page-full" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="installing-r"><span class="header-section-number">2</span> Installing R</h2>
+</section><section id="installing-r" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="installing-r">
+<span class="header-section-number">2</span> Installing R</h2>
 <p>Download and install R by going to <a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a>. Here, you will find three options for installing R—click on the option for your computer’s operating system.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
+<div class="callout callout-style-default callout-required-video callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-video</span>Required Video
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="youtube-video-container">
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/YrEe2TLr3MI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div></div><section id="if-you-are-a-windows-user" class="level3">
-<h3 class="anchored" data-anchor-id="if-you-are-a-windows-user">If you are a <em>Windows</em> user:</h3>
+</div>
+</div>
+</div>
+<section id="if-you-are-a-windows-user" class="level3"><h3 class="anchored" data-anchor-id="if-you-are-a-windows-user">If you are a <em>Windows</em> user:</h3>
 <ul>
 <li><p>Click on “Download R for Windows”</p></li>
 <li><p>Click on “base”</p></li>
@@ -518,18 +505,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="images/uninstall-old-r-version.png" class="img-fluid" alt="A screenshot of selecting the (...) option to uninstall the older version of R."></p>
 </div>
 </div>
-</section>
-<section id="if-you-are-macos-user" class="level3">
-<h3 class="anchored" data-anchor-id="if-you-are-macos-user">If you are <em>macOS</em> user:</h3>
+</section><section id="if-you-are-macos-user" class="level3"><h3 class="anchored" data-anchor-id="if-you-are-macos-user">If you are <em>macOS</em> user:</h3>
 <ul>
 <li><p>Click on “Download R for (Mac) OS X”</p></li>
 <li><p>Under “Latest release:” click on R-X.X.X.pkg, where R-X.X.X is the version number. For example, the latest version of R as of July 1, 2024 was R-4.4.1 (Race for Your Life).</p></li>
 <li><p>When installing, use the default features / settings that come with R (click Ok until the download starts).</p></li>
-</ul>
-</section>
-</section>
-<section id="updating-rstudio" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="updating-rstudio"><span class="header-section-number">3</span> Updating RStudio</h2>
+</ul></section></section><section id="updating-rstudio" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="updating-rstudio">
+<span class="header-section-number">3</span> Updating RStudio</h2>
 <p>RStudio can be downloaded <a href="https://rstudio.com/products/rstudio/download/">here</a></p>
 <p>The most recent version of RStudio is 2024.12.1+563. You can check if you are using the most recent version of RStudio by:</p>
 <ul>
@@ -537,41 +519,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Clicking on “Help”</li>
 <li>Selecting “Check for Updates”</li>
 <li>Choosing “Quit and Download” if there is an update available</li>
-</ul>
-</section>
-<section id="installing-updating-the-tidyverse" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="installing-updating-the-tidyverse"><span class="header-section-number">4</span> Installing / Updating the <code>tidyverse</code></h2>
+</ul></section><section id="installing-updating-the-tidyverse" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="installing-updating-the-tidyverse">
+<span class="header-section-number">4</span> Installing / Updating the <code>tidyverse</code>
+</h2>
 <p>In this class, we will make heavy use of the <code>tidyverse</code> packages.</p>
 <p>If you <strong>have not</strong> used the <code>tidyverse</code> before, type the following into your console:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>If you <strong>have</strong> used the <code>tidyverse</code> before, you only need to update packages. Type the following into your console:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidyverse_update</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://tidyverse.tidyverse.org/reference/tidyverse_update.html">tidyverse_update</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Then follow the instructions that print out to update a few of your tidyverse packages.</p>
-</section>
-<section id="configure-your-options" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="configure-your-options"><span class="header-section-number">5</span> Configure your options</h2>
+</section><section id="configure-your-options" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="configure-your-options">
+<span class="header-section-number">5</span> Configure your options</h2>
 <p>There are a few settings we recommend that you change right away in RStudio. These can be accessed by opening RStudio and clicking on the “Tools” option from the top of the RStudio menu and selecting “Global Options…” from the dropdown menu:</p>
 <p><img src="images/rstudio-global-options.png" class="img-fluid" alt=""></p>
-<section id="r-workspace" class="level3">
-<h3 class="anchored" data-anchor-id="r-workspace">R Workspace</h3>
+<section id="r-workspace" class="level3"><h3 class="anchored" data-anchor-id="r-workspace">R Workspace</h3>
 <p>First, in the “General” pane (that first shows up), you should not save your environment when you close RStudio. Meaning, you should uncheck the box that says “Restore .RData into workspace at startup” and you should select “Never” from the dropdown menu that says “Save workspace to .RData on exit”:</p>
-<p><img src="https://rstats.wtf/img/rstudio-workspace.png" class="img-fluid" alt="A screenshot of the Global options screen, specifically focusing on the 'General' section of the options. There is a red arrow pointing to the box that says 'Restore .RData into workspace at startup', indicating that this box should not be checked (this option should be turned off). There is another red arrow pointing at the dropdown menu next to 'Save workspace to .RData on exit', indicating that the option should be 'Never'."> ### Code Chunk Output</p>
+<p><img src="https://rstats.wtf/img/rstudio-workspace.png" class="img-fluid" alt="A screenshot of the Global options screen, specifically focusing on the 'General' section of the options. There is a red arrow pointing to the box that says 'Restore .RData into workspace at startup', indicating that this box should not be checked (this option should be turned off). There is another red arrow pointing at the dropdown menu next to 'Save workspace to .RData on exit', indicating that the option should be 'Never'."></p>
+</section><section id="code-chunk-output" class="level3"><h3 class="anchored" data-anchor-id="code-chunk-output">Code Chunk Output</h3>
 <p>Next, click on the R Markdown pane on the left hand side. This pane allows you to choose how your Quarto documents will behave.</p>
 <p>First, let’s decide where we want the output of our code to appear in our document. If you want for the output of your code (e.g., summary statistics, visualizations) to be shown in the document immediately below the code chunk, check the box that says “Show output inline for all R Markdown documents.” If you do not check this box, your output will either be shown in the Console (for numerical summaries) or in the Plots tab (for visualizations).</p>
 <p>Second, we need to decide where Quarto should look for files that we are referencing. Meaning, if you reference files, should Quarto look for them relative to the <em>Project</em> or relative to your <em>Quarto Document</em> (which might live in a subfolder or even outside the project). I would recommend choosing “Document” here!</p>
 <p><img src="images/rstudio-inline-document.png" class="img-fluid" alt="A screenshot of the Global options screen, specifically focusing on the 'R Markdown' section of the options. There is a red box around the option for 'Show output inline for all R Markdown documents.' and the box on the left hand side is checked indicating that this option is turned on. There is a second red box around the 'Evaluate chunks in directory:' option where there is a drop down menu for where Quarto should assume the files you are referencing should be searched for. The option selected is 'Document' which means that external files should be searched for relative to the Quarto document instead of the Project."></p>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -983,9 +959,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../1810-review.html" class="pagination-link" aria-label="STAT 331 Review">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">STAT 331 Review</span>
       </a>          
@@ -997,8 +971,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>This page is built with ❤️ by Drs. Kelly Bodwin &amp; Allison Theobold and also <a href="https://quarto.org/">Quarto</a>.</p>
 </div>   
@@ -1007,17 +980,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/1810-review/setup-workflow.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../LICENSE.md">
 <p>License</p>
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>

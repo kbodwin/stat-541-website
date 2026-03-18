@@ -22,8 +22,7 @@ This module consists of readings reviewing material typically taught in STAT
 responsibility to decide which areas you need to review before diving into
 Stat 541.
 
-Answer the following questions to see if you can safely skip this section. 
-:::
+**Answer the following questions to see if you can safely skip this section.**
 
 Each question focuses on the following data tables:
 
@@ -182,6 +181,7 @@ left_join(cases, population,
 
 *If you had a hard time answering this question, I would recommend reviewing
 [@sec-pivot-longer] and [@sec-mutating-joins].*
+:::
 
 <!-- add a question on filtering joins? -->
 
@@ -196,7 +196,9 @@ statistical model.
 
 ## Tidy Data {#sec-tidy-data}
 
-📖 [Recommended Reading: *R4DS* Section 5.2 (Tidy data)](https://r4ds.hadley.nz/data-tidy.html#sec-tidy-data)
+::: {.callout-required-reading}
+[*R4DS* Chapter 5, Section 2: Tidy data](https://r4ds.hadley.nz/data-tidy.html#sec-tidy-data)
+:::
 
 ::: callout-note
 ## Do we always want our data in the same layout?
@@ -233,10 +235,14 @@ Let's explore each of these formats in more depth
 
 ### Longer {#sec-pivot-longer}
 
-📖 [Recommended Reading: *R4DS* Section 5.3 (Lengthening data)](https://r4ds.hadley.nz/data-tidy.html#sec-pivoting)
+::: {.callout-required-reading}
+[*R4DS* Chapter 5, Section 3: Lengthening data](https://r4ds.hadley.nz/data-tidy.html#sec-pivoting)
+:::
 
-::: column-margin
+::: {.callout-required-video}
+::: youtube-video-container
 {{< video https://www.youtube.com/embed/2rQZNlH2734 >}} 
+:::
 :::
 
 Table 4a and 4b are currently stored in a wide format, where the years are 
@@ -264,10 +270,14 @@ data type, so we would likely need to `mutate()` it before we do our analysis!
 
 ### Wider {#sec-pivot-wider}
 
-📖 [Recommended Reading: *R4DS* Section 5.3 (Widening data)](https://r4ds.hadley.nz/data-tidy.html#widening-data)
+::: {.callout-required-reading}
+[*R4DS* Chapter 5, Section 3: Widening data](https://r4ds.hadley.nz/data-tidy.html#widening-data)
+:::
 
-::: column-margin
+::: {.callout-required-video}
+::: youtube-video-container
 {{< video https://www.youtube.com/embed/NKnl2WoNpK0 >}} 
+:::
 :::
 
 Table 2 is currently stored in a long format, where the case and population
@@ -387,7 +397,9 @@ another table
 there is a matching row in another table (but the columns in the original table
 don't change)
 
-📖 [Recommended Reading: *R4DS* Chapter 19 (Joins)](https://r4ds.hadley.nz/joins.html)
+::: {.callout-required-reading}
+[*R4DS* Chapter 19: Joins](https://r4ds.hadley.nz/joins.html)
+:::
 
 ## Mutating Joins {#sec-mutating-joins}
 
@@ -496,10 +508,9 @@ that the resulting dataset is a modification of the original `x`
 dataset---nothing from `y` has been added to `x`!
 
 ::: {.callout-tip}
-You can think of this as a relative of using a `!` in front of the inclusion 
-operator (`%in%`) inside of a `filter()` statement 
-(e.g., `filter(! day %in% c("Mon", "Tues", "Wed"))`). The `!` negates the `%in%`
-so only `Thurs`, `Fri`, `Sat`, and `Sun` would be included. 
+You can think of this as a relative of the `filter_out()` function, which is 
+a better tool for negating a filter statement (e.g.,
+`filter(! day %in% c("Mon", "Tues", "Wed"))`).
 :::
 
 ![© Garrick Aden-Buie](https://github.com/gadenbuie/tidyexplain/raw/main/images/anti-join.gif){fig-alt="A looping animation shows two tables being compared under an ‘anti join’ operation. The left table has keys 1 (red), 2 (blue), 3 (green) paired with values x1, x2, x3. The right table has keys 1 (red), 2 (blue), and 4 (purple) paired with values y1, y2, y4. Lines indicate matching keys (1 and 2). The resulting table on the right contains only the rows from the left table that do not have a match in the right: key 3 with x3 (green). Keys 1 and 2 are excluded because they have matches in the right table."}

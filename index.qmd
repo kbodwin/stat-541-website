@@ -13,6 +13,78 @@ environments. We will also continue to expand your skills as a
 developer---writing functions and iterating over those functions to query data
 from APIs and scrape the web. We're going to have a lot of fun!
 
+## How to Use This Text
+
+:::{.callout-warning}
+
+Watch out sections contain things you may want to look out for - common errors,
+etc.
+:::
+
+:::{.callout-example .icon}
+
+Example sections contain code and other information. Don't skip them!
+:::
+
+
+:::{.callout-note}
+
+Note sections contain clarification points (anywhere I would normally say "note
+that ....).  Make sure to read them to avoid any common pitfalls or
+misconceptions.
+:::
+
+:::{.callout-required-reading .icon}
+
+Consider these sections to be required readings.  This is where we will direct
+you to existing materials to explain or introduce a concept. 
+
+:::
+
+
+:::{.callout-required-video .icon}
+
+Similarly, consider these sections to be required viewing for the course
+material. 
+
+:::
+
+:::{.callout-check-in .icon}
+
+Check-in sections contain small tasks that you need to do throughout the
+reading, to practice or prepare. Although they are not graded, please treat them
+as required!
+:::
+
+:::{.callout-practice-exercise .icon}
+
+Each chapter will have a longer practice exercise to complete and turn in. 
+These are intended to be done with help from instructors and peers.
+
+:::
+
+:::{.callout-learn-more .icon}
+
+Consider these to be optional readings / viewings. The world of R programming
+has so many interesting tidbits, we can't possibly teach them all - but we want 
+to share them with you nonetheless!
+
+We will usually make these "click to expand" so that they don't distract from
+your reading.
+:::
+
+:::{.callout-opinion .icon}
+
+These are personal opinion comments from the authors. Take them with a grain of
+salt; we aren't the only R programmers worth listening to, we are just sharing
+what has worked for us.
+
+We will usually make these "click to expand" so that they don't distract from
+your reading.
+
+:::
+
+
 ## Acknowledements {.unnumbered}
 
 The design (and redesign) of this course was generously supported by the 
