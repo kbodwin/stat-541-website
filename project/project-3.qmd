@@ -1,0 +1,52 @@
+---
+title: "Project 3 Final Deliverable"
+editor: source
+---
+
+The deliverable for this project is a fully developed R package, which contains 
+functions to automate and streamline the data collection and analysis that you 
+did in Units 1 and 2.
+
+Along the way you will learn how to:
+
+- structure an R package folder
+- write automated unit tests for your functions
+- design code that is fast and efficient
+
+# Final Deliverable
+
+The package you create _must_ have the following elements:
+
+## Structure 
+
+-   Package installs without errors or warnings using 
+`remotes::install_github("your-repo/your-package-name")`
+-   All functions are fully documented in the `roxygen2` style.
+-   All functions have at least one associated unit test in the `testthat` format.
+
+## Content
+
+*Package mut contain at least...*
+-   one data gathering function
+-   one data cleaning/wrangling function
+-   two data summarizing functions
+-   two plotting functions
+-   one statistical analysis function
+
+
+## Function Design
+-   Package includes underlying helper functions that support primary functions.
+-   Functions perform efficiently on moderately large data
+-   At least one function uses `data.table`, `arrow`, and/or parallelization.
+
+# Peer Review
+
+In Week 9 your group will give (and receive) feedback to another group on their
+preliminary package setup.  Your goal is to test the user-friendliness of the functions
+and to find places where the functions break.
+
+# Submission
+
+You are required to submit **both** the link to your GitHub repository
+for your package, which should be fully installable from the link,
+**and** a `.zip` folder of your package.
