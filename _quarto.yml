@@ -143,7 +143,7 @@ website:
       contents:
         - href: unit-3.qmd
         - href: unit-3/package-structure.qmd
-          href: unit-3/unit-testing.qmd
+        - href: unit-3/unit-testing.qmd
         - text: "Week 8: In-Class Activity"
           href: practice-activities/week-8.qmd
         - href: unit-3/debugging.qmd
