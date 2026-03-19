@@ -1,0 +1,6 @@
+---
+title: "pa-7"
+format: html
+---
+
+https://github.com/jjallaire/diamonds-dashboard/blob/main/diamonds.qmd

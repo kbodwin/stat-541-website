@@ -21,9 +21,12 @@ A huge part of making a compelling and convincing plot is your choice of color
 and layout. In this second part of the coursework, we are going to learn more 
 about customizing colors and themes.
 
-## 🎥 Required Video: The Glamour of Graphics
-
+::: {.callout-required-video}
+::: youtube-video-container
 {{< video https://www.youtube.com/embed/h5cTacaWE6I?si=zLxvctfyr3TuAwlG >}}
+:::
+
+</br>
 
 This is one of the best talks on *simple* ways to make your visualizations more clear and glamorous. We recommend watching the entire thing (maybe on a sunny
 walk or at the beach!), but if you can't do the entire thing here are the main
@@ -37,6 +40,7 @@ principles Will Chase outlines:
 6.  Color is hard
 
 Let's work through each of these recommendations.
+:::
 
 ## Don't make people tilt their head
 
@@ -581,11 +585,8 @@ The number of color packages can get a bit overwhelming, which is why
 color palette that speaks to you! Is it the `Apricot` palette from the
 **LaCroixColoR** package?!
 
-::: {.callout-important}
-# [Check-ins]{style="font-size: 1.5em;"}
-:::
-
-**1. Which of the functions below would you use to change the colors of the bars on the following plot?**
+::: {.callout-check-in}
+1. Which of the functions below would you use to change the colors of the bars on the following plot?
 
 -   `scale_color_continuous()`
 -   `scale_color_discrete()`
@@ -607,7 +608,9 @@ p <- ggplot(penguins,
 p
 ```
 
-**2. Consider the plot in Question 1. What change was made to it in each step below? That is, what code would go inside the function `+ theme( )` to produce the added change?**
+2. Consider the plot in Question 1. What change was made to it in each step
+below? That is, what code would go inside the function `+ theme( )` to produce 
+the added change?
 
 a)  
 
@@ -631,7 +634,7 @@ p +
   theme(panel.grid.minor.x = element_blank())
 ```
 
-**3. Which built-in theme is each of the following plots? That is, what `theme_XXXX()` function would produce the added change?**
+3. Which built-in theme is each of the following plots? That is, what `theme_XXXX()` function would produce the added change?
 
 a)  
 
@@ -682,6 +685,10 @@ p +
 
 ```
 
-**4. Which of the plots above (a, b, c, or d) best adheres to the principles outlined by Will Chase (in the Glamour of Graphics)?**
+4. Which of the plots above (a, b, c, or d) best adheres to the principles
+outlined by Will Chase (in the Glamour of Graphics)?
 
-**5. None of the built-in ggplot themes _completely_ adhere to the principles outlined by Will Chase. For the plot you chose in Question 4, what additional change(s) are necessary?**
+5. None of the built-in ggplot themes _completely_ adhere to the principles
+outlined by Will Chase. For the plot you chose in Question 4, what additional
+change(s) are necessary?
+:::

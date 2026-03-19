@@ -117,10 +117,14 @@ we will use a shortcut by installing the
     SelectorGadget and toggle the "Pin to toolbar" option.)
 -   There is also a version that can be saved as a bookmark in the browser--see [here](https://rvest.tidyverse.org/articles/selectorgadget.html).
 
-## Required Video: [Selector Gadget Tutorial Video](http://selectorgadget.com/)
+::: {.callout-required-video}
+::: youtube-video-container
+<div style="padding:90.64% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/52055686?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="SelectorGadget Screencast"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+:::
+:::
 
-## Check-in: Webscraping
 
+::: {.callout-check-in}
 Head over to the [alphabetical page of the first 100 cheeses](https://www.cheese.com/alphabetical/?per_page=100).
 Click the Selector Gadget extension icon or bookmark button. As you mouse over
 the webpage, different parts will be highlighted in orange.
@@ -136,6 +140,7 @@ the webpage, different parts will be highlighted in orange.
 3.  What CSS selector would you use to obtain the link for each cheese?
 
 <!-- .product-item a -->
+:::
 
 ## Retrieving Data Using `rvest` and CSS Selectors {#sec-css-cheese}
 
@@ -242,9 +247,7 @@ approach!
     -   These functions need to be iterated! We would need to call the function
     to scrape a page once for each page we want to scrape.
 
-::: {.callout-important}
-# 🪤 [Check-ins]{style="font-size: 1.5em;"}
-
+::: {.callout-check-in}
 Let's carry out this plan to obtain the following information for **all**
 cheeses in the database:
 
@@ -255,7 +258,6 @@ does not).
 
 To be kind to the website owners, we will add a 1 second pause between page
 queries. (Note that you can view 100 cheeses at a time.)
-:::
 
 1. All three of the CSS selectors from @sec-css-cheese, have something in
 common. Can you spot it? Specifically, what input to `html_elements()` do they
@@ -446,3 +448,4 @@ on cheeses?
 all_cheeses <- bind_rows(all_pages)
 all_cheeses
 ```
+:::

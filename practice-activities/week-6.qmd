@@ -1,5 +1,5 @@
 ---
-title: "Practice Activity Week 5"
+title: "Practice Activity Week 6"
 format: html
 embed-resources: true
 editor: source
@@ -8,13 +8,13 @@ execute:
   error: true
   eval: false
 resources: 
-  - student/pa-5.zip
+  - student/pa-6.zip
 ---
 
 # Accessing the Practice Activity
 
 Download the materials for the activity here: 
-<a href="student/pa-5.zip" download>`pa-5.zip`</a>
+<a href="student/pa-6.zip" download>`pa-6.zip`</a>
 
 This `.zip` folder contains:
 
@@ -22,7 +22,7 @@ This `.zip` folder contains:
 2. the secret data used to make the map
 
 ::: {.callout-important}
-Be sure to save the file inside your Week 5 folder of your STAT 431 (or 541)
+Be sure to save the file inside your Week 6 folder of your STAT 431 (or 541)
 folder! 
 :::
 

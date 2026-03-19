@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Professionally Styled Plots – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
@@ -57,7 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -80,10 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d740d1846410d21846eaedb988be6a2e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-235111c28925c9e86c962b253a60587d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -110,10 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-
-
 </head>
-
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -279,14 +271,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content">
-    </a>
+    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content"><img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content"></a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -294,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
@@ -327,21 +315,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/atheobold/stat-541-website"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -349,15 +335,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Unit 1</span></a>
@@ -430,45 +412,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#custom-colors-and-themes" id="toc-custom-colors-and-themes" class="nav-link active" data-scroll-target="#custom-colors-and-themes">Custom Colors and Themes</a>
+<li>
+<a href="#custom-colors-and-themes" id="toc-custom-colors-and-themes" class="nav-link active" data-scroll-target="#custom-colors-and-themes">Custom Colors and Themes</a>
   <ul class="collapse">
-  <li><a href="#required-video-the-glamour-of-graphics" id="toc-required-video-the-glamour-of-graphics" class="nav-link" data-scroll-target="#required-video-the-glamour-of-graphics">🎥 Required Video: The Glamour of Graphics</a></li>
-  <li><a href="#dont-make-people-tilt-their-head" id="toc-dont-make-people-tilt-their-head" class="nav-link" data-scroll-target="#dont-make-people-tilt-their-head">Don’t make people tilt their head</a></li>
+<li><a href="#dont-make-people-tilt-their-head" id="toc-dont-make-people-tilt-their-head" class="nav-link" data-scroll-target="#dont-make-people-tilt-their-head">Don’t make people tilt their head</a></li>
   <li><a href="#left-align-most-of-your-text" id="toc-left-align-most-of-your-text" class="nav-link" data-scroll-target="#left-align-most-of-your-text">Left align most of your text</a></li>
   <li><a href="#lighten-gridlines-as-much-as-possible" id="toc-lighten-gridlines-as-much-as-possible" class="nav-link" data-scroll-target="#lighten-gridlines-as-much-as-possible">Lighten gridlines as much as possible</a></li>
-  <li><a href="#sec-legend" id="toc-sec-legend" class="nav-link" data-scroll-target="#sec-legend">Legends suck</a>
+  <li>
+<a href="#sec-legend" id="toc-sec-legend" class="nav-link" data-scroll-target="#sec-legend">Legends suck</a>
   <ul class="collapse">
-  <li><a href="#reordering-your-legend" id="toc-reordering-your-legend" class="nav-link" data-scroll-target="#reordering-your-legend">Reordering Your Legend</a></li>
+<li><a href="#reordering-your-legend" id="toc-reordering-your-legend" class="nav-link" data-scroll-target="#reordering-your-legend">Reordering Your Legend</a></li>
   <li><a href="#embedding-your-legend-in-the-plot-title" id="toc-embedding-your-legend-in-the-plot-title" class="nav-link" data-scroll-target="#embedding-your-legend-in-the-plot-title">Embedding Your Legend in the Plot Title</a></li>
   <li><a href="#removing-your-legend-with-annotations" id="toc-removing-your-legend-with-annotations" class="nav-link" data-scroll-target="#removing-your-legend-with-annotations">Removing Your Legend with Annotations</a></li>
-  </ul></li>
-  <li><a href="#fonts-matter" id="toc-fonts-matter" class="nav-link" data-scroll-target="#fonts-matter">Fonts matter</a>
+  </ul>
+</li>
+  <li>
+<a href="#fonts-matter" id="toc-fonts-matter" class="nav-link" data-scroll-target="#fonts-matter">Fonts matter</a>
   <ul class="collapse">
-  <li><a href="#the-debate" id="toc-the-debate" class="nav-link" data-scroll-target="#the-debate">The Debate</a></li>
+<li><a href="#the-debate" id="toc-the-debate" class="nav-link" data-scroll-target="#the-debate">The Debate</a></li>
   <li><a href="#tone-and-perception" id="toc-tone-and-perception" class="nav-link" data-scroll-target="#tone-and-perception">Tone and Perception</a></li>
   <li><a href="#bottom-line" id="toc-bottom-line" class="nav-link" data-scroll-target="#bottom-line">Bottom Line</a></li>
   <li><a href="#changing-your-plot-font" id="toc-changing-your-plot-font" class="nav-link" data-scroll-target="#changing-your-plot-font">Changing Your Plot Font</a></li>
-  </ul></li>
-  <li><a href="#color-is-hard" id="toc-color-is-hard" class="nav-link" data-scroll-target="#color-is-hard">Color is hard</a></li>
-  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-1/styled-plots.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+</li>
+  <li><a href="#color-is-hard" id="toc-color-is-hard" class="nav-link" data-scroll-target="#color-is-hard">Color is hard</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-1/styled-plots.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Professionally Styled Plots</h1>
 </div>
 
@@ -483,20 +463,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</header><div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="custom-colors-and-themes" class="level1">
-<h1>Custom Colors and Themes</h1>
+<section id="custom-colors-and-themes" class="level1"><h1>Custom Colors and Themes</h1>
 <p>A huge part of making a compelling and convincing plot is your choice of color and layout. In this second part of the coursework, we are going to learn more about customizing colors and themes.</p>
-<section id="required-video-the-glamour-of-graphics" class="level2">
-<h2 class="anchored" data-anchor-id="required-video-the-glamour-of-graphics">🎥 Required Video: The Glamour of Graphics</h2>
+<div class="callout callout-style-default callout-required-video callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-video</span>Required Video
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="youtube-video-container">
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/h5cTacaWE6I?si=zLxvctfyr3TuAwlG" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div>
+<p></p>
 <p>This is one of the best talks on <em>simple</em> ways to make your visualizations more clear and glamorous. We recommend watching the entire thing (maybe on a sunny walk or at the beach!), but if you can’t do the entire thing here are the main principles Will Chase outlines:</p>
 <ol type="1">
 <li>Don’t make people tilt their head (to read your plot)</li>
@@ -507,204 +494,183 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Color is hard</li>
 </ol>
 <p>Let’s work through each of these recommendations.</p>
-</section>
-<section id="dont-make-people-tilt-their-head" class="level2">
-<h2 class="anchored" data-anchor-id="dont-make-people-tilt-their-head">Don’t make people tilt their head</h2>
+</div>
+</div>
+<section id="dont-make-people-tilt-their-head" class="level2"><h2 class="anchored" data-anchor-id="dont-make-people-tilt-their-head">Don’t make people tilt their head</h2>
 <p>Let’s start with something simple! Not making people tilt their head to read your plot seems like an easy thing to do. We typically see plots that make people tilt their head when categorical variables have long names. For example, in the code below, we pull out the top 10 countries based on the length. We then compare the country’s life expectancy using side-by-side boxplots. As you can see, the names of the countries are illegible.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>countris_to_keep <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(country) <span class="sc">|&gt;</span> </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">name_len =</span> <span class="fu">str_length</span>(country)) <span class="sc">|&gt;</span> </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">order_by =</span> name_len)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">semi_join</span>(countris_to_keep, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> country, </span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">y =</span> lifeExp)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">+</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">countris_to_keep</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">country</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>name_len <span class="op">=</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_length.html">str_length</a></span><span class="op">(</span><span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_max</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span>, order_by <span class="op">=</span> <span class="va">name_len</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter-joins.html">semi_join</a></span><span class="op">(</span><span class="va">countris_to_keep</span>, by <span class="op">=</span> <span class="st">"country"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">country</span>, </span>
+<span>                       y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span></span>
+<span>         <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-mooshed-country-names" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Boxplot of life expectancy (‘lifeExp’) by country. The x-axis lists multiple country names, and the y-axis shows life expectancy values ranging roughly from the mid-30s to low-80s. Each country has a vertical boxplot showing the distribution of life expectancy over time. However, the country labels along the x-axis are long and overlap heavily, making them difficult or impossible to read. The plot demonstrates a situation where axis labels need to be modified for clarity.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-mooshed-country-names-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-mooshed-country-names-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="styled-plots_files/figure-html/fig-mooshed-country-names-1.png" class="img-fluid figure-img" alt="Boxplot of life expectancy (‘lifeExp’) by country. The x-axis lists multiple country names, and the y-axis shows life expectancy values ranging roughly from the mid-30s to low-80s. Each country has a vertical boxplot showing the distribution of life expectancy over time. However, the country labels along the x-axis are long and overlap heavily, making them difficult or impossible to read. The plot demonstrates a situation where axis labels need to be modified for clarity." width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mooshed-country-names-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Boxplot with unreadable x-axis labels
-</figcaption>
-</figure>
+</figcaption></figure>
 </div>
 </div>
 </div>
 <p>A “typical” fix is to tilt the names of the countries 45 degrees, like so:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">semi_join</span>(countris_to_keep, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> country, </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">y =</span> lifeExp)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">+</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter-joins.html">semi_join</a></span><span class="op">(</span><span class="va">countris_to_keep</span>, by <span class="op">=</span> <span class="st">"country"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">country</span>, </span>
+<span>                       y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span></span>
+<span>         <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-tilt-names-45-degrees" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Boxplot of life expectancy (‘lifeExp’) by country. The y-axis shows life expectancy values from roughly the mid-30s to low-80s. Each country has a vertical boxplot summarizing its distribution over time. The country names along the x-axis have been rotated diagonally to prevent overlap. While the labels are now readable, the angling makes the reader need to tilt their head for them to read the plot. The plot illustrates a common but imperfect fix for overlapping axis labels.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-tilt-names-45-degrees-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-tilt-names-45-degrees-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="styled-plots_files/figure-html/fig-tilt-names-45-degrees-1.png" class="img-fluid figure-img" alt="Boxplot of life expectancy (‘lifeExp’) by country. The y-axis shows life expectancy values from roughly the mid-30s to low-80s. Each country has a vertical boxplot summarizing its distribution over time. The country names along the x-axis have been rotated diagonally to prevent overlap. While the labels are now readable, the angling makes the reader need to tilt their head for them to read the plot. The plot illustrates a common but imperfect fix for overlapping axis labels." width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tilt-names-45-degrees-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Rotating the axis labels as a preliminary fix
-</figcaption>
-</figure>
+</figcaption></figure>
 </div>
 </div>
 </div>
 <p>However, our plot now makes people tilt their head! A better fix is to move the countries to the y-axis, where the names have plenty of space. Viola!</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">semi_join</span>(countris_to_keep, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> country, </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">x =</span> lifeExp)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">+</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Life Expectancy (Years)"</span>, </span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter-joins.html">semi_join</a></span><span class="op">(</span><span class="va">countris_to_keep</span>, by <span class="op">=</span> <span class="st">"country"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">country</span>, </span>
+<span>                       x <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span></span>
+<span>         <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Life Expectancy (Years)"</span>, </span>
+<span>       y <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-move-country-to-y" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Horizontal boxplot of life expectancy by country. The x-axis shows life expectancy in years (roughly mid-30s to low-80s), and the y-axis lists country names. Each country has a horizontal boxplot summarizing its life expectancy over time. By flipping the axes, the country labels are displayed vertically along the y-axis and are fully readable without overlap or rotation. This layout makes the long country names easy to scan and compare.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-move-country-to-y-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-move-country-to-y-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="styled-plots_files/figure-html/fig-move-country-to-y-1.png" class="img-fluid figure-img" alt="Horizontal boxplot of life expectancy by country. The x-axis shows life expectancy in years (roughly mid-30s to low-80s), and the y-axis lists country names. Each country has a horizontal boxplot summarizing its life expectancy over time. By flipping the axes, the country labels are displayed vertically along the y-axis and are fully readable without overlap or rotation. This layout makes the long country names easy to scan and compare." width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-move-country-to-y-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Rotating <code>x</code> and <code>y</code> axes so the long labels are easily read without tilting your head
-</figcaption>
-</figure>
+</figcaption></figure>
 </div>
 </div>
 </div>
 <p>You might have noticed something about <strong>a lot</strong> of the plots we’ve shown you in this coursework—many don’t have y-axis labels. The reason for this is twofold, first people always have to tilt their head to read the y-axis label. Second, many of these labels are not necessary because the variable is obvious.</p>
 <p>Here, we don’t need a label that says “Country” because the y-axis values can clearly communicate that context. In <a href="alt-geoms.html#fig-hexbin">Figure 10 of Non-Standard Geometries</a> the y-axis didn’t have a clear context, but we included that context in a location where the reader didn’t need to tilt their head (the plot title).</p>
-</section>
-<section id="left-align-most-of-your-text" class="level2">
-<h2 class="anchored" data-anchor-id="left-align-most-of-your-text">Left align most of your text</h2>
+</section><section id="left-align-most-of-your-text" class="level2"><h2 class="anchored" data-anchor-id="left-align-most-of-your-text">Left align most of your text</h2>
 <p>This recommendation is <strong>very</strong> easy to follow when making plots with <strong>ggplot2</strong> because left alignment is the default orientation for text. Sometimes we see students get excited at the idea of centering their plot title, but Will Chase (and your teachers) would recommend against it. Use that creative energy on finding great colors!</p>
-</section>
-<section id="lighten-gridlines-as-much-as-possible" class="level2">
-<h2 class="anchored" data-anchor-id="lighten-gridlines-as-much-as-possible">Lighten gridlines as much as possible</h2>
+</section><section id="lighten-gridlines-as-much-as-possible" class="level2"><h2 class="anchored" data-anchor-id="lighten-gridlines-as-much-as-possible">Lighten gridlines as much as possible</h2>
 <p><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">This documentation page</a> provides a complete list of all the themes that are built into <strong>ggplot2</strong>.</p>
 <p>If you want to go a bit deeper into the land of ggplot themes, <a href="https://emanuelaf.github.io/own-ggplot-theme.html">this blog by Emanuela Furfaro</a> provides great advice on how to make your own custom ggplot theme function.</p>
-</section>
-<section id="sec-legend" class="level2">
-<h2 class="anchored" data-anchor-id="sec-legend">Legends suck</h2>
+</section><section id="sec-legend" class="level2"><h2 class="anchored" data-anchor-id="sec-legend">Legends suck</h2>
 <p>In general, legends suck because they take people’s eyes away from your plot. Below, we present a few options for trying to address this issue.</p>
-<section id="reordering-your-legend" class="level3">
-<h3 class="anchored" data-anchor-id="reordering-your-legend">Reordering Your Legend</h3>
+<section id="reordering-your-legend" class="level3"><h3 class="anchored" data-anchor-id="reordering-your-legend">Reordering Your Legend</h3>
 <p>If you must keep your legend, then you <strong>absolutely must</strong> format your legend so that the colors appear in the same order as they appear on the plot. When your legend is not in order, then it is <strong>substantially</strong> more difficult for people to read your plot, as seen in this amazing gist from <a href="https://jennybryan.org/">Jenny Bryan</a>.</p>
 <p><img src="images/jenny-bryan-reorder-legend.png" class="img-fluid" alt="Side-by-side line charts showing why you should reorder your legend to match the data. Both plots show three lines (‘top’, ‘middle’, and ‘bottom’) across x = 1 to 3. In the left plot, the legend order does not match the vertical order of the lines at the right end of the chart, making it harder to read. In the right plot, the legend is reordered to match the lines’ final positions (highest to lowest), making the chart easier to understand."></p>
-<p>The <code>fct_reorder()</code> and <code>fct_reorder2()</code> functions from the <strong>forcats</strong> package are the key tools for getting your legend to have the same ordering as your plot. In <a href="alt-geoms.html#fig-geom-ribbon">Figure 6 from Non-Standard Geometries</a>, the legend <strong>did not</strong> appear in the same order as the plot. Let’s fix that using <code>fct_reorder()</code>!</p>
+<p>The <code><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder()</a></code> and <code><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder2()</a></code> functions from the <strong>forcats</strong> package are the key tools for getting your legend to have the same ordering as your plot. In <a href="alt-geoms.html#fig-geom-ribbon">Figure 6 from Non-Standard Geometries</a>, the legend <strong>did not</strong> appear in the same order as the plot. Let’s fix that using <code><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder()</a></code>!</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ribbon_summaries <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(continent <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Oceania"</span>, <span class="st">"Africa"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year, continent) <span class="sc">|&gt;</span> </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_life =</span> <span class="fu">mean</span>(lifeExp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> continent, </span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> mean_life, </span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">names_prefix =</span> <span class="st">"mean_"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ribbon_summaries</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">continent</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Oceania"</span>, <span class="st">"Africa"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">continent</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>mean_life <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">lifeExp</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, </span>
+<span>            .groups <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">continent</span>, </span>
+<span>              values_from <span class="op">=</span> <span class="va">mean_life</span>, </span>
+<span>              names_prefix <span class="op">=</span> <span class="st">"mean_"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(continent <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Oceania"</span>, <span class="st">"Africa"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year, continent) <span class="sc">|&gt;</span> </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_life =</span> <span class="fu">mean</span>(lifeExp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">continent =</span> forcats<span class="sc">::</span><span class="fu">fct_reorder</span>(<span class="at">.f =</span> continent, </span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">.x =</span> mean_life, </span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">.desc =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, </span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>                       <span class="at">y =</span> mean_life, </span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                       <span class="at">color =</span> continent)) <span class="sc">+</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> ribbon_summaries, </span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>              <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, </span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ymin =</span> mean_Africa, </span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ymax =</span> mean_Oceania</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>                            ), </span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="st">"identity"</span>,</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">fill =</span> <span class="st">"lightgray"</span>) <span class="sc">+</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, </span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>, </span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Profound Differences in Life Expectancy"</span>, </span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Comparing Continents with Highest and Lowest Life Expectancy"</span>, </span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Continent"</span>) <span class="sc">+</span></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">continent</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Oceania"</span>, <span class="st">"Africa"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">continent</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>mean_life <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">lifeExp</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, </span>
+<span>            .groups <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>continent <span class="op">=</span> <span class="fu">forcats</span><span class="fu">::</span><span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder</a></span><span class="op">(</span>.f <span class="op">=</span> <span class="va">continent</span>, </span>
+<span>                                          .x <span class="op">=</span> <span class="va">mean_life</span>, </span>
+<span>                                          .desc <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, </span>
+<span>                       y <span class="op">=</span> <span class="va">mean_life</span>, </span>
+<span>                       color <span class="op">=</span> <span class="va">continent</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>linewidth <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_ribbon.html">geom_ribbon</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">ribbon_summaries</span>, </span>
+<span>              mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, </span>
+<span>                            ymin <span class="op">=</span> <span class="va">mean_Africa</span>, </span>
+<span>                            ymax <span class="op">=</span> <span class="va">mean_Oceania</span></span>
+<span>                            <span class="op">)</span>, </span>
+<span>            position <span class="op">=</span> <span class="st">"identity"</span>,</span>
+<span>            inherit.aes <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span>            fill <span class="op">=</span> <span class="st">"lightgray"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, </span>
+<span>       y <span class="op">=</span> <span class="st">""</span>, </span>
+<span>       title <span class="op">=</span> <span class="st">"Profound Differences in Life Expectancy"</span>, </span>
+<span>       subtitle <span class="op">=</span> <span class="st">"Comparing Continents with Highest and Lowest Life Expectancy"</span>, </span>
+<span>       color <span class="op">=</span> <span class="st">"Continent"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>panel.grid.minor <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-reorder-ribbon" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Line and ribbon plot titled ‘Profound Differences in Life Expectancy’ with the subtitle ‘Comparing Continents with Highest and Lowest Life Expectancy’. The x-axis shows years from the 1950s to the early 2000s, and the y-axis shows life expectancy. Two lines are shown: Oceania (upper line) and Africa (lower line), with a shaded region between them highlighting the gap. Both lines increase over time, and Oceania remains consistently higher than Africa. The legend lists the continents in an order that does not match their vertical position in the plot, making it less intuitive to connect colors to lines. The plot illustrates why reordering the legend to match the visual order of the lines improves clarity.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-reorder-ribbon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-reorder-ribbon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="styled-plots_files/figure-html/fig-reorder-ribbon-1.png" class="img-fluid figure-img" alt="Line and ribbon plot titled ‘Profound Differences in Life Expectancy’ with the subtitle ‘Comparing Continents with Highest and Lowest Life Expectancy’. The x-axis shows years from the 1950s to the early 2000s, and the y-axis shows life expectancy. Two lines are shown: Oceania (upper line) and Africa (lower line), with a shaded region between them highlighting the gap. Both lines increase over time, and Oceania remains consistently higher than Africa. The legend lists the continents in an order that does not match their vertical position in the plot, making it less intuitive to connect colors to lines. The plot illustrates why reordering the legend to match the visual order of the lines improves clarity." width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reorder-ribbon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: Previous ribbon plot with a reordered legend so the colors appear in the same order as the plot
-</figcaption>
-</figure>
+</figcaption></figure>
 </div>
 </div>
 </div>
-</section>
-<section id="embedding-your-legend-in-the-plot-title" class="level3">
-<h3 class="anchored" data-anchor-id="embedding-your-legend-in-the-plot-title">Embedding Your Legend in the Plot Title</h3>
+</section><section id="embedding-your-legend-in-the-plot-title" class="level3"><h3 class="anchored" data-anchor-id="embedding-your-legend-in-the-plot-title">Embedding Your Legend in the Plot Title</h3>
 <p>If you can remove your legend, then there are two approaches you can take—adding the legend to the plot title or adding annotations to the plot. Let’s take a look at the first option, adding colors to your plot title.</p>
 <p>The <strong>ggtext</strong> package allows you to add hex colors and other HTML elements (e.g., italics, boldface) to plot titles. The process involves two main steps:</p>
 <ol type="1">
-<li><p>Wrap your text in HTML tags within the <code>labs()</code> function.</p></li>
-<li><p>Tell ggplot to render the HTML by adding <code>plot.title = element_markdown()</code> inside the <code>theme()</code> function.</p></li>
+<li><p>Wrap your text in HTML tags within the <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs()</a></code> function.</p></li>
+<li><p>Tell ggplot to render the HTML by adding <code>plot.title = element_markdown()</code> inside the <code><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme()</a></code> function.</p></li>
 </ol>
 <p>Let’s see how this can look! I’ve added the hex colors for the two continents (from <a href="alt-geoms.html#fig-geom-ribbon">Figure 6 from Non-Standard Geometries</a>) into the subtitle of my plot:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggtext)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(continent <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Oceania"</span>, <span class="st">"Africa"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year, continent) <span class="sc">|&gt;</span> </span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_life =</span> <span class="fu">mean</span>(lifeExp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, </span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">y =</span> mean_life, </span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>                       <span class="at">color =</span> continent)) <span class="sc">+</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> ribbon_summaries, </span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>              <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, </span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ymin =</span> mean_Africa, </span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ymax =</span> mean_Oceania</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>                            ), </span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="st">"identity"</span>,</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">fill =</span> <span class="st">"lightgray"</span>) <span class="sc">+</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, </span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>, </span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Profound Differences in Life Expectancy"</span>,</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Comparison of &lt;span style='color: #17b3b7;'&gt;Oceania&lt;/span&gt; and &lt;span style='color: #f35e5a;'&gt;Africa&lt;/span&gt;"</span>) <span class="sc">+</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_markdown</span>(), </span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://wilkelab.org/ggtext/">ggtext</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">continent</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Oceania"</span>, <span class="st">"Africa"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">continent</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>mean_life <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">lifeExp</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, </span>
+<span>            .groups <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, </span>
+<span>                       y <span class="op">=</span> <span class="va">mean_life</span>, </span>
+<span>                       color <span class="op">=</span> <span class="va">continent</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>linewidth <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_ribbon.html">geom_ribbon</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">ribbon_summaries</span>, </span>
+<span>              mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, </span>
+<span>                            ymin <span class="op">=</span> <span class="va">mean_Africa</span>, </span>
+<span>                            ymax <span class="op">=</span> <span class="va">mean_Oceania</span></span>
+<span>                            <span class="op">)</span>, </span>
+<span>            position <span class="op">=</span> <span class="st">"identity"</span>,</span>
+<span>            inherit.aes <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span>            fill <span class="op">=</span> <span class="st">"lightgray"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, </span>
+<span>       y <span class="op">=</span> <span class="st">""</span>, </span>
+<span>       title <span class="op">=</span> <span class="st">"Profound Differences in Life Expectancy"</span>,</span>
+<span>       subtitle <span class="op">=</span> <span class="st">"Comparison of &lt;span style='color: #17b3b7;'&gt;Oceania&lt;/span&gt; and &lt;span style='color: #f35e5a;'&gt;Africa&lt;/span&gt;"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span></span>
+<span>    legend.position <span class="op">=</span> <span class="st">"none"</span>,</span>
+<span>    plot.subtitle <span class="op">=</span> <span class="fu"><a href="https://wilkelab.org/ggtext/reference/element_markdown.html">element_markdown</a></span><span class="op">(</span><span class="op">)</span>, </span>
+<span>    panel.grid.minor <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-html-subtitle" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Line and ribbon plot titled ‘Profound Differences in Life Expectancy’ with the subtitle ‘Comparison of Oceania and Africa’, where the words ‘Oceania’ and ‘Africa’ are colored to match their lines in the plot. The x-axis shows years from the 1950s to the early 2000s, and the y-axis shows life expectancy. A teal line (Oceania) appears above a red line (Africa), with a shaded gray ribbon between them highlighting the gap. Both lines increase over time, and the gap remains large throughout. There is no separate legend; instead, the colored continent names in the subtitle act as direct labels for the lines.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-html-subtitle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-html-subtitle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="styled-plots_files/figure-html/fig-html-subtitle-1.png" class="img-fluid figure-img" alt="Line and ribbon plot titled ‘Profound Differences in Life Expectancy’ with the subtitle ‘Comparison of Oceania and Africa’, where the words ‘Oceania’ and ‘Africa’ are colored to match their lines in the plot. The x-axis shows years from the 1950s to the early 2000s, and the y-axis shows life expectancy. A teal line (Oceania) appears above a red line (Africa), with a shaded gray ribbon between them highlighting the gap. Both lines increase over time, and the gap remains large throughout. There is no separate legend; instead, the colored continent names in the subtitle act as direct labels for the lines." width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-html-subtitle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5: Removing the legend and incorporating the colors into the plot title
-</figcaption>
-</figure>
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -723,9 +689,9 @@ Figure&nbsp;5: Removing the legend and incorporating the colors into the plot ti
 <div class="columns">
 <div class="column" style="width:48%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">viridis</span>(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://sjmgarnier.github.io/viridis/">viridis</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://sjmgarnier.github.io/viridisLite/reference/viridis.html">viridis</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "#440154FF" "#3B528BFF" "#21908CFF" "#5DC863FF" "#FDE725FF"</code></pre>
 </div>
@@ -734,9 +700,9 @@ Figure&nbsp;5: Removing the legend and incorporating the colors into the plot ti
 
 </div><div class="column" style="width:48%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">brewer.pal</span>(<span class="dv">5</span>, <span class="st">"Set2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">RColorBrewer</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span><span class="fl">5</span>, <span class="st">"Set2"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "#66C2A5" "#FC8D62" "#8DA0CB" "#E78AC3" "#A6D854"</code></pre>
 </div>
@@ -745,70 +711,64 @@ Figure&nbsp;5: Removing the legend and incorporating the colors into the plot ti
 </div>
 </div>
 </div>
-</section>
-<section id="removing-your-legend-with-annotations" class="level3">
-<h3 class="anchored" data-anchor-id="removing-your-legend-with-annotations">Removing Your Legend with Annotations</h3>
+</section><section id="removing-your-legend-with-annotations" class="level3"><h3 class="anchored" data-anchor-id="removing-your-legend-with-annotations">Removing Your Legend with Annotations</h3>
 <p>Maybe you feel like having the legend in the plot title is still difficult for people to read. We don’t disagree! It would be <strong>really</strong> easy for people to read the legend if it was included in the <strong>body</strong> of the visualization. Let’s explore that option!</p>
 <p>Let’s first start with our base plot that we want to add annotations to:</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(continent <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Oceania"</span>, <span class="st">"Africa"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year, continent) <span class="sc">|&gt;</span> </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_life =</span> <span class="fu">mean</span>(lifeExp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, </span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">y =</span> mean_life, </span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">color =</span> continent)) <span class="sc">+</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> ribbon_summaries, </span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, </span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ymin =</span> mean_Africa, </span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ymax =</span> mean_Oceania</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>                            ), </span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="st">"identity"</span>,</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">fill =</span> <span class="st">"lightgray"</span>) <span class="sc">+</span></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, </span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>, </span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Profound Differences in Life Expectancy"</span>, </span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Comparing Continents with Highest and Lowest Life Expectancy"</span></span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span></span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">plot</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">continent</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Oceania"</span>, <span class="st">"Africa"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">continent</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>mean_life <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">lifeExp</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, </span>
+<span>            .groups <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, </span>
+<span>                       y <span class="op">=</span> <span class="va">mean_life</span>, </span>
+<span>                       color <span class="op">=</span> <span class="va">continent</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>linewidth <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_ribbon.html">geom_ribbon</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">ribbon_summaries</span>, </span>
+<span>              mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, </span>
+<span>                            ymin <span class="op">=</span> <span class="va">mean_Africa</span>, </span>
+<span>                            ymax <span class="op">=</span> <span class="va">mean_Oceania</span></span>
+<span>                            <span class="op">)</span>, </span>
+<span>            position <span class="op">=</span> <span class="st">"identity"</span>,</span>
+<span>            inherit.aes <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span>            fill <span class="op">=</span> <span class="st">"lightgray"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, </span>
+<span>       y <span class="op">=</span> <span class="st">""</span>, </span>
+<span>       title <span class="op">=</span> <span class="st">"Profound Differences in Life Expectancy"</span>, </span>
+<span>       subtitle <span class="op">=</span> <span class="st">"Comparing Continents with Highest and Lowest Life Expectancy"</span></span>
+<span>       <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span></span>
+<span>    legend.position <span class="op">=</span> <span class="st">"none"</span>,</span>
+<span>    panel.grid.minor <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span></span>
+<span><span class="va">plot</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details><div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="styled-plots_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" alt="Line and ribbon plot titled ‘Profound Differences in Life Expectancy’ with the subtitle ‘Comparing Continents with Highest and Lowest Life Expectancy’. The x-axis shows years from the 1950s to the early 2000s, and the y-axis shows life expectancy. Two lines are displayed but there are no labels for the lines or a legend indicating what continent each line corresponds with. This plot is being used as the 'base' plot to add annotations to the body of the plot (instead of the plot title)." width="672"></p>
+<figure class="figure"><p><img src="styled-plots_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" alt="Line and ribbon plot titled ‘Profound Differences in Life Expectancy’ with the subtitle ‘Comparing Continents with Highest and Lowest Life Expectancy’. The x-axis shows years from the 1950s to the early 2000s, and the y-axis shows life expectancy. Two lines are displayed but there are no labels for the lines or a legend indicating what continent each line corresponds with. This plot is being used as the 'base' plot to add annotations to the body of the plot (instead of the plot title)." width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Now that we have our base plot (saved as <code>plot</code>), we can explore adding annotations to the plot using <code>geom_text()</code>. Looking at the documentation for <code>geom_text()</code> you will notice that you must supply <code>x</code>, <code>y</code>, and <code>label</code> aesthetics. So, you need to have a dataframe with <strong>three</strong> columns indicating where to put the labels (x and y location) and what labels should be used. Let’s think about how to make this dataframe.</p>
+<p>Now that we have our base plot (saved as <code>plot</code>), we can explore adding annotations to the plot using <code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text()</a></code>. Looking at the documentation for <code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text()</a></code> you will notice that you must supply <code>x</code>, <code>y</code>, and <code>label</code> aesthetics. So, you need to have a dataframe with <strong>three</strong> columns indicating where to put the labels (x and y location) and what labels should be used. Let’s think about how to make this dataframe.</p>
 <p>Based on Will Chase’s advice, we should consider adding annotations on the left (“left align most of your text”), somewhere around 1955. If we want the annotations to help people know what continent each line is associated with, it seems like we want the text to be close to the line. For consistency, let’s put both annotations <em>inside</em> the grey area.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>annotate_text <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> </span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(continent <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Oceania"</span>, <span class="st">"Africa"</span>), </span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>         year <span class="sc">==</span> <span class="dv">1957</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">|&gt;</span> </span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year, continent) <span class="sc">|&gt;</span> </span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">y_lab =</span> <span class="fu">mean</span>(lifeExp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Move text based on what continent it is</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y_lab =</span> y_lab <span class="sc">+</span> <span class="fu">if_else</span>(continent <span class="sc">==</span> <span class="st">"Africa"</span>, </span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>                            <span class="dv">2</span>, <span class="co"># Move up for Africa (on bottom)</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>                            <span class="sc">-</span><span class="dv">2</span> <span class="co"># Move down for Oceania (on top)</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>                            )  </span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>annotate_text</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">annotate_text</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">continent</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Oceania"</span>, <span class="st">"Africa"</span><span class="op">)</span>, </span>
+<span>         <span class="va">year</span> <span class="op">==</span> <span class="fl">1957</span></span>
+<span>         <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">continent</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>y_lab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">lifeExp</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, </span>
+<span>            .groups <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="co"># Move text based on what continent it is</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    y_lab <span class="op">=</span> <span class="va">y_lab</span> <span class="op">+</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="va">continent</span> <span class="op">==</span> <span class="st">"Africa"</span>, </span>
+<span>                            <span class="fl">2</span>, <span class="co"># Move up for Africa (on bottom)</span></span>
+<span>                            <span class="op">-</span><span class="fl">2</span> <span class="co"># Move down for Oceania (on top)</span></span>
+<span>                            <span class="op">)</span>  </span>
+<span>  <span class="op">)</span></span>
+<span><span class="va">annotate_text</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
    year continent y_lab
@@ -819,51 +779,47 @@ Figure&nbsp;5: Removing the legend and incorporating the colors into the plot ti
 </div>
 <p>Now that we have our annotations, let’s put them on the plot!</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plot <span class="sc">+</span> </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> annotate_text, </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, </span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">y =</span> y_lab, </span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">label =</span> continent, </span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> continent</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                          ), </span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">inherit.aes =</span> <span class="cn">FALSE</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>            )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">annotate_text</span>, </span>
+<span>            mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, </span>
+<span>                          y <span class="op">=</span> <span class="va">y_lab</span>, </span>
+<span>                          label <span class="op">=</span> <span class="va">continent</span>, </span>
+<span>                          color <span class="op">=</span> <span class="va">continent</span></span>
+<span>                          <span class="op">)</span>, </span>
+<span>            inherit.aes <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>            <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-add-annotations" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Line and ribbon plot titled ‘Profound Differences in Life Expectancy’ with the subtitle ‘Comparing Continents with Highest and Lowest Life Expectancy’. The x-axis shows years from the 1950s to the early 2000s, and the y-axis shows life expectancy. Two lines are shown: a teal line for Oceania (upper line) and a red line for Africa (lower line), with a shaded gray ribbon between them highlighting the gap. Both lines rise steadily over time. Instead of a legend, the plot includes direct text annotations near the lines: the word ‘Oceania’ in teal placed near the upper line and ‘Africa’ in red placed near the lower line. The annotation colors match the line colors, making the plot easy to interpret without a separate legend.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-add-annotations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-add-annotations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="styled-plots_files/figure-html/fig-add-annotations-1.png" class="img-fluid figure-img" alt="Line and ribbon plot titled ‘Profound Differences in Life Expectancy’ with the subtitle ‘Comparing Continents with Highest and Lowest Life Expectancy’. The x-axis shows years from the 1950s to the early 2000s, and the y-axis shows life expectancy. Two lines are shown: a teal line for Oceania (upper line) and a red line for Africa (lower line), with a shaded gray ribbon between them highlighting the gap. Both lines rise steadily over time. Instead of a legend, the plot includes direct text annotations near the lines: the word ‘Oceania’ in teal placed near the upper line and ‘Africa’ in red placed near the lower line. The annotation colors match the line colors, making the plot easy to interpret without a separate legend." width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-add-annotations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6: Incorporating annotations to the body of the plot where text colors coordinate with the plot lines
-</figcaption>
-</figure>
+</figcaption></figure>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="fonts-matter" class="level2">
-<h2 class="anchored" data-anchor-id="fonts-matter">Fonts matter</h2>
+</section></section><section id="fonts-matter" class="level2"><h2 class="anchored" data-anchor-id="fonts-matter">Fonts matter</h2>
 <p>You may have missed it, but fonts have <a href="https://www.nytimes.com/2025/12/09/us/politics/rubio-state-department-font.html">gotten an interesting amount of attention recently</a>. There has been a longstanding debate between serif and sans serif fonts, centering primarily on readability, tone, and context of use.</p>
 <div class="columns">
 <div class="column" style="width:48%;">
 <p><strong>Serif fonts</strong> have small decorative strokes (“serifs”) at the ends of letters.</p>
 <ul>
-<li>Examples: <em>Times New Roman, Georgia, Garamond</em></li>
+<li>Examples: <em>Times New Roman, Georgia, Garamond</em>
+</li>
 </ul>
 </div><div class="column" style="width:4%;">
 
 </div><div class="column" style="width:48%;">
 <p><strong>Sans serif fonts</strong> do not have these strokes.</p>
 <ul>
-<li>Examples: <em>Arial, Helvetica, Calibri</em></li>
+<li>Examples: <em>Arial, Helvetica, Calibri</em>
+</li>
 </ul>
 </div>
 </div>
 <p><img src="images/serif-san-serif.jpeg" class="img-fluid" alt="Graphic comparing serif and sans serif fonts. On a blue background, a large capital A with small decorative strokes at the ends is labeled Serif on the left, and a large capital A without decorative strokes is labeled Sans Serif on the right. Green circles highlight the presence of serifs on the left letter and their absence on the right letter."></p>
-<section id="the-debate" class="level3">
-<h3 class="anchored" data-anchor-id="the-debate">The Debate</h3>
+<section id="the-debate" class="level3"><h3 class="anchored" data-anchor-id="the-debate">The Debate</h3>
 <p>Historically, serif fonts were considered easier to read in printed materials. The serifs were thought to:</p>
 <ul>
 <li>Guide the eye along lines of text</li>
@@ -883,17 +839,13 @@ Figure&nbsp;6: Incorporating annotations to the body of the plot where text colo
 <li>Factors like <strong>font size, spacing, contrast, and layout</strong> often <a href="https://jov.arvojournals.org/article.aspx?articleid=2433383">have a greater impact on readability</a>.</li>
 </ul>
 <p>In other words: there is no universal “better” choice.</p>
-</section>
-<section id="tone-and-perception" class="level3">
-<h3 class="anchored" data-anchor-id="tone-and-perception">Tone and Perception</h3>
+</section><section id="tone-and-perception" class="level3"><h3 class="anchored" data-anchor-id="tone-and-perception">Tone and Perception</h3>
 <p>Font choice strongly influences how a visualization feels:</p>
 <table class="caption-top table">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Serif</th>
 <th>Sans Serif</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td>Traditional</td>
@@ -919,10 +871,7 @@ Figure&nbsp;6: Incorporating annotations to the body of the plot where text colo
 <li>It looks clean at small sizes (axis labels, legends)</li>
 <li>It works well on slides and dashboards</li>
 <li>It reduces distraction from the data itself</li>
-</ul>
-</section>
-<section id="bottom-line" class="level3">
-<h3 class="anchored" data-anchor-id="bottom-line">Bottom Line</h3>
+</ul></section><section id="bottom-line" class="level3"><h3 class="anchored" data-anchor-id="bottom-line">Bottom Line</h3>
 <p>The serif vs.&nbsp;sans serif debate is less about absolute readability and more about <strong>context, tone, and design goals</strong>. In data visualization, clarity and consistency usually matter more than the category of font itself.</p>
 <p>When choosing a font for a visualization:</p>
 <ol type="1">
@@ -931,41 +880,33 @@ Figure&nbsp;6: Incorporating annotations to the body of the plot where text colo
 <li>Be consistent across figures.</li>
 <li>Match the font to the audience and context.</li>
 <li>Test how it looks when exported (PDF, PNG, slides).</li>
-</ol>
-</section>
-<section id="changing-your-plot-font" class="level3">
-<h3 class="anchored" data-anchor-id="changing-your-plot-font">Changing Your Plot Font</h3>
+</ol></section><section id="changing-your-plot-font" class="level3"><h3 class="anchored" data-anchor-id="changing-your-plot-font">Changing Your Plot Font</h3>
 <p>Let’s create the same plot in both a serif and sans serif font and compare clarity, tone, and legibility. Let’s take the last plot we saw (<a href="#fig-add-annotations" class="quarto-xref">Figure&nbsp;6</a>) and modify the font.</p>
 <p>You should notice that the default font in <a href="#fig-add-annotations" class="quarto-xref">Figure&nbsp;6</a> is <strong>san serif</strong>, but we never specified the font! <strong>ggplot2</strong> does not have its own built-in font, rather it uses the system’s default “sans” font. For Windows, this default font is typically Arial, whereas for a Mac the default font is typically Helvetica.</p>
-<p>We can change the font inside the <code>theme()</code> function, using the <code>text</code> argument.</p>
+<p>We can change the font inside the <code><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme()</a></code> function, using the <code>text</code> argument.</p>
 <div class="columns">
 <div class="column" style="width:48%;">
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>plot <span class="sc">+</span> </span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> annotate_text, </span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, </span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">y =</span> y_lab, </span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">label =</span> continent, </span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> continent</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>                          ), </span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">family =</span> <span class="st">"Times"</span>, </span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">7</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">+</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"Times"</span>, <span class="at">size =</span> <span class="dv">16</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">annotate_text</span>, </span>
+<span>            mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, </span>
+<span>                          y <span class="op">=</span> <span class="va">y_lab</span>, </span>
+<span>                          label <span class="op">=</span> <span class="va">continent</span>, </span>
+<span>                          color <span class="op">=</span> <span class="va">continent</span></span>
+<span>                          <span class="op">)</span>, </span>
+<span>            inherit.aes <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span>            family <span class="op">=</span> <span class="st">"Times"</span>, </span>
+<span>            size <span class="op">=</span> <span class="fl">7</span></span>
+<span>            <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>text <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>family <span class="op">=</span> <span class="st">"Times"</span>, size <span class="op">=</span> <span class="fl">16</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details><div class="cell-output-display">
 <div id="fig-change-times" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-change-times-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-change-times-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="styled-plots_files/figure-html/fig-change-times-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-change-times-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7: Times New Roman font
-</figcaption>
-</figure>
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -973,32 +914,27 @@ Figure&nbsp;7: Times New Roman font
 
 </div><div class="column" style="width:48%;">
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>plot <span class="sc">+</span> </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> annotate_text, </span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year, </span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">y =</span> y_lab, </span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">label =</span> continent, </span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> continent</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>                          ), </span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">family =</span> <span class="st">"Arial"</span>, </span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">7</span></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">+</span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"Arial"</span>, <span class="at">size =</span> <span class="dv">16</span>)</span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>        )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">plot</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">annotate_text</span>, </span>
+<span>            mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, </span>
+<span>                          y <span class="op">=</span> <span class="va">y_lab</span>, </span>
+<span>                          label <span class="op">=</span> <span class="va">continent</span>, </span>
+<span>                          color <span class="op">=</span> <span class="va">continent</span></span>
+<span>                          <span class="op">)</span>, </span>
+<span>            inherit.aes <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span>            family <span class="op">=</span> <span class="st">"Arial"</span>, </span>
+<span>            size <span class="op">=</span> <span class="fl">7</span></span>
+<span>            <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>text <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>family <span class="op">=</span> <span class="st">"Arial"</span>, size <span class="op">=</span> <span class="fl">16</span><span class="op">)</span></span>
+<span>        <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details><div class="cell-output-display">
 <div id="fig-change-calibri" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-change-calibri-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-change-calibri-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="styled-plots_files/figure-html/fig-change-calibri-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-change-calibri-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8: Arial font
-</figcaption>
-</figure>
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -1014,14 +950,11 @@ Figure&nbsp;8: Arial font
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can run <code>quartzFonts()</code> in your console to see what fonts are (currently) installed on your computer. If that list isn’t long enough (or you are looking for a specific font), we recommend installing the <strong>systemfonts</strong> package. This package opens the door to many non-standard fonts.</p>
+<p>You can run <code><a href="https://rdrr.io/r/grDevices/quartzFonts.html">quartzFonts()</a></code> in your console to see what fonts are (currently) installed on your computer. If that list isn’t long enough (or you are looking for a specific font), we recommend installing the <strong>systemfonts</strong> package. This package opens the door to many non-standard fonts.</p>
 <p>Dr.&nbsp;Theobold’s favorite font is <code>"Avenir"</code>. 🤓</p>
 </div>
 </div>
-</section>
-</section>
-<section id="color-is-hard" class="level2">
-<h2 class="anchored" data-anchor-id="color-is-hard">Color is hard</h2>
+</section></section><section id="color-is-hard" class="level2"><h2 class="anchored" data-anchor-id="color-is-hard">Color is hard</h2>
 <p>There are <strong>so</strong> many color packages in R that all work with ggplot. Regardless of what colors you decide to work with, you will need to know:</p>
 <ol type="1">
 <li>What aesthetic are the colors associated with (e.g., <code>color</code> or <code>fill</code>)?</li>
@@ -1030,127 +963,123 @@ Figure&nbsp;8: Arial font
 <p>The answers to these two questions direct you toward what function you need to use to change the colors in your plot. For example, to change the colors in a filled area plot (like <a href="alt-geoms.html#fig-area-plot-reordered">Figure 5 from Non-Standard Geometries</a>) you would need to use a <code>scale_fill_XXXX()</code> function, whereas with a hexbin plot (like <a href="alt-geoms.html#fig-hexbin">Figure 10</a>) you would need to use a <code>scale_color_XXXX()</code> function.</p>
 <p>We recommend poking around the <a href="https://ggplot2-book.org/scales-colour.html">Color Scales and Legends chapter of the <em>ggplot2</em> book by Hadley Wickham</a>. This chapter covers how color scales work, how to choose palettes, and how to customize them. The chapter even motivates the importance of choosing accessible color palettes that <em>everyone’s</em> eyes can see.</p>
 <p>The number of color packages can get a bit overwhelming, which is why <a href="https://emilhvitfeldt.com/">Emil Hvitfeldt</a> put together a <a href="https://emilhvitfeldt.github.io/r-color-palettes/">comprehensive list of color palettes in R</a>. Check it out! Find the color palette that speaks to you! Is it the <code>Apricot</code> palette from the <strong>LaCroixColoR</strong> package?!</p>
-<div class="callout callout-style-default callout-important callout-empty-content callout-titled">
+<div class="callout callout-style-default callout-check-in callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span><span style="font-size: 1.5em;">Check-ins</span>
+<span class="screen-reader-only">Check-in</span>Check In
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
-</div>
-</div>
-<p><strong>1. Which of the functions below would you use to change the colors of the bars on the following plot?</strong></p>
+<ol type="1">
+<li>Which of the functions below would you use to change the colors of the bars on the following plot?</li>
+</ol>
 <ul>
-<li><code>scale_color_continuous()</code></li>
-<li><code>scale_color_discrete()</code></li>
-<li><code>scale_fill_continuous()</code></li>
-<li><code>scale_fill_discrete()</code></li>
+<li><code><a href="https://ggplot2.tidyverse.org/reference/scale_colour_continuous.html">scale_color_continuous()</a></code></li>
+<li><code><a href="https://ggplot2.tidyverse.org/reference/scale_colour_discrete.html">scale_color_discrete()</a></code></li>
+<li><code><a href="https://ggplot2.tidyverse.org/reference/scale_colour_continuous.html">scale_fill_continuous()</a></code></li>
+<li><code><a href="https://ggplot2.tidyverse.org/reference/scale_colour_discrete.html">scale_fill_discrete()</a></code></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(penguins, </span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> species, </span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">fill =</span> species)) <span class="sc">+</span> </span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>, </span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Number of Penguins Sampled"</span>, </span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Species of Penguin"</span>)</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, </span>
+<span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">species</span>, </span>
+<span>                     fill <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">""</span>, </span>
+<span>       x <span class="op">=</span> <span class="st">"Number of Penguins Sampled"</span>, </span>
+<span>       fill <span class="op">=</span> <span class="st">"Species of Penguin"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">p</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="styled-plots_files/figure-html/base-plot-1.png" class="img-fluid figure-img" alt="Horizontal bar chart showing the number of penguins sampled by species. The x-axis shows ‘Number of Penguins Sampled’, and the y-axis lists three species: Adelie, Chinstrap, and Gentoo. Each bar is filled with a different color and the legend on the right labeled ‘Species of Penguin’ matches colors to species. The plot includes both major and minor gridlines in the background. Darker major gridlines align with labeled axis ticks, and lighter minor gridlines appear between them (with no labeled ticks). Both sets of gridlines create a dense grid behind the bars." width="672"></p>
+<figure class="figure"><p><img src="styled-plots_files/figure-html/base-plot-1.png" class="img-fluid figure-img" alt="Horizontal bar chart showing the number of penguins sampled by species. The x-axis shows ‘Number of Penguins Sampled’, and the y-axis lists three species: Adelie, Chinstrap, and Gentoo. Each bar is filled with a different color and the legend on the right labeled ‘Species of Penguin’ matches colors to species. The plot includes both major and minor gridlines in the background. Darker major gridlines align with labeled axis ticks, and lighter minor gridlines appear between them (with no labeled ticks). Both sets of gridlines create a dense grid behind the bars." width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p><strong>2. Consider the plot in Question 1. What change was made to it in each step below? That is, what code would go inside the function <code>+ theme( )</code> to produce the added change?</strong></p>
-<ol type="a">
-<li></li>
+<ol start="2" type="1">
+<li>Consider the plot in Question 1. What change was made to it in each step below? That is, what code would go inside the function <code>+ theme( )</code> to produce the added change?</li>
 </ol>
+<ol type="a">
+<li>
+</li></ol>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="styled-plots_files/figure-html/theme-remove-legend-1.png" class="img-fluid figure-img" alt="Horizontal bar chart showing the number of penguins sampled by species. The x-axis shows ‘Number of Penguins Sampled’, and the y-axis lists three species: Adelie, Chinstrap, and Gentoo. Each bar is filled with a different color. Similar to the base plot, this plot includes both major and minor gridlines in the background. However, in this plot there is no legend on the right." width="672"></p>
+<figure class="figure"><p><img src="styled-plots_files/figure-html/theme-remove-legend-1.png" class="img-fluid figure-img" alt="Horizontal bar chart showing the number of penguins sampled by species. The x-axis shows ‘Number of Penguins Sampled’, and the y-axis lists three species: Adelie, Chinstrap, and Gentoo. Each bar is filled with a different color. Similar to the base plot, this plot includes both major and minor gridlines in the background. However, in this plot there is no legend on the right." width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <ol start="2" type="a">
-<li></li>
-</ol>
+<li>
+</li></ol>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="styled-plots_files/figure-html/theme-grid-major-1.png" class="img-fluid figure-img" alt="Horizontal bar chart showing the number of penguins sampled by species. The x-axis shows ‘Number of Penguins Sampled’, and the y-axis lists three species: Adelie, Chinstrap, and Gentoo. Each bar is filled with a different color and the legend on the right labeled ‘Species of Penguin’ matches colors to species. The plot includes only major gridlines in the background (darker major gridlines with labeled axis ticks), creating a simpler grid behind the bars." width="672"></p>
+<figure class="figure"><p><img src="styled-plots_files/figure-html/theme-grid-major-1.png" class="img-fluid figure-img" alt="Horizontal bar chart showing the number of penguins sampled by species. The x-axis shows ‘Number of Penguins Sampled’, and the y-axis lists three species: Adelie, Chinstrap, and Gentoo. Each bar is filled with a different color and the legend on the right labeled ‘Species of Penguin’ matches colors to species. The plot includes only major gridlines in the background (darker major gridlines with labeled axis ticks), creating a simpler grid behind the bars." width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p><strong>3. Which built-in theme is each of the following plots? That is, what <code>theme_XXXX()</code> function would produce the added change?</strong></p>
-<ol type="a">
-<li></li>
+<ol start="3" type="1">
+<li>Which built-in theme is each of the following plots? That is, what <code>theme_XXXX()</code> function would produce the added change?</li>
 </ol>
+<ol type="a">
+<li>
+</li></ol>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="styled-plots_files/figure-html/theme-classic-1.png" class="img-fluid figure-img" alt="Compared with the base ggplot theme, this version uses a classic theme: the grey panel background is gone (now plain white), all gridlines are removed, and only the black x- and y-axis lines with ticks remain." width="672"></p>
+<figure class="figure"><p><img src="styled-plots_files/figure-html/theme-classic-1.png" class="img-fluid figure-img" alt="Compared with the base ggplot theme, this version uses a classic theme: the grey panel background is gone (now plain white), all gridlines are removed, and only the black x- and y-axis lines with ticks remain." width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <ol start="2" type="a">
-<li></li>
-</ol>
+<li>
+</li></ol>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="styled-plots_files/figure-html/theme-bw-1.png" class="img-fluid figure-img" alt="Compared with the base ggplot theme, this version has a white background and both major and minor gridlines are clearly visible in light grey. A thin black border outlines the plotting panel. The overall look is higher contrast and more minimal than the default grey theme, while still retaining gridlines for reference." width="672"></p>
+<figure class="figure"><p><img src="styled-plots_files/figure-html/theme-bw-1.png" class="img-fluid figure-img" alt="Compared with the base ggplot theme, this version has a white background and both major and minor gridlines are clearly visible in light grey. A thin black border outlines the plotting panel. The overall look is higher contrast and more minimal than the default grey theme, while still retaining gridlines for reference." width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <ol start="3" type="a">
-<li></li>
-</ol>
+<li>
+</li></ol>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="styled-plots_files/figure-html/theme-dark-1.png" class="img-fluid figure-img" alt="Compared with the base ggplot theme, this version has a dark grey background instead of light grey, and gridlines are shown in lighter grey for contrast. Axis text and tick labels are light-colored to stand out against the dark background. The overall appearance is high-contrast with a dark backdrop, while the colored bars remain vivid." width="672"></p>
+<figure class="figure"><p><img src="styled-plots_files/figure-html/theme-dark-1.png" class="img-fluid figure-img" alt="Compared with the base ggplot theme, this version has a dark grey background instead of light grey, and gridlines are shown in lighter grey for contrast. Axis text and tick labels are light-colored to stand out against the dark background. The overall appearance is high-contrast with a dark backdrop, while the colored bars remain vivid." width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <ol start="4" type="a">
-<li></li>
-</ol>
+<li>
+</li></ol>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="styled-plots_files/figure-html/theme-void-1.png" class="img-fluid figure-img" alt="Compared with the base ggplot theme, this version uses a theme where all axes, axis labels, tick marks, gridlines, legend, and background panel elements have been removed. Only the colored bars remain on a blank background, creating a minimal, stripped-down appearance with no contextual guides or reference lines." width="672"></p>
+<figure class="figure"><p><img src="styled-plots_files/figure-html/theme-void-1.png" class="img-fluid figure-img" alt="Compared with the base ggplot theme, this version uses a theme where all axes, axis labels, tick marks, gridlines, legend, and background panel elements have been removed. Only the colored bars remain on a blank background, creating a minimal, stripped-down appearance with no contextual guides or reference lines." width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p><strong>4. Which of the plots above (a, b, c, or d) best adheres to the principles outlined by Will Chase (in the Glamour of Graphics)?</strong></p>
-<p><strong>5. None of the built-in ggplot themes <em>completely</em> adhere to the principles outlined by Will Chase. For the plot you chose in Question 4, what additional change(s) are necessary?</strong></p>
+<ol start="4" type="1">
+<li><p>Which of the plots above (a, b, c, or d) best adheres to the principles outlined by Will Chase (in the Glamour of Graphics)?</p></li>
+<li><p>None of the built-in ggplot themes <em>completely</em> adhere to the principles outlined by Will Chase. For the plot you chose in Question 4, what additional change(s) are necessary?</p></li>
+</ol>
+</div>
+</div>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1562,9 +1491,7 @@ Figure&nbsp;8: Arial font
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../unit-1/alt-geoms.html" class="pagination-link" aria-label="Non-Standard Geometries">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Non-Standard Geometries</span>
       </a>          
@@ -1576,8 +1503,7 @@ Figure&nbsp;8: Arial font
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>This page is built with ❤️ by Drs. Kelly Bodwin &amp; Allison Theobold and also <a href="https://quarto.org/">Quarto</a>.</p>
 </div>   
@@ -1586,17 +1512,15 @@ Figure&nbsp;8: Arial font
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-1/styled-plots.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../LICENSE.md">
 <p>License</p>
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>

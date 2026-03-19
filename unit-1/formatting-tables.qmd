@@ -45,7 +45,6 @@ quite well. For more sophisticated tables, you will need to add-on additional
 styling functions (e.g., `cols_label()`, `tab_header()`, `fmt_percent()`).
 
 ::: callout-warning
-
 Quarto doesn't play nice with some options for formatting HTML tables in other
 packages. 
 
@@ -156,10 +155,6 @@ penguins |>
   slice_head(n = 10) |> 
   gt()
 ```
-
-
-
-
 
 ## Using Formatter Functions
 
@@ -365,3 +360,9 @@ penguins |>
 ```
 
 ## Now go forth and make great tables!
+
+::: {.callout-check-in}
+
+<!-- TODO make questions -->
+
+:::

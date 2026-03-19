@@ -8,13 +8,13 @@ execute:
   error: true
   eval: false
 resources: 
-  - student/pa-6.zip
+  - student/pa-5.zip
 ---
 
 # Accessing the Practice Activity
 
 Download the materials for the activity here: 
-<a href="student/pa-6.zip" download>`pa-6.zip`</a>
+<a href="student/pa-5.zip" download>`pa-5.zip`</a>
 
 This `.zip` folder contains:
 

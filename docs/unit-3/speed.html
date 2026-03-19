@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Code Speed – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
@@ -57,7 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -78,10 +74,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d740d1846410d21846eaedb988be6a2e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-235111c28925c9e86c962b253a60587d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -108,10 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-
-
 </head>
-
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -277,14 +269,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content">
-    </a>
+    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content"><img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content"></a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -292,7 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
@@ -325,46 +313,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/atheobold/stat-541-website"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tip-3-use-faster-existing-functions" id="toc-tip-3-use-faster-existing-functions" class="nav-link active" data-scroll-target="#tip-3-use-faster-existing-functions">Tip 3: Use faster existing functions</a>
+<li>
+<a href="#tip-3-use-faster-existing-functions" id="toc-tip-3-use-faster-existing-functions" class="nav-link active" data-scroll-target="#tip-3-use-faster-existing-functions">Tip 3: Use faster existing functions</a>
   <ul class="collapse">
-  <li><a href="#data.table" id="toc-data.table" class="nav-link" data-scroll-target="#data.table"><code>data.table</code></a></li>
-  </ul></li>
-  <li><a href="#tip-3-only-improve-what-needs-improving" id="toc-tip-3-only-improve-what-needs-improving" class="nav-link" data-scroll-target="#tip-3-only-improve-what-needs-improving">Tip 3: Only improve what needs improving</a>
-  <ul class="collapse">
-  <li><a href="#optional-super-advanced-mode" id="toc-optional-super-advanced-mode" class="nav-link" data-scroll-target="#optional-super-advanced-mode">Optional: Super advanced mode</a></li>
-  </ul></li>
+<li><a href="#data.table" id="toc-data.table" class="nav-link" data-scroll-target="#data.table"><code>data.table</code></a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-3/speed.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+</li>
+  <li>
+<a href="#tip-3-only-improve-what-needs-improving" id="toc-tip-3-only-improve-what-needs-improving" class="nav-link" data-scroll-target="#tip-3-only-improve-what-needs-improving">Tip 3: Only improve what needs improving</a>
+  <ul class="collapse">
+<li><a href="#optional-super-advanced-mode" id="toc-optional-super-advanced-mode" class="nav-link" data-scroll-target="#optional-super-advanced-mode">Optional: Super advanced mode</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-3/speed.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Code Speed</h1>
 </div>
 
@@ -379,30 +362,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<p>Fortunately, we stand on the shoulders of giants. Many skilled computer scientists have put a lot of time and effort into writing R functions that run as fast as possible.</p>
+</header><p>Fortunately, we stand on the shoulders of giants. Many skilled computer scientists have put a lot of time and effort into writing R functions that run as fast as possible.</p>
 <p>To speed up the code, without deep knowledge of computer algorithms and inner workings, you can sometimes come up with clever ways to avoid these pitfalls.</p>
 <p>First, though: as you start thinking about writing faster code, you’ll need a way to check whether your improvements actually sped up the code.</p>
-<section id="required-reading-the-tictoc-and-microbenchmark-packages" class="level4">
-<h4 class="anchored" data-anchor-id="required-reading-the-tictoc-and-microbenchmark-packages">📖 Required Reading: <a href="https://www.jumpingrivers.com/blog/timing-in-r/">The tictoc and microbenchmark packages</a></h4>
-</section>
-<section id="required-reading-the-bench-package" class="level4">
-<h4 class="anchored" data-anchor-id="required-reading-the-bench-package">📖 Required Reading: <a href="https://www.tidyverse.org/blog/2018/06/bench-1.0.1/">The bench package</a></h4>
-</section>
-<section id="required-reading-lobstrobj_size" class="level4">
-<h4 class="anchored" data-anchor-id="required-reading-lobstrobj_size">📖 Required Reading: <a href="https://lobstr.r-lib.org/reference/obj_size.html"><code>lobstr::obj_size()</code></a></h4>
-</section>
-<section id="tip-3-use-faster-existing-functions" class="level1">
-<h1>Tip 3: Use faster existing functions</h1>
+<section id="required-reading-the-tictoc-and-microbenchmark-packages" class="level4"><h4 class="anchored" data-anchor-id="required-reading-the-tictoc-and-microbenchmark-packages">📖 Required Reading: <a href="https://www.jumpingrivers.com/blog/timing-in-r/">The tictoc and microbenchmark packages</a>
+</h4>
+</section><section id="required-reading-the-bench-package" class="level4"><h4 class="anchored" data-anchor-id="required-reading-the-bench-package">📖 Required Reading: <a href="https://www.tidyverse.org/blog/2018/06/bench-1.0.1/">The bench package</a>
+</h4>
+</section><section id="required-reading-lobstrobj_size" class="level4"><h4 class="anchored" data-anchor-id="required-reading-lobstrobj_size">📖 Required Reading: <a href="https://lobstr.r-lib.org/reference/obj_size.html"><code>lobstr::obj_size()</code></a>
+</h4>
+</section><section id="tip-3-use-faster-existing-functions" class="level1"><h1>Tip 3: Use faster existing functions</h1>
 <p>Because R has so many packages, there are often many functions to perform the same task. Not all functions are created equal!</p>
-<section id="data.table" class="level2">
-<h2 class="anchored" data-anchor-id="data.table"><code>data.table</code></h2>
+<section id="data.table" class="level2"><h2 class="anchored" data-anchor-id="data.table"><code>data.table</code></h2>
 <p>For speeding up work with data frames, no package is better than <code>data.table</code>!</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/uueVddWwbkk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<section id="required-reading-data.table-cheatsheet" class="level4">
-<h4 class="anchored" data-anchor-id="required-reading-data.table-cheatsheet">📖 Required Reading: <a href="https://pbs.twimg.com/media/Dwoq0ZQXQAE5lJt.jpg">data.table cheatsheet</a></h4>
+<section id="required-reading-data.table-cheatsheet" class="level4"><h4 class="anchored" data-anchor-id="required-reading-data.table-cheatsheet">📖 Required Reading: <a href="https://pbs.twimg.com/media/Dwoq0ZQXQAE5lJt.jpg">data.table cheatsheet</a>
+</h4>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -417,31 +392,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Here is some <code>dplyr</code> code. Re-write it in <code>data.table</code> syntax.</li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>congress_age <span class="sc">%&gt;%</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(state) <span class="sc">%&gt;%</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(age))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">congress_age</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">summarize</span><span class="op">(</span>mean_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">age</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="3" type="1">
 <li>Using either the <code>tictoc</code> or <code>microbenchmark</code> packages perform a speed test to see which code is faster, and by how much.</li>
 </ol>
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="tip-3-only-improve-what-needs-improving" class="level1">
-<h1>Tip 3: Only improve what needs improving</h1>
+</section></section></section><section id="tip-3-only-improve-what-needs-improving" class="level1"><h1>Tip 3: Only improve what needs improving</h1>
 <blockquote class="blockquote">
 <p>“We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical 3%. A good programmer will not be lulled into complacency by such reasoning, [they] will be wise to look carefully at the critical code; but only after that code has been identified.” — Donald Knuth.</p>
 </blockquote>
 <p>Speed and computational efficiency are important, but there can be a trade off. If you make a small speed improvement, but your code becomes overly complex, confusing, or difficult to edit and test it’s not worth it!</p>
 <p>Also, consider your time and energy as the programmer. Suppose you have a function that takes 30-minutes to run. It relies on a subfunction that takes 30-seconds to run. Should you really spend your efforts making the subfunction take only 10-seconds?</p>
 <p>The art of finding the slow bits of your code where you can make the most improvement is called <strong>profiling</strong>.</p>
-<section id="required-reading-profiling" class="level4">
-<h4 class="anchored" data-anchor-id="required-reading-profiling">📖 Required Reading: <a href="http://adv-r.had.co.nz/Profiling.html#profiling">Profiling</a></h4>
-</section>
-<section id="recommended-reading-measuring-performance" class="level4">
-<h4 class="anchored" data-anchor-id="recommended-reading-measuring-performance">📖 Recommended Reading: <a href="https://adv-r.hadley.nz/perf-measure.html">Measuring Performance</a></h4>
+<section id="required-reading-profiling" class="level4"><h4 class="anchored" data-anchor-id="required-reading-profiling">📖 Required Reading: <a href="http://adv-r.had.co.nz/Profiling.html#profiling">Profiling</a>
+</h4>
+</section><section id="recommended-reading-measuring-performance" class="level4"><h4 class="anchored" data-anchor-id="recommended-reading-measuring-performance">📖 Recommended Reading: <a href="https://adv-r.hadley.nz/perf-measure.html">Measuring Performance</a>
+</h4>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -467,53 +437,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-body-container callout-body">
 <ol start="4" type="1">
-<li>Why is <code>vapply()</code> faster than <code>sapply()</code>?</li>
+<li>Why is <code><a href="https://rdrr.io/r/base/lapply.html">vapply()</a></code> faster than <code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code>?</li>
 </ol>
-<!-- -->
-<ol type="a">
+<!-- --><ol type="a">
 <li>It specifies the output type.</li>
 <li>It specifies the input type.</li>
 <li>It performs fewer safety checks.</li>
 <li>It performs fewer iterations.</li>
 </ol>
-<!-- -->
-<ol start="5" type="1">
+<!-- --><ol start="5" type="1">
 <li>Here are two other ways to compute the square root of a vector. Which is faster? fastest? Use microbenchmarking to test your answers!</li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">^</span> (<span class="dv">1</span> <span class="sc">/</span> <span class="dv">2</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">log</span>(x) <span class="sc">/</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">^</span> <span class="op">(</span><span class="fl">1</span> <span class="op">/</span> <span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">/</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="6" type="1">
 <li>Why is <code>mean(x)</code> slower than <code>sum(x)/length(x)</code>?</li>
 </ol>
-<!-- -->
-<ol type="a">
-<li><code>sum()</code> is vectorized, while <code>mean()</code> is not.</li>
+<!-- --><ol type="a">
+<li>
+<code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code> is vectorized, while <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> is not.</li>
 <li>A mean is a smaller number than a sum, so it needs less memory.</li>
-<li><code>mean()</code> calculates the mean twice just in case.</li>
-<li><code>mean()</code> was written in an old version of R.</li>
+<li>
+<code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> calculates the mean twice just in case.</li>
+<li>
+<code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> was written in an old version of R.</li>
 </ol>
 </div>
 </div>
-</section>
-<section id="optional-super-advanced-mode" class="level2">
-<h2 class="anchored" data-anchor-id="optional-super-advanced-mode">Optional: Super advanced mode</h2>
+</section><section id="optional-super-advanced-mode" class="level2"><h2 class="anchored" data-anchor-id="optional-super-advanced-mode">Optional: Super advanced mode</h2>
 <p>The following are some suggestions of ways you can level-up your code speed. These are outside the scope of this class, but you are welcome to explore them!</p>
 <ul>
 <li><a href="https://csgillespie.github.io/efficientR/">Dive deep into the R efficiency rabbit hole…</a></li>
 <li><a href="http://zevross.com/blog/2019/02/12/dramatically-speed-up-your-r-purrr-functions-with-the-furrr-package/">Parallelize your computations</a></li>
 <li><a href="http://adv-r.had.co.nz/Rcpp.html#rcpp">Make your code run in C++ with Rcpp</a></li>
-<li>Learn to use <a href="https://techvidvan.com/tutorials/recursion-in-r/">recursion</a></li>
+<li>Learn to use <a href="https://techvidvan.com/tutorials/recursion-in-r/">recursion</a>
+</li>
 <li>Learn more about <a href="https://adv-r.hadley.nz/names-values.html">memory allocation</a> and <a href="http://adv-r.had.co.nz/memory.html">garbage collecting</a> in R.</li>
 </ul>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -927,8 +892,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>This page is built with ❤️ by Drs. Kelly Bodwin &amp; Allison Theobold and also <a href="https://quarto.org/">Quarto</a>.</p>
 </div>   
@@ -937,17 +901,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-3/speed.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../LICENSE.md">
 <p>License</p>
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>

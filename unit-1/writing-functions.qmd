@@ -10,9 +10,9 @@ execute:
 ::: {.callout-tip}
 # Go on a walk and listen to a talk!
 
-I've included quite a few talks in this coursework (1) because they do a great 
+We've included quite a few talks in this coursework (1) because they do a great 
 job discussing topics related to function design, and (2) they were given by 
-my coding heroes (cough, [Jenny Bryan](https://jennybryan.org/about/) 🤩). 
+our coding heroes (cough, [Jenny Bryan](https://jennybryan.org/about/) 🤩). 
 
 It's not critical for you to sit in front of a computer when listening to these
 talks, so I might recommend going on a walk and listening to one! The weather 
@@ -30,13 +30,30 @@ library(palmerpenguins)
 # Basics of Functions
 
 If you do not recall the basics of writing functions, or if you want a quick
-refresher, watch the video below.
+refresher, feel free to read the section from *R for Data Science* or watch the
+video below:
 
-## 🎥 Recommended Video: How to Write a Function in R
+::: {.callout-learn-more}
 
+::: columns
+::: {.column width="40%"}
+</br>
+
+[*R for Data Science* Chapter 25, Section 2: Vector Functions](https://r4ds.hadley.nz/functions.html#vector-functions)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+</br>
+
+::: youtube-video-container
 {{< video https://www.youtube.com/embed/zA5eVuUMM8U?si=AlTQG1N79B48UjT_ >}} 
-
-## 📖 Recommended Reading: [*R for Data Science*: Vector Functions](https://r4ds.hadley.nz/functions.html#vector-functions)
+:::
+:::
+:::
+:::
 
 ### Anatomy of a Function
 
@@ -94,10 +111,8 @@ When we use a function in code, this is referred to as a **function call**.
 add_or_subtract(1, 2)
 ```
 
-::: {.callout-important}
-# Check-in: Function Basics
-
-**Question 1:** What will be returned by each of the following?
+::: {.callout-check-in}
+1. What will be returned by each of the following?
 
 a.  1
 b. -1
@@ -120,9 +135,7 @@ add_or_subtract(5, 6, type = "multiply")
 add_or_subtract("orange", type = "multiply")
 ```
 
-**Question 2:**
-
-Consider the following code:
+2. Consider the following code:
 
 ```{r}
 #| echo: true
@@ -154,6 +167,7 @@ Most likely, you have so far only written functions for your own convenience.
 *other people* to use and possibly even edit them. This means we need to put
 some thought into the *design* of the function.
 
+::: {.callout-required-video}
 Please choose one of these talks to listen to (and go on a walk)!
 
 ::: columns
@@ -167,6 +181,7 @@ Please choose one of these talks to listen to (and go on a walk)!
 
 ::: {.column width="48%"}
 {{< video https://www.youtube.com/embed/7oyiPBjLAWY?si=9gYMPPvExZ43DDpC >}}
+:::
 :::
 :::
 
@@ -200,10 +215,8 @@ always apply:
     -   They should not alter the Global Environment. 
     *(Do not put `library()` or `install()` statements inside functions!)*
 
-::: {.callout-important}
-# Check-in: Function Design
-
-**Question 3:** Identify the relevant issues for the following function:
+::: {.callout-check-in}
+3. Identify the relevant issues for the following function:
 
 ```{r}
 #| eval: false
@@ -253,14 +266,17 @@ went wrong?
 :::
 :::
 
-## 🎥 Recommended Video: Object of Type ‘closure’ is Not Subsettable
+::: {.callout-learn-more}
+We highly recommend watching this video on the debuggin process by Jenny Bryan:
 
+::: youtube-video-container
 {{< video https://www.youtube.com/embed/vgYS-F8opgE?si=50_pcvhIl2LkgwJT >}}
+:::
+:::
 
-::: {.callout-important}
-# Checkin: Debugging
-
-**Question 4:** What does using the `traceback` approach to debugging **NOT**
+<!-- maybe make new questions? -->
+::: {.callout-check-in}
+4. What does using the `traceback` approach to debugging **NOT**
 tell you?
 
 a)  The function call that triggered the error.
@@ -268,7 +284,7 @@ b)  The sub-function where the error actually occurred.
 c)  The value of the argument or object that caused the error.
 d)  The text of the full error message.
 
-**Question 5:** Which of the following is **NOT** a disadvantage of using
+5. Which of the following is **NOT** a disadvantage of using
 `browser()`?
 
 a)  You can't insert it into existing functions.
@@ -276,7 +292,7 @@ b)  You can't view variables in the function environment when it is running.
 c)  You have to remember to take it out of your code when you are done with it.
 d)  You have to run your code line-by-line until you find the error.
 
-**Question 6:** What is the most fun pronunciation of `debugonce()`
+6. What is the most fun pronunciation of `debugonce()`
 
 a)  "Debug Once"
 b)  "Debut Gonky"
@@ -335,10 +351,8 @@ a non-existent object. However, you used an object name that happens to also be
 an existing function.
 
 
-::: {.callout-important}
-# Check-in: Object of Type "closure"
-
-**Question 7:** What is the most likely cause of the error message 
+::: {.callout-chech-in}
+7. What is the most likely cause of the error message 
 `Error in x[1] : object of type 'closure'` is not subsettable?
 
 a. Trying to access an element of a list using parentheses `()` instead of
@@ -398,10 +412,8 @@ The function `silly_function()` doesn't use the `x` argument. Thus, R was
 "lazy", and never even bothered to try to run `mean("orange")` - so we never get
 an error. 🙀
 
-::: {.callout-important}
-# Check-in: Lazy Evaluation
-
-**Question 8:** In R, when exactly does the evaluation of a function argument
+::: {.callout-check-in}
+8. In R, when exactly does the evaluation of a function argument
 occur?
 
 a. Immediately when the function is called
@@ -461,7 +473,9 @@ unquoted variable `cat_var`, and tries to use it as an input in `group_by()`,
 not realizing that we *actually* meant to pass along the variable name 
 `species` into the function.
 
-## 📖 Recommended Reading: [*R for Data Science*: Data Frame Functions](https://r4ds.hadley.nz/functions.html#data-frame-functions)
+::: {.callout-required-reading}
+[*R for Data Science* Chapter 25, Section 3: Data Frame Functions](https://r4ds.hadley.nz/functions.html#data-frame-functions)
+:::
 
 To solve this conundrum, we use a trick called **tunneling** to "force" the
 unquoted name `species` through to the function `group_by()`. It looks like
@@ -547,10 +561,8 @@ means_by_group(penguins,
                )
 ```
 
-::: {.callout-important}
-# Check-in: Tidy Eval Functions
-
-**Question 9:** Create a new version of `dplyr::count()` that also shows
+::: {.callout-check-in}
+9. Create a new version of `dplyr::count()` that also shows
 proportions instead of just sample sizes. The function should be able to handle
 counting by multiple categorical variables. 
 :::

@@ -39,28 +39,16 @@ be...difficult.
 :::
 :::
 
+::: {.callout-required-video}
 
+**Be sure to watch all 6 videos in this series!**
 
-## 🎥 Required Video: Introductory Series to `leaflet` in R (6 Videos)
-
-::: columns
-::: {.column width="60%"}
-<iframe width="400" height="225" style="width: 400px; height: 225px;" src="https://www.youtube.com/embed/6Uz5KBZ8V5E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-:::
-
-::: {.column width="40%"}
-::: callout-caution
-Be sure to watch all 6 videos in this series!
-:::
+::: youtube-video-container
+{{< video https://www.youtube.com/embed/6Uz5KBZ8V5E >}}
 :::
 :::
 
-
-
-::: {.callout-important}
-# Check-in
-
+::: {.callout-check-in}
 1. Is running just the `leaflet()` function enough to produce a map?
 
 -   Yes
@@ -77,12 +65,13 @@ Be sure to watch all 6 videos in this series!
 ## More on the `leaflet` package
 
 The leaflet package is actually extremely rich and can basically enable
-(interactive) map visualizations as complex as you can imagine. Take some time 
-to peruse the site for the leaflet R package: <https://rstudio.github.io/leaflet/>
+(interactive) map visualizations as complex as you can imagine. 
 
-::: {.callout-important}
-# Check-in
+::: {.callout-required-reading}
+Take some time to peruse the site for the leaflet R package: <https://rstudio.github.io/leaflet/>
+:::
 
+::: {.callout-check-in}
 3.  What do the names of your plotted data columns have to be?
 
 -   `x`; `y`
@@ -133,9 +122,7 @@ leaflet() %>%
              )
 ```
 
-::: {.callout-important}
-# Check-in
-
+::: {.callout-check-in}
 The above map plots data on NASA astronauts!
 
 5.  The graphic for each marker is a little astronaut helmet. How cute! This
@@ -153,8 +140,8 @@ image was used via...
 -   squint your eyes; look normally
 :::
 
-# Extra Resources
-
+::: {.callout-learn-more}
 -   Greg Sward has a pretty good series of videos on [leaflet in R](https://www.youtube.com/channel/UCVvv6HyBo9pg5-URPeJPQEw/search?query=leaflet) - the entire series is longer than we can fit as required viewing, but they are great tutorials!
 -   Abhinav Agrawal also has a good [beginner series](https://www.youtube.com/watch?v=ktWjjAlAKtE&list=PL6wLL_RojB5y8uL3uuIMnJ6JoTIFywQ-r&index=1)
 -   Don't forget about the [Data-to-Viz Website](https://www.data-to-viz.com/)
+:::

@@ -519,10 +519,7 @@ that could be made and the situations when they'd be most useful. Have you
 ever wondered when you would want to make a radar plot? Or maybe a parallel 
 plot? This site has it all!
 
-::: {.callout-important}
-# [Check-ins]{style="font-size: 1.5em;"}
-:::
-
+::: {.callout-check-in}
 ::: columns
 ::: {.column width="40%"}
 

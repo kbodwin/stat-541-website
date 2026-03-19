@@ -9,23 +9,26 @@ into version 1.4, so you can use a familiar tool to create these dashboards.
 In part 1, we will focus on creating "static" dashboards---where the user 
 **does not** interact with the content. 
 
-## 🎥 Required Video: Hello Quarto Dashboards
+::: {.callout-required-video}
+::: youtube-video-container
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HW7QbqI4fH0?si=Rw6Cwy173CNJN3M-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< video https://www.youtube.com/embed/HW7QbqI4fH0?si=Rw6Cwy173CNJN3M >}}
+:::
 
-
-## Video Resources
+</br>
 
 - Slides for this Video: <https://mine.quarto.pub/quarto-dashboards/>
 - Starter Documents: <https://github.com/mine-cetinkaya-rundel/olympicdash>
 
-## Optional Resources 
+:::
+
+::: {.callout-learn-more} 
 
 - [Quarto Dashboard Gallery](https://quarto.org/docs/gallery/#dashboards)
 - [Quarto Dashboard Tutorial](https://quarto.org/docs/dashboards/)
 - [Quarto Dashboard Reference](https://quarto.org/docs/reference/formats/dashboard.html)
+:::
 
-::: {.callout-important}
-# Check-in
+::: {.callout-check-in}
 
 :::

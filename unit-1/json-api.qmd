@@ -61,15 +61,13 @@ accommodate very complex types and shapes of data. So while it may not always be
 workable into a tabular form, it still maintains a high degree of structure that
 we can exploit!
 
-## 📖 Required Reading: [*R for Data Science*, Chapter 23](https://r4ds.hadley.nz/rectangling.html)
+::: {.callout-required-reading}
+[*R for Data Science*, Chapter 23](https://r4ds.hadley.nz/rectangling.html)
 
-::: {.callout-note}
-# Only read Sections 1-4 for now!
+**Only read Sections 1-4 for now!**
 :::
 
-::: {.callout-important}
-## Check-in
-
+::: {.callout-check-in}
 1. What happens when you use `unnest_wider()` with unnamed list-columns like 
 `df2`? 
 
@@ -109,15 +107,13 @@ unnest_wider(df2, col = y, names_sep = "_")
 
 # JSON Data
 
-## 📖 Required Reading: [*R for Data Science*, Chapter 23](https://r4ds.hadley.nz/rectangling.html)
+::: {.callout-required-reading}
+[*R for Data Science*, Chapter 23](https://r4ds.hadley.nz/rectangling.html)
 
-::: {.callout-note}
-# Now read Sections 5 & 6! 
+**Now read Sections 5 & 6!**
 :::
 
-::: {.callout-important}
-## Check-in
-
+::: {.callout-check-in}
 1. Objects are held in \_\_\_\_\_.
 
 -   parentheses
@@ -243,7 +239,6 @@ companies %>%
   str()
 ```
 
-
 ### Step 1 -- Use `spread_all()` to spread the values of a JSON object
 
 ```{r}
@@ -253,9 +248,7 @@ companies %>%
 companies_tidy <- spread_all(companies)
 ```
 
-::: {.callout-important}
-## Check-in
-
+::: {.callout-check-in}
 5. How does `spread_all()` know how many columns to make? 
 
 6. Is the JSON data retained after you have spread the data?
@@ -285,9 +278,7 @@ JSON associated with each row of the `tbl_json` object, and adds a new column
 occurrences of each `name`, `type` combination to understand how many rows / 
 observations contained these values.
 
-::: {.callout-important}
-## Check-in
-
+::: {.callout-check-in}
 7. Fill in the code below to discover how many different values are included in
 the `companies` dataset?
 
@@ -305,9 +296,7 @@ companies_values <- companies %>%
 Now that we know the name of **every** value in the `companies` dataset, we can
 inspect how many of these columns were not captured when we used `spread-all()`.
 
-::: {.callout-important}
-## Check-in
-
+::: {.callout-check-in}
 8. Fill in the code below to uncover how many arrays from the `companies`
 dataset were not spread into new columns.
 
@@ -360,9 +349,7 @@ into index-value pairs, creating a new column `array.index` to store the index
 of the array, and storing values in the 'JSON' attribute for further tidyjson
 manipulation.
 
-::: {.callout-important}
-## Check-in
-
+::: {.callout-check-in}
 9. Fill in the code below to spread the `acquisitions` array of the `companies`
 dataset. 
 
@@ -473,35 +460,38 @@ thing1 <- map(.x = values_to_map,
 reduce(thing1, .f = bind_cols)
 ```
 
-
 # APIs 
 
 Now that we've talked about the JSON format for data files, it's time we talked
 about one of the primary vehicles for them: APIs.
 
-## 🎥 Required Video: [What is an API?](https://www.youtube.com/watch?v=s7wmiS2mSXY)
+::: {.callout-required-video}
+This is the tip of the iceberg when it comes to APIs, but it will suffice to 
+enable a lot of cool things for us. The video above used some nice examples like
+the restaurant and travel services, but there are APIs for accessing all kinds
+of data out there, like cat facts](https://alexwohlbruck.github.io/cat-facts/), 
+[movie data](https://www.omdbapi.com/), and [NASA data](https://api.nasa.gov/).
 
-::: {.callout-tip}
-This is the tip of the iceberg when it comes to APIs, but it will suffice to enable a lot of cool things for us. The video above used some nice examples like the restaurant and travel services, but there are APIs for accessing all kinds of data out there, 
-like cat facts](https://alexwohlbruck.github.io/cat-facts/), [movie data](https://www.omdbapi.com/), and [NASA data](https://api.nasa.gov/).
+</br>
+
+::: youtube-video-container
+{{< video https://www.youtube.com/watch?v=s7wmiS2mSXY >}}
+:::
 :::
 
 For our class we're not interested in **creating** APIs, but mostly **using** 
 them to access data that we otherwise couldn't get our hands on...at least not
 as easily.
 
-## 📖 Required Reading: [R API Tutorial](https://www.dataquest.io/blog/r-api-tutorial/)
+::: {.callout-required-reading}
+[Dataquest: R API Tutorial](https://www.dataquest.io/blog/r-api-tutorial/)
 
-::: callout-warning
-# Wrong URL
-
-The tutorial references the wrong link to access the API on the number of people
-in space. The correct link is: <http://api.open-notify.org/astros.json>
+**Warning!** The tutorial references the wrong link to access the API on the
+number of people in space. The correct link is:
+<http://api.open-notify.org/astros.json>
 :::
 
-::: callout-important
-## Check-in
-
+::: {.callout-check-in}
 11.  Which package does the tutorial use to make requests to the API server?
 
 -   rvest

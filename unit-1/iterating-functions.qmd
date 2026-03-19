@@ -231,9 +231,7 @@ microbenchmark::microbenchmark(
 
 Lesson: **You should always initialize your object as the size you want it to be.**
 
-::: {.callout-important}
-# Check-in: Iteration
-
+::: {.callout-check-in}
 1. Write a `for()`-loop that prints the even numbers from 1:20. 
 
 2. Can you produce the same output with the `seq()` function?
@@ -296,7 +294,9 @@ for (i in seq_along(mpg)) {
 > vector as output. 
 > - Hadley Wickham
 
-## 📖 Recommended Reading: [Functionals](https://adv-r.hadley.nz/functionals.html)
+::: {.callout-required-reading}
+[*Advanced R* Chapter 9: Functionals](https://adv-r.hadley.nz/functionals.html)
+:::
 
 `purrr` is a `tidyverse` package that provides several useful functions for
 iteration. The main advantages of `purrr` include:
@@ -389,9 +389,7 @@ diamonds %>%
   map_int(.f = n_distinct)
 ```
 
-::: {.callout-important}
-# Check-in: Iteration
-
+::: {.callout-check-in}
 6. Using a map function reproduce this table which indicates whether a given 
 column is numeric.
 
@@ -562,9 +560,7 @@ string_data |>
 
 
 
-::: {.callout-important}
-# Check-in: Iteration
-
+::: {.callout-check-in}
 9. The function `str_c()` concatenates strings. Create a small example that uses
 `map2_chr()` to combine two character vectors element by element. Each element
 of the first vector should be combined with the corresponding element of the
