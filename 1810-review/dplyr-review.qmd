@@ -68,7 +68,7 @@ d)  `tibble`s create row names
 
 - `summarize()`
 
-- `group_by()`
+- `group_by()` + `summarize()`
 :::
 :::
 
