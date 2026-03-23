@@ -179,3 +179,14 @@ live in a subfolder or even outside the project). I would recommend choosing
 "Document" here!
 
 ![](images/rstudio-inline-document.png){fig-alt="A screenshot of the Global options screen, specifically focusing on the 'R Markdown' section of the options. There is a red box around the option for 'Show output inline for all R Markdown documents.' and the box on the left hand side is checked indicating that this option is turned on. There is a second red box around the 'Evaluate chunks in directory:' option where there is a drop down menu for where Quarto should assume the files you are referencing should be searched for. The option selected is 'Document' which means that external files should be searched for relative to the Quarto document instead of the Project."}
+
+::: {.callout-check-in}
+1. Once you have updated R, open RStudio. If you have correctly installed the
+most recent version of R, version 4.5.3 should appear at the top of your Console.
+Take a screenshot of the version of R displayed in your Console.
+
+2. In RStudio, click on the Help menu and then select "Check for Updates." If
+you have correct installed the most recent version of RStudio, the message
+should say "You're using the newest version of RStudio." Take a screenshot of
+the message that appears.
+:::
