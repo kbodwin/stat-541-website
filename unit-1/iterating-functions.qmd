@@ -561,7 +561,7 @@ string_data |>
 
 
 ::: {.callout-check-in}
-9. The function `str_c()` concatenates strings. Create a small example that uses
+8. The function `str_c()` concatenates strings. Create a small example that uses
 `map2_chr()` to combine two character vectors element by element. Each element
 of the first vector should be combined with the corresponding element of the
 second vector, separated by a space.
@@ -589,20 +589,18 @@ map2_chr(
 )
 ```
 
-10. The function `str_sub()` takes three arguments: `string`, `start`, and `end`.
-Create a small example that uses `pmap_chr()` to apply `str_sub()` row-by-row, 
-where:
+9. The function `str_sub()` takes three arguments: `string`, `start`, and `end`.
+Create a small tibble containing the three inputs required for `str_sub()`. 
+**Note that the names of these columns must be the same as the names of the
+arguments to `str_sub()`!**
 
-- each row uses a different string,
-- a different starting position, and
-- a different ending position.
-
-Use a tibble with one column per argument, then use `pmap_chr()` to extract
-substrings.
+- a string,
+- a starting position, and
+- an ending position.
 
 ```{r}
 #| label: pmap-exercise-tibble
-#| echo: true
+#| echo: false
 #| eval: false
 
 string_data <- tibble(
@@ -611,6 +609,9 @@ string_data <- tibble(
     end = c(2, 3, 5)
 )
 ```
+
+10. Now use `pmap_chr()` to apply `str_sub()` row-by-row to the tibble created
+above.
 
 ```{r}
 #| label: pmap-exercise-solution
