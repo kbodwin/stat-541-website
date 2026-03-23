@@ -779,7 +779,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>I bet you have! What happened here is that we tried to take a subset of the vector <code>a</code>. But <code>a</code> is a function, not a vector, so this doesn’t work! If you’ve encounter this error in the wild, it’s probably because you tried to reference a non-existent object. However, you used an object name that happens to also be an existing function.</p>
-<div class="callout-chech-in">
+<div class="callout callout-style-default callout-check-in callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Check-in</span>Check In
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol start="7" type="1">
 <li>What is the most likely cause of the error message <code>Error in x[1] : object of type 'closure'</code> is not subsettable?</li>
 </ol>
@@ -790,6 +799,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Trying to extract an element from a function using square bracket notation</li>
 <li>Passing a missing argument to a function</li>
 </ol>
+</div>
 </div>
 </section><section id="lazy-evaluation" class="level2"><h2 class="anchored" data-anchor-id="lazy-evaluation">Lazy Evaluation</h2>
 <p>Like most people, R’s goal is to avoid doing any unnecessary work. When you “give” a value to an argument of a function, R does a quick check to make sure you haven’t done anything too crazy, like forgotten a parenthesis. Then it says, “Yep, looks like R code to me!” and moves on with its life. Only when that argument is <em>actually used</em> does R try to run the code.</p>

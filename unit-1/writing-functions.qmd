@@ -351,7 +351,7 @@ a non-existent object. However, you used an object name that happens to also be
 an existing function.
 
 
-::: {.callout-chech-in}
+::: {.callout-check-in}
 7. What is the most likely cause of the error message 
 `Error in x[1] : object of type 'closure'` is not subsettable?
 
