@@ -135,16 +135,11 @@ instead looks like this:
 #| label: separate-unite-table5
 #| echo: false
 
-separate_wider_delim(table5, 
-                     cols = rate, 
-                     delim = "/", 
-                     names = c("cases", "population"), 
-                     cols_remove = TRUE
-                     ) |> 
-  unite(col = "year", 
-        century:year, 
-        sep = "", 
-        remove = TRUE) |> 
+unite(table5, 
+      col = "year", 
+      century:year, 
+      sep = "", 
+      remove = TRUE) |> 
   knitr::kable()
 ```
 
