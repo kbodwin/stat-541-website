@@ -259,13 +259,13 @@ does not).
 To be kind to the website owners, we will add a 1 second pause between page
 queries. (Note that you can view 100 cheeses at a time.)
 
-1. All three of the CSS selectors from @sec-css-cheese, have something in
+4. All three of the CSS selectors from @sec-css-cheese, have something in
 common. Can you spot it? Specifically, what input to `html_elements()` do they
 all share?
 
 <!-- .product-item -->
 
-2. Now that we've found the similarities, let's spot the differences. Match each
+5. Now that we've found the similarities, let's spot the differences. Match each
 CSS selector to where it is (exclusively) used. 
 
 ::: columns
@@ -290,7 +290,7 @@ CSS selector to where it is (exclusively) used.
 :::
 
 
-3. There are also differences in the HTML elements that are being extracted 
+6. There are also differences in the HTML elements that are being extracted 
 from the pages. Match each HTML extractor function to where it is used. 
 
 ::: columns
@@ -312,7 +312,7 @@ from the pages. Match each HTML extractor function to where it is used.
 :::
 :::
 
-4. Let's use all this information to write a general function that can be used
+7. Let's use all this information to write a general function that can be used
 for all three cases (name, URL, image). The function should take **four** 
 arguments, (1) page to scrape, (2) css_selector, (3) node, and (4) what element
 to extract. The following function calls should give you an idea of how the
@@ -338,6 +338,28 @@ get_info_from_page(cheeses,
 
 ```{r}
 #| label: helper-function
+#| eval: false
+
+get_info_from_page <- function(page, css_selector, node, extract = "text") {
+  
+  # Grab the CSS and node elements from the page
+  elements <- page %>%
+    ________(css_selector) %>%
+    ________(node)
+  
+  
+  if (extract == "text") {
+    # Extract the text from the element and trim it
+    ________(elements, trim = TRUE)
+  } else {
+    # Extract what is specified
+    html_attr(elements, extract)
+  }
+}
+```
+
+```{r}
+#| label: helper-function-soln
 #| echo: false
 
 get_info_from_page <- function(page, css_selector, node, extract = "text") {
@@ -358,7 +380,7 @@ get_info_from_page <- function(page, css_selector, node, extract = "text") {
 }
 ```
 
-5. Our next step is to use this function in a larger `scrape_page()` function
+8. Our next step is to use this function in a larger `scrape_page()` function
 that will obtain the necessary information for each page of cheeses. To be kind
 to the website owners, let's add a 1 second pause between page queries.
 
@@ -366,6 +388,47 @@ to the website owners, let's add a 1 second pause between page queries.
 
 ```{r}
 #| label: scrape-page-function
+#| eval: false
+
+scrape_cheese_page <- function(url) {
+    
+    # 1 second crawl delay
+    Sys.sleep(1)
+    
+    # Read the page
+    page <- ________(url)
+    
+    # Grab cheese name
+    cheese_names <- get_info_from_page(page, 
+                   css_selector = ".product-item", 
+                   node = ________) 
+    
+    # Grab cheese URL
+    cheese_url <- get_info_from_page(page, 
+                   css_selector = ".product-item", 
+                   node = ________, 
+                   extract = "href") |> 
+      url_absolute("https://www.cheese.com")
+    
+    # Grab whether cheese has image
+    cheese_image <- get_info_from_page(page, 
+                   css_selector = ".product-item", 
+                   node = ________, 
+                   extract = "class") |> 
+      # Detects if cheese has image
+      str_detect("image-exists")
+    
+
+    #Put page elements into a data frame / tibble
+    tibble(cheese = cheese_names,
+           url = cheese_url,
+           image = cheese_image
+    )
+}
+```
+
+```{r}
+#| label: scrape-page-function-soln
 #| echo: false
 
 scrape_cheese_page <- function(url) {
@@ -405,7 +468,7 @@ scrape_cheese_page <- function(url) {
 }
 ```
 
-6. Finally, let's iterate over **all** the pages of cheese! We can figure out
+9. Finally, let's iterate over **all** the pages of cheese! We can figure out
 how many pages we need to scrape over by grabbing the number of pages from the 
 bottom of the [first alphabetical page (per page = 100)](https://www.cheese.com/alphabetical/?per_page=100).
 This method is a bit less error prone than manually typing `21`!
@@ -421,6 +484,18 @@ total_pages <- cheeses %>%
 
 ```{r}
 #| label:  map-scrape
+#| eval: false
+
+base_url <- "https://www.cheese.com/alphabetical/?per_page=100&page="
+
+urls_all_pages <- str_c(base_url, 1:______)
+
+all_pages <- map(.x = ________, 
+                 .f = ________)
+```
+
+```{r}
+#| label:  map-scrape-soln
 #| echo: false
 #| cache: true
 
@@ -432,7 +507,7 @@ all_pages <- map(.x = urls_all_pages,
                  .f = scrape_cheese_page)
 ```
 
-7. The `map()` function returns a list of dataframes. What function should 
+10. The `map()` function returns a list of dataframes. What function should 
 we use to bind each of these dataframes together to form **one** large dataframe
 on cheeses?
 
