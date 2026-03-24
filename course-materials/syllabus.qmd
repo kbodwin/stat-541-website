@@ -302,7 +302,8 @@ class.
 At the beginning of the first class day in the week, we will have an on-paper
 mini-quiz, consisting of 3 selected check-in questions.  These questions will be 
 *exactly the same* as the ones in the check-ins, so if you have done the pre-reading 
-and check-ins, it should be easy points.
+and check-ins, it should be easy points.  To allow for illnesses or other unforseen absences,
+your **one** lowest score will be dropped.
 
 #### Canvas check-in quizzes are worth 5% of your grade.
 #### In-Class check-in quizzes are worth 5% of your grade.
@@ -356,8 +357,8 @@ the check-in quizzes in class, it will *not* be identical to questions you have
 already seen.
 
 Unit Exam Dates for Spring 2026:
-* Wednesday, May 6
-* Wednesday, May 27
+* Wednesday, April 29th
+* Wednesday, May 20th
 * TBD - Registrar-set times in finals week
 
 #### Unit exams are worth 10% of your grade each, for a total of 30% of your grade.
