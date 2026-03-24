@@ -434,7 +434,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#step-2-find-the-values-that-were-not-able-to-be-spread" id="toc-step-2-find-the-values-that-were-not-able-to-be-spread" class="nav-link" data-scroll-target="#step-2-find-the-values-that-were-not-able-to-be-spread">Step 2 – Find the values that were not able to be spread</a></li>
   <li><a href="#step-3-manually-spread-the-problem-values" id="toc-step-3-manually-spread-the-problem-values" class="nav-link" data-scroll-target="#step-3-manually-spread-the-problem-values">Step 3 – Manually spread the problem values</a></li>
   <li><a href="#step-4-combining-everything-together" id="toc-step-4-combining-everything-together" class="nav-link" data-scroll-target="#step-4-combining-everything-together">Step 4 – Combining everything together</a></li>
-  <li><a href="#stat-541-step-5-scaling-to-multiple-columns" id="toc-stat-541-step-5-scaling-to-multiple-columns" class="nav-link" data-scroll-target="#stat-541-step-5-scaling-to-multiple-columns">STAT 541: Step 5 – Scaling to multiple columns</a></li>
   </ul>
 </li>
   <li><a href="#apis" id="toc-apis" class="nav-link" data-scroll-target="#apis">APIs</a></li>
@@ -506,7 +505,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="2" type="1">
-<li>Why does this code result in an error? What argument is now necessary to correctly unnest <code>df2</code>?</li>
+<li>What argument is now necessary to correctly unnest <code>df2</code>? Specifically, the column names should be <code>y_1</code>, <code>y_2</code>, and <code>y_3</code>?</li>
 </ol>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">unnest_wider</span><span class="op">(</span><span class="va">df2</span>, col <span class="op">=</span> <span class="va">y</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -549,8 +548,8 @@ Caused by error:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>Objects are held in _____.</li>
+<ol start="4" type="1">
+<li>JSON Objects are held in _____.</li>
 </ol>
 <ul>
 <li>parentheses</li>
@@ -558,7 +557,7 @@ Caused by error:
 <li>square brackets</li>
 <li>curly braces</li>
 </ul>
-<ol start="2" type="1">
+<ol start="5" type="1">
 <li>While it may seem tedious compared to our usual tabular forms of data, JSON data is easy to read because they _____.</li>
 </ol>
 <ul>
@@ -566,7 +565,7 @@ Caused by error:
 <li>are separated by “—–”</li>
 <li>come in table / name / value triplets</li>
 </ul>
-<ol start="3" type="1">
+<ol start="6" type="1">
 <li>Create rectangular versions of <code>df_col</code> and <code>df_row</code> (shown below).</li>
 </ol>
 <div class="columns">
@@ -618,23 +617,23 @@ Caused by error:
 <p><strong>In both cases, your unnested data should look like this:</strong></p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="sclmqfrojl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#sclmqfrojl table {
+<div id="aempmulyeq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#aempmulyeq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#sclmqfrojl thead, #sclmqfrojl tbody, #sclmqfrojl tfoot, #sclmqfrojl tr, #sclmqfrojl td, #sclmqfrojl th {
+#aempmulyeq thead, #aempmulyeq tbody, #aempmulyeq tfoot, #aempmulyeq tr, #aempmulyeq td, #aempmulyeq th {
   border-style: none;
 }
 
-#sclmqfrojl p {
+#aempmulyeq p {
   margin: 0;
   padding: 0;
 }
 
-#sclmqfrojl .gt_table {
+#aempmulyeq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -660,12 +659,12 @@ Caused by error:
   border-left-color: #D3D3D3;
 }
 
-#sclmqfrojl .gt_caption {
+#aempmulyeq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#sclmqfrojl .gt_title {
+#aempmulyeq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -677,7 +676,7 @@ Caused by error:
   border-bottom-width: 0;
 }
 
-#sclmqfrojl .gt_subtitle {
+#aempmulyeq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -689,7 +688,7 @@ Caused by error:
   border-top-width: 0;
 }
 
-#sclmqfrojl .gt_heading {
+#aempmulyeq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -701,13 +700,13 @@ Caused by error:
   border-right-color: #D3D3D3;
 }
 
-#sclmqfrojl .gt_bottom_border {
+#aempmulyeq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#sclmqfrojl .gt_col_headings {
+#aempmulyeq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -722,7 +721,7 @@ Caused by error:
   border-right-color: #D3D3D3;
 }
 
-#sclmqfrojl .gt_col_heading {
+#aempmulyeq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -742,7 +741,7 @@ Caused by error:
   overflow-x: hidden;
 }
 
-#sclmqfrojl .gt_column_spanner_outer {
+#aempmulyeq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -754,15 +753,15 @@ Caused by error:
   padding-right: 4px;
 }
 
-#sclmqfrojl .gt_column_spanner_outer:first-child {
+#aempmulyeq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#sclmqfrojl .gt_column_spanner_outer:last-child {
+#aempmulyeq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#sclmqfrojl .gt_column_spanner {
+#aempmulyeq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -774,11 +773,11 @@ Caused by error:
   width: 100%;
 }
 
-#sclmqfrojl .gt_spanner_row {
+#aempmulyeq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#sclmqfrojl .gt_group_heading {
+#aempmulyeq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -804,7 +803,7 @@ Caused by error:
   text-align: left;
 }
 
-#sclmqfrojl .gt_empty_group_heading {
+#aempmulyeq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -819,15 +818,15 @@ Caused by error:
   vertical-align: middle;
 }
 
-#sclmqfrojl .gt_from_md > :first-child {
+#aempmulyeq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#sclmqfrojl .gt_from_md > :last-child {
+#aempmulyeq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#sclmqfrojl .gt_row {
+#aempmulyeq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -846,7 +845,7 @@ Caused by error:
   overflow-x: hidden;
 }
 
-#sclmqfrojl .gt_stub {
+#aempmulyeq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -859,7 +858,7 @@ Caused by error:
   padding-right: 5px;
 }
 
-#sclmqfrojl .gt_stub_row_group {
+#aempmulyeq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -873,15 +872,15 @@ Caused by error:
   vertical-align: top;
 }
 
-#sclmqfrojl .gt_row_group_first td {
+#aempmulyeq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#sclmqfrojl .gt_row_group_first th {
+#aempmulyeq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#sclmqfrojl .gt_summary_row {
+#aempmulyeq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -891,16 +890,16 @@ Caused by error:
   padding-right: 5px;
 }
 
-#sclmqfrojl .gt_first_summary_row {
+#aempmulyeq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#sclmqfrojl .gt_first_summary_row.thick {
+#aempmulyeq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#sclmqfrojl .gt_last_summary_row {
+#aempmulyeq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -910,7 +909,7 @@ Caused by error:
   border-bottom-color: #D3D3D3;
 }
 
-#sclmqfrojl .gt_grand_summary_row {
+#aempmulyeq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -920,7 +919,7 @@ Caused by error:
   padding-right: 5px;
 }
 
-#sclmqfrojl .gt_first_grand_summary_row {
+#aempmulyeq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -930,7 +929,7 @@ Caused by error:
   border-top-color: #D3D3D3;
 }
 
-#sclmqfrojl .gt_last_grand_summary_row_top {
+#aempmulyeq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -940,11 +939,11 @@ Caused by error:
   border-bottom-color: #D3D3D3;
 }
 
-#sclmqfrojl .gt_striped {
+#aempmulyeq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#sclmqfrojl .gt_table_body {
+#aempmulyeq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -953,7 +952,7 @@ Caused by error:
   border-bottom-color: #D3D3D3;
 }
 
-#sclmqfrojl .gt_footnotes {
+#aempmulyeq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -967,7 +966,7 @@ Caused by error:
   border-right-color: #D3D3D3;
 }
 
-#sclmqfrojl .gt_footnote {
+#aempmulyeq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -976,7 +975,7 @@ Caused by error:
   padding-right: 5px;
 }
 
-#sclmqfrojl .gt_sourcenotes {
+#aempmulyeq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -990,7 +989,7 @@ Caused by error:
   border-right-color: #D3D3D3;
 }
 
-#sclmqfrojl .gt_sourcenote {
+#aempmulyeq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -998,72 +997,72 @@ Caused by error:
   padding-right: 5px;
 }
 
-#sclmqfrojl .gt_left {
+#aempmulyeq .gt_left {
   text-align: left;
 }
 
-#sclmqfrojl .gt_center {
+#aempmulyeq .gt_center {
   text-align: center;
 }
 
-#sclmqfrojl .gt_right {
+#aempmulyeq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sclmqfrojl .gt_font_normal {
+#aempmulyeq .gt_font_normal {
   font-weight: normal;
 }
 
-#sclmqfrojl .gt_font_bold {
+#aempmulyeq .gt_font_bold {
   font-weight: bold;
 }
 
-#sclmqfrojl .gt_font_italic {
+#aempmulyeq .gt_font_italic {
   font-style: italic;
 }
 
-#sclmqfrojl .gt_super {
+#aempmulyeq .gt_super {
   font-size: 65%;
 }
 
-#sclmqfrojl .gt_footnote_marks {
+#aempmulyeq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#sclmqfrojl .gt_asterisk {
+#aempmulyeq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#sclmqfrojl .gt_indent_1 {
+#aempmulyeq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#sclmqfrojl .gt_indent_2 {
+#aempmulyeq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#sclmqfrojl .gt_indent_3 {
+#aempmulyeq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#sclmqfrojl .gt_indent_4 {
+#aempmulyeq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#sclmqfrojl .gt_indent_5 {
+#aempmulyeq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#sclmqfrojl .katex-display {
+#aempmulyeq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#sclmqfrojl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#aempmulyeq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1130,7 +1129,7 @@ Caused by error:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol start="5" type="1">
+<ol start="8" type="1">
 <li><p>How does <code><a href="https://rdrr.io/pkg/tidyjson/man/spread_all.html">spread_all()</a></code> know how many columns to make?</p></li>
 <li><p>Is the JSON data retained after you have spread the data?</p></li>
 </ol>
@@ -1155,7 +1154,7 @@ Caused by error:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol start="7" type="1">
+<ol start="10" type="1">
 <li>Fill in the code below to discover how many different values are included in the <code>companies</code> dataset?</li>
 </ol>
 <div class="cell">
@@ -1177,7 +1176,7 @@ Caused by error:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol start="8" type="1">
+<ol start="11" type="1">
 <li>Fill in the code below to uncover how many arrays from the <code>companies</code> dataset were not spread into new columns.</li>
 </ol>
 <div class="cell">
@@ -1209,7 +1208,7 @@ Caused by error:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol start="9" type="1">
+<ol start="12" type="1">
 <li>Fill in the code below to spread the <code>acquisitions</code> array of the <code>companies</code> dataset.</li>
 </ol>
 <div class="cell">
@@ -1218,7 +1217,7 @@ Caused by error:
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather_array</span>() <span class="sc">%&gt;%</span> </span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  ________ </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<ol start="10" type="1">
+<ol start="13" type="1">
 <li>What values are stored in this array? What are the names of the new columns that appear in the spread dataset?</li>
 </ol>
 </div>
@@ -1283,23 +1282,23 @@ Caused by error:
 <span>             max_price <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html">md</a></span><span class="op">(</span><span class="st">"**Max Company Sale Price**"</span><span class="op">)</span></span>
 <span>             <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="gkwyscqgxv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gkwyscqgxv table {
+<div id="nryjiflmtm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nryjiflmtm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gkwyscqgxv thead, #gkwyscqgxv tbody, #gkwyscqgxv tfoot, #gkwyscqgxv tr, #gkwyscqgxv td, #gkwyscqgxv th {
+#nryjiflmtm thead, #nryjiflmtm tbody, #nryjiflmtm tfoot, #nryjiflmtm tr, #nryjiflmtm td, #nryjiflmtm th {
   border-style: none;
 }
 
-#gkwyscqgxv p {
+#nryjiflmtm p {
   margin: 0;
   padding: 0;
 }
 
-#gkwyscqgxv .gt_table {
+#nryjiflmtm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1325,12 +1324,12 @@ Caused by error:
   border-left-color: #D3D3D3;
 }
 
-#gkwyscqgxv .gt_caption {
+#nryjiflmtm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gkwyscqgxv .gt_title {
+#nryjiflmtm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1342,7 +1341,7 @@ Caused by error:
   border-bottom-width: 0;
 }
 
-#gkwyscqgxv .gt_subtitle {
+#nryjiflmtm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1354,7 +1353,7 @@ Caused by error:
   border-top-width: 0;
 }
 
-#gkwyscqgxv .gt_heading {
+#nryjiflmtm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1366,13 +1365,13 @@ Caused by error:
   border-right-color: #D3D3D3;
 }
 
-#gkwyscqgxv .gt_bottom_border {
+#nryjiflmtm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gkwyscqgxv .gt_col_headings {
+#nryjiflmtm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1387,7 +1386,7 @@ Caused by error:
   border-right-color: #D3D3D3;
 }
 
-#gkwyscqgxv .gt_col_heading {
+#nryjiflmtm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1407,7 +1406,7 @@ Caused by error:
   overflow-x: hidden;
 }
 
-#gkwyscqgxv .gt_column_spanner_outer {
+#nryjiflmtm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1419,15 +1418,15 @@ Caused by error:
   padding-right: 4px;
 }
 
-#gkwyscqgxv .gt_column_spanner_outer:first-child {
+#nryjiflmtm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gkwyscqgxv .gt_column_spanner_outer:last-child {
+#nryjiflmtm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gkwyscqgxv .gt_column_spanner {
+#nryjiflmtm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1439,11 +1438,11 @@ Caused by error:
   width: 100%;
 }
 
-#gkwyscqgxv .gt_spanner_row {
+#nryjiflmtm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gkwyscqgxv .gt_group_heading {
+#nryjiflmtm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1469,7 +1468,7 @@ Caused by error:
   text-align: left;
 }
 
-#gkwyscqgxv .gt_empty_group_heading {
+#nryjiflmtm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1484,15 +1483,15 @@ Caused by error:
   vertical-align: middle;
 }
 
-#gkwyscqgxv .gt_from_md > :first-child {
+#nryjiflmtm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gkwyscqgxv .gt_from_md > :last-child {
+#nryjiflmtm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gkwyscqgxv .gt_row {
+#nryjiflmtm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1511,7 +1510,7 @@ Caused by error:
   overflow-x: hidden;
 }
 
-#gkwyscqgxv .gt_stub {
+#nryjiflmtm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1524,7 +1523,7 @@ Caused by error:
   padding-right: 5px;
 }
 
-#gkwyscqgxv .gt_stub_row_group {
+#nryjiflmtm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1538,15 +1537,15 @@ Caused by error:
   vertical-align: top;
 }
 
-#gkwyscqgxv .gt_row_group_first td {
+#nryjiflmtm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gkwyscqgxv .gt_row_group_first th {
+#nryjiflmtm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gkwyscqgxv .gt_summary_row {
+#nryjiflmtm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1556,16 +1555,16 @@ Caused by error:
   padding-right: 5px;
 }
 
-#gkwyscqgxv .gt_first_summary_row {
+#nryjiflmtm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gkwyscqgxv .gt_first_summary_row.thick {
+#nryjiflmtm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gkwyscqgxv .gt_last_summary_row {
+#nryjiflmtm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1575,7 +1574,7 @@ Caused by error:
   border-bottom-color: #D3D3D3;
 }
 
-#gkwyscqgxv .gt_grand_summary_row {
+#nryjiflmtm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1585,7 +1584,7 @@ Caused by error:
   padding-right: 5px;
 }
 
-#gkwyscqgxv .gt_first_grand_summary_row {
+#nryjiflmtm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1595,7 +1594,7 @@ Caused by error:
   border-top-color: #D3D3D3;
 }
 
-#gkwyscqgxv .gt_last_grand_summary_row_top {
+#nryjiflmtm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1605,11 +1604,11 @@ Caused by error:
   border-bottom-color: #D3D3D3;
 }
 
-#gkwyscqgxv .gt_striped {
+#nryjiflmtm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gkwyscqgxv .gt_table_body {
+#nryjiflmtm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1618,7 +1617,7 @@ Caused by error:
   border-bottom-color: #D3D3D3;
 }
 
-#gkwyscqgxv .gt_footnotes {
+#nryjiflmtm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1632,7 +1631,7 @@ Caused by error:
   border-right-color: #D3D3D3;
 }
 
-#gkwyscqgxv .gt_footnote {
+#nryjiflmtm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1641,7 +1640,7 @@ Caused by error:
   padding-right: 5px;
 }
 
-#gkwyscqgxv .gt_sourcenotes {
+#nryjiflmtm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1655,7 +1654,7 @@ Caused by error:
   border-right-color: #D3D3D3;
 }
 
-#gkwyscqgxv .gt_sourcenote {
+#nryjiflmtm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1663,72 +1662,72 @@ Caused by error:
   padding-right: 5px;
 }
 
-#gkwyscqgxv .gt_left {
+#nryjiflmtm .gt_left {
   text-align: left;
 }
 
-#gkwyscqgxv .gt_center {
+#nryjiflmtm .gt_center {
   text-align: center;
 }
 
-#gkwyscqgxv .gt_right {
+#nryjiflmtm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gkwyscqgxv .gt_font_normal {
+#nryjiflmtm .gt_font_normal {
   font-weight: normal;
 }
 
-#gkwyscqgxv .gt_font_bold {
+#nryjiflmtm .gt_font_bold {
   font-weight: bold;
 }
 
-#gkwyscqgxv .gt_font_italic {
+#nryjiflmtm .gt_font_italic {
   font-style: italic;
 }
 
-#gkwyscqgxv .gt_super {
+#nryjiflmtm .gt_super {
   font-size: 65%;
 }
 
-#gkwyscqgxv .gt_footnote_marks {
+#nryjiflmtm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gkwyscqgxv .gt_asterisk {
+#nryjiflmtm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gkwyscqgxv .gt_indent_1 {
+#nryjiflmtm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gkwyscqgxv .gt_indent_2 {
+#nryjiflmtm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gkwyscqgxv .gt_indent_3 {
+#nryjiflmtm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gkwyscqgxv .gt_indent_4 {
+#nryjiflmtm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gkwyscqgxv .gt_indent_5 {
+#nryjiflmtm .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gkwyscqgxv .katex-display {
+#nryjiflmtm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gkwyscqgxv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nryjiflmtm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1814,21 +1813,35 @@ Caused by error:
 </div>
 </div>
 </div>
-</section><section id="stat-541-step-5-scaling-to-multiple-columns" class="level2"><h2 class="anchored" data-anchor-id="stat-541-step-5-scaling-to-multiple-columns">STAT 541: Step 5 – Scaling to multiple columns</h2>
-<p>This is a powerful process, but you might be able to see how we don’t necessarily want to do this process repeatedly for every value <code><a href="https://rdrr.io/pkg/tidyjson/man/spread_all.html">spread_all()</a></code> was not able to parse.</p>
-<div class="callout callout-style-default callout-tip callout-empty-content callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Can you think of a way to use iteration to solve this task?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
+<!-- ## STAT 541:  Step 5 -- Scaling to multiple columns -->
+<!-- This is a powerful process, but you might be able to see how we don't -->
+<!-- necessarily want to do this process repeatedly for every value `spread_all()` -->
+<!-- was not able to parse. -->
+<!-- ::: callout-tip -->
+<!-- # Can you think of a way to use iteration to solve this task? -->
+<!-- ::: -->
+<!-- ```{r} -->
+<!-- #| label: attempting-to-iterate -->
+<!-- #| eval: false -->
+<!-- #| echo: false -->
+<!-- values_to_map <- companies_values %>%  -->
+<!--   filter( -->
+<!--     !name %in% colnames(companies_tidy) -->
+<!--       ) %>%  -->
+<!--   filter(name != "_id") %>%  -->
+<!--   pull(name) %>%  -->
+<!--   as.list() -->
+<!-- manual_spread <- function(value){ -->
+<!--   companies %>%  -->
+<!--   enter_object({{value}}) %>%  -->
+<!--   gather_array() %>%  -->
+<!--   spread_all() -->
+<!-- } -->
+<!-- thing1 <- map(.x = values_to_map,  -->
+<!--               .f = manual_spread -->
+<!--               ) -->
+<!-- reduce(thing1, .f = bind_cols) -->
+<!-- ``` -->
 </section></section><section id="apis" class="level1"><h1>APIs</h1>
 <p>Now that we’ve talked about the JSON format for data files, it’s time we talked about one of the primary vehicles for them: APIs.</p>
 <div class="callout callout-style-default callout-required-video callout-titled">

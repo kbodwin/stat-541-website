@@ -83,8 +83,8 @@ df2 <- tribble(
 )
 ```
 
-2. Why does this code result in an error? What argument is now necessary to
-correctly unnest `df2`? 
+2. What argument is now necessary to correctly unnest `df2`? Specifically, the
+column names should be `y_1`, `y_2`, and `y_3`? 
 
 ```{r}
 #| error: true
@@ -114,21 +114,21 @@ unnest_wider(df2, col = y, names_sep = "_")
 :::
 
 ::: {.callout-check-in}
-1. Objects are held in \_\_\_\_\_.
+4. JSON Objects are held in \_\_\_\_\_.
 
 -   parentheses
 -   double quotes
 -   square brackets
 -   curly braces
 
-2.  While it may seem tedious compared to our usual tabular forms of data, JSON
+5.  While it may seem tedious compared to our usual tabular forms of data, JSON
 data is easy to read because they \_\_\_\_\_.
 
 -   come in name / value pairs
 -   are separated by "-----"
 -   come in table / name / value triplets
 
-3.  Create rectangular versions of `df_col` and `df_row` (shown below). 
+6.  Create rectangular versions of `df_col` and `df_row` (shown below). 
 
 ::: columns
 ::: {.column width="48%"}
@@ -249,9 +249,9 @@ companies_tidy <- spread_all(companies)
 ```
 
 ::: {.callout-check-in}
-5. How does `spread_all()` know how many columns to make? 
+8. How does `spread_all()` know how many columns to make? 
 
-6. Is the JSON data retained after you have spread the data?
+9. Is the JSON data retained after you have spread the data?
 :::
 
 ### Step 2 -- Find the values that were not able to be spread
@@ -279,7 +279,7 @@ occurrences of each `name`, `type` combination to understand how many rows /
 observations contained these values.
 
 ::: {.callout-check-in}
-7. Fill in the code below to discover how many different values are included in
+10. Fill in the code below to discover how many different values are included in
 the `companies` dataset?
 
 ```{r}
@@ -291,13 +291,25 @@ companies_values <- companies %>%
   json_types() %>% 
   __________
 ```
+
+```{r}
+#| label: values-in-data-soln
+#| echo: false
+#| eval: false
+
+companies_values <- companies %>% 
+  gather_object() %>% 
+  json_types() %>% 
+  count(name, type)
+```
+
 :::
 
 Now that we know the name of **every** value in the `companies` dataset, we can
 inspect how many of these columns were not captured when we used `spread-all()`.
 
 ::: {.callout-check-in}
-8. Fill in the code below to uncover how many arrays from the `companies`
+11. Fill in the code below to uncover how many arrays from the `companies`
 dataset were not spread into new columns.
 
 ```{r}
@@ -317,8 +329,8 @@ companies_values %>%
 #| eval: false
 
 companies_values %>% 
-  filter(
-    ! name %in% colnames(companies_tidy)
+  filter_out(
+    name %in% colnames(companies_tidy)
     ) %>% 
   filter(name != "_id")
 ```
@@ -350,7 +362,7 @@ of the array, and storing values in the 'JSON' attribute for further tidyjson
 manipulation.
 
 ::: {.callout-check-in}
-9. Fill in the code below to spread the `acquisitions` array of the `companies`
+12. Fill in the code below to spread the `acquisitions` array of the `companies`
 dataset. 
 
 ```{r}
@@ -362,7 +374,7 @@ companies %>%
   gather_array() %>% 
   ________ 
 ```
-10. What values are stored in this array? What are the names of the new
+13. What values are stored in this array? What are the names of the new
 columns that appear in the spread dataset?
 :::
 
@@ -422,43 +434,42 @@ company_max_sales |>
              )
 ```
 
+<!-- ## STAT 541:  Step 5 -- Scaling to multiple columns -->
 
-## STAT 541:  Step 5 -- Scaling to multiple columns
+<!-- This is a powerful process, but you might be able to see how we don't -->
+<!-- necessarily want to do this process repeatedly for every value `spread_all()` -->
+<!-- was not able to parse. -->
 
-This is a powerful process, but you might be able to see how we don't
-necessarily want to do this process repeatedly for every value `spread_all()`
-was not able to parse.
+<!-- ::: callout-tip -->
+<!-- # Can you think of a way to use iteration to solve this task? -->
+<!-- ::: -->
 
-::: callout-tip
-# Can you think of a way to use iteration to solve this task?
-:::
+<!-- ```{r} -->
+<!-- #| label: attempting-to-iterate -->
+<!-- #| eval: false -->
+<!-- #| echo: false -->
 
-```{r}
-#| label: attempting-to-iterate
-#| eval: false
-#| echo: false
+<!-- values_to_map <- companies_values %>%  -->
+<!--   filter( -->
+<!--     !name %in% colnames(companies_tidy) -->
+<!--       ) %>%  -->
+<!--   filter(name != "_id") %>%  -->
+<!--   pull(name) %>%  -->
+<!--   as.list() -->
 
-values_to_map <- companies_values %>% 
-  filter(
-    !name %in% colnames(companies_tidy)
-      ) %>% 
-  filter(name != "_id") %>% 
-  pull(name) %>% 
-  as.list()
+<!-- manual_spread <- function(value){ -->
+<!--   companies %>%  -->
+<!--   enter_object({{value}}) %>%  -->
+<!--   gather_array() %>%  -->
+<!--   spread_all() -->
+<!-- } -->
 
-manual_spread <- function(value){
-  companies %>% 
-  enter_object({{value}}) %>% 
-  gather_array() %>% 
-  spread_all()
-}
+<!-- thing1 <- map(.x = values_to_map,  -->
+<!--               .f = manual_spread -->
+<!--               ) -->
 
-thing1 <- map(.x = values_to_map, 
-              .f = manual_spread
-              )
-
-reduce(thing1, .f = bind_cols)
-```
+<!-- reduce(thing1, .f = bind_cols) -->
+<!-- ``` -->
 
 # APIs 
 
