@@ -374,8 +374,8 @@ companies %>%
   gather_array() %>% 
   ________ 
 ```
-13. What values are stored in this array? What are the names of the new
-columns that appear in the spread dataset?
+
+13. What are the names of the new columns that appear in the spread dataset?
 :::
 
 ### Step 4 -- Combining everything together
