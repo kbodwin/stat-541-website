@@ -1,0 +1,34 @@
+---
+title: "Project Checkpoint 2"
+editor: source
+---
+
+Now that you have explored your dataset and posed research questions about 
+these data, this week we are focused on producing summary statistics that 
+could be used to also address your research question. These summary statistics
+will allow you to apply your function writing and iteration skills! 
+
+## By the end of the week, your updated report should contain:
+
+-   **Two** data summaries that use existing (unmodified) columns in the data
+    * **At least one** of these summaries need to be produced with a custom
+    function. 
+    * **At least one** of these summaries need to include iteration (either 
+    inside or outside of a function).
+    
+-   **Two** data summaries that modify columns from the original 
+data
+    * **At least one** of these summaries need to be produced with a custom
+    function. 
+    * **At least one** of these summaries need to include iteration (either 
+    inside or outside of a function).
+
+-   Summary tables that *at a minimum* have:
+    * Formatted values (e.g., decimals, percentages, currencies)
+    * Boldface headers
+    * Captions
+
+::: {.callout-important}
+Your report should contain **at least two** custom functions (to produce 
+data summaries), and **at least two** places where iteration was used.
+:::

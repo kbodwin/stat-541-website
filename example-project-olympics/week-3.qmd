@@ -1,0 +1,17 @@
+---
+title: "Project Checkpoint 3"
+---
+
+Now that you have explored your original dataset and produced data summaries addressing your primary research questions, it is time to integrate new country-level data.
+
+## By the end of the week, your updated report should contain:
+
+-   **one** new country-level data acquired using APIs,
+
+-   **one** new country-level data acquired using webscraping,
+
+-   descriptions of each of the new datasets
+
+-   a "meta" dataset containing **all** the acquired data (joined together)
+
+-   **at least two** data summaries OR visualizations incorporating the additional country-level data
