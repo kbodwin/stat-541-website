@@ -182,7 +182,8 @@ between your analysis and your report. Quarto is here to save the day!
 
 The software associated with Quarto is automatically downloaded with the newest 
 versions of RStudio. So, if you are using the most up to date version of RStudio
-(as instructed in [Part 1 of this week's coursework](1810-review/setup-workflow.qmd)), you should already have Quarto installed on your computer. But, let's test it
+(as instructed in [Part 1 of this week's coursework](setup-workflow.qmd)), you
+should already have Quarto installed on your computer. But, let's test it
 out.
 
 To ensure you have Quarto installed, carry out the following process:
