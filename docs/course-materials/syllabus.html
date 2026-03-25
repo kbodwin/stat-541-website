@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Advanced Statistical Computing – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
@@ -21,7 +18,6 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
@@ -47,8 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-dark-235111c28925c9e86c962b253a60587d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/flourish-0.0.1/injectFlourishes.js"></script>
-<script src="../site_libs/quarto-contrib/flourish-0.0.1/flourish.js"></script>
-<script id="quarto-search-options" type="application/json">{
+<script src="../site_libs/quarto-contrib/flourish-0.0.1/flourish.js"></script><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -75,10 +70,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-
-
 </head>
-
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -244,14 +236,10 @@ ul.task-list li input[type="checkbox"] {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content">
-    </a>
+    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content"><img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content"></a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -259,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
@@ -292,80 +280,84 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/atheobold/stat-541-website"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#stat-431" id="toc-stat-431" class="nav-link active" data-scroll-target="#stat-431">STAT 431</a></li>
+<li><a href="#stat-431" id="toc-stat-431" class="nav-link active" data-scroll-target="#stat-431">STAT 431</a></li>
   <li><a href="#stat-541" id="toc-stat-541" class="nav-link" data-scroll-target="#stat-541">STAT 541</a></li>
-  <li><a href="#course-resources" id="toc-course-resources" class="nav-link" data-scroll-target="#course-resources">Course Resources</a>
+  <li>
+<a href="#course-resources" id="toc-course-resources" class="nav-link" data-scroll-target="#course-resources">Course Resources</a>
   <ul class="collapse">
-  <li><a href="#course-objectives" id="toc-course-objectives" class="nav-link" data-scroll-target="#course-objectives">Course Objectives</a></li>
+<li><a href="#course-objectives" id="toc-course-objectives" class="nav-link" data-scroll-target="#course-objectives">Course Objectives</a></li>
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
-  </ul></li>
-  <li><a href="#sec-grades" id="toc-sec-grades" class="nav-link" data-scroll-target="#sec-grades">Assessment</a>
+  </ul>
+</li>
+  <li>
+<a href="#sec-grades" id="toc-sec-grades" class="nav-link" data-scroll-target="#sec-grades">Assessment</a>
   <ul class="collapse">
-  <li><a href="#check-ins-due-mondays-by-9am" id="toc-check-ins-due-mondays-by-9am" class="nav-link" data-scroll-target="#check-ins-due-mondays-by-9am">Check-ins (Due Mondays by 9am)</a></li>
-  <li><a href="#practice-actitivies-due-wednesdays-by-9am" id="toc-practice-actitivies-due-wednesdays-by-9am" class="nav-link" data-scroll-target="#practice-actitivies-due-wednesdays-by-9am">Practice Actitivies (Due Wednesdays by 9am)</a></li>
-  <li><a href="#project-checkpoints-due-saturdays-by-midnight" id="toc-project-checkpoints-due-saturdays-by-midnight" class="nav-link" data-scroll-target="#project-checkpoints-due-saturdays-by-midnight">Project Checkpoints (Due Saturdays by midnight)</a></li>
-  <li><a href="#projects-due-at-the-end-of-each-unit" id="toc-projects-due-at-the-end-of-each-unit" class="nav-link" data-scroll-target="#projects-due-at-the-end-of-each-unit">Projects (Due at the end of each unit)</a></li>
+<li><a href="#check-ins-due-mondays-by-9am" id="toc-check-ins-due-mondays-by-9am" class="nav-link" data-scroll-target="#check-ins-due-mondays-by-9am">Check-ins (due Mondays by 9am)</a></li>
+  <li><a href="#practice-actitivies-due-wednesdays-by-9am" id="toc-practice-actitivies-due-wednesdays-by-9am" class="nav-link" data-scroll-target="#practice-actitivies-due-wednesdays-by-9am">Practice Actitivies (due Wednesdays by 9am)</a></li>
+  <li><a href="#project-checkpoints-due-saturdays-by-midnight" id="toc-project-checkpoints-due-saturdays-by-midnight" class="nav-link" data-scroll-target="#project-checkpoints-due-saturdays-by-midnight">Project Checkpoints (due Saturdays by midnight)</a></li>
+  <li><a href="#projects-due-at-the-end-of-each-unit" id="toc-projects-due-at-the-end-of-each-unit" class="nav-link" data-scroll-target="#projects-due-at-the-end-of-each-unit">Projects (due at the end of each unit)</a></li>
   <li><a href="#unit-exams" id="toc-unit-exams" class="nav-link" data-scroll-target="#unit-exams">Unit Exams</a></li>
-  </ul></li>
-  <li><a href="#classroom-community-and-policies" id="toc-classroom-community-and-policies" class="nav-link" data-scroll-target="#classroom-community-and-policies">Classroom community and policies</a>
+  <li><a href="#summary-of-grade-calculations" id="toc-summary-of-grade-calculations" class="nav-link" data-scroll-target="#summary-of-grade-calculations">Summary of Grade Calculations</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#classroom-community-and-policies" id="toc-classroom-community-and-policies" class="nav-link" data-scroll-target="#classroom-community-and-policies">Classroom community and policies</a>
   <ul class="collapse">
-  <li><a href="#weekly-expectations" id="toc-weekly-expectations" class="nav-link" data-scroll-target="#weekly-expectations">Weekly expectations</a></li>
+<li><a href="#weekly-expectations" id="toc-weekly-expectations" class="nav-link" data-scroll-target="#weekly-expectations">Weekly expectations</a></li>
   <li><a href="#sec-help" id="toc-sec-help" class="nav-link" data-scroll-target="#sec-help">Getting help</a></li>
-  </ul></li>
+  </ul>
+</li>
   <li><a href="#responding-to-private-messages" id="toc-responding-to-private-messages" class="nav-link" data-scroll-target="#responding-to-private-messages">Responding to Private Messages</a></li>
-  <li><a href="#well-being-access-and-accommodations" id="toc-well-being-access-and-accommodations" class="nav-link" data-scroll-target="#well-being-access-and-accommodations">Well-being, Access, and Accommodations</a>
+  <li>
+<a href="#well-being-access-and-accommodations" id="toc-well-being-access-and-accommodations" class="nav-link" data-scroll-target="#well-being-access-and-accommodations">Well-being, Access, and Accommodations</a>
   <ul class="collapse">
-  <li><a href="#what-if-i-have-accommodations-or-feel-that-accommodations-would-be-beneficial-to-my-learning" id="toc-what-if-i-have-accommodations-or-feel-that-accommodations-would-be-beneficial-to-my-learning" class="nav-link" data-scroll-target="#what-if-i-have-accommodations-or-feel-that-accommodations-would-be-beneficial-to-my-learning">What if I have accommodations or feel that accommodations would be beneficial to my learning?</a></li>
+<li><a href="#what-if-i-have-accommodations-or-feel-that-accommodations-would-be-beneficial-to-my-learning" id="toc-what-if-i-have-accommodations-or-feel-that-accommodations-would-be-beneficial-to-my-learning" class="nav-link" data-scroll-target="#what-if-i-have-accommodations-or-feel-that-accommodations-would-be-beneficial-to-my-learning">What if I have accommodations or feel that accommodations would be beneficial to my learning?</a></li>
   <li><a href="#im-having-difficulty-paying-for-food-and-rent-what-can-i-do" id="toc-im-having-difficulty-paying-for-food-and-rent-what-can-i-do" class="nav-link" data-scroll-target="#im-having-difficulty-paying-for-food-and-rent-what-can-i-do">I’m having difficulty paying for food and rent, what can I do?</a></li>
   <li><a href="#my-mental-health-is-impairing-my-ability-to-engage-in-my-classes-what-should-i-do" id="toc-my-mental-health-is-impairing-my-ability-to-engage-in-my-classes-what-should-i-do" class="nav-link" data-scroll-target="#my-mental-health-is-impairing-my-ability-to-engage-in-my-classes-what-should-i-do">My mental health is impairing my ability to engage in my classes, what should I do?</a></li>
   <li><a href="#someone-is-threatening-me-what-can-i-do" id="toc-someone-is-threatening-me-what-can-i-do" class="nav-link" data-scroll-target="#someone-is-threatening-me-what-can-i-do">Someone is threatening me, what can I do?</a></li>
   <li><a href="#what-if-i-cant-arrange-for-childcare" id="toc-what-if-i-cant-arrange-for-childcare" class="nav-link" data-scroll-target="#what-if-i-cant-arrange-for-childcare">What if I can’t arrange for childcare?</a></li>
-  </ul></li>
-  <li><a href="#attendance-extensions-and-technology" id="toc-attendance-extensions-and-technology" class="nav-link" data-scroll-target="#attendance-extensions-and-technology">Attendance, Extensions, and Technology</a>
+  </ul>
+</li>
+  <li>
+<a href="#attendance-extensions-and-technology" id="toc-attendance-extensions-and-technology" class="nav-link" data-scroll-target="#attendance-extensions-and-technology">Attendance, Extensions, and Technology</a>
   <ul class="collapse">
-  <li><a href="#what-if-i-need-to-miss-class" id="toc-what-if-i-need-to-miss-class" class="nav-link" data-scroll-target="#what-if-i-need-to-miss-class">What if I need to miss class?</a></li>
+<li><a href="#what-if-i-need-to-miss-class" id="toc-what-if-i-need-to-miss-class" class="nav-link" data-scroll-target="#what-if-i-need-to-miss-class">What if I need to miss class?</a></li>
   <li><a href="#what-if-i-need-to-turn-something-in-late" id="toc-what-if-i-need-to-turn-something-in-late" class="nav-link" data-scroll-target="#what-if-i-need-to-turn-something-in-late">What if I need to turn something in late?</a></li>
   <li><a href="#do-i-need-to-bring-a-computer-to-class" id="toc-do-i-need-to-bring-a-computer-to-class" class="nav-link" data-scroll-target="#do-i-need-to-bring-a-computer-to-class">Do I need to bring a computer to class?</a></li>
-  </ul></li>
-  <li><a href="#expectations-respect-and-integrity" id="toc-expectations-respect-and-integrity" class="nav-link" data-scroll-target="#expectations-respect-and-integrity">Expectations, Respect, and Integrity</a>
+  </ul>
+</li>
+  <li>
+<a href="#expectations-respect-and-integrity" id="toc-expectations-respect-and-integrity" class="nav-link" data-scroll-target="#expectations-respect-and-integrity">Expectations, Respect, and Integrity</a>
   <ul class="collapse">
-  <li><a href="#how-can-i-expect-to-be-treated-in-this-course" id="toc-how-can-i-expect-to-be-treated-in-this-course" class="nav-link" data-scroll-target="#how-can-i-expect-to-be-treated-in-this-course">How can I expect to be treated in this course?</a></li>
+<li><a href="#how-can-i-expect-to-be-treated-in-this-course" id="toc-how-can-i-expect-to-be-treated-in-this-course" class="nav-link" data-scroll-target="#how-can-i-expect-to-be-treated-in-this-course">How can I expect to be treated in this course?</a></li>
   <li><a href="#what-constitutes-plagiarism-in-a-statistics-class" id="toc-what-constitutes-plagiarism-in-a-statistics-class" class="nav-link" data-scroll-target="#what-constitutes-plagiarism-in-a-statistics-class">What constitutes plagiarism in a statistics class?</a></li>
   <li><a href="#learning-to-code-with-chatgpt" id="toc-learning-to-code-with-chatgpt" class="nav-link" data-scroll-target="#learning-to-code-with-chatgpt">Learning to Code with ChatGPT</a></li>
   <li><a href="#integrity-violations" id="toc-integrity-violations" class="nav-link" data-scroll-target="#integrity-violations">Integrity Violations</a></li>
-  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/course-materials/syllabus.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/course-materials/syllabus.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Advanced Statistical Computing</h1>
 <p class="subtitle lead">Spring 2026</p>
 </div>
@@ -381,21 +373,20 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header>
-
-
-<p>This quarter, the undergraduate <em>Advanced R</em> course (STAT 431) is being coordinated with the graduate <em>Advanced R</em> course (STAT 541). The structure of each course is identical and the content will be very similar. However, the graduate course will occasionally require additional content.</p>
-<section id="stat-431" class="level1">
-<h1>STAT 431</h1>
+</header><p>This quarter, the undergraduate <em>Advanced R</em> course (STAT 431) is being coordinated with the graduate <em>Advanced R</em> course (STAT 541). The structure of each course is identical and the content will be very similar. However, the graduate course will occasionally require additional content.</p>
+<section id="stat-431" class="level1"><h1>STAT 431</h1>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Instructor Info</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Class Meetings</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Student Hours</a></li></ul>
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Instructor Info</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Class Meetings</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Student Hours</a></li>
+</ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Instructor: Dr.&nbsp;Kelly Bodwin</strong> – you can call me <strong>Dr.&nbsp;Bodwin</strong> or <strong>Dr.&nbsp;B</strong> or just <strong>Kelly</strong>! I use <strong>she / her</strong> pronouns. 😊</p>
-<p><strong>Email</strong>: kbodwin@calpoly.edu<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a><br>
-<strong>Office</strong>: Building 25, Office 106</p>
+<p><strong>Email</strong>: kbodwin@calpoly.edu<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a><br><strong>Office</strong>: Building 25, Office 106</p>
 </div><div class="column" style="width:10%;">
 
 </div><div class="column" style="width:40%;">
@@ -417,23 +408,22 @@ ul.task-list li input[type="checkbox"] {
 <col style="width: 25%">
 <col style="width: 70%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Day</th>
 <th>Time</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
-<td colspan="2">Tuesdays | 10:10pm – 11:00am |</td>
+<td>Tuesdays</td>
+<td>10:10pm – 11:00am</td>
 </tr>
 <tr class="even">
 <td>Wednesdays</td>
-<td>1:10pm – 2:00pm |</td>
+<td>1:10pm – 2:00pm</td>
 </tr>
 <tr class="odd">
 <td>Thursdays</td>
-<td>10:10am – 11:00am |</td>
+<td>10:10am – 11:00am</td>
 </tr>
 </tbody>
 </table>
@@ -443,25 +433,25 @@ ul.task-list li input[type="checkbox"] {
 <li>Tues-Thurs, May 26-28th</li>
 </ul>
 <p>Zoom appointments may be booked at <a href="https://tidycal.com/kellybodwin/office-hours">this TidyCal link</a>.</p>
-<section id="personal-meetings" class="level2">
-<h2 class="anchored" data-anchor-id="personal-meetings">Personal Meetings</h2>
-<p>If you would like to talk with me about personal matters (e.g., grades), please don’t hesitate to send me an email, and we can find a way to meet one on one.</p>
+<section id="personal-meetings" class="level2"><h2 class="anchored" data-anchor-id="personal-meetings">Personal Meetings</h2>
+<p>If you would like to talk with me about personal matters (e.g., grades), please don’t hesitate to send me an email, and we can find a way to meet one-on-one.</p>
 </section>
 </div>
 </div>
 </div>
-</section>
-<section id="stat-541" class="level1">
-<h1>STAT 541</h1>
+</section><section id="stat-541" class="level1"><h1>STAT 541</h1>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Instructor Info</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Class Meetings</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Student Hours</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false" href="">Personal Meetings</a></li></ul>
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Instructor Info</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Class Meetings</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Student Hours</a></li>
+</ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Instructor: Dr.&nbsp;Allison Theobold</strong> – you can call me <a href="https://docs.google.com/document/d/1m4e-2l76luAd9WrxiwCVf8-yf-co82dDSe1jHYf-NBo/edit?usp=sharing"><strong>Dr.&nbsp;Theobold</strong> or <strong>Dr.&nbsp;T</strong></a>! I use <strong>they / them</strong> pronouns. 😊</p>
-<p><strong>Email</strong>: atheobol@calpoly.edu<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a><br>
-<strong>Office</strong>: Building 25, Office 105</p>
+<p><strong>Email</strong>: atheobol@calpoly.edu<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a><br><strong>Office</strong>: Building 25, Office 105</p>
 </div><div class="column" style="width:10%;">
 
 </div><div class="column" style="width:40%;">
@@ -480,12 +470,10 @@ ul.task-list li input[type="checkbox"] {
 <col style="width: 25%">
 <col style="width: 70%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Day</th>
 <th>Time</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td>Mondays</td>
@@ -495,22 +483,27 @@ ul.task-list li input[type="checkbox"] {
 <td>Wednesdays</td>
 <td>12:10pm – 1:00pm (in-person)</td>
 </tr>
+<tr class="odd">
+<td>Thursdays</td>
+<td>12:10pm – 1:00pm (in-person)</td>
+</tr>
 </tbody>
 </table>
 <p>I will typically hold student hours in my office (25-105), but may choose to move to the outside vestibule between wings of the building (where all the whiteboards are) or the Statistics department conference room. If we’re meeting somewhere other than my office, I will leave a sign on the door indicating where we’re meeting!</p>
-</div>
-<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
-<p>If you would like to talk with me one-on-one about anything (e.g., grades, research), I’ve reserved time on Thursdays from 12:10pm to 1:00pm for individual appointments. You can make 10-minute appointments through the following link: <a href="https://calendly.com/allisontheobold" class="uri">https://calendly.com/allisontheobold</a></p>
-<p>I do request that you make appointments at least 2-hours ahead of time, so I don’t accidentally miss our meeting!</p>
-<p>If you need to meet, but none of the student hours work for you please let me know! It is possible we can communicate asynchronously through Discord or email, but I am happy to schedule a meeting during another time if necessary.</p>
-</div>
-</div>
-</div>
+<section id="personal-meetings-1" class="level2"><h2 class="anchored" data-anchor-id="personal-meetings-1">Personal Meetings</h2>
+<p>If you would like to talk with me about personal matters (e.g., grades), please don’t hesitate to send me an email, and we can find a way to meet one-on-one.</p>
 </section>
-<section id="course-resources" class="level1">
-<h1>Course Resources</h1>
+</div>
+</div>
+</div>
+</section><section id="course-resources" class="level1"><h1>Course Resources</h1>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Textbooks</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Required Technology</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">Canvas</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false" href="">Discord</a></li></ul>
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Textbooks</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Required Technology</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">Canvas</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false" href="">Discord</a></li>
+</ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <p>This course has no specific textbook; we will make use of many online books and resources. Some suggested resources are below.</p>
@@ -519,34 +512,34 @@ ul.task-list li input[type="checkbox"] {
 <li>Review of Content from STAT 331
 <ul>
 <li><a href="https://r4ds.hadley.nz/"><em>R for Data Science</em></a></li>
-</ul></li>
+</ul>
+</li>
 <li>Version Control:
 <ul>
 <li><a href="https://happygitwithr.com/"><em>Happy Git with R</em></a></li>
-</ul></li>
+</ul>
+</li>
 <li>Refresher on Quarto Documents
 <ul>
-<li><a href="https://quarto.org/docs/get-started/authoring/rstudio.html">Quarto Tutorial on Making Documents</a> – To get familiar with Quarto documents (what we will typically use)</li>
-<li><a href="https://quarto.org/docs/reference/">Quarto Documentation</a> – Extensive documentation on each type of Quarto document</li>
-</ul></li>
+<li>
+<a href="https://quarto.org/docs/get-started/authoring/rstudio.html">Quarto Tutorial on Making Documents</a> – To get familiar with Quarto documents (what we will typically use)</li>
+<li>
+<a href="https://quarto.org/docs/reference/">Quarto Documentation</a> – Extensive documentation on each type of Quarto document</li>
+</ul>
+</li>
 <li>Iteration with <code>purrr</code>
 <ul>
 <li><a href="https://r4ds.had.co.nz/iteration.html"><em>R for Data Science</em>, 1st Edition</a></li>
 <li><a href="https://purrr.tidyverse.org/"><code>purrr</code> documentation</a></li>
 <li><a href="https://adv-r.hadley.nz/functionals.html">Deeper Dive into Functional Programming (<em>Advanced R</em>)</a></li>
-</ul></li>
+</ul>
+</li>
 <li>JSON Data
 <ul>
 <li><a href="https://cran.r-project.org/web/packages/jsonlite/vignettes/json-aaquickstart.html">JSONlite Vignette</a></li>
-</ul></li>
 </ul>
-<!-- **Portfolio:** -->
-<!-- - Templates for Personal Websites -->
-<!--   + [Dr. T's Personal Website](https://atheobold.github.io/) -->
-<!--   + [Sam Shanny-Csik's Personal Website](https://samanthacsik.github.io/) -->
-<!--   + [Gallery of Fun Quarto Websites](https://quarto.org/docs/gallery/#websites) -->
-<!-- - Guides on Styling Your Website -->
-<!--   + [Guide on Using Sass & CSS for Website (also by Sam Shanny-Csik!)](https://samanthacsik.github.io/talks_workshops/2022-10-10-customizing-quarto-websites/) -->
+</li>
+</ul>
 <p><strong>Unit 2:</strong></p>
 <ul>
 <li>Creating Quarto Dashboards
@@ -554,13 +547,15 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://quarto.org/docs/dashboards/">Guide for Creating Quarto Dashboards</a></li>
 <li><a href="https://quarto.org/docs/reference/formats/dashboard.html">Dashboard Documentation</a></li>
 <li><a href="https://quarto.org/docs/gallery/#dashboards">Gallery of Cool Dashboards</a></li>
-</ul></li>
+</ul>
+</li>
 <li>Integrating WebR into Quarto
 <ul>
 <li><a href="https://quarto-webr.thecoatlessprofessor.com/">Guide for Using WebR</a></li>
 <li><a href="https://github.com/coatless/quarto-webr">Repository for WebR to Quarto Extension</a></li>
 <li><a href="https://gws.quarto.pub/introduction-to-webr-2023/#/title-slide">Slides from Presentation on WebR by George Stagg</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <p><strong>Unit 3:</strong></p>
 <ul>
@@ -570,18 +565,21 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://swcarpentry.github.io/r-novice-inflammation/02-func-R.html">The Carpentries - Writing R Fucntions</a></li>
 <li><a href="https://deepr.gagolewski.com/chapter/210-design.html">Deep R Programming - Function Design</a></li>
 <li><a href="https://adv-r.hadley.nz/functions.html">Advanced R - Functions</a></li>
-</ul></li>
+</ul>
+</li>
 <li>Creating R Packages
 <ul>
 <li><a href="https://r-pkgs.org/">R Packages Book</a></li>
 <li><a href="https://kbroman.org/pkg_primer/">R Package Primer</a></li>
 <li><a href="https://rstudio.github.io/cheatsheets/html/package-development.html">Package Development Cheatsheet</a></li>
-</ul></li>
+</ul>
+</li>
 <li>Testing Code
 <ul>
 <li><a href="https://testthat.r-lib.org/"><code>testthat</code> documentation</a></li>
 <li><a href="https://kbodwin.github.io/paRticles/posts/2025-07-23-speed_test/">Speed Testing Blog</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
@@ -594,9 +592,12 @@ ul.task-list li input[type="checkbox"] {
 <div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
 <p>Canvas will be your resource for the course materials necessary for each week. Each module will walk you through what you are expected to do each week, including:</p>
 <ul>
-<li>pre-reading (“Coursework”) to go over <strong>before class</strong></li>
-<li>check-ins (short quiz questions) that are done <strong>before class</strong> and rechecked <strong>during class</strong></li>
-<li>practice activities, worked on <strong>during first class day in a week</strong></li>
+<li>pre-reading (“Coursework”) to go over <strong>before class</strong>
+</li>
+<li>check-ins (short quiz questions) that are done <strong>before class</strong> and rechecked <strong>during class</strong>
+</li>
+<li>practice activities, worked on <strong>during first class day in a week</strong>
+</li>
 <li>project checkpoints, worked on <strong>during second class day in a week</strong><br>
 </li>
 <li>projects, due at the end of each unit</li>
@@ -635,99 +636,71 @@ Tip
 </div>
 </div>
 </div>
-<section id="course-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="course-objectives">Course Objectives</h2>
+<section id="course-objectives" class="level2"><h2 class="anchored" data-anchor-id="course-objectives">Course Objectives</h2>
 <p>After taking this course, you will be able to:</p>
-<p><strong>Create</strong></p>
 <ul>
-<li><p>complex and reproducible data reports, that include interactive and / or dynamic elements.</p></li>
-<li><p>compelling data visualizations with interactive elements.</p></li>
-</ul>
-<p><strong>Use iteration to</strong></p>
+<li>Work effectively with complex data</li>
+<li>Build functions and automate workflows</li>
+<li>Debug, optimize, and improve code performance</li>
+<li>Create reproducible analyses and reports</li>
+<li>Structure and manage larger R projects</li>
+<li>Communicate results with clear visualizations</li>
+<li>Deliver complete, end-to-end data analyses</li>
+</ul></section><section id="prerequisites" class="level2"><h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<p>We expect you to enter this class with:</p>
 <ul>
-<li>obtain data through APIs and webscraping.</li>
-<li>create generative art.</li>
-</ul>
-</section>
-<section id="prerequisites" class="level2">
-<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
-<p>I expect you to enter this class with:</p>
-<ul>
-<li><p>Comfort in Stat 331 level R skills.</p></li>
-<li><p>Statistical knowledge at the Year 2 level; i.e., comfort with the concepts and basic math of multiple linear regression.</p></li>
-<li><p>Familiarity with computers and technology (e.g., Internet browsing, word processing, opening/saving files, converting files to PDF format, sending and receiving e-mail, etc.).</p></li>
-<li><p>A positive attitude, a curious mind, and a respect for ethical use of data science tools.</p></li>
-</ul>
-</section>
-</section>
-<section id="sec-grades" class="level1">
-<h1>Assessment</h1>
-<section id="check-ins-due-mondays-by-9am" class="level2">
-<h2 class="anchored" data-anchor-id="check-ins-due-mondays-by-9am">Check-ins (Due Mondays by 9am)</h2>
+<li>Comfort in Stat 331 level R skills.</li>
+<li>Statistical knowledge at the Year 2 level; i.e., comfort with the concepts and basic math of multiple linear regression.</li>
+<li>Familiarity with computers and technology (e.g., Internet browsing, word processing, opening/saving files, converting files to PDF format, sending and receiving e-mail, etc.).</li>
+<li>A positive attitude, a curious mind, and a respect for ethical use of data science tools.</li>
+</ul></section></section><section id="sec-grades" class="level1"><h1>Assessment</h1>
+<section id="check-ins-due-mondays-by-9am" class="level2"><h2 class="anchored" data-anchor-id="check-ins-due-mondays-by-9am">Check-ins (due Mondays by 9am)</h2>
 <p>These small “quizzes” or activities are posted each week, to give you a way to check your milestones on the main topics of the week. Check-ins are designed so that they can be done on your own, using the Coursework guides, in advance of class.</p>
 <p>At the beginning of the first class day in the week, we will have an on-paper mini-quiz, consisting of 3 selected check-in questions. These questions will be <em>exactly the same</em> as the ones in the check-ins, so if you have done the pre-reading and check-ins, it should be easy points. To allow for illnesses or other unforseen absences, your <strong>one</strong> lowest score will be dropped.</p>
-<section id="canvas-check-in-quizzes-are-worth-5-of-your-grade." class="level4">
-<h4 class="anchored" data-anchor-id="canvas-check-in-quizzes-are-worth-5-of-your-grade.">Canvas check-in quizzes are worth 5% of your grade.</h4>
-</section>
-<section id="in-class-check-in-quizzes-are-worth-5-of-your-grade." class="level4">
-<h4 class="anchored" data-anchor-id="in-class-check-in-quizzes-are-worth-5-of-your-grade.">In-Class check-in quizzes are worth 5% of your grade.</h4>
-</section>
-</section>
-<section id="practice-actitivies-due-wednesdays-by-9am" class="level2">
-<h2 class="anchored" data-anchor-id="practice-actitivies-due-wednesdays-by-9am">Practice Actitivies (Due Wednesdays by 9am)</h2>
+<p><strong>Canvas check-in quizzes are worth 5% of your grade.</strong></p>
+<p><strong>In-Class check-in quizzes are worth 5% of your grade.</strong></p>
+</section><section id="practice-actitivies-due-wednesdays-by-9am" class="level2"><h2 class="anchored" data-anchor-id="practice-actitivies-due-wednesdays-by-9am">Practice Actitivies (due Wednesdays by 9am)</h2>
 <p>Practice activities are meant to be done in class during or after lecture, during the first class session of the week. If you do not finish in class, you should complete these at home before the next class day.</p>
-<section id="practice-activities-are-worth-15-of-your-grade." class="level4">
-<h4 class="anchored" data-anchor-id="practice-activities-are-worth-15-of-your-grade.">Practice Activities are worth 15% of your grade.</h4>
-</section>
-</section>
-<section id="project-checkpoints-due-saturdays-by-midnight" class="level2">
-<h2 class="anchored" data-anchor-id="project-checkpoints-due-saturdays-by-midnight">Project Checkpoints (Due Saturdays by midnight)</h2>
+<p><strong>Practice Activities are worth 15% of your grade.</strong></p>
+</section><section id="project-checkpoints-due-saturdays-by-midnight" class="level2"><h2 class="anchored" data-anchor-id="project-checkpoints-due-saturdays-by-midnight">Project Checkpoints (due Saturdays by midnight)</h2>
 <p>Each week, you will complete a section of your unit project. You will have some class time in the second class day of the week to work on them, but you will almost certainly need to also work on them at home. These checkpoints will be graded on quality, not just completeness.</p>
-<section id="project-checkpoints-are-worth-15-of-your-grade" class="level4">
-<h4 class="anchored" data-anchor-id="project-checkpoints-are-worth-15-of-your-grade">Project Checkpoints are worth 15% of your grade</h4>
-<!-- :::{.callout-caution} -->
-<!-- # Incremental Progress -->
-<!-- You can do your future self a big favor by working on your portfolio -->
-<!-- progressively throughout the quarter, instead of leaving it all for Finals Week. -->
-<!-- My suggestion is that each week, you add everything you can to your portfolio  -->
-<!-- that you demonstrated in that week. -->
-<!-- ::: -->
-</section>
-</section>
-<section id="projects-due-at-the-end-of-each-unit" class="level2">
-<h2 class="anchored" data-anchor-id="projects-due-at-the-end-of-each-unit">Projects (Due at the end of each unit)</h2>
+<p><strong>Project Checkpoints are worth 15% of your grade</strong></p>
+</section><section id="projects-due-at-the-end-of-each-unit" class="level2"><h2 class="anchored" data-anchor-id="projects-due-at-the-end-of-each-unit">Projects (due at the end of each unit)</h2>
 <p>Your project checkpoints will culminate in a complete and polished deliverable at the end of each unit. These projects have minimum requirements, but for an A-level grade, they must show depth and creativity in addition to meeting the baseline elements.</p>
-<p>Project Due Dates for Spring 2026: * Saturday, May 2 * Saturday, May 23 * Saturday, June 6</p>
-<section id="projects-are-worth-10-of-your-grade-each-for-a-total-of-30-of-your-grade." class="level4">
-<h4 class="anchored" data-anchor-id="projects-are-worth-10-of-your-grade-each-for-a-total-of-30-of-your-grade.">Projects are worth 10% of your grade each, for a total of 30% of your grade.</h4>
-</section>
-</section>
-<section id="unit-exams" class="level2">
-<h2 class="anchored" data-anchor-id="unit-exams">Unit Exams</h2>
+<p>Project Due Dates for Spring 2026:</p>
+<ul>
+<li>Saturday, May 2</li>
+<li>Saturday, May 23</li>
+<li>Saturday, June 6</li>
+</ul>
+<p><strong>Projects are worth 10% of your grade each, for a total of 30% of your grade.</strong></p>
+</section><section id="unit-exams" class="level2"><h2 class="anchored" data-anchor-id="unit-exams">Unit Exams</h2>
 <p>At the end of each unit, you will also have a 1-hour on-paper exam in class. This exam will cover conceptual material from the required readings. It will be similar in nature to the check-ins and exercises from the readings, but unlike the check-in quizzes in class, it will <em>not</em> be identical to questions you have already seen.</p>
-<p>Unit Exam Dates for Spring 2026: * Wednesday, April 29th * Wednesday, May 20th * TBD - Registrar-set times in finals week</p>
-<section id="unit-exams-are-worth-10-of-your-grade-each-for-a-total-of-30-of-your-grade." class="level4">
-<h4 class="anchored" data-anchor-id="unit-exams-are-worth-10-of-your-grade-each-for-a-total-of-30-of-your-grade.">Unit exams are worth 10% of your grade each, for a total of 30% of your grade.</h4>
-</section>
-</section>
-</section>
-<section id="classroom-community-and-policies" class="level1">
-<h1>Classroom community and policies</h1>
-<section id="weekly-expectations" class="level3">
-<h3 class="anchored" data-anchor-id="weekly-expectations">Weekly expectations</h3>
+<p>Unit Exam Dates for Spring 2026:</p>
+<ul>
+<li>Wednesday, April 29th</li>
+<li>Wednesday, May 20th</li>
+<li>TBD - Registrar-set times in finals week</li>
+</ul>
+<p><strong>Unit exams are worth 10% of your grade each, for a total of 30% of your grade.</strong></p>
+</section><section id="summary-of-grade-calculations" class="level2"><h2 class="anchored" data-anchor-id="summary-of-grade-calculations">Summary of Grade Calculations</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="syllabus_files/figure-html/plot-of-grade-components-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section></section><section id="classroom-community-and-policies" class="level1"><h1>Classroom community and policies</h1>
+<section id="weekly-expectations" class="level2"><h2 class="anchored" data-anchor-id="weekly-expectations">Weekly expectations</h2>
 <p>The module for each week will be released no later than 5pm on Friday, so you can look over the content and see what the plan is for the week.</p>
-</section>
-<section id="sec-help" class="level3">
-<h3 class="anchored" data-anchor-id="sec-help">Getting help</h3>
+</section><section id="sec-help" class="level2"><h2 class="anchored" data-anchor-id="sec-help">Getting help</h2>
 <p>This quarter, I am instating a policy that <strong>I do not respond to emails with questions of general interest</strong>, such as deadline clarifications or conceptual questions. If you have one of these questions, please ask your question on our course Discord server.</p>
 <p><strong>Discord:</strong> We will use Discord to manage questions and responses regarding course content. There are channels for the different components of each week (e.g., Week 1 Lab Assignment). Please <strong>do not</strong> send an email about homework questions or questions about the course material. It is incredibly helpful for others in the course to see the questions you have and the responses to those questions. I will try to answer any questions posted to Discord within 3-4 hours (unless it is posted at midnight). If you think you can answer another student’s question, please respond!</p>
-</section>
-</section>
-<section id="responding-to-private-messages" class="level1 {callout-note}">
-<h1>Responding to Private Messages</h1>
+</section></section><section id="responding-to-private-messages" class="level1 {callout-note}"><h1>Responding to Private Messages</h1>
 <p>If you use private email or messaging to ask a question that should be public, I may simply answer it in Discord instead. Please don’t take this personally! It just means that you asked a good question, and I think the rest of the class could benefit from seeing the answer.</p>
-</section>
-<p>Of course, if your question is truly private, such as a grade inquiry or a personal concern, you may send me a private email. To help both you and me, here are some specific expectations about emails:</p>
+</section><p>Of course, if your question is truly private, such as a grade inquiry or a personal concern, you may send me a private email. To help both you and me, here are some specific expectations about emails:</p>
 <ul>
 <li>Please tell me what course and section (by time or number) you are in!</li>
 <li>If you email me between 9am and 4pm on Monday through Friday, I’ll try my best to reply to you on the <em>same</em> day.</li>
@@ -735,33 +708,19 @@ Tip
 <li>If your question is much easier to discuss face-to-face, I may ask you to meet with me in my office or on Discord (at a time that works for both of us) rather than answering directly in an email.</li>
 <li>Include any relevant photos / screenshots / error messages / PDFs / links with your email.</li>
 </ul>
-<section id="well-being-access-and-accommodations" class="level1">
-<h1>Well-being, Access, and Accommodations</h1>
-<section id="what-if-i-have-accommodations-or-feel-that-accommodations-would-be-beneficial-to-my-learning" class="level2">
-<h2 class="anchored" data-anchor-id="what-if-i-have-accommodations-or-feel-that-accommodations-would-be-beneficial-to-my-learning">What if I have accommodations or feel that accommodations would be beneficial to my learning?</h2>
+<section id="well-being-access-and-accommodations" class="level1"><h1>Well-being, Access, and Accommodations</h1>
+<section id="what-if-i-have-accommodations-or-feel-that-accommodations-would-be-beneficial-to-my-learning" class="level2"><h2 class="anchored" data-anchor-id="what-if-i-have-accommodations-or-feel-that-accommodations-would-be-beneficial-to-my-learning">What if I have accommodations or feel that accommodations would be beneficial to my learning?</h2>
 <p>I enthusiastically support the mission of Disability Resource Center to make education accessible to all. I design all my courses with accessibility at the forefront of my thinking, but if you have any suggestions for ways I can make things more accessible, please let me know. Come talk to me if you need accommodation for your disabilities. I honor self-diagnosis: let’s talk to each other about how we can make the course as accessible as possible. See also the standard syllabus statements, which include more information about formal processes.</p>
-</section>
-<section id="im-having-difficulty-paying-for-food-and-rent-what-can-i-do" class="level2">
-<h2 class="anchored" data-anchor-id="im-having-difficulty-paying-for-food-and-rent-what-can-i-do">I’m having difficulty paying for food and rent, what can I do?</h2>
+</section><section id="im-having-difficulty-paying-for-food-and-rent-what-can-i-do" class="level2"><h2 class="anchored" data-anchor-id="im-having-difficulty-paying-for-food-and-rent-what-can-i-do">I’m having difficulty paying for food and rent, what can I do?</h2>
 <p>If you have difficulty affording groceries or accessing sufficient food to eat every day, or if you lack a safe and stable place to live, and you believe this may affect your performance in the course, I urge you to contact the Dean of Students for support. Furthermore, please notify me if you are comfortable in doing so. This will enable me to advocate for you and to connect you with other campus resources.</p>
-</section>
-<section id="my-mental-health-is-impairing-my-ability-to-engage-in-my-classes-what-should-i-do" class="level2">
-<h2 class="anchored" data-anchor-id="my-mental-health-is-impairing-my-ability-to-engage-in-my-classes-what-should-i-do">My mental health is impairing my ability to engage in my classes, what should I do?</h2>
+</section><section id="my-mental-health-is-impairing-my-ability-to-engage-in-my-classes-what-should-i-do" class="level2"><h2 class="anchored" data-anchor-id="my-mental-health-is-impairing-my-ability-to-engage-in-my-classes-what-should-i-do">My mental health is impairing my ability to engage in my classes, what should I do?</h2>
 <p>National surveys of college students have consistently found that stress, sleep problems, anxiety, depression, interpersonal concerns, death of a significant other and alcohol use are among the top ten health impediments to academic performance. If you are experiencing any mental health issues, I and Cal Poly are here to help you. Cal Poly’s Counseling Services (805-756-2511) is a free and confidential resource for assistance, support and advocacy.</p>
-</section>
-<section id="someone-is-threatening-me-what-can-i-do" class="level2">
-<h2 class="anchored" data-anchor-id="someone-is-threatening-me-what-can-i-do">Someone is threatening me, what can I do?</h2>
+</section><section id="someone-is-threatening-me-what-can-i-do" class="level2"><h2 class="anchored" data-anchor-id="someone-is-threatening-me-what-can-i-do">Someone is threatening me, what can I do?</h2>
 <p>I will listen and believe you if someone is threatening you. I will help you get the help you need. I commit to changing campus culture that responds poorly to dating violence and stalking.</p>
-</section>
-<section id="what-if-i-cant-arrange-for-childcare" class="level2">
-<h2 class="anchored" data-anchor-id="what-if-i-cant-arrange-for-childcare">What if I can’t arrange for childcare?</h2>
+</section><section id="what-if-i-cant-arrange-for-childcare" class="level2"><h2 class="anchored" data-anchor-id="what-if-i-cant-arrange-for-childcare">What if I can’t arrange for childcare?</h2>
 <p>If you are responsible for childcare on short notice, you are welcome to bring children to class with you. If you are a lactating parent, you many take breaks to feed your infant or express milk as needed. If I can support yo in navigating parenting, coursework, and other obligations in any way, please let me know.</p>
-</section>
-</section>
-<section id="attendance-extensions-and-technology" class="level1">
-<h1>Attendance, Extensions, and Technology</h1>
-<section id="what-if-i-need-to-miss-class" class="level2">
-<h2 class="anchored" data-anchor-id="what-if-i-need-to-miss-class">What if I need to miss class?</h2>
+</section></section><section id="attendance-extensions-and-technology" class="level1"><h1>Attendance, Extensions, and Technology</h1>
+<section id="what-if-i-need-to-miss-class" class="level2"><h2 class="anchored" data-anchor-id="what-if-i-need-to-miss-class">What if I need to miss class?</h2>
 <p>I encourage you to attend every class session, but policies are for narcs. I put a great deal of time into making each class session engaging and worth your time. Attendance in this course is not explicitly required, but it degrades your classmates’ trust in you when they don’t see you in class.</p>
 <p>Please do not email me letting me know when you are missing class - you will not lose points for this, but it is your responsibility to catch up on the materials and complete the in-class activities. Here’s what you should do if you do miss a class:</p>
 <ul>
@@ -770,9 +729,7 @@ Tip
 <li>Stop by student hours with any questions you have after reviewing notes and handouts</li>
 </ul>
 <p>If you miss a bunch of classes, please come talk to me. I’m working from the assumption that you care and are trying, but something is getting in your way (health issues? depression / anxiety? college stress?); let’s figure out what that is and how I can help.</p>
-</section>
-<section id="what-if-i-need-to-turn-something-in-late" class="level2">
-<h2 class="anchored" data-anchor-id="what-if-i-need-to-turn-something-in-late">What if I need to turn something in late?</h2>
+</section><section id="what-if-i-need-to-turn-something-in-late" class="level2"><h2 class="anchored" data-anchor-id="what-if-i-need-to-turn-something-in-late">What if I need to turn something in late?</h2>
 <p>Assignments are expected to be submitted on time. However, every student will be permitted to submit up to <strong>three</strong> individual assignments up to 2-days late, by completing a deadline extension form. Similar to the “real world,” deadline extensions must be requested <strong>before</strong> an assignment is due.</p>
 <p>When you complete the deadline extension form you will be required to state (1) what assignment you need an extension for, and (2) your proposed new deadline. <strong>Your new deadline must be within 2-days of the original deadline.</strong></p>
 <p><strong>All</strong> deadline extensions must be done through the form, so I can keep track of who has used their allotment of extensions. If you are registered with DRC to have deadline extensions, you are required to complete a deadline extension request and make a note if your extension is related to a need related to DRC accommodations.</p>
@@ -790,16 +747,10 @@ Warning
 <p><strong>Deadline extensions are not permitted for group assignments (e.g., project check-ins, final deliverables)!</strong></p>
 </div>
 </div>
-</section>
-<section id="do-i-need-to-bring-a-computer-to-class" class="level2">
-<h2 class="anchored" data-anchor-id="do-i-need-to-bring-a-computer-to-class">Do I need to bring a computer to class?</h2>
+</section><section id="do-i-need-to-bring-a-computer-to-class" class="level2"><h2 class="anchored" data-anchor-id="do-i-need-to-bring-a-computer-to-class">Do I need to bring a computer to class?</h2>
 <p>You are allowed to use technology in the classroom! In fact, we will often do so as part of in-class activities. Our class is held in a room with monitors, but no computers. So, bringing a laptop is critical!</p>
-</section>
-</section>
-<section id="expectations-respect-and-integrity" class="level1">
-<h1>Expectations, Respect, and Integrity</h1>
-<section id="how-can-i-expect-to-be-treated-in-this-course" class="level2">
-<h2 class="anchored" data-anchor-id="how-can-i-expect-to-be-treated-in-this-course">How can I expect to be treated in this course?</h2>
+</section></section><section id="expectations-respect-and-integrity" class="level1"><h1>Expectations, Respect, and Integrity</h1>
+<section id="how-can-i-expect-to-be-treated-in-this-course" class="level2"><h2 class="anchored" data-anchor-id="how-can-i-expect-to-be-treated-in-this-course">How can I expect to be treated in this course?</h2>
 <p>Following Ihab Hassan, I strive to teach statistics so that people will stop killing each other. In my classroom, diversity and individual differences are a sources of strength. One of the greatest failures of Statistics, historically and in the present, has been the exclusion of voices from the field. <strong>Everyone here can learn from each other, and doing so is vital to the structure of the course.</strong> Significant portions of this course involve group work and discussion in class. Some discussions will touch on sensitive topics. <strong>So that everyone feels comfortable participating in these activities, we must listen to each other and treat each other with respect.</strong> Any attitude or belief that espouses the superiority of one group of people over another is not welcome in my classroom. Such beliefs are directly destructive to the sense of community that we strive to create, and will sabotage our ability to learn from each other (and thus sabotage the entire structure of the course).</p>
 <p>In this classroom, I expect you to be polite, respectful, inclusive, and open-minded.</p>
 <p>Some examples of how to be a good classmate include:</p>
@@ -811,9 +762,7 @@ Warning
 <li>Taking the time to help your classmates grasp concepts or solve problems, even when you are ready to move on.</li>
 </ul>
 <p>In summary: Be good to each other.</p>
-</section>
-<section id="what-constitutes-plagiarism-in-a-statistics-class" class="level2">
-<h2 class="anchored" data-anchor-id="what-constitutes-plagiarism-in-a-statistics-class">What constitutes plagiarism in a statistics class?</h2>
+</section><section id="what-constitutes-plagiarism-in-a-statistics-class" class="level2"><h2 class="anchored" data-anchor-id="what-constitutes-plagiarism-in-a-statistics-class">What constitutes plagiarism in a statistics class?</h2>
 <p>You are encouraged to work with other classmates on all but the exam portions of this class. You are also encouraged (realistically, required!) to make use of online resources to accomplish tasks.</p>
 <p>When dealing with code, follow these guidelines:</p>
 <ul>
@@ -834,15 +783,11 @@ Warning
 <p>(In fact, this is exactly what I will do if I need to investigate possible cheating.)</p>
 </div>
 </div>
-</section>
-<section id="learning-to-code-with-chatgpt" class="level2">
-<h2 class="anchored" data-anchor-id="learning-to-code-with-chatgpt">Learning to Code with ChatGPT</h2>
+</section><section id="learning-to-code-with-chatgpt" class="level2"><h2 class="anchored" data-anchor-id="learning-to-code-with-chatgpt">Learning to Code with ChatGPT</h2>
 <p>New AI models like Chat GPT offer a whole new world of online coding resources. This is exciting! In this class, you are allowed to use these tools like you would any other online coding support tool. (Note that this is not a typical policy; most of your other classes likely do not allow AI tools to be used.)</p>
 <p>If you do use an AI tool to help you write or debug code, it is important that you document and cite this process. That is, you should save the “conversation” with the chatbot, to show how you used your knowledge of R coding to construct queries that lead to useful results.</p>
 <p>When you submit your portfolio, if you use AI-generated code in your examples, you will need to make an argument for how you are demonstrating mastery of the requisite skills, and the AI is only being used as support.</p>
-</section>
-<section id="integrity-violations" class="level2">
-<h2 class="anchored" data-anchor-id="integrity-violations">Integrity Violations</h2>
+</section><section id="integrity-violations" class="level2"><h2 class="anchored" data-anchor-id="integrity-violations">Integrity Violations</h2>
 <p>If you accidentally forget a small citation, or go a little overboard in how much you “borrow” from StackOverflow, you’ll get a warning. Any instance of willful and deliberate cheating will result in a failing grade in this class, full stop.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -859,18 +804,11 @@ Warning
 </div>
 
 
-</section>
-</section>
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
+</section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 <ol>
-<li id="fn1"><p>See <a href="#sec-help" class="quarto-xref">Section&nbsp;5.0.2</a> for information on what you can expect when you email me.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>See <a href="#sec-help" class="quarto-xref">Section&nbsp;5.0.2</a> for information on what you can expect when you email me.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+<li id="fn1"><p>See <a href="#sec-help" class="quarto-xref">Section&nbsp;5.2</a> for information on what you can expect when you email me.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>See <a href="#sec-help" class="quarto-xref">Section&nbsp;5.2</a> for information on what you can expect when you email me.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1284,8 +1222,7 @@ Warning
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>This page is built with ❤️ by Drs. Kelly Bodwin &amp; Allison Theobold and also <a href="https://quarto.org/">Quarto</a>.</p>
 </div>   
@@ -1294,17 +1231,15 @@ Warning
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/course-materials/syllabus.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../LICENSE.md">
 <p>License</p>
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>

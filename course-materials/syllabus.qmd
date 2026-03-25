@@ -11,6 +11,17 @@ execute:
   message: false
 ---
 
+```{r}
+#| label: packages
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(RColorBrewer)
+```
+
+
 This quarter, the undergraduate *Advanced R* course (STAT 431) is being 
 coordinated with the graduate *Advanced R* course (STAT 541). The structure of
 each course is identical and the content will be very similar. However, the
@@ -55,11 +66,11 @@ graduate course will occasionally require additional content.
 +-----------------+--------------------------------------------------+
 | Day             | Time                                             |
 +=================+==================================================+
-| Tuesdays         | 10:10pm -- 11:00am                   |
+| Tuesdays        | 10:10pm -- 11:00am                               |
 +-----------------+--------------------------------------------------+
-| Wednesdays      | 1:10pm -- 2:00pm                    |
+| Wednesdays      | 1:10pm -- 2:00pm                                 |
 +-----------------+--------------------------------------------------+
-| Thursdays       | 10:10am -- 11:00am                   |
+| Thursdays       | 10:10am -- 11:00am                               |
 +-----------------+--------------------------------------------------+
 
 All student hours are held in-person in my office (25-106), with the exception of 
@@ -73,7 +84,7 @@ Zoom appointments may be booked at [this TidyCal link](https://tidycal.com/kelly
 ## Personal Meetings
 
 If you would like to talk with me about personal matters (e.g., grades), please
-don't hesitate to send me an email, and we can find a way to meet one on one. 
+don't hesitate to send me an email, and we can find a way to meet one-on-one. 
 :::
 
 
@@ -118,6 +129,8 @@ and Thursdays at the same time---so it is easy to remember!
 +-----------------+--------------------------------------------------+
 | Wednesdays      | 12:10pm -- 1:00pm (in-person)                    |
 +-----------------+--------------------------------------------------+
+| Thursdays       | 12:10pm -- 1:00pm (in-person)                    |
++-----------------+--------------------------------------------------+
 
 I will typically hold student hours in my office (25-105), but may choose to
 move to the outside vestibule between wings of the building (where all the
@@ -125,19 +138,10 @@ whiteboards are) or the Statistics department conference room. If we're meeting
 somewhere other than my office, I will leave a sign on the door indicating where
 we're meeting!
 
-# Personal Meetings 
+## Personal Meetings 
 
-If you would like to talk with me one-on-one about anything (e.g., grades,
-research), I've reserved time on Thursdays from 12:10pm to 1:00pm
-for individual appointments. You can make 10-minute appointments through the
-following link: <https://calendly.com/allisontheobold>
-
-I do request that you make appointments at least 2-hours ahead of time, so I
-don't accidentally miss our meeting!
-
-If you need to meet, but none of the student hours work for you please let me
-know! It is possible we can communicate asynchronously through Discord or email,
-but I am happy to schedule a meeting during another time if necessary.
+If you would like to talk with me about personal matters (e.g., grades), please
+don't hesitate to send me an email, and we can find a way to meet one-on-one. 
 :::
 
 # Course Resources 
@@ -171,16 +175,6 @@ documentation on each type of Quarto document
 - JSON Data
   + [JSONlite Vignette](https://cran.r-project.org/web/packages/jsonlite/vignettes/json-aaquickstart.html)
 
-<!-- **Portfolio:** -->
-
-<!-- - Templates for Personal Websites -->
-<!--   + [Dr. T's Personal Website](https://atheobold.github.io/) -->
-<!--   + [Sam Shanny-Csik's Personal Website](https://samanthacsik.github.io/) -->
-<!--   + [Gallery of Fun Quarto Websites](https://quarto.org/docs/gallery/#websites) -->
-
-<!-- - Guides on Styling Your Website -->
-<!--   + [Guide on Using Sass & CSS for Website (also by Sam Shanny-Csik!)](https://samanthacsik.github.io/talks_workshops/2022-10-10-customizing-quarto-websites/) -->
-
 **Unit 2:**
 
 - Creating Quarto Dashboards
@@ -209,7 +203,6 @@ documentation on each type of Quarto document
 - Testing Code
     + [`testthat` documentation](https://testthat.r-lib.org/)
     + [Speed Testing Blog](https://kbodwin.github.io/paRticles/posts/2025-07-23-speed_test/)
-
 
 # Required Technology
 
@@ -260,37 +253,30 @@ ordinary class and office hours.
 
 After taking this course, you will be able to:
 
-**Create**
-
-- complex and reproducible data reports, that include interactive and / or
-dynamic elements.
-
-- compelling data visualizations with interactive elements. 
-
-**Use iteration to**
-
-- obtain data through APIs and webscraping.
-- create generative art. 
+- Work effectively with complex data
+- Build functions and automate workflows
+- Debug, optimize, and improve code performance
+- Create reproducible analyses and reports
+- Structure and manage larger R projects
+- Communicate results with clear visualizations
+- Deliver complete, end-to-end data analyses
 
 ## Prerequisites
 
-I expect you to enter this class with:
+We expect you to enter this class with:
 
 - Comfort in Stat 331 level R skills.
-
 - Statistical knowledge at the Year 2 level; i.e., comfort with the concepts and
 basic math of multiple linear regression.
-
 - Familiarity with computers and technology (e.g., Internet browsing, word
 processing, opening/saving files, converting files to PDF format, sending and
 receiving e-mail, etc.).
-
 - A positive attitude, a curious mind, and a respect for ethical use of data
 science tools.
 
 # Assessment {#sec-grades}
 
-## Check-ins (Due Mondays by 9am)
+## Check-ins (due Mondays by 9am)
 
 These small "quizzes" or activities are posted each week, to give you a way to
 check your milestones on the main topics of the week. Check-ins are designed so 
@@ -303,36 +289,28 @@ mini-quiz, consisting of 3 selected check-in questions.  These questions will be
 and check-ins, it should be easy points.  To allow for illnesses or other unforseen absences,
 your **one** lowest score will be dropped.
 
-#### Canvas check-in quizzes are worth 5% of your grade.
-#### In-Class check-in quizzes are worth 5% of your grade.
+**Canvas check-in quizzes are worth 5% of your grade.**
 
-## Practice Actitivies (Due Wednesdays by 9am)
+**In-Class check-in quizzes are worth 5% of your grade.**
+
+## Practice Actitivies (due Wednesdays by 9am)
 
 Practice activities are meant to be done in class during or after lecture, during the 
 first class session of the week. If you do not finish in class, you should complete 
 these at home before the next class day.
 
-#### Practice Activities are worth 15% of your grade.
+**Practice Activities are worth 15% of your grade.**
 
-## Project Checkpoints (Due Saturdays by midnight)
+## Project Checkpoints (due Saturdays by midnight)
 
 Each week, you will complete a section of your unit project.  You will have some
 class time in the second class day of the week to work on them, but you will
-almost certainly need to also work on them at home.  These checkpoints will be graded 
-on quality, not just completeness.
+almost certainly need to also work on them at home.  These checkpoints will be
+graded on quality, not just completeness.
 
-#### Project Checkpoints are worth 15% of your grade
+**Project Checkpoints are worth 15% of your grade**
 
-<!-- :::{.callout-caution} -->
-<!-- # Incremental Progress -->
-
-<!-- You can do your future self a big favor by working on your portfolio -->
-<!-- progressively throughout the quarter, instead of leaving it all for Finals Week. -->
-<!-- My suggestion is that each week, you add everything you can to your portfolio  -->
-<!-- that you demonstrated in that week. -->
-<!-- ::: -->
-
-## Projects (Due at the end of each unit)
+## Projects (due at the end of each unit)
 
 Your project checkpoints will culminate in a complete and polished deliverable
 at the end of each unit.  These projects have minimum requirements, but for an
@@ -340,11 +318,12 @@ A-level grade, they must show depth and creativity in addition to meeting the
 baseline elements.
 
 Project Due Dates for Spring 2026:
+
 * Saturday, May 2
 * Saturday, May 23
 * Saturday, June 6 
 
-#### Projects are worth 10% of your grade each, for a total of 30% of your grade.
+**Projects are worth 10% of your grade each, for a total of 30% of your grade.**
 
 ## Unit Exams
 
@@ -355,21 +334,65 @@ the check-in quizzes in class, it will *not* be identical to questions you have
 already seen.
 
 Unit Exam Dates for Spring 2026:
+
 * Wednesday, April 29th
 * Wednesday, May 20th
 * TBD - Registrar-set times in finals week
 
-#### Unit exams are worth 10% of your grade each, for a total of 30% of your grade.
+**Unit exams are worth 10% of your grade each, for a total of 30% of your grade.**
 
+## Summary of Grade Calculations
 
+```{r}
+#| label: plot-of-grade-components
+
+pal <- brewer.pal(n = 6, name = "Dark2")
+
+grades <- tribble(
+  ~category,                       ~percent, ~meta,
+  "Pre-Class Check-ins",            0.05,    "Participation",
+  "In-Class Check-ins",             0.05,    "Participation",
+  "Practice Activities",            0.15,    "Homework",
+  "Project Checkpoints",            0.15,    "Projects", 
+  "Final Projects",                 0.30,    "Projects",
+  "Unit Exams",                     0.30,    "Exams"
+  ) %>% 
+  #arrange(-row_number()) %>%
+  mutate(category = fct_inorder(category),
+         meta = fct_inorder(meta)
+         )
+
+grades %>% 
+  ggplot() +
+  geom_col(aes(x= 1, y = percent, fill = category), 
+           col = "black", alpha = 0.5)  +
+  scale_fill_manual(values = pal[as.numeric(grades$meta)]) + 
+  guides(fill = "none") + 
+  geom_text(aes(x = rep(1, 6), 
+                label = rev(paste(category, "-", 
+                                  scales::percent(percent)
+                                  )
+                            ), 
+                y = cumsum(rev(percent)) - 0.5*rev(percent)
+                )
+            ) + 
+  scale_y_continuous(labels = scales::percent) +
+  theme_classic() +
+  labs(x = "", 
+       y = "") +
+  theme(aspect.ratio = 0.8, 
+        axis.text.x = element_blank(), 
+        axis.ticks.x = element_blank()
+        )
+```
 # Classroom community and policies
 
-### Weekly expectations
+## Weekly expectations
 
 The module for each week will be released no later than 5pm on Friday, so you
 can look over the content and see what the plan is for the week.
 
-### Getting help {#sec-help}
+## Getting help {#sec-help}
 
 This quarter, I am instating a policy that **I do not respond to emails with
 questions of general interest**, such as deadline clarifications or conceptual
