@@ -5,11 +5,10 @@ editor: source
 
 Before the course starts, you are tasked with ranking the datasets available
 for analysis. We have done our best to locate high quality datasets from 
-a variety of contexts. This year we have four possible options:
+a variety of contexts. This year we have three possible options:
 
 -   [Environmental: Plastic Waste](https://github.com/rfordatascience/tidytuesday/blob/main/data/2021/2021-01-26/readme.md)
 -   [Health: Measles Cases](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-06-24/readme.md)
--   [Sports: Olympic Medals](https://github.com/rfordatascience/tidytuesday/blob/main/data/2024/2024-08-06/readme.md)
 -   [Geopolitical: Government Types](https://github.com/rfordatascience/tidytuesday/blob/main/data/2024/2024-11-05/readme.md)
 
 Please complete the following Google Form indicating your ranked preference 
