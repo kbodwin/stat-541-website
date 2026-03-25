@@ -169,12 +169,9 @@ format:
 
 filters:
   - custom_callout.lua
+  - flourish
 
 editor: visual
-    
-filters:
-- custom-callout
-- flourish
 
 
 custom-callout:
