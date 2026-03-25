@@ -172,13 +172,3 @@ filters:
   - flourish
 
 editor: visual
-
-
-custom-callout:
-  req-reading:
-    icon-symbol: "fa-solid fa-book"
-    color: "purple"
-  thumbs-up:
-    title: "Great job!"
-    icon-symbol: "fa-thumbs-up"
-    color: "#008000"
