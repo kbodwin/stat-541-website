@@ -23,7 +23,7 @@ This module consists of readings reviewing material typically taught in STAT
 responsibility to decide which areas you need to review before diving into
 Stat 541.
 
-Answer the following questions to see if you can safely skip this section. 
+**Answer the following questions to see if you can safely skip this section.**
 
 1. Identify the elements of the following plot as
 
@@ -96,11 +96,16 @@ this content. You should feel comfortable with:
 
 -   Identifying these elements of existing plots
 
-## 📖 Recommended Reading: [*R4DS*: Data Visualisation](https://r4ds.hadley.nz/data-visualize.html)
+::: {.callout-required-reading}
+[*R4DS* Chapter 1: Data Visualisation](https://r4ds.hadley.nz/data-visualize.html)
+:::
 
-## 🎥 Recommended Video
-
+<!-- this should be recommended not required-->
+::: {.callout-required-video}
+::: youtube-video-container
 {{< video https://www.youtube.com/embed/kepKM7Z2O54?si=LR2jOR0kKfot1-vy >}}
+:::
+:::
 
 # Using ggplot2
 
@@ -124,4 +129,6 @@ this content. You should be comfortable with:
     * `facet_wrap()` for one categorical variable
     * `facet_grid()` for two categorical variables
 
-## 📖 Recommended Reading -- [*R for Data Science* - Layers](https://r4ds.hadley.nz/layers.html)
+::: {.callout-required-reading}
+[*R for Data Science* Chapter 9 - Layers](https://r4ds.hadley.nz/layers.html)
+:::

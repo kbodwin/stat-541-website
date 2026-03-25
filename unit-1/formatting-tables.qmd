@@ -35,8 +35,6 @@ also a great avenue to display creativity! In fact, there is a yearly
 and [here](https://community.rstudio.com/c/table-gallery/64) is a gallery of the
 award winning tables!
 
-<!-- either `kable()`function from the **knitr** package or -->
-
 There are many packages for generating tables but we recommend the [**gt** 
 (greatables) R package](https://gt.rstudio.com/). 
 
@@ -44,14 +42,13 @@ For simple tables, the basic `gt()` function from the **gt** package works
 quite well. For more sophisticated tables, you will need to add-on additional
 styling functions (e.g., `cols_label()`, `tab_header()`, `fmt_percent()`).
 
-::: callout-warning
+<!-- ::: callout-warning -->
+<!-- Quarto doesn't play nice with some options for formatting HTML tables in other -->
+<!-- packages.  -->
 
-Quarto doesn't play nice with some options for formatting HTML tables in other
-packages. 
-
-To make sure that your tables render as expected, we need to specify 
-`html-table-processing: none` in the YAML header. 
-:::
+<!-- To make sure that your tables render as expected, we need to specify  -->
+<!-- `html-table-processing: none` in the YAML header.  -->
+<!-- ::: -->
 
 ## Making Simple Tables
 
@@ -61,6 +58,7 @@ data type of each variable in the `palmerpenguins` dataset:
 
 ```{r}
 #| label: first-gt
+
 penguins |> 
   map_chr(.f = class) |> 
   enframe(name = "Variable", value = "Data Type") |> 
@@ -87,7 +85,7 @@ penguins |>
     locations = cells_column_labels()
     ) |> 
   tab_header(
-    title = md("Data Types of the `penguins` Dataset")
+    title = md("Data Types of Variables in the `penguins` Dataset")
   ) |> 
   tab_caption(
     caption = md("Example 2: `gt` table with simple extras.")
@@ -157,10 +155,6 @@ penguins |>
   gt()
 ```
 
-
-
-
-
 ## Using Formatter Functions
 
 The gt package also comes with powerful functions for reformatting the text
@@ -187,7 +181,8 @@ use the `across()` function!
 ```{r}
 #| label: tbl-decimals
 penguins |> 
-  select(-c(sex, year, island), 
+  select(-c(sex, year, island),
+         species,
          body_mass_g, 
          bill_depth_mm, 
          bill_length_mm, 
@@ -365,3 +360,36 @@ penguins |>
 ```
 
 ## Now go forth and make great tables!
+
+::: {.callout-check-in}
+1. The `tab_style()` function allows you to modify which aspects of a table?
+
+- title
+- subtitle
+- text of the cells
+- fill of the cells
+- borders of the cells
+- column labels
+- row group labels
+- footnotes
+- source notes
+- none of the above
+- all of the above
+
+2. To specify multiple styles in the `style` argument of `tab_style()`, the 
+styles must be specified as a [vector / dataframe / list]. 
+
+3. Is it possible to specify multiple `locations` for the `styles` to be
+applied?
+
+- Yes
+- No
+- Only if they can be selected with the same `cells_XXXX()` function. 
+
+4. There are two ways to create row groups in `gt()`. One option is to use 
+`group_by()` [before / after] inputting the data into `gt()`. The second option
+is to use `tab_row_group()` [before / after] inputting the data into `gt()`.
+
+5. The `cols_label()` function is the only way to change the names of columns
+in a `gt()` table. 
+:::

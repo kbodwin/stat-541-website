@@ -56,7 +56,6 @@ oscars <- oscars %>%
 
 ```
 
-
 ## gganimate
 
 There are many, many ways to "spice up" your plots. We will focus in on one: 
@@ -70,16 +69,22 @@ to use the [cache chunk option](https://quarto.org/docs/computations/r.html#cach
 in Quarto, so that you don't re-render the images every time you knit your file.
 :::
 
-## 📖 Required Reading: [Intro to `gganimate`](https://gganimate.com/articles/gganimate.html)
+::: {.callout-required-reading}
+[Getting Started with `gganimate` (from the `gganimate` Documentation)](https://gganimate.com/articles/gganimate.html)
+:::
 
-## 📖 Recommended Reading: [Another intro to `gganimate`](https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/)
+::: {.callout-learn-more}
+[How to Create Plots with Beautiful Animation (Datanovia Blog Post) ](https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/)
 
-## 🎥 Recommended Video: `gganimate` flipbook demo (RStudio::conf 2017)
+Or you could watch [Thomas Lin Pedersen's](https://www.data-imaginist.com/about)
+Posit Conf 2019 talk on `gganimate`:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3UY7Or0v_dI?si=j326j6NNtakM6BmK&amp;start=77" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+::: youtube-video-container
+{{< video https://www.youtube.com/embed/3UY7Or0v_dI?si=j326j6NNtakM6BmK&amp;start=77 >}}
+:::
+:::
 
-::: {.callout-important}
-## Check-in
+::: {.callout-check-in}
 
 1.  Fill in the five (5) blanks for the `gganimate` plot below:
 
@@ -152,14 +157,14 @@ Although we don't have time to go in-depth on every single extension of
 
 Take a look around the links below!
 
-## 📖 Required Reading: [`ggplot` Extension Gallery](https://exts.ggplot2.tidyverse.org/gallery/)
+::: {.callout-required-reading}
+[`ggplot` Extension Gallery](https://exts.ggplot2.tidyverse.org/gallery/)
+:::
 
-## 📖 Required Reading: [More `ggplot` Extension Summaries](https://mode.com/blog/r-ggplot-extension-packages)
-
-::: {.callout-important}
-## Check-in
+::: {.callout-check-in}
 
 2.  Which extension package would you use to...
+
 *Hint: There is more than one possible answer for each question!*
 
 a)  Visualize a **social network** using twitter data?
@@ -181,9 +186,9 @@ corresponding label?
 <!-- plotly, ggraph -->
 :::
 
-## Extra Resources
-
+::: {.callout-learn-more}
 -   [The "dataisbeautiful" subreddit](https://www.reddit.com/r/dataisbeautiful/top/?t=all) shares many nice visualizations. 
 -   Don't forget about the [Data-to-Viz Website](https://www.data-to-viz.com/)
 <!-- -   [This webinar](https://www.youtube.com/watch?v=0m4yywqNPVY), by ggplot contributor Thomas Lin Pedersen, is wonderful. It's about 2 hours long - so more than we can fit in as required viewing - but if you want to become a `ggplot` queen, watch this! -->
 <!-- -   Dave Robinson's [Tidy Tuesday Screencasts](https://www.youtube.com/user/safe4democracy/videos) show a Picasso of Data Viz at work! -->
+:::

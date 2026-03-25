@@ -53,6 +53,14 @@ The colors in your styled dashboard should match the colors in your plots!
 These interactive features are expected to be used to update **at least one** 
 table or visualization.
 
+## Example Dashboards
+
+In case you are looking for inspiration, here are a couple of dashboards
+containing the required elements for your project: 
+
+- [Multiple pages, tabsets & value boxes](https://grrrck.quarto.pub/mynorfolk-dash/)
+- [Multiple pages, value boxes & a fun sidebar](https://mine-cetinkaya-rundel.github.io/ld-dashboard/)
+
 # Peer Review
 
 In Week 7 your group will give (and receive) feedback to another group as it

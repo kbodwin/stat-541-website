@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>JSON Data &amp; APIs – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
@@ -57,7 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -80,10 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d740d1846410d21846eaedb988be6a2e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-235111c28925c9e86c962b253a60587d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -110,10 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-
-
 </head>
-
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -279,14 +271,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content">
-    </a>
+    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content"><img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content"></a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -294,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
@@ -327,21 +315,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/atheobold/stat-541-website"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -349,15 +335,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Unit 1</span></a>
@@ -430,49 +412,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tabular-data" id="toc-tabular-data" class="nav-link active" data-scroll-target="#tabular-data">Tabular Data</a>
+<li>
+<a href="#tabular-data" id="toc-tabular-data" class="nav-link active" data-scroll-target="#tabular-data">Tabular Data</a>
   <ul class="collapse">
-  <li><a href="#structured-but-non-tabular-data" id="toc-structured-but-non-tabular-data" class="nav-link" data-scroll-target="#structured-but-non-tabular-data">Structured, but Non-Tabular Data</a></li>
-  </ul></li>
-  <li><a href="#hierarchical-data" id="toc-hierarchical-data" class="nav-link" data-scroll-target="#hierarchical-data">Hierarchical Data</a>
+<li><a href="#structured-but-non-tabular-data" id="toc-structured-but-non-tabular-data" class="nav-link" data-scroll-target="#structured-but-non-tabular-data">Structured, but Non-Tabular Data</a></li>
+  </ul>
+</li>
+  <li><a href="#hierarchical-data" id="toc-hierarchical-data" class="nav-link" data-scroll-target="#hierarchical-data">Hierarchical Data</a></li>
+  <li><a href="#json-data" id="toc-json-data" class="nav-link" data-scroll-target="#json-data">JSON Data</a></li>
+  <li>
+<a href="#working-with-json-data" id="toc-working-with-json-data" class="nav-link" data-scroll-target="#working-with-json-data">Working with JSON Data</a>
   <ul class="collapse">
-  <li><a href="#required-reading-r-for-data-science-chapter-23" id="toc-required-reading-r-for-data-science-chapter-23" class="nav-link" data-scroll-target="#required-reading-r-for-data-science-chapter-23">📖 Required Reading: <em>R for Data Science</em>, Chapter 23</a></li>
-  </ul></li>
-  <li><a href="#json-data" id="toc-json-data" class="nav-link" data-scroll-target="#json-data">JSON Data</a>
-  <ul class="collapse">
-  <li><a href="#required-reading-r-for-data-science-chapter-23-1" id="toc-required-reading-r-for-data-science-chapter-23-1" class="nav-link" data-scroll-target="#required-reading-r-for-data-science-chapter-23-1">📖 Required Reading: <em>R for Data Science</em>, Chapter 23</a></li>
-  </ul></li>
-  <li><a href="#working-with-json-data" id="toc-working-with-json-data" class="nav-link" data-scroll-target="#working-with-json-data">Working with JSON Data</a>
-  <ul class="collapse">
-  <li><a href="#step-1-use-spread_all-to-spread-the-values-of-a-json-object" id="toc-step-1-use-spread_all-to-spread-the-values-of-a-json-object" class="nav-link" data-scroll-target="#step-1-use-spread_all-to-spread-the-values-of-a-json-object">Step 1 – Use <code>spread_all()</code> to spread the values of a JSON object</a></li>
+<li><a href="#step-1-use-spread_all-to-spread-the-values-of-a-json-object" id="toc-step-1-use-spread_all-to-spread-the-values-of-a-json-object" class="nav-link" data-scroll-target="#step-1-use-spread_all-to-spread-the-values-of-a-json-object">Step 1 – Use <code>spread_all()</code> to spread the values of a JSON object</a></li>
   <li><a href="#step-2-find-the-values-that-were-not-able-to-be-spread" id="toc-step-2-find-the-values-that-were-not-able-to-be-spread" class="nav-link" data-scroll-target="#step-2-find-the-values-that-were-not-able-to-be-spread">Step 2 – Find the values that were not able to be spread</a></li>
   <li><a href="#step-3-manually-spread-the-problem-values" id="toc-step-3-manually-spread-the-problem-values" class="nav-link" data-scroll-target="#step-3-manually-spread-the-problem-values">Step 3 – Manually spread the problem values</a></li>
   <li><a href="#step-4-combining-everything-together" id="toc-step-4-combining-everything-together" class="nav-link" data-scroll-target="#step-4-combining-everything-together">Step 4 – Combining everything together</a></li>
-  <li><a href="#stat-541-step-5-scaling-to-multiple-columns" id="toc-stat-541-step-5-scaling-to-multiple-columns" class="nav-link" data-scroll-target="#stat-541-step-5-scaling-to-multiple-columns">STAT 541: Step 5 – Scaling to multiple columns</a></li>
-  </ul></li>
-  <li><a href="#apis" id="toc-apis" class="nav-link" data-scroll-target="#apis">APIs</a>
-  <ul class="collapse">
-  <li><a href="#required-video-what-is-an-api" id="toc-required-video-what-is-an-api" class="nav-link" data-scroll-target="#required-video-what-is-an-api">🎥 Required Video: What is an API?</a></li>
-  <li><a href="#required-reading-r-api-tutorial" id="toc-required-reading-r-api-tutorial" class="nav-link" data-scroll-target="#required-reading-r-api-tutorial">📖 Required Reading: R API Tutorial</a></li>
-  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-1/json-api.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+</li>
+  <li><a href="#apis" id="toc-apis" class="nav-link" data-scroll-target="#apis">APIs</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-1/json-api.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">JSON Data &amp; APIs</h1>
 </div>
 
@@ -487,11 +455,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<section id="tabular-data" class="level1">
-<h1>Tabular Data</h1>
+</header><section id="tabular-data" class="level1"><h1>Tabular Data</h1>
 <p>It’s likely that a huge portion of the datasets you’ve worked with in your life thus far are very well structured and organized to the point of being <strong>tabular</strong>. That is, the dataset consists of a single table with rows and columns. If you’re not familiar with the concept of <strong>tidy data</strong> I suggest you check out this <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html"><code>tidyr</code> vignette</a> on what it means for a dataset to be “tidy.” Most of your datasets have likely even been tidy:</p>
 <ul>
 <li>Each variable forms a column</li>
@@ -499,38 +463,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Almost everyone’s experiences beyond this probably involved taking multiple <strong>tidy</strong> datasets and combining them in some way, but the overall dataset still fit into this tabular structure. These often came in the form of TXT, CSV, Excel, or TSV files.</p>
 <p>Our world is rich with data and a great deal of it doesn’t come in nice, neat tables…BUT a lot of it is still extremely structured and well organized.</p>
-<section id="structured-but-non-tabular-data" class="level2">
-<h2 class="anchored" data-anchor-id="structured-but-non-tabular-data">Structured, but Non-Tabular Data</h2>
+<section id="structured-but-non-tabular-data" class="level2"><h2 class="anchored" data-anchor-id="structured-but-non-tabular-data">Structured, but Non-Tabular Data</h2>
 <p>There is another very popular data format called “JSON”. JSON is short for <strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation and is a syntax for storing and exchanging data, but data in a much broader sense than we’re used to thinking about.</p>
 <p>In the middle of a statistics-related course when I hear the word “data” my mind instinctively envisions something tabular with which we could do some sort of visualization or analysis with. However, in the broadest sense, the word “data” really just describes pieces of information which encapsulates everything from movie theater schedules when you look up showtimes on a website to what your cell phone <em>uses</em> as part of your “data plan.”</p>
 <p>While the website for your favorite movie theater may not have had your visualization and analysis plans in mind, their data may still be of interest to us. Many companies and organizations have built tools that allow access to their data in a more streamlined way, and JSON has become a ubiquitous format for many of these data sources to use.</p>
-</section>
-</section>
-<section id="hierarchical-data" class="level1">
-<h1>Hierarchical Data</h1>
+</section></section><section id="hierarchical-data" class="level1"><h1>Hierarchical Data</h1>
 <p>One of the reasons the JSON format is so important and useful is because it can accommodate very complex types and shapes of data. So while it may not always be workable into a tabular form, it still maintains a high degree of structure that we can exploit!</p>
-<section id="required-reading-r-for-data-science-chapter-23" class="level2">
-<h2 class="anchored" data-anchor-id="required-reading-r-for-data-science-chapter-23">📖 Required Reading: <a href="https://r4ds.hadley.nz/rectangling.html"><em>R for Data Science</em>, Chapter 23</a></h2>
-<div class="callout callout-style-default callout-note callout-empty-content callout-titled">
+<div class="callout callout-style-default callout-required-reading callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Only read Sections 1-4 for now!
+<span class="screen-reader-only">Required-reading</span>Required Reading
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p><a href="https://r4ds.hadley.nz/rectangling.html"><em>R for Data Science</em>, Chapter 23</a></p>
+<p><strong>Only read Sections 1-4 for now!</strong></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-check-in callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Check-in
+<span class="screen-reader-only">Check-in</span>Check In
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -538,18 +497,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>What happens when you use <code>unnest_wider()</code> with unnamed list-columns like <code>df2</code>?</li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>x, <span class="sc">~</span>y,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span>, <span class="fu">list</span>(<span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>),</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span>, <span class="fu">list</span>(<span class="dv">21</span>),</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dv">3</span>, <span class="fu">list</span>(<span class="dv">31</span>, <span class="dv">32</span>),</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df2</span> <span class="op">&lt;-</span> <span class="fu">tribble</span><span class="op">(</span></span>
+<span>  <span class="op">~</span><span class="va">x</span>, <span class="op">~</span><span class="va">y</span>,</span>
+<span>  <span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">13</span><span class="op">)</span>,</span>
+<span>  <span class="fl">2</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fl">21</span><span class="op">)</span>,</span>
+<span>  <span class="fl">3</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fl">31</span>, <span class="fl">32</span><span class="op">)</span>,</span>
+<span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="2" type="1">
-<li>Why does this code result in an error? What argument is now necessary to correctly unnest <code>df2</code>?</li>
+<li>What argument is now necessary to correctly unnest <code>df2</code>? Specifically, the column names should be <code>y_1</code>, <code>y_2</code>, and <code>y_3</code>?</li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unnest_wider</span>(df2, <span class="at">col =</span> y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">unnest_wider</span><span class="op">(</span><span class="va">df2</span>, col <span class="op">=</span> <span class="va">y</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `unnest_wider()`:
 ℹ In column: `y`.
@@ -564,37 +523,33 @@ Caused by error:
 </ol>
 </div>
 </div>
-</section>
-</section>
-<section id="json-data" class="level1">
-<h1>JSON Data</h1>
-<section id="required-reading-r-for-data-science-chapter-23-1" class="level2">
-<h2 class="anchored" data-anchor-id="required-reading-r-for-data-science-chapter-23-1">📖 Required Reading: <a href="https://r4ds.hadley.nz/rectangling.html"><em>R for Data Science</em>, Chapter 23</a></h2>
-<div class="callout callout-style-default callout-note callout-empty-content callout-titled">
+</section><section id="json-data" class="level1"><h1>JSON Data</h1>
+<div class="callout callout-style-default callout-required-reading callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Now read Sections 5 &amp; 6!
+<span class="screen-reader-only">Required-reading</span>Required Reading
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p><a href="https://r4ds.hadley.nz/rectangling.html"><em>R for Data Science</em>, Chapter 23</a></p>
+<p><strong>Now read Sections 5 &amp; 6!</strong></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-check-in callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Check-in
+<span class="screen-reader-only">Check-in</span>Check In
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>Objects are held in _____.</li>
+<ol start="4" type="1">
+<li>JSON Objects are held in _____.</li>
 </ol>
 <ul>
 <li>parentheses</li>
@@ -602,7 +557,7 @@ Caused by error:
 <li>square brackets</li>
 <li>curly braces</li>
 </ul>
-<ol start="2" type="1">
+<ol start="5" type="1">
 <li>While it may seem tedious compared to our usual tabular forms of data, JSON data is easy to read because they _____.</li>
 </ol>
 <ul>
@@ -610,22 +565,22 @@ Caused by error:
 <li>are separated by “—–”</li>
 <li>come in table / name / value triplets</li>
 </ul>
-<ol start="3" type="1">
+<ol start="6" type="1">
 <li>Create rectangular versions of <code>df_col</code> and <code>df_row</code> (shown below).</li>
 </ol>
 <div class="columns">
 <div class="column" style="width:48%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>json_col <span class="ot">&lt;-</span> <span class="fu">parse_json</span>(<span class="st">'</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">  {</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">    "x": ["a", "x", "z"],</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">    "y": [10, null, 3]</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">  }</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="st">'</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>df_col <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">json =</span> <span class="fu">list</span>(json_col)) </span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>df_col</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">json_col</span> <span class="op">&lt;-</span> <span class="fu">parse_json</span><span class="op">(</span><span class="st">'</span></span>
+<span><span class="st">  {</span></span>
+<span><span class="st">    "x": ["a", "x", "z"],</span></span>
+<span><span class="st">    "y": [10, null, 3]</span></span>
+<span><span class="st">  }</span></span>
+<span><span class="st">'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df_col</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>json <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">json_col</span><span class="op">)</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="va">df_col</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   json            
@@ -637,17 +592,17 @@ Caused by error:
 
 </div><div class="column" style="width:48%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>json_row <span class="ot">&lt;-</span> <span class="fu">parse_json</span>(<span class="st">'</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="st">  [</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">    {"x": "a", "y": 10},</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="st">    {"x": "x", "y": null},</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="st">    {"x": "z", "y": 3}</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="st">  ]</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="st">'</span>)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>df_row <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">json =</span> json_row)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>df_row</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">json_row</span> <span class="op">&lt;-</span> <span class="fu">parse_json</span><span class="op">(</span><span class="st">'</span></span>
+<span><span class="st">  [</span></span>
+<span><span class="st">    {"x": "a", "y": 10},</span></span>
+<span><span class="st">    {"x": "x", "y": null},</span></span>
+<span><span class="st">    {"x": "z", "y": 3}</span></span>
+<span><span class="st">  ]</span></span>
+<span><span class="st">'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df_row</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>json <span class="op">=</span> <span class="va">json_row</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df_row</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 1
   json            
@@ -662,23 +617,23 @@ Caused by error:
 <p><strong>In both cases, your unnested data should look like this:</strong></p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="mhutzhwhgb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mhutzhwhgb table {
+<div id="jsgeuunhxm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jsgeuunhxm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mhutzhwhgb thead, #mhutzhwhgb tbody, #mhutzhwhgb tfoot, #mhutzhwhgb tr, #mhutzhwhgb td, #mhutzhwhgb th {
+#jsgeuunhxm thead, #jsgeuunhxm tbody, #jsgeuunhxm tfoot, #jsgeuunhxm tr, #jsgeuunhxm td, #jsgeuunhxm th {
   border-style: none;
 }
 
-#mhutzhwhgb p {
+#jsgeuunhxm p {
   margin: 0;
   padding: 0;
 }
 
-#mhutzhwhgb .gt_table {
+#jsgeuunhxm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -704,12 +659,12 @@ Caused by error:
   border-left-color: #D3D3D3;
 }
 
-#mhutzhwhgb .gt_caption {
+#jsgeuunhxm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mhutzhwhgb .gt_title {
+#jsgeuunhxm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -721,7 +676,7 @@ Caused by error:
   border-bottom-width: 0;
 }
 
-#mhutzhwhgb .gt_subtitle {
+#jsgeuunhxm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -733,7 +688,7 @@ Caused by error:
   border-top-width: 0;
 }
 
-#mhutzhwhgb .gt_heading {
+#jsgeuunhxm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -745,13 +700,13 @@ Caused by error:
   border-right-color: #D3D3D3;
 }
 
-#mhutzhwhgb .gt_bottom_border {
+#jsgeuunhxm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mhutzhwhgb .gt_col_headings {
+#jsgeuunhxm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -766,7 +721,7 @@ Caused by error:
   border-right-color: #D3D3D3;
 }
 
-#mhutzhwhgb .gt_col_heading {
+#jsgeuunhxm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -786,7 +741,7 @@ Caused by error:
   overflow-x: hidden;
 }
 
-#mhutzhwhgb .gt_column_spanner_outer {
+#jsgeuunhxm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -798,15 +753,15 @@ Caused by error:
   padding-right: 4px;
 }
 
-#mhutzhwhgb .gt_column_spanner_outer:first-child {
+#jsgeuunhxm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mhutzhwhgb .gt_column_spanner_outer:last-child {
+#jsgeuunhxm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mhutzhwhgb .gt_column_spanner {
+#jsgeuunhxm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -818,11 +773,11 @@ Caused by error:
   width: 100%;
 }
 
-#mhutzhwhgb .gt_spanner_row {
+#jsgeuunhxm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mhutzhwhgb .gt_group_heading {
+#jsgeuunhxm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -848,7 +803,7 @@ Caused by error:
   text-align: left;
 }
 
-#mhutzhwhgb .gt_empty_group_heading {
+#jsgeuunhxm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -863,15 +818,15 @@ Caused by error:
   vertical-align: middle;
 }
 
-#mhutzhwhgb .gt_from_md > :first-child {
+#jsgeuunhxm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mhutzhwhgb .gt_from_md > :last-child {
+#jsgeuunhxm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mhutzhwhgb .gt_row {
+#jsgeuunhxm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -890,7 +845,7 @@ Caused by error:
   overflow-x: hidden;
 }
 
-#mhutzhwhgb .gt_stub {
+#jsgeuunhxm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -903,7 +858,7 @@ Caused by error:
   padding-right: 5px;
 }
 
-#mhutzhwhgb .gt_stub_row_group {
+#jsgeuunhxm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -917,15 +872,15 @@ Caused by error:
   vertical-align: top;
 }
 
-#mhutzhwhgb .gt_row_group_first td {
+#jsgeuunhxm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mhutzhwhgb .gt_row_group_first th {
+#jsgeuunhxm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mhutzhwhgb .gt_summary_row {
+#jsgeuunhxm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -935,16 +890,16 @@ Caused by error:
   padding-right: 5px;
 }
 
-#mhutzhwhgb .gt_first_summary_row {
+#jsgeuunhxm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mhutzhwhgb .gt_first_summary_row.thick {
+#jsgeuunhxm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mhutzhwhgb .gt_last_summary_row {
+#jsgeuunhxm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -954,7 +909,7 @@ Caused by error:
   border-bottom-color: #D3D3D3;
 }
 
-#mhutzhwhgb .gt_grand_summary_row {
+#jsgeuunhxm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -964,7 +919,7 @@ Caused by error:
   padding-right: 5px;
 }
 
-#mhutzhwhgb .gt_first_grand_summary_row {
+#jsgeuunhxm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -974,7 +929,7 @@ Caused by error:
   border-top-color: #D3D3D3;
 }
 
-#mhutzhwhgb .gt_last_grand_summary_row_top {
+#jsgeuunhxm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -984,11 +939,11 @@ Caused by error:
   border-bottom-color: #D3D3D3;
 }
 
-#mhutzhwhgb .gt_striped {
+#jsgeuunhxm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mhutzhwhgb .gt_table_body {
+#jsgeuunhxm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -997,7 +952,7 @@ Caused by error:
   border-bottom-color: #D3D3D3;
 }
 
-#mhutzhwhgb .gt_footnotes {
+#jsgeuunhxm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1011,7 +966,7 @@ Caused by error:
   border-right-color: #D3D3D3;
 }
 
-#mhutzhwhgb .gt_footnote {
+#jsgeuunhxm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1020,7 +975,7 @@ Caused by error:
   padding-right: 5px;
 }
 
-#mhutzhwhgb .gt_sourcenotes {
+#jsgeuunhxm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1034,7 +989,7 @@ Caused by error:
   border-right-color: #D3D3D3;
 }
 
-#mhutzhwhgb .gt_sourcenote {
+#jsgeuunhxm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1042,83 +997,80 @@ Caused by error:
   padding-right: 5px;
 }
 
-#mhutzhwhgb .gt_left {
+#jsgeuunhxm .gt_left {
   text-align: left;
 }
 
-#mhutzhwhgb .gt_center {
+#jsgeuunhxm .gt_center {
   text-align: center;
 }
 
-#mhutzhwhgb .gt_right {
+#jsgeuunhxm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mhutzhwhgb .gt_font_normal {
+#jsgeuunhxm .gt_font_normal {
   font-weight: normal;
 }
 
-#mhutzhwhgb .gt_font_bold {
+#jsgeuunhxm .gt_font_bold {
   font-weight: bold;
 }
 
-#mhutzhwhgb .gt_font_italic {
+#jsgeuunhxm .gt_font_italic {
   font-style: italic;
 }
 
-#mhutzhwhgb .gt_super {
+#jsgeuunhxm .gt_super {
   font-size: 65%;
 }
 
-#mhutzhwhgb .gt_footnote_marks {
+#jsgeuunhxm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mhutzhwhgb .gt_asterisk {
+#jsgeuunhxm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mhutzhwhgb .gt_indent_1 {
+#jsgeuunhxm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mhutzhwhgb .gt_indent_2 {
+#jsgeuunhxm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mhutzhwhgb .gt_indent_3 {
+#jsgeuunhxm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mhutzhwhgb .gt_indent_4 {
+#jsgeuunhxm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mhutzhwhgb .gt_indent_5 {
+#jsgeuunhxm .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mhutzhwhgb .katex-display {
+#jsgeuunhxm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mhutzhwhgb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#jsgeuunhxm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
-
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
-<thead>
-<tr class="gt_col_headings header">
+<thead><tr class="gt_col_headings header">
 <th id="x" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">x</th>
 <th id="y" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">y</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="x">a</td>
@@ -1134,23 +1086,19 @@ Caused by error:
 </tr>
 </tbody>
 </table>
-
 </div>
 </div>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="working-with-json-data" class="level1">
-<h1>Working with JSON Data</h1>
+</section><section id="working-with-json-data" class="level1"><h1>Working with JSON Data</h1>
 <p>The chapter covers a few functions from the <code>jsonlite</code> package, but there are several other packages for working with JSON data in R (e.g., <code>rjson</code>, <code>rjsonio</code>). These packages automatically transform JSON data into nested R lists or complex data frames. However, working with these complex objects can be difficult.</p>
 <p>The <code>tidyjson</code> package takes a different approach to structuring JSON data into tidy data frames. Similar to <code>tidyr</code>, <code>tidyjson</code> builds a grammar for manipulating JSON into a tidy table structure.</p>
 <p><code>tidyjson</code> is based on the following principles:</p>
 <ul>
 <li>Work on a single JSON document, or on a collection of related documents</li>
 <li>Create pipelines with the pipe operator (<code>%&gt;%</code>), producing code that can be read from left to right</li>
-<li>Guarantee the structure of the data produced, even if the input JSON structure changes (with the exception of <code>spread_all()</code>)</li>
+<li>Guarantee the structure of the data produced, even if the input JSON structure changes (with the exception of <code><a href="https://rdrr.io/pkg/tidyjson/man/spread_all.html">spread_all()</a></code>)</li>
 <li>Work with arbitrarily nested arrays or objects</li>
 <li>Handle ‘ragged’ arrays and / or objects (varying lengths by document)</li>
 <li>Ensure edge cases are handled correctly (especially empty data)</li>
@@ -1158,58 +1106,55 @@ Caused by error:
 </ul>
 <p>Let’s use the <code>companies</code> JSON dataset from the <strong>tidyjson</strong> package to explore tools from the <strong>tidyjson</strong> package. This exploration parallels the <code>worldbank</code> examples from the <a href="https://cran.r-project.org/web/packages/tidyjson/vignettes/introduction-to-tidyjson.html"><strong>tidyjson</strong> vignette</a>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyjson)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Companies is a long character vector</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>companies <span class="sc">%&gt;%</span> </span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/colearendt/tidyjson">tidyjson</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Companies is a long character vector</span></span>
+<span><span class="va">companies</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> chr [1:1000] "{ \"_id\" : { \"$oid\" : \"52cdef7e4bab8bd67529bd0c\" }, \"name\" : \"OutSmart Power Systems\", \"permalink\" :"| __truncated__ ...</code></pre>
 </div>
 </div>
-<section id="step-1-use-spread_all-to-spread-the-values-of-a-json-object" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-use-spread_all-to-spread-the-values-of-a-json-object">Step 1 – Use <code>spread_all()</code> to spread the values of a JSON object</h3>
+<section id="step-1-use-spread_all-to-spread-the-values-of-a-json-object" class="level3"><h3 class="anchored" data-anchor-id="step-1-use-spread_all-to-spread-the-values-of-a-json-object">Step 1 – Use <code>spread_all()</code> to spread the values of a JSON object</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>companies_tidy <span class="ot">&lt;-</span> <span class="fu">spread_all</span>(companies)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">companies_tidy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/tidyjson/man/spread_all.html">spread_all</a></span><span class="op">(</span><span class="va">companies</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-check-in callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Check-in
+<span class="screen-reader-only">Check-in</span>Check In
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol start="5" type="1">
-<li><p>How does <code>spread_all()</code> know how many columns to make?</p></li>
+<ol start="8" type="1">
+<li><p>How does <code><a href="https://rdrr.io/pkg/tidyjson/man/spread_all.html">spread_all()</a></code> know how many columns to make?</p></li>
 <li><p>Is the JSON data retained after you have spread the data?</p></li>
 </ol>
 </div>
 </div>
-</section>
-<section id="step-2-find-the-values-that-were-not-able-to-be-spread" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-find-the-values-that-were-not-able-to-be-spread">Step 2 – Find the values that were not able to be spread</h3>
+</section><section id="step-2-find-the-values-that-were-not-able-to-be-spread" class="level3"><h3 class="anchored" data-anchor-id="step-2-find-the-values-that-were-not-able-to-be-spread">Step 2 – Find the values that were not able to be spread</h3>
 <p>To identify the names of an object, their type, and frequency we use the following pipeline:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>name_of_data <span class="sc">%&gt;%</span> </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather_object</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">json_types</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(name, type)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">name_of_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tidyjson/man/gather_object.html">gather_object</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tidyjson/man/json_types.html">json_types</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="va">name</span>, <span class="va">type</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>The <code>gather_object()</code> function collapses a JSON object into name-value pairs, producing a <code>tbl_json</code> object. The <code>json_types()</code> function then inspects the JSON associated with each row of the <code>tbl_json</code> object, and adds a new column (<code>"type"</code>) that identifies the type according to the <a href="http://json.org/">JSON standard</a>. We can then <code>count()</code> the number of occurrences of each <code>name</code>, <code>type</code> combination to understand how many rows / observations contained these values.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<p>The <code><a href="https://rdrr.io/pkg/tidyjson/man/gather_object.html">gather_object()</a></code> function collapses a JSON object into name-value pairs, producing a <code>tbl_json</code> object. The <code><a href="https://rdrr.io/pkg/tidyjson/man/json_types.html">json_types()</a></code> function then inspects the JSON associated with each row of the <code>tbl_json</code> object, and adds a new column (<code>"type"</code>) that identifies the type according to the <a href="http://json.org/">JSON standard</a>. We can then <code>count()</code> the number of occurrences of each <code>name</code>, <code>type</code> combination to understand how many rows / observations contained these values.</p>
+<div class="callout callout-style-default callout-check-in callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Check-in
+<span class="screen-reader-only">Check-in</span>Check In
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol start="7" type="1">
+<ol start="10" type="1">
 <li>Fill in the code below to discover how many different values are included in the <code>companies</code> dataset?</li>
 </ol>
 <div class="cell">
@@ -1221,17 +1166,17 @@ Caused by error:
 </div>
 </div>
 <p>Now that we know the name of <strong>every</strong> value in the <code>companies</code> dataset, we can inspect how many of these columns were not captured when we used <code>spread-all()</code>.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-check-in callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Check-in
+<span class="screen-reader-only">Check-in</span>Check In
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol start="8" type="1">
+<ol start="11" type="1">
 <li>Fill in the code below to uncover how many arrays from the <code>companies</code> dataset were not spread into new columns.</li>
 </ol>
 <div class="cell">
@@ -1243,29 +1188,27 @@ Caused by error:
 </div>
 </div>
 </div>
-</section>
-<section id="step-3-manually-spread-the-problem-values" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-manually-spread-the-problem-values">Step 3 – Manually spread the problem values</h3>
+</section><section id="step-3-manually-spread-the-problem-values" class="level3"><h3 class="anchored" data-anchor-id="step-3-manually-spread-the-problem-values">Step 3 – Manually spread the problem values</h3>
 <p>Now that we know the names of the values that were not spread into columns, we can wrangle specific values to capture their values. Let’s do this with the <code>acquisitions</code> value.</p>
 <p>We do this with the following pipeline:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>name_of_dataset <span class="sc">%&gt;%</span> </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">enter_object</span>(name_of_value) <span class="sc">%&gt;%</span> </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather_array</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread_all</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">name_of_dataset</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tidyjson/man/enter_object.html">enter_object</a></span><span class="op">(</span><span class="va">name_of_value</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tidyjson/man/gather_array.html">gather_array</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tidyjson/man/spread_all.html">spread_all</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>The <code>enter_object()</code> function allows you to navigate a specific value of the JSON data by referencing its name. <code>gather_array()</code> then collapses a JSON array into index-value pairs, creating a new column <code>array.index</code> to store the index of the array, and storing values in the ‘JSON’ attribute for further tidyjson manipulation.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<p>The <code><a href="https://rdrr.io/pkg/tidyjson/man/enter_object.html">enter_object()</a></code> function allows you to navigate a specific value of the JSON data by referencing its name. <code><a href="https://rdrr.io/pkg/tidyjson/man/gather_array.html">gather_array()</a></code> then collapses a JSON array into index-value pairs, creating a new column <code>array.index</code> to store the index of the array, and storing values in the ‘JSON’ attribute for further tidyjson manipulation.</p>
+<div class="callout callout-style-default callout-check-in callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Check-in
+<span class="screen-reader-only">Check-in</span>Check In
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol start="9" type="1">
+<ol start="12" type="1">
 <li>Fill in the code below to spread the <code>acquisitions</code> array of the <code>companies</code> dataset.</li>
 </ol>
 <div class="cell">
@@ -1274,32 +1217,30 @@ Caused by error:
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather_array</span>() <span class="sc">%&gt;%</span> </span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  ________ </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<ol start="10" type="1">
-<li>What values are stored in this array? What are the names of the new columns that appear in the spread dataset?</li>
+<ol start="13" type="1">
+<li>What are the names of the new columns that appear in the spread dataset?</li>
 </ol>
 </div>
 </div>
-</section>
-<section id="step-4-combining-everything-together" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-combining-everything-together">Step 4 – Combining everything together</h3>
-<p>By combining with our initial top-level <code>spread_all()</code>, we can aggregate the sale price of companies (’price_amount<code>) by</code>category_code<code>and the currency it was sold in (</code>price_currency_code`).</p>
+</section><section id="step-4-combining-everything-together" class="level3"><h3 class="anchored" data-anchor-id="step-4-combining-everything-together">Step 4 – Combining everything together</h3>
+<p>By combining with our initial top-level <code><a href="https://rdrr.io/pkg/tidyjson/man/spread_all.html">spread_all()</a></code>, we can aggregate the sale price of companies (’price_amount<code>) by</code>category_code<code>and the currency it was sold in (</code>price_currency_code`).</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>company_max_sales <span class="ot">&lt;-</span> companies <span class="sc">%&gt;%</span> </span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread_all</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Manually extracting information from acquisitions</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">enter_object</span>(acquisitions) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather_array</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread_all</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Removing missing values from relevant variables</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(category_code, price_currency_code, price_amount) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Finding max sale price for different company categories</span></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(category_code, price_currency_code) <span class="sc">%&gt;%</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_price =</span> <span class="fu">max</span>(price_amount), </span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>            )</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>company_max_sales</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">company_max_sales</span> <span class="op">&lt;-</span> <span class="va">companies</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tidyjson/man/spread_all.html">spread_all</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="co"># Manually extracting information from acquisitions</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tidyjson/man/enter_object.html">enter_object</a></span><span class="op">(</span><span class="va">acquisitions</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tidyjson/man/gather_array.html">gather_array</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tidyjson/man/spread_all.html">spread_all</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="co"># Removing missing values from relevant variables</span></span>
+<span>  <span class="fu">drop_na</span><span class="op">(</span><span class="va">category_code</span>, <span class="va">price_currency_code</span>, <span class="va">price_amount</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="co"># Finding max sale price for different company categories</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">category_code</span>, <span class="va">price_currency_code</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">summarize</span><span class="op">(</span></span>
+<span>    max_price <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">price_amount</span><span class="op">)</span>, </span>
+<span>    .groups <span class="op">=</span> <span class="st">"drop"</span></span>
+<span>            <span class="op">)</span></span>
+<span></span>
+<span><span class="va">company_max_sales</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 14 × 3
    category_code    price_currency_code  max_price
@@ -1322,42 +1263,42 @@ Caused by error:
 </div>
 <p>To get a professional looking table, we can reformat the columns and use the <strong>gt</strong> package:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>company_max_sales <span class="sc">|&gt;</span> </span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert to dollar format</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_price =</span> scales<span class="sc">::</span><span class="fu">dollar</span>(max_price), </span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Remove _ from company sector names</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">category_code =</span> <span class="fu">str_replace_all</span>(category_code, </span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">pattern =</span> <span class="st">"_"</span>,</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">replacement =</span> <span class="st">" "</span>), </span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Capitalize the first letter of each word</span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">category_code =</span> <span class="fu">str_to_title</span>(category_code)</span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">category_code =</span> <span class="fu">md</span>(<span class="st">"**Business Sector**"</span>), </span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">price_currency_code =</span> <span class="fu">md</span>(<span class="st">"**Currency of Sale**"</span>), </span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">max_price =</span> <span class="fu">md</span>(<span class="st">"**Max Company Sale Price**"</span>)</span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>             )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com">gt</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">company_max_sales</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    <span class="co"># Convert to dollar format</span></span>
+<span>    max_price <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/dollar_format.html">dollar</a></span><span class="op">(</span><span class="va">max_price</span><span class="op">)</span>, </span>
+<span>    <span class="co"># Remove _ from company sector names</span></span>
+<span>    category_code <span class="op">=</span> <span class="fu">str_replace_all</span><span class="op">(</span><span class="va">category_code</span>, </span>
+<span>                                    pattern <span class="op">=</span> <span class="st">"_"</span>,</span>
+<span>                                    replacement <span class="op">=</span> <span class="st">" "</span><span class="op">)</span>, </span>
+<span>    <span class="co"># Capitalize the first letter of each word</span></span>
+<span>    category_code <span class="op">=</span> <span class="fu">str_to_title</span><span class="op">(</span><span class="va">category_code</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/cols_label.html">cols_label</a></span><span class="op">(</span>category_code <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html">md</a></span><span class="op">(</span><span class="st">"**Business Sector**"</span><span class="op">)</span>, </span>
+<span>             price_currency_code <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html">md</a></span><span class="op">(</span><span class="st">"**Currency of Sale**"</span><span class="op">)</span>, </span>
+<span>             max_price <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html">md</a></span><span class="op">(</span><span class="st">"**Max Company Sale Price**"</span><span class="op">)</span></span>
+<span>             <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="wxrbmvfmje" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wxrbmvfmje table {
+<div id="wrhrgidgzc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wrhrgidgzc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wxrbmvfmje thead, #wxrbmvfmje tbody, #wxrbmvfmje tfoot, #wxrbmvfmje tr, #wxrbmvfmje td, #wxrbmvfmje th {
+#wrhrgidgzc thead, #wrhrgidgzc tbody, #wrhrgidgzc tfoot, #wrhrgidgzc tr, #wrhrgidgzc td, #wrhrgidgzc th {
   border-style: none;
 }
 
-#wxrbmvfmje p {
+#wrhrgidgzc p {
   margin: 0;
   padding: 0;
 }
 
-#wxrbmvfmje .gt_table {
+#wrhrgidgzc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1383,12 +1324,12 @@ Caused by error:
   border-left-color: #D3D3D3;
 }
 
-#wxrbmvfmje .gt_caption {
+#wrhrgidgzc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wxrbmvfmje .gt_title {
+#wrhrgidgzc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1400,7 +1341,7 @@ Caused by error:
   border-bottom-width: 0;
 }
 
-#wxrbmvfmje .gt_subtitle {
+#wrhrgidgzc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1412,7 +1353,7 @@ Caused by error:
   border-top-width: 0;
 }
 
-#wxrbmvfmje .gt_heading {
+#wrhrgidgzc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1424,13 +1365,13 @@ Caused by error:
   border-right-color: #D3D3D3;
 }
 
-#wxrbmvfmje .gt_bottom_border {
+#wrhrgidgzc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wxrbmvfmje .gt_col_headings {
+#wrhrgidgzc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1445,7 +1386,7 @@ Caused by error:
   border-right-color: #D3D3D3;
 }
 
-#wxrbmvfmje .gt_col_heading {
+#wrhrgidgzc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1465,7 +1406,7 @@ Caused by error:
   overflow-x: hidden;
 }
 
-#wxrbmvfmje .gt_column_spanner_outer {
+#wrhrgidgzc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1477,15 +1418,15 @@ Caused by error:
   padding-right: 4px;
 }
 
-#wxrbmvfmje .gt_column_spanner_outer:first-child {
+#wrhrgidgzc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wxrbmvfmje .gt_column_spanner_outer:last-child {
+#wrhrgidgzc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wxrbmvfmje .gt_column_spanner {
+#wrhrgidgzc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1497,11 +1438,11 @@ Caused by error:
   width: 100%;
 }
 
-#wxrbmvfmje .gt_spanner_row {
+#wrhrgidgzc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wxrbmvfmje .gt_group_heading {
+#wrhrgidgzc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1527,7 +1468,7 @@ Caused by error:
   text-align: left;
 }
 
-#wxrbmvfmje .gt_empty_group_heading {
+#wrhrgidgzc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1542,15 +1483,15 @@ Caused by error:
   vertical-align: middle;
 }
 
-#wxrbmvfmje .gt_from_md > :first-child {
+#wrhrgidgzc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wxrbmvfmje .gt_from_md > :last-child {
+#wrhrgidgzc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wxrbmvfmje .gt_row {
+#wrhrgidgzc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1569,7 +1510,7 @@ Caused by error:
   overflow-x: hidden;
 }
 
-#wxrbmvfmje .gt_stub {
+#wrhrgidgzc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1582,7 +1523,7 @@ Caused by error:
   padding-right: 5px;
 }
 
-#wxrbmvfmje .gt_stub_row_group {
+#wrhrgidgzc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1596,15 +1537,15 @@ Caused by error:
   vertical-align: top;
 }
 
-#wxrbmvfmje .gt_row_group_first td {
+#wrhrgidgzc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wxrbmvfmje .gt_row_group_first th {
+#wrhrgidgzc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wxrbmvfmje .gt_summary_row {
+#wrhrgidgzc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1614,16 +1555,16 @@ Caused by error:
   padding-right: 5px;
 }
 
-#wxrbmvfmje .gt_first_summary_row {
+#wrhrgidgzc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wxrbmvfmje .gt_first_summary_row.thick {
+#wrhrgidgzc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wxrbmvfmje .gt_last_summary_row {
+#wrhrgidgzc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1633,7 +1574,7 @@ Caused by error:
   border-bottom-color: #D3D3D3;
 }
 
-#wxrbmvfmje .gt_grand_summary_row {
+#wrhrgidgzc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1643,7 +1584,7 @@ Caused by error:
   padding-right: 5px;
 }
 
-#wxrbmvfmje .gt_first_grand_summary_row {
+#wrhrgidgzc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1653,7 +1594,7 @@ Caused by error:
   border-top-color: #D3D3D3;
 }
 
-#wxrbmvfmje .gt_last_grand_summary_row_top {
+#wrhrgidgzc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1663,11 +1604,11 @@ Caused by error:
   border-bottom-color: #D3D3D3;
 }
 
-#wxrbmvfmje .gt_striped {
+#wrhrgidgzc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wxrbmvfmje .gt_table_body {
+#wrhrgidgzc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1676,7 +1617,7 @@ Caused by error:
   border-bottom-color: #D3D3D3;
 }
 
-#wxrbmvfmje .gt_footnotes {
+#wrhrgidgzc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1690,7 +1631,7 @@ Caused by error:
   border-right-color: #D3D3D3;
 }
 
-#wxrbmvfmje .gt_footnote {
+#wrhrgidgzc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1699,7 +1640,7 @@ Caused by error:
   padding-right: 5px;
 }
 
-#wxrbmvfmje .gt_sourcenotes {
+#wrhrgidgzc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1713,7 +1654,7 @@ Caused by error:
   border-right-color: #D3D3D3;
 }
 
-#wxrbmvfmje .gt_sourcenote {
+#wrhrgidgzc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1721,84 +1662,81 @@ Caused by error:
   padding-right: 5px;
 }
 
-#wxrbmvfmje .gt_left {
+#wrhrgidgzc .gt_left {
   text-align: left;
 }
 
-#wxrbmvfmje .gt_center {
+#wrhrgidgzc .gt_center {
   text-align: center;
 }
 
-#wxrbmvfmje .gt_right {
+#wrhrgidgzc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wxrbmvfmje .gt_font_normal {
+#wrhrgidgzc .gt_font_normal {
   font-weight: normal;
 }
 
-#wxrbmvfmje .gt_font_bold {
+#wrhrgidgzc .gt_font_bold {
   font-weight: bold;
 }
 
-#wxrbmvfmje .gt_font_italic {
+#wrhrgidgzc .gt_font_italic {
   font-style: italic;
 }
 
-#wxrbmvfmje .gt_super {
+#wrhrgidgzc .gt_super {
   font-size: 65%;
 }
 
-#wxrbmvfmje .gt_footnote_marks {
+#wrhrgidgzc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wxrbmvfmje .gt_asterisk {
+#wrhrgidgzc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wxrbmvfmje .gt_indent_1 {
+#wrhrgidgzc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wxrbmvfmje .gt_indent_2 {
+#wrhrgidgzc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wxrbmvfmje .gt_indent_3 {
+#wrhrgidgzc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wxrbmvfmje .gt_indent_4 {
+#wrhrgidgzc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wxrbmvfmje .gt_indent_5 {
+#wrhrgidgzc .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wxrbmvfmje .katex-display {
+#wrhrgidgzc .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wxrbmvfmje div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wrhrgidgzc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
-
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
-<thead>
-<tr class="gt_col_headings header">
+<thead><tr class="gt_col_headings header">
 <th id="category_code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Business Sector</strong></th>
 <th id="price_currency_code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Currency of Sale</strong></th>
 <th id="max_price" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"><strong>Max Company Sale Price</strong></th>
-</tr>
-</thead>
+</tr></thead>
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="category_code">Biotech</td>
@@ -1872,71 +1810,79 @@ Caused by error:
 </tr>
 </tbody>
 </table>
-
 </div>
 </div>
 </div>
-</section>
-<section id="stat-541-step-5-scaling-to-multiple-columns" class="level2">
-<h2 class="anchored" data-anchor-id="stat-541-step-5-scaling-to-multiple-columns">STAT 541: Step 5 – Scaling to multiple columns</h2>
-<p>This is a powerful process, but you might be able to see how we don’t necessarily want to do this process repeatedly for every value <code>spread_all()</code> was not able to parse.</p>
-<div class="callout callout-style-default callout-tip callout-empty-content callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Can you think of a way to use iteration to solve this task?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
-</section>
-</section>
-<section id="apis" class="level1">
-<h1>APIs</h1>
+<!-- ## STAT 541:  Step 5 -- Scaling to multiple columns -->
+<!-- This is a powerful process, but you might be able to see how we don't -->
+<!-- necessarily want to do this process repeatedly for every value `spread_all()` -->
+<!-- was not able to parse. -->
+<!-- ::: callout-tip -->
+<!-- # Can you think of a way to use iteration to solve this task? -->
+<!-- ::: -->
+<!-- ```{r} -->
+<!-- #| label: attempting-to-iterate -->
+<!-- #| eval: false -->
+<!-- #| echo: false -->
+<!-- values_to_map <- companies_values %>%  -->
+<!--   filter( -->
+<!--     !name %in% colnames(companies_tidy) -->
+<!--       ) %>%  -->
+<!--   filter(name != "_id") %>%  -->
+<!--   pull(name) %>%  -->
+<!--   as.list() -->
+<!-- manual_spread <- function(value){ -->
+<!--   companies %>%  -->
+<!--   enter_object({{value}}) %>%  -->
+<!--   gather_array() %>%  -->
+<!--   spread_all() -->
+<!-- } -->
+<!-- thing1 <- map(.x = values_to_map,  -->
+<!--               .f = manual_spread -->
+<!--               ) -->
+<!-- reduce(thing1, .f = bind_cols) -->
+<!-- ``` -->
+</section></section><section id="apis" class="level1"><h1>APIs</h1>
 <p>Now that we’ve talked about the JSON format for data files, it’s time we talked about one of the primary vehicles for them: APIs.</p>
-<section id="required-video-what-is-an-api" class="level2">
-<h2 class="anchored" data-anchor-id="required-video-what-is-an-api">🎥 Required Video: <a href="https://www.youtube.com/watch?v=s7wmiS2mSXY">What is an API?</a></h2>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-required-video callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<span class="screen-reader-only">Required-video</span>Required Video
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>This is the tip of the iceberg when it comes to APIs, but it will suffice to enable a lot of cool things for us. The video above used some nice examples like the restaurant and travel services, but there are APIs for accessing all kinds of data out there, like cat facts](https://alexwohlbruck.github.io/cat-facts/), <a href="https://www.omdbapi.com/">movie data</a>, and <a href="https://api.nasa.gov/">NASA data</a>.</p>
+<p></p>
+<div class="youtube-video-container">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/s7wmiS2mSXY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div>
 </div>
 </div>
 <p>For our class we’re not interested in <strong>creating</strong> APIs, but mostly <strong>using</strong> them to access data that we otherwise couldn’t get our hands on…at least not as easily.</p>
-</section>
-<section id="required-reading-r-api-tutorial" class="level2">
-<h2 class="anchored" data-anchor-id="required-reading-r-api-tutorial">📖 Required Reading: <a href="https://www.dataquest.io/blog/r-api-tutorial/">R API Tutorial</a></h2>
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-required-reading callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Wrong URL
+<span class="screen-reader-only">Required-reading</span>Required Reading
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The tutorial references the wrong link to access the API on the number of people in space. The correct link is: <a href="http://api.open-notify.org/astros.json" class="uri">http://api.open-notify.org/astros.json</a></p>
+<p><a href="https://www.dataquest.io/blog/r-api-tutorial/">Dataquest: R API Tutorial</a></p>
+<p><strong>Warning!</strong> The tutorial references the wrong link to access the API on the number of people in space. The correct link is: <a href="http://api.open-notify.org/astros.json" class="uri">http://api.open-notify.org/astros.json</a></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-check-in callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Check-in
+<span class="screen-reader-only">Check-in</span>Check In
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1967,11 +1913,7 @@ Tip
 </div>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -2383,9 +2325,7 @@ Tip
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../practice-activities/week-2.html" class="pagination-link" aria-label="Week 2: In-Class Activity">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 2: In-Class Activity</span>
       </a>          
@@ -2397,8 +2337,7 @@ Tip
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>This page is built with ❤️ by Drs. Kelly Bodwin &amp; Allison Theobold and also <a href="https://quarto.org/">Quarto</a>.</p>
 </div>   
@@ -2407,17 +2346,15 @@ Tip
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-1/json-api.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../LICENSE.md">
 <p>License</p>
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>

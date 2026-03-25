@@ -133,9 +133,7 @@ Not only did saving the senator data cut down on the runtime of our code, it
 made the code easier to understand! It is **much** clearer to the reader that
 each of the data exploration steps refers to the `senate` dataset. 
 
-::: {.callout-important}
-# Check-in
-
+::: {.callout-check-in}
 1. What functions help us assess how long it takes our code to run?
 
 2. How would you change the code below to make it more efficient?
@@ -286,9 +284,7 @@ Looking at the output, we see substantial differences in the run time of these
 two functions. The loop function took about 3.5 seconds whereas the map function
 took less than half a second. 
 
-::: {.callout-important}
-# Check-in
-
+::: {.callout-check-in}
 3. Why might we prefer using `map()` functions instead of writing a `for()` 
 loop?
 
@@ -324,11 +320,13 @@ d. `walk()`
 Better even than `map()` or `apply()` is not to iterate at all! Writing 
 vectorized functions is tough, but do-able in many cases. Here's an example:
 
+::: {.callout-required-video}
+::: youtube-video-container
 {{< video https://youtu.be/ShewFCbPHv8?si=sVpKCo0FF28hw40v >}}
+:::
+:::
 
-::: {.callout-important}
-# Check-in
-
+::: {.callout-check-in}
 5. Which of the following functions are vectorized?
 
 a. `sqrt()`

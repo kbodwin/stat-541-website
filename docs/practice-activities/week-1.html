@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Practice Activity Week 1 – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
@@ -57,7 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -79,10 +75,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d740d1846410d21846eaedb988be6a2e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-235111c28925c9e86c962b253a60587d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -109,10 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-
-
 </head>
-
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -278,14 +270,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content">
-    </a>
+    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content"><img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content"></a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -293,7 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
@@ -326,21 +314,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/atheobold/stat-541-website"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -348,15 +334,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../1810-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">STAT 331 Review</span></a>
@@ -405,29 +387,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#accessing-the-practice-activity" id="toc-accessing-the-practice-activity" class="nav-link active" data-scroll-target="#accessing-the-practice-activity">Accessing the Practice Activity</a></li>
+<li><a href="#accessing-the-practice-activity" id="toc-accessing-the-practice-activity" class="nav-link active" data-scroll-target="#accessing-the-practice-activity">Accessing the Practice Activity</a></li>
   <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
   <li><a href="#data-visualization-review" id="toc-data-visualization-review" class="nav-link" data-scroll-target="#data-visualization-review">Data Visualization Review</a></li>
   <li><a href="#data-wrangling-review" id="toc-data-wrangling-review" class="nav-link" data-scroll-target="#data-wrangling-review">Data Wrangling Review</a></li>
   <li><a href="#getting-to-know-your-classmates" id="toc-getting-to-know-your-classmates" class="nav-link" data-scroll-target="#getting-to-know-your-classmates">Getting to know your classmates</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/practice-activities/week-1.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/practice-activities/week-1.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Practice Activity Week 1</h1>
 </div>
 
@@ -442,11 +417,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<section id="accessing-the-practice-activity" class="level2">
-<h2 class="anchored" data-anchor-id="accessing-the-practice-activity">Accessing the Practice Activity</h2>
+</header><section id="accessing-the-practice-activity" class="level2"><h2 class="anchored" data-anchor-id="accessing-the-practice-activity">Accessing the Practice Activity</h2>
 <p>Download the template Practice Activity Quarto file here: <a href="student/pa-1.qmd" download=""><code>pa-1.qmd</code></a></p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -462,11 +433,9 @@ Important
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="quarto" class="level2">
-<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+</section><section id="quarto" class="level2"><h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
 <p>First, let’s make sure you know how to use Markdown formatting to style a Quarto document.</p>
 <ol type="1">
 <li><p>Make this text bold.</p></li>
@@ -479,7 +448,7 @@ Important
 <li><p>Using code chunk options, make it so this chunk shows the code but not the output:</p></li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">2</span> <span class="op">+</span> <span class="fl">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
@@ -488,50 +457,42 @@ Important
 <li>Using code chunk options, make it so the file can still render even though this chunk has an error</li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">2</span> <span class="op">+</span> <span class="va">a</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error:
 ! object 'a' not found</code></pre>
 </div>
 </div>
-</section>
-<section id="data-visualization-review" class="level2">
-<h2 class="anchored" data-anchor-id="data-visualization-review">Data Visualization Review</h2>
+</section><section id="data-visualization-review" class="level2"><h2 class="anchored" data-anchor-id="data-visualization-review">Data Visualization Review</h2>
 <p>In this class, we will exclusively make visualizations using <code>ggplot2</code> and packages developed to be compatible with <code>ggplot2</code>. If you are less familiar with plotting in <code>ggplot2</code> or it’s been some time since you used this package, I would strongly recommend referencing <a href="../1810-review/ggplot-review.html">resources from the data visualization section of this week’s coursework</a>!</p>
 <p>The questions below (Questions 7-11) utilize the <code>mpg</code> data from the <code>tidyverse</code> package.</p>
 <ol start="7" type="1">
-<li>Use side-by-side boxplots to visualize the distribution of <code>hwy</code> miles per gallon for each <code>manufacturer</code>. <strong>The names of the manufacturers should be easily readable, and your axes should include any necessary information regarding the variables and their units!</strong></li>
+<li>Use side-by-side boxplots to visualize the distribution of <code>hwy</code> miles per gallon for each <code>manufacturer</code>. <strong>The names of the manufacturers should be easily readable, and your axes should include any necessary information regarding the variables and their units!</strong>
+</li>
 </ol>
 <ol start="8" type="1">
-<li>Use faceted scatterplots to visualize how the relationship between <code>hwy</code> mileage and <code>cty</code> mileage has changed over time. <strong>Your axes should include any necessary information regarding the variables and their units!</strong></li>
-</ol>
-</section>
-<section id="data-wrangling-review" class="level2">
-<h2 class="anchored" data-anchor-id="data-wrangling-review">Data Wrangling Review</h2>
+<li>Use faceted scatterplots to visualize how the relationship between <code>hwy</code> mileage and <code>cty</code> mileage has changed over time. <strong>Your axes should include any necessary information regarding the variables and their units!</strong>
+</li>
+</ol></section><section id="data-wrangling-review" class="level2"><h2 class="anchored" data-anchor-id="data-wrangling-review">Data Wrangling Review</h2>
 <p>In this class, we will exclusively make use of tools from the <code>tidyverse</code> suite of packages to perform our data cleaning and wrangling operations. If you are less familiar with these packages or it’s been some time since you used them, I would strongly recommend referencing the function documentation!</p>
 <p>For these problems, we will continue to work with the <code>mtcars mpg</code> data frame, making various changes to the data to clean it up.</p>
 <ol start="9" type="1">
-<li>The <code>fl</code> variable describes the type of fuel for each car, with levels: <code>p</code>, <code>r</code>, <code>e</code>, <code>d</code>, and <code>c</code>. Do some research into what each of these labels mean! Then, use the <code>mutate()</code> and <code>if_else()</code> functions to create a new variable (<code>fuel_type</code>) with two levels: <code>petrol</code> (any car using petrolium-based gas) and <code>alternative energy</code> (any car not using petrolium-based gas).</li>
+<li>The <code>fl</code> variable describes the type of fuel for each car, with levels: <code>p</code>, <code>r</code>, <code>e</code>, <code>d</code>, and <code>c</code>. Do some research into what each of these labels mean! Then, use the <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else()</a></code> functions to create a new variable (<code>fuel_type</code>) with two levels: <code>petrol</code> (any car using petrolium-based gas) and <code>alternative energy</code> (any car not using petrolium-based gas).</li>
 </ol>
 <ol start="10" type="1">
-<li>The <code>drv</code> variable describes if the car has front drive (<code>f</code>), rear drive (<code>r</code>), or four wheel drive (<code>4</code>). Let’s make better labels for these values! Specifically, use the <code>mutate()</code> and <code>case_when()</code> functions to change the <code>drv</code> variable to have the following descriptive levels: <code>front</code>, <code>rear</code>, <code>four wheel</code>.</li>
+<li>The <code>drv</code> variable describes if the car has front drive (<code>f</code>), rear drive (<code>r</code>), or four wheel drive (<code>4</code>). Let’s make better labels for these values! Specifically, use the <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/case-and-replace-when.html">case_when()</a></code> functions to change the <code>drv</code> variable to have the following descriptive levels: <code>front</code>, <code>rear</code>, <code>four wheel</code>.</li>
 </ol>
 <ol start="11" type="1">
-<li>The <code>trans</code> variable contains two pieces of information, (1) the transmission style (<code>auto</code> or <code>manual</code>) and the specific type of transmission (e.g., <code>l5</code>, <code>m5</code>, <code>av</code>). Using the <code>separate_wider_delim()</code> function, create two new variables from <code>trans</code>, (1) <code>trans_type</code> containing the specific type of transmission of each car (e.g., <code>l5</code>), and (2) <code>trans_style</code> the style of the transmission (e.g., <code>auto</code>). <em>Hint: You will need to deal with the stray parenthesis!</em></li>
-</ol>
-</section>
-<section id="getting-to-know-your-classmates" class="level2">
-<h2 class="anchored" data-anchor-id="getting-to-know-your-classmates">Getting to know your classmates</h2>
+<li>The <code>trans</code> variable contains two pieces of information, (1) the transmission style (<code>auto</code> or <code>manual</code>) and the specific type of transmission (e.g., <code>l5</code>, <code>m5</code>, <code>av</code>). Using the <code><a href="https://tidyr.tidyverse.org/reference/separate_wider_delim.html">separate_wider_delim()</a></code> function, create two new variables from <code>trans</code>, (1) <code>trans_type</code> containing the specific type of transmission of each car (e.g., <code>l5</code>), and (2) <code>trans_style</code> the style of the transmission (e.g., <code>auto</code>). <em>Hint: You will need to deal with the stray parenthesis!</em>
+</li>
+</ol></section><section id="getting-to-know-your-classmates" class="level2"><h2 class="anchored" data-anchor-id="getting-to-know-your-classmates">Getting to know your classmates</h2>
 <ol start="12" type="1">
 <li><p>Find someone who took Stat 331 from a different professor than you. Compare your experiences. Tell me their name and professor. List one or two things that you think you learned more about, and one or two things that they learned more about.</p></li>
 <li><p>Find someone in the class who <strong>does not</strong> share your birth month. Tell me their name and birthday, and use R to find out how many days apart your birthdays are.</p></li>
 </ol>
 
 
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -943,9 +904,7 @@ Important
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../1810-review/setup-version-control.html" class="pagination-link" aria-label="Version Control with Git and GitHub">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Version Control with Git and GitHub</span>
       </a>          
@@ -954,8 +913,7 @@ Important
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>This page is built with ❤️ by Drs. Kelly Bodwin &amp; Allison Theobold and also <a href="https://quarto.org/">Quarto</a>.</p>
 </div>   
@@ -964,17 +922,15 @@ Important
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/practice-activities/week-1.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../LICENSE.md">
 <p>License</p>
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>

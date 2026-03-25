@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>ggplot Review – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
@@ -57,7 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -80,10 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d740d1846410d21846eaedb988be6a2e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-235111c28925c9e86c962b253a60587d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -110,11 +105,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-
-
 </head>
-
-<body class="nav-sidebar floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -279,14 +271,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content">
-    </a>
+    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content"><img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content"></a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -294,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
@@ -327,21 +315,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/atheobold/stat-541-website"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -349,15 +335,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../1810-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">STAT 331 Review</span></a>
@@ -406,34 +388,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-grammar-of-graphics" id="toc-the-grammar-of-graphics" class="nav-link active" data-scroll-target="#the-grammar-of-graphics">The Grammar of Graphics</a>
-  <ul class="collapse">
-  <li><a href="#recommended-reading-r4ds-data-visualisation" id="toc-recommended-reading-r4ds-data-visualisation" class="nav-link" data-scroll-target="#recommended-reading-r4ds-data-visualisation">📖 Recommended Reading: <em>R4DS</em>: Data Visualisation</a></li>
-  <li><a href="#recommended-video" id="toc-recommended-video" class="nav-link" data-scroll-target="#recommended-video">🎥 Recommended Video</a></li>
-  </ul></li>
-  <li><a href="#using-ggplot2" id="toc-using-ggplot2" class="nav-link" data-scroll-target="#using-ggplot2">Using ggplot2</a>
-  <ul class="collapse">
-  <li><a href="#recommended-reading-r-for-data-science---layers" id="toc-recommended-reading-r-for-data-science---layers" class="nav-link" data-scroll-target="#recommended-reading-r-for-data-science---layers">📖 Recommended Reading – <em>R for Data Science</em> - Layers</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/1810-review/ggplot-review.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+<li><a href="#the-grammar-of-graphics" id="toc-the-grammar-of-graphics" class="nav-link active" data-scroll-target="#the-grammar-of-graphics">The Grammar of Graphics</a></li>
+  <li><a href="#using-ggplot2" id="toc-using-ggplot2" class="nav-link" data-scroll-target="#using-ggplot2">Using ggplot2</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/1810-review/ggplot-review.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title"><code>ggplot</code> Review</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">
+<code>ggplot</code> Review</h1>
 </div>
 
 
@@ -447,10 +416,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<div class="callout callout-style-default callout-caution callout-titled">
+</header><div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -461,7 +427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-body-container callout-body">
 <p>This module consists of readings reviewing material typically taught in STAT 331. It is possible you can skip over portions of this reading. It is your responsibility to decide which areas you need to review before diving into Stat 541.</p>
-<p>Answer the following questions to see if you can safely skip this section.</p>
+<p><strong>Answer the following questions to see if you can safely skip this section.</strong></p>
 <ol type="1">
 <li>Identify the elements of the following plot as</li>
 </ol>
@@ -505,63 +471,95 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ggplot-review_files/figure-html/ggplot-plot-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ggplot-review_files/figure-html/ggplot-plot-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section id="the-grammar-of-graphics" class="level1 page-columns page-full">
-<h1>The Grammar of Graphics</h1>
+<section id="the-grammar-of-graphics" class="level1"><h1>The Grammar of Graphics</h1>
 <p>If you had a hard time answering Question 1, I would recommend reviewing this content. You should feel comfortable with:</p>
 <ul>
 <li><p>Knowing what goes into an aesthetic (<code>aes()</code>) versus the geometry (<code>geom_*()</code>)</p></li>
 <li><p>Identifying these elements of existing plots</p></li>
 </ul>
-<section id="recommended-reading-r4ds-data-visualisation" class="level2">
-<h2 class="anchored" data-anchor-id="recommended-reading-r4ds-data-visualisation">📖 Recommended Reading: <a href="https://r4ds.hadley.nz/data-visualize.html"><em>R4DS</em>: Data Visualisation</a></h2>
-</section>
-
-<div class="no-row-height column-margin column-container"><section id="recommended-video" class="level2">
-<h2 class="anchored" data-anchor-id="recommended-video">🎥 Recommended Video</h2>
+<div class="callout callout-style-default callout-required-reading callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-reading</span>Required Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://r4ds.hadley.nz/data-visualize.html"><em>R4DS</em> Chapter 1: Data Visualisation</a></p>
+</div>
+</div>
+<!-- this should be recommended not required-->
+<div class="callout callout-style-default callout-required-video callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-video</span>Required Video
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="youtube-video-container">
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/kepKM7Z2O54?si=LR2jOR0kKfot1-vy" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</section></div></section>
-<section id="using-ggplot2" class="level1">
-<h1>Using ggplot2</h1>
+</div>
+</div>
+</div>
+</section><section id="using-ggplot2" class="level1"><h1>Using ggplot2</h1>
 <p>If you had a hard time answering Question 2, I would recommend reviewing this content. You should be comfortable with:</p>
 <ul>
 <li>Using the “big 5” geometries
 <ul>
 <li><code>geom_point()</code></li>
-<li><code>geom_bar()</code> / <code>geom_col()</code></li>
+<li>
+<code>geom_bar()</code> / <code>geom_col()</code>
+</li>
 <li><code>geom_line()</code></li>
 <li><code>geom_histogram()</code></li>
 <li><code>geom_boxplot()</code></li>
-</ul></li>
+</ul>
+</li>
 <li>Changing optional arguments
 <ul>
 <li>Shape of points</li>
 <li>Size of points</li>
 <li>Linewidth of line</li>
 <li>Binwidth of histogram</li>
-</ul></li>
+</ul>
+</li>
 <li>Faceting
 <ul>
-<li><code>facet_wrap()</code> for one categorical variable</li>
-<li><code>facet_grid()</code> for two categorical variables</li>
-</ul></li>
+<li>
+<code>facet_wrap()</code> for one categorical variable</li>
+<li>
+<code>facet_grid()</code> for two categorical variables</li>
 </ul>
-<section id="recommended-reading-r-for-data-science---layers" class="level2">
-<h2 class="anchored" data-anchor-id="recommended-reading-r-for-data-science---layers">📖 Recommended Reading – <a href="https://r4ds.hadley.nz/layers.html"><em>R for Data Science</em> - Layers</a></h2>
+</li>
+</ul>
+<div class="callout callout-style-default callout-required-reading callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-reading</span>Required Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://r4ds.hadley.nz/layers.html"><em>R for Data Science</em> Chapter 9 - Layers</a></p>
+</div>
+</div>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -973,9 +971,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../1810-review/setup-workflow.html" class="pagination-link" aria-label="Installing / Updating R &amp; RStudio">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Installing / Updating R &amp; RStudio</span>
       </a>          
@@ -987,8 +983,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>This page is built with ❤️ by Drs. Kelly Bodwin &amp; Allison Theobold and also <a href="https://quarto.org/">Quarto</a>.</p>
 </div>   
@@ -997,17 +992,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/1810-review/ggplot-review.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../LICENSE.md">
 <p>License</p>
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>

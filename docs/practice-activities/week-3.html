@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Practice Activity Week 3 – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
@@ -57,7 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -80,10 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d740d1846410d21846eaedb988be6a2e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-235111c28925c9e86c962b253a60587d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -110,10 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-
-
 </head>
-
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -279,14 +271,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content">
-    </a>
+    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content"><img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content"></a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -294,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
@@ -327,21 +315,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/atheobold/stat-541-website"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -349,15 +335,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Unit 1</span></a>
@@ -430,30 +412,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#accessing-the-practice-activity" id="toc-accessing-the-practice-activity" class="nav-link active" data-scroll-target="#accessing-the-practice-activity">Accessing the Practice Activity</a></li>
-  <li><a href="#open-notify-api" id="toc-open-notify-api" class="nav-link" data-scroll-target="#open-notify-api">Open-Notify API</a>
+<li><a href="#accessing-the-practice-activity" id="toc-accessing-the-practice-activity" class="nav-link active" data-scroll-target="#accessing-the-practice-activity">Accessing the Practice Activity</a></li>
+  <li>
+<a href="#open-notify-api" id="toc-open-notify-api" class="nav-link" data-scroll-target="#open-notify-api">Open-Notify API</a>
   <ul class="collapse">
-  <li><a href="#getting-the-pass-times-for-one-city" id="toc-getting-the-pass-times-for-one-city" class="nav-link" data-scroll-target="#getting-the-pass-times-for-one-city">Getting the Pass Times for <em>One</em> City</a></li>
+<li><a href="#getting-the-pass-times-for-one-city" id="toc-getting-the-pass-times-for-one-city" class="nav-link" data-scroll-target="#getting-the-pass-times-for-one-city">Getting the Pass Times for <em>One</em> City</a></li>
   <li><a href="#getting-the-pass-times-for-every-city" id="toc-getting-the-pass-times-for-every-city" class="nav-link" data-scroll-target="#getting-the-pass-times-for-every-city">Getting the Pass Times for <em>Every</em> City</a></li>
-  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/practice-activities/week-3.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/practice-activities/week-3.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Practice Activity Week 3</h1>
 </div>
 
@@ -468,11 +445,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<section id="accessing-the-practice-activity" class="level2">
-<h2 class="anchored" data-anchor-id="accessing-the-practice-activity">Accessing the Practice Activity</h2>
+</header><section id="accessing-the-practice-activity" class="level2"><h2 class="anchored" data-anchor-id="accessing-the-practice-activity">Accessing the Practice Activity</h2>
 <p>Download the template Practice Activity Quarto file here: <a href="student/pa-3.qmd" download=""><code>pa-3.qmd</code></a></p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -488,25 +461,21 @@ Important
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyjson)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr.r-lib.org/">httr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/colearendt/tidyjson">tidyjson</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://jeroen.r-universe.dev/jsonlite">jsonlite</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="open-notify-api" class="level1">
-<h1>Open-Notify API</h1>
+</section><section id="open-notify-api" class="level1"><h1>Open-Notify API</h1>
 <p>The Open-Notify APIs provides information on the International Space Station. Specifically, the API provides (1) the names of the astronauts currently aboard the ISS, (2) the current location of the ISS, and (3) overhead pass predictions for the ISS.</p>
 <p>For this activity, we are going to find the predicted time the ISS will pass by 10 major cities across the world and sort the pass times to see the path of the ISS.</p>
 <table class="caption-top table">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>City</th>
 <th>Country</th>
 <th>Latitude</th>
 <th>Longitude</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td>New York</td>
@@ -570,76 +539,81 @@ Important
 </tr>
 </tbody>
 </table>
-<section id="getting-the-pass-times-for-one-city" class="level2">
-<h2 class="anchored" data-anchor-id="getting-the-pass-times-for-one-city">Getting the Pass Times for <em>One</em> City</h2>
+<section id="getting-the-pass-times-for-one-city" class="level2"><h2 class="anchored" data-anchor-id="getting-the-pass-times-for-one-city">Getting the Pass Times for <em>One</em> City</h2>
 <p>Inspecting the <a href="https://g7vrd.co.uk/public-satellite-pass-rest-api">satellite pass API homepage</a>, we can obtain the JSON data with the pass information for a given city using an address like the following: <a href="https://api.g7vrd.co.uk/v1/satellite-passes/25544/51.45/-2.5833.json?hours=18" class="uri">https://api.g7vrd.co.uk/v1/satellite-passes/25544/51.45/-2.5833.json?hours=18</a></p>
 <p>In this web address,</p>
 <ul>
-<li><code>25544</code> stands for the NORAD Catalog Number for the ISS. So, this number will <strong>never</strong> change for different cities.</li>
-<li><code>51.45</code> is the latitude for the given location</li>
-<li><code>-2.5833</code> is the longitude for the given location</li>
-<li><code>?hours=18</code> tells the API how many hours you want to consider for the passes</li>
+<li>
+<code>25544</code> stands for the NORAD Catalog Number for the ISS. So, this number will <strong>never</strong> change for different cities.</li>
+<li>
+<code>51.45</code> is the latitude for the given location</li>
+<li>
+<code>-2.5833</code> is the longitude for the given location</li>
+<li>
+<code>?hours=18</code> tells the API how many hours you want to consider for the passes</li>
 </ul>
 <p>Let’s give this a go!</p>
 <ol type="1">
-<li>Using the <code>base_url</code>, <code>lat</code> and <code>long</code> objects, obtain the ISS pass times for New York City. Save this object as <code>nyc</code>. <em>Hint 1: The <code>glue()</code> function from the <strong>glue</strong> package or the <code>str_c()</code> function from <strong>stringr</strong> will be helpful here!</em> <em>Hint 2: What function do you use to get information from an API?</em></li>
+<li>Using the <code>base_url</code>, <code>lat</code> and <code>long</code> objects, obtain the ISS pass times for New York City. Save this object as <code>nyc</code>. <em>Hint 1: The <code>glue()</code> function from the <strong>glue</strong> package or the <code><a href="https://stringr.tidyverse.org/reference/str_c.html">str_c()</a></code> function from <strong>stringr</strong> will be helpful here!</em> <em>Hint 2: What function do you use to get information from an API?</em>
+</li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>base_url <span class="ot">&lt;-</span> <span class="st">"https://api.g7vrd.co.uk/v1/satellite-passes/25544/"</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>lat  <span class="ot">&lt;-</span> <span class="fl">40.7128</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>long <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">74.0060</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">base_url</span> <span class="op">&lt;-</span> <span class="st">"https://api.g7vrd.co.uk/v1/satellite-passes/25544/"</span></span>
+<span></span>
+<span><span class="va">lat</span>  <span class="op">&lt;-</span> <span class="fl">40.7128</span></span>
+<span><span class="va">long</span> <span class="op">&lt;-</span> <span class="op">-</span><span class="fl">74.0060</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="2" type="1">
-<li>Now that we have the JSON file for NYC, let’s parse it into a tidy dataframe. Using functions from <strong>jsonlite</strong> or <strong>tidyjson</strong> convert the JSON file to a dataframe. <em>Hint: You might find it helpful to inspect the raw JSON file <a href="https://api.g7vrd.co.uk/v1/satellite-passes/25544/40.7128/-74.006.json?hours=18">here</a>.</em></li>
+<li>Now that we have the JSON file for NYC, let’s parse it into a tidy dataframe. Using functions from <strong>jsonlite</strong> or <strong>tidyjson</strong> convert the JSON file to a dataframe. <em>Hint: You might find it helpful to inspect the raw JSON file <a href="https://api.g7vrd.co.uk/v1/satellite-passes/25544/40.7128/-74.006.json?hours=18">here</a>.</em>
+</li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nyc<span class="sc">$</span>content <span class="sc">|&gt;</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rawToChar</span>() <span class="sc">|&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.tbl_json</span>() <span class="sc">|&gt;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">enter_object</span>(<span class="st">"passes"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather_array</span>() <span class="sc">|&gt;</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread_all</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nyc</span><span class="op">$</span><span class="va">content</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/rawConversion.html">rawToChar</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tidyjson/man/tbl_json.html">as.tbl_json</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tidyjson/man/enter_object.html">enter_object</a></span><span class="op">(</span><span class="st">"passes"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tidyjson/man/gather_array.html">gather_array</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tidyjson/man/spread_all.html">spread_all</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="3" type="1">
-<li>The <code>start</code> column for the passtimes is what we are interested in, but currently this is formatted as a string (e.g., <code>"2026-02-26T05:23:21.257Z"</code>). Parse this column into a data-time object using the <code>ymd_hms()</code> function from <strong>lubridate</strong>. <em>Hint: The pass times for the ISS are reported in UTC (Coordinated Universal Time).</em></li>
+<li>The <code>start</code> column for the passtimes is what we are interested in, but currently this is formatted as a string (e.g., <code>"2026-02-26T05:23:21.257Z"</code>). Parse this column into a data-time object using the <code><a href="https://lubridate.tidyverse.org/reference/ymd_hms.html">ymd_hms()</a></code> function from <strong>lubridate</strong>. <em>Hint: The pass times for the ISS are reported in UTC (Coordinated Universal Time).</em>
+</li>
 </ol>
 <ol start="4" type="1">
-<li>Our final step is to isolate the pass time for NYC. Use the <code>pull()</code> function to extract the parsed data-time column you made in the last question.</li>
-</ol>
-</section>
-<section id="getting-the-pass-times-for-every-city" class="level2">
-<h2 class="anchored" data-anchor-id="getting-the-pass-times-for-every-city">Getting the Pass Times for <em>Every</em> City</h2>
+<li>Our final step is to isolate the pass time for NYC. Use the <code><a href="https://dplyr.tidyverse.org/reference/pull.html">pull()</a></code> function to extract the parsed data-time column you made in the last question.</li>
+</ol></section><section id="getting-the-pass-times-for-every-city" class="level2"><h2 class="anchored" data-anchor-id="getting-the-pass-times-for-every-city">Getting the Pass Times for <em>Every</em> City</h2>
 <p>Now that we have worked out each step using <em>one</em> city, the next step is to scale this process to <strong>multiple</strong> cities. We’ve created a tibble with ten major cities across the world. Your goal is to acquire the pass time for each city.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cities <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">city =</span> <span class="fu">c</span>(</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"New York"</span>, <span class="st">"Mexico City"</span>, <span class="st">"Sao Paulo"</span>, <span class="st">"London"</span>,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Cairo"</span>, <span class="st">"Nairobi"</span>, <span class="st">"Mumbai"</span>, <span class="st">"Bangkok"</span>,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Tokyo"</span>, <span class="st">"Sydney"</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">country =</span> <span class="fu">c</span>(</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"USA"</span>, <span class="st">"Mexico"</span>, <span class="st">"Brazil"</span>, <span class="st">"United Kingdom"</span>,</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Egypt"</span>, <span class="st">"Kenya"</span>, <span class="st">"India"</span>, <span class="st">"Thailand"</span>,</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Japan"</span>, <span class="st">"Australia"</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">latitude =</span> <span class="fu">c</span>(</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="fl">40.7128</span>, <span class="fl">19.4326</span>, <span class="sc">-</span><span class="fl">23.5505</span>, <span class="fl">51.5074</span>,</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="fl">30.0444</span>, <span class="sc">-</span><span class="fl">1.2921</span>, <span class="fl">19.0760</span>, <span class="fl">13.7563</span>,</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="fl">35.6762</span>, <span class="sc">-</span><span class="fl">33.8688</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">longitude =</span> <span class="fu">c</span>(</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span><span class="fl">74.0060</span>, <span class="sc">-</span><span class="fl">99.1332</span>, <span class="sc">-</span><span class="fl">46.6333</span>, <span class="sc">-</span><span class="fl">0.1278</span>,</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="fl">31.2357</span>, <span class="fl">36.8219</span>, <span class="fl">72.8777</span>, <span class="fl">100.5018</span>,</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="fl">139.6503</span>, <span class="fl">151.2093</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cities</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
+<span>  city <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<span>    <span class="st">"New York"</span>, <span class="st">"Mexico City"</span>, <span class="st">"Sao Paulo"</span>, <span class="st">"London"</span>,</span>
+<span>    <span class="st">"Cairo"</span>, <span class="st">"Nairobi"</span>, <span class="st">"Mumbai"</span>, <span class="st">"Bangkok"</span>,</span>
+<span>    <span class="st">"Tokyo"</span>, <span class="st">"Sydney"</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  country <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<span>    <span class="st">"USA"</span>, <span class="st">"Mexico"</span>, <span class="st">"Brazil"</span>, <span class="st">"United Kingdom"</span>,</span>
+<span>    <span class="st">"Egypt"</span>, <span class="st">"Kenya"</span>, <span class="st">"India"</span>, <span class="st">"Thailand"</span>,</span>
+<span>    <span class="st">"Japan"</span>, <span class="st">"Australia"</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  latitude <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<span>    <span class="fl">40.7128</span>, <span class="fl">19.4326</span>, <span class="op">-</span><span class="fl">23.5505</span>, <span class="fl">51.5074</span>,</span>
+<span>    <span class="fl">30.0444</span>, <span class="op">-</span><span class="fl">1.2921</span>, <span class="fl">19.0760</span>, <span class="fl">13.7563</span>,</span>
+<span>    <span class="fl">35.6762</span>, <span class="op">-</span><span class="fl">33.8688</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  longitude <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<span>    <span class="op">-</span><span class="fl">74.0060</span>, <span class="op">-</span><span class="fl">99.1332</span>, <span class="op">-</span><span class="fl">46.6333</span>, <span class="op">-</span><span class="fl">0.1278</span>,</span>
+<span>    <span class="fl">31.2357</span>, <span class="fl">36.8219</span>, <span class="fl">72.8777</span>, <span class="fl">100.5018</span>,</span>
+<span>    <span class="fl">139.6503</span>, <span class="fl">151.2093</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="5" type="1">
-<li>Our first step is to write a function that gets the pass time for <em>any</em> latitude and longitude coordinates. Using your code from Questions 1 though 4, create a <code>get_pass-time()</code> function which outputs the pass time for a given location. <em>Hint: Your function should take <strong>two</strong> arguments: latitude and longitude.</em></li>
+<li>Our first step is to write a function that gets the pass time for <em>any</em> latitude and longitude coordinates. Using your code from Questions 1 though 4, create a <code>get_pass-time()</code> function which outputs the pass time for a given location. <em>Hint: Your function should take <strong>two</strong> arguments: latitude and longitude.</em>
+</li>
 </ol>
 <ol start="6" type="1">
-<li>Using <code>map2()</code> iterate your function over the <code>latitude</code> and <code>longitude</code> columns of the <code>cities</code> dataframe. <em>Hint: There are three arguments to <code>map2()</code>, <code>.x</code>, <code>.y</code>, and <code>.f</code>. You will need to specify each!</em></li>
+<li>Using <code><a href="https://purrr.tidyverse.org/reference/map2.html">map2()</a></code> iterate your function over the <code>latitude</code> and <code>longitude</code> columns of the <code>cities</code> dataframe. <em>Hint: There are three arguments to <code><a href="https://purrr.tidyverse.org/reference/map2.html">map2()</a></code>, <code>.x</code>, <code>.y</code>, and <code>.f</code>. You will need to specify each!</em>
+</li>
 </ol>
 <p>Crap! It seems we got an error. Let’s think through what might be happening.</p>
 <ol start="7" type="1">
@@ -649,21 +623,19 @@ Important
 <li>How does your function handle cities with <strong>multiple</strong> pass times? What can you add to the body of your function to handle this special case?</li>
 </ol>
 <ol start="9" type="1">
-<li>Alright, let’s try this again. Using <code>map2()</code> iterate your function over the <code>latitude</code> and <code>longitude</code> columns of the <code>cities</code> dataframe. <strong>Save this object as <code>city_passes</code> so you don’t get an error about exceeding 10 requests per minute.</strong></li>
+<li>Alright, let’s try this again. Using <code><a href="https://purrr.tidyverse.org/reference/map2.html">map2()</a></code> iterate your function over the <code>latitude</code> and <code>longitude</code> columns of the <code>cities</code> dataframe. <strong>Save this object as <code>city_passes</code> so you don’t get an error about exceeding 10 requests per minute.</strong>
+</li>
 </ol>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>city_passes <span class="ot">&lt;-</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="10" type="1">
-<li>Add each city’s pass times to the original <code>cities</code> dataframe. Arrange the table based on the cities where the ISS will pass next. <em>Hint: The <code>city_passes</code> object is a list which you will need to unpack. The <code>unnest()</code> will be helpful here!</em></li>
+<li>Add each city’s pass times to the original <code>cities</code> dataframe. Arrange the table based on the cities where the ISS will pass next. <em>Hint: The <code>city_passes</code> object is a list which you will need to unpack. The <code><a href="https://tidyr.tidyverse.org/reference/unnest.html">unnest()</a></code> will be helpful here!</em>
+</li>
 </ol>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1075,9 +1047,7 @@ Important
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../unit-1/web-scraping.html" class="pagination-link" aria-label="Web Scraping">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Web Scraping</span>
       </a>          
@@ -1089,8 +1059,7 @@ Important
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>This page is built with ❤️ by Drs. Kelly Bodwin &amp; Allison Theobold and also <a href="https://quarto.org/">Quarto</a>.</p>
 </div>   
@@ -1099,17 +1068,15 @@ Important
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/practice-activities/week-3.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../LICENSE.md">
 <p>License</p>
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>

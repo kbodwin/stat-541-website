@@ -1,31 +1,153 @@
 ---
 title: "Quarto Dashboards, Part 1"
 editor: source
+execute: 
+  eval: false
 ---
 
 This week, we're taking the visualization skills we learned last week and using
 them to create an informational dashboard. Quarto dashboards were integrated
 into version 1.4, so you can use a familiar tool to create these dashboards. 
-In part 1, we will focus on creating "static" dashboards---where the user 
+In Part 1, we will focus on creating "static" dashboards---where the user 
 **does not** interact with the content. 
 
-## 🎥 Required Video: Hello Quarto Dashboards
+## Step 1 - What is a Quarto dashboard?
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HW7QbqI4fH0?si=Rw6Cwy173CNJN3M-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+::: {.callout-required-video}
+::: youtube-video-container
+
+{{< video https://www.youtube.com/embed/HW7QbqI4fH0?si=Rw6Cwy173CNJN3M >}}
+:::
+
+</br>
+
+- Slides for this Video: <https://mine.quarto.pub/quarto-dashboards/1-hello-dashboards/>
+- Starter Documents: <https://github.com/mine-cetinkaya-rundel/olympicdash/blob/main/olympicdash-r-1.qmd>
+:::
+
+::: {.callout-check-in}
+1. To make a Quarto dashboard what do you put in the `format` line of your YAML?
+
+2. If you use the default options for a Quarto dashboard and your code makes 
+two plots, how will they be output?
+
+- Stacked horizontally (side-by-side)
+- Stacked vertically
+
+3. How would you define a card title in an R code chunk?
+:::
 
 
-## Video Resources
+## Step 2 - How do you make a Quarto dashboard?
 
-- Slides for this Video: <https://mine.quarto.pub/quarto-dashboards/>
-- Starter Documents: <https://github.com/mine-cetinkaya-rundel/olympicdash>
+::: {.callout-required-video}
+::: youtube-video-container
 
-## Optional Resources 
+{{< video https://www.youtube.com/embed/KdsQgwaY950?si=dS2dYH_hmrpeDjSC >}}
+:::
 
-- [Quarto Dashboard Gallery](https://quarto.org/docs/gallery/#dashboards)
-- [Quarto Dashboard Tutorial](https://quarto.org/docs/dashboards/)
-- [Quarto Dashboard Reference](https://quarto.org/docs/reference/formats/dashboard.html)
+</br>
 
-::: {.callout-important}
-# Check-in
+- Slides for this Video: <https://mine.quarto.pub/quarto-dashboards/2-dashboard-components/>
+- Starter Documents: <https://github.com/mine-cetinkaya-rundel/olympicdash/blob/main/olympicdash-r-2.qmd>
+:::
 
+::: {.callout-check-in}
+4. In a Quarto dashboard what does a `#` create?
+
+- A new column
+- A new row
+- A new page
+
+Suppose your Quarto dashboard has a YAML that looks something like this:
+
+<!-- ``` {.markdown filename="my-first-dash.qmd" style="overflow-y: hidden"} -->
+
+```{.yaml}
+---
+title: "Olympic Games"
+format: 
+  dashboard:
+    orientation: columns
+---
+```
+
+5. With this YAML, what does a `##` create?
+
+- A new column
+- A new row
+- A new page
+
+6. What does a `###` create? 
+
+- A new column
+- A new row
+- A new page
+
+7. How do you change the size of a row? Of a column?
+
+<!-- row: {height="70%"} -->
+<!-- column: {width="70%"} -->
+
+8. Can different pages of a Quarto dashboard use different orientations?
+Meaning, can one page use a row orientation and another page use a column 
+orientation?
+
+9. Which of the following cells will become a card in a dashboard?
+
+::: columns
+::: {.column width="48%"}
+
+a. 
+
+```{r}
+#| echo: fenced
+x <- 2
+```
+
+b. 
+
+```{r}
+#| echo: fenced
+plot(cars)
+```
+
+:::
+
+::: {.column width="2%"}
+:::
+
+::: {.column width="48%"}
+c. 
+
+```{r}
+#| echo: fenced
+#| output: false
+
+2 + 2
+```
+
+d. 
+
+```{r}
+#| echo: fenced
+library(palmerpenguins)
+```
+
+:::
+:::
+
+10. How do you create a card outside of an R script? Meaning, how would you 
+create a card in Quarto?
+
+<!-- ::: {.card} -->
+:::
+
+# Additional Resources
+
+::: {.callout-learn-more} 
+
+- [Quarto Dashboard Gallery](https://quarto.org/docs/gallery/#dashboards) - Example dashboards from the community of Quarto users
+- [Quarto Dashboard Tutorial](https://quarto.org/docs/dashboards/) - Simple starting guide
+- [Quarto Dashboard Reference](https://quarto.org/docs/reference/formats/dashboard.html) - Reference to all functions / aspects of a Quarto dashboards
 :::

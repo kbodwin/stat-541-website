@@ -42,7 +42,9 @@ Version control is a system that (1) allows you to store your files in the
 cloud, (2) track change in those files over time, and (3) share your files with
 others.
 
-### 📖 Recommended Reading: [Big Picture](https://happygitwithr.com/big-picture)
+::: {.callout-required-reading}
+[*Happy Git and GitHub for the useR* Chapter 1: Why Git? Why GitHub?](https://happygitwithr.com/big-picture)
+:::
 
 # Git
 
@@ -100,10 +102,11 @@ frequently.
 :::
 :::
 
-### 📖 Required Reading: [Install Git](https://happygitwithr.com/install-git)
+::: {.callout-required-reading}
+[*Happy Git and GitHub for the useR* Chapter 6: Install Git](https://happygitwithr.com/install-git)
+:::
 
-::: {.callout-important}
-## Install Git
+::: {.callout-practice-exercise}
 
 We will be working with Git / GitHub every week for the next 10 weeks, starting 
 this week! To be prepared for class, follow the instructions in the above
@@ -134,17 +137,8 @@ different places is data you don't care about.^[Yes, I'm aware that this sounds
 paranoid. It's been a very rare occasion that I've needed to restore something
 from another backup. You don't want to take chances.]
 
-### 📖 Required Reading: [Register for a GitHub Account](https://happygitwithr.com/github-acct)
-
-::: {.callout-important}
-## Register for a GitHub Account
-
-Follow the instructions in [Registering a GitHub Account](https://happygitwithr.com/github-acct.html) to create a **free** GitHub account.
-
-Copy and paste the link to your GitHub profile into the Canvas quiz. 
-
-+ Your GitHub profile link should look like -- https://github.com/USERNAME
-+ Here is mine! [https://github.com/atheobold](https://github.com/atheobold)
+::: {.callout-required-reading}
+[*Happy Git and GitHub for the useR* Chapter 4: Register for a GitHub Account](https://happygitwithr.com/github-acct)
 :::
 
 ::: columns
@@ -172,12 +166,21 @@ up gets you unlimited private repositories among other perks.
 :::
 :::
 
+::: {.callout-check-in}
+Copy and paste the link to your GitHub profile into the Canvas quiz. 
+
++ Your GitHub profile link should look like -- https://github.com/USERNAME
++ Here is mine! [https://github.com/atheobold](https://github.com/atheobold)
+:::
+
 # Introducing Yourself to Git
 
 Now that you have git downloaded and have a GitHub account, it is time to 
 introduce yourself to git! 
 
-### 📖 Required Reading: [Introduce Yourself to Git](https://happygitwithr.com/hello-git)
+::: {.callout-required-reading}
+[*Happy Git and GitHub for the useR* Chapter 7: Introduce Yourself to Git](https://happygitwithr.com/hello-git)
+:::
 
 Rather than using the terminal on your computer (like they do in the chapter
 above), let's get familiar with the **usethis** package in R. 
@@ -200,9 +203,7 @@ use_git_config(user.name = "Jane Doe",
                user.email = "jane@example.org")
 ```
 
-::: {.callout-important}
-## Introduce Yourself to git
-
+::: {.callout-check-in}
 Follow the instructions for introducing yourself to git by running the code 
 in your console. Once you've run the code, take a screenshot of your Console
 so we can see that you were successful.
@@ -216,23 +217,13 @@ allowed to do what we are trying to do. There are a few ways to setup your
 credential, but we will specifically be using **P**ersonal **A**ccess **T**okens
 or PATs. 
 
-<!-- ::: {.callout-warning} -->
-<!-- # No support for username & password credentials  -->
+::: {.callout-required-reading}
+[*Happy Git and GitHub for the useR* Chapter 7: Personal Access Tokens for HTTPS](https://happygitwithr.com/hello-git)
 
-<!-- Let it be known that the password that you use to login to GitHub’s website is -->
-<!-- NOT an acceptable credential when talking to GitHub as a Git server.  -->
-<!-- ::: -->
-
-### 📖 Required Reading: [Personal Access Tokens for HTTPS](https://happygitwithr.com/hello-git)
-
-::: {.callout-note}
-# Skip Section 9.2
-
-We're not using SSH, so feel free to skip that section!
+**Skip Section 9.2!** We're not using SSH, so feel free to skip that section!
 :::
 
-::: {.callout-important}
-## PAT
+::: {.callout-check-in}
 
 Follow the instructions for setting up your own personal access token. When
 selecting an expiration either choose one of the options that will allow your
@@ -285,6 +276,10 @@ this week's lab!
 
 # Learn More
 
+We've only scratched the surface for everything you can know about Git and 
+GitHub. Here are some resources if you want to learn more!
+
+::: {.callout-learn-more}
 - [Git "Hello World" Tutorial on GitHub](https://guides.github.com/activities/hello-world/)
 
 - [Crash course on git](https://www.youtube.com/watch?v=SWYqp7iY_Tc) (30 minute YouTube video) [@traversymediaGitGitHubCrash2017]
@@ -294,5 +289,6 @@ this week's lab!
 - [More advanced git concepts, in comic form](https://dev.to/erikaheidi/stage-commit-push-a-git-story-comic-a37), by Erika Heidi [@ericaheidiStageCommitPush2020]
 
 - [A quick guide to the command line (Terminal)](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955) [@weiQuickGuideUsing2019]
+:::
 
 ### References {-}

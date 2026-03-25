@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Data Joins and Transformations Review – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
@@ -57,7 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -80,10 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d740d1846410d21846eaedb988be6a2e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-235111c28925c9e86c962b253a60587d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -109,14 +104,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-
-
+}</script><script src="../site_libs/kePrint-0.0.1/kePrint.js"></script><link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 </head>
-
-<body class="nav-sidebar floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -281,14 +271,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content">
-    </a>
+    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content"><img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content"></a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -296,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
@@ -329,21 +315,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/atheobold/stat-541-website"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -351,15 +335,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../1810-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">STAT 331 Review</span></a>
@@ -408,43 +388,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tidying-data-with-tidyr" id="toc-tidying-data-with-tidyr" class="nav-link active" data-scroll-target="#tidying-data-with-tidyr">Tidying Data with <code>tidyr</code></a>
+<li>
+<a href="#tidying-data-with-tidyr" id="toc-tidying-data-with-tidyr" class="nav-link active" data-scroll-target="#tidying-data-with-tidyr">Tidying Data with <code>tidyr</code></a>
   <ul class="collapse">
-  <li><a href="#sec-tidy-data" id="toc-sec-tidy-data" class="nav-link" data-scroll-target="#sec-tidy-data">Tidy Data</a></li>
-  <li><a href="#reshaping-data" id="toc-reshaping-data" class="nav-link" data-scroll-target="#reshaping-data">Reshaping Data</a>
+<li><a href="#sec-tidy-data" id="toc-sec-tidy-data" class="nav-link" data-scroll-target="#sec-tidy-data">Tidy Data</a></li>
+  <li>
+<a href="#reshaping-data" id="toc-reshaping-data" class="nav-link" data-scroll-target="#reshaping-data">Reshaping Data</a>
   <ul class="collapse">
-  <li><a href="#sec-pivot-longer" id="toc-sec-pivot-longer" class="nav-link" data-scroll-target="#sec-pivot-longer">Longer</a></li>
+<li><a href="#sec-pivot-longer" id="toc-sec-pivot-longer" class="nav-link" data-scroll-target="#sec-pivot-longer">Longer</a></li>
   <li><a href="#sec-pivot-wider" id="toc-sec-pivot-wider" class="nav-link" data-scroll-target="#sec-pivot-wider">Wider</a></li>
-  </ul></li>
-  <li><a href="#separating-and-uniting" id="toc-separating-and-uniting" class="nav-link" data-scroll-target="#separating-and-uniting">Separating and Uniting</a>
-  <ul class="collapse">
-  <li><a href="#sec-separate" id="toc-sec-separate" class="nav-link" data-scroll-target="#sec-separate"><code>separate_wider_delim()</code></a></li>
-  <li><a href="#sec-unite" id="toc-sec-unite" class="nav-link" data-scroll-target="#sec-unite"><code>unite()</code></a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#joining-data-with-dplyr" id="toc-joining-data-with-dplyr" class="nav-link" data-scroll-target="#joining-data-with-dplyr">Joining data with <code>dplyr</code></a>
-  <ul class="collapse">
-  <li><a href="#sec-mutating-joins" id="toc-sec-mutating-joins" class="nav-link" data-scroll-target="#sec-mutating-joins">Mutating Joins</a></li>
-  <li><a href="#filtering-joins" id="toc-filtering-joins" class="nav-link" data-scroll-target="#filtering-joins">Filtering Joins</a></li>
-  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/1810-review/tidyr-review.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+</li>
+  <li>
+<a href="#separating-and-uniting" id="toc-separating-and-uniting" class="nav-link" data-scroll-target="#separating-and-uniting">Separating and Uniting</a>
+  <ul class="collapse">
+<li><a href="#sec-separate" id="toc-sec-separate" class="nav-link" data-scroll-target="#sec-separate"><code>separate_wider_delim()</code></a></li>
+  <li><a href="#sec-unite" id="toc-sec-unite" class="nav-link" data-scroll-target="#sec-unite"><code>unite()</code></a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  <li>
+<a href="#joining-data-with-dplyr" id="toc-joining-data-with-dplyr" class="nav-link" data-scroll-target="#joining-data-with-dplyr">Joining data with <code>dplyr</code></a>
+  <ul class="collapse">
+<li><a href="#sec-mutating-joins" id="toc-sec-mutating-joins" class="nav-link" data-scroll-target="#sec-mutating-joins">Mutating Joins</a></li>
+  <li><a href="#filtering-joins" id="toc-filtering-joins" class="nav-link" data-scroll-target="#filtering-joins">Filtering Joins</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/1810-review/tidyr-review.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Data Joins and Transformations Review</h1>
 </div>
 
@@ -459,10 +440,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<div class="callout callout-style-default callout-caution callout-titled">
+</header><div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -473,26 +451,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-body-container callout-body">
 <p>This module consists of readings reviewing material typically taught in STAT 331. It is possible you can skip over portions of this reading. It is your responsibility to decide which areas you need to review before diving into Stat 541.</p>
-<p>Answer the following questions to see if you can safely skip this section.</p>
-</div>
-</div>
+<p><strong>Answer the following questions to see if you can safely skip this section.</strong></p>
 <p>Each question focuses on the following data tables:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Table 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Table 2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Table 3</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Tables 4a &amp; 4b</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">Table 5</a></li></ul>
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Table 1</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Table 2</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Table 3</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Tables 4a &amp; 4b</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">Table 5</a></li>
+</ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>Table 1</caption>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: right;">year</th>
 <th style="text-align: right;">cases</th>
 <th style="text-align: right;">population</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Afghanistan</td>
@@ -540,14 +520,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>Table 2</caption>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: right;">year</th>
 <th style="text-align: left;">type</th>
 <th style="text-align: right;">count</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Afghanistan</td>
@@ -631,13 +609,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>Table 3</caption>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: right;">year</th>
 <th style="text-align: left;">rate</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Afghanistan</td>
@@ -679,13 +655,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>Table 4a</caption>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: right;">1999</th>
 <th style="text-align: right;">2000</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Afghanistan</td>
@@ -708,13 +682,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>Table 4b</caption>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: right;">1999</th>
 <th style="text-align: right;">2000</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Afghanistan</td>
@@ -741,14 +713,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>Table 5</caption>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: left;">century</th>
 <th style="text-align: left;">year</th>
 <th style="text-align: left;">rate</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Afghanistan</td>
@@ -794,7 +764,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <ol type="1">
-<li>For each of the Tables (datasets) above, answer the following question: <strong>Which of the principles of tidy data does the table violate?</strong></li>
+<li>For each of the Tables (datasets) above, answer the following question: <strong>Which of the principles of tidy data does the table violate?</strong>
+</li>
 </ol>
 <ul>
 <li>Variables are spread across multiple columns</li>
@@ -808,14 +779,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: right;">year</th>
 <th style="text-align: right;">cases</th>
 <th style="text-align: right;">population</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Afghanistan</td>
@@ -857,7 +826,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p><br></p>
+<p></p>
 <p><em>If you had a hard time answering this question, I would recommend reviewing <a href="#sec-pivot-wider" class="quarto-xref">Section&nbsp;1.2.2</a>.</em></p>
 <ol start="3" type="1">
 <li>Use <code>separate_wider_delim()</code> to separate the <code>rate</code> column of Table 3 so it instead looks like this:</li>
@@ -865,14 +834,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: right;">year</th>
 <th style="text-align: left;">cases</th>
 <th style="text-align: left;">population</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Afghanistan</td>
@@ -914,7 +881,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p><br></p>
+<p></p>
 <p><em>If you had a hard time answering this question, I would recommend reviewing <a href="#sec-separate" class="quarto-xref">Section&nbsp;1.3.1</a>.</em></p>
 <ol start="4" type="1">
 <li>Use <code>unite()</code> to join the <code>century</code> and <code>year</code> columns of Table 5 so it instead looks like this:</li>
@@ -922,56 +889,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: left;">year</th>
-<th style="text-align: left;">cases</th>
-<th style="text-align: left;">population</th>
-</tr>
-</thead>
+<th style="text-align: left;">rate</th>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Afghanistan</td>
 <td style="text-align: left;">1999</td>
-<td style="text-align: left;">745</td>
-<td style="text-align: left;">19987071</td>
+<td style="text-align: left;">745/19987071</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Afghanistan</td>
 <td style="text-align: left;">2000</td>
-<td style="text-align: left;">2666</td>
-<td style="text-align: left;">20595360</td>
+<td style="text-align: left;">2666/20595360</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Brazil</td>
 <td style="text-align: left;">1999</td>
-<td style="text-align: left;">37737</td>
-<td style="text-align: left;">172006362</td>
+<td style="text-align: left;">37737/172006362</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Brazil</td>
 <td style="text-align: left;">2000</td>
-<td style="text-align: left;">80488</td>
-<td style="text-align: left;">174504898</td>
+<td style="text-align: left;">80488/174504898</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">China</td>
 <td style="text-align: left;">1999</td>
-<td style="text-align: left;">212258</td>
-<td style="text-align: left;">1272915272</td>
+<td style="text-align: left;">212258/1272915272</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">China</td>
 <td style="text-align: left;">2000</td>
-<td style="text-align: left;">213766</td>
-<td style="text-align: left;">1280428583</td>
+<td style="text-align: left;">213766/1280428583</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<p><br></p>
+<p></p>
 <p><em>If you had a hard time answering this question, I would recommend reviewing <a href="#sec-unite" class="quarto-xref">Section&nbsp;1.3.2</a>.</em></p>
 <ol start="5" type="1">
 <li>Pivot Tables 4a and 4b to long format and then join them to obtain this dataframe:</li>
@@ -979,14 +937,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: right;">year</th>
 <th style="text-align: right;">cases</th>
 <th style="text-align: right;">population</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Afghanistan</td>
@@ -1028,19 +984,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p><br></p>
+<p></p>
 <p><em>If you had a hard time answering this question, I would recommend reviewing <a href="#sec-pivot-longer" class="quarto-xref">Section&nbsp;1.2.1</a> and <a href="#sec-mutating-joins" class="quarto-xref">Section&nbsp;2.1</a>.</em></p>
+</div>
+</div>
 <!-- add a question on filtering joins? -->
-<section id="tidying-data-with-tidyr" class="level1 page-columns page-full">
-<h1>Tidying Data with <code>tidyr</code></h1>
+<section id="tidying-data-with-tidyr" class="level1"><h1>Tidying Data with <code>tidyr</code>
+</h1>
 <p>You should feel comfortable:</p>
 <ul>
 <li>Understand the differences between “wide” and “long” format data and how to transition between the two structures.</li>
 <li>Determining what data format is necessary to generate a desired plot or statistical model.</li>
 </ul>
-<section id="sec-tidy-data" class="level2">
-<h2 class="anchored" data-anchor-id="sec-tidy-data">Tidy Data</h2>
-<p>📖 <a href="https://r4ds.hadley.nz/data-tidy.html#sec-tidy-data">Recommended Reading: <em>R4DS</em> Section 5.2 (Tidy data)</a></p>
+<section id="sec-tidy-data" class="level2"><h2 class="anchored" data-anchor-id="sec-tidy-data">Tidy Data</h2>
+<div class="callout callout-style-default callout-required-reading callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-reading</span>Required Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://r4ds.hadley.nz/data-tidy.html#sec-tidy-data"><em>R4DS</em> Chapter 5, Section 2: Tidy data</a></p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1054,9 +1023,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The concept of tidy data is useful for mapping variables from the data set to elements in a graph, specifications of a model, or aggregating to create summaries. However, what is considered to be “tidy data” format for one task, might not be in the correct “tidy data” format for a different task. It is important for you to consider the end goal when restructuring your data.</p>
 </div>
 </div>
-</section>
-<section id="reshaping-data" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="reshaping-data">Reshaping Data</h2>
+</section><section id="reshaping-data" class="level2"><h2 class="anchored" data-anchor-id="reshaping-data">Reshaping Data</h2>
 <p>It’s fairly common for data to come in forms which are convenient for either human viewing or data entry. Unfortunately, these forms aren’t necessarily the most friendly for analysis. There are two main “layouts” a dataset can have:</p>
 <ol type="1">
 <li>“wide” format</li>
@@ -1066,24 +1033,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="https://github.com/gadenbuie/tidyexplain/raw/main/images/static/png/original-dfs-tidy.png" class="img-fluid" alt="A diagram showing two table representations side by side, labeled 'wide' on the left and 'long' on the right. On the 'wide' side: a table with columns labeled id, x, y, z. Beneath id are red 1 and blue 2; beneath x are a and b; beneath y are c and d; beneath z are e and f. On the 'long' side: three columns labeled id, key, val. The id column alternates 1 (red) and 2 (blue) across six rows; key cycles through x (green), y (purple), z (orange); val shows corresponding values a, b, c, d, e, f. The visual illustrates how the same data can be represented in wide format (fewer rows, more columns) versus long (more rows, fewer variable columns) — a core idea in tidy data transformations such as pivoting."></p>
 <p>Sometimes we will be given data that is in one layout and we will need to transform it into a different layout. This animation illustrates the process of going from a wide data layout to a long data layout, and how to go from a long data layout back to a wide data layout. Here, we are using the <code>pivot_wider()</code> and <code>pivot_longer()</code> functions from the <code>tidyr</code> package in R.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://github.com/gadenbuie/tidyexplain/raw/main/images/tidyr-pivoting.gif" class="img-fluid figure-img"></p>
-<figcaption><a href="https://github.com/gadenbuie">© Garrett Aden Buie</a></figcaption>
-</figure>
+<figure class="figure"><p><img src="https://github.com/gadenbuie/tidyexplain/raw/main/images/tidyr-pivoting.gif" class="img-fluid figure-img"></p>
+<figcaption><a href="https://github.com/gadenbuie">© Garrett Aden Buie</a></figcaption></figure>
 </div>
 <p>Let’s explore each of these formats in more depth</p>
-<section id="sec-pivot-longer" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="sec-pivot-longer">Longer</h3>
-<p>📖 <a href="https://r4ds.hadley.nz/data-tidy.html#sec-pivoting">Recommended Reading: <em>R4DS</em> Section 5.3 (Lengthening data)</a></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
+<section id="sec-pivot-longer" class="level3"><h3 class="anchored" data-anchor-id="sec-pivot-longer">Longer</h3>
+<div class="callout callout-style-default callout-required-reading callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-reading</span>Required Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://r4ds.hadley.nz/data-tidy.html#sec-pivoting"><em>R4DS</em> Chapter 5, Section 3: Lengthening data</a></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-required-video callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-video</span>Required Video
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="youtube-video-container">
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/2rQZNlH2734" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div></div><p>Table 4a and 4b are currently stored in a wide format, where the years are spread across multiple columns. We can use <code>pivot_longer()</code> to pivot these data to long format (with one column for all years).</p>
+</div>
+</div>
+</div>
+<p>Table 4a and 4b are currently stored in a wide format, where the years are spread across multiple columns. We can use <code>pivot_longer()</code> to pivot these data to long format (with one column for all years).</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_longer</span>(table4a, </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">cols =</span> <span class="st">`</span><span class="at">1999</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">2000</span><span class="st">`</span>, </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">names_to =</span> <span class="st">"year"</span>, </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">values_to =</span> <span class="st">"cases"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">pivot_longer</span><span class="op">(</span><span class="va">table4a</span>, </span>
+<span>             cols <span class="op">=</span> <span class="va">`1999`</span><span class="op">:</span><span class="va">`2000`</span>, </span>
+<span>             names_to <span class="op">=</span> <span class="st">"year"</span>, </span>
+<span>             values_to <span class="op">=</span> <span class="st">"cases"</span><span class="op">)</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   country     year   cases
@@ -1110,18 +1098,40 @@ Tip
 <p>Also note that the <code>year</code> column is currently considered to be a <strong>character</strong> data type, so we would likely need to <code>mutate()</code> it before we do our analysis!</p>
 </div>
 </div>
-</section>
-<section id="sec-pivot-wider" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="sec-pivot-wider">Wider</h3>
-<p>📖 <a href="https://r4ds.hadley.nz/data-tidy.html#widening-data">Recommended Reading: <em>R4DS</em> Section 5.3 (Widening data)</a></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
+</section><section id="sec-pivot-wider" class="level3"><h3 class="anchored" data-anchor-id="sec-pivot-wider">Wider</h3>
+<div class="callout callout-style-default callout-required-reading callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-reading</span>Required Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://r4ds.hadley.nz/data-tidy.html#widening-data"><em>R4DS</em> Chapter 5, Section 3: Widening data</a></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-required-video callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-video</span>Required Video
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="youtube-video-container">
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/NKnl2WoNpK0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div></div><p>Table 2 is currently stored in a long format, where the case and population information is stored in a single column named <code>type</code>. We can use <code>pivot_wider()</code> to pivot these data to wide format (with one column for each statistic).</p>
+</div>
+</div>
+</div>
+<p>Table 2 is currently stored in a long format, where the case and population information is stored in a single column named <code>type</code>. We can use <code>pivot_wider()</code> to pivot these data to wide format (with one column for each statistic).</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_wider</span>(table2, </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">names_from =</span> type, </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">values_from =</span> count)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">pivot_wider</span><span class="op">(</span><span class="va">table2</span>, </span>
+<span>            names_from <span class="op">=</span> <span class="va">type</span>, </span>
+<span>            values_from <span class="op">=</span> <span class="va">count</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   country      year  cases population
@@ -1147,21 +1157,17 @@ Tip
 <p>Notice that I’m not using a <code>cols</code> argument for <code>pivot_wider()</code>! This is because <code>pivot_wider()</code> only modifies the columns specified in the <code>names_from</code> and <code>values_from</code> arguments.</p>
 </div>
 </div>
-</section>
-</section>
-<section id="separating-and-uniting" class="level2">
-<h2 class="anchored" data-anchor-id="separating-and-uniting">Separating and Uniting</h2>
+</section></section><section id="separating-and-uniting" class="level2"><h2 class="anchored" data-anchor-id="separating-and-uniting">Separating and Uniting</h2>
 <p>In addition to pivoting, <code>tidyr</code> provides tools to accomplish two additional tasks: separating variables into two different columns using <code>separate()</code>, and uniting (combining) two variables into one column using <code>unite()</code>.</p>
-<section id="sec-separate" class="level3">
-<h3 class="anchored" data-anchor-id="sec-separate"><code>separate_wider_delim()</code></h3>
+<section id="sec-separate" class="level3"><h3 class="anchored" data-anchor-id="sec-separate"><code>separate_wider_delim()</code></h3>
 <p>Table 3 (and Table 5) has a <code>rate</code> column that includes information about <strong>both</strong> the cases and the population, separated with a <code>/</code> symbol. We can use <code>separate_wider_delim()</code> to create two separate columns for these variables.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">separate_wider_delim</span>(table3, </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">cols =</span> rate, </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">delim =</span> <span class="st">"/"</span>, </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"cases"</span>, <span class="st">"population"</span>), </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">cols_remove =</span> <span class="cn">TRUE</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                     ) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">separate_wider_delim</span><span class="op">(</span><span class="va">table3</span>, </span>
+<span>                     cols <span class="op">=</span> <span class="va">rate</span>, </span>
+<span>                     delim <span class="op">=</span> <span class="st">"/"</span>, </span>
+<span>                     names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cases"</span>, <span class="st">"population"</span><span class="op">)</span>, </span>
+<span>                     cols_remove <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>                     <span class="op">)</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   country      year cases  population
@@ -1186,29 +1192,27 @@ Tip
 <div class="callout-body-container callout-body">
 <p>Note that we could have also used <code>separate_wider_regex()</code> here to split on the <code>/</code> symbol. The <code>patterns</code> argument of <code>separate_wider_regex()</code> is a bit funky:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">separate_wider_regex</span>(table3, </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                     rate, </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">patterns =</span> <span class="fu">c</span>(<span class="at">cases =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">d+"</span>, <span class="st">"/"</span>, <span class="at">population =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">d+"</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                     ) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">separate_wider_regex</span><span class="op">(</span><span class="va">table3</span>, </span>
+<span>                     <span class="va">rate</span>, </span>
+<span>                     patterns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>cases <span class="op">=</span> <span class="st">"\\d+"</span>, <span class="st">"/"</span>, population <span class="op">=</span> <span class="st">"\\d+"</span><span class="op">)</span></span>
+<span>                     <span class="op">)</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><code>patterns</code> needs to be a named character vector where the names become column names and the values are regular expressions that match the contents of the vector. <code>cases</code> comes from the first one or more (<code>+</code>) digits <code>\\d</code>, then the split is made on the <code>\</code>, and then population comes from the following one or more digits.</p>
 <p>Personally, we think the <code>delim</code> option is a bit easier, but this is how it would work with regular expressions.</p>
 </div>
 </div>
-</section>
-<section id="sec-unite" class="level3">
-<h3 class="anchored" data-anchor-id="sec-unite"><code>unite()</code></h3>
+</section><section id="sec-unite" class="level3"><h3 class="anchored" data-anchor-id="sec-unite"><code>unite()</code></h3>
 <p>In addition to having variables that need separating, Table 5 also has two variables (<code>century</code> and <code>year</code>) that need to be united (i.e., joined together). We can perform this action using the <code>unite()</code> function.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>table5 <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(<span class="at">col =</span> <span class="st">"year"</span>,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">c</span>(century, year),</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">sep =</span> <span class="st">""</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">|&gt;</span> </span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate_wider_delim</span>(<span class="at">cols =</span> rate, </span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">delim =</span> <span class="st">"/"</span>, </span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"cases"</span>, <span class="st">"population"</span>), </span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">cols_remove =</span> <span class="cn">TRUE</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">table5</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">unite</span><span class="op">(</span>col <span class="op">=</span> <span class="st">"year"</span>,</span>
+<span>        <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">century</span>, <span class="va">year</span><span class="op">)</span>,</span>
+<span>        sep <span class="op">=</span> <span class="st">""</span></span>
+<span>        <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">separate_wider_delim</span><span class="op">(</span>cols <span class="op">=</span> <span class="va">rate</span>, </span>
+<span>                       delim <span class="op">=</span> <span class="st">"/"</span>, </span>
+<span>                       names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cases"</span>, <span class="st">"population"</span><span class="op">)</span>, </span>
+<span>                       cols_remove <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   country     year  cases  population
@@ -1235,71 +1239,74 @@ Tip
 <p>The pipe operator saves us from having to save intermediate objects and makes the process easier to read!</p>
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="joining-data-with-dplyr" class="level1">
-<h1>Joining data with <code>dplyr</code></h1>
+</section></section></section><section id="joining-data-with-dplyr" class="level1"><h1>Joining data with <code>dplyr</code>
+</h1>
 <p>You should feel comfortable:</p>
 <ul>
 <li>Finding the keys that match between two relational datasets</li>
 <li>Identifying which join(s) will result in the dataset you want</li>
-<li>Using filtering joins in place of the <code>filter()</code> function</li>
+<li>Using filtering joins in place of the <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> function</li>
 </ul>
 <p>There are two main types of table joins:</p>
 <ul>
 <li><p><strong>Mutating joins</strong>, which add columns from one table to matching rows in another table</p></li>
 <li><p><strong>Filtering joins</strong>, which remove rows from a table based on whether or not there is a matching row in another table (but the columns in the original table don’t change)</p></li>
 </ul>
-<p>📖 <a href="https://r4ds.hadley.nz/joins.html">Recommended Reading: <em>R4DS</em> Chapter 19 (Joins)</a></p>
-<section id="sec-mutating-joins" class="level2">
-<h2 class="anchored" data-anchor-id="sec-mutating-joins">Mutating Joins</h2>
+<div class="callout callout-style-default callout-required-reading callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-reading</span>Required Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://r4ds.hadley.nz/joins.html"><em>R4DS</em> Chapter 19: Joins</a></p>
+</div>
+</div>
+<section id="sec-mutating-joins" class="level2"><h2 class="anchored" data-anchor-id="sec-mutating-joins">Mutating Joins</h2>
 <p>We’re primarily going to focus on mutating joins, as filtering joins can be accomplished by…filtering…rather than by table joins.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Inner Join</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Left Join</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Right Join</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false" href="">Full Join</a></li></ul>
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Inner Join</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Left Join</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Right Join</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false" href="">Full Join</a></li>
+</ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p>An <code>inner_join()</code> only keeps any rows that are included in <strong>both</strong> tables, but keeps every column.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://raw.githubusercontent.com/gadenbuie/tidyexplain/master/images/inner-join.gif" class="img-fluid figure-img" alt="A looping animation shows two tables on the left being joined with matching key values to produce a combined output on the right. In the first table, keys 1, 2, and 3 (colored red, blue, green) each pair with a value x1, x2, x3. In the second table, keys 1, 2, and 4 (same red, blue, and a different color for 4) each pair with values y1, y2, y3. Lines connect matching keys (1 and 2). The output table shows only keys 1 and 2, each with their x and y values combined, while keys that don’t match (3 in the first, 4 in the second) are excluded."></p>
-<figcaption>© Garrick Aden-Buie</figcaption>
-</figure>
+<figure class="figure"><p><img src="https://raw.githubusercontent.com/gadenbuie/tidyexplain/master/images/inner-join.gif" class="img-fluid figure-img" alt="A looping animation shows two tables on the left being joined with matching key values to produce a combined output on the right. In the first table, keys 1, 2, and 3 (colored red, blue, green) each pair with a value x1, x2, x3. In the second table, keys 1, 2, and 4 (same red, blue, and a different color for 4) each pair with values y1, y2, y3. Lines connect matching keys (1 and 2). The output table shows only keys 1 and 2, each with their x and y values combined, while keys that don’t match (3 in the first, 4 in the second) are excluded."></p>
+<figcaption>© Garrick Aden-Buie</figcaption></figure>
 </div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <p>But what if we want to keep all of the rows in <code>x</code>? We would do a <code>left_join()</code> (since <code>x</code> is on the left).</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://raw.githubusercontent.com/gadenbuie/tidyexplain/master/images/left-join.gif" class="img-fluid figure-img" alt="A looping animation showing a “left” table on the left and a “right” table on the left-join operation arrow pointing to a result on the right. The left table has keys 1 (red), 2 (blue), and 3 (green) with values x1, x2, x3. The right table has keys 1 (red), 2 (blue), and 4 (purple) with values y1, y2, y3. Lines connect matching keys 1 and 2. The resulting joined table includes all rows from the left table (keys 1, 2, 3). For keys 1 and 2, the x and y values are combined; for key 3 (which has no match in the right table), the y value is blank or missing."></p>
-<figcaption>© Garrick Aden-Buie</figcaption>
-</figure>
+<figure class="figure"><p><img src="https://raw.githubusercontent.com/gadenbuie/tidyexplain/master/images/left-join.gif" class="img-fluid figure-img" alt="A looping animation showing a “left” table on the left and a “right” table on the left-join operation arrow pointing to a result on the right. The left table has keys 1 (red), 2 (blue), and 3 (green) with values x1, x2, x3. The right table has keys 1 (red), 2 (blue), and 4 (purple) with values y1, y2, y3. Lines connect matching keys 1 and 2. The resulting joined table includes all rows from the left table (keys 1, 2, 3). For keys 1 and 2, the x and y values are combined; for key 3 (which has no match in the right table), the y value is blank or missing."></p>
+<figcaption>© Garrick Aden-Buie</figcaption></figure>
 </div>
 <p>If there are multiple matches in the y table, though, we might have to duplicate rows in x. This is still a left join, just a more complicated one.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://raw.githubusercontent.com/gadenbuie/tidyexplain/master/images/left-join-extra.gif" class="img-fluid figure-img" alt="A looping animation shows a “left” table and a “right” table being joined, with extra matching rows in the right table. The left table has keys 1 (red), 2 (blue), and 3 (green) with values x1, x2, x3. The right table has keys 1 (red), 2 (blue), 2 (another blue), and 4 (purple) with values y1, y2, y5, y4. Lines connect matching keys (1, 2, 2). The result table includes all rows from the left table: for key 1, the match yields a row with x1 and y1; for key 2, there are two matching rows, so x2 pairs with y2 and also x2 pairs with y5 (two rows); for key 3, no match, so x3 appears with a missing y value."></p>
-<figcaption>© Garrick Aden-Buie</figcaption>
-</figure>
+<figure class="figure"><p><img src="https://raw.githubusercontent.com/gadenbuie/tidyexplain/master/images/left-join-extra.gif" class="img-fluid figure-img" alt="A looping animation shows a “left” table and a “right” table being joined, with extra matching rows in the right table. The left table has keys 1 (red), 2 (blue), and 3 (green) with values x1, x2, x3. The right table has keys 1 (red), 2 (blue), 2 (another blue), and 4 (purple) with values y1, y2, y5, y4. Lines connect matching keys (1, 2, 2). The result table includes all rows from the left table: for key 1, the match yields a row with x1 and y1; for key 2, there are two matching rows, so x2 pairs with y2 and also x2 pairs with y5 (two rows); for key 3, no match, so x3 appears with a missing y value."></p>
+<figcaption>© Garrick Aden-Buie</figcaption></figure>
 </div>
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <p>If we wanted to keep all of the rows in <code>y</code>, we would do a <code>right_join()</code> (since <code>y</code> is on the right):</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://raw.githubusercontent.com/gadenbuie/tidyexplain/master/images/right-join.gif" class="img-fluid figure-img" alt="A looping animation shows two tables being joined with a “right join” operation. The left table has keys 1 (red), 2 (blue), 3 (green) paired with values x1, x2, x3. The right table has keys 1 (red), 2 (blue), 4 (purple) paired with y1, y2, y4. Lines connect matching keys (1 and 2). The resulting table includes all rows from the right table: for keys 1 and 2, the x and y values are joined; for key 4 (which has no match in the left table), the x value is missing/blank while the y value remains."></p>
-<figcaption>© Garrick Aden-Buie</figcaption>
-</figure>
+<figure class="figure"><p><img src="https://raw.githubusercontent.com/gadenbuie/tidyexplain/master/images/right-join.gif" class="img-fluid figure-img" alt="A looping animation shows two tables being joined with a “right join” operation. The left table has keys 1 (red), 2 (blue), 3 (green) paired with values x1, x2, x3. The right table has keys 1 (red), 2 (blue), 4 (purple) paired with y1, y2, y4. Lines connect matching keys (1 and 2). The resulting table includes all rows from the right table: for keys 1 and 2, the x and y values are joined; for key 4 (which has no match in the left table), the x value is missing/blank while the y value remains."></p>
+<figcaption>© Garrick Aden-Buie</figcaption></figure>
 </div>
 <p>We can always change a left join to a right join or visa versa. People seem to have a preference for left joins, but if you like right joins more go for it!</p>
 </div>
 <div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
 <p>And finally, if we want to keep all of the rows of both <code>x</code> and <code>y</code>, we’d do a <code>full_join()</code>:</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://raw.githubusercontent.com/gadenbuie/tidyexplain/master/images/full-join.gif" class="img-fluid figure-img" alt="A looping animation shows two tables on the left being joined with a ‘full join’ operation arrow pointing right. The left table has keys 1 (red), 2 (blue), 3 (green) with values x1, x2, x3. The right table has keys 1 (red), 2 (blue), 4 (purple) with values y1, y2, y4. Lines connect matching keys 1 and 2. The resulting table on the right includes all rows from both original tables: for keys 1 and 2, x and y values are combined; for key 3 (no match on right) the y field is missing/NA; for key 4 (no match on left) the x field is missing/NA while y is retained."></p>
-<figcaption>© Garrick Aden-Buie</figcaption>
-</figure>
+<figure class="figure"><p><img src="https://raw.githubusercontent.com/gadenbuie/tidyexplain/master/images/full-join.gif" class="img-fluid figure-img" alt="A looping animation shows two tables on the left being joined with a ‘full join’ operation arrow pointing right. The left table has keys 1 (red), 2 (blue), 3 (green) with values x1, x2, x3. The right table has keys 1 (red), 2 (blue), 4 (purple) with values y1, y2, y4. Lines connect matching keys 1 and 2. The resulting table on the right includes all rows from both original tables: for keys 1 and 2, x and y values are combined; for key 3 (no match on right) the y field is missing/NA; for key 4 (no match on left) the x field is missing/NA while y is retained."></p>
+<figcaption>© Garrick Aden-Buie</figcaption></figure>
 </div>
 </div>
 </div>
@@ -1352,12 +1359,13 @@ Rows Selected
 </table>
 </div>
 </div>
-</section>
-<section id="filtering-joins" class="level2">
-<h2 class="anchored" data-anchor-id="filtering-joins">Filtering Joins</h2>
+</section><section id="filtering-joins" class="level2"><h2 class="anchored" data-anchor-id="filtering-joins">Filtering Joins</h2>
 <p>These joins <strong>do not</strong> merge two datasets together! Instead, they <em>filter</em> the values of one dataset based on the values of another dataset.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Semi Join</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Anti Join</a></li></ul>
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Semi Join</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Anti Join</a></li>
+</ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <p>A <code>semi_join()</code> keeps rows in <code>x</code> that have a match in <code>y</code>. Notice that the resulting dataset is a modification of the original <code>x</code> dataset—nothing from <code>y</code> has been added to <code>x</code>!</p>
@@ -1371,20 +1379,18 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can think of this as a relative of using the inclusion operator (<code>%in%</code>) inside of a <code>filter()</code> statement (e.g., <code>filter(day %in% c("Mon", "Tues", "Wed"))</code>).</p>
+<p>You can think of this as a relative of using the inclusion operator (<code>%in%</code>) inside of a <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> statement (e.g., <code>filter(day %in% c("Mon", "Tues", "Wed"))</code>).</p>
 </div>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://github.com/gadenbuie/tidyexplain/raw/main/images/semi-join.gif" class="img-fluid figure-img" alt="A looping animation shows two tables side by side and the result of a semi join. The left table (x) has keys 1 (red), 2 (blue), 3 (green) paired with x1, x2, x3. The right table (y) has keys 1 (red), 2 (blue), 4 (purple) paired with y1, y2, y4. Matching key rows (1 and 2) are connected. The resulting output table includes only the rows from the left table that have matches in the right table: key 1 with x1 and key 2 with x2. The left row with key 3 is dropped, and no new columns from y are shown."></p>
-<figcaption>© Garrick Aden-Buie</figcaption>
-</figure>
+<figure class="figure"><p><img src="https://github.com/gadenbuie/tidyexplain/raw/main/images/semi-join.gif" class="img-fluid figure-img" alt="A looping animation shows two tables side by side and the result of a semi join. The left table (x) has keys 1 (red), 2 (blue), 3 (green) paired with x1, x2, x3. The right table (y) has keys 1 (red), 2 (blue), 4 (purple) paired with y1, y2, y4. Matching key rows (1 and 2) are connected. The resulting output table includes only the rows from the left table that have matches in the right table: key 1 with x1 and key 2 with x2. The left row with key 3 is dropped, and no new columns from y are shown."></p>
+<figcaption>© Garrick Aden-Buie</figcaption></figure>
 </div>
 <p>Suppose we wanted to only keep countries in Table 2 that were also present in Table 1. We could do this using a semi-join:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">semi_join</span>(<span class="at">x =</span> table2, </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">y =</span> table1, </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">by =</span> <span class="st">"country"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">semi_join</span><span class="op">(</span>x <span class="op">=</span> <span class="va">table2</span>, </span>
+<span>          y <span class="op">=</span> <span class="va">table1</span>, </span>
+<span>          by <span class="op">=</span> <span class="st">"country"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 4
    country      year type            count
@@ -1417,20 +1423,18 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can think of this as a relative of using a <code>!</code> in front of the inclusion operator (<code>%in%</code>) inside of a <code>filter()</code> statement (e.g., <code>filter(! day %in% c("Mon", "Tues", "Wed"))</code>). The <code>!</code> negates the <code>%in%</code> so only <code>Thurs</code>, <code>Fri</code>, <code>Sat</code>, and <code>Sun</code> would be included.</p>
+<p>You can think of this as a relative of the <code>filter_out()</code> function, which is a better tool for negating a filter statement (e.g., <code>filter(! day %in% c("Mon", "Tues", "Wed"))</code>).</p>
 </div>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://github.com/gadenbuie/tidyexplain/raw/main/images/anti-join.gif" class="img-fluid figure-img" alt="A looping animation shows two tables being compared under an ‘anti join’ operation. The left table has keys 1 (red), 2 (blue), 3 (green) paired with values x1, x2, x3. The right table has keys 1 (red), 2 (blue), and 4 (purple) paired with values y1, y2, y4. Lines indicate matching keys (1 and 2). The resulting table on the right contains only the rows from the left table that do not have a match in the right: key 3 with x3 (green). Keys 1 and 2 are excluded because they have matches in the right table."></p>
-<figcaption>© Garrick Aden-Buie</figcaption>
-</figure>
+<figure class="figure"><p><img src="https://github.com/gadenbuie/tidyexplain/raw/main/images/anti-join.gif" class="img-fluid figure-img" alt="A looping animation shows two tables being compared under an ‘anti join’ operation. The left table has keys 1 (red), 2 (blue), 3 (green) paired with values x1, x2, x3. The right table has keys 1 (red), 2 (blue), and 4 (purple) paired with values y1, y2, y4. Lines indicate matching keys (1 and 2). The resulting table on the right contains only the rows from the left table that do not have a match in the right: key 3 with x3 (green). Keys 1 and 2 are excluded because they have matches in the right table."></p>
+<figcaption>© Garrick Aden-Buie</figcaption></figure>
 </div>
 <p>Suppose we wanted to filter out countries in Table 2 that were also present in Table 1. We could do this using an anti-join:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anti_join</span>(<span class="at">x =</span> table2, </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">y =</span> table1, </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">by =</span> <span class="st">"country"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">anti_join</span><span class="op">(</span>x <span class="op">=</span> <span class="va">table2</span>, </span>
+<span>          y <span class="op">=</span> <span class="va">table1</span>, </span>
+<span>          by <span class="op">=</span> <span class="st">"country"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 0 × 4
 # ℹ 4 variables: country &lt;chr&gt;, year &lt;dbl&gt;, type &lt;chr&gt;, count &lt;dbl&gt;</code></pre>
@@ -1442,11 +1446,7 @@ Tip
 </div>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1858,9 +1858,7 @@ Tip
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../1810-review/dplyr-review.html" class="pagination-link" aria-label="`dplyr` Review">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><code>dplyr</code> Review</span>
       </a>          
@@ -1872,8 +1870,7 @@ Tip
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>This page is built with ❤️ by Drs. Kelly Bodwin &amp; Allison Theobold and also <a href="https://quarto.org/">Quarto</a>.</p>
 </div>   
@@ -1882,17 +1879,15 @@ Tip
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/1810-review/tidyr-review.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../LICENSE.md">
 <p>License</p>
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>

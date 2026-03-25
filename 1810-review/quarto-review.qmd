@@ -20,10 +20,10 @@ The theme of this lesson is good management of your files and data. For this
 course, you need to know how to identify **folders** and **paths**, and create
 professional looking **Quarto documents**.
 
-Answer the following questions to see if you can safely skip this section. 
-:::
+**Answer the following questions to see if you can safely skip this section.**
 
-1. Which statement best describes the difference between an absolute file path and a relative file path?
+1. Which statement best describes the difference between an absolute file path
+and a relative file path?
 
 a.  An absolute path works only on Windows systems, while a relative path works
 on all operating systems.
@@ -73,6 +73,7 @@ d.  `#`
 
 *If you had a hard time answering these questions, I would recommend reviewing
 [@sec-quarto].*
+:::
 
 ## Directories, Paths, and Projects 
 
@@ -103,7 +104,9 @@ setwd("/path/to/my/assignment/folder")
 
 ### R Projects {#sec-r-projects}
 
-📖 [Recommended Reading: Workflow and Projects](https://r4ds.had.co.nz/workflow-projects.html)
+::: {.callout-required-reading}
+[*R4DS* Chapter 8: Workflow and Projects](https://r4ds.had.co.nz/workflow-projects.html)
+:::
 
 Since there are often many files necessary for a project (e.g. data sources, 
 images, etc.), `R` has a nice built in system for setting up your project 
@@ -200,12 +203,19 @@ computer, you need to download Quarto: <https://quarto.org/docs/download/>
 
 ## Introduction to Quarto
 
-📖 [Recommended Reading: Intro to Quarto](https://r4ds.hadley.nz/quarto.html)
+::: {.callout-required-reading}
+[*R4DS* Chapter 28: Quarto](https://r4ds.hadley.nz/quarto.html)
+:::
 
 ### HTML Documents
 
-We will exclusively use HTML documents in this course. If you are interested in learning more about formatting options for Quarto HTML documents, I would recommend checking out:
+We will exclusively use HTML documents in this course. 
+
+::: {.callout-learn-more}
+If you are interested in learning more about formatting options for Quarto HTML
+documents, I would recommend checking out:
 
 -   [a discussion of the basics of formatting HTML documents in Quarto](https://quarto.org/docs/output-formats/html-basics.html)
 
 -   [the list of all HTML formatting options for Quarto documents](https://quarto.org/docs/reference/formats/html.html)
+:::

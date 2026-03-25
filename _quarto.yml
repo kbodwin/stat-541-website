@@ -155,14 +155,20 @@ website:
 
 format:
   html:
+    code-link: true
     theme:
-      light: [cosmo, style/stat331.scss]
-      dark: [cosmo, style/stat331.scss, style/dark.scss]
-    mainfont: "Atkinson Hyperlegible"
+      light: [flatly, customcallouts.scss]
+      dark: [darkly, customcallouts.scss]
     code-copy: true
+    code-annotations: below
     code-overflow: wrap
     toc: true
     linkcolor: "#5D737E"
+  # pdf:
+  #   documentclass: scrreprt
+
+filters:
+  - custom_callout.lua
 
 editor: visual
     

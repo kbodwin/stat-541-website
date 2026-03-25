@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>ggplot Extensions – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
@@ -57,7 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -80,10 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d740d1846410d21846eaedb988be6a2e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-71c5e44f9b8369425ab35775d37fd3f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-235111c28925c9e86c962b253a60587d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -110,10 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-
-
 </head>
-
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -279,14 +271,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content">
-    </a>
+    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content"><img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content"></a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -294,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
@@ -327,21 +315,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/atheobold/stat-541-website"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -349,15 +335,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Unit 2</span></a>
@@ -400,33 +382,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#gganimate" id="toc-gganimate" class="nav-link active" data-scroll-target="#gganimate">gganimate</a></li>
-  <li><a href="#required-reading-intro-to-gganimate" id="toc-required-reading-intro-to-gganimate" class="nav-link" data-scroll-target="#required-reading-intro-to-gganimate">📖 Required Reading: Intro to <code>gganimate</code></a></li>
-  <li><a href="#recommended-reading-another-intro-to-gganimate" id="toc-recommended-reading-another-intro-to-gganimate" class="nav-link" data-scroll-target="#recommended-reading-another-intro-to-gganimate">📖 Recommended Reading: Another intro to <code>gganimate</code></a></li>
-  <li><a href="#recommended-video-gganimate-flipbook-demo-rstudioconf-2017" id="toc-recommended-video-gganimate-flipbook-demo-rstudioconf-2017" class="nav-link" data-scroll-target="#recommended-video-gganimate-flipbook-demo-rstudioconf-2017">🎥 Recommended Video: <code>gganimate</code> flipbook demo (RStudio::conf 2017)</a></li>
+<li><a href="#gganimate" id="toc-gganimate" class="nav-link active" data-scroll-target="#gganimate">gganimate</a></li>
   <li><a href="#other-extensions" id="toc-other-extensions" class="nav-link" data-scroll-target="#other-extensions">Other Extensions</a></li>
-  <li><a href="#required-reading-ggplot-extension-gallery" id="toc-required-reading-ggplot-extension-gallery" class="nav-link" data-scroll-target="#required-reading-ggplot-extension-gallery">📖 Required Reading: <code>ggplot</code> Extension Gallery</a></li>
-  <li><a href="#required-reading-more-ggplot-extension-summaries" id="toc-required-reading-more-ggplot-extension-summaries" class="nav-link" data-scroll-target="#required-reading-more-ggplot-extension-summaries">📖 Required Reading: More <code>ggplot</code> Extension Summaries</a></li>
-  <li><a href="#extra-resources" id="toc-extra-resources" class="nav-link" data-scroll-target="#extra-resources">Extra Resources</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-2/ggplot-extensions.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-2/ggplot-extensions.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title"><code>ggplot</code> Extensions</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">
+<code>ggplot</code> Extensions</h1>
 </div>
 
 
@@ -440,11 +410,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<section id="gganimate" class="level2">
-<h2 class="anchored" data-anchor-id="gganimate">gganimate</h2>
+</header><section id="gganimate" class="level2"><h2 class="anchored" data-anchor-id="gganimate">gganimate</h2>
 <p>There are many, many ways to “spice up” your plots. We will focus in on one: making your plot animated! The best package for this, if you are using <code>ggplot</code> already, is <code>gganimate</code>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -459,24 +425,43 @@ Note
 <p><code>gganimate</code> plot objects can sometimes take a long time to render. One way to make it quicker is to change the number of frames in your gif. Another trick is to use the <a href="https://quarto.org/docs/computations/r.html#caching">cache chunk option</a> in Quarto, so that you don’t re-render the images every time you knit your file.</p>
 </div>
 </div>
-</section>
-<section id="required-reading-intro-to-gganimate" class="level2">
-<h2 class="anchored" data-anchor-id="required-reading-intro-to-gganimate">📖 Required Reading: <a href="https://gganimate.com/articles/gganimate.html">Intro to <code>gganimate</code></a></h2>
-</section>
-<section id="recommended-reading-another-intro-to-gganimate" class="level2">
-<h2 class="anchored" data-anchor-id="recommended-reading-another-intro-to-gganimate">📖 Recommended Reading: <a href="https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/">Another intro to <code>gganimate</code></a></h2>
-</section>
-<section id="recommended-video-gganimate-flipbook-demo-rstudioconf-2017" class="level2">
-<h2 class="anchored" data-anchor-id="recommended-video-gganimate-flipbook-demo-rstudioconf-2017">🎥 Recommended Video: <code>gganimate</code> flipbook demo (RStudio::conf 2017)</h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3UY7Or0v_dI?si=j326j6NNtakM6BmK&amp;start=77" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-required-reading callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Check-in
+<span class="screen-reader-only">Required-reading</span>Required Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://gganimate.com/articles/gganimate.html">Getting Started with <code>gganimate</code> (from the <code>gganimate</code> Documentation)</a></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-learn-more callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Learn-more</span>Learn More
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/">How to Create Plots with Beautiful Animation (Datanovia Blog Post)</a></p>
+<p>Or you could watch <a href="https://www.data-imaginist.com/about">Thomas Lin Pedersen’s</a> Posit Conf 2019 talk on <code>gganimate</code>:</p>
+<div class="youtube-video-container">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/3UY7Or0v_dI?si=j326j6NNtakM6BmK&amp;start=77" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-check-in callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Check-in</span>Check In
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -500,61 +485,73 @@ Note
 <p><img src="images/oscars-animation.gif" class="img-fluid"></p>
 </div>
 </div>
-</section>
-<section id="other-extensions" class="level2">
-<h2 class="anchored" data-anchor-id="other-extensions">Other Extensions</h2>
+</section><section id="other-extensions" class="level2"><h2 class="anchored" data-anchor-id="other-extensions">Other Extensions</h2>
 <p>Although we don’t have time to go in-depth on every single extension of <code>ggplot</code>, there are <strong>so</strong> many wonderful ways to up your Data Viz game.</p>
 <p>Take a look around the links below!</p>
-</section>
-<section id="required-reading-ggplot-extension-gallery" class="level2">
-<h2 class="anchored" data-anchor-id="required-reading-ggplot-extension-gallery">📖 Required Reading: <a href="https://exts.ggplot2.tidyverse.org/gallery/"><code>ggplot</code> Extension Gallery</a></h2>
-</section>
-<section id="required-reading-more-ggplot-extension-summaries" class="level2">
-<h2 class="anchored" data-anchor-id="required-reading-more-ggplot-extension-summaries">📖 Required Reading: <a href="https://mode.com/blog/r-ggplot-extension-packages">More <code>ggplot</code> Extension Summaries</a></h2>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-required-reading callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Check-in
+<span class="screen-reader-only">Required-reading</span>Required Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://exts.ggplot2.tidyverse.org/gallery/"><code>ggplot</code> Extension Gallery</a></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-check-in callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Check-in</span>Check In
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ol start="2" type="1">
-<li>Which extension package would you use to… <em>Hint: There is more than one possible answer for each question!</em></li>
+<li>Which extension package would you use to…</li>
 </ol>
+<p><em>Hint: There is more than one possible answer for each question!</em></p>
 <ol type="a">
 <li>Visualize a <strong>social network</strong> using twitter data?</li>
 </ol>
-<!-- ggraph, ggnetwork -->
-<ol start="2" type="a">
-<li><strong>Add p-values</strong> to your side-by-side boxplot of treatment groups, showing the significance of the differences?</li>
+<!-- ggraph, ggnetwork --><ol start="2" type="a">
+<li>
+<strong>Add p-values</strong> to your side-by-side boxplot of treatment groups, showing the significance of the differences?</li>
 </ol>
-<!-- ggpubr, ggstatsplot -->
-<ol start="3" type="a">
+<!-- ggpubr, ggstatsplot --><ol start="3" type="a">
 <li>Arrange <strong>several different plots</strong> next to each other?</li>
 </ol>
-<!-- patchwork, cowplot, GGAlly -->
-<ol start="4" type="a">
+<!-- patchwork, cowplot, GGAlly --><ol start="4" type="a">
 <li>Make it so <strong>hovering over a point</strong> in your scatterplot shows the corresponding label?</li>
 </ol>
 <!-- plotly, ggraph -->
 </div>
 </div>
-</section>
-<section id="extra-resources" class="level2">
-<h2 class="anchored" data-anchor-id="extra-resources">Extra Resources</h2>
+<div class="callout callout-style-default callout-learn-more callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Learn-more</span>Learn More
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li><a href="https://www.reddit.com/r/dataisbeautiful/top/?t=all">The “dataisbeautiful” subreddit</a> shares many nice visualizations.</li>
-<li>Don’t forget about the <a href="https://www.data-to-viz.com/">Data-to-Viz Website</a> <!-- -   [This webinar](https://www.youtube.com/watch?v=0m4yywqNPVY), by ggplot contributor Thomas Lin Pedersen, is wonderful. It's about 2 hours long - so more than we can fit in as required viewing - but if you want to become a `ggplot` queen, watch this! --> <!-- -   Dave Robinson's [Tidy Tuesday Screencasts](https://www.youtube.com/user/safe4democracy/videos) show a Picasso of Data Viz at work! --></li>
+<li>
+<a href="https://www.reddit.com/r/dataisbeautiful/top/?t=all">The “dataisbeautiful” subreddit</a> shares many nice visualizations.</li>
+<li>Don’t forget about the <a href="https://www.data-to-viz.com/">Data-to-Viz Website</a> <!-- -   [This webinar](https://www.youtube.com/watch?v=0m4yywqNPVY), by ggplot contributor Thomas Lin Pedersen, is wonderful. It's about 2 hours long - so more than we can fit in as required viewing - but if you want to become a `ggplot` queen, watch this! --> <!-- -   Dave Robinson's [Tidy Tuesday Screencasts](https://www.youtube.com/user/safe4democracy/videos) show a Picasso of Data Viz at work! -->
+</li>
 </ul>
+</div>
+</div>
 
 
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -966,9 +963,7 @@ Note
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../unit-2/ggplot-leaflet.html" class="pagination-link" aria-label="Creating Maps with the `leaflet` Package">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Creating Maps with the <code>leaflet</code> Package</span>
       </a>          
@@ -980,8 +975,7 @@ Note
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>This page is built with ❤️ by Drs. Kelly Bodwin &amp; Allison Theobold and also <a href="https://quarto.org/">Quarto</a>.</p>
 </div>   
@@ -990,17 +984,15 @@ Note
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-2/ggplot-extensions.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../LICENSE.md">
 <p>License</p>
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>
