@@ -53,6 +53,7 @@ t <- d |>
                          8 ~ "Week 8",
                          9 ~ "Week 9",
                          10 ~ "Week 10",
+                         11 ~ "Finals Week"
                          ), 
   week_label = case_when(week == "Week 0" ~ week, 
                          week != lag(week) ~ week,
