@@ -1,0 +1,16 @@
+---
+title: "Practice Activity 9: Find the bugs"
+format: html
+---
+
+Fork the repository `Cal-Poly-Advanced-R/entomology`.  This repository contains 
+a package that is mostly complete and mostly correctly structured, but that has
+10 different small bugs.
+
+Track down all of these bugs, using whatever unit testing and debugging techniques 
+you prefer.  For each bug, you must **document** how you discovered it; for example,
+by showing the unit testing code you ran to find it, by taking a screenshot of your
+window during the `debugonce()` process, or similar.
+
+You do **not** need to fix the bugs, although you may choose to if that helps you
+test them and make sure you understand what went wrong.

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.24">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>R Packages – Advanced R</title>
+<title>Practice Activity 8: A Package from Scratch – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,41 +17,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -61,8 +26,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../unit-3/unit-testing.qmd" rel="next">
-<link href="../unit-3.html" rel="prev">
+<link href="../unit-3/debugging.qmd" rel="next">
+<link href="../unit-3/unit-testing.qmd" rel="prev">
 <link href="../images/cat-monsters-horst.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -333,7 +298,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unit-3/package-structure.html">R Packages</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practice-activities/week-8.html">Week 8: In-Class Activity</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -353,13 +318,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit-3/package-structure.html" class="sidebar-item-text sidebar-link active">
+  <a href="../unit-3/package-structure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Packages</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practice-activities/week-8.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../practice-activities/week-8.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week 8: In-Class Activity</span></a>
   </div>
 </li>
@@ -386,22 +351,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#basics-of-packages" id="toc-basics-of-packages" class="nav-link active" data-scroll-target="#basics-of-packages">Basics of Packages</a></li>
-  <li>
-<a href="#contributing-to-packages" id="toc-contributing-to-packages" class="nav-link" data-scroll-target="#contributing-to-packages">Contributing to Packages</a>
-  <ul class="collapse">
-<li><a href="#get-set-up" id="toc-get-set-up" class="nav-link" data-scroll-target="#get-set-up">Get set up</a></li>
-  <li><a href="#make-some-simple-changes" id="toc-make-some-simple-changes" class="nav-link" data-scroll-target="#make-some-simple-changes">Make some simple changes</a></li>
-  <li><a href="#testing-the-package" id="toc-testing-the-package" class="nav-link" data-scroll-target="#testing-the-package">Testing the package</a></li>
-  <li><a href="#make-a-major-contribution" id="toc-make-a-major-contribution" class="nav-link" data-scroll-target="#make-a-major-contribution">Make a major contribution</a></li>
-  </ul>
-</li>
-  <li><a href="#package-creation-from-scratch" id="toc-package-creation-from-scratch" class="nav-link" data-scroll-target="#package-creation-from-scratch">Package Creation From Scratch</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-3/package-structure.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+<li><a href="#part-one-a-basic-package" id="toc-part-one-a-basic-package" class="nav-link active" data-scroll-target="#part-one-a-basic-package">Part One: A basic package</a></li>
+  <li><a href="#part-two-adding-to-the-package" id="toc-part-two-adding-to-the-package" class="nav-link" data-scroll-target="#part-two-adding-to-the-package">Part Two: Adding to the package</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/practice-activities/week-8.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">R Packages</h1>
+<h1 class="title">Practice Activity 8: A Package from Scratch</h1>
 </div>
 
 
@@ -415,226 +371,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="basics-of-packages" class="level2"><h2 class="anchored" data-anchor-id="basics-of-packages">Basics of Packages</h2>
-<p>In principle, an R Package is nothing more than a folder with a very specific structure, which allows R to recognize it as a “Package”. Minimally, to be a package, a folder must contain:</p>
-<ol type="1">
-<li>A subfolder named <code>/R/</code>, containing <code>.R</code> code files.</li>
-<li>A text file named <code>DESCRIPTION</code>, which contains information about the package in a <em>very</em> specifically formatted way.</li>
-<li>A text file named <code>NAMESPACE</code>, which contains a list of the functions that the package makes available.</li>
-</ol>
-<p>If you’re thinking to yourself, <em>“Boy, that sounds like a lot of annoyingly specific formatting!”</em> - you’re not wrong. Fortunately, there are automatic ways to make these files, which we will learn about soon!</p>
-<p>Any folder with that structure can, in principle, be <strong>installed</strong> into R as a package. Typically, you will be installing packages from one of three sources:</p>
-<section id="install.packagessomething" class="level4"><h4 class="anchored" data-anchor-id="install.packagessomething">1. <code>install.packages("something")</code>
-</h4>
-<p>If you are able to install a package directly using <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code>, that means the package has been accepted to the <a href="https://cran.r-project.org/">Comprehensive R Archive Network</a>, or <strong>CRAN</strong>.</p>
-<p>The minimal folder structure is not sufficient to be accepted to CRAN; these packages must meet many strict guidelines about documenting and testing the package’s functions.</p>
-</section><section id="remotesinstall_githubusernamesomething" class="level4"><h4 class="anchored" data-anchor-id="remotesinstall_githubusernamesomething">2. <code>remotes::install_github("username/something")</code>
-</h4>
-<p>You may have come across packages you wanted to use that could only be installed using the <code>install_github</code> function (from the <code>remotes</code> package).</p>
-<p>In principle, anyone can put a package-structured folder on GitHub, and if the repository is public, anyone else can install that package.</p>
-<p>In practice, it’s good to have your package meet CRAN-like levels of careful documentation before you share it with the public.</p>
-</section><section id="installing-from-your-personal-sources" class="level4"><h4 class="anchored" data-anchor-id="installing-from-your-personal-sources">3. Installing from your personal sources</h4>
-<p>If you use R heavily in the future, you may find it useful to write packages just for yourself. For example, if you find yourself using the same small “helper” functions over and over, it can be nice to simply load a package rather than re-run them for every project.</p>
-<p>We won’t worry about installing from sources for this class.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Check-In: Package Structure
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Visit <a href="https://github.com/Cal-Poly-Advanced-R/meangirls">this GitHub repository</a>, where our good friend Regina George has made a package.</p>
-<p>Answer the following questions about Regina’s package by clicking around in her files.</p>
-<ol type="1">
-<li>What is the name of this package?</li>
-<li>Besides Regina, who is listed as an author of this package?</li>
-<li>Which other packages does Regina’s package depend on? (Hint: Which packages does this one <em>import</em>?)</li>
-<li>Which functions are defined in the file <code>insults.R</code>?</li>
-<li>In the documentation comments above the functions, what does <code>@param</code> indicate?</li>
-<li>In the documentation comments above the functions, what does <code>@importFrom</code> do?</li>
-<li>Look at the functions defined in the file <code>give_candygrams.R</code>. One of them does NOT appear in the <code>NAMESPACE</code> file. What is different about the documentation comments for this function?</li>
-<li>Why do you think Regina decided not to include the function from Q7 in her namespace?</li>
-</ol>
-</div>
-</div>
-</section></section><section id="contributing-to-packages" class="level2"><h2 class="anchored" data-anchor-id="contributing-to-packages">Contributing to Packages</h2>
-<p>Now let’s help Regina make her <code>meangirls</code> package even better.</p>
-<p>The <code>usethis</code> package will make this process easy and foolproof. Make sure you have it installed now.</p>
-<section id="get-set-up" class="level3"><h3 class="anchored" data-anchor-id="get-set-up">Get set up</h3>
-<p>The first thing you need to do when you want to contribute to someone else’s package is to <strong>fork</strong> the package. Recall that a <strong>fork</strong> is very different from a <strong>clone</strong>. A <em>clone</em> simply copy-pastes the repository, while a <em>fork</em> retains its link to the original repository.</p>
-<p>Now, we could go through the tedious process of <em>forking</em> the repository, then all the steps after that to get it open in your local computer’s RStudio.</p>
-<p>Instead, let’s do all these steps in one with <code>usethis</code>. Open up a new RStudio session, load the <code>usethis</code> package, and then run:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/create_from_github.html">create_from_github</a></span><span class="op">(</span><span class="st">"Cal-Poly-Advanced-R/meangirls"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>A lot of output will print out.</p>
-<p>Here’s what this does:</p>
-<ul>
-<li><p>Forks the <code>meangirls</code> repo, owned by <code>Cal-Poly-Advanced-R</code> on GitHub, into your GitHub account.</p></li>
-<li><p>Clones your forked repo into a folder named “meangirls” on your desktop (or similar).</p></li>
-<li>
-<p>Does additional git/GitHub setup:</p>
-<ul>
-<li>Sets your <em>origin remote</em> (the repo you can push directly to) to be your own forked copy of the “meangirls” repo.</li>
-<li>Sets your <em>upstream remote</em> (the original version that you will later Pull Request) to be the “meangirls” repo owned by <code>Cal-Poly-Advanced-R</code>
-</li>
-<li>Sets the <em>main branch</em> to be the original repo’s main branch, so you can pull future edits that Regina makes (“upstream changes”) in the future.</li>
-</ul>
-</li>
-<li><p>Opens a new instance of RStudio in the <code>meangirls</code> R project.</p></li>
-</ul>
-<p>It is also possible to do this steps without <code><a href="https://usethis.r-lib.org/reference/create_from_github.html">usethis::create_from_github</a></code>, if you prefer.</p>
-<ol type="1">
-<li><p>On GitHub, navigate to <a href="https://github.com/Cal-Poly-Advanced-R/meangirls">the package repo</a> and click “Fork”.</p></li>
-<li><p>Using GitHub Desktop (or your preferred method), clone your new forked package to your local machine.</p></li>
-<li><p>Navigate to the folder where you cloned the package, and open the <code>.Rproj</code>.</p></li>
-</ol></section><section id="make-some-simple-changes" class="level3"><h3 class="anchored" data-anchor-id="make-some-simple-changes">Make some simple changes</h3>
-<p>We are now ready to get our hands dirty with this package.</p>
-<p>First, <strong>build the package</strong>. You can do this by typing <code>Cmd/Ctrl-Shift-B</code>, or by clicking in the “Build” pane:</p>
-<p><img src="images/build_package.gif" class="img-fluid"></p>
-<p>Open up <strong>README.Rmd</strong> and knit it. Scroll to the very bottom. Do you see a problem with the output?</p>
-<p>It’s time to fix the <code>give_candygrams()</code> function so that it includes extra messages. But first, we need to make a <strong>branch</strong> of our repo, so that when we change the code, it is carefully tracked separately.</p>
-<p>In your console, type:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/pull-requests.html">pr_init</a></span><span class="op">(</span><span class="st">"fix-candygrams"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>This will switch you to a new branch.</p>
-<p><img src="images/see_branch.png" class="img-fluid"></p>
-<p>Now, we can finally edit the source code.</p>
-<p>Fix the code in <code>give_candygrams.R</code> so that the extra messages print out properly. <em>(Hint: This is a small change in only one line of the code!)</em></p>
-<p>Check that the code is fixed by re-building the package, re-knitting the <code>README.Rmd</code> file, and looking at the output at the bottom.</p>
-<p>When you are satisfied with your change, <strong>commit your changes</strong> to Git.</p>
-<p>Then run in the console:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/pull-requests.html">pr_push</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>This will magically pop up a Pull Request window! Complete the Pull Request if you wish.</p>
-</section><section id="testing-the-package" class="level3"><h3 class="anchored" data-anchor-id="testing-the-package">Testing the package</h3>
-<p>Last, let’s check out the <strong>unit tests</strong> in Regina’s package.</p>
-<p>In any package, it’s very important to write automatic tests to check that your functions work the way you hope. As the package gets more complex, you can then keep running your tests to make sure nothing broke along the way.</p>
-<p>Run the tests that Regina has written for her package by typing <code>Ctrl/Cmd-Shift-T</code>; or from the drop-down menu in the Build pane:</p>
-<p><img src="images/run_tests.gif" class="img-fluid"></p>
-<p>Oh no! One of the unit tests failed.</p>
-<p>In the folder <code>tests/testthat</code>, find the appropriate test file. Figure out how the actual output was different from the expected output.</p>
-<p>Start a new pull request branch using <code><a href="https://usethis.r-lib.org/reference/pull-requests.html">usethis::pr_init()</a></code>, as you did above. Track down the error, and make changes to the function. Keep trying until alltests succeed.</p>
-</section><section id="make-a-major-contribution" class="level3"><h3 class="anchored" data-anchor-id="make-a-major-contribution">Make a major contribution</h3>
-<p>When handing out candygrams, <a href="https://www.youtube.com/embed/nnjWmz4lB2U">Santa has a whole classroom of students to announce</a>.</p>
-<p>It would be tedious to have to call the <code>give_candygrams()</code> function once for each student. Instead, it would be convenient to have a vector of student names and a vector of candygram counts, and run a single function like so:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">students</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Taylor Zimmerman"</span>, <span class="st">"Glen Coco"</span>, <span class="st">"Cady Heron"</span>, <span class="st">"Gretchen Weiners"</span><span class="op">)</span></span>
-<span><span class="va">counts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span></span>
-<span></span>
-<span></span>
-<span><span class="fu">give_many_candygrams</span><span class="op">(</span><span class="va">students</span>, <span class="va">counts</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ol type="1">
-<li><p>Write the function <code>give_many_candygrams()</code> into the <code>meangirls</code> package.</p></li>
-<li><p>Do your best to copy the documentation style of the <code>give_candygrams()</code> function. Type <code>Ctrl-Shift-D</code>, or use the Build pane drop-down menu, to automatically write a documentation file for your function.</p></li>
-<li><p>Re-build the package. Then type <code>?give_many_candygrams</code> in your console.</p></li>
-<li><p>Look at the “Help” pane that pops up. It should look like this, except with the documentation for your new <code>give_many_candygrams</code> function:</p></li>
-</ol>
-<p><img src="images/help_pane.png" class="img-fluid"></p>
-<p>Type in your console:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">use_test</span><span class="op">(</span><span class="st">"give_many_candygrams"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Edit the file that pops up, to create a unit test for your new <code>give_many_candygrams</code> function. Re-run the tests for the package. It should look like this, but with a total of 7 tests:</p>
-<p><img src="images/passed_tests.png" class="img-fluid"></p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Check-In: Contributing to a Package
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Which line would NOT be correct in the documentation for <code>give_many_candygrams</code>?</li>
-</ol>
-<ol type="a">
-<li><code>@param person The candygram recipient.</code></li>
-<li><code>@param number How many grams they got.</code></li>
-<li><code>@param extra_message A string giving extra commentary.</code></li>
-<li><code>@param Value A candy gram announcement.</code></li>
-</ol>
-<ol start="2" type="1">
-<li>Consider the following unit test for <code>give_many_candygrams</code>:</li>
-</ol>
-<p>What would you expect to happen for this test?</p>
-<ol type="a">
-<li>It would pass because</li>
-<li>It would pass because</li>
-<li>It would fail because</li>
-<li>It would fail because</li>
-</ol>
-</div>
-</div>
-</section></section><section id="package-creation-from-scratch" class="level2"><h2 class="anchored" data-anchor-id="package-creation-from-scratch">Package Creation From Scratch</h2>
-<div class="callout callout-style-default callout-required-reading callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Required-reading</span>Required Reading
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="https://r-pkgs.org/whole-game.html">R Packages Chapter 1 - The Whole Game</a></p>
-<p><em>For now, just read through this chapter and do your best to figure out the check-in questions below. Your Practice Activity this week will be to actually follow along with the steps in this chapter and create a working package - so you are welcome to get a head start if you wish!</em></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Check-In: Package Workflow
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Match the following helper packages to their usage in package creation.</li>
-</ol>
-<div class="columns">
-<div class="column" style="width:20%;">
-<ul>
-<li><p><code>roxygen2</code></p></li>
-<li><p><code>testthat</code></p></li>
-<li><p><code>devtools</code></p></li>
-<li><p><code>usethis</code></p></li>
-</ul>
-</div><div class="column" style="width:10%;">
-
-</div><div class="column" style="width:70%;">
-<ul>
-<li><p>Automatically creating and editing package files in the proper format.</p></li>
-<li><p>Loading, documenting, and running checks for the package after you make edits.</p></li>
-<li><p>Creating small <em>unit tests</em> for the functions in the package.</p></li>
-<li><p>Creating function documentation pages from comments in <code>.R</code> files.</p></li>
-</ul>
-</div>
-</div>
-<ol start="2" type="1">
-<li><p>In a <code>test_that</code> function, what is the difference between <code>expect_equal</code> and <code>expect_error</code>?</p></li>
-<li><p>Which of the following files should you <strong>never</strong> open and edit by hand, instead of generating changes automatically during documentation or with a <code>usethis</code> function? <em>(Select all that apply.)</em></p></li>
-</ol>
-<ol type="a">
-<li><code>DESCRIPTION</code></li>
-<li><code>NAMESPACE</code></li>
-<li><code>README.Rmd</code></li>
-<li>Any <code>.R</code> source file in the <code>R/</code> folder.</li>
-<li>Any <code>.md</code> documentation file in the <code>man/</code> folder</li>
-<li>Any <code>test-*.R</code> file in the <code>tests/testthat/</code> folder</li>
-</ol>
-</div>
-</div>
+</header><section id="part-one-a-basic-package" class="level2"><h2 class="anchored" data-anchor-id="part-one-a-basic-package">Part One: A basic package</h2>
+<p>Return to <a href="https://r-pkgs.org/whole-game.html">R Packages Chapter 1 - The Whole Game</a>, but this time, instead of only reading through, follow the steps in the chapter to actually build your own copy of the `regexcite`` package.</p>
+<p><strong>For full credit, you must <em>commit</em> your code frequently throughout this process, so that it is clear you did not simply copy the complete package.</strong></p>
+</section><section id="part-two-adding-to-the-package" class="level2"><h2 class="anchored" data-anchor-id="part-two-adding-to-the-package">Part Two: Adding to the package</h2>
+<p>Once your package is loaded, run the following code:</p>
+<p>You will see that this ran a few unit tests, but they all failed, because they tested functions that do not exist!</p>
+<p>Visit <a href="">the source code</a> for these unit tests, and use this as a reference as you write the new functions into your <code>regexcite`` package.  Make sure to properly document these new functions using</code>roxygen2` comments.</p>
+<p>Once your package passes all unit tests, make sure everything is pushed to GitHub, and turn in the GitHub URL.</p>
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
@@ -1050,12 +794,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../unit-3.html" class="pagination-link" aria-label="Unit 3">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Unit 3</span>
+      <a href="../unit-3/unit-testing.qmd" class="pagination-link" aria-label="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../unit-3/unit-testing.qmd" class="pagination-link" aria-label="">
+      <a href="../unit-3/debugging.qmd" class="pagination-link" aria-label="">
         <span class="nav-page-text"></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1067,7 +811,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-3/package-structure.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/practice-activities/week-8.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
 <li class="nav-item">

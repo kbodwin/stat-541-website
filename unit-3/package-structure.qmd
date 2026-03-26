@@ -273,7 +273,7 @@ d. It would fail because
 ::: {.callout-required-reading}
 [R Packages Chapter 1 - The Whole Game](https://r-pkgs.org/whole-game.html)
 
-*You may want to follow along yourself with the steps in this chapter - it will give you a head start on the Practice Activity this week!*
+*For now, just read through this chapter and do your best to figure out the check-in questions below.  Your Practice Activity this week will be to actually follow along with the steps in this chapter and create a working package - so you are welcome to get a head start if you wish!*
 :::
 
 

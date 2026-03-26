@@ -2178,7 +2178,7 @@
     "href": "unit-3/package-structure.html#package-creation-from-scratch",
     "title": "R Packages",
     "section": "Package Creation From Scratch",
-    "text": "Package Creation From Scratch\n\n\n\n\n\n\nRequired-readingRequired Reading\n\n\n\nR Packages Chapter 1 - The Whole Game\nYou may want to follow along yourself with the steps in this chapter - it will give you a head start on the Practice Activity this week!\n\n\n\n\n\n\n\n\nImportantCheck-In: Package Workflow\n\n\n\n\nMatch the following helper packages to their usage in package creation.\n\n\n\n\nroxygen2\ntestthat\ndevtools\nusethis\n\n\n\n\n\nAutomatically creating and editing package files in the proper format.\nLoading, documenting, and running checks for the package after you make edits.\nCreating small unit tests for the functions in the package.\nCreating function documentation pages from comments in .R files.\n\n\n\n\nIn a test_that function, what is the difference between expect_equal and expect_error?\nWhich of the following files should you never open and edit by hand, instead of generating changes automatically during documentation or with a usethis function? (Select all that apply.)\n\n\nDESCRIPTION\nNAMESPACE\nREADME.Rmd\nAny .R source file in the R/ folder.\nAny .md documentation file in the man/ folder\nAny test-*.R file in the tests/testthat/ folder",
+    "text": "Package Creation From Scratch\n\n\n\n\n\n\nRequired-readingRequired Reading\n\n\n\nR Packages Chapter 1 - The Whole Game\nFor now, just read through this chapter and do your best to figure out the check-in questions below. Your Practice Activity this week will be to actually follow along with the steps in this chapter and create a working package - so you are welcome to get a head start if you wish!\n\n\n\n\n\n\n\n\nImportantCheck-In: Package Workflow\n\n\n\n\nMatch the following helper packages to their usage in package creation.\n\n\n\n\nroxygen2\ntestthat\ndevtools\nusethis\n\n\n\n\n\nAutomatically creating and editing package files in the proper format.\nLoading, documenting, and running checks for the package after you make edits.\nCreating small unit tests for the functions in the package.\nCreating function documentation pages from comments in .R files.\n\n\n\n\nIn a test_that function, what is the difference between expect_equal and expect_error?\nWhich of the following files should you never open and edit by hand, instead of generating changes automatically during documentation or with a usethis function? (Select all that apply.)\n\n\nDESCRIPTION\nNAMESPACE\nREADME.Rmd\nAny .R source file in the R/ folder.\nAny .md documentation file in the man/ folder\nAny test-*.R file in the tests/testthat/ folder",
     "crumbs": [
       "Unit 3 - Package Development",
       "R Packages"
@@ -2193,6 +2193,39 @@
     "crumbs": [
       "Unit 3 - Package Development",
       "Unit 3"
+    ]
+  },
+  {
+    "objectID": "practice-activities/week-8.html",
+    "href": "practice-activities/week-8.html",
+    "title": "Practice Activity 8: A Package from Scratch",
+    "section": "",
+    "text": "Return to R Packages Chapter 1 - The Whole Game, but this time, instead of only reading through, follow the steps in the chapter to actually build your own copy of the `regexcite`` package.\nFor full credit, you must commit your code frequently throughout this process, so that it is clear you did not simply copy the complete package.",
+    "crumbs": [
+      "Unit 3 - Package Development",
+      "Week 8: In-Class Activity"
+    ]
+  },
+  {
+    "objectID": "practice-activities/week-8.html#part-one-a-basic-package",
+    "href": "practice-activities/week-8.html#part-one-a-basic-package",
+    "title": "Practice Activity 8: A Package from Scratch",
+    "section": "",
+    "text": "Return to R Packages Chapter 1 - The Whole Game, but this time, instead of only reading through, follow the steps in the chapter to actually build your own copy of the `regexcite`` package.\nFor full credit, you must commit your code frequently throughout this process, so that it is clear you did not simply copy the complete package.",
+    "crumbs": [
+      "Unit 3 - Package Development",
+      "Week 8: In-Class Activity"
+    ]
+  },
+  {
+    "objectID": "practice-activities/week-8.html#part-two-adding-to-the-package",
+    "href": "practice-activities/week-8.html#part-two-adding-to-the-package",
+    "title": "Practice Activity 8: A Package from Scratch",
+    "section": "Part Two: Adding to the package",
+    "text": "Part Two: Adding to the package\nOnce your package is loaded, run the following code:\nYou will see that this ran a few unit tests, but they all failed, because they tested functions that do not exist!\nVisit the source code for these unit tests, and use this as a reference as you write the new functions into your regexcite`` package.  Make sure to properly document these new functions usingroxygen2` comments.\nOnce your package passes all unit tests, make sure everything is pushed to GitHub, and turn in the GitHub URL.",
+    "crumbs": [
+      "Unit 3 - Package Development",
+      "Week 8: In-Class Activity"
     ]
   }
 ]
