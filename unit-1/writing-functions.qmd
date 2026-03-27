@@ -267,7 +267,7 @@ went wrong?
 :::
 
 ::: {.callout-learn-more}
-We highly recommend watching this video on the debuggin process by Jenny Bryan:
+We highly recommend watching this video on the debugging process by Jenny Bryan:
 
 ::: youtube-video-container
 {{< video https://www.youtube.com/embed/vgYS-F8opgE?si=50_pcvhIl2LkgwJT >}}
@@ -298,6 +298,15 @@ a)  "Debug Once"
 b)  "Debut Gonky"
 c)  "Debugoncé" like "Beyoncé"
 :::
+
+
+---
+# Stat 541
+
+*This content is required for students enrolled in STAT 541 and optional for 
+students enrolled in STAT 431.*
+
+---
 
 # Advanced Details
 
@@ -423,10 +432,6 @@ c. When the function is compiled
 d. Only after all other arguments have been evaluated
 :::
 
-# STAT 541
-
-This content is required for students enrolled in STAT 541 and optional for 
-students enrolled in STAT 431. 
 
 ## Non-Standard Evaluation and Tunnelling
 
