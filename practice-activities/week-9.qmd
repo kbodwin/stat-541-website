@@ -4,13 +4,66 @@ format: html
 ---
 
 Fork the repository `Cal-Poly-Advanced-R/entomology`.  This repository contains 
-a package that is mostly complete and mostly correctly structured, but that has
-10 different small bugs.
+a package that is mostly complete and mostly correctly structured, that performs 
+some simple analyses and summaries on a dataset concerning a few species of beetle.[^1]
 
-Track down all of these bugs, using whatever unit testing and debugging techniques 
-you prefer.  For each bug, you must **document** how you discovered it; for example,
-by showing the unit testing code you ran to find it, by taking a screenshot of your
-window during the `debugonce()` process, or similar.
+Unfortunately, this package contain **many bugs**, and your job is to track them
+down!  It also is missing any `@example` documentation or `testthat` tests to
+help identify the issues.
 
+To make things a little easier, there is exactly one problem in each of the nine
+different `.R` files (not counting `package.R`, which is just a formality).  There
+is also one extra bonus problem in the `summary.R` file, that you are not required
+to find but should keep an eye out for.  
+
+## Your task
+
+* State, in your own words, what the function is intended to do and why a data
+analyst might use it.
+
+* Write a small *unit tests* for the function.  It is up to you if you
+write these as full `testthat` package tests, or if you simply run small examples
+locally.  Be sure to establish what output you *expect* from these tests **before**
+you actually run them.
+
+* If the unit test returns what you expected - you'll need to try a different one
+to find the problem!
+
+* If the unit test does *not* return what you expected, you found a bug!  Use
+whatever debugging techniques you prefer to identify exactly what is going wrong.
+
+Turn in your list of bugs, and the unit tests that you ran to identify them. 
 You do **not** need to fix the bugs, although you may choose to if that helps you
 test them and make sure you understand what went wrong.
+
+**STAT 541 Only**: You must write your unit tests in `testthat` style, using
+functions like `expect_equal` and `expect_error`.
+
+
+#### Hints and Advice
+
+* Most of the errors in this package are *not* computational; instead, they are
+related to syntax problems, inconsistent object types and structures, etc.
+
+* The bugs are all in the code itself, not in the descriptions or documentation
+of the functions.
+
+* Don't overlook the power of "rubber duck debugging" - describe what the function
+does, step by step, to a partner and see if you notice anything amiss as you
+say it out loud.
+
+* Don't necessarily work through the `.R` files in the order they appear.  Many 
+of these functions depend on each other, the bug in one file might cause another 
+to not work properly.  Try to identify which functions get  called first, and fix 
+those, and then move up from there.
+
+* Debugging is hard!  If you find yourself stumped and frustrated, take a break
+and come back later with fresh eyes.  And don't forget to work together with
+you peers - don't just split the list in half, discuss *each* bug together
+to track them down faster.
+
+
+[^1]: Hand, D.J., et al. (1994) *A Handbook of Small Data Sets*, London: Chapman & Hall, 254-255.
+
+
+
