@@ -1,0 +1,37 @@
+---
+title: "Testing Package Code"
+---
+
+
+## The Art of Unit Tests
+
+*Would you get into an airplane that nobody had ever flown before?  What if it 
+had been flown, but only under perfect conditions - blue skies, no wind - but not
+in bad weather?  What if it had only ever been flown with no passengers or cargo inside?*
+
+Just like with any other technology, when you build a new package, you need to
+test it out before you send it off to be used in real applications.  The way to
+test out functions is by writing **unit tests** that make sure the function 
+behaves how you expect - both in ideal settings, and when there is a problem!
+
+Last week, you saw some examples of unit tests in the `testthat` package structure.
+For now, we'll take a step back from that formal structure and simply think
+about how to write quick code to check your function.
+
+
+
+
+
+## Testing packages with `testthat`
+
+::: required-reading
+[R Packages Chapter 13 - Testing Basics](https://r-pkgs.org/testing-basics.html)
+:::
+
+::: stat541
+:::
+
+### Test Coverage
+
+
+
