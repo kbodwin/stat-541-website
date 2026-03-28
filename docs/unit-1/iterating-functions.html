@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.8.24">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Iterating Over Functions – Advanced R</title>
 <style>
@@ -71,9 +71,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -285,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
 <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
@@ -301,7 +301,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">STAT 331 Review</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../unit-1.html" aria-current="page"> 
+    <a class="nav-link" href="../unit-1.html"> 
 <span class="menu-text">Unit 1 - Complex Analyses</span></a>
   </li>  
   <li class="nav-item">
@@ -339,7 +339,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -665,23 +669,23 @@ NULL</code></pre>
 <p>Let’s see how these two functions compare in their run time:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="skeayskaau" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#skeayskaau table {
+<div id="leonezjaxt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#leonezjaxt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#skeayskaau thead, #skeayskaau tbody, #skeayskaau tfoot, #skeayskaau tr, #skeayskaau td, #skeayskaau th {
+#leonezjaxt thead, #leonezjaxt tbody, #leonezjaxt tfoot, #leonezjaxt tr, #leonezjaxt td, #leonezjaxt th {
   border-style: none;
 }
 
-#skeayskaau p {
+#leonezjaxt p {
   margin: 0;
   padding: 0;
 }
 
-#skeayskaau .gt_table {
+#leonezjaxt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -707,12 +711,12 @@ NULL</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#skeayskaau .gt_caption {
+#leonezjaxt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#skeayskaau .gt_title {
+#leonezjaxt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -724,7 +728,7 @@ NULL</code></pre>
   border-bottom-width: 0;
 }
 
-#skeayskaau .gt_subtitle {
+#leonezjaxt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -736,7 +740,7 @@ NULL</code></pre>
   border-top-width: 0;
 }
 
-#skeayskaau .gt_heading {
+#leonezjaxt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -748,13 +752,13 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#skeayskaau .gt_bottom_border {
+#leonezjaxt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#skeayskaau .gt_col_headings {
+#leonezjaxt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -769,7 +773,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#skeayskaau .gt_col_heading {
+#leonezjaxt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -789,7 +793,7 @@ NULL</code></pre>
   overflow-x: hidden;
 }
 
-#skeayskaau .gt_column_spanner_outer {
+#leonezjaxt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -801,15 +805,15 @@ NULL</code></pre>
   padding-right: 4px;
 }
 
-#skeayskaau .gt_column_spanner_outer:first-child {
+#leonezjaxt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#skeayskaau .gt_column_spanner_outer:last-child {
+#leonezjaxt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#skeayskaau .gt_column_spanner {
+#leonezjaxt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -821,11 +825,11 @@ NULL</code></pre>
   width: 100%;
 }
 
-#skeayskaau .gt_spanner_row {
+#leonezjaxt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#skeayskaau .gt_group_heading {
+#leonezjaxt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -851,7 +855,7 @@ NULL</code></pre>
   text-align: left;
 }
 
-#skeayskaau .gt_empty_group_heading {
+#leonezjaxt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -866,15 +870,15 @@ NULL</code></pre>
   vertical-align: middle;
 }
 
-#skeayskaau .gt_from_md > :first-child {
+#leonezjaxt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#skeayskaau .gt_from_md > :last-child {
+#leonezjaxt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#skeayskaau .gt_row {
+#leonezjaxt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -893,7 +897,7 @@ NULL</code></pre>
   overflow-x: hidden;
 }
 
-#skeayskaau .gt_stub {
+#leonezjaxt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -906,7 +910,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-#skeayskaau .gt_stub_row_group {
+#leonezjaxt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -920,15 +924,15 @@ NULL</code></pre>
   vertical-align: top;
 }
 
-#skeayskaau .gt_row_group_first td {
+#leonezjaxt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#skeayskaau .gt_row_group_first th {
+#leonezjaxt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#skeayskaau .gt_summary_row {
+#leonezjaxt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -938,16 +942,16 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-#skeayskaau .gt_first_summary_row {
+#leonezjaxt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#skeayskaau .gt_first_summary_row.thick {
+#leonezjaxt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#skeayskaau .gt_last_summary_row {
+#leonezjaxt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -957,7 +961,7 @@ NULL</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#skeayskaau .gt_grand_summary_row {
+#leonezjaxt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -967,7 +971,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-#skeayskaau .gt_first_grand_summary_row {
+#leonezjaxt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -977,7 +981,7 @@ NULL</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#skeayskaau .gt_last_grand_summary_row_top {
+#leonezjaxt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -987,11 +991,11 @@ NULL</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#skeayskaau .gt_striped {
+#leonezjaxt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#skeayskaau .gt_table_body {
+#leonezjaxt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1000,7 +1004,7 @@ NULL</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#skeayskaau .gt_footnotes {
+#leonezjaxt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1014,7 +1018,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#skeayskaau .gt_footnote {
+#leonezjaxt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1023,7 +1027,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-#skeayskaau .gt_sourcenotes {
+#leonezjaxt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1037,7 +1041,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#skeayskaau .gt_sourcenote {
+#leonezjaxt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1045,72 +1049,72 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-#skeayskaau .gt_left {
+#leonezjaxt .gt_left {
   text-align: left;
 }
 
-#skeayskaau .gt_center {
+#leonezjaxt .gt_center {
   text-align: center;
 }
 
-#skeayskaau .gt_right {
+#leonezjaxt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#skeayskaau .gt_font_normal {
+#leonezjaxt .gt_font_normal {
   font-weight: normal;
 }
 
-#skeayskaau .gt_font_bold {
+#leonezjaxt .gt_font_bold {
   font-weight: bold;
 }
 
-#skeayskaau .gt_font_italic {
+#leonezjaxt .gt_font_italic {
   font-style: italic;
 }
 
-#skeayskaau .gt_super {
+#leonezjaxt .gt_super {
   font-size: 65%;
 }
 
-#skeayskaau .gt_footnote_marks {
+#leonezjaxt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#skeayskaau .gt_asterisk {
+#leonezjaxt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#skeayskaau .gt_indent_1 {
+#leonezjaxt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#skeayskaau .gt_indent_2 {
+#leonezjaxt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#skeayskaau .gt_indent_3 {
+#leonezjaxt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#skeayskaau .gt_indent_4 {
+#leonezjaxt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#skeayskaau .gt_indent_5 {
+#leonezjaxt .gt_indent_5 {
   text-indent: 25px;
 }
 
-#skeayskaau .katex-display {
+#leonezjaxt .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#skeayskaau div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#leonezjaxt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1123,23 +1127,23 @@ NULL</code></pre>
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Statistic">min</td>
-<td class="gt_row gt_left" headers="do_stuff_allocate">18,001 µs</td>
-<td class="gt_row gt_left" headers="do_stuff_tackon">532,251 µs</td>
+<td class="gt_row gt_left" headers="do_stuff_allocate">18,292 µs</td>
+<td class="gt_row gt_left" headers="do_stuff_tackon">506,709 µs</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Statistic">mean</td>
-<td class="gt_row gt_left" headers="do_stuff_allocate">37,664 µs</td>
-<td class="gt_row gt_left" headers="do_stuff_tackon">856,353 µs</td>
+<td class="gt_row gt_left" headers="do_stuff_allocate">34,951 µs</td>
+<td class="gt_row gt_left" headers="do_stuff_tackon">1,142,211 µs</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Statistic">median</td>
-<td class="gt_row gt_left" headers="do_stuff_allocate">21,188 µs</td>
-<td class="gt_row gt_left" headers="do_stuff_tackon">604,022 µs</td>
+<td class="gt_row gt_left" headers="do_stuff_allocate">20,814 µs</td>
+<td class="gt_row gt_left" headers="do_stuff_tackon">848,709 µs</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Statistic">max</td>
-<td class="gt_row gt_left" headers="do_stuff_allocate">1,552,042 µs</td>
-<td class="gt_row gt_left" headers="do_stuff_tackon">5,884,418 µs</td>
+<td class="gt_row gt_left" headers="do_stuff_allocate">1,198,834 µs</td>
+<td class="gt_row gt_left" headers="do_stuff_tackon">6,837,126 µs</td>
 </tr>
 </tbody>
 </table>
@@ -1378,8 +1382,7 @@ $z
 <span>    .f <span class="op">=</span> <span class="op">~</span> <span class="fu">str_detect</span><span class="op">(</span><span class="va">.x</span>, <span class="va">.y</span><span class="op">)</span></span>
 <span>    <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error:
-! object 'string' not found</code></pre>
+<pre><code>Error: object 'string' not found</code></pre>
 </div>
 </div>
 <p>This error is because the pipe operator is inputting the entire <code>string_data</code> dataframe into the first argument of <code>map2_lgl()</code> (<code>.x</code>). Looking at the documentation for <code>map2()</code>, the <code>.x</code> and <code>.y</code> arguments should be specified as a pair of vectors, not dataframes.</p>

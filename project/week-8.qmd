@@ -1,0 +1,40 @@
+---
+title: "Project Checkpoint 8"
+---
+
+This week, your goal is to create a minimal working package, that we will build
+on in the remainder of the course until you have a fully fleshed out data analysis
+package!
+
+The first thing you'll need is a name for your package.  Get creative with this!
+There are a few common package styles:
+
+* "old school" R tradition is to use a capital R in the package, e.g. `RMySQL`
+
+* In the early tidyverse days, packages were all lowercase and ended in an r, 
+such as `dplyr` or `tidyr`.
+
+* More recently, folks often go for one-word puns that describe the package
+purpose, like `lubridate` or `forcats`.
+
+You can do whatever you'd like with this - as long as the package has no special
+characters, does not start with a number, and relates in some way to the actual
+functionality or data context of the package.
+
+
+Once you have a name, 
+
+1. follow the steps from the Week 8 Practice Activity to produce
+a package directory and publish it on GitHub.  
+
+2. Update the `DESCRIPTION` file.
+
+3. Write a function called `load_data` to load your original dataset into the 
+package from the Tidy Tuesday link or using the `tidytuesdayR` package.
+
+4. Write two functions for analyzing, visualizing, or summarizing your data.
+
+
+The three functions in this starter package must use `roxygen2` documentation; 
+however, you do **not** have to write any `testthat` tests at this stage.
+

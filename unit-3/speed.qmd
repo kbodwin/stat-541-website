@@ -2,24 +2,29 @@
 title: "Code Speed"
 ---
 
-Fortunately, we stand on the shoulders of giants. Many skilled computer
-scientists have put a lot of time and effort into writing R functions that run
-as fast as possible. 
+Fortunately, we stand on the shoulders of giants. Many skilled computer scientists have put a lot of time and effort into writing R functions that run as fast as possible.
 
-To speed up the code, without deep knowledge of computer algorithms and inner
-workings, you can sometimes come up with clever ways to avoid these pitfalls.
+To speed up the code, without deep knowledge of computer algorithms and inner workings, you can sometimes come up with clever ways to avoid these pitfalls.
 
-First, though: as you start thinking about writing faster code, you'll need a
-way to check whether your improvements actually sped up the code.
-
-#### 📖 Required Reading: [The tictoc and microbenchmark packages](https://www.jumpingrivers.com/blog/timing-in-r/)
-
-#### 📖 Required Reading: [The bench package](https://www.tidyverse.org/blog/2018/06/bench-1.0.1/)
-
-#### 📖 Required Reading: [`lobstr::obj_size()`](https://lobstr.r-lib.org/reference/obj_size.html)
+First, though: as you start thinking about writing faster code, you'll need a way to check whether your improvements actually sped up the code.
 
 
-# Tip 3: Use faster existing functions
+::: {.callout-required-reading}
+[The tictoc and microbenchmark packages](https://www.jumpingrivers.com/blog/timing-in-r/)
+:::
+
+
+::: {.callout-required-reading}
+[The bench package](https://www.tidyverse.org/blog/2018/06/bench-1.0.1/)
+:::
+
+
+::: {.callout-required-reading}
+*Stat 541 Only*
+[`lobstr::obj_size()`](https://lobstr.r-lib.org/reference/obj_size.html)
+:::
+
+# Use faster existing functions
 
 Because R has so many packages, there are often many functions to perform the same task. Not all functions are created equal!
 
@@ -29,7 +34,10 @@ For speeding up work with data frames, no package is better than `data.table`!
 
 {{< video https://www.youtube.com/embed/uueVddWwbkk >}}
 
-#### 📖 Required Reading: [data.table cheatsheet](https://pbs.twimg.com/media/Dwoq0ZQXQAE5lJt.jpg)
+
+::: {.callout-required-reading}
+[data.table cheatsheet](https://pbs.twimg.com/media/Dwoq0ZQXQAE5lJt.jpg)
+:::
 
 ::: callout-important
 # Check-in: Efficiency
