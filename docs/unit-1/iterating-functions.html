@@ -76,9 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-235111c28925c9e86c962b253a60587d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5f858a84010510139e49c405efe9b486.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/flourish-0.0.1/injectFlourishes.js"></script>
 <script src="../site_libs/quarto-contrib/flourish-0.0.1/flourish.js"></script><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -444,14 +444,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a href="#multiple-inputs" id="toc-multiple-inputs" class="nav-link" data-scroll-target="#multiple-inputs">Multiple Inputs</a>
   <ul class="collapse">
 <li><a href="#two-inputs" id="toc-two-inputs" class="nav-link" data-scroll-target="#two-inputs">Two Inputs</a></li>
+  <li><a href="#three-or-more-inputs" id="toc-three-or-more-inputs" class="nav-link" data-scroll-target="#three-or-more-inputs">Three or More Inputs</a></li>
   </ul>
 </li>
-  </ul>
-</li>
-  <li>
-<a href="#stat-541" id="toc-stat-541" class="nav-link" data-scroll-target="#stat-541">STAT 541</a>
-  <ul class="collapse">
-<li><a href="#three-or-more-inputs" id="toc-three-or-more-inputs" class="nav-link" data-scroll-target="#three-or-more-inputs">Three or More Inputs</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-1/iterating-functions.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
@@ -648,6 +643,9 @@ NULL</code></pre>
 </div>
 </div>
 </section><section id="initial-object-size" class="level2"><h2 class="anchored" data-anchor-id="initial-object-size">Initial Object Size</h2>
+<div class="stat541">
+
+</div>
 <p>Notice that we initialized <code>char_storage</code>, <code>num_storage</code>, and <code>list_storage</code> to all be the same length as our iteration vector (<code>seq_len(3)</code>). Technically, this wasn’t necessary. We could have been much lazier when we initialized these objects: <code>list_storage &lt;- NA</code>. Why didn’t we do this?</p>
 <p>When you don’t initialize an object as a specific size (e.g., <code>length = 3</code>) then at every stage of the <code>for()</code> loop R needs to append a new index to that object. This <strong>really</strong> slows down your <code>for()</code> loop!</p>
 <p>Here is a comparison of the run time between two functions that both store the index of the iteration. The first function (<code>do_stuff_allocate</code>) sets the initial object size (<code>vector(length = reps)</code>) before the loop is run. The second function (<code>do_stuff_tackon</code>) does not set an initial object size and instead initializes <code>results</code> as a vector of length 1 (<code>results &lt;- NA</code>).</p>
@@ -671,23 +669,23 @@ NULL</code></pre>
 <p>Let’s see how these two functions compare in their run time:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="irhupjibnm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#irhupjibnm table {
+<div id="clbpzsylcw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#clbpzsylcw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#irhupjibnm thead, #irhupjibnm tbody, #irhupjibnm tfoot, #irhupjibnm tr, #irhupjibnm td, #irhupjibnm th {
+#clbpzsylcw thead, #clbpzsylcw tbody, #clbpzsylcw tfoot, #clbpzsylcw tr, #clbpzsylcw td, #clbpzsylcw th {
   border-style: none;
 }
 
-#irhupjibnm p {
+#clbpzsylcw p {
   margin: 0;
   padding: 0;
 }
 
-#irhupjibnm .gt_table {
+#clbpzsylcw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -713,12 +711,12 @@ NULL</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#irhupjibnm .gt_caption {
+#clbpzsylcw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#irhupjibnm .gt_title {
+#clbpzsylcw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -730,7 +728,7 @@ NULL</code></pre>
   border-bottom-width: 0;
 }
 
-#irhupjibnm .gt_subtitle {
+#clbpzsylcw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -742,7 +740,7 @@ NULL</code></pre>
   border-top-width: 0;
 }
 
-#irhupjibnm .gt_heading {
+#clbpzsylcw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -754,13 +752,13 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#irhupjibnm .gt_bottom_border {
+#clbpzsylcw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#irhupjibnm .gt_col_headings {
+#clbpzsylcw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -775,7 +773,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#irhupjibnm .gt_col_heading {
+#clbpzsylcw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -795,7 +793,7 @@ NULL</code></pre>
   overflow-x: hidden;
 }
 
-#irhupjibnm .gt_column_spanner_outer {
+#clbpzsylcw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -807,15 +805,15 @@ NULL</code></pre>
   padding-right: 4px;
 }
 
-#irhupjibnm .gt_column_spanner_outer:first-child {
+#clbpzsylcw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#irhupjibnm .gt_column_spanner_outer:last-child {
+#clbpzsylcw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#irhupjibnm .gt_column_spanner {
+#clbpzsylcw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -827,11 +825,11 @@ NULL</code></pre>
   width: 100%;
 }
 
-#irhupjibnm .gt_spanner_row {
+#clbpzsylcw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#irhupjibnm .gt_group_heading {
+#clbpzsylcw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -857,7 +855,7 @@ NULL</code></pre>
   text-align: left;
 }
 
-#irhupjibnm .gt_empty_group_heading {
+#clbpzsylcw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -872,15 +870,15 @@ NULL</code></pre>
   vertical-align: middle;
 }
 
-#irhupjibnm .gt_from_md > :first-child {
+#clbpzsylcw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#irhupjibnm .gt_from_md > :last-child {
+#clbpzsylcw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#irhupjibnm .gt_row {
+#clbpzsylcw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -899,7 +897,7 @@ NULL</code></pre>
   overflow-x: hidden;
 }
 
-#irhupjibnm .gt_stub {
+#clbpzsylcw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -912,7 +910,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-#irhupjibnm .gt_stub_row_group {
+#clbpzsylcw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -926,15 +924,15 @@ NULL</code></pre>
   vertical-align: top;
 }
 
-#irhupjibnm .gt_row_group_first td {
+#clbpzsylcw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#irhupjibnm .gt_row_group_first th {
+#clbpzsylcw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#irhupjibnm .gt_summary_row {
+#clbpzsylcw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -944,16 +942,16 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-#irhupjibnm .gt_first_summary_row {
+#clbpzsylcw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#irhupjibnm .gt_first_summary_row.thick {
+#clbpzsylcw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#irhupjibnm .gt_last_summary_row {
+#clbpzsylcw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -963,7 +961,7 @@ NULL</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#irhupjibnm .gt_grand_summary_row {
+#clbpzsylcw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -973,7 +971,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-#irhupjibnm .gt_first_grand_summary_row {
+#clbpzsylcw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -983,7 +981,7 @@ NULL</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#irhupjibnm .gt_last_grand_summary_row_top {
+#clbpzsylcw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -993,11 +991,11 @@ NULL</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#irhupjibnm .gt_striped {
+#clbpzsylcw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#irhupjibnm .gt_table_body {
+#clbpzsylcw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1006,7 +1004,7 @@ NULL</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#irhupjibnm .gt_footnotes {
+#clbpzsylcw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1020,7 +1018,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#irhupjibnm .gt_footnote {
+#clbpzsylcw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1029,7 +1027,7 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-#irhupjibnm .gt_sourcenotes {
+#clbpzsylcw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1043,7 +1041,7 @@ NULL</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#irhupjibnm .gt_sourcenote {
+#clbpzsylcw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1051,72 +1049,72 @@ NULL</code></pre>
   padding-right: 5px;
 }
 
-#irhupjibnm .gt_left {
+#clbpzsylcw .gt_left {
   text-align: left;
 }
 
-#irhupjibnm .gt_center {
+#clbpzsylcw .gt_center {
   text-align: center;
 }
 
-#irhupjibnm .gt_right {
+#clbpzsylcw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#irhupjibnm .gt_font_normal {
+#clbpzsylcw .gt_font_normal {
   font-weight: normal;
 }
 
-#irhupjibnm .gt_font_bold {
+#clbpzsylcw .gt_font_bold {
   font-weight: bold;
 }
 
-#irhupjibnm .gt_font_italic {
+#clbpzsylcw .gt_font_italic {
   font-style: italic;
 }
 
-#irhupjibnm .gt_super {
+#clbpzsylcw .gt_super {
   font-size: 65%;
 }
 
-#irhupjibnm .gt_footnote_marks {
+#clbpzsylcw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#irhupjibnm .gt_asterisk {
+#clbpzsylcw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#irhupjibnm .gt_indent_1 {
+#clbpzsylcw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#irhupjibnm .gt_indent_2 {
+#clbpzsylcw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#irhupjibnm .gt_indent_3 {
+#clbpzsylcw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#irhupjibnm .gt_indent_4 {
+#clbpzsylcw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#irhupjibnm .gt_indent_5 {
+#clbpzsylcw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#irhupjibnm .katex-display {
+#clbpzsylcw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#irhupjibnm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#clbpzsylcw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1129,23 +1127,23 @@ NULL</code></pre>
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Statistic">min</td>
-<td class="gt_row gt_left" headers="do_stuff_allocate">19,584 µs</td>
-<td class="gt_row gt_left" headers="do_stuff_tackon">533,626 µs</td>
+<td class="gt_row gt_left" headers="do_stuff_allocate">18,126 µs</td>
+<td class="gt_row gt_left" headers="do_stuff_tackon">475,834 µs</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Statistic">mean</td>
-<td class="gt_row gt_left" headers="do_stuff_allocate">34,368 µs</td>
-<td class="gt_row gt_left" headers="do_stuff_tackon">942,690 µs</td>
+<td class="gt_row gt_left" headers="do_stuff_allocate">36,283 µs</td>
+<td class="gt_row gt_left" headers="do_stuff_tackon">967,621 µs</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Statistic">median</td>
-<td class="gt_row gt_left" headers="do_stuff_allocate">21,709 µs</td>
-<td class="gt_row gt_left" headers="do_stuff_tackon">846,354 µs</td>
+<td class="gt_row gt_left" headers="do_stuff_allocate">20,688 µs</td>
+<td class="gt_row gt_left" headers="do_stuff_tackon">827,314 µs</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Statistic">max</td>
-<td class="gt_row gt_left" headers="do_stuff_allocate">1,235,375 µs</td>
-<td class="gt_row gt_left" headers="do_stuff_tackon">8,132,667 µs</td>
+<td class="gt_row gt_left" headers="do_stuff_allocate">1,541,959 µs</td>
+<td class="gt_row gt_left" headers="do_stuff_tackon">9,393,209 µs</td>
 </tr>
 </tbody>
 </table>
@@ -1406,9 +1404,10 @@ $z
 3 cherry h       H           TRUE </code></pre>
 </div>
 </div>
-</section></section></section><section id="stat-541" class="level1"><h1>STAT 541</h1>
-<p>This content is required for students enrolled in STAT 541 and optional for students enrolled in STAT 431.</p>
-<section id="three-or-more-inputs" class="level3"><h3 class="anchored" data-anchor-id="three-or-more-inputs">Three or More Inputs</h3>
+<div class="stat541">
+
+</div>
+</section><section id="three-or-more-inputs" class="level3"><h3 class="anchored" data-anchor-id="three-or-more-inputs">Three or More Inputs</h3>
 <p>Now that we’ve conquered two inputs, let’s try three! The <code>str_replace_all()</code> function takes three inputs: a <code>string</code>, a <code>pattern</code> to look for, and a <code>replacement</code> pattern (to use when the <code>pattern</code> is found).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb61"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">string_data</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1498,7 +1497,7 @@ $z
 </div>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
