@@ -2134,7 +2134,7 @@
     "href": "unit-2/quarto-dashboard-dynamic.html",
     "title": "Quarto Dashboards, Part 2",
     "section": "",
-    "text": "Now that we’ve acquired some skills for making dashboards, let’s spice them up a bit! This week, we’re going to add interactive content to our dashboards!\nThis week is different from the previous weeks in that you get to choose which tool you want to explore when creating interactive content on your dashboard. There are two options:\n\nShiny\nQuarto Live (webR and Observable JavaScript)\n\nEither tool will allow you to make interactive content, but the way that you go about making the content differs (pretty substantially). Since you may not have heard about or explored either of these tools I would strongly recommend poking around the resources below before making your decision!\n\nMaking Interactive Content with Shiny\nQuick vignette: https://quarto.org/docs/dashboards/interactivity/shiny-r.html\nExample Shiny dashboard: https://jjallaire.shinyapps.io/penguins-dashboard/",
+    "text": "Now that we’ve acquired some skills for making dashboards, let’s spice them up a bit! This week, we’re going to add interactive content to our dashboards!\nHistorically, if you wanted to make a Shiny dashboard, you would have created a .R file containing the UI and server interfaces. In January 2024, Posit released Quarto 1.4 for creating layouts with interactive components. While the ideas are still the same—UI and server interfaces—we can now create a dashboard in a familiar Quarto context!",
     "crumbs": [
       "Unit 2 - Professional Deliverables",
       "Quarto Dashboards, Part 2"
@@ -2167,5 +2167,49 @@
     "title": "Advanced Statistical Computing",
     "section": "Summary of Grade Calculations",
     "text": "Summary of Grade Calculations"
+  },
+  {
+    "objectID": "unit-2/quarto-dashboard-dynamic.html#what-is-shiny",
+    "href": "unit-2/quarto-dashboard-dynamic.html#what-is-shiny",
+    "title": "Quarto Dashboards, Part 2",
+    "section": "What is Shiny?",
+    "text": "What is Shiny?\nLet’s start with a broad overview of what Shiny is. Please skim over “Getting Started” page for the Shiny R package.",
+    "crumbs": [
+      "Unit 2 - Professional Deliverables",
+      "Quarto Dashboards, Part 2"
+    ]
+  },
+  {
+    "objectID": "unit-2/quarto-dashboard-dynamic.html#how-does-this-translate-into-quarto",
+    "href": "unit-2/quarto-dashboard-dynamic.html#how-does-this-translate-into-quarto",
+    "title": "Quarto Dashboards, Part 2",
+    "section": "How does this translate into Quarto?",
+    "text": "How does this translate into Quarto?\nAs we said, the document layout of a Shiny “app” is different from a Quarto dashboard with Shiny. So, let’s see how these ideas translate. Please skim over introduction page for Dashboards with Shiny.\n\n\n\n\n\n\nCheck-inCheck In\n\n\n\n\nWhat gets added to the YAML to move from a static Quarto dashboard to a Shiny dashboard?\n\n\n\nWhat are the three execution contexts that can be used? Meaning, what are the three options that can come after |# context: in a code chunk? Hint: Two are included on this page, and you can find the third on this page.\n\n\ncontext: setup\ncontext: packages\ncontext: server\ncontext: ui\ncontext: render\ncontext: data\n\n\nIf no |# context: is provided in a code chunk, what context does Quarto assume the code chunk should have?\n\n\nserver\nsetup\ndata\nNone of the above\n\n\nLet’s unpack the three components to selectInput('x', 'X', names(dataset)).\n\n\nThe first component ('x') represents the [choices / variable name / label] that stores the value to be given to the renderPlot({}) function as input$x.\nThe second component ('X') represents the [choices / variable name / label] displayed on the dashboard.\nThe third component (names(dataset)) represents the [choices / variable name / label] displayed in the dropdown menu.\n\n\nWhen a dataset is reactive, how do you pass the data into ggplot()?\n\n\n\nWhen a dataset is reactive (changes based on the user input), what function would you use to create a plot?\n\n\nplot({})\nPlot({})\nrenderplot({})\nrenderPlot({})\n\n\nMatch each component to its role in displaying a table from a reactive dataset.\n\n\n\n\nrenderTable({})\noutput$data\ntableOutput('data')\n\n\n\n\n\nDisplays the table in the dashboard.\nStores the result of the table.\nCreates the table from the reactive data.",
+    "crumbs": [
+      "Unit 2 - Professional Deliverables",
+      "Quarto Dashboards, Part 2"
+    ]
+  },
+  {
+    "objectID": "unit-2/quarto-dashboard-dynamic.html#where-should-i-put-my-inputs",
+    "href": "unit-2/quarto-dashboard-dynamic.html#where-should-i-put-my-inputs",
+    "title": "Quarto Dashboards, Part 2",
+    "section": "Where should I put my inputs?",
+    "text": "Where should I put my inputs?\nThe example we just walked through had a sidebar (on the left) for users to control the dashboard. This isn’t the only place these controls can go!\nLet’s read this resource on dashboard input layout.\n\n\n\n\n\n\nCheck-inCheck In\n\n\n\n\nTo create a sidebar, you would use ____. To create a toolbar, you would use ____.\nA sidebar clearly goes on the side, but where does a toolbar go? Select all that apply.\n\n\nOn the top of the page.\nOn the bottom of the page.\nOn the top of the card.\nOn the bottom of the card.\n\n\n[True / False] Instead of the input taking up the entire top or side of the dashboard, you could place the input into a specific card.",
+    "crumbs": [
+      "Unit 2 - Professional Deliverables",
+      "Quarto Dashboards, Part 2"
+    ]
+  },
+  {
+    "objectID": "unit-2/quarto-dashboard-dynamic.html#where-can-i-learn-more",
+    "href": "unit-2/quarto-dashboard-dynamic.html#where-can-i-learn-more",
+    "title": "Quarto Dashboards, Part 2",
+    "section": "Where can I learn more?",
+    "text": "Where can I learn more?\nThe pages we’ve read focused on this dashboard and its source code. Let’s poke around another example dashboard:\n\nPalmer Penguins Dashboard\n\nSource Code",
+    "crumbs": [
+      "Unit 2 - Professional Deliverables",
+      "Quarto Dashboards, Part 2"
+    ]
   }
 ]

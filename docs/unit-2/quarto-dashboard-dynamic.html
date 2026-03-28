@@ -375,7 +375,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#making-interactive-content-with-shiny" id="toc-making-interactive-content-with-shiny" class="nav-link active" data-scroll-target="#making-interactive-content-with-shiny">Making Interactive Content with Shiny</a></li>
+  <li><a href="#what-is-shiny" id="toc-what-is-shiny" class="nav-link active" data-scroll-target="#what-is-shiny">What is Shiny?</a></li>
+  <li><a href="#how-does-this-translate-into-quarto" id="toc-how-does-this-translate-into-quarto" class="nav-link" data-scroll-target="#how-does-this-translate-into-quarto">How does this translate into Quarto?</a></li>
+  <li><a href="#where-should-i-put-my-inputs" id="toc-where-should-i-put-my-inputs" class="nav-link" data-scroll-target="#where-should-i-put-my-inputs">Where should I put my inputs?</a></li>
+  <li><a href="#where-can-i-learn-more" id="toc-where-can-i-learn-more" class="nav-link" data-scroll-target="#where-can-i-learn-more">Where can I learn more?</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-2/quarto-dashboard-dynamic.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -403,16 +406,131 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Now that we’ve acquired some skills for making dashboards, let’s spice them up a bit! This week, we’re going to add interactive content to our dashboards!</p>
-<p>This week is different from the previous weeks in that you get to choose which tool you want to explore when creating interactive content on your dashboard. There are two options:</p>
+<p>Historically, if you wanted to make a Shiny dashboard, you would have created a <code>.R</code> file containing the UI and server interfaces. In January 2024, Posit released Quarto 1.4 for creating layouts with interactive components. While the ideas are still the same—UI and server interfaces—we can now create a dashboard in a familiar Quarto context!</p>
+<section id="what-is-shiny" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-shiny">What is Shiny?</h2>
+<p>Let’s start with a broad overview of what Shiny is. Please skim over <a href="https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/">“Getting Started” page for the <strong>Shiny</strong> R package</a>.</p>
+</section>
+<section id="how-does-this-translate-into-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="how-does-this-translate-into-quarto">How does this translate into Quarto?</h2>
+<p>As we said, the document layout of a Shiny “app” is different from a Quarto dashboard with Shiny. So, let’s see how these ideas translate. Please skim over <a href="https://quarto.org/docs/dashboards/interactivity/shiny-r.html">introduction page for Dashboards with Shiny</a>.</p>
+<div class="callout callout-style-default callout-check-in callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Check-in</span>Check In
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
-<li>Shiny</li>
-<li>Quarto Live (webR and Observable JavaScript)</li>
+<li>What gets added to the YAML to move from a static Quarto dashboard to a Shiny dashboard?</li>
 </ol>
-<p>Either tool will allow you to make interactive content, but the way that you go about making the content differs (pretty substantially). Since you may not have heard about or explored either of these tools I would strongly recommend poking around the resources below before making your decision!</p>
-<section id="making-interactive-content-with-shiny" class="level1">
-<h1>Making Interactive Content with Shiny</h1>
-<p>Quick vignette: <a href="https://quarto.org/docs/dashboards/interactivity/shiny-r.html" class="uri">https://quarto.org/docs/dashboards/interactivity/shiny-r.html</a></p>
-<p>Example Shiny dashboard: <a href="https://jjallaire.shinyapps.io/penguins-dashboard/" class="uri">https://jjallaire.shinyapps.io/penguins-dashboard/</a></p>
+<!-- server: shiny -->
+<ol start="2" type="1">
+<li>What are the three execution contexts that can be used? Meaning, what are the three options that can come after <code>|# context:</code> in a code chunk? <em>Hint: Two are included on this page, and you can find the third <a href="https://quarto.org/docs/interactive/shiny/execution.html">on this page</a>.</em></li>
+</ol>
+<ul>
+<li><code>context: setup</code></li>
+<li><code>context: packages</code></li>
+<li><code>context: server</code></li>
+<li><code>context: ui</code></li>
+<li><code>context: render</code></li>
+<li><code>context: data</code></li>
+</ul>
+<ol start="3" type="1">
+<li>If no <code>|# context:</code> is provided in a code chunk, what <code>context</code> does Quarto assume the code chunk should have?</li>
+</ol>
+<ul>
+<li><code>server</code></li>
+<li><code>setup</code></li>
+<li><code>data</code></li>
+<li>None of the above</li>
+</ul>
+<ol start="4" type="1">
+<li>Let’s unpack the three components to <code>selectInput('x', 'X', names(dataset))</code>.</li>
+</ol>
+<ol type="a">
+<li><p>The first component (<code>'x'</code>) represents the [choices / variable name / label] that stores the value to be given to the <code>renderPlot({})</code> function as <code>input$x</code>.</p></li>
+<li><p>The second component (<code>'X'</code>) represents the [choices / variable name / label] displayed on the dashboard.</p></li>
+<li><p>The third component (<code>names(dataset)</code>) represents the [choices / variable name / label] displayed in the dropdown menu.</p></li>
+</ol>
+<ol start="5" type="1">
+<li>When a dataset is reactive, how do you pass the data into <code>ggplot()</code>?</li>
+</ol>
+<!-- dataset() -->
+<ol start="6" type="1">
+<li>When a dataset is reactive (changes based on the user input), what function would you use to create a plot?</li>
+</ol>
+<ul>
+<li><code>plot({})</code></li>
+<li><code>Plot({})</code></li>
+<li><code>renderplot({})</code></li>
+<li><code>renderPlot({})</code></li>
+</ul>
+<ol start="7" type="1">
+<li>Match each component to its role in displaying a table from a reactive dataset.</li>
+</ol>
+<div class="columns">
+<div class="column" style="width:42%;">
+<ul>
+<li><p><code>renderTable({})</code></p></li>
+<li><p><code>output$data</code></p></li>
+<li><p><code>tableOutput('data')</code></p></li>
+</ul>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:48%;">
+<ul>
+<li>Displays the table in the dashboard.</li>
+<li>Stores the result of the table.</li>
+<li>Creates the table from the reactive data.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="where-should-i-put-my-inputs" class="level2">
+<h2 class="anchored" data-anchor-id="where-should-i-put-my-inputs">Where should I put my inputs?</h2>
+<p>The example we just walked through had a sidebar (on the left) for users to control the dashboard. This isn’t the only place these controls can go!</p>
+<p>Let’s read <a href="https://quarto.org/docs/dashboards/inputs.html">this resource on dashboard input layout</a>.</p>
+<div class="callout callout-style-default callout-check-in callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Check-in</span>Check In
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol start="8" type="1">
+<li><p>To create a sidebar, you would use ____. To create a toolbar, you would use ____.</p></li>
+<li><p>A sidebar clearly goes on the side, but where does a toolbar go? Select all that apply.</p></li>
+</ol>
+<ul>
+<li>On the top of the page.</li>
+<li>On the bottom of the page.</li>
+<li>On the top of the card.</li>
+<li>On the bottom of the card.</li>
+</ul>
+<ol start="10" type="1">
+<li>[True / False] Instead of the input taking up the entire top or side of the dashboard, you could place the input into a specific card.</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="where-can-i-learn-more" class="level2">
+<h2 class="anchored" data-anchor-id="where-can-i-learn-more">Where can I learn more?</h2>
+<p>The pages we’ve read focused on <a href="https://jjallaire.shinyapps.io/diamonds/">this dashboard</a> and its <a href="https://github.com/jjallaire/diamonds-dashboard/blob/main/diamonds.qmd">source code</a>. Let’s poke around another example dashboard:</p>
+<ul>
+<li><a href="https://jjallaire.shinyapps.io/penguins-dashboard/">Palmer Penguins Dashboard</a>
+<ul>
+<li><a href="https://github.com/jjallaire/penguins-dashboard/blob/main/penguins.qmd">Source Code</a></li>
+</ul></li>
+</ul>
 
 
 </section>
