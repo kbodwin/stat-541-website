@@ -1,6 +1,15 @@
 ---
-title: "pa-7"
+title: "Practice Activity Week 7"
 format: html
+editor: source
+execute: 
+  echo: true
+  error: true
+  eval: false
 ---
 
-https://github.com/jjallaire/diamonds-dashboard/blob/main/diamonds.qmd
+<!-- Nick's dashboard: https://nasoares.shinyapps.io/lab-4/ -->
+<!-- Source code: https://github.com/nasoares/lab-4/blob/main/wellcome_dashboard.qmd -->
+
+<!-- Alisa's dashboard: https://alisa-krasilnikov.shinyapps.io/lab-4/ -->
+<!-- Source code: https://github.com/Alisa-Krasilnikov/lab-4/blob/main/lab-4.qmd -->
