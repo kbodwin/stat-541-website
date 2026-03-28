@@ -6,20 +6,122 @@ editor: source
 Now that we've acquired some skills for making dashboards, let's spice them up
 a bit! This week, we're going to add interactive content to our dashboards!
 
-This week is different from the previous weeks in that you get to choose which 
-tool you want to explore when creating interactive content on your dashboard. 
-There are two options:
+Historically, if you wanted to make a Shiny dashboard, you would have created
+a `.R` file containing the UI and server interfaces. In January 2024, Posit 
+released Quarto 1.4 for creating layouts with interactive components. While the
+ideas are still the same---UI and server interfaces---we can now create a 
+dashboard in a familiar Quarto context!
 
-1. Shiny
-2. Quarto Live (webR and Observable JavaScript)
+## What is Shiny?
 
-Either tool will allow you to make interactive content, but the way that you 
-go about making the content differs (pretty substantially). Since you may not 
-have heard about or explored either of these tools I would strongly recommend
-poking around the resources below before making your decision! 
+Let's start with a broad overview of what Shiny is. Please skim over 
+["Getting Started" page for the **Shiny** R package](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/).
 
-# Making Interactive Content with Shiny 
+## How does this translate into Quarto?
 
-Quick vignette: <https://quarto.org/docs/dashboards/interactivity/shiny-r.html> 
+As we said, the document layout of a Shiny "app" is different from a Quarto 
+dashboard with Shiny. So, let's see how these ideas translate. Please skim over
+[introduction page for Dashboards with Shiny](https://quarto.org/docs/dashboards/interactivity/shiny-r.html).
 
-Example Shiny dashboard: <https://jjallaire.shinyapps.io/penguins-dashboard/>
+::: {.callout-check-in}
+1. What gets added to the YAML to move from a static Quarto dashboard to a 
+Shiny dashboard?
+
+<!-- server: shiny -->
+
+2. What are the three execution contexts that can be used? Meaning, what are the
+three options that can come after `|# context: ` in a code chunk? 
+*Hint: Two are included on this page, and you can find the third [on this page](https://quarto.org/docs/interactive/shiny/execution.html).*
+
+- `context: setup`
+- `context: packages`
+- `context: server`
+- `context: ui`
+- `context: render`
+- `context: data`
+
+3. If no `|# context: ` is provided in a code chunk, what `context` does Quarto
+assume the code chunk should have? 
+
+- `server`
+- `setup`
+- `data`
+- None of the above
+
+4. Let's unpack the three components to `selectInput('x', 'X', names(dataset))`.
+
+a. The first component (`'x'`) represents the [choices / variable name / label]
+that stores the value to be given to the `renderPlot({})` function as `input$x`.
+
+b. The second component (`'X'`) represents the [choices / variable name / label]
+displayed on the dashboard.
+
+c. The third component (`names(dataset)`) represents the 
+[choices / variable name / label] displayed in the dropdown menu.
+
+5. When a dataset is reactive, how do you pass the data into `ggplot()`? 
+
+<!-- dataset() -->
+
+6. When a dataset is reactive (changes based on the user input), what function
+would you use to create a plot?
+
+- `plot({})`
+- `Plot({})`
+- `renderplot({})`
+- `renderPlot({})`
+
+7. Match each component to its role in displaying a table from a reactive
+dataset.
+
+::: columns
+::: {.column width="42%"}
+- `renderTable({})`
+
+- `output$data`
+
+- `tableOutput('data')`
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="48%"}
+- Displays the table in the dashboard.
+- Stores the result of the table.
+- Creates the table from the reactive data.
+
+:::
+:::
+:::
+
+## Where should I put my inputs?
+
+The example we just walked through had a sidebar (on the left) for users to 
+control the dashboard. This isn't the only place these controls can go!
+
+Let's read [this resource on dashboard input layout](https://quarto.org/docs/dashboards/inputs.html). 
+
+::: {.callout-check-in}
+8. To create a sidebar, you would use ____. To create a toolbar, you 
+would use ____. 
+
+9. A sidebar clearly goes on the side, but where does a toolbar go? Select 
+all that apply.
+
+- On the top of the page.
+- On the bottom of the page. 
+- On the top of the card.
+- On the bottom of the card. 
+
+10. [True / False] Instead of the input taking up the entire top or side of the
+dashboard, you could place the input into a specific card. 
+:::
+
+## Where can I learn more?
+
+The pages we've read focused on [this dashboard](https://jjallaire.shinyapps.io/diamonds/)
+and its [source code](https://github.com/jjallaire/diamonds-dashboard/blob/main/diamonds.qmd). Let's poke around another example dashboard:
+
+- [Palmer Penguins Dashboard](https://jjallaire.shinyapps.io/penguins-dashboard/) 
+  * [Source Code](https://github.com/jjallaire/penguins-dashboard/blob/main/penguins.qmd) 

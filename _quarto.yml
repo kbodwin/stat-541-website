@@ -151,6 +151,7 @@ website:
           href: practice-activities/week-9.qmd
         - href: unit-3/speed.qmd
         - text: "Week 10: In-Class Activity"
+          href: practice-activities/week-10.qmd
 
 format:
   html:
