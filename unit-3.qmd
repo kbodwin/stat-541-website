@@ -1,5 +1,10 @@
 ---
-title: "unit-3"
+title: "Unit 3"
 format: html
 ---
 
+In this unit, you'll bundle your code from the quarter so far into a formal R package that will streamline and document your data collection, cleaning, and analysis. We'll start with some simple example R packages, to learn what makes something a true *package*, and what tools exist to help you out in the development workflow.
+
+Then, we will dig deeper into good code development practices. You'll learn to write good, through unit tests for your functions, both in and out of the package formal. Then we'll revisit *debugging* and introduce more strategies for finding problems in your code.
+
+Finally, you'll think more deeply about the speed and memory demands of the code you write. We'll learn about *benchmarking* to find out where in your code a slowdown occurs, and we'll learn a few very modern packages and coding techniques for faster code.
