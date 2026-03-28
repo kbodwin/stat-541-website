@@ -228,6 +228,9 @@ This seems like a great place to use `str_detect()`!
 
 ## Iteration
 
+::: stat541
+:::
+
 Our goal is to obtain a dataset of characteristics about different cheeses 
 from <https://www.cheese.com>. **Before doing any coding,** let's plan our
 approach!
