@@ -76,9 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-235111c28925c9e86c962b253a60587d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5f858a84010510139e49c405efe9b486.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/flourish-0.0.1/injectFlourishes.js"></script>
 <script src="../site_libs/quarto-contrib/flourish-0.0.1/flourish.js"></script><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -440,14 +440,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a href="#multiple-inputs" id="toc-multiple-inputs" class="nav-link" data-scroll-target="#multiple-inputs">Multiple Inputs</a>
   <ul class="collapse">
 <li><a href="#two-inputs" id="toc-two-inputs" class="nav-link" data-scroll-target="#two-inputs">Two Inputs</a></li>
+  <li><a href="#three-or-more-inputs" id="toc-three-or-more-inputs" class="nav-link" data-scroll-target="#three-or-more-inputs">Three or More Inputs</a></li>
   </ul>
 </li>
-  </ul>
-</li>
-  <li>
-<a href="#stat-541" id="toc-stat-541" class="nav-link" data-scroll-target="#stat-541">STAT 541</a>
-  <ul class="collapse">
-<li><a href="#three-or-more-inputs" id="toc-three-or-more-inputs" class="nav-link" data-scroll-target="#three-or-more-inputs">Three or More Inputs</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-1/iterating-functions.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
@@ -644,6 +639,9 @@ NULL</code></pre>
 </div>
 </div>
 </section><section id="initial-object-size" class="level2"><h2 class="anchored" data-anchor-id="initial-object-size">Initial Object Size</h2>
+<div class="stat541">
+
+</div>
 <p>Notice that we initialized <code>char_storage</code>, <code>num_storage</code>, and <code>list_storage</code> to all be the same length as our iteration vector (<code>seq_len(3)</code>). Technically, this wasn’t necessary. We could have been much lazier when we initialized these objects: <code>list_storage &lt;- NA</code>. Why didn’t we do this?</p>
 <p>When you don’t initialize an object as a specific size (e.g., <code>length = 3</code>) then at every stage of the <code>for()</code> loop R needs to append a new index to that object. This <strong>really</strong> slows down your <code>for()</code> loop!</p>
 <p>Here is a comparison of the run time between two functions that both store the index of the iteration. The first function (<code>do_stuff_allocate</code>) sets the initial object size (<code>vector(length = reps)</code>) before the loop is run. The second function (<code>do_stuff_tackon</code>) does not set an initial object size and instead initializes <code>results</code> as a vector of length 1 (<code>results &lt;- NA</code>).</p>
@@ -1403,9 +1401,10 @@ $z
 3 cherry h       H           TRUE </code></pre>
 </div>
 </div>
-</section></section></section><section id="stat-541" class="level1"><h1>STAT 541</h1>
-<p>This content is required for students enrolled in STAT 541 and optional for students enrolled in STAT 431.</p>
-<section id="three-or-more-inputs" class="level3"><h3 class="anchored" data-anchor-id="three-or-more-inputs">Three or More Inputs</h3>
+<div class="stat541">
+
+</div>
+</section><section id="three-or-more-inputs" class="level3"><h3 class="anchored" data-anchor-id="three-or-more-inputs">Three or More Inputs</h3>
 <p>Now that we’ve conquered two inputs, let’s try three! The <code>str_replace_all()</code> function takes three inputs: a <code>string</code>, a <code>pattern</code> to look for, and a <code>replacement</code> pattern (to use when the <code>pattern</code> is found).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb61"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">string_data</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1495,7 +1494,7 @@ $z
 </div>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {

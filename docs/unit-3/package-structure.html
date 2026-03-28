@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.8.24">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Practice Activity Week 2 – Advanced R</title>
+<title>R Packages – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -61,8 +61,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../unit-1/json-api.html" rel="next">
-<link href="../unit-1/efficient-code.html" rel="prev">
+<link href="../unit-3/unit-testing.qmd" rel="next">
+<link href="../unit-3.html" rel="prev">
 <link href="../images/cat-monsters-horst.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -71,14 +71,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-5f858a84010510139e49c405efe9b486.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-235111c28925c9e86c962b253a60587d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/flourish-0.0.1/injectFlourishes.js"></script>
 <script src="../site_libs/quarto-contrib/flourish-0.0.1/flourish.js"></script><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -285,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
 <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
@@ -301,7 +301,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">STAT 331 Review</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../unit-1.html" aria-current="page"> 
+    <a class="nav-link" href="../unit-1.html"> 
 <span class="menu-text">Unit 1 - Complex Analyses</span></a>
   </li>  
   <li class="nav-item">
@@ -333,86 +333,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practice-activities/week-2.html">Week 2: In-Class Activity</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../unit-3/package-structure.html">R Packages</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unit 1</span></a>
+  <a href="../unit-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Unit 3</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit-1/writing-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Writing Functions in R</span></a>
+  <a href="../unit-3/package-structure.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">R Packages</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit-1/iterating-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Iterating Over Functions</span></a>
+  <a href="../practice-activities/week-8.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 8: In-Class Activity</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit-1/efficient-code.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Writing More Efficient Code</span></a>
+  <a href="../practice-activities/week-9.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 9: In-Class Activity</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practice-activities/week-2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 2: In-Class Activity</span></a>
+  <a href="../unit-3/speed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code Speed</span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit-1/json-api.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JSON Data &amp; APIs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit-1/web-scraping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Web Scraping</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice-activities/week-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 3: In-Class Activity</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit-1/formatting-tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Making Great Tables with gt</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit-1/alt-geoms.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Non-Standard Geometries</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit-1/styled-plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Professionally Styled Plots</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practice-activities/week-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 4: In-Class Activity</span></a>
-  </div>
-</li>
+ <span class="menu-text">Week 10: In-Class Activity</span>
+  </li>
     </ul>
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
@@ -421,16 +386,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#accessing-the-practice-activity" id="toc-accessing-the-practice-activity" class="nav-link active" data-scroll-target="#accessing-the-practice-activity">Accessing the Practice Activity</a></li>
-  <li><a href="#writing-functions" id="toc-writing-functions" class="nav-link" data-scroll-target="#writing-functions">Writing Functions</a></li>
-  <li><a href="#iterating-functions" id="toc-iterating-functions" class="nav-link" data-scroll-target="#iterating-functions">Iterating Functions</a></li>
-  <li><a href="#data-transformation" id="toc-data-transformation" class="nav-link" data-scroll-target="#data-transformation">Data Transformation</a></li>
-  <li><a href="#using-helper-functions-stat-541-only" id="toc-using-helper-functions-stat-541-only" class="nav-link" data-scroll-target="#using-helper-functions-stat-541-only">Using Helper Functions (Stat 541 only)</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/practice-activities/week-2.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+<li><a href="#basics-of-packages" id="toc-basics-of-packages" class="nav-link active" data-scroll-target="#basics-of-packages">Basics of Packages</a></li>
+  <li>
+<a href="#contributing-to-packages" id="toc-contributing-to-packages" class="nav-link" data-scroll-target="#contributing-to-packages">Contributing to Packages</a>
+  <ul class="collapse">
+<li><a href="#get-set-up" id="toc-get-set-up" class="nav-link" data-scroll-target="#get-set-up">Get set up</a></li>
+  <li><a href="#make-some-simple-changes" id="toc-make-some-simple-changes" class="nav-link" data-scroll-target="#make-some-simple-changes">Make some simple changes</a></li>
+  <li><a href="#testing-the-package" id="toc-testing-the-package" class="nav-link" data-scroll-target="#testing-the-package">Testing the package</a></li>
+  <li><a href="#make-a-major-contribution" id="toc-make-a-major-contribution" class="nav-link" data-scroll-target="#make-a-major-contribution">Make a major contribution</a></li>
+  </ul>
+</li>
+  <li><a href="#package-creation-from-scratch" id="toc-package-creation-from-scratch" class="nav-link" data-scroll-target="#package-creation-from-scratch">Package Creation From Scratch</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-3/package-structure.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Practice Activity Week 2</h1>
+<h1 class="title">R Packages</h1>
 </div>
 
 
@@ -444,45 +415,225 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="accessing-the-practice-activity" class="level2"><h2 class="anchored" data-anchor-id="accessing-the-practice-activity">Accessing the Practice Activity</h2>
-<p>Download the template Practice Activity Quarto file here: <a href="student/pa-2.qmd" download=""><code>pa-2.qmd</code></a></p>
+</header><section id="basics-of-packages" class="level2"><h2 class="anchored" data-anchor-id="basics-of-packages">Basics of Packages</h2>
+<p>In principle, an R Package is nothing more than a folder with a very specific structure, which allows R to recognize it as a “Package”. Minimally, to be a package, a folder must contain:</p>
+<ol type="1">
+<li>A subfolder named <code>/R/</code>, containing <code>.R</code> code files.</li>
+<li>A text file named <code>DESCRIPTION</code>, which contains information about the package in a <em>very</em> specifically formatted way.</li>
+<li>A text file named <code>NAMESPACE</code>, which contains a list of the functions that the package makes available.</li>
+</ol>
+<p>If you’re thinking to yourself, <em>“Boy, that sounds like a lot of annoyingly specific formatting!”</em> - you’re not wrong. Fortunately, there are automatic ways to make these files, which we will learn about soon!</p>
+<p>Any folder with that structure can, in principle, be <strong>installed</strong> into R as a package. Typically, you will be installing packages from one of three sources:</p>
+<section id="install.packagessomething" class="level4"><h4 class="anchored" data-anchor-id="install.packagessomething">1. <code>install.packages("something")</code>
+</h4>
+<p>If you are able to install a package directly using <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code>, that means the package has been accepted to the <a href="https://cran.r-project.org/">Comprehensive R Archive Network</a>, or <strong>CRAN</strong>.</p>
+<p>The minimal folder structure is not sufficient to be accepted to CRAN; these packages must meet many strict guidelines about documenting and testing the package’s functions.</p>
+</section><section id="remotesinstall_githubusernamesomething" class="level4"><h4 class="anchored" data-anchor-id="remotesinstall_githubusernamesomething">2. <code>remotes::install_github("username/something")</code>
+</h4>
+<p>You may have come across packages you wanted to use that could only be installed using the <code>install_github</code> function (from the <code>remotes</code> package).</p>
+<p>In principle, anyone can put a package-structured folder on GitHub, and if the repository is public, anyone else can install that package.</p>
+<p>In practice, it’s good to have your package meet CRAN-like levels of careful documentation before you share it with the public.</p>
+</section><section id="installing-from-your-personal-sources" class="level4"><h4 class="anchored" data-anchor-id="installing-from-your-personal-sources">3. Installing from your personal sources</h4>
+<p>If you use R heavily in the future, you may find it useful to write packages just for yourself. For example, if you find yourself using the same small “helper” functions over and over, it can be nice to simply load a package rather than re-run them for every project.</p>
+<p>We won’t worry about installing from sources for this class.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+<span class="screen-reader-only">Important</span>Check-In: Package Structure
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Be sure to save the file inside your Week 2 folder of your STAT 431 (or 541) folder!</p>
-</div>
-</div>
-</section><section id="writing-functions" class="level2"><h2 class="anchored" data-anchor-id="writing-functions">Writing Functions</h2>
+<p>Visit <a href="https://github.com/Cal-Poly-Advanced-R/meangirls">this GitHub repository</a>, where our good friend Regina George has made a package.</p>
+<p>Answer the following questions about Regina’s package by clicking around in her files.</p>
 <ol type="1">
-<li>Write a function called <code>summ_stats()</code> that takes a vector <code>x</code> as input and produces the following output:</li>
+<li>What is the name of this package?</li>
+<li>Besides Regina, who is listed as an author of this package?</li>
+<li>Which other packages does Regina’s package depend on? (Hint: Which packages does this one <em>import</em>?)</li>
+<li>Which functions are defined in the file <code>insults.R</code>?</li>
+<li>In the documentation comments above the functions, what does <code>@param</code> indicate?</li>
+<li>In the documentation comments above the functions, what does <code>@importFrom</code> do?</li>
+<li>Look at the functions defined in the file <code>give_candygrams.R</code>. One of them does NOT appear in the <code>NAMESPACE</code> file. What is different about the documentation comments for this function?</li>
+<li>Why do you think Regina decided not to include the function from Q7 in her namespace?</li>
 </ol>
-<ul>
-<li>for <strong>numeric variables</strong>: returns the mean, median, standard deviation, and IQR as a data frame</li>
-<li>for <strong>categorical variables</strong>: returns the number of levels (categories) of the variable</li>
-</ul>
-<p><em>Hint:</em> You can use <code>tibble()</code> to create the data frame. For example, <code>tibble(a = 1:2, b = 2:3)</code> creates a data frame with variables <code>a</code> and <code>b</code>.</p>
-</section><section id="iterating-functions" class="level2"><h2 class="anchored" data-anchor-id="iterating-functions">Iterating Functions</h2>
-<ol start="2" type="1">
-<li>Use <code>map()</code> to apply your <code>summ_stats()</code> function to every column in the <code>diamonds</code> dataset. <em>Hint:</em> Look up the <code>bind_rows()</code> documentation from dplyr to combine summary statistics for all quantitative variables into one data frame. The <code>.id</code> argument will be especially helpful in adding the variable names!</li>
-</ol></section><section id="data-transformation" class="level2"><h2 class="anchored" data-anchor-id="data-transformation">Data Transformation</h2>
-<ol start="3" type="1">
-<li>Let’s make the output more intuitive, with the variables on the columns and the summary statistics on the rows.</li>
-</ol>
-<p><em>Hint:</em> You will need to do a double pivot (<code>pivot_longer()</code> then <code>pivot_wider()</code>) to achieve this result!</p>
-</section><section id="using-helper-functions-stat-541-only" class="level2"><h2 class="anchored" data-anchor-id="using-helper-functions-stat-541-only">Using Helper Functions (Stat 541 only)</h2>
-<ol start="4" type="1">
-<li><p>Now that we have the output we want, let’s use our code to write a <code>summ_df()</code> function that takes a data frame as an input and outputs a table of summary statistics for every variable in the data frame.</p></li>
-<li><p>Demonstrate that your function works using the <code>mpg</code> dataset.</p></li>
-</ol>
+</div>
+</div>
+</section></section><section id="contributing-to-packages" class="level2"><h2 class="anchored" data-anchor-id="contributing-to-packages">Contributing to Packages</h2>
+<p>Now let’s help Regina make her <code>meangirls</code> package even better.</p>
+<p>The <code>usethis</code> package will make this process easy and foolproof. Make sure you have it installed now.</p>
+<section id="get-set-up" class="level3"><h3 class="anchored" data-anchor-id="get-set-up">Get set up</h3>
+<p>The first thing you need to do when you want to contribute to someone else’s package is to <strong>fork</strong> the package. Recall that a <strong>fork</strong> is very different from a <strong>clone</strong>. A <em>clone</em> simply copy-pastes the repository, while a <em>fork</em> retains its link to the original repository.</p>
+<p>Now, we could go through the tedious process of <em>forking</em> the repository, then all the steps after that to get it open in your local computer’s RStudio.</p>
+<p>Instead, let’s do all these steps in one with <code>usethis</code>. Open up a new RStudio session, load the <code>usethis</code> package, and then run:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">summ_df</span><span class="op">(</span><span class="va">mpg</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/create_from_github.html">create_from_github</a></span><span class="op">(</span><span class="st">"Cal-Poly-Advanced-R/meangirls"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>A lot of output will print out.</p>
+<p>Here’s what this does:</p>
+<ul>
+<li><p>Forks the <code>meangirls</code> repo, owned by <code>Cal-Poly-Advanced-R</code> on GitHub, into your GitHub account.</p></li>
+<li><p>Clones your forked repo into a folder named “meangirls” on your desktop (or similar).</p></li>
+<li>
+<p>Does additional git/GitHub setup:</p>
+<ul>
+<li>Sets your <em>origin remote</em> (the repo you can push directly to) to be your own forked copy of the “meangirls” repo.</li>
+<li>Sets your <em>upstream remote</em> (the original version that you will later Pull Request) to be the “meangirls” repo owned by <code>Cal-Poly-Advanced-R</code>
+</li>
+<li>Sets the <em>main branch</em> to be the original repo’s main branch, so you can pull future edits that Regina makes (“upstream changes”) in the future.</li>
+</ul>
+</li>
+<li><p>Opens a new instance of RStudio in the <code>meangirls</code> R project.</p></li>
+</ul>
+<p>It is also possible to do this steps without <code><a href="https://usethis.r-lib.org/reference/create_from_github.html">usethis::create_from_github</a></code>, if you prefer.</p>
+<ol type="1">
+<li><p>On GitHub, navigate to <a href="https://github.com/Cal-Poly-Advanced-R/meangirls">the package repo</a> and click “Fork”.</p></li>
+<li><p>Using GitHub Desktop (or your preferred method), clone your new forked package to your local machine.</p></li>
+<li><p>Navigate to the folder where you cloned the package, and open the <code>.Rproj</code>.</p></li>
+</ol></section><section id="make-some-simple-changes" class="level3"><h3 class="anchored" data-anchor-id="make-some-simple-changes">Make some simple changes</h3>
+<p>We are now ready to get our hands dirty with this package.</p>
+<p>First, <strong>build the package</strong>. You can do this by typing <code>Cmd/Ctrl-Shift-B</code>, or by clicking in the “Build” pane:</p>
+<p><img src="images/build_package.gif" class="img-fluid"></p>
+<p>Open up <strong>README.Rmd</strong> and knit it. Scroll to the very bottom. Do you see a problem with the output?</p>
+<p>It’s time to fix the <code>give_candygrams()</code> function so that it includes extra messages. But first, we need to make a <strong>branch</strong> of our repo, so that when we change the code, it is carefully tracked separately.</p>
+<p>In your console, type:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/pull-requests.html">pr_init</a></span><span class="op">(</span><span class="st">"fix-candygrams"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>This will switch you to a new branch.</p>
+<p><img src="images/see_branch.png" class="img-fluid"></p>
+<p>Now, we can finally edit the source code.</p>
+<p>Fix the code in <code>give_candygrams.R</code> so that the extra messages print out properly. <em>(Hint: This is a small change in only one line of the code!)</em></p>
+<p>Check that the code is fixed by re-building the package, re-knitting the <code>README.Rmd</code> file, and looking at the output at the bottom.</p>
+<p>When you are satisfied with your change, <strong>commit your changes</strong> to Git.</p>
+<p>Then run in the console:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/pull-requests.html">pr_push</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>This will magically pop up a Pull Request window! Complete the Pull Request if you wish.</p>
+</section><section id="testing-the-package" class="level3"><h3 class="anchored" data-anchor-id="testing-the-package">Testing the package</h3>
+<p>Last, let’s check out the <strong>unit tests</strong> in Regina’s package.</p>
+<p>In any package, it’s very important to write automatic tests to check that your functions work the way you hope. As the package gets more complex, you can then keep running your tests to make sure nothing broke along the way.</p>
+<p>Run the tests that Regina has written for her package by typing <code>Ctrl/Cmd-Shift-T</code>; or from the drop-down menu in the Build pane:</p>
+<p><img src="images/run_tests.gif" class="img-fluid"></p>
+<p>Oh no! One of the unit tests failed.</p>
+<p>In the folder <code>tests/testthat</code>, find the appropriate test file. Figure out how the actual output was different from the expected output.</p>
+<p>Start a new pull request branch using <code><a href="https://usethis.r-lib.org/reference/pull-requests.html">usethis::pr_init()</a></code>, as you did above. Track down the error, and make changes to the function. Keep trying until alltests succeed.</p>
+</section><section id="make-a-major-contribution" class="level3"><h3 class="anchored" data-anchor-id="make-a-major-contribution">Make a major contribution</h3>
+<p>When handing out candygrams, <a href="https://www.youtube.com/embed/nnjWmz4lB2U">Santa has a whole classroom of students to announce</a>.</p>
+<p>It would be tedious to have to call the <code>give_candygrams()</code> function once for each student. Instead, it would be convenient to have a vector of student names and a vector of candygram counts, and run a single function like so:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">students</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Taylor Zimmerman"</span>, <span class="st">"Glen Coco"</span>, <span class="st">"Cady Heron"</span>, <span class="st">"Gretchen Weiners"</span><span class="op">)</span></span>
+<span><span class="va">counts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="fu">give_many_candygrams</span><span class="op">(</span><span class="va">students</span>, <span class="va">counts</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol type="1">
+<li><p>Write the function <code>give_many_candygrams()</code> into the <code>meangirls</code> package.</p></li>
+<li><p>Do your best to copy the documentation style of the <code>give_candygrams()</code> function. Type <code>Ctrl-Shift-D</code>, or use the Build pane drop-down menu, to automatically write a documentation file for your function.</p></li>
+<li><p>Re-build the package. Then type <code>?give_many_candygrams</code> in your console.</p></li>
+<li><p>Look at the “Help” pane that pops up. It should look like this, except with the documentation for your new <code>give_many_candygrams</code> function:</p></li>
+</ol>
+<p><img src="images/help_pane.png" class="img-fluid"></p>
+<p>Type in your console:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">use_test</span><span class="op">(</span><span class="st">"give_many_candygrams"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Edit the file that pops up, to create a unit test for your new <code>give_many_candygrams</code> function. Re-run the tests for the package. It should look like this, but with a total of 7 tests:</p>
+<p><img src="images/passed_tests.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Check-In: Contributing to a Package
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Which line would NOT be correct in the documentation for <code>give_many_candygrams</code>?</li>
+</ol>
+<ol type="a">
+<li><code>@param person The candygram recipient.</code></li>
+<li><code>@param number How many grams they got.</code></li>
+<li><code>@param extra_message A string giving extra commentary.</code></li>
+<li><code>@param Value A candy gram announcement.</code></li>
+</ol>
+<ol start="2" type="1">
+<li>Consider the following unit test for <code>give_many_candygrams</code>:</li>
+</ol>
+<p>What would you expect to happen for this test?</p>
+<ol type="a">
+<li>It would pass because</li>
+<li>It would pass because</li>
+<li>It would fail because</li>
+<li>It would fail because</li>
+</ol>
+</div>
+</div>
+</section></section><section id="package-creation-from-scratch" class="level2"><h2 class="anchored" data-anchor-id="package-creation-from-scratch">Package Creation From Scratch</h2>
+<div class="callout callout-style-default callout-required-reading callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-reading</span>Required Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://r-pkgs.org/whole-game.html">R Packages Chapter 1 - The Whole Game</a></p>
+<p><em>For now, just read through this chapter and do your best to figure out the check-in questions below. Your Practice Activity this week will be to actually follow along with the steps in this chapter and create a working package - so you are welcome to get a head start if you wish!</em></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Check-In: Package Workflow
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Match the following helper packages to their usage in package creation.</li>
+</ol>
+<div class="columns">
+<div class="column" style="width:20%;">
+<ul>
+<li><p><code>roxygen2</code></p></li>
+<li><p><code>testthat</code></p></li>
+<li><p><code>devtools</code></p></li>
+<li><p><code>usethis</code></p></li>
+</ul>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:70%;">
+<ul>
+<li><p>Automatically creating and editing package files in the proper format.</p></li>
+<li><p>Loading, documenting, and running checks for the package after you make edits.</p></li>
+<li><p>Creating small <em>unit tests</em> for the functions in the package.</p></li>
+<li><p>Creating function documentation pages from comments in <code>.R</code> files.</p></li>
+</ul>
+</div>
+</div>
+<ol start="2" type="1">
+<li><p>In a <code>test_that</code> function, what is the difference between <code>expect_equal</code> and <code>expect_error</code>?</p></li>
+<li><p>Which of the following files should you <strong>never</strong> open and edit by hand, instead of generating changes automatically during documentation or with a <code>usethis</code> function? <em>(Select all that apply.)</em></p></li>
+</ol>
+<ol type="a">
+<li><code>DESCRIPTION</code></li>
+<li><code>NAMESPACE</code></li>
+<li><code>README.Rmd</code></li>
+<li>Any <code>.R</code> source file in the <code>R/</code> folder.</li>
+<li>Any <code>.md</code> documentation file in the <code>man/</code> folder</li>
+<li>Any <code>test-*.R</code> file in the <code>tests/testthat/</code> folder</li>
+</ol>
+</div>
 </div>
 
 
@@ -899,13 +1050,13 @@ Important
     }
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../unit-1/efficient-code.html" class="pagination-link" aria-label="Writing More Efficient Code">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Writing More Efficient Code</span>
+      <a href="../unit-3.html" class="pagination-link" aria-label="Unit 3">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Unit 3</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../unit-1/json-api.html" class="pagination-link" aria-label="JSON Data &amp; APIs">
-        <span class="nav-page-text">JSON Data &amp; APIs</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../unit-3/unit-testing.qmd" class="pagination-link" aria-label="">
+        <span class="nav-page-text"></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -916,7 +1067,7 @@ Important
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/practice-activities/week-2.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/unit-3/package-structure.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
 <li class="nav-item">

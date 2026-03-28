@@ -1,0 +1,28 @@
+---
+title: "Practice Activity 8: A Package from Scratch"
+format: html
+embed-resources: true
+execute: 
+  echo: true
+  error: true
+  eval: false
+resources: 
+  - student/pa-8.R
+---
+
+## Part One: A basic package
+
+Return to [R Packages Chapter 1 - The Whole Game](https://r-pkgs.org/whole-game.html), but this time, instead of only reading through, follow the steps in the chapter to actually build your own copy of the `regexcite` package.
+
+**For full credit, you must *commit* your code frequently throughout this process, so that it is clear you did not simply copy the complete package.**
+
+## Part Two: Adding to the package
+
+<a href="student/pa-8.R" download>Download this `.R` file</a> and then add it - without editing anything about it - to the `tests/testthat/` folder of the `regexcite` package.
+
+Re-run the package tests. You will see that the newly added tests all failed, 
+because they tested functions that do not exist!
+
+Look at the source code for these unit tests, and use this as a reference as you write the new functions into your `regexcite` package.  Make sure to properly document these new functions using `roxygen2` comments.
+
+Once your package passes all unit tests, make sure everything is pushed to GitHub, and turn in the GitHub URL.

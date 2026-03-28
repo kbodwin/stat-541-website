@@ -6,12 +6,58 @@ Now that you have explored your original dataset and produced data summaries add
 
 ## By the end of the week, your updated report should contain:
 
--   **one** new country-level data acquired using APIs,
+-   **two** new country-level data sources
 
--   **one** new country-level data acquired using webscraping,
+    -   Stat 431: One of these must be acquired using APIs or webscraping
+
+    -   Stat 541: One of these must be acquired using APIs, the other using webscraping.
 
 -   descriptions of each of the new datasets
 
 -   a "meta" dataset containing **all** the acquired data (joined together)
 
 -   **at least two** data summaries OR visualizations incorporating the additional country-level data
+
+## Stat 541 Only
+
+-   your **webscraped** data must come from a multi-paged source, so that iteration is used to gather all the data
+
+::: callout-warning
+**Warning!** Most APIs require you to make an account to access them, to prevent too much automated data collection. *Some* APIs also charge a fee to use - you should *not* use any of these for this class.
+:::
+
+## Helpful Links
+
+Here are some sources for country-level data that you may use if you so choose.
+
+*These are just to get you started. You are not obligated to use these, and we cannot guarantee that they will all be functional, free, or useful.*
+
+### Tabular and/or Scrapable Data
+
+-   [World Happiness Report](https://www.worldhappiness.report/data-sharing/)
+
+-   [NOAA Climate Data](https://www.ncei.noaa.gov/cdo-web/)
+
+-   [BEA Employment Data](https://www.bea.gov/data/employment/employment-county-metro-and-other-areas)
+
+-   [WorldBank Development Indicator Data](https://databank.worldbank.org/id/f1ddbc94)
+
+-   [Wikipedia - Temperatures](https://en.wikipedia.org/wiki/List_of_countries_by_average_yearly_temperature)
+
+-   [Wikipedia - Populations](https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population)
+
+-   [Wikipedia - Many demographics](https://en.wikipedia.org/wiki/Demographics_of_the_world)
+
+### APIs
+
+-   [Currency, flags, capitals](https://restcountries.com/)
+
+-   [Demographics and financial data](https://api-ninjas.com/api/country)
+
+-   [WorldBank Data API](https://documents.worldbank.org/en/publication/documents-reports/api)
+
+::: callout-note
+Much of the data we have relied on for years - such as NOAA and BEA data listed above - are no longer being collected and made available, due to US Government cuts to these public statistics services. Other data sources that result from independent academic research at US institutions are rapidly dwindling as well, also due to cuts to this funding.\
+\
+Although these data sources may eventually be restored, or replaced with data from alternative agencies, we will never be able to go back and fill the gap for these lost years.
+:::

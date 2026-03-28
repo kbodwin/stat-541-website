@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>unit-3 – Advanced R</title>
+<title>Unit 3 – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./unit-3/package-structure.qmd" rel="next">
+<link href="./unit-3/package-structure.html" rel="next">
 <link href="./images/cat-monsters-horst.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -44,9 +44,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-235111c28925c9e86c962b253a60587d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-5f858a84010510139e49c405efe9b486.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/flourish-0.0.1/injectFlourishes.js"></script>
 <script src="site_libs/quarto-contrib/flourish-0.0.1/flourish.js"></script>
 <script id="quarto-search-options" type="application/json">{
@@ -311,7 +311,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unit-3.html">unit-3</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unit-3.html">Unit 3</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -326,18 +326,30 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./unit-3.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">unit-3</span></a>
+ <span class="menu-text">Unit 3</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./practice-activities/week-8.qmd" class="sidebar-item-text sidebar-link">
+  <a href="./unit-3/package-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Packages</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./practice-activities/week-8.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 8: In-Class Activity</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./practice-activities/week-9.qmd" class="sidebar-item-text sidebar-link">
+  <a href="./unit-3/debugging.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Debugging Package Code</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./practice-activities/week-9.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 9: In-Class Activity</span></a>
   </div>
 </li>
@@ -367,7 +379,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">unit-3</h1>
+<h1 class="title">Unit 3</h1>
 </div>
 
 
@@ -384,6 +396,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>In this unit, you’ll bundle your code from the quarter so far into a formal R package that will streamline and document your data collection, cleaning, and analysis. We’ll start with some simple example R packages, to learn what makes something a true <em>package</em>, and what tools exist to help you out in the development workflow.</p>
+<p>Then, we will dig deeper into good code development practices. You’ll learn to write good, through unit tests for your functions, both in and out of the package formal. Then we’ll revisit <em>debugging</em> and introduce more strategies for finding problems in your code.</p>
+<p>Finally, you’ll think more deeply about the speed and memory demands of the code you write. We’ll learn about <em>benchmarking</em> to find out where in your code a slowdown occurs, and we’ll learn a few very modern packages and coding techniques for faster code.</p>
 
 
 
@@ -805,8 +820,8 @@ ul.task-list li input[type="checkbox"] {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./unit-3/package-structure.qmd" class="pagination-link" aria-label="">
-        <span class="nav-page-text"></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./unit-3/package-structure.html" class="pagination-link" aria-label="R Packages">
+        <span class="nav-page-text">R Packages</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

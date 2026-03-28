@@ -157,7 +157,12 @@ num_storage
 list_storage
 ```
 
+
+
 ## Initial Object Size
+
+::: stat541
+:::
 
 Notice that we initialized `char_storage`, `num_storage`, and `list_storage` to
 all be the same length as our iteration vector (`seq_len(3)`). Technically, this
@@ -492,10 +497,8 @@ string_data |>
 
 ```
 
-# STAT 541
-
-This content is required for students enrolled in STAT 541 and optional for 
-students enrolled in STAT 431. 
+::: stat541
+:::
 
 ### Three or More Inputs
 

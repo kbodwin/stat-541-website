@@ -36,7 +36,7 @@ Be sure to save the file inside your Week 2 folder of your STAT 431 (or 541) fol
 
 *Hint:* You will need to do a double pivot (`pivot_longer()` then `pivot_wider()`) to achieve this result!
 
-## Using Helper Functions
+## Using Helper Functions (Stat 541 only)
 
 4.  Now that we have the output we want, let's use our code to write a `summ_df()` function that takes a data frame as an input and outputs a table of summary statistics for every variable in the data frame.
 

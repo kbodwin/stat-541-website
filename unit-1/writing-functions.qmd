@@ -1,22 +1,20 @@
 ---
 title: "Writing Functions in R"
 editor: source
+markdown: 
+  wrap: 72
 execute: 
   echo: false
   warning: false
   message: false
 ---
 
-::: {.callout-tip}
+::: callout-tip
 # Go on a walk and listen to a talk!
 
-We've included quite a few talks in this coursework (1) because they do a great 
-job discussing topics related to function design, and (2) they were given by 
-our coding heroes (cough, [Jenny Bryan](https://jennybryan.org/about/) 🤩). 
+We've included quite a few talks in this coursework (1) because they do a great job discussing topics related to function design, and (2) they were given by our coding heroes (cough, [Jenny Bryan](https://jennybryan.org/about/) 🤩).
 
-It's not critical for you to sit in front of a computer when listening to these
-talks, so I might recommend going on a walk and listening to one! The weather 
-is too nice to sit in front of a computer all day! 
+It's not critical for you to sit in front of a computer when listening to these talks, so I might recommend going on a walk and listening to one! The weather is too nice to sit in front of a computer all day!
 :::
 
 ```{r}
@@ -29,13 +27,10 @@ library(palmerpenguins)
 
 # Basics of Functions
 
-If you do not recall the basics of writing functions, or if you want a quick
-refresher, feel free to read the section from *R for Data Science* or watch the
-video below:
+If you do not recall the basics of writing functions, or if you want a quick refresher, feel free to read the section from *R for Data Science* or watch the video below:
 
-::: {.callout-learn-more}
-
-::: columns
+:::::::: callout-learn-more
+::::::: columns
 ::: {.column width="40%"}
 </br>
 
@@ -45,20 +40,19 @@ video below:
 ::: {.column width="5%"}
 :::
 
-::: {.column width="55%"}
+:::: {.column width="55%"}
 </br>
 
 ::: youtube-video-container
-{{< video https://www.youtube.com/embed/zA5eVuUMM8U?si=AlTQG1N79B48UjT_ >}} 
+{{< video https://www.youtube.com/embed/zA5eVuUMM8U?si=AlTQG1N79B48UjT_ >}}
 :::
-:::
-:::
-:::
+::::
+:::::::
+::::::::
 
 ### Anatomy of a Function
 
-Let's establish some vocabulary moving forward. Consider the very simple
-function below:
+Let's establish some vocabulary moving forward. Consider the very simple function below:
 
 ```{r}
 #| label: addtwo
@@ -80,26 +74,19 @@ add_or_subtract <- function(first_num,
   
 ```
 
--   The **function name** is chosen by whoever writes the function: 
-`add_or_subtract()`
+-   The **function name** is chosen by whoever writes the function: `add_or_subtract()`
 
--   The **required arguments** are the ones for which no default value is
-supplied: `first_num`
+-   The **required arguments** are the ones for which no default value is supplied: `first_num`
 
--   The **optional arguments** are the ones for which a default value is
-supplied: `second_num = 2`, `type = "add"`
+-   The **optional arguments** are the ones for which a default value is supplied: `second_num = 2`, `type = "add"`
 
--   The **body of the function** is all the code inside the definition (between
-the beginning `{` and closing `}`) . This code will be run in the
-**environment of the function**, rather than in the**global environment**. This
-means that code in the body of the function does *not* have the power to alter
-anything outside the function[^1].
+-   The **body of the function** is all the code inside the definition (between the beginning `{` and closing `}`) . This code will be run in the **environment of the function**, rather than in the**global environment**. This means that code in the body of the function does *not* have the power to alter anything outside the function[^1].
 
 [^1]: There are ways to cheat your way around this, but **we will avoid them**!
 
--   The **return values** of the function are the possible objects that get
-returned: `first_num + second_num` (for `type = "add"`) or
-`first_num - second_num` (for `type = "subtract"`).
+<!-- -->
+
+-   The **return values** of the function are the possible objects that get returned: `first_num + second_num` (for `type = "add"`) or `first_num - second_num` (for `type = "subtract"`).
 
 When we use a function in code, this is referred to as a **function call**.
 
@@ -111,15 +98,16 @@ When we use a function in code, this is referred to as a **function call**.
 add_or_subtract(1, 2)
 ```
 
-::: {.callout-check-in}
-1. What will be returned by each of the following?
+::: callout-check-in
+1.  What will be returned by each of the following?
+
+<!-- -->
 
 a.  1
-b. -1
-c. 30
-d. An error defined in the function `add_or_subtract()`
-e.  An error defined in a different function, that is called from inside 
-`add_or_subtract()`
+b.  -1
+c.  30
+d.  An error defined in the function `add_or_subtract()`
+e.  An error defined in a different function, that is called from inside `add_or_subtract()`
 
 ```{r}
 #| echo: true
@@ -135,7 +123,7 @@ add_or_subtract(5, 6, type = "multiply")
 add_or_subtract("orange", type = "multiply")
 ```
 
-2. Consider the following code:
+2.  Consider the following code:
 
 ```{r}
 #| echo: true
@@ -162,18 +150,14 @@ d)  `result_2`
 
 ## Good Function Design
 
-Most likely, you have so far only written functions for your own convenience.
-(Or for assignments, of course!) We are now going to be designing functions for
-*other people* to use and possibly even edit them. This means we need to put
-some thought into the *design* of the function.
+Most likely, you have so far only written functions for your own convenience. (Or for assignments, of course!) We are now going to be designing functions for *other people* to use and possibly even edit them. This means we need to put some thought into the *design* of the function.
 
-::: {.callout-required-video}
+::::::: callout-required-video
 Please choose one of these talks to listen to (and go on a walk)!
 
-::: columns
+:::::: columns
 ::: {.column width="48%"}
 {{< video https://www.youtube.com/embed/Qne86lxjgtg?si=9isK6kFJo5VLxCNY >}}
-
 :::
 
 ::: {.column width="4%"}
@@ -182,41 +166,30 @@ Please choose one of these talks to listen to (and go on a walk)!
 ::: {.column width="48%"}
 {{< video https://www.youtube.com/embed/7oyiPBjLAWY?si=9gYMPPvExZ43DDpC >}}
 :::
-:::
-:::
+::::::
+:::::::
 
-Designing functions is somewhat subjective, but there are a few principles that
-always apply:
+Designing functions is somewhat subjective, but there are a few principles that always apply:
 
 1.  Choose a good, **descriptive names**
-    -   Your function name should describe what it does, and usually involves a
-    verb.
+    -   Your function name should describe what it does, and usually involves a verb.
     -   Your argument names should be simple and / or descriptive.
     -   Names of variables in the body of the function should be descriptive.
-    
 2.  Output should be **very predictable**
-    -   Your function should always *return* the same object type, no matter
-    what input it gets.
-    -   Your function should expect certain objects or object types as *input*,
-    and give errors when it does not get them.
+    -   Your function should always *return* the same object type, no matter what input it gets.
+    -   Your function should expect certain objects or object types as *input*, and give errors when it does not get them.
     -   Your function should give errors or warnings for common mistakes.
-    -   Default values of arguments should only be used when there is a clear
-    common choice.
-
+    -   Default values of arguments should only be used when there is a clear common choice.
 3.  The body of the function should be **easy to read**.
     -   Code should use [good style principles](https://style.tidyverse.org/).
     -   There should be occasional comments to explain the purpose of the steps.
-    -   Complicated steps, or steps that are repeated many times, should be
-    written into **separate functions** (sometimes called *helper functions*).
-
+    -   Complicated steps, or steps that are repeated many times, should be written into **separate functions** (sometimes called *helper functions*).
 4.  Functions should be **self-contained**.
-    -   They should not rely on any information besides what is given as input.
-    *(Relying on other functions* is fine, though!)
-    -   They should not alter the Global Environment. 
-    *(Do not put `library()` or `install()` statements inside functions!)*
+    -   They should not rely on any information besides what is given as input. *(Relying on other functions* is fine, though!)
+    -   They should not alter the Global Environment. *(Do not put `library()` or `install()` statements inside functions!)*
 
-::: {.callout-check-in}
-3. Identify the relevant issues for the following function:
+::: callout-check-in
+3.  Identify the relevant issues for the following function:
 
 ```{r}
 #| eval: false
@@ -237,25 +210,22 @@ doStuff <- function(x) {
 
 ```
 
-- the body of the function does not follow good style principles
-- the argument names are not descriptive
-- the function returns a different object type for different inputs
-- function does not give errors when unexpected object types are input
-- the names of variables in the body of the function are not descriptive
-- the function modifies the global environment
-- the function's name does not describe what it does
+-   the body of the function does not follow good style principles
+-   the argument names are not descriptive
+-   the function returns a different object type for different inputs
+-   function does not give errors when unexpected object types are input
+-   the names of variables in the body of the function are not descriptive
+-   the function modifies the global environment
+-   the function's name does not describe what it does
 :::
 
 # Debugging Functions
 
-::: columns
+:::::: columns
 ::: {.column width="40%"}
-Suppose you've done it: You've written the most glorious, beautiful,
-well-designed function of all time. It's many lines long, and it relies on
-several sub-functions. You run it and it doesn't work.
+Suppose you've done it: You've written the most glorious, beautiful, well-designed function of all time. It's many lines long, and it relies on several sub-functions. You run it and it doesn't work.
 
-How can you track down exactly where in your complicated functions, something
-went wrong?
+How can you track down exactly where in your complicated functions, something went wrong?
 :::
 
 ::: {.column width="5%"}
@@ -264,50 +234,58 @@ went wrong?
 ::: {.column width="55%"}
 ![](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/51084276-ab7f-4c57-a0e7-5cf14a277359_rw_3840.png?h=d4d09144139fad473d6333e919c0f45a){fig-alt="A cartoon of a fuzzy round monster face showing 10 different emotions experienced during the process of debugging code. The progression goes from (1) “I got this” - looking determined and optimistic; (2) “Huh. Really thought that was it.” - looking a bit baffled; (3) “...” - looking up at the ceiling in thought; (4) “Fine. Restarting.” - looking a bit annoyed; (5) “OH WTF.” Looking very frazzled and frustrated; (6) “Zombie meltdown.” - looking like a full meltdown; (7) (blank) - sleeping; (8) “A NEW HOPE!” - a happy looking monster with a lightbulb above; (9) “insert awesome theme song” - looking determined and typing away; (10) “I love coding” - arms raised in victory with a big smile, with confetti falling."}
 :::
-:::
+::::::
 
-::: {.callout-learn-more}
-We highly recommend watching this video on the debuggin process by Jenny Bryan:
+:::: callout-learn-more
+We highly recommend watching this video on the debugging process by Jenny Bryan:
 
 ::: youtube-video-container
 {{< video https://www.youtube.com/embed/vgYS-F8opgE?si=50_pcvhIl2LkgwJT >}}
 :::
-:::
+::::
 
 <!-- maybe make new questions? -->
-::: {.callout-check-in}
-4. What does using the `traceback` approach to debugging **NOT**
-tell you?
+
+::: callout-check-in
+4.  What does using the `traceback` approach to debugging **NOT** tell you?
+
+<!-- -->
 
 a)  The function call that triggered the error.
 b)  The sub-function where the error actually occurred.
 c)  The value of the argument or object that caused the error.
 d)  The text of the full error message.
 
-5. Which of the following is **NOT** a disadvantage of using
-`browser()`?
+<!-- -->
+
+5.  Which of the following is **NOT** a disadvantage of using `browser()`?
+
+<!-- -->
 
 a)  You can't insert it into existing functions.
 b)  You can't view variables in the function environment when it is running.
 c)  You have to remember to take it out of your code when you are done with it.
 d)  You have to run your code line-by-line until you find the error.
 
-6. What is the most fun pronunciation of `debugonce()`
+<!-- -->
+
+6.  What is the most fun pronunciation of `debugonce()`
+
+<!-- -->
 
 a)  "Debug Once"
 b)  "Debut Gonky"
 c)  "Debugoncé" like "Beyoncé"
 :::
 
-# Advanced Details
 
-As this is an Advanced course, let's take a moment to talk about two quirky
-details of how R handles functions.
+
+
 
 ## Objects of Type Closure
 
-In R, functions are **objects**. That is, creating a function is not
-fundamentally different from creating a vector or a data frame.
+
+In R, functions are **objects**. That is, creating a function is not fundamentally different from creating a vector or a data frame.
 
 Here we store the vector `1, 2, 3` in the object named `a`:
 
@@ -333,8 +311,7 @@ a <- function(){
 a
 ```
 
-For some strange reason, there is a specific term in R for "an object that is
-a function"---**closure**. Have you ever gotten this error?
+For some strange reason, there is a specific term in R for "an object that is a function"---**closure**. Have you ever gotten this error?
 
 ```{r}
 #| echo: true
@@ -344,31 +321,26 @@ a function"---**closure**. Have you ever gotten this error?
 a[1]
 ```
 
-I bet you have! What happened here is that we tried to take a subset of the
-vector `a`. But `a` is a function, not a vector, so this doesn't work! If you've
-encounter this error in the wild, it's probably because you tried to reference
-a non-existent object. However, you used an object name that happens to also be
-an existing function.
+I bet you have! What happened here is that we tried to take a subset of the vector `a`. But `a` is a function, not a vector, so this doesn't work! If you've encounter this error in the wild, it's probably because you tried to reference a non-existent object. However, you used an object name that happens to also be an existing function.
 
+::: callout-check-in
+7.  What is the most likely cause of the error message `Error in x[1] : object of type 'closure'` is not subsettable?
 
-::: {.callout-check-in}
-7. What is the most likely cause of the error message 
-`Error in x[1] : object of type 'closure'` is not subsettable?
+<!-- -->
 
-a. Trying to access an element of a list using parentheses `()` instead of
-square brackets `[]`
-b. Attempting to subset a numeric vector using the wrong index type
-c. Trying to extract an element from a function using square bracket notation
-d. Passing a missing argument to a function
+a.  Trying to access an element of a list using parentheses `()` instead of square brackets `[]`
+b.  Attempting to subset a numeric vector using the wrong index type
+c.  Trying to extract an element from a function using square bracket notation
+d.  Passing a missing argument to a function
 :::
 
 ## Lazy Evaluation
 
-Like most people, R's goal is to avoid doing any unnecessary work. When you
-"give" a value to an argument of a function, R does a quick check to make sure
-you haven't done anything too crazy, like forgotten a parenthesis. Then it says,
-"Yep, looks like R code to me!" and moves on with its life. Only when that
-argument is *actually used* does R try to run the code.
+
+::: stat541
+:::
+
+Like most people, R's goal is to avoid doing any unnecessary work. When you "give" a value to an argument of a function, R does a quick check to make sure you haven't done anything too crazy, like forgotten a parenthesis. Then it says, "Yep, looks like R code to me!" and moves on with its life. Only when that argument is *actually used* does R try to run the code.
 
 Consider the following obvious problem:
 
@@ -408,30 +380,26 @@ silly_function(
 
 Seems like it should be an error, right? But wait! Try it out for yourself.
 
-The function `silly_function()` doesn't use the `x` argument. Thus, R was
-"lazy", and never even bothered to try to run `mean("orange")` - so we never get
-an error. 🙀
+The function `silly_function()` doesn't use the `x` argument. Thus, R was "lazy", and never even bothered to try to run `mean("orange")` - so we never get an error. 🙀
 
-::: {.callout-check-in}
-8. In R, when exactly does the evaluation of a function argument
-occur?
+::: callout-check-in
+8.  In R, when exactly does the evaluation of a function argument occur?
 
-a. Immediately when the function is called
-b. Only if and when the argument’s value is actually used within the function
-body
-c. When the function is compiled
-d. Only after all other arguments have been evaluated
+<!-- -->
+
+a.  Immediately when the function is called
+b.  Only if and when the argument’s value is actually used within the function body
+c.  When the function is compiled
+d.  Only after all other arguments have been evaluated
 :::
 
-# STAT 541
+## Non-Standard Evaluation and Tunneling
 
-This content is required for students enrolled in STAT 541 and optional for 
-students enrolled in STAT 431. 
 
-## Non-Standard Evaluation and Tunnelling
+::: stat541
+:::
 
-Suppose you want to write a function that takes a dataset, a categorical
-variable, and a quantitative variable; and returns the means by group.
+Suppose you want to write a function that takes a dataset, a categorical variable, and a quantitative variable; and returns the means by group.
 
 You might think to yourself, "Easy!" and write something like this:
 
@@ -461,25 +429,15 @@ means_by_group(penguins,
                quant_var = bill_length_mm)
 ```
 
-Dagnabbit! The function tried to group the data by a variable named `cat_var` -
-but the dataset `penguins` doesn't have any variables named `cat_var`!
+Dagnabbit! The function tried to group the data by a variable named `cat_var` - but the dataset `penguins` doesn't have any variables named `cat_var`!
 
-What happened here is that the function `group_by()` uses 
-**non-standard evaluation**. This means it has a very special type of input
-called **unquoted**. Notice that we say `group_by(species)` not 
-`group_by("species")` - there are no quotation marks, because `species` is a
-variable name, not a string. In the `means_by_group()` function, R sees the
-unquoted variable `cat_var`, and tries to use it as an input in `group_by()`, 
-not realizing that we *actually* meant to pass along the variable name 
-`species` into the function.
+What happened here is that the function `group_by()` uses **non-standard evaluation**. This means it has a very special type of input called **unquoted**. Notice that we say `group_by(species)` not `group_by("species")` - there are no quotation marks, because `species` is a variable name, not a string. In the `means_by_group()` function, R sees the unquoted variable `cat_var`, and tries to use it as an input in `group_by()`, not realizing that we *actually* meant to pass along the variable name `species` into the function.
 
-::: {.callout-required-reading}
+::: callout-required-reading
 [*R for Data Science* Chapter 25, Section 3: Data Frame Functions](https://r4ds.hadley.nz/functions.html#data-frame-functions)
 :::
 
-To solve this conundrum, we use a trick called **tunneling** to "force" the
-unquoted name `species` through to the function `group_by()`. It looks like
-this:
+To solve this conundrum, we use a trick called **tunneling** to "force" the unquoted name `species` through to the function `group_by()`. It looks like this:
 
 ```{r}
 #| echo: true
@@ -500,8 +458,7 @@ means_by_group <- function(dataset, cat_var, quant_var) {
 ::: callout-note
 # `rlang` Package
 
-Note the tunnel, or "curly-curly" operator, `{{{ }}}`, is from the tidyverse 
-package `rlang`.
+Note the tunnel, or "curly-curly" operator, `{{{ }}}`, is from the tidyverse package `rlang`.
 :::
 
 Now everything works!
@@ -528,14 +485,9 @@ means_by_group(penguins,
                quant_var = bill_length_mm)
 ```
 
-Oh no! What now?! When `c(species, sex)` is put inside `{{{ c(species, sex) }}}`
-within the function, R is actually running the code inside `{{{ }}}`. This 
-combines the columns for those two variables into one long vector. What we
-really meant by `c(species, sex)` is "group by **both** `species` **and** 
-`sex`."
+Oh no! What now?! When `c(species, sex)` is put inside `{{{ c(species, sex) }}}` within the function, R is actually running the code inside `{{{ }}}`. This combines the columns for those two variables into one long vector. What we really meant by `c(species, sex)` is "group by **both** `species` **and** `sex`."
 
-To fix this, we need the `pick()` function to get R to see `{{{ group_var }}}` 
-as a list of separate variables (like the way `select()` works).
+To fix this, we need the `pick()` function to get R to see `{{{ group_var }}}` as a list of separate variables (like the way `select()` works).
 
 ```{r}
 #| label: group-means-multiple-cat-vars
@@ -561,8 +513,6 @@ means_by_group(penguins,
                )
 ```
 
-::: {.callout-check-in}
-9. Create a new version of `dplyr::count()` that also shows
-proportions instead of just sample sizes. The function should be able to handle
-counting by multiple categorical variables. 
+::: callout-check-in
+9.  Create a new version of `dplyr::count()` that also shows proportions instead of just sample sizes. The function should be able to handle counting by multiple categorical variables.
 :::
