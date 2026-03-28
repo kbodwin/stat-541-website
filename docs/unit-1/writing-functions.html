@@ -45,9 +45,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-11bfcd6a0b7733ad32f3ef46bdbbe30f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-796ef4b68f69bee2ebb2012afbce16fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-11bfcd6a0b7733ad32f3ef46bdbbe30f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5f858a84010510139e49c405efe9b486.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/flourish-0.0.1/injectFlourishes.js"></script>
 <script src="../site_libs/quarto-contrib/flourish-0.0.1/flourish.js"></script>
 <script id="quarto-search-options" type="application/json">{
@@ -753,9 +753,6 @@ doStuff &lt;- function(x) {
 </ol>
 </div>
 </div>
-<div class="stat541">
-
-</div>
 <section id="objects-of-type-closure" class="level2">
 <h2 class="anchored" data-anchor-id="objects-of-type-closure">Objects of Type Closure</h2>
 <p>In R, functions are <strong>objects</strong>. That is, creating a function is not fundamentally different from creating a vector or a data frame.</p>
@@ -807,6 +804,9 @@ a[1]</code></pre>
 </section>
 <section id="lazy-evaluation" class="level2">
 <h2 class="anchored" data-anchor-id="lazy-evaluation">Lazy Evaluation</h2>
+<div class="stat541">
+
+</div>
 <p>Like most people, R’s goal is to avoid doing any unnecessary work. When you “give” a value to an argument of a function, R does a quick check to make sure you haven’t done anything too crazy, like forgotten a parenthesis. Then it says, “Yep, looks like R code to me!” and moves on with its life. Only when that argument is <em>actually used</em> does R try to run the code.</p>
 <p>Consider the following obvious problem:</p>
 <pre class="{r}"><code>#| error: true
@@ -859,6 +859,9 @@ silly_function(
 </section>
 <section id="non-standard-evaluation-and-tunneling" class="level2">
 <h2 class="anchored" data-anchor-id="non-standard-evaluation-and-tunneling">Non-Standard Evaluation and Tunneling</h2>
+<div class="stat541">
+
+</div>
 <p>Suppose you want to write a function that takes a dataset, a categorical variable, and a quantitative variable; and returns the means by group.</p>
 <p>You might think to yourself, “Easy!” and write something like this:</p>
 <pre class="{r}"><code>#| echo: true

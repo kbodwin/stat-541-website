@@ -226,14 +226,14 @@ div.callout-opinion.icon.callout-captioned .callout-icon::before {
 }
 
 .stat541::before {
-  content: "Advanced Details";
+  content: "Advanced Content";
   display: block;
   font-size: 1.5em;
   margin-bottom: 0.5em;
 }
 
 .stat541::after {
-  content: "Content below is required for students enrolled in STAT 541 and optional for students enrolled in STAT 431.";
+  content: "Content in this section is required for students enrolled in STAT 541 and optional for students enrolled in STAT 431. (This only applies to the current section or subsection of this lesson; be sure to scroll down for more content.) ";
   display: block;
   font-weight: normal;
   font-size: 0.95em;
