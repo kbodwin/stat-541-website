@@ -692,3 +692,6 @@ outlined by Will Chase (in the Glamour of Graphics)?
 outlined by Will Chase. For the plot you chose in Question 4, what additional
 change(s) are necessary?
 :::
+
+
+<!-- Note - good place for custom themes as optional content in the future! -->
