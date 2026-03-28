@@ -308,6 +308,11 @@ class time in the second class day of the week to work on them, but you will
 almost certainly need to also work on them at home.  These checkpoints will be
 graded on quality, not just completeness.
 
+Project checkpoints are completed in teams; however, each individual must have
+their own repository that is kept up to date for each checkpoint.  All individual
+repositories will be turned in to the group assignment each week, and one will
+be chosen at random for grading.
+
 **Project Checkpoints are worth 15% of your grade**
 
 ## Projects (due at the end of each unit)
@@ -322,6 +327,8 @@ Project Due Dates for Spring 2026:
 * Saturday, May 2
 * Saturday, May 23
 * Saturday, June 6 
+
+Only one final deliverable needs to be submitted for each team.
 
 **Projects are worth 10% of your grade each, for a total of 30% of your grade.**
 

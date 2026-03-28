@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.8.24">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Code Speed – Advanced R</title>
 <style>
@@ -62,7 +62,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../practice-activities/week-10.qmd" rel="next">
-<link href="../practice-activities/week-9.qmd" rel="prev">
+<link href="../practice-activities/week-9.html" rel="prev">
 <link href="../images/cat-monsters-horst.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -71,14 +71,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-235111c28925c9e86c962b253a60587d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-66e13ad8bcd6db200b8760a97ea3ceb4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5f858a84010510139e49c405efe9b486.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/flourish-0.0.1/injectFlourishes.js"></script>
 <script src="../site_libs/quarto-contrib/flourish-0.0.1/flourish.js"></script><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -285,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
 <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
@@ -309,7 +309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Unit 2 - Professional Deliverables</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../unit-3.html" aria-current="page"> 
+    <a class="nav-link" href="../unit-3.html"> 
 <span class="menu-text">Unit 3 - Package Development</span></a>
   </li>  
   <li class="nav-item">
@@ -339,23 +339,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">unit-3</span></a>
+ <span class="menu-text">Unit 3</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practice-activities/week-8.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../unit-3/package-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Packages</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../practice-activities/week-8.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 8: In-Class Activity</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practice-activities/week-9.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../unit-3/unit-testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Testing Package Code</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit-3/debugging.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Debugging Package Code</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../practice-activities/week-9.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 9: In-Class Activity</span></a>
   </div>
 </li>
@@ -380,7 +402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
 <li>
-<a href="#tip-3-use-faster-existing-functions" id="toc-tip-3-use-faster-existing-functions" class="nav-link active" data-scroll-target="#tip-3-use-faster-existing-functions">Tip 3: Use faster existing functions</a>
+<a href="#use-faster-existing-functions" id="toc-use-faster-existing-functions" class="nav-link active" data-scroll-target="#use-faster-existing-functions">Use faster existing functions</a>
   <ul class="collapse">
 <li><a href="#data.table" id="toc-data.table" class="nav-link" data-scroll-target="#data.table"><code>data.table</code></a></li>
   </ul>
@@ -412,19 +434,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header><p>Fortunately, we stand on the shoulders of giants. Many skilled computer scientists have put a lot of time and effort into writing R functions that run as fast as possible.</p>
 <p>To speed up the code, without deep knowledge of computer algorithms and inner workings, you can sometimes come up with clever ways to avoid these pitfalls.</p>
 <p>First, though: as you start thinking about writing faster code, you’ll need a way to check whether your improvements actually sped up the code.</p>
-<section id="required-reading-the-tictoc-and-microbenchmark-packages" class="level4"><h4 class="anchored" data-anchor-id="required-reading-the-tictoc-and-microbenchmark-packages">📖 Required Reading: <a href="https://www.jumpingrivers.com/blog/timing-in-r/">The tictoc and microbenchmark packages</a>
-</h4>
-</section><section id="required-reading-the-bench-package" class="level4"><h4 class="anchored" data-anchor-id="required-reading-the-bench-package">📖 Required Reading: <a href="https://www.tidyverse.org/blog/2018/06/bench-1.0.1/">The bench package</a>
-</h4>
-</section><section id="required-reading-lobstrobj_size" class="level4"><h4 class="anchored" data-anchor-id="required-reading-lobstrobj_size">📖 Required Reading: <a href="https://lobstr.r-lib.org/reference/obj_size.html"><code>lobstr::obj_size()</code></a>
-</h4>
-</section><section id="tip-3-use-faster-existing-functions" class="level1"><h1>Tip 3: Use faster existing functions</h1>
+<div class="callout callout-style-default callout-required-reading callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-reading</span>Required Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://www.jumpingrivers.com/blog/timing-in-r/">The tictoc and microbenchmark packages</a></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-required-reading callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-reading</span>Required Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://www.tidyverse.org/blog/2018/06/bench-1.0.1/">The bench package</a></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-required-reading callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-reading</span>Required Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>Stat 541 Only</em> <a href="https://lobstr.r-lib.org/reference/obj_size.html"><code>lobstr::obj_size()</code></a></p>
+</div>
+</div>
+<section id="use-faster-existing-functions" class="level1"><h1>Use faster existing functions</h1>
 <p>Because R has so many packages, there are often many functions to perform the same task. Not all functions are created equal!</p>
 <section id="data.table" class="level2"><h2 class="anchored" data-anchor-id="data.table"><code>data.table</code></h2>
 <p>For speeding up work with data frames, no package is better than <code>data.table</code>!</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/uueVddWwbkk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<section id="required-reading-data.table-cheatsheet" class="level4"><h4 class="anchored" data-anchor-id="required-reading-data.table-cheatsheet">📖 Required Reading: <a href="https://pbs.twimg.com/media/Dwoq0ZQXQAE5lJt.jpg">data.table cheatsheet</a>
-</h4>
+<div class="callout callout-style-default callout-required-reading callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Required-reading</span>Required Reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://pbs.twimg.com/media/Dwoq0ZQXQAE5lJt.jpg">data.table cheatsheet</a></p>
+</div>
+</div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -448,7 +514,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 </div>
 </div>
-</section></section></section><section id="tip-3-only-improve-what-needs-improving" class="level1"><h1>Tip 3: Only improve what needs improving</h1>
+</section></section><section id="tip-3-only-improve-what-needs-improving" class="level1"><h1>Tip 3: Only improve what needs improving</h1>
 <blockquote class="blockquote">
 <p>“We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical 3%. A good programmer will not be lulled into complacency by such reasoning, [they] will be wise to look carefully at the critical code; but only after that code has been identified.” — Donald Knuth.</p>
 </blockquote>
@@ -938,7 +1004,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../practice-activities/week-9.qmd" class="pagination-link" aria-label="Week 9: In-Class Activity">
+      <a href="../practice-activities/week-9.html" class="pagination-link" aria-label="Week 9: In-Class Activity">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 9: In-Class Activity</span>
       </a>          
   </div>
