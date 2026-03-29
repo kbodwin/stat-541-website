@@ -614,19 +614,22 @@ Important
 <li>How does your function handle cities without pass times? What can you add to the body of your function to handle this special case?</li>
 </ol>
 <ol start="8" type="1">
-<li>How does your function handle cities with <strong>multiple</strong> pass times? What can you add to the body of your function to handle this special case?</li>
+<li>Alright, let’s try this again! Using <code><a href="https://purrr.tidyverse.org/reference/map2.html">map2()</a></code> iterate your function over the <code>latitude</code> and <code>longitude</code> columns of the <code>cities</code> dataframe.</li>
 </ol>
 <ol start="9" type="1">
-<li>Alright, let’s try this again. Using <code><a href="https://purrr.tidyverse.org/reference/map2.html">map2()</a></code> iterate your function over the <code>latitude</code> and <code>longitude</code> columns of the <code>cities</code> dataframe. <strong>Save this object as <code>city_passes</code> so you don’t get an error about exceeding 10 requests per minute.</strong>
+<li>Your <code><a href="https://purrr.tidyverse.org/reference/map.html">map()</a></code> should have been successful, but you should notice something else happening. There are cities with <strong>multiple</strong> pass times! What can you add to the body of your function to grab the <em>first</em> pass time for cities with multiple pass times?</li>
+</ol>
+<ol start="10" type="1">
+<li>Alright, let’s try this one last time! Using <code><a href="https://purrr.tidyverse.org/reference/map2.html">map2()</a></code> iterate your function over the <code>latitude</code> and <code>longitude</code> columns of the <code>cities</code> dataframe. <strong>Save this object as <code>city_passes</code> so you don’t get an error about exceeding 10 requests per minute.</strong>
 </li>
 </ol>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>city_passes <span class="ot">&lt;-</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<ol start="10" type="1">
-<li>Add each city’s pass times to the original <code>cities</code> dataframe. Arrange the table based on the cities where the ISS will pass next. <em>Hint: The <code>city_passes</code> object is a list which you will need to unpack. The <code><a href="https://tidyr.tidyverse.org/reference/unnest.html">unnest()</a></code> will be helpful here!</em>
-</li>
+<ol start="11" type="1">
+<li>Add each city’s pass times to the original <code>cities</code> dataframe. Arrange the table based on the cities where the ISS will pass next.</li>
 </ol>
+<p><em>Hint: The <code>city_passes</code> object is a list which you will need to unpack. The <code><a href="https://tidyr.tidyverse.org/reference/unnest.html">unnest()</a></code> will be helpful here!</em></p>
 
 
 </section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">

@@ -158,7 +158,8 @@ location.
 
 6. Using `map2()` iterate your function over the `latitude` and `longitude` 
 columns of the `cities` dataframe. 
-*Hint: There are three arguments to `map2()`, `.x`, `.y`, and `.f`. You will need to specify each!*
+*Hint: There are three arguments to `map2()`, `.x`, `.y`, and `.f`. You will
+need to specify each!*
 
 ```{r}
 #| label: map-pass-times
@@ -175,28 +176,40 @@ the body of your function to handle this special case?
 
 ```
 
-8. How does your function handle cities with **multiple** pass times? What can
-you add to the body of your function to handle this special case?
+8. Alright, let's try this again! Using `map2()` iterate your function over the
+`latitude` and `longitude` columns of the `cities` dataframe. 
+
+```{r}
+#| label: map-pass-times-take-2
+
+```
+
+9. Your `map()` should have been successful, but you should notice something 
+else happening. There are cities with **multiple** pass times! What can
+you add to the body of your function to grab the *first* pass time for cities
+with multiple pass times?
 
 ```{r}
 #| label: pass-time-function-mult-passes
 
 ```
 
-9. Alright, let's try this again. Using `map2()` iterate your function over the
+10. Alright, let's try this one last time! Using `map2()` iterate your function over the
 `latitude` and `longitude` columns of the `cities` dataframe. 
 **Save this object as `city_passes` so you don't get an error about exceeding 10 requests per minute.**
 
 ```{r}
-#| label: second-try-iterating
+#| label: map-pass-times-take-3
 
 city_passes <- 
   
 ```
 
-10. Add each city's pass times to the original `cities` dataframe. Arrange the
+11. Add each city's pass times to the original `cities` dataframe. Arrange the
 table based on the cities where the ISS will pass next. 
-*Hint: The `city_passes` object is a list which you will need to unpack. The `unnest()` will be helpful here!* 
+
+*Hint: The `city_passes` object is a list which you will need to unpack. The
+`unnest()` will be helpful here!* 
 
 ```{r}
 #| label: cities-with-passtimes
