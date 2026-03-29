@@ -82,14 +82,6 @@ lat  <- 40.7128
 long <- -74.0060
 ```
 
-```{r}
-#| label: q1-soln
-#| echo: false
-
-url <- glue::glue("{base_url}/25544/{lat}/{long}.json?hours=12")
-nyc <- GET(url)
-```
-
 2. Now that we have the JSON file for NYC, let's parse it into a tidy dataframe.
 Using functions from **jsonlite** or **tidyjson** convert the JSON file to a 
 dataframe. 
@@ -98,12 +90,6 @@ dataframe.
 ```{r}
 #| label: extracting-nyc-passtime-info
 
-nyc$content |> 
-  rawToChar() |>
-  as.tbl_json() |>
-  enter_object("passes") |>
-  gather_array() |>
-  spread_all()
 ```
 
 3. The `start` column for the passtimes is what we are interested in, but
@@ -114,15 +100,7 @@ Parse this column into a data-time object using the `ymd_hms()` function from
 
 ```{r}
 #| label: parse-date-nyc
-#| echo: false
 
-nyc$content |> 
-  rawToChar() |>
-  as.tbl_json() |>
-  enter_object("passes") |>
-  gather_array() |>
-  spread_all() |> 
-  mutate(start = ymd_hms(start, tz = "UTC"))
 ```
 
 4. Our final step is to isolate the pass time for NYC. Use the `pull()` function
@@ -130,16 +108,7 @@ to extract the parsed data-time column you made in the last question.
 
 ```{r}
 #| label: pull-date-nyc
-#| echo: false
 
-nyc$content |> 
-  rawToChar() |>
-  as.tbl_json() |>
-  enter_object("passes") |>
-  gather_array() |>
-  spread_all() |> 
-  mutate(start = ymd_hms(start, tz = "UTC")) |>
-  pull(start)
 ```
 
 ## Getting the Pass Times for *Every* City
@@ -185,7 +154,6 @@ location.
 ```{r}
 #| label: pass-time-function
 
-
 ```
 
 6. Using `map2()` iterate your function over the `latitude` and `longitude` 
@@ -194,7 +162,6 @@ columns of the `cities` dataframe.
 
 ```{r}
 #| label: map-pass-times
-
 
 ```
 
@@ -206,7 +173,6 @@ the body of your function to handle this special case?
 ```{r}
 #| label: pass-time-function-no-passes
 
-
 ```
 
 8. How does your function handle cities with **multiple** pass times? What can
@@ -214,35 +180,6 @@ you add to the body of your function to handle this special case?
 
 ```{r}
 #| label: pass-time-function-mult-passes
-#| echo: false
-
-get_pass_time <- function(lat, long){
-  # Grab pass time information from API
-  pass_time <- GET(
-    glue::glue("{base_url}{lat}/{long}.json?hours=18")
-    )$content |>
-    rawToChar() |>
-    as.tbl_json() |>
-    enter_object("passes") |>
-    gather_array() |>
-    spread_all()
-  
-  # If there is no pass information (ISS doesn't pass in next 18-hours)
-  if(nrow(pass_time) == 0){
-    NA_POSIXct_
-    } else if(nrow(pass_time) > 1) { # If ISS passes by multiple times
-      pass_time |>
-        mutate(start_dt = ymd_hms(start, tz = "UTC")) |>
-        # Grab first pass
-        slice_min(start_dt) |>
-        pull(start_dt)
-      }
-  else{ # If there is only one pass time
-    pass_time |>
-      mutate(start_dt = ymd_hms(start, tz = "UTC")) |>
-      pull(start_dt)
-    }
-}
 
 ```
 
@@ -263,11 +200,6 @@ table based on the cities where the ISS will pass next.
 
 ```{r}
 #| label: cities-with-passtimes
-#| echo: false
 
-cities %>%
-  mutate(next_pass = city_passes) |>
-  unnest(cols = next_pass) |>
-  arrange(next_pass)
 
 ```
