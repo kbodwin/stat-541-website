@@ -19,32 +19,54 @@ Be sure to save the file inside your Week 2 folder of your STAT 431 (or 541) fol
 
 ## Writing Functions
 
-1.  Write a function called `summ_stats()` that takes a vector `x` as input and produces the following output:
+1.  Write a function called `summ_stats()` that takes a vector `x` as input and
+produces the following output:
 
--   for **numeric variables**: returns the mean, median, standard deviation, and IQR as a data frame
--   for **categorical variables**: returns the number of levels (categories) of the variable
+-   for **numeric variables**: returns the mean, median, standard deviation, and
+IQR as a data frame
+-   for **categorical variables**: returns the number of levels (categories) of
+the variable
 
-*Hint:* You can use `tibble()` to create the data frame. For example, `tibble(a = 1:2, b = 2:3)` creates a data frame with variables `a` and `b`.
+*Hint:* You can use `tibble()` to create the data frame. For example, 
+`tibble(a = 1:2, b = 2:3)` creates a data frame with variables `a` and `b`.
+
+2. Confirm that your function works on each type of variable by running the 
+code below. 
+
+```{r}
+summ_stats(diamonds$carat)
+
+summ_stats(diamonds$color)
+```
 
 ## Iterating Functions
 
-2.  Use `map()` to apply your `summ_stats()` function to every column in the `diamonds` dataset. *Hint:* Look up the `bind_rows()` documentation from dplyr to combine summary statistics for all quantitative variables into one data frame. The `.id` argument will be especially helpful in adding the variable names!
+3.  Use `map()` to apply your `summ_stats()` function to every column in the
+`diamonds` dataset. 
+
+*Hint: Look up the `bind_rows()` documentation from dplyr to combine summary
+statistics for all quantitative variables into one data frame. The `.id`
+argument will be especially helpful in adding the variable names!*
 
 ## Data Transformation
 
-3.  Let's make the output more intuitive, with the variables on the columns and the summary statistics on the rows.
+4.  Let's make the output more intuitive, with the variables on the columns and
+the summary statistics on the rows.
 
-*Hint:* You will need to do a double pivot (`pivot_longer()` then `pivot_wider()`) to achieve this result!
+*Hint: You will need to do a double pivot (`pivot_longer()` then
+`pivot_wider()`) to achieve this result!*
 
 ## Using Helper Functions (Stat 541 only)
 
-4.  Now that we have the output we want, let's use our code to write a `summ_df()` function that takes a data frame as an input and outputs a table of summary statistics for every variable in the data frame.
+5.  Now that we have the output we want, let's use our code to write a
+`summ_df()` function that takes a data frame as an input and outputs a table of
+summary statistics for every variable in the data frame.
 
-5.  Demonstrate that your function works using the `mpg` dataset.
+*Hint: The body of your function should contain __all__ the code from Question 3.*
+
+6.  Demonstrate that your function works using the `mpg` dataset.
 
 ```{r}
-#| echo: true
 #| label: try-df-function
 
-summ_df(mpg)
 ```

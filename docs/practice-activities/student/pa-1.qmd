@@ -79,7 +79,7 @@ operations. If you are less familiar with these packages or it's been some time
 since you used them, I would strongly recommend referencing the function 
 documentation!  
 
-For these problems, we will continue to work with the `mtcars mpg` data frame, 
+For these problems, we will continue to work with the `mpg` data frame, 
 making various changes to the data to clean it up. 
 
 9. The `fl` variable describes the type of fuel for each car, with levels: `p`, 
@@ -95,8 +95,9 @@ Then, use the `mutate()` and `if_else()` functions to create a new variable
 
 10. The `drv` variable describes if the car has front drive (`f`), rear drive
 (`r`), or four wheel drive (`4`). Let's make better labels for these values! 
-Specifically, use the `mutate()` and `case_when()` functions to change the `drv`
-variable to have the following descriptive levels: `front`, `rear`, `four wheel`. 
+Specifically, use the `mutate()` and `recode_values()` to change the `drv`
+variable to have the following descriptive levels: `front`, `rear`,
+`four wheel`. 
 
 ```{r}
 #| label: descriptive-drive-variable
