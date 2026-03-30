@@ -1794,7 +1794,7 @@
     "href": "project/project-1.html#stat-431",
     "title": "Project 1 Final Deliverable",
     "section": "STAT 431",
-    "text": "STAT 431\nYou are required to submit both the link to your GitHub repository containing your source code and the final rendered report (as an HTML).",
+    "text": "STAT 431\nFor your final submission, your group will submit one GitHub repository link and one HTML document. This means, you will need to choose which group member’s repository will be submitted as the final version.",
     "crumbs": [
       "Projects",
       "Project 1 Final Deliverable"
@@ -1805,7 +1805,7 @@
     "href": "project/project-1.html#stat-541",
     "title": "Project 1 Final Deliverable",
     "section": "STAT 541",
-    "text": "STAT 541\nYou are required to submit both the link to your GitHub repository containing your source code and a link to your published report.\n\n\n\n\n\n\n\nTipSign-up for Connect Cloud\n\n\n\nYou will need to sign up for a free Connect Cloud account with your GitHub account, since the documents you will be publishing should live in a GitHub repository!",
+    "text": "STAT 541\nFor your final submission, your group will submit one GitHub repository link and one link to the published HTML document. This means, you will need to choose which group member’s repository will be submitted as the final version.\nTo publish your document, you will need to sign up for a free Connect Cloud account. I would recommend signing up with your GitHub account, since the documents you will be publishing for Project 1 and Project 2 live in a GitHub repository!\nOnce you’ve signed up, you need to follow these steps to publish your document:\n\nClick on the “Publish” button on the left sidebar\nSelect the “From GitHub” tab\nSelect “Quarto” as the framework\nInput the URL of your GitHub repository\nThe branch you want to push from should be “main”\nInput the name of the HTML document you want to publish (e.g., project-1.html)\nSelect “Publish” to publish your document!\n\n\n\n\n\n\n\nTipPublish on Push\n\n\n\nI would recommend toggling on the “Automatically publish on push” option, so your document will automatically update when you push changes to your GitHub repository.",
     "crumbs": [
       "Projects",
       "Project 1 Final Deliverable"
