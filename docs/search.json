@@ -1981,7 +1981,7 @@
     "href": "slides/01-version-control.html#cloning-a-repo",
     "title": "Introduction to Version Control",
     "section": "Cloning a Repo",
-    "text": "Cloning a Repo\n\nDownload the project onto your computer.\n\n\n\n\n\n\n\n\nA repository (repo) lives online.\nWhen you clone it, you make a local copy on your computer.\n\nAll the project files, history, and branches come with it."
+    "text": "Cloning a Repo\n\nDownload the project onto your computer.\n\n\n\n\n\n\nA repository (repo) lives online.\nWhen you clone it, you make a local copy on your computer.\n\nAll the project files, history, and branches come with it."
   },
   {
     "objectID": "slides/01-version-control.html#committing-changes",
@@ -2030,7 +2030,7 @@
     "href": "slides/01-version-control.html#workflow",
     "title": "Introduction to Version Control",
     "section": "Workflow",
-    "text": "Workflow\n\nPull the repo to make sure you have the most up to date version (especially if you are working on different computers).\nMake some changes locally.\nStage the changes (check the box).\nWrite a commit message\nPush your changes to GitHub."
+    "text": "Workflow\n\nPull the repo to make sure you have the most up to date version (especially if you are working on different computers).\nMake some changes locally.\nStage the changes (check the box).\nWrite a commit message\nClick the “Commit” button.\nPush your changes to GitHub."
   },
   {
     "objectID": "unit-1/alt-geoms.html",
@@ -2416,5 +2416,40 @@
       "Projects",
       "Week 1: Making a Game Plan"
     ]
+  },
+  {
+    "objectID": "slides/01-version-control.html#cloning-into-rstudio",
+    "href": "slides/01-version-control.html#cloning-into-rstudio",
+    "title": "Introduction to Version Control",
+    "section": "Cloning into RStudio",
+    "text": "Cloning into RStudio"
+  },
+  {
+    "objectID": "slides/01-version-control.html#step-2---cloning-the-repo-into-rstudio",
+    "href": "slides/01-version-control.html#step-2---cloning-the-repo-into-rstudio",
+    "title": "Introduction to Version Control",
+    "section": "Step 2 - Cloning the Repo into RStudio",
+    "text": "Step 2 - Cloning the Repo into RStudio\n\n\n\n\n\n\n\nImportant\n\n\nNow that we have a repo, we need to clone it into RStudio so we can work in it locally.\nFollow these instructions to clone your repo into RStudio.\nPut a green post-it on your laptop when you are done!"
+  },
+  {
+    "objectID": "slides/01-version-control.html#step-2",
+    "href": "slides/01-version-control.html#step-2",
+    "title": "Introduction to Version Control",
+    "section": "Step 2",
+    "text": "Step 2\n\n\n\n\n\n\n\nClone the Repo into RStudio\n\n\nNow that we have a repo, we need to clone it into RStudio so we can work in it locally.\nFollow these instructions to clone your repo into RStudio.\nPut a green post-it on your laptop when you are done!"
+  },
+  {
+    "objectID": "slides/01-version-control.html#gitignore",
+    "href": "slides/01-version-control.html#gitignore",
+    "title": "Introduction to Version Control",
+    "section": ".gitignore",
+    "text": ".gitignore\nThe instructions you followed added a .gitignore file to your repository.\n\nA .gitignore file specifies the files that git should intentionally ignore.\nOften these are machine generated files (e.g., .DS_Store) or files / directories that you do not want to be shared (e.g., solutions/).\nThe R specific .gitignore added by GitHub will ignore standard machine generated files that we don’t want to track: .Rhistory, .RData, .Rproj.user, .DS_Store."
+  },
+  {
+    "objectID": "slides/01-version-control.html#your-turn",
+    "href": "slides/01-version-control.html#your-turn",
+    "title": "Introduction to Version Control",
+    "section": "Your Turn",
+    "text": "Your Turn\n\n\n\n\n\n\n\nCommit & Push the New Files\n\n\nNow that you have the repo cloned into RStudio, you should see files that need to committed and pushed.\nFollow these instructions to commit your new files.\nPut a green post-it on your laptop when you are done!"
   }
 ]
