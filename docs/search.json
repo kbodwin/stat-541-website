@@ -2405,5 +2405,16 @@
       "Unit 3 - Package Development",
       "Code Speed"
     ]
+  },
+  {
+    "objectID": "project/week-1.html#submission",
+    "href": "project/week-1.html#submission",
+    "title": "Project Checkpoint 1",
+    "section": "Submission",
+    "text": "Submission\nYou will submit both your HTML report and the link to the GitHub repository where your report lives. In GitHub, you will need to make a new repository where your project materials will live.\n\nCreate a GitHub Repository\nFirst, you will need to create a new GitHub repository. Here is a document walking you through the 10 steps for accomplishing this:\n\n\n\n\nClone Your Repository into RStudio\nNow that you have a repository, you need to clone it into RStudio so your local changes can be pushed into your repository. Here is a document walking you through the 8 steps for accomplishing this:\n\n\n\n\nPush Your Changes to GitHub\nOnce you click “Create Project,” RStudio will open your project. You will know the project it has open based on the blue cube that appears in the upper right hand corner of your project ().\nIf you click on the “Git” tab in the upper right pane, you should see one file listed (project-1.Rproj). There is a yellow question mark next to this file meaning it is a new file that is not currently being tracked.\n\nTo add this file to your repository, you need to click on the “Commit” box (with the green check mark by it). That will open a popup window like this:\n\nFrom here you need to first check the box next to the file to stage it, this adds it to the list of files that will be pushed to GitHub. Next, you need to write a commit message in the textbox. Once you’ve completed these steps, you click the “Commit” button to commit these changes.\nOnce you click the “Commit” button, you should see a message like this appear, indicating that your commit was successful. Go ahead and hit “Close” to return to RStudio.\n\nNow, your Git tab should show that your branch (the local copy of your repo) is one commit ahead of the origin (the repository on GitHub).\n\nThe final step is to push the changes to GitHub. If you click on the “Push” icon (with the up arrow), the changes you committed will be pushed to GitHub. Similar to the commit message, if RStudio successfully pushed the changes you will get a message saying your changes were successfully pushed (HEAD -&gt; main).\n\n\n\nFour Steps to Follow Every Time\nYou only need to setup your repository once, but you will need to commit and push changes frequently. Our best advice is to commit and push small changes (e.g., one section of a report, one visualization, one table).\nEvery time you make a change to a document (new or existing), you will need to follow these four steps:\n\nStage the file—check the box next to the file.\nWrite a commit message—describe what changes you made.\nClick “Commit” to log these changes.\nClick “Push” to send these changes up to GitHub.",
+    "crumbs": [
+      "Projects",
+      "Week 1: Making a Game Plan"
+    ]
   }
 ]
