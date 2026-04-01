@@ -3,6 +3,7 @@ title: "Practice Activity Week 1"
 format: html
 embed-resources: true
 editor: source
+code-tools: true
 ---
 
 ```{r}
