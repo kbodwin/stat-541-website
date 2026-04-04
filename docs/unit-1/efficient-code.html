@@ -61,7 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../practice-activities/week-2.html" rel="next">
+<link href="../unit-1/formatting-tables.html" rel="next">
 <link href="../unit-1/iterating-functions.html" rel="prev">
 <link href="../images/cat-monsters-horst.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -367,6 +367,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../unit-1/formatting-tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Making Great Tables with gt</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../practice-activities/week-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 2: In-Class Activity</span></a>
   </div>
@@ -387,12 +393,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../practice-activities/week-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 3: In-Class Activity</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit-1/formatting-tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Making Great Tables with gt</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -500,7 +500,7 @@ $ age        &lt;dbl&gt; 86, 83, 81, 79, 78, 78, 78, 77, 76, 76, 75, 74, 74, 73,
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">toc</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.183 sec elapsed</code></pre>
+<pre><code>0.196 sec elapsed</code></pre>
 </div>
 </div>
 <p>These are all three reasonable things to do, and they can’t be done in the same pipeline. But wait, we just made R do the process of filtering to only include senators three separate times!</p>
@@ -512,7 +512,7 @@ $ age        &lt;dbl&gt; 86, 83, 81, 79, 78, 78, 78, 77, 76, 76, 75, 74, 74, 73,
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">toc</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.018 sec elapsed</code></pre>
+<pre><code>0.017 sec elapsed</code></pre>
 </div>
 </div>
 <p>Instead, how about we filter the data once, save it into an object, and call on that object:</p>
@@ -535,7 +535,7 @@ $ age        &lt;dbl&gt; 86, 83, 81, 79, 78, 78, 78, 77, 76, 76, 75, 74, 74, 73,
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">toc</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.12 sec elapsed</code></pre>
+<pre><code>0.126 sec elapsed</code></pre>
 </div>
 </div>
 <p>Not only did saving the senator data cut down on the runtime of our code, it made the code easier to understand! It is <strong>much</strong> clearer to the reader that each of the data exploration steps refers to the <code>senate</code> dataset.</p>
@@ -634,7 +634,7 @@ $ age        &lt;dbl&gt; 86, 83, 81, 79, 78, 78, 78, 77, 76, 76, 75, 74, 74, 73,
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">toc</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>7.714 sec elapsed</code></pre>
+<pre><code>7.81 sec elapsed</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:4%;">
@@ -647,7 +647,7 @@ $ age        &lt;dbl&gt; 86, 83, 81, 79, 78, 78, 78, 77, 76, 76, 75, 74, 74, 73,
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">toc</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.514 sec elapsed</code></pre>
+<pre><code>0.51 sec elapsed</code></pre>
 </div>
 </div>
 </div>
@@ -1170,8 +1170,8 @@ $ age        &lt;dbl&gt; 86, 83, 81, 79, 78, 78, 78, 77, 76, 76, 75, 74, 74, 73,
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../practice-activities/week-2.html" class="pagination-link" aria-label="Week 2: In-Class Activity">
-        <span class="nav-page-text">Week 2: In-Class Activity</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../unit-1/formatting-tables.html" class="pagination-link" aria-label="Making Great Tables with gt">
+        <span class="nav-page-text">Making Great Tables with gt</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
