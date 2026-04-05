@@ -14,3 +14,4 @@ _site
 *_cache
 **/*.quarto_ipynb
 *solutions
+*exams

@@ -1432,21 +1432,21 @@
     "href": "example-project-olympics/week-1.html",
     "title": "Project Checkpoint 1 - Example",
     "section": "",
-    "text": "This is a minimal example representing “passing” or ‘C’ level work, to give you a baseline for how to proceed. ‘B’ or ‘A’ level work will require a more thoughtful and thorough description of the data and cleaning, deeper or more complex research questions, and/or more polished visualization sketches."
+    "text": "Note\n\n\n\nThis is a minimal example representing “passing” or ‘C’ level work, to give you a baseline for how to proceed. ‘B’ or ‘A’ level work will require a more thoughtful and thorough description of the data and cleaning, deeper or more complex research questions, and/or more polished visualization sketches. Some notes about areas for improvement are included in the callouts below."
   },
   {
     "objectID": "example-project-olympics/week-1.html#introduction",
     "href": "example-project-olympics/week-1.html#introduction",
     "title": "Project Checkpoint 1 - Example",
     "section": "Introduction",
-    "text": "Introduction\n\nData Cleaning"
+    "text": "Introduction\nMy dataset is the Olympics data from TidyTuesday.\nIt shows all the Olympic athletes ever, and gives information about their sport, the country they are from, whether they won a medal, etc.\nThe data comes from a Kaggle dataset created by user RGriffin, who scraped the data from www.sports-reference.com in May 2018.\nHere are a few rows of the dataset:\n\ntuesdata &lt;- tidytuesdayR::tt_load('2024-08-06')\n\n---- Compiling #TidyTuesday Information for 2024-08-06 ----\n--- There is 1 file available ---\n\n\n── Downloading files ───────────────────────────────────────────────────────────\n\n  1 of 1: \"olympics.csv\"\n\ntuesdata$olympics |&gt; dplyr::sample_n(6)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nid\nname\nsex\nage\nheight\nweight\nteam\nnoc\ngames\nyear\nseason\ncity\nsport\nevent\nmedal\n\n\n\n883\nCharles Addo-Odametey\nM\n31\n170\n67\nGhana\nGHA\n1968 Summer\n1968\nSummer\nMexico City\nFootball\nFootball Men’s Football\nNA\n\n\n19784\nChang Wei-Chia\nF\n15\n173\n69\nChinese Taipei\nTPE\n1996 Summer\n1996\nSummer\nAtlanta\nSwimming\nSwimming Women’s 4 x 100 metres Freestyle Relay\nNA\n\n\n96074\nThomas Harold “Tom” Ponting\nM\n19\n180\n84\nCanada\nCAN\n1984 Summer\n1984\nSummer\nLos Angeles\nSwimming\nSwimming Men’s 200 metres Butterfly\nNA\n\n\n124134\nThomas Maria “Tom” van ’t Hek\nM\n26\n173\n75\nNetherlands\nNED\n1984 Summer\n1984\nSummer\nLos Angeles\nHockey\nHockey Men’s Hockey\nNA\n\n\n121911\nJames “Jim” Trifunov\nM\n24\nNA\nNA\nCanada\nCAN\n1928 Summer\n1928\nSummer\nAmsterdam\nWrestling\nWrestling Men’s Bantamweight, Freestyle\nBronze\n\n\n72456\nIlonda Lse\nF\n25\n181\n72\nLatvia\nLAT\n1998 Winter\n1998\nWinter\nNagano\nSpeed Skating\nSpeed Skating Women’s 1,500 metres\nNA\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nGood:\n\nThis description explains who created the data, from where, and when. It provides links to the sources so the reader can find them.\nIt somewhat explains what information is in the dataset; i.e., information about athletes, as opposed to scheduling information or other details.\nShowing a random small snippet of the dataset is typically useful, to get a feel for what it looks like.\n\nBad:\n\nThis is lacking in the “why” and “how” of the data creation. It is important to know what motivated the creation and sharing of a dataset, as well as the specific process that the creator used to assemble it.\nThis description is unclear about the observational units, i.e., what each row represents. (It is not true that each row is a unique athlete!)\nThis description could give much more detail on the observed variables present, such as how they were measured and what a typical value looks like.\n\n\n\nData Cleaning\nThis data was cleaned by using janitor to reformat column names.\nThe user RGriffin who scraped the data also checked for misentered data in the columns Name, Gender, Height, and Weight.\n\n\n\n\n\n\nNote\n\n\n\nGood:\n\nWe did not just look at the Tidy Tuesday cleaning and call it a day! We followed the path of the data creation to figure out what other cleaning and wrangling took place.\n\nBad:\n\nWe were not specific enough about the cleaning done by RGriffin. What did they alter in those columns and why? What other anomalies did they look for?"
   },
   {
     "objectID": "example-project-olympics/week-1.html#explorations",
     "href": "example-project-olympics/week-1.html#explorations",
     "title": "Project Checkpoint 1 - Example",
     "section": "Explorations",
-    "text": "Explorations\n\nRQ 1:\n\n\nRQ 2:\n\n\nRQ 3: Olympic success by population\nWhich countries win disproportionately more medals compared to their population size?\nAdditional Data: Populations of each country\n\n\nRQ 4:\n\n\n\n\n\n\n\n\n\n\n\n\n:::"
+    "text": "Explorations\nRQ 1: Olympic success by country\nWhich countries win the most Gold, Silver, and Bronze medals?\nRQ 2: Gender over time\nAre there a higher percentage of female sports over time?\n\n\n\n\n\n\nNote\n\n\n\nGood: * These two research questions are well-defined and answerable with the dataset.\nBad: * These are not particularly deep. “Which countries win the most?” is not going to provide a new insight beyond what most people already know, and I think we can expect from the outset that female sports have increased over time.\n\n\nRQ 3: Olympic success corrected by population\nWhich countries win disproportionately more medals compared to their population size?\nAdditional Data: Populations of each country\nRQ 4: Correlation between female wins and education\nDo countries with better support for education for women also tend to see more success in female sports categories?\nAdditional Data: Education trends in each country\n\n\n\n\n\n\nNote\n\n\n\nGood: * Question 4 digs deeper into the relationships between a country’s culture and government; and outcomes at the Olympics. This is a good question.\nBad: * Question 3 is a bit less interesting - you might uncover 1 or 2 interesting countries that win disproporitionately, but you aren’t telling a rich story."
   },
   {
     "objectID": "example-project-olympics/week-3.html",
@@ -2405,5 +2405,54 @@
       "Unit 3 - Package Development",
       "Code Speed"
     ]
+  },
+  {
+    "objectID": "exams/reading-quizzes/week-2/week-2-quiz.html",
+    "href": "exams/reading-quizzes/week-2/week-2-quiz.html",
+    "title": "Reading Quiz: Week 2",
+    "section": "",
+    "text": "Consider the function:\n\nadd_or_subtract &lt;- function(first_num, \n                            second_num = 2, \n                            type = \"add\") {\n  \n  if (type == \"add\") {\n    first_num + second_num\n  } else if (type == \"subtract\") {\n    first_num - second_num\n  } else {\n    stop(\"Please choose `add` or `subtract` as the type.\")\n  }\n  \n}\n\nWhat will be returned by this function call?\n\nadd_or_subtract(5, 6, type = \"multiply\")\n\n\n\n1\n-1\n30\nAn error defined in the function add_or_subtract()\n\nAn error defined in a different function, that is called from inside add_or_subtract()"
+  },
+  {
+    "objectID": "exams/reading-quizzes/week-2/week-2-quiz.html#q1",
+    "href": "exams/reading-quizzes/week-2/week-2-quiz.html#q1",
+    "title": "Reading Quiz: Week 2",
+    "section": "",
+    "text": "Consider the function:\n\nadd_or_subtract &lt;- function(first_num, \n                            second_num = 2, \n                            type = \"add\") {\n  \n  if (type == \"add\") {\n    first_num + second_num\n  } else if (type == \"subtract\") {\n    first_num - second_num\n  } else {\n    stop(\"Please choose `add` or `subtract` as the type.\")\n  }\n  \n}\n\nWhat will be returned by this function call?\n\nadd_or_subtract(5, 6, type = \"multiply\")\n\n\n\n1\n-1\n30\nAn error defined in the function add_or_subtract()\n\nAn error defined in a different function, that is called from inside add_or_subtract()"
+  },
+  {
+    "objectID": "exams/reading-quizzes/week-2/week-2-quiz.html#q2",
+    "href": "exams/reading-quizzes/week-2/week-2-quiz.html#q2",
+    "title": "Reading Quiz: Week 2",
+    "section": "Q2",
+    "text": "Q2\nFill in the blanks in the code below, which produces a table indicating whether a given column is numeric.\n\ndiamonds |&gt; \n  map_lgl(.f = is.numeric)\n\n  carat     cut   color clarity   depth   table   price       x       y       z \n   TRUE   FALSE   FALSE   FALSE    TRUE    TRUE    TRUE    TRUE    TRUE    TRUE \n\n\nFirst blank:\n\nint\npurrr\nchr\nlgl\n2\n\nSecond blank:\n\nis.numeric\nis.numeric()\nis.numeric(x)\nfunction(x) x == is.numeric"
+  },
+  {
+    "objectID": "exams/reading-quizzes/week-2/week-2-quiz.html#q3",
+    "href": "exams/reading-quizzes/week-2/week-2-quiz.html#q3",
+    "title": "Reading Quiz: Week 2",
+    "section": "Q3",
+    "text": "Q3\nWhy does the code below produce an error?\n\nx &lt;- c(1, 2, 3, 4, 16, 25)\n\nf &lt;- function(x) {\n  if (x &gt; 0) x else 0\n}\n\nf(x)\n\nError in if (x &gt; 0) x else 0: the condition has length &gt; 1\n\n\n\nBecause the function f() is missing a return() statement, so R throws an error.\nBecause if() only works with numeric values, and x is treated as a list.\nBecause if() can only evaluate a single TRUE/FALSE value, but x &gt; 0 returns a vector.\nBecause the function argument x has the same name as the global variable x, causing a naming conflict."
+  },
+  {
+    "objectID": "exams/reading-quizzes/week-2/week-2-quiz.html#q4---stat-541-only",
+    "href": "exams/reading-quizzes/week-2/week-2-quiz.html#q4---stat-541-only",
+    "title": "Reading Quiz: Week 2",
+    "section": "Q4 - Stat 541 only",
+    "text": "Q4 - Stat 541 only\nIn R, when exactly does the evaluation of a function argument occur?\n\n\nImmediately when the function is called\nOnly if and when the argument’s value is actually used within the function body\nWhen the function is compiled\nOnly after all other arguments have been evaluated"
+  },
+  {
+    "objectID": "exams/reading-quizzes/generate_question_banks.html",
+    "href": "exams/reading-quizzes/generate_question_banks.html",
+    "title": "make q banks",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.0     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\nextract_check_ins &lt;- function(path) {\n  \n   # Read file\n  lines &lt;- readLines(path, warn = FALSE)\n  \n  # Find check ins\n  starts &lt;- lines |&gt;\n    str_detect(\"callout-check-in\") |&gt;\n    which()\n  \n  # Find all div ends\n  ends &lt;- lines |&gt; str_detect(\":::\") |&gt; which()\n  \n  \n  # Find closest div ends to the callout start\n  ends_actual &lt;- map_dbl(starts, ~min(ends[ends &gt; .x]))\n  \n  # yoink out all check ins\n  map2(starts, ends_actual, ~lines[(.x+1):(.y-1)])\n}\n\nNote to self, loop this for all weeks or whatever.\n\nw1_files &lt;- c(\"writing-functions.qmd\", \"iterating-functions.qmd\", \"efficient-code.qmd\")\nw1_paths &lt;- map_chr(w1_files, ~here::here(\"unit-1\", .x))\n\nres &lt;- list()\n\nfor (i in 1:length(w1_paths)) {\n  \n  path &lt;- w1_paths[i]\n  name &lt;- w1_files[i] |&gt; str_remove(\"\\\\.qmd\")\n  name_divider &lt;- paste0(\"-----------------\", name, \"-------------------\")\n  \n  res &lt;- c(res, name_divider, extract_check_ins(path))\n}\n\nres |&gt;\n  map(~str_c(.x, collapse = \"\\n\")) |&gt;\n  str_c(collapse = \"\\n\\n\") |&gt;\n  writeLines(here::here(\"exams\", \"reading-quizzes\", \"week-2\", \"question_bank.txt\"))"
+  },
+  {
+    "objectID": "example-project-olympics/week-1.html#visualizations",
+    "href": "example-project-olympics/week-1.html#visualizations",
+    "title": "Project Checkpoint 1 - Example",
+    "section": "Visualizations",
+    "text": "Visualizations\n\n\n\n\n\n\n\nNote\n\n\n\nGood: * Plots are appropriate to data type and address RQs\nBad: * Not a lot of thought is put into these as far as good plot design, annotation and storytelling, etc."
   }
 ]
