@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Project Checkpoint 1 - Example – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
@@ -20,8 +18,42 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
-
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
@@ -47,8 +79,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-dark-5f858a84010510139e49c405efe9b486.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/flourish-0.0.1/injectFlourishes.js"></script>
-<script src="../site_libs/quarto-contrib/flourish-0.0.1/flourish.js"></script>
-<script id="quarto-search-options" type="application/json">{
+<script src="../site_libs/quarto-contrib/flourish-0.0.1/flourish.js"></script><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -75,10 +106,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-
-
 </head>
-
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -244,14 +272,10 @@ ul.task-list li input[type="checkbox"] {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content">
-    </a>
+    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content"><img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content"></a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -259,7 +283,7 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
@@ -292,49 +316,45 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/atheobold/stat-541-website"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+<li>
+<a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
-  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning">Data Cleaning</a></li>
-  </ul></li>
-  <li><a href="#explorations" id="toc-explorations" class="nav-link" data-scroll-target="#explorations">Explorations</a>
-  <ul class="collapse">
-  <li><a href="#rq-1" id="toc-rq-1" class="nav-link" data-scroll-target="#rq-1">RQ 1:</a></li>
-  <li><a href="#rq-2" id="toc-rq-2" class="nav-link" data-scroll-target="#rq-2">RQ 2:</a></li>
-  <li><a href="#rq-3-olympic-success-by-population" id="toc-rq-3-olympic-success-by-population" class="nav-link" data-scroll-target="#rq-3-olympic-success-by-population">RQ 3: Olympic success by population</a></li>
-  <li><a href="#rq-4" id="toc-rq-4" class="nav-link" data-scroll-target="#rq-4">RQ 4:</a></li>
-  </ul></li>
+<li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning">Data Cleaning</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/example-project-olympics/week-1.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+</li>
+  <li>
+<a href="#explorations" id="toc-explorations" class="nav-link" data-scroll-target="#explorations">Explorations</a>
+  <ul class="collapse">
+<li><a href="#rq-1-olympic-success-by-country" id="toc-rq-1-olympic-success-by-country" class="nav-link" data-scroll-target="#rq-1-olympic-success-by-country">RQ 1: Olympic success by country</a></li>
+  <li><a href="#rq-2-gender-over-time" id="toc-rq-2-gender-over-time" class="nav-link" data-scroll-target="#rq-2-gender-over-time">RQ 2: Gender over time</a></li>
+  <li><a href="#rq-3-olympic-success-corrected-by-population" id="toc-rq-3-olympic-success-corrected-by-population" class="nav-link" data-scroll-target="#rq-3-olympic-success-corrected-by-population">RQ 3: Olympic success corrected by population</a></li>
+  <li><a href="#rq-4-correlation-between-female-wins-and-education" id="toc-rq-4-correlation-between-female-wins-and-education" class="nav-link" data-scroll-target="#rq-4-correlation-between-female-wins-and-education">RQ 4: Correlation between female wins and education</a></li>
+  </ul>
+</li>
+  <li><a href="#visualizations" id="toc-visualizations" class="nav-link" data-scroll-target="#visualizations">Visualizations</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/example-project-olympics/week-1.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Project Checkpoint 1 - Example</h1>
 </div>
 
@@ -349,31 +369,283 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header>
+</header><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a minimal example representing “passing” or ‘C’ level work, to give you a baseline for how to proceed. ‘B’ or ‘A’ level work will require a more thoughtful and thorough description of the data and cleaning, deeper or more complex research questions, and/or more polished visualization sketches. Some notes about areas for improvement are included in the callouts below.</p>
+</div>
+</div>
+<section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>My dataset is <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2021/2021-07-27/readme.md">the Olympics data from TidyTuesday</a>.<br>
+It shows all the Olympic athletes ever, and gives information about their sport, the country they are from, whether they won a medal, etc.</p>
+<p>The data comes from a <a href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results/">Kaggle dataset</a> created by user RGriffin, who scraped the data from www.sports-reference.com in May 2018.</p>
+<p>Here are a few rows of the dataset:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tuesdata</span> <span class="op">&lt;-</span> <span class="fu">tidytuesdayR</span><span class="fu">::</span><span class="fu"><a href="https://dslc-io.github.io/tidytuesdayR/reference/tt_load.html">tt_load</a></span><span class="op">(</span><span class="st">'2024-08-06'</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>---- Compiling #TidyTuesday Information for 2024-08-06 ----
+--- There is 1 file available ---
 
 
-<p><em>This is a minimal example representing “passing” or ‘C’ level work, to give you a baseline for how to proceed. ‘B’ or ‘A’ level work will require a more thoughtful and thorough description of the data and cleaning, deeper or more complex research questions, and/or more polished visualization sketches.</em></p>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<section id="data-cleaning" class="level3">
-<h3 class="anchored" data-anchor-id="data-cleaning">Data Cleaning</h3>
-</section>
-</section>
-<section id="explorations" class="level2">
-<h2 class="anchored" data-anchor-id="explorations">Explorations</h2>
-<section id="rq-1" class="level3">
-<h3 class="anchored" data-anchor-id="rq-1">RQ 1:</h3>
-</section>
-<section id="rq-2" class="level3">
-<h3 class="anchored" data-anchor-id="rq-2">RQ 2:</h3>
-</section>
-<section id="rq-3-olympic-success-by-population" class="level3">
-<h3 class="anchored" data-anchor-id="rq-3-olympic-success-by-population">RQ 3: Olympic success by population</h3>
+── Downloading files ───────────────────────────────────────────────────────────
+
+  1 of 1: "olympics.csv"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tuesdata</span><span class="op">$</span><span class="va">olympics</span> <span class="op">|&gt;</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/sample_n.html">sample_n</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 16%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 8%">
+<col style="width: 2%">
+<col style="width: 6%">
+<col style="width: 2%">
+<col style="width: 3%">
+<col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 26%">
+<col style="width: 3%">
+</colgroup>
+<thead><tr class="header">
+<th style="text-align: right;">id</th>
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">sex</th>
+<th style="text-align: right;">age</th>
+<th style="text-align: right;">height</th>
+<th style="text-align: right;">weight</th>
+<th style="text-align: left;">team</th>
+<th style="text-align: left;">noc</th>
+<th style="text-align: left;">games</th>
+<th style="text-align: right;">year</th>
+<th style="text-align: left;">season</th>
+<th style="text-align: left;">city</th>
+<th style="text-align: left;">sport</th>
+<th style="text-align: left;">event</th>
+<th style="text-align: left;">medal</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">883</td>
+<td style="text-align: left;">Charles Addo-Odametey</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">170</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: left;">Ghana</td>
+<td style="text-align: left;">GHA</td>
+<td style="text-align: left;">1968 Summer</td>
+<td style="text-align: right;">1968</td>
+<td style="text-align: left;">Summer</td>
+<td style="text-align: left;">Mexico City</td>
+<td style="text-align: left;">Football</td>
+<td style="text-align: left;">Football Men’s Football</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">19784</td>
+<td style="text-align: left;">Chang Wei-Chia</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">173</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: left;">Chinese Taipei</td>
+<td style="text-align: left;">TPE</td>
+<td style="text-align: left;">1996 Summer</td>
+<td style="text-align: right;">1996</td>
+<td style="text-align: left;">Summer</td>
+<td style="text-align: left;">Atlanta</td>
+<td style="text-align: left;">Swimming</td>
+<td style="text-align: left;">Swimming Women’s 4 x 100 metres Freestyle Relay</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">96074</td>
+<td style="text-align: left;">Thomas Harold “Tom” Ponting</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">84</td>
+<td style="text-align: left;">Canada</td>
+<td style="text-align: left;">CAN</td>
+<td style="text-align: left;">1984 Summer</td>
+<td style="text-align: right;">1984</td>
+<td style="text-align: left;">Summer</td>
+<td style="text-align: left;">Los Angeles</td>
+<td style="text-align: left;">Swimming</td>
+<td style="text-align: left;">Swimming Men’s 200 metres Butterfly</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">124134</td>
+<td style="text-align: left;">Thomas Maria “Tom” van ’t Hek</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">173</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: left;">Netherlands</td>
+<td style="text-align: left;">NED</td>
+<td style="text-align: left;">1984 Summer</td>
+<td style="text-align: right;">1984</td>
+<td style="text-align: left;">Summer</td>
+<td style="text-align: left;">Los Angeles</td>
+<td style="text-align: left;">Hockey</td>
+<td style="text-align: left;">Hockey Men’s Hockey</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">121911</td>
+<td style="text-align: left;">James “Jim” Trifunov</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">Canada</td>
+<td style="text-align: left;">CAN</td>
+<td style="text-align: left;">1928 Summer</td>
+<td style="text-align: right;">1928</td>
+<td style="text-align: left;">Summer</td>
+<td style="text-align: left;">Amsterdam</td>
+<td style="text-align: left;">Wrestling</td>
+<td style="text-align: left;">Wrestling Men’s Bantamweight, Freestyle</td>
+<td style="text-align: left;">Bronze</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">72456</td>
+<td style="text-align: left;">Ilonda Lse</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">181</td>
+<td style="text-align: right;">72</td>
+<td style="text-align: left;">Latvia</td>
+<td style="text-align: left;">LAT</td>
+<td style="text-align: left;">1998 Winter</td>
+<td style="text-align: right;">1998</td>
+<td style="text-align: left;">Winter</td>
+<td style="text-align: left;">Nagano</td>
+<td style="text-align: left;">Speed Skating</td>
+<td style="text-align: left;">Speed Skating Women’s 1,500 metres</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Good:</p>
+<ul>
+<li><p>This description explains who created the data, from where, and when. It provides links to the sources so the reader can find them.</p></li>
+<li><p>It somewhat explains what information is in the dataset; i.e., information about athletes, as opposed to scheduling information or other details.</p></li>
+<li><p>Showing a random small snippet of the dataset is typically useful, to get a feel for what it looks like.</p></li>
+</ul>
+<p>Bad:</p>
+<ul>
+<li><p>This is lacking in the “why” and “how” of the data creation. It is important to know what motivated the creation and sharing of a dataset, as well as the specific process that the creator used to assemble it.</p></li>
+<li><p>This description is unclear about the <em>observational units</em>, i.e., what each row represents. (It is not true that each row is a unique athlete!)</p></li>
+<li><p>This description could give much more detail on the observed variables present, such as how they were measured and what a typical value looks like.</p></li>
+</ul>
+</div>
+</div>
+<section id="data-cleaning" class="level3"><h3 class="anchored" data-anchor-id="data-cleaning">Data Cleaning</h3>
+<p>This data was cleaned by using <code>janitor</code> to reformat column names.</p>
+<p>The user RGriffin who scraped the data also checked for misentered data in the columns <code>Name</code>, <code>Gender</code>, <code>Height</code>, and <code>Weight</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Good:</p>
+<ul>
+<li>We did not just look at the Tidy Tuesday cleaning and call it a day! We followed the path of the data creation to figure out what other cleaning and wrangling took place.</li>
+</ul>
+<p>Bad:</p>
+<ul>
+<li>We were not specific enough about the cleaning done by RGriffin. What did they alter in those columns and why? What other anomalies did they look for?</li>
+</ul>
+</div>
+</div>
+</section></section><section id="explorations" class="level2"><h2 class="anchored" data-anchor-id="explorations">Explorations</h2>
+<section id="rq-1-olympic-success-by-country" class="level3"><h3 class="anchored" data-anchor-id="rq-1-olympic-success-by-country">RQ 1: Olympic success by country</h3>
+<p>Which countries win the most Gold, Silver, and Bronze medals?</p>
+</section><section id="rq-2-gender-over-time" class="level3"><h3 class="anchored" data-anchor-id="rq-2-gender-over-time">RQ 2: Gender over time</h3>
+<p>Are there a higher percentage of female sports over time?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Good: * These two research questions are well-defined and answerable with the dataset.</p>
+<p>Bad: * These are not particularly deep. “Which countries win the most?” is not going to provide a new insight beyond what most people already know, and I think we can expect from the outset that female sports have increased over time.</p>
+</div>
+</div>
+</section><section id="rq-3-olympic-success-corrected-by-population" class="level3"><h3 class="anchored" data-anchor-id="rq-3-olympic-success-corrected-by-population">RQ 3: Olympic success corrected by population</h3>
 <p>Which countries win disproportionately more medals compared to their population size?</p>
 <p>Additional Data: Populations of each country</p>
-</section>
-<section id="rq-4" class="level3">
-<h3 class="anchored" data-anchor-id="rq-4">RQ 4:</h3>
+</section><section id="rq-4-correlation-between-female-wins-and-education" class="level3"><h3 class="anchored" data-anchor-id="rq-4-correlation-between-female-wins-and-education">RQ 4: Correlation between female wins and education</h3>
+<p>Do countries with better support for education for women also tend to see more success in female sports categories?</p>
+<p>Additional Data: Education trends in each country</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Good: * Question 4 digs deeper into the relationships between a country’s culture and government; and outcomes at the Olympics. This is a good question.</p>
+<p>Bad: * Question 3 is a bit less interesting - you might uncover 1 or 2 interesting countries that win disproporitionately, but you aren’t telling a rich story.</p>
+</div>
+</div>
+</section></section><section id="visualizations" class="level2"><h2 class="anchored" data-anchor-id="visualizations">Visualizations</h2>
+<p><img src=".images/example_plot_1.png" class="img-fluid"><img src=".images/example_plot_2.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Good: * Plots are appropriate to data type and address RQs</p>
+<p>Bad: * Not a lot of thought is put into these as far as good plot design, annotation and storytelling, etc.</p>
+</div>
+</div>
 <!-- Now that you have been assigned a dataset, this week we are focused on  -->
 <!-- acquiring the data, investigating how the data were cleaned, and working with -->
 <!-- your group to pose research questions that could be addressed with these data. -->
@@ -386,14 +658,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- supplemental data  -->
 <!-- -   sketches out two visualizations that could be made to address the  -->
 <!-- research questions you posed above  -->
-<p>:::</p>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -807,8 +1074,7 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>This page is built with ❤️ by Drs. Kelly Bodwin &amp; Allison Theobold and also <a href="https://quarto.org/">Quarto</a>.</p>
 </div>   
@@ -817,17 +1083,15 @@ ul.task-list li input[type="checkbox"] {
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/example-project-olympics/week-1.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../LICENSE.md">
 <p>License</p>
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>
