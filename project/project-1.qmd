@@ -70,10 +70,10 @@ posed
 -   uses table and figure numbers to reference findings
 :::
 
-::: {.column width="5%"}
+::: {.column width="2%"}
 :::
 
-::: {.column width="40%"}
+::: {.column width="43%"}
 ::: callout-warning
 # Coordinated Colors
 
@@ -96,22 +96,36 @@ Please see below for the expectations for your course.
 
 ## STAT 431
 
-You are required to submit **both** the link to your GitHub repository
-containing your source code **and** the final rendered report (as an HTML).
+For your final submission, your group will submit **one** GitHub repository
+link and **one** HTML document. This means, you will need to choose which group
+member's repository will be submitted as the final version. 
 
 ## STAT 541
 
-You are required to submit **both** the link to your GitHub repository
-containing your source code **and** a link to your [published]{.underline} 
-report.
+For your final submission, your group will submit **one** GitHub repository
+link and **one** link to the published HTML document. This means, you will need
+to choose which group member's repository will be submitted as the final
+version. 
 
-<!-- Need to change to Connect Cloud (https://connect.posit.cloud/) instead of 
-quarto pub -->
+To publish your document, you will need to sign up for a free [Connect Cloud](https://connect.posit.cloud/) account. I would recommend signing up with
+your GitHub account, since the documents you will be publishing for Project 1 
+and Project 2 live in a GitHub repository!
+
+Once you've signed up, you need to follow these steps to publish your document:
+
+1. Click on the "Publish" button on the left sidebar
+2. Select the "From GitHub" tab
+3. Select "Quarto" as the framework
+4. Input the URL of your GitHub repository
+5. The branch you want to push from should be "main"
+6. Input the name of the HTML document you want to publish 
+(e.g., `project-1.html`)
+7. Select "Publish" to publish your document!
 
 ::: callout-tip
-# Sign-up for Connect Cloud
+# Publish on Push
 
-You will need to sign up for a free [Connect Cloud](https://connect.posit.cloud/)
-account with your GitHub account, since the documents you will be publishing
-should live in a GitHub repository!
+I would recommend toggling on the "Automatically publish on push" option, so 
+your document will automatically update when you push changes to your GitHub
+repository. 
 :::

@@ -90,48 +90,44 @@ Git is based on **repositories**.
 
 # Actions in Git
 
-## Forking a Repo
+<!-- ## Forking a Repo -->
 
-> Make your own copy of a project.
+<!-- > Make your own copy of a project. -->
 
-:::: columns
-::: {.column width="70%"}
-::: {.fragment}
-::: {.midi}
-- The original repository is like the main version of a project. 
-- When you fork it, you make your own copy of that project under your own
-account.
-- You can freely make changes, test ideas, or add new features in your fork. 
-   + The original project stays untouched.
-:::
-:::
-:::
+<!-- :::: columns -->
+<!-- ::: {.column width="70%"} -->
+<!-- ::: {.fragment} -->
+<!-- ::: {.midi} -->
+<!-- - The original repository is like the main version of a project.  -->
+<!-- - When you fork it, you make your own copy of that project under your own -->
+<!-- account. -->
+<!-- - You can freely make changes, test ideas, or add new features in your fork.  -->
+<!--    + The original project stays untouched. -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: -->
 
-::: {.column width="30%"}
-![](images/01-fork.png){fig-align="center" fig-alt="A picture of the graphic used by GitHub to represent a 'fork' of a repository." width="50%"}
-:::
-::::
+<!-- ::: {.column width="30%"} -->
+<!-- ![](images/01-fork.png){fig-align="center" fig-alt="A picture of the graphic used by GitHub to represent a 'fork' of a repository." width="50%"} -->
+<!-- ::: -->
+<!-- :::: -->
 
-# Your Turn
+<!-- # Your Turn -->
 
-::: {.large}
-::: {.callout-important}
-# Fork Lab 1
+<!-- ::: {.large} -->
+<!-- ::: {.callout-important} -->
+<!-- # Fork Lab 1 -->
 
-Navigate the the Lab 1 repository linked on Canvas. 
-Create your own fork of that repository. 
+<!-- Navigate the the Lab 1 repository linked on Canvas.  -->
+<!-- Create your own fork of that repository.  -->
 
-**Put a green post-it on your laptop when you are done!**
-:::
-:::
+<!-- **Put a green post-it on your laptop when you are done!** -->
+<!-- ::: -->
+<!-- ::: -->
 
 ## Cloning a Repo
 
 > Download the project onto your computer.
-
-<!-- Fork = make your own copy of a project online. -->
-<!-- Clone = download a repo (your own or someone else’s) to your computer. -->
-
 
 :::: columns
 ::: {.column width="70%"}
@@ -149,13 +145,43 @@ Create your own fork of that repository.
 :::
 ::::
 
-# Your Turn
+# Step 1
 
 ::: {.large}
 ::: {.callout-important}
-You should now have your own copy (fork) of the Lab 1 repository open. 
+# Make a New Repo
 
-Follow the [instructions posted on Canvas](https://scribehow.com/viewer/Forking_a_Repository_and_Cloning_into_RStudio__TKGOvrrYQ1GMfYCafxercg) to clone that repository into RStudio.
+We're going to make a new repository to hold our Project 1 materials.
+
+Follow [these instructions](https://scribehow.com/viewer/How_To_Create_A_New_GitHub_Repository__QnOg6qOMTvWU6aRWD19-hA) to create a new repository in GitHub.
+
+**Put a green post-it on your laptop when you are done!**
+:::
+:::
+
+## `.gitignore`
+
+The instructions you followed added a `.gitignore` file to your repository. 
+
+- A `.gitignore` file specifies the files that git should intentionally ignore.
+
+- Often these are machine generated files (e.g., `.DS_Store`) or
+files / directories that you do not want to be shared (e.g., `solutions/`).
+
+- The  R specific `.gitignore` added by GitHub will ignore standard machine 
+generated files that we don't want to track: `.Rhistory`, `.RData`, 
+`.Rproj.user`, `.DS_Store`. 
+
+## Step 2
+
+::: {.large}
+::: {.callout-important}
+# Clone the Repo into RStudio 
+
+Now that we have a repo, we need to clone it into RStudio so we can work in it
+locally.
+
+Follow [these instructions](https://scribehow.com/viewer/Cloning_a_Repository_into_RStudio__u0yELMuBR0S5Vy8TVRpRDg) to clone your repo into RStudio.
 
 **Put a green post-it on your laptop when you are done!**
 :::
@@ -197,48 +223,20 @@ you made.
 + You’ll end up with a set of bite-sized changes (with description) to serve as
 a record of what you’ve done.
 
-<!-- ## `.gitignore` -->
-
-<!-- Sometimes there are files that you **do not** want to track. -->
-
-<!-- + A `.gitignore` file specifies the files that git should intentionally ignore. -->
-<!-- + Often these are machine generated files (e.g., `/bin`, `.DS_Store`) or files/directories that you do not want to be shared (e.g., `solutions/`). -->
-<!-- + **We want to ignore `.Rproj` files!** -->
-
-
-## Your Turn - Make a Change
+## Your Turn
 
 ::: {.large}
 ::: {.callout-important}
+# Commit & Push the New Files 
 
-Open the `lab-1.qmd` file from the repository (it should be easily accessible
-from your Files tab).
+Now that you have the repo cloned into RStudio, you should see files that need 
+to committed and pushed. 
 
-Change the `author: "YOUR NAME HERE"` line to include your name. 
+Follow [these instructions](https://atheobold.github.io/advanced-R-website/project/week-1.html#push-your-changes-to-github) to commit your new files.
 
-Save the document. 
+**Put a green post-it on your laptop when you are done!**
+
 :::
-:::
-
-## Your Turn - Commit that Change
-
-::: {.large}
-> I will live code this process!
-
-Put a green post-it on your laptop if you were successful!
-:::
-
-. . .
-
-</br>
-
-::: {.callout-tip}
-# Three Steps to Commit
-
-1. Check the box of the document you want to commit changes from (this stages
-the changes)
-2. Type out a commit message describing the changes you made (make it short!)
-3. Click the Commit button to commit these documents with that commit message
 :::
 
 ## Pushing Changes
@@ -305,5 +303,6 @@ if you are working on different computers).
 2. Make some changes locally.
 3. Stage the changes (check the box).
 4. Write a commit message
+5. Click the "Commit" button.
 5. Push your changes to GitHub.
 :::

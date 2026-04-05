@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -40,9 +40,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -262,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
@@ -290,7 +290,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Unit 3 - Package Development</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../project.html"> 
+    <a class="nav-link active" href="../project.html" aria-current="page"> 
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
@@ -322,10 +322,6 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
-      </a>
-      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -411,6 +407,13 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#by-the-end-of-the-week-you-should-have-a-draft-report-which" id="toc-by-the-end-of-the-week-you-should-have-a-draft-report-which" class="nav-link active" data-scroll-target="#by-the-end-of-the-week-you-should-have-a-draft-report-which">By the end of the week, you should have a draft report which:</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a>
+  <ul class="collapse">
+  <li><a href="#create-a-github-repository" id="toc-create-a-github-repository" class="nav-link" data-scroll-target="#create-a-github-repository">Create a GitHub Repository</a></li>
+  <li><a href="#clone-your-repository-into-rstudio" id="toc-clone-your-repository-into-rstudio" class="nav-link" data-scroll-target="#clone-your-repository-into-rstudio">Clone Your Repository into RStudio</a></li>
+  <li><a href="#push-your-changes-to-github" id="toc-push-your-changes-to-github" class="nav-link" data-scroll-target="#push-your-changes-to-github">Push Your Changes to GitHub</a></li>
+  <li><a href="#four-steps-to-follow-every-time" id="toc-four-steps-to-follow-every-time" class="nav-link" data-scroll-target="#four-steps-to-follow-every-time">Four Steps to Follow Every Time</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/project/week-1.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -462,8 +465,50 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/excalidraw-sketch.png" class="img-fluid" alt="A graphic displaying the relationship between a dataset (on the left) and a plot (on the right). The graphic uses colors and arrows to indicate where a column in the dataset is being mapped on the plot. The 'study_year' variable is circled in green and is being mapped to the x-axis. The 'median_wk_cost' variable is circled in red and being mapped to the y-axis. The 'county_name' variable is circled in purple and is being mapped to the color aesthetic. Finally, the visualization on the right indicates that points will be made using geom_point and lines will be made using geom_smooth."></p>
 </div>
 </div>
+</section>
+<section id="submission" class="level2">
+<h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<p>You will submit <strong>both</strong> your HTML report <strong>and</strong> the link to the GitHub repository where your report lives. In GitHub, you will need to make a new repository where your project materials will live.</p>
+<section id="create-a-github-repository" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-github-repository">Create a GitHub Repository</h3>
+<p>First, you will need to create a new GitHub repository. Here is a document walking you through the 10 steps for accomplishing this:</p>
+<iframe src="https://scribehow.com/embed/How_To_Create_A_New_GitHub_Repository__QnOg6qOMTvWU6aRWD19-hA" width="800" height="679" allow="fullscreen" style="aspect-ratio: 1 / 1; border: 0; min-height: 480px">
+</iframe>
+</section>
+<section id="clone-your-repository-into-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="clone-your-repository-into-rstudio">Clone Your Repository into RStudio</h3>
+<p>Now that you have a repository, you need to clone it into RStudio so your local changes can be pushed into your repository. Here is a document walking you through the 8 steps for accomplishing this:</p>
+<iframe src="https://scribehow.com/embed/Cloning_a_Repository_into_RStudio__u0yELMuBR0S5Vy8TVRpRDg" width="800" height="679" allow="fullscreen" style="aspect-ratio: 1 / 1; border: 0; min-height: 480px">
+</iframe>
+</section>
+<section id="push-your-changes-to-github" class="level3">
+<h3 class="anchored" data-anchor-id="push-your-changes-to-github">Push Your Changes to GitHub</h3>
+<p>Once you click “Create Project,” RStudio will open your project. You will know the project it has open based on the blue cube that appears in the upper right hand corner of your project (<img src="images/r-project.png" class="img-fluid" style="width:20.0%" alt="A screenshot of the blue cube that can be seen in the upper right hand corner of RStudio when a project is open. The title next to the blue cube reads 'project-1', indicating the name of the project that is currently open.">).</p>
+<p>If you click on the “Git” tab in the upper right pane, you should see one file listed (<code>project-1.Rproj</code>). There is a yellow question mark next to this file meaning it is a new file that is not currently being tracked.</p>
+<p><img src="images/git-tab-new-file.png" class="img-fluid" data-alt-text="A screenshot of the Git pane in the upper right corner of RStudio. In this pane, there is one file listed (project-1.Rproj) and there is a yellow box with a question mark inside it, indicating that this is a file that is not currently being tracked."></p>
+<p>To add this file to your repository, you need to click on the “Commit” box (with the green check mark by it). That will open a popup window like this:</p>
+<p><img src="images/stage-commit-message.png" class="img-fluid" alt="A screenshot of the popup window that opens when you select 'Commit' on the Git tab. On the left, the popup shows the file that is being staged, as indicated by the box that is checked next to the file name. On the right, the commit message for the file is displayed, describing the changes made to the file: 'first file for repo'. Finally, the 'Commit' button at the bottom of the commit message box is hightlighted in blue, indicating it should be clicked once the file has been stages and a message has been written."></p>
+<p>From here you need to first <strong>check the box next to the file to stage it</strong>, this adds it to the list of files that will be pushed to GitHub. Next, you need to <strong>write a commit message in the textbox</strong>. Once you’ve completed these steps, you <strong>click the “Commit” button</strong> to commit these changes.</p>
+<p>Once you click the “Commit” button, you should see a message like this appear, indicating that your commit was successful. Go ahead and hit “Close” to return to RStudio.</p>
+<p><img src="images/commit.png" class="img-fluid" alt="A screenshot of the commit message box that appears after clicking the 'Commit' button in the previous screen. The commit message box indicates if the commit was successful. The message given by git says (1) the commit ID and message ('[main c703ad] first file for repo'), (2) the number of files that were changed and how they were changed ('1 file changed, 15 insertions(+)'), and (3) that the commit was successful ('create mode 100644 project-1.Rproj')."></p>
+<p>Now, your Git tab should show that your branch (the local copy of your repo) is one commit ahead of the origin (the repository on GitHub).</p>
+<p><img src="images/ahead-by-one-commit.png" class="img-fluid" alt="A screenshot of the Commit popup window after clicking 'Commit'. The popup window now shows no files but has a message above the files: 'Your branch is ahead of origin/main by 1 commit,' indicating that there are changes that were staged locally that haven't been pushed to GitHub. The upper right corner has a 'Push' button that is highlighted in green. This is the button that must be pushed to send the local changes to the remote GitHub repository."></p>
+<p>The final step is to push the changes to GitHub. If you click on the “Push” icon (with the up arrow), the changes you committed will be pushed to GitHub. Similar to the commit message, if RStudio successfully pushed the changes you will get a message saying your changes were successfully pushed (HEAD -&gt; main).</p>
+<p><img src="images/push.png" class="img-fluid" alt="A screenshot of the push message box that appears after clicking the 'Push' button in the previous screen. The message box indicates (1) where the file was pushed ('To https://github.com/atheobold/project-1.git'), and (2) if it was successful ('HEAD -> main')."></p>
+</section>
+<section id="four-steps-to-follow-every-time" class="level3">
+<h3 class="anchored" data-anchor-id="four-steps-to-follow-every-time">Four Steps to Follow Every Time</h3>
+<p>You only need to setup your repository <em>once</em>, but you will need to commit and push changes <strong>frequently</strong>. Our best advice is to commit and push <em>small</em> changes (e.g., one section of a report, one visualization, one table).</p>
+<p>Every time you make a change to a document (new or existing), you will need to follow these four steps:</p>
+<ol type="1">
+<li>Stage the file—check the box next to the file.</li>
+<li>Write a commit message—describe what changes you made.</li>
+<li>Click “Commit” to log these changes.</li>
+<li>Click “Push” to send these changes up to GitHub.</li>
+</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

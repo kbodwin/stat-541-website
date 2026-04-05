@@ -187,8 +187,8 @@ above), let's get familiar with the **usethis** package in R.
 
 1. Open RStudio.
 2. Run the following code **in your console** (bottom left), substituting your 
-name for `"Jane Doe"` and the email associated with your GitHub account with 
-`"jane@example.org"`. 
+name for `"Jane Hollander"` and the email associated with your GitHub account
+with `"jane@metros.org"`. 
 
 ```{r}
 #| label: introducing-yourself-to-git
@@ -199,8 +199,8 @@ install.packages("usethis")
 library(usethis)
 
 # Change this to use your name and your GitHub email address! 
-use_git_config(user.name = "Jane Doe", 
-               user.email = "jane@example.org")
+use_git_config(user.name = "Jane Hollander", 
+               user.email = "jane@metros.org")
 ```
 
 ::: {.callout-check-in}
