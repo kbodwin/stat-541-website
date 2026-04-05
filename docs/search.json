@@ -2416,5 +2416,16 @@
       "Unit 3 - Package Development",
       "Code Speed"
     ]
+  },
+  {
+    "objectID": "unit-2/quarto-dashboard-static.html#history-of-dashboards",
+    "href": "unit-2/quarto-dashboard-static.html#history-of-dashboards",
+    "title": "Quarto Dashboards, Part 1",
+    "section": "History of Dashboards",
+    "text": "History of Dashboards\n\n\nThe Operations Room at RAF Fighter Command’s No. 10 Group Headquarters\n\nThe dashboard has arguably become prolific in data science. Indeed we have heard from many of our own students that once their employer learns that they can create dashboards, this often becomes part of their job or helps them land a job. While dashboards are a great tool for ingesting information, they are not without their faults.\nThis article by Shannon Mattern provides an excellent history on the use of dashboards, dating all the way back to early 1900s.\n\n\n\n\n\n\nNote\n\n\n\nIf you have the time, this entire article is quite interesting. However, if you are a bit short on time this week, we would strongly encourage you read the final section—“Critical Mud: Structuring and Sanitizing the Dashboard.”",
+    "crumbs": [
+      "Unit 2 - Professional Deliverables",
+      "Quarto Dashboards, Part 1"
+    ]
   }
 ]

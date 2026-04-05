@@ -143,6 +143,26 @@ create a card in Quarto?
 <!-- ::: {.card} -->
 :::
 
+## History of Dashboards
+
+![The Operations Room at RAF Fighter Command's No. 10 Group Headquarters](images/plotting-room.jpg){fig-alt="The Operations Room at RAF Fighter Command's No. 10 Group Headquarters, Rudloe Manor (RAF Box), Wiltshire, showing WAAF plotters and duty officers at work, 1943. General view of the Operations Room at No. 10 Group Headquarters, Rudloe Manor (RAF Box), Wiltshire, showing WAAF plotters and duty officers at work."}
+
+The dashboard has arguably become prolific in data science. Indeed we have heard
+from many of our own students that once their employer learns that they can 
+create dashboards, this often becomes part of their job or helps them land a 
+job. While dashboards are a great tool for ingesting information, they are not
+without their faults. 
+
+[This article by Shannon Mattern](https://placesjournal.org/article/mission-control-a-history-of-the-urban-dashboard/) provides an excellent history on the use of dashboards, dating 
+all the way back to early 1900s. 
+
+::: {.callout-note}
+If you have the time, this entire article is quite interesting. However, 
+if you are a bit short on time this week, we would strongly encourage you read
+the final section---"Critical Mud: Structuring and Sanitizing the Dashboard."
+:::
+
+
 # Additional Resources
 
 ::: {.callout-learn-more} 
