@@ -17,21 +17,3 @@ whom you would or would not like to work, and what were your *most* and
 *least* favorite topics from Introduction to R. 
 
 [Link to Google Form for Data Preferences](https://forms.gle/W5tbc3AEMxh89d3n8)
-
-<!-- 1.  Rank dataset preferences -->
-<!-- 2.  State if there are people that you would trade your dataset preference to work with -->
-<!-- 3.  If you had to choose one **favorite** topic from 331 what would it be? -->
-
-<!-- -   viz -->
-<!-- -   cleaning data -->
-<!-- -   writing functions -->
-<!-- -   iterating over functions -->
-<!-- -   statistical analyses -->
-
-<!-- 4.  If you had to choose one **least favorite** topic from 331 what would it be? -->
-
-<!-- -   viz -->
-<!-- -   cleaning data -->
-<!-- -   writing functions -->
-<!-- -   iterating over functions -->
-<!-- -   statistical analyses -->

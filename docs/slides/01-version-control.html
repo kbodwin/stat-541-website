@@ -7,10 +7,10 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/flourish-0.0.1/injectFlourishes.js"></script>
 <script src="../site_libs/quarto-contrib/flourish-0.0.1/flourish.js"></script><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.24">
+  <meta name="generator" content="quarto-1.8.26">
 
   <title>Advanced R – Introduction to Version Control</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -231,62 +231,39 @@
 <section>
 <section id="actions-in-git" class="title-slide slide level1 center">
 <h1>Actions in Git</h1>
-
-</section>
-<section id="forking-a-repo" class="slide level2">
-<h2>Forking a Repo</h2>
-<blockquote>
-<p>Make your own copy of a project.</p>
-</blockquote>
-<div class="columns">
-<div class="column" style="width:70%;">
-<div class="fragment">
-<div class="midi">
-<ul>
-<li>The original repository is like the main version of a project.</li>
-<li>When you fork it, you make your own copy of that project under your own account.</li>
-<li>You can freely make changes, test ideas, or add new features in your fork.
-<ul>
-<li>The original project stays untouched.</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div><div class="column" style="width:30%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/01-fork.png" class="quarto-figure quarto-figure-center" style="width:50.0%" alt="A picture of the graphic used by GitHub to represent a 'fork' of a repository."></p>
-</figure>
-</div>
-</div></div>
-</section></section>
-<section>
-<section id="your-turn" class="title-slide slide level1 center">
-<h1>Your Turn</h1>
-<div class="large">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Fork Lab 1</strong></p>
-</div>
-<div class="callout-content">
-<p>Navigate the the Lab 1 repository linked on Canvas. Create your own fork of that repository.</p>
-<p><strong>Put a green post-it on your laptop when you are done!</strong></p>
-</div>
-</div>
-</div>
-</div>
+<!-- ## Forking a Repo -->
+<!-- > Make your own copy of a project. -->
+<!-- :::: columns -->
+<!-- ::: {.column width="70%"} -->
+<!-- ::: {.fragment} -->
+<!-- ::: {.midi} -->
+<!-- - The original repository is like the main version of a project.  -->
+<!-- - When you fork it, you make your own copy of that project under your own -->
+<!-- account. -->
+<!-- - You can freely make changes, test ideas, or add new features in your fork.  -->
+<!--    + The original project stays untouched. -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ::: {.column width="30%"} -->
+<!-- ![](images/01-fork.png){fig-align="center" fig-alt="A picture of the graphic used by GitHub to represent a 'fork' of a repository." width="50%"} -->
+<!-- ::: -->
+<!-- :::: -->
+<!-- # Your Turn -->
+<!-- ::: {.large} -->
+<!-- ::: {.callout-important} -->
+<!-- # Fork Lab 1 -->
+<!-- Navigate the the Lab 1 repository linked on Canvas.  -->
+<!-- Create your own fork of that repository.  -->
+<!-- **Put a green post-it on your laptop when you are done!** -->
+<!-- ::: -->
+<!-- ::: -->
 </section>
 <section id="cloning-a-repo" class="slide level2">
 <h2>Cloning a Repo</h2>
 <blockquote>
 <p>Download the project onto your computer.</p>
 </blockquote>
-<!-- Fork = make your own copy of a project online. -->
-<!-- Clone = download a repo (your own or someone else’s) to your computer. -->
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="fragment">
@@ -309,8 +286,8 @@
 </div></div>
 </section></section>
 <section>
-<section id="your-turn-1" class="title-slide slide level1 center">
-<h1>Your Turn</h1>
+<section id="step-1" class="title-slide slide level1 center">
+<h1>Step 1</h1>
 <div class="large">
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
@@ -318,11 +295,40 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Important</strong></p>
+<p><strong>Make a New Repo</strong></p>
 </div>
 <div class="callout-content">
-<p>You should now have your own copy (fork) of the Lab 1 repository open.</p>
-<p>Follow the <a href="https://scribehow.com/viewer/Forking_a_Repository_and_Cloning_into_RStudio__TKGOvrrYQ1GMfYCafxercg">instructions posted on Canvas</a> to clone that repository into RStudio.</p>
+<p>We’re going to make a new repository to hold our Project 1 materials.</p>
+<p>Follow <a href="https://scribehow.com/viewer/How_To_Create_A_New_GitHub_Repository__QnOg6qOMTvWU6aRWD19-hA">these instructions</a> to create a new repository in GitHub.</p>
+<p><strong>Put a green post-it on your laptop when you are done!</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="gitignore" class="slide level2">
+<h2><code>.gitignore</code></h2>
+<p>The instructions you followed added a <code>.gitignore</code> file to your repository.</p>
+<ul>
+<li><p>A <code>.gitignore</code> file specifies the files that git should intentionally ignore.</p></li>
+<li><p>Often these are machine generated files (e.g., <code>.DS_Store</code>) or files / directories that you do not want to be shared (e.g., <code>solutions/</code>).</p></li>
+<li><p>The R specific <code>.gitignore</code> added by GitHub will ignore standard machine generated files that we don’t want to track: <code>.Rhistory</code>, <code>.RData</code>, <code>.Rproj.user</code>, <code>.DS_Store</code>.</p></li>
+</ul>
+</section>
+<section id="step-2" class="slide level2">
+<h2>Step 2</h2>
+<div class="large">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Clone the Repo into RStudio</strong></p>
+</div>
+<div class="callout-content">
+<p>Now that we have a repo, we need to clone it into RStudio so we can work in it locally.</p>
+<p>Follow <a href="https://scribehow.com/viewer/Cloning_a_Repository_into_RStudio__u0yELMuBR0S5Vy8TVRpRDg">these instructions</a> to clone your repo into RStudio.</p>
 <p><strong>Put a green post-it on your laptop when you are done!</strong></p>
 </div>
 </div>
@@ -370,15 +376,10 @@
 <li>Use short, but informative commit messages.</li>
 <li>You’ll end up with a set of bite-sized changes (with description) to serve as a record of what you’ve done.</li>
 </ul>
-<!-- ## `.gitignore` -->
-<!-- Sometimes there are files that you **do not** want to track. -->
-<!-- + A `.gitignore` file specifies the files that git should intentionally ignore. -->
-<!-- + Often these are machine generated files (e.g., `/bin`, `.DS_Store`) or files/directories that you do not want to be shared (e.g., `solutions/`). -->
-<!-- + **We want to ignore `.Rproj` files!** -->
 </div>
 </section>
-<section id="your-turn---make-a-change" class="slide level2">
-<h2>Your Turn - Make a Change</h2>
+<section id="your-turn" class="slide level2">
+<h2>Your Turn</h2>
 <div class="large">
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
@@ -386,41 +387,12 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Important</strong></p>
+<p><strong>Commit &amp; Push the New Files</strong></p>
 </div>
 <div class="callout-content">
-<p>Open the <code>lab-1.qmd</code> file from the repository (it should be easily accessible from your Files tab).</p>
-<p>Change the <code>author: "YOUR NAME HERE"</code> line to include your name.</p>
-<p>Save the document.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="your-turn---commit-that-change" class="slide level2">
-<h2>Your Turn - Commit that Change</h2>
-<div class="large">
-<blockquote>
-<p>I will live code this process!</p>
-</blockquote>
-<p>Put a green post-it on your laptop if you were successful!</p>
-</div>
-<div class="fragment">
-<p><br></p>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Three Steps to Commit</strong></p>
-</div>
-<div class="callout-content">
-<ol type="1">
-<li>Check the box of the document you want to commit changes from (this stages the changes)</li>
-<li>Type out a commit message describing the changes you made (make it short!)</li>
-<li>Click the Commit button to commit these documents with that commit message</li>
-</ol>
+<p>Now that you have the repo cloned into RStudio, you should see files that need to committed and pushed.</p>
+<p>Follow <a href="https://atheobold.github.io/advanced-R-website/project/week-1.html#push-your-changes-to-github">these instructions</a> to commit your new files.</p>
+<p><strong>Put a green post-it on your laptop when you are done!</strong></p>
 </div>
 </div>
 </div>
@@ -450,7 +422,7 @@
 </div></div>
 </section></section>
 <section>
-<section id="your-turn-2" class="title-slide slide level1 center">
+<section id="your-turn-1" class="title-slide slide level1 center">
 <h1>Your Turn</h1>
 <div class="large">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -512,6 +484,7 @@
 <li class="fragment">Make some changes locally.</li>
 <li class="fragment">Stage the changes (check the box).</li>
 <li class="fragment">Write a commit message</li>
+<li class="fragment">Click the “Commit” button.</li>
 <li class="fragment">Push your changes to GitHub.</li>
 </ol>
 
