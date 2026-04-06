@@ -1,10 +1,11 @@
 ---
-title: "Project Checkpoint 2"
+title: "Project Checkpoint 2 - Example"
 format:
   html:
     df-print: kable
 execute:
   message: false
+  warning: false
 ---
 
 :::{.callout-note}
