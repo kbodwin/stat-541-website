@@ -5,6 +5,7 @@ format:
     df-print: kable
 execute:
   message: false
+  warning: false
 editor: source
 ---
 
