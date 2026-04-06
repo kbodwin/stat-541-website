@@ -97,9 +97,11 @@ Are there a higher percentage of female sports over time?
 
 :::{.callout-note}
 Good:
+
 * These two research questions are well-defined and answerable with the dataset.
 
 Bad: 
+
 * These are not particularly deep.  "Which countries win the most?" is not going
 to provide a new insight beyond what most people already know, and I think we
 can expect from the outset that female sports have increased over time.
@@ -121,10 +123,12 @@ Additional Data: Education trends in each country
 :::{.callout-note}
 
 Good:
+
 * Question 4 digs deeper into the relationships between a country's culture and
 government; and outcomes at the Olympics.  This is a good question.
 
 Bad:
+
 * Question 3 is a bit less interesting - you might uncover 1 or 2 interesting 
 countries that win disproporitionately, but you aren't telling a rich story.
 
@@ -140,9 +144,11 @@ countries that win disproporitionately, but you aren't telling a rich story.
 :::{.callout-note}
 
 Good:
+
 * Plots are appropriate to data type and address RQs
 
 Bad:
+
 * Not a lot of thought is put into these as far as good plot design, annotation
 and storytelling, etc.
 
