@@ -102,20 +102,34 @@ website:
           href: group-stuff/contract.qmd
         - text: "Week 1: Making a Game Plan"
           href: project/week-1.qmd
+        - text: "*Week 1: Example Project*"
+          href: project/example-project-olympics/week-1.qmd
         - text: "Week 2: Data Summary Functions"
           href: project/week-2.qmd
+        - text: "*Week 2: Example Project*"
+          href: project/example-project-olympics/week-2.qmd
         - text: "Week 3: Acquiring New Data"
           href: project/week-3.qmd
+        - text: "*Week 3: Example Project*"
+          href: project/example-project-olympics/week-3.qmd
         - text: "Week 4: Advanced Visualizations"
           href: project/week-4.qmd
+        - text: "*Week 4: Example Project*"
+          href: project/example-project-olympics/week-4.qmd
         - text: Project 1 Final Deliverable
           href: project/project-1.qmd
         - text: "Week 5: First Draft Dashboard"
           href: project/week-5.qmd
+        - text: "*Week 5: Example Project*"
+          href: project/example-project-olympics/week-5.qmd
         - text: "Week 6: Dynamic Plots & Country Data"
           href: project/week-6.qmd
+        - text: "*Week 6: Example Project*"
+          href: project/example-project-olympics/week-6.qmd
         - text: "Week 7: Interactive Dashboard"
           href: project/week-7.qmd
+        - text: "*Week 7: Example Project*"
+          href: project/example-project-olympics/week-7.qmd
         - text: Project 2 Final Deliverable
           href: project/project-2.qmd
         # - href: project/week-8.qmd

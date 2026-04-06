@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project Checkpoint 6 – Advanced R</title>
+<title>Project Checkpoint 3 – Advanced R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,31 +23,33 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../images/cat-monsters-horst.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-5f858a84010510139e49c405efe9b486.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/flourish-0.0.1/injectFlourishes.js"></script>
-<script src="../site_libs/quarto-contrib/flourish-0.0.1/flourish.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../project/week-4.html" rel="next">
+<link href="../../project/week-3.html" rel="prev">
+<link href="../../images/cat-monsters-horst.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-5f858a84010510139e49c405efe9b486.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/flourish-0.0.1/injectFlourishes.js"></script>
+<script src="../../site_libs/quarto-contrib/flourish-0.0.1/flourish.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -248,9 +250,9 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content">
+    <img src="../../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -260,35 +262,35 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../course-materials/calendar.html"> 
+    <a class="nav-link" href="../../course-materials/calendar.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../course-materials/syllabus.html"> 
+    <a class="nav-link" href="../../course-materials/syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../1810-review.html"> 
+    <a class="nav-link" href="../../1810-review.html"> 
 <span class="menu-text">STAT 331 Review</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../unit-1.html"> 
+    <a class="nav-link" href="../../unit-1.html"> 
 <span class="menu-text">Unit 1 - Complex Analyses</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../unit-2.html"> 
+    <a class="nav-link" href="../../unit-2.html"> 
 <span class="menu-text">Unit 2 - Professional Deliverables</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../unit-3.html"> 
+    <a class="nav-link" href="../../unit-3.html"> 
 <span class="menu-text">Unit 3 - Package Development</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../project.html"> 
+    <a class="nav-link active" href="../../project.html" aria-current="page"> 
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
@@ -305,20 +307,150 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../project/example-project-olympics/week-3.html"><em>Week 3: Example Project</em></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projects</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/week-0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 0: Choose a Dataset</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../group-stuff/contract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Group Collaboration Expectations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/week-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1: Making a Game Plan</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/example-project-olympics/week-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><em>Week 1: Example Project</em></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/week-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2: Data Summary Functions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/example-project-olympics/week-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><em>Week 2: Example Project</em></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/week-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3: Acquiring New Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/example-project-olympics/week-3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><em>Week 3: Example Project</em></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/week-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4: Advanced Visualizations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/example-project-olympics/week-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><em>Week 4: Example Project</em></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/project-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project 1 Final Deliverable</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/week-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 5: First Draft Dashboard</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/example-project-olympics/week-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><em>Week 5: Example Project</em></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/week-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 6: Dynamic Plots &amp; Country Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/example-project-olympics/week-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><em>Week 6: Example Project</em></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/week-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 7: Interactive Dashboard</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/example-project-olympics/week-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><em>Week 7: Example Project</em></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/project-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project 2 Final Deliverable</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-on-a-specific-country" id="toc-data-on-a-specific-country" class="nav-link active" data-scroll-target="#data-on-a-specific-country">Data on a Specific Country</a></li>
-  <li><a href="#for-this-checkpoint-your-group-should" id="toc-for-this-checkpoint-your-group-should" class="nav-link" data-scroll-target="#for-this-checkpoint-your-group-should">For this checkpoint, your group should:</a></li>
+  <li><a href="#by-the-end-of-the-week-your-updated-report-should-contain" id="toc-by-the-end-of-the-week-your-updated-report-should-contain" class="nav-link active" data-scroll-target="#by-the-end-of-the-week-your-updated-report-should-contain">By the end of the week, your updated report should contain:</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/example-project-olympics/week-6.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/project/example-project-olympics/week-3.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -326,7 +458,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project Checkpoint 6</h1>
+<h1 class="title">Project Checkpoint 3</h1>
 </div>
 
 
@@ -343,40 +475,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>For this second check-in, you will build on the dashboard shell you created last week by adding interactivity and incorporating a new country-specific dataset. All additions should be integrated into your existing Quarto dashboard—this is not a new project, but a continuation and expansion of your current work.</p>
-<section id="data-on-a-specific-country" class="level2">
-<h2 class="anchored" data-anchor-id="data-on-a-specific-country">Data on a Specific Country</h2>
-<p>This week, you will choose <strong>one</strong> country from your original dataset to acquire additional information on. The country you choose is required to meet *<strong>at least one</strong> of the following criteria:</p>
+<p>Now that you have explored your original dataset and produced data summaries addressing your primary research questions, it is time to integrate new country-level data.</p>
+<section id="by-the-end-of-the-week-your-updated-report-should-contain" class="level2">
+<h2 class="anchored" data-anchor-id="by-the-end-of-the-week-your-updated-report-should-contain">By the end of the week, your updated report should contain:</h2>
 <ul>
-<li>An outlier
-<ul>
-<li>A country that is unusually high or low or behaves differently than others in your dataset.</li>
-</ul></li>
-<li>A representative case
-<ul>
-<li>A country that reflects the global or regional trend particularly well.</li>
-</ul></li>
-<li>A case of change
-<ul>
-<li>A country that shows substantial change over time.</li>
-</ul></li>
-</ul>
-<p>Before finalizing your country choice, verify that you can obtain additional country-specific data suitable for a dynamic visualization!</p>
-</section>
-<section id="for-this-checkpoint-your-group-should" class="level2">
-<h2 class="anchored" data-anchor-id="for-this-checkpoint-your-group-should">For this checkpoint, your group should:</h2>
-<p><strong>On the main page:</strong></p>
-<ul>
-<li>Create a <code>leaflet</code> map visualizing information from your original dataset (from Project 1).
-<ul>
-<li>This map should be thoughtfully integrated into the existing structure of your dashboard. That might mean some reshuffling of last week’s dashboard!</li>
-</ul></li>
-</ul>
-<p><strong>On a (new) second page:</strong></p>
-<ul>
-<li><p>Acquire and incorporate new country-specific data relevant to your project.</p></li>
-<li><p>Include a short “Why this country?” section (2–3 sentences) on your dashboard.</p></li>
-<li><p>Create at least one dynamic visualization (e.g., an animated plot or a <code>plotly</code> interactive graphic) using the new country-specific data.</p></li>
+<li><p><strong>one</strong> new country-level data acquired using APIs,</p></li>
+<li><p><strong>one</strong> new country-level data acquired using webscraping,</p></li>
+<li><p>descriptions of each of the new datasets</p></li>
+<li><p>a “meta” dataset containing <strong>all</strong> the acquired data (joined together)</p></li>
+<li><p><strong>at least two</strong> data summaries OR visualizations incorporating the additional country-level data</p></li>
 </ul>
 
 
@@ -796,6 +903,18 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../project/week-3.html" class="pagination-link" aria-label="Week 3: Acquiring New Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 3: Acquiring New Data</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../project/week-4.html" class="pagination-link" aria-label="Week 4: Advanced Visualizations">
+        <span class="nav-page-text">Week 4: Advanced Visualizations</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -804,11 +923,11 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/example-project-olympics/week-6.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/project/example-project-olympics/week-3.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../LICENSE.md">
+    <a class="nav-link" href="../../LICENSE.md">
 <p>License</p>
 </a>
   </li>  

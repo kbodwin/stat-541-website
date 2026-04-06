@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.8.26">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Project Checkpoint 1 - Example – Advanced R</title>
 <style>
@@ -54,31 +54,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../images/cat-monsters-horst.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-5f858a84010510139e49c405efe9b486.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/flourish-0.0.1/injectFlourishes.js"></script>
-<script src="../site_libs/quarto-contrib/flourish-0.0.1/flourish.js"></script><script id="quarto-search-options" type="application/json">{
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../project/week-2.html" rel="next">
+<link href="../../project/week-1.html" rel="prev">
+<link href="../../images/cat-monsters-horst.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-5f858a84010510139e49c405efe9b486.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-63767328852000e01d7c9d44355c1f36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/flourish-0.0.1/injectFlourishes.js"></script>
+<script src="../../site_libs/quarto-contrib/flourish-0.0.1/flourish.js"></script><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -106,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 </head>
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -273,8 +275,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content"><img src="../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content"></a>
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/cat-monsters-horst.png" alt="" class="navbar-logo light-content"><img src="../../images/cat-monsters-horst.png" alt="" class="navbar-logo dark-content"></a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -283,35 +285,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
 <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../course-materials/calendar.html"> 
+    <a class="nav-link" href="../../course-materials/calendar.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../course-materials/syllabus.html"> 
+    <a class="nav-link" href="../../course-materials/syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../1810-review.html"> 
+    <a class="nav-link" href="../../1810-review.html"> 
 <span class="menu-text">STAT 331 Review</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../unit-1.html"> 
+    <a class="nav-link" href="../../unit-1.html"> 
 <span class="menu-text">Unit 1 - Complex Analyses</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../unit-2.html"> 
+    <a class="nav-link" href="../../unit-2.html"> 
 <span class="menu-text">Unit 2 - Professional Deliverables</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../unit-3.html"> 
+    <a class="nav-link" href="../../unit-3.html"> 
 <span class="menu-text">Unit 3 - Package Development</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../project.html"> 
+    <a class="nav-link active" href="../../project.html" aria-current="page"> 
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
@@ -327,8 +329,135 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../project/example-project-olympics/week-1.html"><em>Week 1: Example Project</em></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projects</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/week-0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 0: Choose a Dataset</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../group-stuff/contract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Group Collaboration Expectations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/week-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1: Making a Game Plan</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/example-project-olympics/week-1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><em>Week 1: Example Project</em></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/week-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2: Data Summary Functions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/example-project-olympics/week-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><em>Week 2: Example Project</em></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/week-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3: Acquiring New Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/example-project-olympics/week-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><em>Week 3: Example Project</em></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/week-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4: Advanced Visualizations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/example-project-olympics/week-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><em>Week 4: Example Project</em></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/project-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project 1 Final Deliverable</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/week-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 5: First Draft Dashboard</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/example-project-olympics/week-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><em>Week 5: Example Project</em></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/week-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 6: Dynamic Plots &amp; Country Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/example-project-olympics/week-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><em>Week 6: Example Project</em></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/week-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 7: Interactive Dashboard</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/example-project-olympics/week-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><em>Week 7: Example Project</em></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project/project-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project 2 Final Deliverable</span></a>
+  </div>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
@@ -344,13 +473,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a href="#explorations" id="toc-explorations" class="nav-link" data-scroll-target="#explorations">Explorations</a>
   <ul class="collapse">
 <li><a href="#rq-1-olympic-success-by-country" id="toc-rq-1-olympic-success-by-country" class="nav-link" data-scroll-target="#rq-1-olympic-success-by-country">RQ 1: Olympic success by country</a></li>
-  <li><a href="#rq-2-gender-over-time" id="toc-rq-2-gender-over-time" class="nav-link" data-scroll-target="#rq-2-gender-over-time">RQ 2: Gender over time</a></li>
+  <li><a href="#rq-2-sex-over-time" id="toc-rq-2-sex-over-time" class="nav-link" data-scroll-target="#rq-2-sex-over-time">RQ 2: Sex over time</a></li>
   <li><a href="#rq-3-olympic-success-corrected-by-population" id="toc-rq-3-olympic-success-corrected-by-population" class="nav-link" data-scroll-target="#rq-3-olympic-success-corrected-by-population">RQ 3: Olympic success corrected by population</a></li>
   <li><a href="#rq-4-correlation-between-female-wins-and-education" id="toc-rq-4-correlation-between-female-wins-and-education" class="nav-link" data-scroll-target="#rq-4-correlation-between-female-wins-and-education">RQ 4: Correlation between female wins and education</a></li>
   </ul>
 </li>
   <li><a href="#visualizations" id="toc-visualizations" class="nav-link" data-scroll-target="#visualizations">Visualizations</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/example-project-olympics/week-1.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/project/example-project-olympics/week-1.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
@@ -382,28 +511,20 @@ Note
 </div>
 </div>
 <section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>My dataset is <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2021/2021-07-27/readme.md">the Olympics data from TidyTuesday</a>.<br>
-It shows all the Olympic athletes ever, and gives information about their sport, the country they are from, whether they won a medal, etc.</p>
+<p>My dataset is <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2021/2021-07-27/readme.md">the Olympics data from TidyTuesday</a>. This dataset shows all the Olympic athletes ever, and gives information about their sport, the country they are from, whether they won a medal, etc.</p>
 <p>The data comes from a <a href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results/">Kaggle dataset</a> created by user RGriffin, who scraped the data from www.sports-reference.com in May 2018.</p>
 <p>Here are a few rows of the dataset:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tuesdata</span> <span class="op">&lt;-</span> <span class="fu">tidytuesdayR</span><span class="fu">::</span><span class="fu"><a href="https://dslc-io.github.io/tidytuesdayR/reference/tt_load.html">tt_load</a></span><span class="op">(</span><span class="st">'2024-08-06'</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>---- Compiling #TidyTuesday Information for 2024-08-06 ----
---- There is 1 file available ---
-
-
-── Downloading files ───────────────────────────────────────────────────────────
-
-  1 of 1: "olympics.csv"</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tuesdata</span><span class="op">$</span><span class="va">olympics</span> <span class="op">|&gt;</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/sample_n.html">sample_n</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tuesdata</span> <span class="op">&lt;-</span> <span class="fu">tidytuesdayR</span><span class="fu">::</span><span class="fu"><a href="https://dslc-io.github.io/tidytuesdayR/reference/tt_load.html">tt_load</a></span><span class="op">(</span><span class="st">'2024-08-06'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">tuesdata</span><span class="op">$</span><span class="va">olympics</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/sample_n.html">sample_n</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 3%">
-<col style="width: 14%">
+<col style="width: 19%">
 <col style="width: 2%">
 <col style="width: 2%">
 <col style="width: 3%">
@@ -414,8 +535,8 @@ It shows all the Olympic athletes ever, and gives information about their sport,
 <col style="width: 2%">
 <col style="width: 3%">
 <col style="width: 6%">
-<col style="width: 7%">
-<col style="width: 27%">
+<col style="width: 5%">
+<col style="width: 26%">
 <col style="width: 3%">
 </colgroup>
 <thead><tr class="header">
@@ -437,105 +558,105 @@ It shows all the Olympic athletes ever, and gives information about their sport,
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">16840</td>
-<td style="text-align: left;">Wilhelm “Willi” Bsing</td>
+<td style="text-align: right;">59068</td>
+<td style="text-align: left;">Omer Khalifa</td>
 <td style="text-align: left;">M</td>
-<td style="text-align: right;">31</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: left;">Germany</td>
-<td style="text-align: left;">GER</td>
-<td style="text-align: left;">1952 Summer</td>
-<td style="text-align: right;">1952</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">174</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: left;">Sudan</td>
+<td style="text-align: left;">SUD</td>
+<td style="text-align: left;">1984 Summer</td>
+<td style="text-align: right;">1984</td>
 <td style="text-align: left;">Summer</td>
-<td style="text-align: left;">Helsinki</td>
-<td style="text-align: left;">Equestrianism</td>
-<td style="text-align: left;">Equestrianism Men’s Three-Day Event, Individual</td>
+<td style="text-align: left;">Los Angeles</td>
+<td style="text-align: left;">Athletics</td>
+<td style="text-align: left;">Athletics Men’s 800 metres</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">23961</td>
+<td style="text-align: left;">Daniele Crosta</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: left;">Italy</td>
+<td style="text-align: left;">ITA</td>
+<td style="text-align: left;">2000 Summer</td>
+<td style="text-align: right;">2000</td>
+<td style="text-align: left;">Summer</td>
+<td style="text-align: left;">Sydney</td>
+<td style="text-align: left;">Fencing</td>
+<td style="text-align: left;">Fencing Men’s Foil, Team</td>
 <td style="text-align: left;">Bronze</td>
 </tr>
-<tr class="even">
-<td style="text-align: right;">128392</td>
-<td style="text-align: left;">Deraldo Peixoto Wanderley</td>
-<td style="text-align: left;">M</td>
-<td style="text-align: right;">24</td>
-<td style="text-align: right;">191</td>
-<td style="text-align: right;">80</td>
-<td style="text-align: left;">Brazil</td>
-<td style="text-align: left;">BRA</td>
-<td style="text-align: left;">1980 Summer</td>
-<td style="text-align: right;">1980</td>
-<td style="text-align: left;">Summer</td>
-<td style="text-align: left;">Moskva</td>
-<td style="text-align: left;">Volleyball</td>
-<td style="text-align: left;">Volleyball Men’s Volleyball</td>
-<td style="text-align: left;">NA</td>
-</tr>
 <tr class="odd">
-<td style="text-align: right;">89396</td>
-<td style="text-align: left;">Eduardo Orejuela</td>
-<td style="text-align: left;">M</td>
+<td style="text-align: right;">19050</td>
+<td style="text-align: left;">Sarah Louise Catherwood (-Jackson)</td>
+<td style="text-align: left;">F</td>
 <td style="text-align: right;">16</td>
-<td style="text-align: right;">173</td>
-<td style="text-align: right;">71</td>
-<td style="text-align: left;">Ecuador</td>
-<td style="text-align: left;">ECU</td>
-<td style="text-align: left;">1968 Summer</td>
-<td style="text-align: right;">1968</td>
-<td style="text-align: left;">Summer</td>
-<td style="text-align: left;">Mexico City</td>
-<td style="text-align: left;">Swimming</td>
-<td style="text-align: left;">Swimming Men’s 100 metres Butterfly</td>
-<td style="text-align: left;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">48077</td>
-<td style="text-align: left;">Rodolfo Hernndez Vzquez</td>
-<td style="text-align: left;">M</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: right;">172</td>
-<td style="text-align: right;">80</td>
-<td style="text-align: left;">Mexico</td>
-<td style="text-align: left;">MEX</td>
+<td style="text-align: right;">177</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">New Zealand</td>
+<td style="text-align: left;">NZL</td>
 <td style="text-align: left;">1996 Summer</td>
 <td style="text-align: right;">1996</td>
 <td style="text-align: left;">Summer</td>
 <td style="text-align: left;">Atlanta</td>
-<td style="text-align: left;">Wrestling</td>
-<td style="text-align: left;">Wrestling Men’s Welterweight, Greco-Roman</td>
-<td style="text-align: left;">NA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">75214</td>
-<td style="text-align: left;">Geoffrey Charles Marks</td>
-<td style="text-align: left;">M</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: left;">Sri Lanka</td>
-<td style="text-align: left;">SRI</td>
-<td style="text-align: left;">1952 Summer</td>
-<td style="text-align: right;">1952</td>
-<td style="text-align: left;">Summer</td>
-<td style="text-align: left;">Helsinki</td>
 <td style="text-align: left;">Swimming</td>
-<td style="text-align: left;">Swimming Men’s 100 metres Freestyle</td>
+<td style="text-align: left;">Swimming Women’s 4 x 200 metres Freestyle Relay</td>
 <td style="text-align: left;">NA</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">44644</td>
-<td style="text-align: left;">Klaus Haertter</td>
+<td style="text-align: right;">824</td>
+<td style="text-align: left;">Luke Kendall Adams</td>
 <td style="text-align: left;">M</td>
-<td style="text-align: right;">23</td>
-<td style="text-align: right;">180</td>
-<td style="text-align: right;">68</td>
-<td style="text-align: left;">East Germany</td>
-<td style="text-align: left;">GDR</td>
-<td style="text-align: left;">1976 Summer</td>
-<td style="text-align: right;">1976</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">189</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: left;">Australia</td>
+<td style="text-align: left;">AUS</td>
+<td style="text-align: left;">2008 Summer</td>
+<td style="text-align: right;">2008</td>
 <td style="text-align: left;">Summer</td>
-<td style="text-align: left;">Montreal</td>
+<td style="text-align: left;">Beijing</td>
+<td style="text-align: left;">Athletics</td>
+<td style="text-align: left;">Athletics Men’s 50 kilometres Walk</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">35149</td>
+<td style="text-align: left;">Anja Fichtel-Mauritz (-Koper)</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: left;">West Germany</td>
+<td style="text-align: left;">FRG</td>
+<td style="text-align: left;">1988 Summer</td>
+<td style="text-align: right;">1988</td>
+<td style="text-align: left;">Summer</td>
+<td style="text-align: left;">Seoul</td>
 <td style="text-align: left;">Fencing</td>
-<td style="text-align: left;">Fencing Men’s Foil, Individual</td>
+<td style="text-align: left;">Fencing Women’s Foil, Team</td>
+<td style="text-align: left;">Gold</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">47981</td>
+<td style="text-align: left;">Alejandro Hernndez Julia</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: left;">Mexico</td>
+<td style="text-align: left;">MEX</td>
+<td style="text-align: left;">2000 Summer</td>
+<td style="text-align: right;">2000</td>
+<td style="text-align: left;">Summer</td>
+<td style="text-align: left;">Sydney</td>
+<td style="text-align: left;">Tennis</td>
+<td style="text-align: left;">Tennis Men’s Doubles</td>
 <td style="text-align: left;">NA</td>
 </tr>
 </tbody>
@@ -580,11 +701,11 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Good:</p>
+<p><strong>Good:</strong></p>
 <ul>
 <li>We did not just look at the Tidy Tuesday cleaning and call it a day! We followed the path of the data creation to figure out what other cleaning and wrangling took place.</li>
 </ul>
-<p>Bad:</p>
+<p><strong>Bad:</strong></p>
 <ul>
 <li>We were not specific enough about the cleaning done by RGriffin. What did they alter in those columns and why? What other anomalies did they look for?</li>
 </ul>
@@ -593,7 +714,7 @@ Note
 </section></section><section id="explorations" class="level2"><h2 class="anchored" data-anchor-id="explorations">Explorations</h2>
 <section id="rq-1-olympic-success-by-country" class="level3"><h3 class="anchored" data-anchor-id="rq-1-olympic-success-by-country">RQ 1: Olympic success by country</h3>
 <p>Which countries win the most Gold, Silver, and Bronze medals?</p>
-</section><section id="rq-2-gender-over-time" class="level3"><h3 class="anchored" data-anchor-id="rq-2-gender-over-time">RQ 2: Gender over time</h3>
+</section><section id="rq-2-sex-over-time" class="level3"><h3 class="anchored" data-anchor-id="rq-2-sex-over-time">RQ 2: Sex over time</h3>
 <p>Are there a higher percentage of female sports over time?</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -605,11 +726,11 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Good:</p>
+<p><strong>Good:</strong></p>
 <ul>
 <li>These two research questions are well-defined and answerable with the dataset.</li>
 </ul>
-<p>Bad:</p>
+<p><strong>Bad:</strong></p>
 <ul>
 <li>These are not particularly deep. “Which countries win the most?” is not going to provide a new insight beyond what most people already know, and I think we can expect from the outset that female sports have increased over time.</li>
 </ul>
@@ -631,18 +752,19 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Good:</p>
+<p><strong>Good:</strong></p>
 <ul>
 <li>Question 4 digs deeper into the relationships between a country’s culture and government; and outcomes at the Olympics. This is a good question.</li>
 </ul>
-<p>Bad:</p>
+<p><strong>Bad:</strong></p>
 <ul>
-<li>Question 3 is a bit less interesting - you might uncover 1 or 2 interesting countries that win disproporitionately, but you aren’t telling a rich story.</li>
+<li>Question 3 is a bit less interesting - you might uncover 1 or 2 interesting countries that win disproportionately, but you aren’t telling a rich story.</li>
 </ul>
 </div>
 </div>
 </section></section><section id="visualizations" class="level2"><h2 class="anchored" data-anchor-id="visualizations">Visualizations</h2>
-<p><img src=".images/example_plot_1.png" class="img-fluid"><img src=".images/example_plot_2.png" class="img-fluid"></p>
+<p><img src="images/example_plot_1.png" class="img-fluid" alt="Stacked bar chart comparing Olympic medal counts for three countries — USA, Russia, and China. Each bar is divided into three segments representing gold (yellow), silver (blue), and bronze (orange) medals. The USA has the most medals overall, followed by Russia, then China. Russia and China have notably fewer bronze medals compared to the USA."></p>
+<p><img src="images/example_plot_2.png" class="img-fluid" alt="Scatter plot showing the relationship between the percent of women with a high school degree or better (x-axis) and the number of gold medals won in women's sports (y-axis). Approximately 15 data points are scattered across the chart. A red trend line runs upward from left to right, indicating a weak positive correlation — countries where more women have at least a high school education tend to win slightly more gold medals in women's sports. The data points show considerable spread around the trend line."></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -653,28 +775,16 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Good:</p>
+<p><strong>Good:</strong></p>
 <ul>
 <li>Plots are appropriate to data type and address RQs</li>
 </ul>
-<p>Bad:</p>
+<p><strong>Bad:</strong></p>
 <ul>
 <li>Not a lot of thought is put into these as far as good plot design, annotation and storytelling, etc.</li>
 </ul>
 </div>
 </div>
-<!-- Now that you have been assigned a dataset, this week we are focused on  -->
-<!-- acquiring the data, investigating how the data were cleaned, and working with -->
-<!-- your group to pose research questions that could be addressed with these data. -->
-<!-- ## By the end of the week, you should have a draft report which: -->
-<!-- -   describes the context of the data -->
-<!-- -   explains what cleaning has been done to the data -->
-<!-- -   poses **at least two** research questions that could be addressed with these -->
-<!-- data  -->
-<!-- -   poses **at least two** research questions that could be addressed using  -->
-<!-- supplemental data  -->
-<!-- -   sketches out two visualizations that could be made to address the  -->
-<!-- research questions you posed above  -->
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
@@ -1089,7 +1199,17 @@ Note
       }
     }
   });
-  </script>
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="../../project/week-1.html" class="pagination-link" aria-label="Week 1: Making a Game Plan">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 1: Making a Game Plan</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../project/week-2.html" class="pagination-link" aria-label="Week 2: Data Summary Functions">
+        <span class="nav-page-text">Week 2: Data Summary Functions</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
@@ -1097,11 +1217,11 @@ Note
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/example-project-olympics/week-1.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/atheobold/stat-541-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/atheobold/stat-541-website/edit/main/project/example-project-olympics/week-1.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
 <li class="nav-item">
-    <a class="nav-link" href="../LICENSE.md">
+    <a class="nav-link" href="../../LICENSE.md">
 <p>License</p>
 </a>
   </li>  
